@@ -8,13 +8,18 @@
 :root{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0}img{max-width:100%}
 [hidden]:not([hidden=until-found i]){display:none!important}
 .evprog{display:none!important}
-#btnUpdate,#evRun,.ev-run,.ev-actions #evRun{display:none!important}
+#btnUpdate,#evRun,.ev-run{display:none!important}
 .gh-note{font-size:.76rem;color:var(--muted);margin:2px 0 0}
+.gh-upd,.btn.gh-ev{box-sizing:border-box;display:inline-grid;gap:0;text-align:left;line-height:1.25;padding:6px 12px;border-radius:10px;font-size:.78rem}
+.gh-upd{background:var(--navy);color:#fff}
+.gh-upd .k,.gh-ev .k{font-size:.66rem;text-transform:uppercase;letter-spacing:.06em;font-weight:700;opacity:.9}
+.gh-upd b,.gh-ev b{font:700 .9rem var(--font-display)}
+.gh-upd .s,.gh-ev .s{font-size:.7rem;opacity:.85;font-weight:500}
+@media (max-width:560px){.hdr .upd{display:grid!important;grid-template-columns:1fr;gap:6px}.hdr .upd .btn,.hdr .gh-upd{width:100%}}
 </style>
 <script>window.GH_STATIC=true;</script>
 </head>
 <body>
-
 <title>Analisi Finanziaria</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -807,8 +812,9 @@ const TRIGGER_ID = "trig_01RFskvnKEXEMuPW4wo8Haxw";      // compito "aggiorna da
 const EVAL_STATUS_FILE = 'valutazione_stato.json';
 const EVAL_TRIGGER_ID = "trig_01JUVzUSZf92iP2qE7fLPynn"; // compito "valutazione attuale"
 // Versione della dashboard: aumenta a OGNI modifica di pagina o modello (non con gli aggiornamenti dei dati).
-const APP_VERSION = '3.3';
+const APP_VERSION = '3.3.1';
 const CHANGELOG = [
+  ['3.3.1', '26/10/2026', ['Comandi "aggiorna ora" e "Valutazione attuale" da scrivere a Claude: fanno lo stesso lavoro dei bottoni e pubblicano anche la versione GitHub (puntospillo.github.io/analisi-finanziaria), dove i bottoni sono sostituiti dalle date dell\'ultimo aggiornamento e dell\'ultima valutazione.']],
   ['3.3', '25/10/2026', ['Quando si clicca un giorno passato sul grafico, banda arancione fissa in basso "Situazione al …" con spiegazione, bottone Torna a oggi e ?; nel riquadro dell\'indice la data scelta e quella dell\'ultima seduta; sotto il grafico l\'indicazione che si può cliccare.']],
   ['3.2.2', '25/10/2026', ['Consiglio: azione, percentuale e "azioni" della stessa grandezza, percentuale al centro; azione nel colore del suo settore della lancetta (Esci rosso, Riduci arancione, Mantieni blu, Aumenta giallo, Entra verde), percentuale e "azioni" nel colore della barra del grafico Quota in azioni. Stessi colori nel PDF.']],
   ['3.2.1', '25/10/2026', ['Riquadro Consiglio impaginato meglio: azione più piccola con accanto la quota in azioni più grande; convertitore My equity % sotto la quota precedente, a tutta larghezza.']],
@@ -2425,6 +2431,8 @@ evRun.addEventListener('click', async () => {
     evSay('warn', 'I dati sono più vecchi di ' + FRESH_H + ' ore: prima li aggiorno (circa 4 minuti, vedi il bottone "Aggiorna ora"). Appena pronti la pagina si ricarica e la valutazione parte da sola.');
   } catch (e) { evRun.disabled = false; evSay('bad', e && e.code === 'no_mcp' ? 'Da qui non posso avviare l\'aggiornamento (pagina aperta fuori da Claude o permesso non concesso).' : mcpErrText(e, 'aggiornare i dati prima della valutazione')); }
 });
+// snapshot per i comandi "Valutazione attuale" lanciati da Claude fuori dalla pagina (stesse impostazioni dei bottoni)
+window.AF_SNAPSHOT = () => { if (!DATA) return null; const settings = currentSettings(); return Object.assign({richiesta_alle: new Date().toISOString(), settings, settings_label: settingsLabel(settings)}, snapshot()); };
 async function startEval() {
   if (!DATA) return;
   evRun.disabled = true; evSay('warn', 'Invio della richiesta…');
@@ -2874,12 +2882,24 @@ async function makePdf(ch) {
 </script>
 
 
-
 <script>
-(function(){function go(){var h=document.querySelector('.hdr');if(!h||document.getElementById('ghNote'))return;
+(function(){
+var MESI=['gen','feb','mar','apr','mag','giu','lug','ago','set','ott','nov','dic'];
+function dt(x){if(!x)return '—';var d=new Date(x);if(isNaN(d))return '—';return d.getDate()+' '+MESI[d.getMonth()]+' '+d.getFullYear()+', '+String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0');}
+function dd(x){if(!x)return '—';var p=String(x).slice(0,10).split('-');return +p[2]+' '+MESI[+p[1]-1]+' '+p[0];}
+function j(u){return fetch(u+'?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).catch(function(){return null});}
+function go(){var h=document.querySelector('.hdr');if(!h||document.getElementById('ghNote'))return;
 var p=document.createElement('p');p.id='ghNote';p.className='gh-note';
-p.textContent='Versione pubblica su GitHub: dati e valutazione si aggiornano su richiesta, elaborati con Claude e pubblicati qui. Il report PDF si crea nel browser.';
-h.appendChild(p);var b=document.getElementById('btnEval');if(b){var l=b.querySelector('.blab');if(l)l.textContent='Valutazione';b.title='Mostra l\'ultima valutazione salvata';}}
+p.textContent='Versione pubblica su GitHub: dati e valutazione si aggiornano su richiesta (comandi “aggiorna ora” e “Valutazione attuale” dati a Claude) e vengono pubblicati qui. Il report PDF si crea nel browser.';
+h.appendChild(p);
+var up=document.getElementById('btnUpdate'),ev=document.getElementById('btnEval');
+var bu=document.createElement('div');bu.className='gh-upd';bu.title='Ultimo aggiornamento dei dati di mercato (comando “aggiorna ora”)';
+bu.innerHTML='<span class="k">Aggiorna ora</span><b id="ghUpdAt">…</b><span class="s" id="ghUpdSub"></span>';
+if(up&&up.parentNode)up.parentNode.insertBefore(bu,up);
+if(ev){ev.classList.add('gh-ev');ev.title='Apri l’ultima valutazione salvata (comando “Valutazione attuale”)';ev.innerHTML='<span class="k">Valutazione attuale</span><b id="ghEvAt">…</b><span class="s" id="ghEvSub">clicca per aprirla</span>';}
+j('update_status.json').then(function(u){document.getElementById('ghUpdAt').textContent=u&&u.at?dt(u.at):'—';document.getElementById('ghUpdSub').textContent=u&&u.as_of?'dati di mercato · seduta del '+dd(u.as_of):'dati di mercato';});
+Promise.all([j('valutazione_stato.json'),j('valutazione.json')]).then(function(r){var v=r[1],s=r[0];document.getElementById('ghEvAt').textContent=v&&v.at?dt(v.at):(s&&s.at?dt(s.at):'—');if(v&&v.livello)document.getElementById('ghEvSub').textContent='ricerca su fonti esterne · rischio '+v.livello+' · clicca per aprirla';});
+}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',go);else go();setTimeout(go,1500);})();
 </script>
 </body>
