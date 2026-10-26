@@ -832,8 +832,9 @@ const TRIGGER_ID = "trig_01RFskvnKEXEMuPW4wo8Haxw";      // compito "aggiorna da
 const EVAL_STATUS_FILE = 'valutazione_stato.json';
 const EVAL_TRIGGER_ID = "trig_01JUVzUSZf92iP2qE7fLPynn"; // compito "valutazione attuale"
 // Versione della dashboard: aumenta a OGNI modifica di pagina o modello (non con gli aggiornamenti dei dati).
-const APP_VERSION = '3.3.9';
+const APP_VERSION = '3.3.10';
 const CHANGELOG = [
+  ['3.3.10', '26/10/2026', ['Testata: tolta la parola "riuscito" dall\'ultimo aggiornamento.']],
   ['3.3.9', '26/10/2026', ['Testata: "Ultimo aggiornamento" scrive "mercato aggiornato" oppure, in rosso, "N giorni di mercato fa" (N = giorni di mercato aperto di ritardo).']],
   ['3.3.8', '26/10/2026', ['Testata: "Ultimo aggiornamento" scrive "mercati aggiornati" se i dati comprendono l\'ultima seduta USA conclusa (anche con la borsa americana ancora aperta); altrimenti, in rosso, "mercati aggiornati a N giornate fa" (solo giorni di mercato aperto).']],
   ['3.3.7', '26/10/2026', ['Bottone "Valutazione del mercato il (data e ora)" al posto di "Valutazione attuale". Nella testata, "Ultimo aggiornamento" indica anche i giorni di mercato aperto passati (lun–ven escluse le festività della borsa USA).']],
@@ -950,7 +951,7 @@ function setMeta() {
     if (!u || !u.at) return;
     const when = new Date(u.at).toLocaleString('it-IT', {timeZone: 'Europe/Rome', day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit'});
     const lag = marketLag(DATA.as_of);
-    chip('Ultimo aggiornamento', when + ' · ' + (u.state === 'ok' ? marketLagTxt(lag) + ' · riuscito' : u.state === 'running' ? 'in corso' : 'non riuscito' + (u.message ? ' (' + u.message + ')' : '')), u.state === 'ok' ? (lag > 0 ? 'red' : 'green') : u.state === 'error' ? 'red' : 'amber');
+    chip('Ultimo aggiornamento', when + ' · ' + (u.state === 'ok' ? marketLagTxt(lag) : u.state === 'running' ? 'in corso' : 'non riuscito' + (u.message ? ' (' + u.message + ')' : '')), u.state === 'ok' ? (lag > 0 ? 'red' : 'green') : u.state === 'error' ? 'red' : 'amber');
   }).catch(() => {});
   document.getElementById('footNote').textContent = 'Dashboard v' + APP_VERSION + ' · Modello ' + DATA.version + ' · ' + N.toLocaleString('it-IT') + ' sedute dal ' + fmtDl(T[0]) + ' al ' + fmtDl(T[N - 1]) + ' · Indicatore sperimentale, non è una probabilità di crollo né un consiglio di investimento.';
 }
