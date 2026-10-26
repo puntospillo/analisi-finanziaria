@@ -832,8 +832,9 @@ const TRIGGER_ID = "trig_01RFskvnKEXEMuPW4wo8Haxw";      // compito "aggiorna da
 const EVAL_STATUS_FILE = 'valutazione_stato.json';
 const EVAL_TRIGGER_ID = "trig_01JUVzUSZf92iP2qE7fLPynn"; // compito "valutazione attuale"
 // Versione della dashboard: aumenta a OGNI modifica di pagina o modello (non con gli aggiornamenti dei dati).
-const APP_VERSION = '3.3.8';
+const APP_VERSION = '3.3.9';
 const CHANGELOG = [
+  ['3.3.9', '26/10/2026', ['Testata: "Ultimo aggiornamento" scrive "mercato aggiornato" oppure, in rosso, "N giorni di mercato fa" (N = giorni di mercato aperto di ritardo).']],
   ['3.3.8', '26/10/2026', ['Testata: "Ultimo aggiornamento" scrive "mercati aggiornati" se i dati comprendono l\'ultima seduta USA conclusa (anche con la borsa americana ancora aperta); altrimenti, in rosso, "mercati aggiornati a N giornate fa" (solo giorni di mercato aperto).']],
   ['3.3.7', '26/10/2026', ['Bottone "Valutazione del mercato il (data e ora)" al posto di "Valutazione attuale". Nella testata, "Ultimo aggiornamento" indica anche i giorni di mercato aperto passati (lun–ven escluse le festività della borsa USA).']],
   ['3.3.6', '26/10/2026', ['Consiglio: riquadro più largo e scritta azione, percentuale e "azioni" più grande, adattata alla larghezza del riquadro (con lo zoom non si sovrappone più).']],
@@ -2239,7 +2240,7 @@ const marketLag = (asofStr) => {
   const a = asofStr.split('-').map(Number);
   return Math.max(0, marketDaysSince({y: a[0], m: a[1] - 1, d: a[2]}, {y: end.getUTCFullYear(), m: end.getUTCMonth(), d: end.getUTCDate()}));
 };
-const marketLagTxt = (n) => n === 0 ? 'mercati aggiornati' : 'mercati aggiornati a ' + n + (n === 1 ? ' giornata fa' : ' giornate fa');
+const marketLagTxt = (n) => n === 0 ? 'mercato aggiornato' : n + (n === 1 ? ' giorno di mercato fa' : ' giorni di mercato fa');
 const whenIt = (t) => new Date(t).toLocaleString('it-IT', {timeZone: 'Europe/Rome', day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit'});
 let MCP;
 async function getMcp() { if (MCP) return MCP; try { MCP = await claude.use('mcp'); } catch (e) { MCP = null; } return MCP; }
