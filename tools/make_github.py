@@ -22,7 +22,14 @@ STATIC = """<style id="gh-static">
 [hidden]:not([hidden=until-found i]){display:none!important}
 .evprog{display:none!important}
 #btnUpdate,#evRun,.ev-run{display:none!important}
-.gh-note{font-size:.76rem;color:var(--muted);margin:2px 0 0}\n.gh-upd,.btn.gh-ev{box-sizing:border-box;display:inline-grid;gap:0;text-align:left;line-height:1.25;padding:6px 12px;border-radius:10px;font-size:.78rem}\n.gh-upd{background:var(--navy);color:#fff}\n.gh-upd .k,.gh-ev .k{font-size:.66rem;text-transform:uppercase;letter-spacing:.06em;font-weight:700;opacity:.9}\n.gh-upd b,.gh-ev b{font:700 .9rem var(--font-display)}\n.gh-upd .s,.gh-ev .s{font-size:.7rem;opacity:.85;font-weight:500}\n@media (max-width:560px){.hdr .upd{display:grid!important;grid-template-columns:1fr;gap:6px}.hdr .upd .btn,.hdr .gh-upd{width:100%}}
+.gh-note{font-size:.76rem;color:var(--muted);margin:2px 0 0}
+.hdr .upd div.gh-upd,.hdr .upd .btn.gh-ev{flex-direction:column;gap:1px;white-space:normal;font-weight:500;padding:6px 10px;font-size:.78rem;line-height:1.25}
+.hdr .upd div.gh-upd{background:var(--navy);color:#fff}
+.gh-upd .k,.gh-ev .k{font-size:.66rem;text-transform:uppercase;letter-spacing:.06em;font-weight:700;opacity:.9}
+.gh-upd b,.gh-ev b{font:700 .9rem var(--font-display)}
+.gh-upd .s,.gh-ev .s{font-size:.7rem;opacity:.85;font-weight:500}
+:root[data-theme="dark"] .hdr .upd div.gh-upd{color:#0b1222}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .hdr .upd div.gh-upd{color:#0b1222}}
 </style>
 <script>window.GH_STATIC=true;</script>"""
 NOTE = """<script>
@@ -39,9 +46,9 @@ var up=document.getElementById('btnUpdate'),ev=document.getElementById('btnEval'
 var bu=document.createElement('div');bu.className='gh-upd';bu.title='Ultimo aggiornamento dei dati di mercato (comando \u201caggiorna ora\u201d)';
 bu.innerHTML='<span class="k">Ultimo aggiornamento</span><b id="ghUpdAt">\u2026</b><span class="s" id="ghUpdSub"></span>';
 if(up&&up.parentNode)up.parentNode.insertBefore(bu,up);
-if(ev){ev.classList.add('gh-ev');ev.title='Apri l’ultima valutazione salvata (comando \u201cValutazione attuale\u201d)';ev.innerHTML='<span class="k">Valutazione attuale</span><b id="ghEvAt">\u2026</b><span class="s" id="ghEvSub">clicca per aprirla</span>';}
-j('update_status.json').then(function(u){document.getElementById('ghUpdAt').textContent=u&&u.at?dt(u.at):'\u2014';document.getElementById('ghUpdSub').textContent=u&&u.as_of?'dati di mercato \u00b7 seduta del '+dd(u.as_of):'dati di mercato';});
-Promise.all([j('valutazione_stato.json'),j('valutazione.json')]).then(function(r){var v=r[1],s=r[0];document.getElementById('ghEvAt').textContent=v&&v.at?dt(v.at):(s&&s.at?dt(s.at):'\u2014');if(v&&v.livello)document.getElementById('ghEvSub').textContent='ricerca su fonti esterne \u00b7 rischio '+v.livello+' \u00b7 clicca per aprirla';});
+if(ev){ev.classList.add('gh-ev');ev.title='Apri l’ultima valutazione salvata (comando \u201cValutazione attuale\u201d)';ev.innerHTML='<span class="k">Valutazione attuale</span><b id="ghEvAt">\u2026</b><span class="s" id="ghEvSub">apri</span>';}
+j('update_status.json').then(function(u){document.getElementById('ghUpdAt').textContent=u&&u.at?dt(u.at):'\u2014';document.getElementById('ghUpdSub').textContent=u&&u.as_of?'seduta del '+dd(u.as_of):'dati di mercato';});
+Promise.all([j('valutazione_stato.json'),j('valutazione.json')]).then(function(r){var v=r[1],s=r[0];document.getElementById('ghEvAt').textContent=v&&v.at?dt(v.at):(s&&s.at?dt(s.at):'\u2014');if(v&&v.livello)document.getElementById('ghEvSub').textContent='rischio '+v.livello+' \u00b7 apri';});
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',go);else go();setTimeout(go,1500);})();
 </script>"""

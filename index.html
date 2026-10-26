@@ -12,16 +12,18 @@
 .evprog{display:none!important}
 #btnUpdate,#evRun,.ev-run{display:none!important}
 .gh-note{font-size:.76rem;color:var(--muted);margin:2px 0 0}
-.gh-upd,.btn.gh-ev{box-sizing:border-box;display:inline-grid;gap:0;text-align:left;line-height:1.25;padding:6px 12px;border-radius:10px;font-size:.78rem}
-.gh-upd{background:var(--navy);color:#fff}
+.hdr .upd div.gh-upd,.hdr .upd .btn.gh-ev{flex-direction:column;gap:1px;white-space:normal;font-weight:500;padding:6px 10px;font-size:.78rem;line-height:1.25}
+.hdr .upd div.gh-upd{background:var(--navy);color:#fff}
 .gh-upd .k,.gh-ev .k{font-size:.66rem;text-transform:uppercase;letter-spacing:.06em;font-weight:700;opacity:.9}
 .gh-upd b,.gh-ev b{font:700 .9rem var(--font-display)}
 .gh-upd .s,.gh-ev .s{font-size:.7rem;opacity:.85;font-weight:500}
-@media (max-width:560px){.hdr .upd{display:grid!important;grid-template-columns:1fr;gap:6px}.hdr .upd .btn,.hdr .gh-upd{width:100%}}
+:root[data-theme="dark"] .hdr .upd div.gh-upd{color:#0b1222}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .hdr .upd div.gh-upd{color:#0b1222}}
 </style>
 <script>window.GH_STATIC=true;</script>
 </head>
 <body>
+
 <title>Analisi Finanziaria</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -79,7 +81,13 @@ button{cursor:pointer}
 .chip .k{color:var(--muted)} .chip b{font-weight:600;font-variant-numeric:tabular-nums}
 .chip.amber{background:var(--amber-soft);color:var(--amber)} .chip.red{background:var(--risk-soft);color:var(--risk)} .chip.green{background:var(--ok-soft);color:var(--ok)}
 .chip .up{color:var(--ok)} .chip .dn{color:var(--risk)}
-@media (max-width:560px){.hdr .upd{width:100%} .hdr .upd .btn{flex:1}}
+/* v3.3.2 tre bottoni allineati: stessa larghezza e altezza, icona e testo centrati */
+.hdr .upd{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;align-items:stretch;flex:1 1 460px;max-width:600px;margin-left:auto}
+.hdr .upd .btn,.hdr .upd div.gh-upd{box-sizing:border-box;width:100%;min-height:44px;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:8px 12px;border-radius:10px;font-size:.88rem;font-weight:700;line-height:1.2;white-space:nowrap;text-align:center;box-shadow:0 1px 2px rgba(15,27,51,.14)}
+.hdr .upd .btn .ic,.hdr .upd .btn .spark{font-size:1.1em;line-height:1;flex:none}
+.btn.prog > .ic{position:relative;z-index:1}
+@media (max-width:900px){.hdr .upd{flex-basis:100%;max-width:none;margin-left:0}}
+@media (max-width:560px){.hdr .upd{grid-template-columns:repeat(2,minmax(0,1fr))}.hdr .upd .btn-eval{grid-column:1/-1}}
 /* caselle colorate per stato */
 .tile.s-ok{border-top:4px solid var(--ok)} .tile.s-yel{border-top:4px solid var(--yel)} .tile.s-warn{border-top:4px solid var(--amber)} .tile.s-risk{border-top:4px solid var(--risk)}
 .tile.s-ok .v{color:var(--ok)} .tile.s-yel .v{color:var(--yel)} .tile.s-warn .v{color:var(--amber)} .tile.s-risk .v{color:var(--risk)}
@@ -604,7 +612,7 @@ button.qp:hover{border-color:var(--navy-2)}
     <div class="upd">
       <button class="btn btn-eval" id="btnEval" type="button" title="Claude cerca la situazione attuale del mercato da fonti professionali e la confronta con la dashboard"><span class="spark" aria-hidden="true">✦</span><span class="blab">Valutazione attuale</span></button>
       <button class="btn btn-rep" id="btnReport" type="button" title="Crea un PDF con tutti i dati della dashboard: scegli tu le sezioni e il livello di dettaglio"><span class="ic" aria-hidden="true">⎙</span><span class="blab">Report</span></button>
-      <button class="btn btn-primary" id="btnUpdate" type="button" title="Scarica i dati di mercato più recenti e ricalcola l'indice"><span class="blab">Aggiorna ora</span></button>
+      <button class="btn btn-primary" id="btnUpdate" type="button" title="Scarica i dati di mercato più recenti e ricalcola l'indice"><span class="ic" aria-hidden="true">↻</span><span class="blab">Aggiorna ora</span></button>
     </div>
    </div>
    <div class="hdr-strip" id="updMeta"><span class="chip">Caricamento dati…</span></div>
@@ -814,8 +822,9 @@ const TRIGGER_ID = "trig_01RFskvnKEXEMuPW4wo8Haxw";      // compito "aggiorna da
 const EVAL_STATUS_FILE = 'valutazione_stato.json';
 const EVAL_TRIGGER_ID = "trig_01JUVzUSZf92iP2qE7fLPynn"; // compito "valutazione attuale"
 // Versione della dashboard: aumenta a OGNI modifica di pagina o modello (non con gli aggiornamenti dei dati).
-const APP_VERSION = '3.3.1';
+const APP_VERSION = '3.3.2';
 const CHANGELOG = [
+  ['3.3.2', '26/10/2026', ['Bottoni Valutazione attuale, Report e Aggiorna ora allineati: stessa larghezza e altezza, icona e testo centrati; sul telefono la Valutazione occupa tutta la riga e gli altri due stanno affiancati. Nella versione GitHub il riquadro "Ultimo aggiornamento" e quello della valutazione hanno la stessa forma del Report.']],
   ['3.3.1', '26/10/2026', ['Comandi "aggiorna ora" e "Valutazione attuale" da scrivere a Claude: fanno lo stesso lavoro dei bottoni e pubblicano anche la versione GitHub (puntospillo.github.io/analisi-finanziaria), dove i bottoni sono sostituiti dalle date dell\'ultimo aggiornamento e dell\'ultima valutazione.']],
   ['3.3', '25/10/2026', ['Quando si clicca un giorno passato sul grafico, banda arancione fissa in basso "Situazione al …" con spiegazione, bottone Torna a oggi e ?; nel riquadro dell\'indice la data scelta e quella dell\'ultima seduta; sotto il grafico l\'indicazione che si può cliccare.']],
   ['3.2.2', '25/10/2026', ['Consiglio: azione, percentuale e "azioni" della stessa grandezza, percentuale al centro; azione nel colore del suo settore della lancetta (Esci rosso, Riduci arancione, Mantieni blu, Aumenta giallo, Entra verde), percentuale e "azioni" nel colore della barra del grafico Quota in azioni. Stessi colori nel PDF.']],
@@ -2884,6 +2893,7 @@ async function makePdf(ch) {
 </script>
 
 
+
 <script>
 (function(){
 var MESI=['gen','feb','mar','apr','mag','giu','lug','ago','set','ott','nov','dic'];
@@ -2898,9 +2908,9 @@ var up=document.getElementById('btnUpdate'),ev=document.getElementById('btnEval'
 var bu=document.createElement('div');bu.className='gh-upd';bu.title='Ultimo aggiornamento dei dati di mercato (comando “aggiorna ora”)';
 bu.innerHTML='<span class="k">Ultimo aggiornamento</span><b id="ghUpdAt">…</b><span class="s" id="ghUpdSub"></span>';
 if(up&&up.parentNode)up.parentNode.insertBefore(bu,up);
-if(ev){ev.classList.add('gh-ev');ev.title='Apri l’ultima valutazione salvata (comando “Valutazione attuale”)';ev.innerHTML='<span class="k">Valutazione attuale</span><b id="ghEvAt">…</b><span class="s" id="ghEvSub">clicca per aprirla</span>';}
-j('update_status.json').then(function(u){document.getElementById('ghUpdAt').textContent=u&&u.at?dt(u.at):'—';document.getElementById('ghUpdSub').textContent=u&&u.as_of?'dati di mercato · seduta del '+dd(u.as_of):'dati di mercato';});
-Promise.all([j('valutazione_stato.json'),j('valutazione.json')]).then(function(r){var v=r[1],s=r[0];document.getElementById('ghEvAt').textContent=v&&v.at?dt(v.at):(s&&s.at?dt(s.at):'—');if(v&&v.livello)document.getElementById('ghEvSub').textContent='ricerca su fonti esterne · rischio '+v.livello+' · clicca per aprirla';});
+if(ev){ev.classList.add('gh-ev');ev.title='Apri l’ultima valutazione salvata (comando “Valutazione attuale”)';ev.innerHTML='<span class="k">Valutazione attuale</span><b id="ghEvAt">…</b><span class="s" id="ghEvSub">apri</span>';}
+j('update_status.json').then(function(u){document.getElementById('ghUpdAt').textContent=u&&u.at?dt(u.at):'—';document.getElementById('ghUpdSub').textContent=u&&u.as_of?'seduta del '+dd(u.as_of):'dati di mercato';});
+Promise.all([j('valutazione_stato.json'),j('valutazione.json')]).then(function(r){var v=r[1],s=r[0];document.getElementById('ghEvAt').textContent=v&&v.at?dt(v.at):(s&&s.at?dt(s.at):'—');if(v&&v.livello)document.getElementById('ghEvSub').textContent='rischio '+v.livello+' · apri';});
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',go);else go();setTimeout(go,1500);})();
 </script>
