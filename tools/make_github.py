@@ -44,9 +44,9 @@ function go(){var h=document.querySelector('.hdr');if(!h||document.getElementByI
 var p=document.createElement('span');p.id='ghNote';p.hidden=true;h.appendChild(p);
 var ev=document.getElementById('btnEval'),rp=document.getElementById('btnReport');
 if(ev&&rp&&ev.nextSibling!==rp)ev.parentNode.insertBefore(ev,rp);
-if(ev){ev.classList.add('gh-ev');ev.title='Apri l’ultima valutazione salvata';ev.innerHTML='<span class="k" id="ghEvK">Valutazione attuale</span><span class="l" id="ghEvL">…</span><span class="s">clicca qui</span>';}
+if(ev){ev.classList.add('gh-ev');ev.title='Apri l’ultima valutazione salvata';ev.innerHTML='<span class="k" id="ghEvK">Valutazione del mercato</span><span class="l" id="ghEvL">…</span><span class="s">clicca qui</span>';}
 var dlg=document.getElementById('evalDlg');if(dlg&&!document.getElementById('evCloseTop')){var c=document.createElement('button');c.type='button';c.className='btn ev-close-top';c.id='evCloseTop';c.textContent='Chiudi ✕';c.onclick=function(){dlg.close()};var hi=dlg.querySelector('.help-in');hi.insertBefore(c,hi.firstChild);}
-j('valutazione.json').then(function(v){if(!v)return;document.getElementById('ghEvK').textContent='Valutazione attuale · '+sd(v.at);var t=(v.titolo||'').trim();document.getElementById('ghEvL').textContent=t||('Rischio '+(v.livello||'—'));document.getElementById('ghEvL').title=t;});
+j('valutazione.json').then(function(v){if(!v)return;document.getElementById('ghEvK').textContent='Valutazione del mercato il '+sd(v.at);var t=(v.titolo||'').trim();document.getElementById('ghEvL').textContent=t||('Rischio '+(v.livello||'—'));document.getElementById('ghEvL').title=t;});
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',go);else go();setTimeout(go,1500);})();
 </script>"""

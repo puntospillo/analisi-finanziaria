@@ -374,6 +374,7 @@ details summary{cursor:pointer;font-weight:600;font-size:.85rem}
 .btn.prog::before{content:"";position:absolute;left:0;top:0;bottom:0;width:var(--p,0%);background:linear-gradient(90deg,var(--amber),var(--yel) 50%,var(--ok));opacity:.92;transition:width .8s ease}
 .btn.prog.prog-ok::before{background:var(--ok);opacity:1}
 .btn.prog.prog-bad::before{background:var(--risk);opacity:1}
+.btn-eval .blab{white-space:normal;text-align:center;line-height:1.15}
 .btn.prog > .blab,.btn.prog > .spark{position:relative;z-index:1}
 .btn.prog .blab{text-shadow:0 1px 2px rgba(0,0,0,.45);color:#fff;font-variant-numeric:tabular-nums}
 .btn-rep{border-color:var(--navy-2);color:var(--navy);font-weight:600;display:inline-flex;align-items:center;gap:6px}
@@ -635,7 +636,7 @@ button.qp:hover{border-color:var(--navy-2)}
 <dialog class="help wide" id="topDlg" aria-labelledby="topTitle"><div class="help-in"><div class="lab">Composizione dell'S&amp;P 500</div><h3 id="topTitle">Primi 50 titoli per peso</h3><p id="topNote"></p><div class="tbl-wrap" style="max-height:60vh;overflow:auto"><table class="top50" id="topTable"><thead><tr><th class="r">#</th><th>Società</th><th class="r">Peso</th><th class="r">Peso cumulato</th><th class="r">1 giorno</th><th class="r">1 mese</th><th class="r">3 mesi</th><th class="r">1 anno</th><th class="r">Dal massimo</th><th>Media 200g</th></tr></thead><tbody></tbody></table></div><button class="btn help-close" type="button" id="topClose">Chiudi</button></div></dialog>
 <dialog class="help wide" id="evalDlg" aria-labelledby="evTitle"><div class="help-in ev">
   <div class="ev-top"><div class="ev-run"><button class="btn btn-eval" type="button" id="evRun"><span class="spark" aria-hidden="true">✦</span>Nuova valutazione con le impostazioni attuali</button><div class="ev-last" id="evLast">Ultimo aggiornamento: —</div></div>
-  <div class="lab">Valutazione attuale · ricerca di Claude su fonti professionali + dati della dashboard<button class="hb" type="button" data-help="valutazione" aria-label="Spiegazione">?</button></div></div>
+  <div class="lab">Valutazione del mercato · ricerca di Claude su fonti professionali + dati della dashboard<button class="hb" type="button" data-help="valutazione" aria-label="Spiegazione">?</button></div></div>
   <div class="evprog" id="evProg" hidden><div class="row"><b id="evProgLab">In corso…</b><span id="evProgPct" class="mono">0%</span></div><div class="track"><i id="evProgBar"></i></div><div class="steps" id="evSteps"><span data-s="0">Richiesta inviata</span><span data-s="1">Sessione avviata</span><span data-s="2">Ricerca fonti</span><span data-s="3">Analisi e scrittura</span><span data-s="4">Pubblicata</span></div><div class="legend4" id="evProgNote">Puoi chiudere la finestra: l'avanzamento continua. La valutazione precedente resta visibile finché la nuova non è pronta.</div></div>
   <div id="evBody" style="display:grid;gap:14px"></div>
   <div class="ev-actions"><div class="ev-status" id="evStatus" role="status" aria-live="polite"></div>
@@ -831,8 +832,9 @@ const TRIGGER_ID = "trig_01RFskvnKEXEMuPW4wo8Haxw";      // compito "aggiorna da
 const EVAL_STATUS_FILE = 'valutazione_stato.json';
 const EVAL_TRIGGER_ID = "trig_01JUVzUSZf92iP2qE7fLPynn"; // compito "valutazione attuale"
 // Versione della dashboard: aumenta a OGNI modifica di pagina o modello (non con gli aggiornamenti dei dati).
-const APP_VERSION = '3.3.6';
+const APP_VERSION = '3.3.7';
 const CHANGELOG = [
+  ['3.3.7', '26/10/2026', ['Bottone "Valutazione del mercato il (data e ora)" al posto di "Valutazione attuale". Nella testata, "Ultimo aggiornamento" indica anche i giorni di mercato aperto passati (lun–ven escluse le festività della borsa USA).']],
   ['3.3.6', '26/10/2026', ['Consiglio: riquadro più largo e scritta azione, percentuale e "azioni" più grande, adattata alla larghezza del riquadro (con lo zoom non si sovrappone più).']],
   ['3.3.5', '26/10/2026', ['Riquadro Consiglio: tolta la sezione di confronto con l\'algoritmo 3.0 (anche nella prima pagina del PDF). L\'algoritmo 3.0 resta nella Prova sul passato.']],
   ['3.3.4', '26/10/2026', ['iPhone: Safari non ingrandisce più da solo il testo di alcuni riquadri (testo che usciva dai bordi); sul telefono le etichette della testata vanno a capo se servono.']],
@@ -945,7 +947,7 @@ function setMeta() {
   fetch('update_status.json', {cache: 'no-store'}).then(r => r.ok ? r.json() : null).then(u => {
     if (!u || !u.at) return;
     const when = new Date(u.at).toLocaleString('it-IT', {timeZone: 'Europe/Rome', day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit'});
-    chip('Ultimo aggiornamento', when + ' · ' + (u.state === 'ok' ? 'riuscito' : u.state === 'running' ? 'in corso' : 'non riuscito' + (u.message ? ' (' + u.message + ')' : '')), u.state === 'ok' ? 'green' : u.state === 'error' ? 'red' : 'amber');
+    chip('Ultimo aggiornamento', when + ' · ' + (u.state === 'ok' ? marketAgeTxt(u.at) + ' · riuscito' : u.state === 'running' ? 'in corso' : 'non riuscito' + (u.message ? ' (' + u.message + ')' : '')), u.state === 'ok' ? 'green' : u.state === 'error' ? 'red' : 'amber');
   }).catch(() => {});
   document.getElementById('footNote').textContent = 'Dashboard v' + APP_VERSION + ' · Modello ' + DATA.version + ' · ' + N.toLocaleString('it-IT') + ' sedute dal ' + fmtDl(T[0]) + ' al ' + fmtDl(T[N - 1]) + ' · Indicatore sperimentale, non è una probabilità di crollo né un consiglio di investimento.';
 }
@@ -2206,6 +2208,29 @@ const lsGet = (k) => { try { return JSON.parse(localStorage.getItem(k) || 'null'
 const lsSet = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} };
 const fetchJson = (f) => fetch(f, {cache: 'no-store'}).then(r => r.ok ? r.json() : null).catch(() => null);
 const hhmm = (t) => new Date(t).toLocaleTimeString('it-IT', {hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Rome'});
+// giorni di mercato aperto (borsa USA: lun–ven escluse le festività NYSE) tra due date, escludendo la prima e includendo l'ultima
+function nyseHolidays(y) {
+  const H = new Set(), iso = (d) => d.toISOString().slice(0, 10), U = (yy, m, d) => new Date(Date.UTC(yy, m, d));
+  const nth = (m, wd, n) => { const f = U(y, m, 1).getUTCDay(); return U(y, m, 1 + ((wd - f + 7) % 7) + 7 * (n - 1)); };
+  const last = (m, wd) => { const l = U(y, m + 1, 0); return U(y, m, l.getUTCDate() - ((l.getUTCDay() - wd + 7) % 7)); };
+  const obs = (d) => { const w = d.getUTCDay(); if (w === 6) return U(y, d.getUTCMonth(), d.getUTCDate() - 1); if (w === 0) return U(y, d.getUTCMonth(), d.getUTCDate() + 1); return d; };
+  const a = y % 19, b = Math.floor(y / 100), c = y % 100, d = Math.floor(b / 4), e = b % 4, f = Math.floor((b + 8) / 25), g = Math.floor((b - f + 1) / 3), h = (19 * a + b - d - g + 15) % 30, i = Math.floor(c / 4), k = c % 4, l = (32 + 2 * e + 2 * i - h - k) % 7, m = Math.floor((a + 11 * h + 22 * l) / 451);
+  const em = Math.floor((h + l - 7 * m + 114) / 31) - 1, ed = ((h + l - 7 * m + 114) % 31) + 1;
+  [obs(U(y, 0, 1)), nth(0, 1, 3), nth(1, 1, 3), U(y, em, ed - 2), last(4, 1), obs(U(y, 5, 19)), obs(U(y, 6, 4)), nth(8, 1, 1), nth(10, 4, 4), obs(U(y, 11, 25))].forEach(x => H.add(iso(x)));
+  return H;
+}
+function marketDaysSince(from, to) {
+  const cache = {}; let n = 0;
+  const a = new Date(Date.UTC(from.y, from.m, from.d)), z = new Date(Date.UTC(to.y, to.m, to.d));
+  for (let t = new Date(a.getTime() + 864e5); t <= z; t = new Date(t.getTime() + 864e5)) {
+    const w = t.getUTCDay(); if (w === 0 || w === 6) continue;
+    const y = t.getUTCFullYear(); const H = cache[y] || (cache[y] = nyseHolidays(y));
+    if (!H.has(t.toISOString().slice(0, 10))) n++;
+  }
+  return n;
+}
+const romeYMD = (t) => { const p = new Intl.DateTimeFormat('en-CA', {timeZone: 'Europe/Rome', year: 'numeric', month: '2-digit', day: '2-digit'}).format(new Date(t)).split('-').map(Number); return {y: p[0], m: p[1] - 1, d: p[2]}; };
+const marketAgeTxt = (t) => { const n = marketDaysSince(romeYMD(t), romeYMD(Date.now())); return n === 0 ? 'oggi, nessuna seduta persa' : n === 1 ? '1 giorno di mercato fa' : n + ' giorni di mercato fa'; };
 const whenIt = (t) => new Date(t).toLocaleString('it-IT', {timeZone: 'Europe/Rome', day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit'});
 let MCP;
 async function getMcp() { if (MCP) return MCP; try { MCP = await claude.use('mcp'); } catch (e) { MCP = null; } return MCP; }
@@ -2418,19 +2443,20 @@ function watchEval(rid, t0) {
   evPoll = setInterval(async () => {
     n++; const s2 = await fetchJson('valutazione_stato.json');
     if (s2 && s2.rid === rid) {
-      if (s2.state === 'ok') { const v = await fetchJson('valutazione.json'); if (v && v.rid === rid) { EVAL = v; evPhase = 4; paintProg(); renderEval(); stop('ok', 'Valutazione pronta (' + hhmm(v.at) + ').'); setTimeout(() => showProg(false), 4000); return; } evPhase = 3; }
+      if (s2.state === 'ok') { const v = await fetchJson('valutazione.json'); if (v && v.rid === rid) { EVAL = v; evPhase = 4; evBtnLabel(); paintProg(); renderEval(); stop('ok', 'Valutazione pronta (' + hhmm(v.at) + ').'); setTimeout(() => showProg(false), 4000); return; } evPhase = 3; }
       else if (s2.state === 'error') { stop('bad', 'La valutazione non è riuscita: ' + (s2.message || 'motivo non indicato') + '. Resta valida quella precedente.'); return; }
       else evPhase = Math.max(evPhase, s2.fase === 'analisi' ? 3 : s2.fase === 'ricerca' ? 2 : 1);
     }
     if (n % 3 === 1) { const o = await runOutcome(EVAL_TRIGGER_ID, t0);
       if (o && o.status === 'failed') { stop('bad', 'Valutazione non riuscita: ' + reasonText(o.reason) + ' Resta valida quella precedente.'); return; }
       if (o && o.status === 'running') evPhase = Math.max(evPhase, 1);
-      if (o && o.status === 'done' && n > 3 && evPhase < 4) { const v2 = await fetchJson('valutazione.json'); if (v2 && v2.rid === rid) { EVAL = v2; evPhase = 4; paintProg(); renderEval(); stop('ok', 'Valutazione pronta.'); setTimeout(() => showProg(false), 4000); return; } stop('warn', 'La sessione è terminata ma la nuova valutazione non risulta pubblicata. Resta valida quella precedente: ricarica la pagina o riprova.'); return; } }
+      if (o && o.status === 'done' && n > 3 && evPhase < 4) { const v2 = await fetchJson('valutazione.json'); if (v2 && v2.rid === rid) { EVAL = v2; evPhase = 4; evBtnLabel(); paintProg(); renderEval(); stop('ok', 'Valutazione pronta.'); setTimeout(() => showProg(false), 4000); return; } stop('warn', 'La sessione è terminata ma la nuova valutazione non risulta pubblicata. Resta valida quella precedente: ricarica la pagina o riprova.'); return; } }
     paintProg();
     if (n > 72) stop('warn', 'Non ho ancora ricevuto la valutazione. Ricarica la pagina tra qualche minuto: se è pronta, la trovi qui.');
   }, 15e3);
 }
-async function loadEval() { const v = await fetchJson('valutazione.json'); if (v && v.state === 'ok') EVAL = v; if (evDlg.open) renderEval(); }
+function evBtnLabel() { const b = document.getElementById('btnEval'); if (!b || !EVAL || !EVAL.at) return; const l = b.querySelector('.blab'); const t = 'Valutazione del mercato il ' + whenIt(EVAL.at).replace(',', ''); b._orig = t; if (l && !b.classList.contains('prog')) l.textContent = t; }
+async function loadEval() { const v = await fetchJson('valutazione.json'); if (v && v.state === 'ok') EVAL = v; evBtnLabel(); if (evDlg.open) renderEval(); }
 loadEval();
 { const p = lsGet(LSE); if (p && Date.now() - p.t < 20 * 60e3) watchEval(p.rid, p.t); }
 // dati appena aggiornati per una valutazione richiesta: aspetta i dati nuovi e avvia
@@ -2916,9 +2942,9 @@ function go(){var h=document.querySelector('.hdr');if(!h||document.getElementByI
 var p=document.createElement('span');p.id='ghNote';p.hidden=true;h.appendChild(p);
 var ev=document.getElementById('btnEval'),rp=document.getElementById('btnReport');
 if(ev&&rp&&ev.nextSibling!==rp)ev.parentNode.insertBefore(ev,rp);
-if(ev){ev.classList.add('gh-ev');ev.title='Apri l’ultima valutazione salvata';ev.innerHTML='<span class="k" id="ghEvK">Valutazione attuale</span><span class="l" id="ghEvL">…</span><span class="s">clicca qui</span>';}
+if(ev){ev.classList.add('gh-ev');ev.title='Apri l’ultima valutazione salvata';ev.innerHTML='<span class="k" id="ghEvK">Valutazione del mercato</span><span class="l" id="ghEvL">…</span><span class="s">clicca qui</span>';}
 var dlg=document.getElementById('evalDlg');if(dlg&&!document.getElementById('evCloseTop')){var c=document.createElement('button');c.type='button';c.className='btn ev-close-top';c.id='evCloseTop';c.textContent='Chiudi ✕';c.onclick=function(){dlg.close()};var hi=dlg.querySelector('.help-in');hi.insertBefore(c,hi.firstChild);}
-j('valutazione.json').then(function(v){if(!v)return;document.getElementById('ghEvK').textContent='Valutazione attuale · '+sd(v.at);var t=(v.titolo||'').trim();document.getElementById('ghEvL').textContent=t||('Rischio '+(v.livello||'—'));document.getElementById('ghEvL').title=t;});
+j('valutazione.json').then(function(v){if(!v)return;document.getElementById('ghEvK').textContent='Valutazione del mercato il '+sd(v.at);var t=(v.titolo||'').trim();document.getElementById('ghEvL').textContent=t||('Rischio '+(v.livello||'—'));document.getElementById('ghEvL').title=t;});
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',go);else go();setTimeout(go,1500);})();
 </script>
