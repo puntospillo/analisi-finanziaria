@@ -41,9 +41,7 @@ function sd(x){var d=new Date(x);if(isNaN(d))return '';return String(d.getDate()
 function dd(x){if(!x)return '—';var p=String(x).slice(0,10).split('-');return +p[2]+' '+MESI[+p[1]-1]+' '+p[0];}
 function j(u){return fetch(u+'?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).catch(function(){return null});}
 function go(){var h=document.querySelector('.hdr');if(!h||document.getElementById('ghNote'))return;
-var p=document.createElement('p');p.id='ghNote';p.className='gh-note';
-p.textContent='Versione pubblica su GitHub: dati e valutazione si aggiornano su richiesta (comandi \u201caggiorna ora\u201d e \u201cValutazione attuale\u201d dati a Claude) e vengono pubblicati qui. Il report PDF si crea nel browser.';
-h.appendChild(p);
+var p=document.createElement('span');p.id='ghNote';p.hidden=true;h.appendChild(p);
 var ev=document.getElementById('btnEval'),rp=document.getElementById('btnReport');
 if(ev&&rp&&ev.nextSibling!==rp)ev.parentNode.insertBefore(ev,rp);
 if(ev){ev.classList.add('gh-ev');ev.title='Apri l’ultima valutazione salvata';ev.innerHTML='<span class="k" id="ghEvK">Valutazione attuale</span><span class="l" id="ghEvL">…</span><span class="s">clicca qui</span>';}
