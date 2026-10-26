@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <link rel="icon" href="logo-spillo.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-title" content="Analisi Finanziaria">
 <style id="gh-static">
 :root{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0}img{max-width:100%}
 [hidden]:not([hidden=until-found i]){display:none!important}
@@ -2894,7 +2896,7 @@ p.textContent='Versione pubblica su GitHub: dati e valutazione si aggiornano su 
 h.appendChild(p);
 var up=document.getElementById('btnUpdate'),ev=document.getElementById('btnEval');
 var bu=document.createElement('div');bu.className='gh-upd';bu.title='Ultimo aggiornamento dei dati di mercato (comando “aggiorna ora”)';
-bu.innerHTML='<span class="k">Aggiorna ora</span><b id="ghUpdAt">…</b><span class="s" id="ghUpdSub"></span>';
+bu.innerHTML='<span class="k">Ultimo aggiornamento</span><b id="ghUpdAt">…</b><span class="s" id="ghUpdSub"></span>';
 if(up&&up.parentNode)up.parentNode.insertBefore(bu,up);
 if(ev){ev.classList.add('gh-ev');ev.title='Apri l’ultima valutazione salvata (comando “Valutazione attuale”)';ev.innerHTML='<span class="k">Valutazione attuale</span><b id="ghEvAt">…</b><span class="s" id="ghEvSub">clicca per aprirla</span>';}
 j('update_status.json').then(function(u){document.getElementById('ghUpdAt').textContent=u&&u.at?dt(u.at):'—';document.getElementById('ghUpdSub').textContent=u&&u.as_of?'dati di mercato · seduta del '+dd(u.as_of):'dati di mercato';});

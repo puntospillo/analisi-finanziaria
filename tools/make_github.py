@@ -37,7 +37,7 @@ p.textContent='Versione pubblica su GitHub: dati e valutazione si aggiornano su 
 h.appendChild(p);
 var up=document.getElementById('btnUpdate'),ev=document.getElementById('btnEval');
 var bu=document.createElement('div');bu.className='gh-upd';bu.title='Ultimo aggiornamento dei dati di mercato (comando \u201caggiorna ora\u201d)';
-bu.innerHTML='<span class="k">Aggiorna ora</span><b id="ghUpdAt">\u2026</b><span class="s" id="ghUpdSub"></span>';
+bu.innerHTML='<span class="k">Ultimo aggiornamento</span><b id="ghUpdAt">\u2026</b><span class="s" id="ghUpdSub"></span>';
 if(up&&up.parentNode)up.parentNode.insertBefore(bu,up);
 if(ev){ev.classList.add('gh-ev');ev.title='Apri l’ultima valutazione salvata (comando \u201cValutazione attuale\u201d)';ev.innerHTML='<span class="k">Valutazione attuale</span><b id="ghEvAt">\u2026</b><span class="s" id="ghEvSub">clicca per aprirla</span>';}
 j('update_status.json').then(function(u){document.getElementById('ghUpdAt').textContent=u&&u.at?dt(u.at):'\u2014';document.getElementById('ghUpdSub').textContent=u&&u.as_of?'dati di mercato \u00b7 seduta del '+dd(u.as_of):'dati di mercato';});
@@ -47,7 +47,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 </script>"""
 head = ('<!doctype html>\n<html lang="it">\n<head>\n<meta charset="utf-8">\n'
         '<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">\n'
-        '<link rel="icon" href="logo-spillo.png">\n' + STATIC + '\n</head>\n<body>\n')
+        '<link rel="icon" href="logo-spillo.png">\n<link rel="apple-touch-icon" href="apple-touch-icon.png">\n<meta name="apple-mobile-web-app-title" content="Analisi Finanziaria">\n' + STATIC + '\n</head>\n<body>\n')
 open(os.path.join(dst, 'index.html'), 'w', encoding='utf-8').write(head + html + '\n' + NOTE + '\n</body>\n</html>\n')
 open(os.path.join(dst, '.nojekyll'), 'w').close()
 st = {}
