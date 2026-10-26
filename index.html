@@ -7,7 +7,7 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="apple-mobile-web-app-title" content="Analisi Finanziaria">
 <style id="gh-static">
-:root{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0}img{max-width:100%}
+:root{box-sizing:border-box}html{-webkit-text-size-adjust:100%;text-size-adjust:100%}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0}img{max-width:100%}
 [hidden]:not([hidden=until-found i]){display:none!important}
 .evprog{display:none!important}
 #btnUpdate,#evRun,.ev-run,#btnVer{display:none!important}
@@ -50,7 +50,9 @@
   --navy:#7ea2ff; --navy-2:#a9c0ff; --sky:#5fb3f0; --price:#dfe7fb;
   --risk:#ff6b5f; --risk-soft:#3a1d22; --amber:#f5a93b; --amber-soft:#3a2c14; --ok:#3fcf9f; --ok-soft:#123227;
   --frag:#ff8a5c; --strs:#b18cf2; --split:#f06aa6; --shadow:none; color-scheme:dark}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:14px;line-height:1.5}
+@media (max-width:560px){.hdr-strip .chip{white-space:normal;max-width:100%}.wrap{overflow-x:clip}}
 .wrap{max-width:1280px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:10px 32px;display:grid;gap:12px}
 h1,h2,h3{font-family:var(--font-display);text-wrap:balance;margin:0;letter-spacing:-.01em}
 h1{font-size:clamp(1.35rem,2.6vw,1.8rem);font-weight:800}
@@ -829,8 +831,9 @@ const TRIGGER_ID = "trig_01RFskvnKEXEMuPW4wo8Haxw";      // compito "aggiorna da
 const EVAL_STATUS_FILE = 'valutazione_stato.json';
 const EVAL_TRIGGER_ID = "trig_01JUVzUSZf92iP2qE7fLPynn"; // compito "valutazione attuale"
 // Versione della dashboard: aumenta a OGNI modifica di pagina o modello (non con gli aggiornamenti dei dati).
-const APP_VERSION = '3.3.3';
+const APP_VERSION = '3.3.4';
 const CHANGELOG = [
+  ['3.3.4', '26/10/2026', ['iPhone: Safari non ingrandisce più da solo il testo di alcuni riquadri (testo che usciva dai bordi); sul telefono le etichette della testata vanno a capo se servono.']],
   ['3.3.3', '26/10/2026', ['Telefono: la finestra della valutazione non scorre più di lato (tabella "Cosa tenere d\'occhio" con intestazioni a capo, schede delle idee entro i bordi). Versione GitHub: riquadro Valutazione attuale su due terzi della riga con la situazione in una riga e "clicca qui", Report a destra su un terzo della stessa altezza, tolto il riquadro Ultimo aggiornamento, Chiudi fisso in alto nella valutazione.']],
   ['3.3.2', '26/10/2026', ['Bottoni Valutazione attuale, Report e Aggiorna ora allineati: stessa larghezza e altezza, icona e testo centrati; sul telefono la Valutazione occupa tutta la riga e gli altri due stanno affiancati. Nella versione GitHub il riquadro "Ultimo aggiornamento" e quello della valutazione hanno la stessa forma del Report.']],
   ['3.3.1', '26/10/2026', ['Comandi "aggiorna ora" e "Valutazione attuale" da scrivere a Claude: fanno lo stesso lavoro dei bottoni e pubblicano anche la versione GitHub (puntospillo.github.io/analisi-finanziaria), dove i bottoni sono sostituiti dalle date dell\'ultimo aggiornamento e dell\'ultima valutazione.']],

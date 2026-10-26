@@ -18,7 +18,7 @@ if html.startswith('<!doctype html><html><head><meta charset=utf8>'):
     html = html[html.index('<body>') + 6:]
     if html.rstrip().endswith('</body></html>'): html = html.rstrip()[:-len('</body></html>')]
 STATIC = """<style id="gh-static">
-:root{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0}img{max-width:100%}
+:root{box-sizing:border-box}html{-webkit-text-size-adjust:100%;text-size-adjust:100%}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0}img{max-width:100%}
 [hidden]:not([hidden=until-found i]){display:none!important}
 .evprog{display:none!important}
 #btnUpdate,#evRun,.ev-run,#btnVer{display:none!important}
