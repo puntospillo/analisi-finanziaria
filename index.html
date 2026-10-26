@@ -26,7 +26,6 @@
 </head>
 <body>
 
-
 <title>Analisi Finanziaria</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -364,9 +363,10 @@ details summary{cursor:pointer;font-weight:600;font-size:.85rem}
 .nowcard{padding:12px 16px}
 .nowcard .nowbox{margin-top:0}
 .nowbox.wide{grid-template-columns:minmax(160px,210px) 1fr;align-items:start;column-gap:18px}
-.nowbox.wide ul{grid-template-columns:repeat(auto-fit,minmax(300px,1fr));column-gap:24px}
+.nowbox.wide ul{grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));column-gap:24px}
 .nowbox.wide .fdesc{grid-column:1/-1}
-@media (max-width:760px){.nowbox.wide{grid-template-columns:1fr}}
+@media (max-width:760px){.nowbox.wide{grid-template-columns:minmax(0,1fr)}}
+.nowbox,.nowbox li{min-width:0;overflow-wrap:anywhere}
 #factTable tr.grp.clickable{cursor:pointer}
 #factTable tr.grp.clickable:hover td{filter:brightness(.96)}
 #factTable tr.grp .gi{font-weight:400;opacity:.7;margin-left:6px;font-size:.78em}
@@ -488,7 +488,7 @@ details summary{cursor:pointer;font-weight:600;font-size:.85rem}
 #factTable tr.grp td.wcell{background:color-mix(in srgb,var(--sky) 26%,var(--panel))}
 #factTable td.wcell output{font-weight:700;color:var(--navy)}
 @media (max-width:700px){#factTable td.wcell{padding:6px 8px;border-radius:8px}}
-@media (max-width:700px){
+@media (max-width:1024px){
 #fattori .tbl-wrap{overflow:visible}
 #factTable,#factTable tbody{display:block;width:100%}
 #factTable thead{display:none}
@@ -552,6 +552,7 @@ button.qp:hover{border-color:var(--navy-2)}
 @media (max-width:600px){.selban{bottom:10px;padding:7px 10px;flex-wrap:nowrap}.selban #selBanTxt{display:none}.selban .sb-ic{display:none}.selban .sb-t b{font-size:.92rem}}
 /* v3.1 archivio opportunità */
 .opp-arch{border:1px solid var(--line);border-radius:12px;padding:10px 12px;display:grid;gap:8px;background:var(--panel)}
+.opp-arch{grid-template-columns:minmax(0,1fr)}.opp-arch,.opp-arch>*,.ideas>*,.ev .tbl-wrap{min-width:0;max-width:100%}.ev .tbl-wrap{overflow-x:auto}
 .opp-head{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
 .opp-head select{font:inherit;padding:4px 8px;border-radius:8px;border:1px solid var(--line);background:var(--panel);color:var(--ink)}
 .opp-tab{width:100%;border-collapse:collapse;font-size:.8rem}.opp-tab th,.opp-tab td{padding:5px 6px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
@@ -833,8 +834,9 @@ const TRIGGER_ID = "trig_01RFskvnKEXEMuPW4wo8Haxw";      // compito "aggiorna da
 const EVAL_STATUS_FILE = 'valutazione_stato.json';
 const EVAL_TRIGGER_ID = "trig_01JUVzUSZf92iP2qE7fLPynn"; // compito "valutazione attuale"
 // Versione della dashboard: aumenta a OGNI modifica di pagina o modello (non con gli aggiornamenti dei dati).
-const APP_VERSION = '3.3.10';
+const APP_VERSION = '3.3.11';
 const CHANGELOG = [
+  ['3.3.11', '26/10/2026', ['iPhone e iPad: il testo della "Situazione" non esce più dal riquadro; la tabella Pesi e fattori usa l\'impaginazione a righe fino a 1024 px (iPad), senza colonne tagliate o nomi schiacciati.']],
   ['3.3.10', '26/10/2026', ['Testata: tolta la parola "riuscito" dall\'ultimo aggiornamento.']],
   ['3.3.9', '26/10/2026', ['Testata: "Ultimo aggiornamento" scrive "mercato aggiornato" oppure, in rosso, "N giorni di mercato fa" (N = giorni di mercato aperto di ritardo).']],
   ['3.3.8', '26/10/2026', ['Testata: "Ultimo aggiornamento" scrive "mercati aggiornati" se i dati comprendono l\'ultima seduta USA conclusa (anche con la borsa americana ancora aperta); altrimenti, in rosso, "mercati aggiornati a N giornate fa" (solo giorni di mercato aperto).']],
@@ -2939,7 +2941,6 @@ async function makePdf(ch) {
 
 })();
 </script>
-
 
 
 
