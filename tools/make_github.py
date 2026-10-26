@@ -21,7 +21,7 @@ STATIC = """<style id="gh-static">
 :root{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0}img{max-width:100%}
 [hidden]:not([hidden=until-found i]){display:none!important}
 .evprog{display:none!important}
-#btnUpdate,#evRun,.ev-run{display:none!important}
+#btnUpdate,#evRun,.ev-run,#btnVer{display:none!important}
 .hdr .upd{flex-wrap:nowrap}
 .gh-note{font-size:.76rem;color:var(--muted);margin:2px 0 0}\n.hdr .upd{display:grid!important;grid-template-columns:minmax(0,2fr) minmax(0,1fr)!important;gap:8px;align-items:stretch;flex:1 1 560px!important;max-width:680px!important}
 .hdr .upd .btn.gh-ev{box-sizing:border-box;display:grid;gap:1px;justify-content:stretch;align-content:center;text-align:left;line-height:1.25;padding:8px 12px;border-radius:10px;min-width:0;width:100%;white-space:nowrap;font-weight:500;grid-column:auto}
