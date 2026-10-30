@@ -847,8 +847,9 @@ button.qp:hover{border-color:var(--navy-2)}
 const TRIGGER_ID = "trig_01RFskvnKEXEMuPW4wo8Haxw";      // compito "aggiorna dati"
 const EVAL_TRIGGER_ID = "trig_01JUVzUSZf92iP2qE7fLPynn"; // compito "valutazione attuale"
 // Versione della dashboard: aumenta a OGNI modifica di pagina o modello (non con gli aggiornamenti dei dati).
-const APP_VERSION = '3.6.1';
+const APP_VERSION = '3.6.2';
 const CHANGELOG = [
+  ['3.6.2', '30/10/2026', ['Valutazione: la sezione «Come ci siamo arrivati» è aperta all\'ingresso e si può chiudere (e riaprire) con un clic.']],
   ['3.6.1', '30/10/2026', ['Valutazione senza ripetizioni: ogni informazione compare in un solo punto. «Il risultato in breve» (rischio e cosa fare) contiene anche l\'indicazione pratica; tolti «Cosa significa in pratica» e la sintesi, che ripetevano gli stessi concetti. Dettagli, fonti e cosa tenere d\'occhio restano nella sezione apribile.']],
   ['3.6.0', '30/10/2026', ['Un solo messaggio sulla quota in azioni: tolto l\'algoritmo 3.0 da descrizioni, Consiglio, report, Prova sul passato e valutazione (confondeva con l\'allocazione adattiva). La casella "Regola del backtest 100%" diventa "Freno d\'emergenza: Non attivo/Attivo", così non sembra in contrasto con la quota consigliata (es. 60%). Valutazione riorganizzata: prima "Il risultato in breve" e "Cosa significa in pratica", poi la sintesi; i dettagli (dashboard, fonti, cosa tenere d\'occhio) in una sezione da aprire.']],
   ['3.5.2', '30/10/2026', ['Ottimizzazione: tolto codice non più usato (nessun cambiamento ai numeri né all\'aspetto).']],
@@ -2361,7 +2362,7 @@ function renderEval() {
   if (Array.isArray(v.in_breve) && v.in_breve.length) { const r = el('div', 'evres'); r.append(el('h4', null, 'Il risultato in breve')); const ul = el('ul'); v.in_breve.forEach(t => ul.append(el('li', null, t))); r.append(ul); r.append(el('div', 'ev-meta', 'Indicazione generale basata sul modello della dashboard: non è un consiglio di investimento personalizzato.')); evBody.append(r); }
   if (v.orientamento) { const b = el('div', 'box'); b.append(el('h4', null, 'Cosa significa in pratica'), el('div', null, v.orientamento), el('div', 'ev-meta', 'Indicazione generale basata sul modello della dashboard: non è un consiglio di investimento personalizzato.')); evBody.append(b); }
   if (v.sintesi) evBody.append(el('p', null, v.sintesi));
-  const det = el('details', 'evdet'); det.append(el('summary', null, 'Come ci siamo arrivati: dashboard, fonti esterne, cosa tenere d\'occhio'));
+  const det = el('details', 'evdet'); det.append(el('summary', null, 'Come ci siamo arrivati: dashboard, fonti esterne, cosa tenere d\'occhio')); det.open = true;
   const cols = el('div', 'grid2');
   const c1 = el('div', 'evcol evdash'); c1.append(el('h4', null, 'Cosa dice la dashboard'), el('div', 'evset', 'Impostazioni usate: ' + (v.settings_label || 'non indicate') + '. Soglia di rischio: in difesa da ' + ((v.settings_label || '').match(/soglia (\d+)/) ? (v.settings_label.match(/soglia (\d+)/)[1]) : '70') + '; colori dell\'indice: verde sotto 40, giallo 40–54, arancione 55–69, rosso da 70.')); const ul1 = el('ul'); (v.dashboard || []).forEach(t => ul1.append(el('li', null, t))); c1.append(ul1);
   const c2 = el('div', 'evcol evext'); c2.append(el('h4', null, 'Cosa dicono le fonti esterne')); const ul2 = el('ul', 'ext');
