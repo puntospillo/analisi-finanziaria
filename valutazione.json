@@ -1,21 +1,21 @@
 {
- "rid": "vmvunff7m",
+ "rid": "vmvvh5e5s",
  "state": "ok",
- "at": "2026-10-30T07:40:58Z",
- "app_version": "3.3.11",
- "data_as_of": "2026-10-29",
+ "at": "2026-10-30T21:21:46Z",
+ "app_version": "3.5.0",
+ "data_as_of": "2026-10-30",
  "settings_key": "2bbtr5",
  "settings_label": "impostazioni standard · fragilità 1, stress 1 · soglia 70 + filtro media 200g · algoritmo 3.0 profilo Bilanciato",
- "livello": "moderato",
- "titolo": "Rischio moderato: l'indice scende a 48 e l'allocazione adattiva torna a salire, ma tassi oltre il 5%, petrolio a 115 dollari e lo shock di Alphabet sui grandi titoli tecnologici chiedono attenzione.",
- "sintesi": "L'indice di rischio della dashboard è a 48 su 100 ('nella media'): −10 punti in una settimana e −19,8 in quattro. Il segnale di spaccatura (indice vicino ai massimi ma molti titoli deboli) si è spento e l'S&P 500 è il 5,7% sopra la media a 200 giorni. La regola e l'algoritmo 3.0 indicano il 100% in azioni; l'allocazione adattiva passa al 70% (da 60% a fine settembre) e il consiglio della dashboard è 'Aumenta'. Fuori dalla dashboard: Fed e BCE ferme ma pronte a rialzare a dicembre, Treasury a 10 anni intorno al 5%, Brent a 115 dollari e un crollo di Alphabet che ha colpito il Nasdaq. Utili in forte crescita, credito calmo, VIX in calo e un mercato che si allarga oltre i pochi grandi titoli sono i principali sostegni. Ne deduco un rischio moderato, con il pericolo concentrato sui titoli tecnologici più grandi.",
+ "livello": "elevato",
+ "titolo": "Rischio elevato: l'indice risale a 56 dopo la vendita del 30 ottobre sui titoli tecnologici; la tendenza resta positiva ma il mercato è più nervoso.",
+ "sintesi": "L'indice di rischio della dashboard sale a 56 (era 48 nella valutazione di stamattina), soprattutto per lo stress: VIX a 19,4 e struttura a termine della volatilità quasi piatta (0,93). Il 30 ottobre l'S&P 500 ha perso l'1,8% a 7.580 punti e il Nasdaq il 2,9%, per i timori sulle spese per l'intelligenza artificiale dopo Amazon, Alphabet e Intel. L'indice resta però sopra la media a 200 giorni (7.310, +3,7%) e a solo il 3% dal massimo: la regola indica ancora il 100% in azioni. L'allocazione adattiva è al 60% perché, dopo lo shock recente, gli aumenti restano sospesi per 21 sedute; l'algoritmo 3.0 resta al 100%. Fuori dalla dashboard pesano tassi alti, petrolio sopra 100 dollari e un'inflazione ancora elevata; il credito invece non segnala tensioni.",
  "dashboard": [
-  "Indice di rischio 48 (stato 'nella media'): fragilità 50,5 e stress 45,5. Variazioni: −10 punti in 1 settimana, −19,8 in 4 settimane, +14,8 in 13 settimane. In 4 settimane la fragilità (debolezza interna del mercato) è crollata di 39,5 punti, mentre lo stress (volatilità, credito, tassi) è fermo.",
-  "Fattori più alti (percentile di rischio = quanto il valore è sfavorevole rispetto agli ultimi anni): piccole società contro S&P 500 80 (−5,5 punti in 63 sedute), credito high yield contro Treasury 78, struttura a termine del VIX 51 (rapporto 0,89). Più bassi: volatilità realizzata 18 (9,9% annuo), MOVE (volatilità dei Treasury) 37, quota di titoli sopra la media a 200 giorni 39 (65% dei titoli).",
-  "Segnale di spaccatura spento: indice a −1,3% dal massimo con il 65% dei titoli sopra la media a 200 giorni e il 46% entro il 10% dal proprio massimo (a fine settembre erano 42% e 21%). Restano due punti deboli: i primi 10 titoli pesano il 38% dell'indice e il CAPE (prezzo diviso utili medi di 10 anni) è 40,9, percentile 98. Gruppi sperimentali non inclusi: grandi investitori 76, sentiment 38, valutazione e macro 46.",
-  "S&P 500 a 7.720, +5,7% sopra la media a 200 giorni (7.306): regola standard al 100% in azioni. Algoritmo 3.0 (profilo Bilanciato, quello scelto nella pagina) al 100%: protezione piena, volatilità EWMA 9,9%, nessuna tranche di rientro attiva ('tutto regolare').",
-  "Allocazione adattiva al 70% in azioni: regime 'rialzo confermato', composito 87,4, quota obiettivo 97% raggiunta per gradi. Rispetto al 60% di fine settembre il consiglio è 'Aumenta'. La differenza con regola e algoritmo 3.0 (100%) nasce dalla salita graduale della quota: l'allocazione adattiva non torna subito al massimo dopo un periodo di fragilità.",
-  "Storico: con un indice simile (±5 punti) un calo di almeno il 10% entro 60 sedute si è visto nel 12,9% dei casi, contro il 16% della media di tutti i giorni. Report di settembre 'giallo': rossi ampiezza, tassi (10 anni al 5,29%) e materie prime (petrolio +32% in 3 mesi); all'estero Buy per Europa, Giappone ed emergenti, Sell per la Cina; Stati Uniti ancora più forti del resto del mondo."
+  "Indice di rischio 56 (stato 'Attenzione'): fragilità 52,8, stress 59,3. In una settimana −3,8 punti ma +24,5 in 13 settimane; nelle ultime 4 settimane la fragilità è scesa (−36,8) mentre lo stress è salito (+13,7).",
+  "Fattori più alti: small cap contro S&P 500 (percentile di rischio 79), credito high yield contro Treasury a 63 giorni (78), struttura a termine del VIX (74), VIX (64). Più bassi: peso uguale contro indice (33) e volatilità realizzata a 21 giorni (37). Segnale di spaccatura spento; nuovi minimi 1%, nuovi massimi 9%.",
+  "Regola: indice sotto la soglia 70 e S&P sopra la media a 200 giorni → esposizione suggerita 100%. Nei giorni storici con indice simile (986 casi) un calo del 10% entro 60 sedute è arrivato nel 17,3% dei casi, appena sopra la media del 16%.",
+  "Allocazione adattiva: regime 'rialzo confermato', composito 80, quota obiettivo 96% ma quota attuale 60% perché uno shock recente sospende gli aumenti per 21 sedute. Consiglio mostrato: 'Mantieni' (60% oggi come a fine settembre).",
+  "Algoritmo 3.0 (profilo Bilanciato): 100% in azioni, protezione di base piena e nessuna tranche di rientro necessaria; volatilità stimata 11,9%. La differenza con l'allocazione adattiva nasce dal blocco prudenziale dopo lo shock, non da un giudizio diverso sulla tendenza.",
+  "Report di settembre: quadro giallo; ampiezza e tassi in rosso (Treasury 10 anni 5,29% a fine mese), petrolio +32% in 3 mesi. Estero: Buy per Europa, Giappone ed emergenti, Sell per la Cina; gli Stati Uniti guidano ancora sul resto del mondo."
  ],
  "esterno": [
   {
@@ -28,11 +28,11 @@
   },
   {
    "tema": "Tassi dei Treasury",
-   "lettura": "Il 28 ottobre il 10 anni era al 5,05%, il 2 anni al 4,67% e il 3 mesi al 4,18% (curva positiva). Il 29 il 10 anni è sceso sotto il 5% (4,98%) dopo i dati su PIL e inflazione.",
-   "segno": "più rischio",
-   "fonte": "Federal Reserve, H.15; Cappnotes (chiusura del 29/10)",
-   "url": "https://www.federalreserve.gov/releases/h15/",
-   "data": "2026-10-28"
+   "lettura": "Il 30 ottobre il Treasury 10 anni è sceso al 4,93% (−6 centesimi), dopo il 5,05% del 28 ottobre (Fed, H.15). Tassi in calo dai massimi ma ancora alti.",
+   "segno": "neutro",
+   "fonte": "Yahoo Finance; Federal Reserve H.15",
+   "url": "https://finance.yahoo.com/markets/live/stock-market-today-friday-october-30-dow-sp-500-nasdaq-amazon-intel-131609630.html",
+   "data": "2026-10-30"
   },
   {
    "tema": "Crescita e inflazione USA",
@@ -52,19 +52,11 @@
   },
   {
    "tema": "Grandi titoli tecnologici e IA",
-   "lettura": "Il 29 ottobre Alphabet ha perso il 12,6% (peggior seduta di sempre): investimenti +114% a 51,4 miliardi di dollari e flusso di cassa libero negativo per il secondo trimestre di fila. Nasdaq −1,4%; Amazon −4,3% in seduta e circa −6% dopo la chiusura sui conti, Intel circa −17% dopo la chiusura. Microsoft ha retto (ricavi +19%, Azure +48%).",
+   "lettura": "Il 30 ottobre S&P 500 −1,82% a 7.580, Nasdaq −2,86%, Dow −1,09%, per i timori sulle spese per l'IA dopo i conti di Amazon e Alphabet e le prospettive deboli di Intel. In ottobre S&P −1,2%, Nasdaq −5,2% (peggior mese da marzo 2025), Dow +1,5%.",
    "segno": "più rischio",
-   "fonte": "Seoul Economic Daily; Cappnotes",
-   "url": "https://en.sedaily.com/international/2026/10/30/alphabet-plunges-13-percent-on-capex-shock-dragging-nasdaq",
-   "data": "2026-10-29"
-  },
-  {
-   "tema": "Ampiezza del mercato",
-   "lettura": "Il 29 ottobre l'S&P 500 ha perso lo 0,3% ma l'ETF a pesi uguali (RSP) ha guadagnato l'1,2% e il Russell 2000 l'1,0%: la maggior parte dei titoli è salita. Hanno guidato sanità (+2,4%), immobiliare e beni di prima necessità; male tecnologia e comunicazioni.",
-   "segno": "meno rischio",
-   "fonte": "Cappnotes – Closing Look",
-   "url": "https://cappnotes.substack.com/p/closing-look-thursday-october-29",
-   "data": "2026-10-29"
+   "fonte": "Yahoo Finance",
+   "url": "https://finance.yahoo.com/markets/live/stock-market-today-friday-october-30-dow-sp-500-nasdaq-amazon-intel-131609630.html",
+   "data": "2026-10-30"
   },
   {
    "tema": "Credito",
@@ -76,55 +68,55 @@
   },
   {
    "tema": "Volatilità",
-   "lettura": "Il VIX (volatilità attesa sull'S&P 500) è sceso a 16,91 il 28 ottobre, da 19,45 del 23: paura in calo.",
-   "segno": "meno rischio",
-   "fonte": "FRED – CBOE VIX",
-   "url": "https://fred.stlouisfed.org/series/VIXCLS",
-   "data": "2026-10-28"
+   "lettura": "Il 30 ottobre il VIX (volatilità attesa sull'S&P 500) è salito del 12,9% a 19,42, da 16,91 del 28: paura in aumento, ancora sotto 20.",
+   "segno": "più rischio",
+   "fonte": "Yahoo Finance",
+   "url": "https://finance.yahoo.com/markets/live/stock-market-today-friday-october-30-dow-sp-500-nasdaq-amazon-intel-131609630.html",
+   "data": "2026-10-30"
   },
   {
    "tema": "Petrolio e geopolitica",
-   "lettura": "Brent a 114,88 dollari e WTI a 102,00 il 29 ottobre: lieve calo per segnali di possibile ripresa dei colloqui USA–Iran, ma gli attacchi Houthi a impianti sauditi tengono alti i prezzi.",
+   "lettura": "Il 30 ottobre il WTI è salito dello 0,8% a 102,82 dollari; il Brent era sopra 112 dollari in mattinata (Milano Finanza). Il petrolio caro tiene alta l'inflazione.",
    "segno": "più rischio",
-   "fonte": "Seoul Economic Daily",
-   "url": "https://en.sedaily.com/international/2026/10/30/alphabet-plunges-13-percent-on-capex-shock-dragging-nasdaq",
-   "data": "2026-10-29"
+   "fonte": "Yahoo Finance; Milano Finanza",
+   "url": "https://finance.yahoo.com/markets/live/stock-market-today-friday-october-30-dow-sp-500-nasdaq-amazon-intel-131609630.html",
+   "data": "2026-10-30"
   },
   {
    "tema": "BCE ed Europa",
-   "lettura": "Il 29 ottobre la BCE ha lasciato il tasso sui depositi al 2,50% all'unanimità; inflazione dell'area euro al 3,8% a settembre, attesa in salita. I mercati stimano circa l'80% di probabilità di un rialzo al 2,75% a dicembre. Lagarde lascerà la presidenza il 7 febbraio.",
+   "lettura": "Il 29 ottobre la BCE ha lasciato il tasso sui depositi al 2,50% (rialzo a dicembre probabile, ANSA). Il 30 ottobre il FTSE MIB ha perso l'1% con le banche deboli; spread BTP-Bund a 118 punti base e BTP 10 anni al 4,51%.",
    "segno": "neutro",
    "fonte": "ANSA",
-   "url": "https://www.ansa.it/sito/notizie/economia/2026/10/29/la-bce-si-ferma-sui-tassi-in-bilico-il-rialzo-di-dicembre_fff36f02-6e9c-4e87-af42-4776abe0acc8.html",
-   "data": "2026-10-29"
+   "url": "https://www.ansa.it/sito/notizie/economia/2026/10/30/borsa-milano-in-calo-con-le-banche-deboli-scivola-amplifon_589fc273-d10a-49b0-80c6-d72b44132524.html",
+   "data": "2026-10-30"
   }
  ],
- "concordanza": "Le fonti esterne confermano il miglioramento visto dalla dashboard: VIX in calo, credito high yield ai minimi di spread e, il 29 ottobre, un rialzo diffuso dei titoli a pesi uguali mentre l'indice scendeva, coerente con lo spegnimento del segnale di spaccatura. Divergono tassi e inflazione: Fed e BCE preparano rialzi a dicembre, il Treasury a 10 anni è intorno al 5% e il petrolio resta sopra 100 dollari, rischi che la dashboard misura solo in parte (il MOVE è basso). Lo shock su Alphabet conferma che il rischio è concentrato nei grandi titoli tecnologici, che pesano il 38% dell'indice. Mantengo il livello coerente con l'indice: moderato, senza abbassarlo né alzarlo.",
+ "concordanza": "Le fonti esterne confermano il salto dello stress: il 30 ottobre il VIX è salito del 13% e il Nasdaq ha chiuso ottobre a −5,2%, il mese peggiore da marzo 2025. Divergono in parte credito e tassi: lo spread high yield era al 3,14% il 28 ottobre e il Treasury 10 anni è sceso al 4,93%, segnali più distesi di quanto dica il fattore credito della dashboard. Ne deduco che il livello 'elevato' (56) è corretto senza aggiustamenti: il rischio è concentrato nei grandi titoli tecnologici più che nel sistema.",
  "monitorare": [
   {
    "cosa": "Indice di rischio della dashboard",
-   "perche": "È la variabile della regola; è sceso molto in fretta e può risalire altrettanto.",
-   "soglia": "Sopra 55 → 'elevato'; sopra 70 la regola passa in difesa"
+   "perche": "È salito da 48 a 56 in un giorno, trainato dallo stress.",
+   "soglia": "Sotto 55 → di nuovo 'moderato'; sopra 70 la regola passa in difesa"
   },
   {
    "cosa": "S&P 500 rispetto alla media a 200 giorni",
    "perche": "Il filtro di tendenza porta la regola in difesa e influenza l'algoritmo 3.0.",
-   "soglia": "Chiusura sotto circa 7.306 punti (−5,4% dal livello attuale)"
+   "soglia": "Chiusura sotto circa 7.310 punti (−3,6% dal livello attuale)"
   },
   {
    "cosa": "Allocazione adattiva e consiglio",
-   "perche": "Il consiglio è passato ad 'Aumenta'; un ritorno della fragilità lo fermerebbe.",
-   "soglia": "Riaccensione del segnale di spaccatura o quota di nuovo al 60% o meno"
-  },
-  {
-   "cosa": "Fed (9 dicembre) e dati USA",
-   "perche": "Un rialzo è quasi scontato; contano tono e previsioni. Prossimi dati: lavoro di ottobre e inflazione CPI di novembre.",
-   "soglia": "Treasury 10 anni stabilmente sopra 5,25% o probabilità di più rialzi nel 2027"
+   "perche": "Gli aumenti sono sospesi per 21 sedute dopo lo shock; la quota obiettivo è 96%.",
+   "soglia": "Fine della sospensione senza nuovi shock (quota in salita) o riaccensione del segnale di spaccatura"
   },
   {
    "cosa": "Grandi titoli tecnologici e spese per l'IA",
-   "perche": "Alphabet, Amazon e Intel hanno deluso; Nvidia, che pesa circa il 7,8% dell'indice, deve ancora pubblicare.",
-   "soglia": "Nuovi crolli a doppia cifra dei primi 10 titoli o Nasdaq −10% dal massimo"
+   "perche": "I primi 10 titoli pesano il 37% dell'indice; Nvidia deve ancora pubblicare i conti.",
+   "soglia": "Nasdaq −10% dal massimo o nuovi crolli a doppia cifra dei grandi titoli"
+  },
+  {
+   "cosa": "Fed (9 dicembre) e dati USA",
+   "perche": "Un rialzo è in gran parte atteso; contano lavoro di ottobre e inflazione.",
+   "soglia": "Treasury 10 anni di nuovo stabilmente sopra 5,25%"
   },
   {
    "cosa": "Petrolio e Golfo Persico",
@@ -133,12 +125,12 @@
   },
   {
    "cosa": "Credito high yield",
-   "perche": "È il 'canarino nella miniera': oggi tranquillo.",
+   "perche": "È il 'canarino nella miniera': finora tranquillo.",
    "soglia": "Spread sopra il 4% (da 3,14%)"
   }
  ],
- "orientamento": "Con le impostazioni standard la regola della dashboard e l'algoritmo 3.0 (profilo Bilanciato) indicano un'esposizione azionaria del 100%, l'allocazione adattiva il 70% con consiglio 'Aumenta' rispetto al 60% di fine settembre. I tre modelli vanno nella stessa direzione; l'allocazione adattiva resta più prudente perché sale per gradi. Il margine di sicurezza è aumentato (22 punti alla soglia di 70, 5,7% sopra la media a 200 giorni). In generale conviene seguire la gradualità del modello invece di aumentare tutto in una volta, evitare la leva e non concentrare l'esposizione sui pochi grandi titoli tecnologici, dato il calendario di tassi e banche centrali di dicembre. Questa non è una raccomandazione personalizzata.",
- "idee_premessa": "Logica d'insieme: rischio moderato, utili in forte crescita e mercato che si allarga favoriscono un'esposizione azionaria più ampia e meno concentrata (pesi uguali, Europa, settori fuori dalla tecnologia), mentre tassi in salita e petrolio caro chiedono qualità e coperture. Preferisco banche e assicurazioni (beneficiano di tassi più alti), sanità con utili in crescita, infrastrutture elettriche e un po' di energia come copertura contro l'inflazione; obbligazioni a breve scadenza invece che a lunga. Evito di aumentare il peso dei semiconduttori e dei grandi titoli dell'IA dopo i segnali di investimenti eccessivi. Europa, Giappone ed emergenti hanno segnale Buy; con l'euro/dollaro a 1,118 (vicino ai minimi da 17 mesi) gli attivi in dollari non perdono per il cambio, ma un recupero dell'euro li penalizzerebbe.",
+ "orientamento": "Con queste impostazioni la regola indica il 100% in azioni, l'algoritmo 3.0 il 100% e l'allocazione adattiva il 60% con consiglio 'Mantieni'. Ne deduco che la tendenza di fondo resta positiva, ma con rischio in salita è prudente non aumentare l'esposizione finché lo stress non si calma, preferire qualità e diversificazione rispetto ai grandi titoli dell'IA, e rivedere le scelte se l'S&P scende sotto la media a 200 giorni o l'indice supera 70. Non è un consiglio personalizzato.",
+ "idee_premessa": "Logica d'insieme: con rischio elevato ma tendenza ancora positiva preferisco qualità e diversificazione: pesi uguali invece dell'indice concentrato, Europa (segnale Buy), sanità con utili in crescita, assicurazioni e infrastrutture elettriche, un po' di energia come copertura contro l'inflazione. Evito di aumentare semiconduttori e grandi titoli dell'IA, colpiti dai timori sugli investimenti. Obbligazioni a breve scadenza invece che a lunga, con tassi e inflazione alti. Con l'euro/dollaro intorno a 1,12-1,13 gli attivi in dollari non perdono per il cambio, ma un recupero dell'euro li penalizzerebbe; le opportunità rischiose restano scommesse su una piccola parte del capitale.",
  "idee": [
   {
    "categoria": "azione",
@@ -372,14 +364,15 @@
    "tesi": "Leader mondiale nella vendita di apparecchi acustici, mercato in crescita per l'invecchiamento della popolazione; margini e cassa in netto miglioramento ma multiplo molto sotto la sua storia.",
    "sottovalutazione": "P/E sulle stime 2027 di circa 13 volte contro circa 35 della media a 5 anni: sconto del 62% (Equita, Affaritaliani 5/10). Morgan Stanley ha alzato il prezzo obiettivo a 14,96 € con giudizio Overweight (9/10). L'aumento di capitale riservato a GN è fissato a 11,267 € per azione.",
    "catalizzatori": "Utile netto rettificato del terzo trimestre +38,7%, margine EBITDA nei nove mesi +80 punti base, flusso di cassa libero +139%, leva scesa a 1,85 volte; guidance 2026 confermata; chiusura dell'acquisizione di GN Hearing entro fine 2026.",
-   "perche_ora": "Conti del 29 ottobre con margini in forte crescita: ne deduco che il piano di efficienza sta funzionando mentre il prezzo sconta ancora le delusioni passate.",
-   "rischi": "Ricavi quasi fermi (+0,9% a cambi costanti); acquisizione di GN da 1,69 miliardi in contanti più 56 milioni di nuove azioni (GN avrà il 17%): più debito e diluizione; rischio di integrazione e concorrenza in Nord America.",
+   "perche_ora": "Il 30 ottobre il titolo è sceso del 14,5% a 11,1 € (ANSA) nonostante conti con utile rettificato +38,7% e guidance confermata: ne deduco che il mercato punisce la crescita debole dei ricavi, e lo sconto sui multipli si è allargato. Da valutare con cautela.",
+   "rischi": "Ricavi quasi fermi (+0,9% a cambi costanti) e reazione del mercato molto negativa ai conti; acquisizione di GN da 1,69 miliardi in contanti più nuove azioni (GN avrà il 17%): più debito e diluizione; rischio di integrazione.",
    "orizzonte": "oltre 12 mesi",
    "link": "https://it.investing.com/equities/amplifon",
    "link_sito": "Investing.com",
-   "fonte": "Milano Finanza; Affaritaliani; Teleborsa",
-   "url": "https://www.milanofinanza.it/news/amplifon-risultati-positivi-nel-terzo-trimestre-cresce-l-utile-netto-202610291858517865",
-   "data": "2026-10-29"
+   "fonte": "ANSA; Milano Finanza; Affaritaliani",
+   "url": "https://www.ansa.it/sito/notizie/economia/2026/10/30/borsa-milano-in-calo-con-le-banche-deboli-scivola-amplifon_589fc273-d10a-49b0-80c6-d72b44132524.html",
+   "data": "2026-10-30",
+   "prezzo_rif": "11,1 € (30/10/2026, ANSA)"
   },
   {
    "categoria": "azione",
@@ -490,9 +483,9 @@
   }
  ],
  "limiti": [
-  "Valutazione basata sullo snapshot inviato dalla pagina (impostazioni standard, algoritmo 3.0 profilo Bilanciato, seduta del 29 ottobre 2026 ancora segnata come in corso); la ricerca sulle fonti è del 30 ottobre mattina, prima dell'apertura europea. Rispetto alla valutazione del 25 ottobre il profilo dell'algoritmo 3.0 è Bilanciato invece di Prudente.",
-  "Alcune pagine non erano leggibili (CNBC, Morningstar, Safran, Eli Lilly su SEC, un articolo Reuters su Campari): diversi dati vengono da fonti che riportano Reuters, CME FedWatch o comunicati societari.",
-  "Per 6 delle 9 opportunità ad alto rischio lo sconto è una stima automatica sui flussi di cassa (Simply Wall St) o un confronto di multipli riportato dai broker; queste stime cambiano molto con le ipotesi. Prezzi indicati con la loro data e da ricontrollare: per Valmet e Textron sono precedenti ai conti, dopo i quali i titoli si sono mossi.",
+  "Valutazione sullo snapshot della seduta del 30 ottobre 2026 (chiusa), impostazioni standard, algoritmo 3.0 profilo Bilanciato. Rispetto alla valutazione di stamattina è stata aggiornata solo la parte di mercato del 30 ottobre; le altre fonti esterne (Fed, utili FactSet, credito, BCE) sono di 2–7 giorni fa.",
+  "Alcuni dati del 30 ottobre (Brent in chiusura, oro, spread high yield) non erano disponibili: lo spread high yield più recente su FRED è del 28 ottobre.",
+  "Per 6 delle 9 opportunità ad alto rischio lo sconto è una stima automatica sui flussi di cassa o un confronto di multipli riportato dai broker; queste stime cambiano molto con le ipotesi. Prezzi indicati con la loro data e da ricontrollare dopo la seduta del 30 ottobre.",
   "Le idee sono spunti di analisi da approfondire, non raccomandazioni personalizzate. Link solo dove la pagina è stata verificata: mancano per Ackermans & Van Haaren, Textron e Halliburton."
  ],
  "fonti": [
@@ -644,6 +637,26 @@
   {
    "nome": "justETF – schede ETF/ETC",
    "url": "https://www.justetf.com/it/",
+   "data": "2026-10-30"
+  },
+  {
+   "nome": "Yahoo Finance – Stock market today, 30 ottobre 2026",
+   "url": "https://finance.yahoo.com/markets/live/stock-market-today-friday-october-30-dow-sp-500-nasdaq-amazon-intel-131609630.html",
+   "data": "2026-10-30"
+  },
+  {
+   "nome": "ANSA – Borsa Milano 30 ottobre 2026",
+   "url": "https://www.ansa.it/sito/notizie/economia/2026/10/30/borsa-milano-in-calo-con-le-banche-deboli-scivola-amplifon_589fc273-d10a-49b0-80c6-d72b44132524.html",
+   "data": "2026-10-30"
+  },
+  {
+   "nome": "ANSA – Spread BTP-Bund 118 punti",
+   "url": "https://www.ansa.it/sito/notizie/topnews/2026/10/30/lo-spread-tra-btp-e-bund-chiude-in-lieve-rialzo-a-118-punti-base_9c1ccf87-639a-4602-8527-9c9ec1842183.html",
+   "data": "2026-10-30"
+  },
+  {
+   "nome": "Milano Finanza – Borse oggi 30 ottobre 2026",
+   "url": "https://www.milanofinanza.it/news/borse-oggi-diretta-30-ottobre-2026-chiusura-apertura-europee-borsa-milano-ftse-mib-piazza-affari-202610300831365967",
    "data": "2026-10-30"
   }
  ]
