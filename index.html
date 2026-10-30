@@ -26,7 +26,6 @@
 </head>
 <body>
 
-
 <title>Analisi Finanziaria</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -844,11 +843,11 @@ button.qp:hover{border-color:var(--navy-2)}
 <script>
 (() => {
 const TRIGGER_ID = "trig_01RFskvnKEXEMuPW4wo8Haxw";      // compito "aggiorna dati"
-const EVAL_STATUS_FILE = 'valutazione_stato.json';
 const EVAL_TRIGGER_ID = "trig_01JUVzUSZf92iP2qE7fLPynn"; // compito "valutazione attuale"
 // Versione della dashboard: aumenta a OGNI modifica di pagina o modello (non con gli aggiornamenti dei dati).
-const APP_VERSION = '3.5.1';
+const APP_VERSION = '3.5.2';
 const CHANGELOG = [
+  ['3.5.2', '30/10/2026', ['Ottimizzazione: tolto codice non più usato (nessun cambiamento ai numeri né all\'aspetto).']],
   ['3.5.1', '30/10/2026', ['Riquadro "Segnale di shock": ora occupa tutta la larghezza (le 3 colonne, da bordo a bordo) e ha lo sfondo colorato in base al livello (verde, giallo, arancione, rosso).']],
   ['3.5.0', '30/10/2026', ['Allocazione adattiva: dopo uno shock (anche una sola delle 3 condizioni del riquadro "Segnale di shock") la quota in azioni può scendere ma non salire per 21 sedute; gli aumenti riprendono dopo. Nel test 1999–2026 (S&P senza costi) la perdita massima passa da circa −22% a −14% e il rendimento da 4,5% a 3,3% l\'anno (circa 1,2 punti in meno); i cambi di quota scendono da 29 a 17 l\'anno. Il Consiglio e il grafico "Quota in azioni" usano la nuova regola; i risultati citati nelle spiegazioni (+5,3% / −16%) sono quelli della versione precedente.']],
   ['3.4.0', '30/10/2026', ['Nuovo riquadro "Segnale di shock": avvisa quando in pochi giorni l\'indice di rischio salta o l\'S&P scende in fretta (verde nessuna condizione, giallo una, arancione due, rosso tre). È solo un avviso e non cambia la quota in azioni: nei test su 26 anni queste condizioni hanno dato più falsi allarmi che segnali giusti.']],
@@ -1373,12 +1372,6 @@ function renderAdvice(i) {
   box.querySelector('.adv-why').textContent = 'Perché: ' + AV.why[i] + '.';
   box.style.setProperty('--adv', `var(${col})`);
 }
-function aavDrivers(i) {
-  const r = []; if (AV.P.br[i] < 50) r.push('la spaccatura accesa'); if (AV.fm[i] < 45) r.push('il momento debole'); if (AV.P.ri[i] < 60) r.push('il rischio interno (favore ' + Math.round(AV.P.ri[i]) + ')');
-  if (AV.P.cr[i] < 50) r.push('il credito'); if (AV.vm[i] < 0.995) r.push('la volatilità'); if (AV.cap[i] < 1) r.push('il tetto di ' + Math.round(AV.cap[i] * 100) + '%');
-  return r.length ? r.join(', ') : 'componenti più prudenti';
-}
-
 let FROWS = [];
 function buildWeights() {
   const tb = document.querySelector('#factTable tbody'); if (!tb) return; tb.replaceChildren(); FROWS = [];
@@ -2279,7 +2272,6 @@ function marketDaysSince(from, to) {
   }
   return n;
 }
-const romeYMD = (t) => { const p = new Intl.DateTimeFormat('en-CA', {timeZone: 'Europe/Rome', year: 'numeric', month: '2-digit', day: '2-digit'}).format(new Date(t)).split('-').map(Number); return {y: p[0], m: p[1] - 1, d: p[2]}; };
 // sedute USA concluse (chiusura 16:00 New York) dopo l'ultima seduta presente nei dati: 0 = mercati aggiornati
 const marketLag = (asofStr) => {
   const f = Object.fromEntries(new Intl.DateTimeFormat('en-CA', {timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', hourCycle: 'h23'}).formatToParts(new Date()).map(x => [x.type, x.value]));
@@ -2984,10 +2976,6 @@ async function makePdf(ch) {
 
 })();
 </script>
-
-
-
-
 
 <script>
 (function(){
