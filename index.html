@@ -847,8 +847,9 @@ button.qp:hover{border-color:var(--navy-2)}
 const TRIGGER_ID = "trig_01RFskvnKEXEMuPW4wo8Haxw";      // compito "aggiorna dati"
 const EVAL_TRIGGER_ID = "trig_01JUVzUSZf92iP2qE7fLPynn"; // compito "valutazione attuale"
 // Versione della dashboard: aumenta a OGNI modifica di pagina o modello (non con gli aggiornamenti dei dati).
-const APP_VERSION = '3.6.0';
+const APP_VERSION = '3.6.1';
 const CHANGELOG = [
+  ['3.6.1', '30/10/2026', ['Valutazione senza ripetizioni: ogni informazione compare in un solo punto. «Il risultato in breve» (rischio e cosa fare) contiene anche l\'indicazione pratica; tolti «Cosa significa in pratica» e la sintesi, che ripetevano gli stessi concetti. Dettagli, fonti e cosa tenere d\'occhio restano nella sezione apribile.']],
   ['3.6.0', '30/10/2026', ['Un solo messaggio sulla quota in azioni: tolto l\'algoritmo 3.0 da descrizioni, Consiglio, report, Prova sul passato e valutazione (confondeva con l\'allocazione adattiva). La casella "Regola del backtest 100%" diventa "Freno d\'emergenza: Non attivo/Attivo", così non sembra in contrasto con la quota consigliata (es. 60%). Valutazione riorganizzata: prima "Il risultato in breve" e "Cosa significa in pratica", poi la sintesi; i dettagli (dashboard, fonti, cosa tenere d\'occhio) in una sezione da aprire.']],
   ['3.5.2', '30/10/2026', ['Ottimizzazione: tolto codice non più usato (nessun cambiamento ai numeri né all\'aspetto).']],
   ['3.5.1', '30/10/2026', ['Riquadro "Segnale di shock": ora occupa tutta la larghezza (le 3 colonne, da bordo a bordo) e ha lo sfondo colorato in base al livello (verde, giallo, arancione, rosso).']],
@@ -2357,7 +2358,7 @@ function renderEval() {
   if (v.data_as_of && v.data_as_of !== DATA.as_of) warns.push('Nel frattempo i dati della dashboard sono stati aggiornati (ora al ' + fmtDl(T[N - 1]) + ').');
   if (Date.now() - Date.parse(v.at) > 3 * 864e5) warns.push('La valutazione ha più di 3 giorni: il quadro esterno potrebbe essere cambiato.');
   if (warns.length) evBody.append(el('p', 'warnbox', warns.join(' ')));
-  if (Array.isArray(v.in_breve) && v.in_breve.length) { const r = el('div', 'evres'); r.append(el('h4', null, 'Il risultato in breve')); const ul = el('ul'); v.in_breve.forEach(t => ul.append(el('li', null, t))); r.append(ul); evBody.append(r); }
+  if (Array.isArray(v.in_breve) && v.in_breve.length) { const r = el('div', 'evres'); r.append(el('h4', null, 'Il risultato in breve')); const ul = el('ul'); v.in_breve.forEach(t => ul.append(el('li', null, t))); r.append(ul); r.append(el('div', 'ev-meta', 'Indicazione generale basata sul modello della dashboard: non è un consiglio di investimento personalizzato.')); evBody.append(r); }
   if (v.orientamento) { const b = el('div', 'box'); b.append(el('h4', null, 'Cosa significa in pratica'), el('div', null, v.orientamento), el('div', 'ev-meta', 'Indicazione generale basata sul modello della dashboard: non è un consiglio di investimento personalizzato.')); evBody.append(b); }
   if (v.sintesi) evBody.append(el('p', null, v.sintesi));
   const det = el('details', 'evdet'); det.append(el('summary', null, 'Come ci siamo arrivati: dashboard, fonti esterne, cosa tenere d\'occhio'));
@@ -2758,9 +2759,9 @@ async function makePdf(ch) {
     if (k === 'eval') {
       const E = EVAL, LI = {basso: 0, moderato: 1, elevato: 2, alto: 3}[String(E.livello).toLowerCase()];
       h1('Valutazione attuale', C.strs, 'preparata il ' + whenIt(E.at));
-      box((LEV[String(E.livello).toLowerCase()] || 'Livello') + ': ' + (E.titolo || ''), [E.sintesi], {color: LI == null ? C.strs : LV[LI], bg: LI == null ? C['panel-2'] : LVS[LI], size: 10.5});
+      box(LEV[String(E.livello).toLowerCase()] || 'Livello', [E.titolo || E.sintesi || ''], {color: LI == null ? C.strs : LV[LI], bg: LI == null ? C['panel-2'] : LVS[LI], size: 10.5});
       para('Impostazioni: ' + (E.settings_label || '—') + ' · dati di mercato al ' + (E.data_as_of || '—'), {size: 8.5, color: C.muted});
-      if ((E.in_breve || []).length) { h2('Il risultato in breve', C.navy); bullets(E.in_breve, {dot: C.navy}); }
+      if ((E.in_breve || []).length) { h2('Il risultato in breve', C.navy); bullets(E.in_breve, {dot: C.navy}); para('Indicazione generale basata sul modello della dashboard: non è un consiglio personalizzato.', {size: 8.5, color: C.muted}); }
       if (E.orientamento) box('Cosa significa in pratica', [E.orientamento, 'Indicazione generale basata sul modello della dashboard: non è un consiglio personalizzato.'], {color: C.navy});
       if ((E.dashboard || []).length) { h2('Cosa dice la dashboard', C.navy); bullets(E.dashboard, {dot: C.navy}); }
       if ((E.esterno || []).length) { h2('Cosa dicono le fonti esterne', C.sky);
