@@ -835,8 +835,9 @@ const TRIGGER_ID = "trig_01RFskvnKEXEMuPW4wo8Haxw";      // compito "aggiorna da
 const EVAL_STATUS_FILE = 'valutazione_stato.json';
 const EVAL_TRIGGER_ID = "trig_01JUVzUSZf92iP2qE7fLPynn"; // compito "valutazione attuale"
 // Versione della dashboard: aumenta a OGNI modifica di pagina o modello (non con gli aggiornamenti dei dati).
-const APP_VERSION = '3.3.11';
+const APP_VERSION = '3.4.0';
 const CHANGELOG = [
+  ['3.4.0', '30/10/2026', ['Nuovo riquadro "Segnale di shock": avvisa quando in pochi giorni l\'indice di rischio salta o l\'S&P scende in fretta (verde nessuna condizione, giallo una, arancione due, rosso tre). È solo un avviso e non cambia la quota in azioni: nei test su 26 anni queste condizioni hanno dato più falsi allarmi che segnali giusti.']],
   ['3.3.11', '26/10/2026', ['iPhone e iPad: il testo della "Situazione" non esce più dal riquadro; la tabella Pesi e fattori usa l\'impaginazione a righe fino a 1024 px (iPad), senza colonne tagliate o nomi schiacciati.']],
   ['3.3.10', '26/10/2026', ['Testata: tolta la parola "riuscito" dall\'ultimo aggiornamento.']],
   ['3.3.9', '26/10/2026', ['Testata: "Ultimo aggiornamento" scrive "mercato aggiornato" oppure, in rosso, "N giorni di mercato fa" (N = giorni di mercato aperto di ritardo).']],
@@ -1020,6 +1021,18 @@ function tileLevels(i) {
   const regola = EXPO[i] < 1 ? (EXPO[i] > 0 ? 's-warn' : 's-risk') : 's-ok';
   return {spx, split, coverage, regola, close};
 }
+
+// v3.4: avviso di shock di breve periodo. Solo informativo: non cambia la quota in azioni.
+// Condizioni: A indice di rischio +8 in un giorno; C S&P -1,5% in un giorno; D S&P almeno -3% dal massimo a 20 sedute e indice +5 in due giorni.
+function shockAt(i) {
+  const s = COL.spx, f = IFI;
+  const r1 = i >= 1 ? s[i] / s[i - 1] - 1 : NaN, d1 = i >= 1 ? f[i] - f[i - 1] : NaN, d2 = i >= 2 ? f[i] - f[i - 2] : NaN;
+  let hi = -Infinity; for (let k = Math.max(0, i - 19); k <= i; k++) if (!isNaN(s[k])) hi = Math.max(hi, s[k]);
+  const dd20 = s[i] / hi - 1, A = d1 >= 8, C = r1 <= -0.015, D = dd20 <= -0.03 && d2 >= 5;
+  const n = (A ? 1 : 0) + (C ? 1 : 0) + (D ? 1 : 0);
+  return {n, A, C, D, r1, d1, d2, dd20, lv: ['s-ok', 's-yel', 's-warn', 's-risk'][n]};
+}
+const SHOCKLAB = ['Nessuno', 'Lieve', 'In corso', 'Forte'];
 
 // ------------------------------------------------------------------ algoritmo 3.0
 // 2.0: 0% se S&P scende oltre il 2% sotto la media 200 giorni (rientra quando torna sopra la media), 0% per 21 sedute dopo indice ≥ 75,
@@ -1242,6 +1255,11 @@ function renderHero() {
   mk('Copertura dati', nf(cov, 0) + '%', 'Titoli dell\'indice con prezzi disponibili quel giorno', null, null, pillOf(lvC, cov >= 97 ? 'dati completi' : cov >= 95 ? 'quasi completi' : cov >= 90 ? 'qualche dato mancante' : 'dati insufficienti'), 'coverage', lvC);
   const ex = EXPO[i], lvE = TL.regola;
   mk('Regola del backtest', Math.round(ex * 100) + '%', 'Quota in azioni indicata dalla regola con le impostazioni attuali (soglia ' + st.th + (st.trend ? ', filtro di tendenza' : '') + ')', null, null, pillOf(lvE, ex < 1 ? 'in difesa' : 'investito'), 'regola', lvE);
+  const SH = shockAt(i), shWhy = document.createElement('div'); shWhy.className = 'why';
+  const shList = [SH.A ? 'indice di rischio +' + nf(SH.d1, 0) + ' in un giorno' : '', SH.C ? 'S&P ' + nf(SH.r1 * 100, 1) + '% in un giorno' : '', SH.D ? 'S&P ' + nf(SH.dd20 * 100, 1) + '% dal massimo a 20 sedute con indice in salita' : ''].filter(Boolean);
+  shWhy.textContent = (SH.n ? 'Scattate: ' + shList.join('; ') + '. ' : 'Nessuna condizione di shock scattata. ') + 'È solo un avviso e non cambia la quota in azioni: in 26 anni dopo queste condizioni il mercato ha perso almeno un altro 3% in circa un caso su quattro.';
+  mk('Segnale di shock', SHOCKLAB[SH.n], 'Oggi: S&P ' + nf(SH.r1 * 100, 1) + '% in un giorno · indice di rischio ' + (SH.d1 > 0 ? '+' : '') + nf(SH.d1, 0) + ' in un giorno', null, null, wrap(shWhy, pillOf(SH.lv, SH.n + ' condizioni su 3')), 'shock', SH.lv);
+  tiles.lastElementChild.style.gridColumn = '1 / -1';
   const lg = document.createElement('div'); lg.className = 'legend';
   lg.innerHTML = LEGEND4 + '<span>Indici 0–100: verde sotto 40, giallo 40–54, arancione 55–69, rosso da 70. Clicca una casella per la spiegazione.</span>';
   tiles.append(lg);
@@ -1944,6 +1962,7 @@ const HELP = {
   spx: ['S&P 500', 'L\'indice delle 500 maggiori società americane, il riferimento del mercato azionario mondiale. "Dal massimo" indica quanto è sceso dal suo record. La media a 200 giorni è il prezzo medio dell\'ultimo anno lavorativo: stare sopra è considerato tendenza positiva.'],
   split: ['Segnale di spaccatura', 'Si accende quando l\'S&P 500 è vicino al suo massimo ma molte società toccano il loro minimo dell\'ultimo anno: almeno il 4% dei titoli e più del doppio di quelli che toccano un nuovo massimo, per almeno 2 giorni in un mese.', 'Viene calcolato ogni giorno dai prezzi delle singole società, non copiato. Dal 1998 si è acceso 12 volte; in 8 casi è seguito un calo di almeno il 10% entro 6 mesi.'],
   coverage: ['Copertura dati', 'Percentuale delle società dell\'S&P 500 di quel giorno per cui ho i prezzi. Oggi è vicina al 100%. Negli anni 2000 è più bassa perché le società fallite o comprate non sono più su Yahoo: per quegli anni i numeri interni sono meno precisi.'],
+  shock: ['Segnale di shock', 'Si accende quando il mercato cambia in fretta. Tre condizioni: l\'indice di rischio sale di almeno 8 punti in un giorno; l\'S&P 500 perde almeno l\'1,5% in un giorno; l\'S&P è almeno il 3% sotto il massimo delle ultime 20 sedute e l\'indice è salito di almeno 5 punti in due giorni. Verde nessuna condizione, giallo una, arancione due, rosso tre. È un avviso e non cambia la quota in azioni. Nei test su 26 anni, dopo queste condizioni il mercato ha perso almeno un altro 3% nelle due settimane successive in circa un caso su quattro, e ridurre le azioni con queste regole non ha migliorato né il rendimento né la perdita massima.'],
   regola: ['Regola del backtest', 'Mostra cosa farebbe una regola semplice: se l\'indice supera la soglia (o l\'S&P scende sotto la media a 200 giorni) si riduce l\'investimento in azioni per almeno un mese. 100% = tutto investito. È un esempio per valutare l\'indice, non un consiglio di investimento.'],
   quota: ['Quota in azioni · allocazione adattiva', 'Quanta parte di un portafoglio interamente azionario tenere in azioni secondo l\'allocazione adattiva (modello del file adaptive_allocation_view, calcolato sui dati reali della dashboard); il resto in liquidità. Una barra per ogni fine mese degli ultimi 2 anni; l\'ultima è la situazione attuale.', 'È un modello distinto dall\'algoritmo 3.0, che invece guida il riquadro Consiglio e la Prova sul passato. Sotto il grafico: regime di mercato, punteggio composito, tendenza strutturale, momento, i pilastri ampiezza, rischio interno e credito, la volatilità; poi il motivo della quota di oggi. Passando sopra una barra vedi il motivo di quel mese.', 'Come funziona e risultati sul passato: vedi il ? accanto ad "allocazione adattiva".'],
   datasel: ['Situazione di un giorno passato', 'Cliccando su un punto del grafico principale (prezzo dell\'S&P 500 e indice di rischio) la dashboard mostra com\'era il mercato quel giorno: indice di rischio, riquadro Consiglio, caselle colorate, tabella dei fattori e "Situazione al …" passano tutti alla data scelta. In basso compare la banda arancione con la data, così sai sempre che non stai guardando oggi.', 'Esempio: clicchi sul 3 gennaio 2023 e vedi l\'indice di quel giorno e la quota in azioni che il modello indicava allora; serve a capire come si sarebbe comportata la dashboard in un momento del passato (per esempio prima di un ribasso).', 'Per tornare a oggi: bottone "Torna a oggi" nella banda, oppure "Torna all\'ultima seduta" nel riquadro dell\'indice, oppure ricarica la pagina (la data scelta non viene salvata). Il report PDF usa sempre l\'ultima seduta.'],
@@ -2037,6 +2056,7 @@ const EX = {
   spx: 'S&P a 7.000 punti, massimo storico 7.200, media a 200 giorni 6.800: è a −2,8% dal massimo e sopra la media, quindi in tendenza positiva. Se scendesse a 6.700 sarebbe sotto la media: tendenza negativa.',
   split: 'S&P a −2% dal massimo, ma il 5% delle società tocca il minimo dell\'ultimo anno e solo il 2% il massimo, per 2 giorni nell\'ultimo mese: il segnale si accende. L\'indice regge solo perché pochi grandi titoli salgono.',
   coverage: 'Copertura 98% = per circa 490 delle 500 società ho il prezzo di quel giorno. Sotto il 90% (anni 2000) le misure di ampiezza sono meno affidabili.',
+  shock: 'Il 30 ottobre 2026 l\'S&P perde l\'1,8% e l\'indice di rischio passa da 48 a 56 (+8): due condizioni su tre, quindi arancione. Con la sola perdita dell\'1,6% in un giorno e l\'indice invariato sarebbe giallo.',
   regola: 'Con soglia 70: l\'indice arriva a 72, la regola porta le azioni allo 0% (o alla quota scelta) per almeno 21 sedute, circa un mese. Se dopo un mese l\'indice è a 60 e l\'S&P è sopra la media a 200 giorni, si torna al 100%.',
   grafico: 'Clicca su un giorno di marzo 2020: in basso vedi i fattori del crollo Covid, con stress al massimo e fragilità che sale insieme. Con "Tutto" vedi anche il 2008.',
   tg_split: 'Le righe viola verticali segnano i giorni con il segnale di spaccatura acceso: S&P vicino al massimo ma molte società ai minimi annuali. Esempio: se compaiono più righe viola ravvicinate con l\'S&P ancora sui massimi, la salita è sostenuta da pochi titoli; nella tabella "Segnale di spaccatura: storico" vedi cosa è successo dopo ogni accensione passata.',
@@ -2157,6 +2177,10 @@ function sitBox(k) {
     const a = adviceAt(i); lv = a.k === 0 ? 's-risk' : a.k === 1 ? 's-warn' : a.k === 2 ? 's-yel' : 's-ok';
     title = 'Consiglio: ' + ADV[a.k][0] + ' · azioni ' + a.q + '% (allocazione adattiva)';
     text = 'Quota di fine mese precedente ' + a.q0 + '%, oggi ' + a.q + '%. Motivo: ' + AV.why[i] + '. Algoritmo 3.0: ' + Math.round(Q3[i]) + '%.';
+  } else if (k === 'shock') {
+    const S = shockAt(i); lv = S.lv;
+    title = 'Segnale di shock: ' + SHOCKLAB[S.n].toLowerCase() + ' (' + S.n + ' condizioni su 3)';
+    text = 'S&P ' + nf(S.r1 * 100, 1) + '% in un giorno, ' + nf(S.dd20 * 100, 1) + '% dal massimo a 20 sedute; indice di rischio ' + (S.d1 > 0 ? '+' : '') + nf(S.d1, 0) + ' in un giorno e ' + (S.d2 > 0 ? '+' : '') + nf(S.d2, 0) + ' in due. Solo un avviso: la quota in azioni non cambia.';
   } else if (['spx', 'split', 'coverage', 'regola'].includes(k)) {
     const TL = tileLevels(i); lv = TL[k];
     title = {spx: 'S&P 500', split: 'Segnale di spaccatura', coverage: 'Copertura dati', regola: 'Regola del backtest'}[k] + ': ' + LVTXT[lv];
