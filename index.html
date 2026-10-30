@@ -398,6 +398,12 @@ details summary{cursor:pointer;font-weight:600;font-size:.85rem}
 /* v1.12.1 colonne valutazione */
 .evcol{border-radius:12px;padding:12px 14px;border:1px solid var(--line)}
 .evcol h4{margin:0 0 6px;font:800 .98rem var(--font-display)}
+.evres{border:2px solid var(--navy-2);border-left-width:8px;background:color-mix(in srgb,var(--navy-2) 11%,var(--panel));border-radius:12px;padding:12px 16px;display:grid;gap:4px}
+.evres h4{margin:0;color:var(--navy);font:800 1rem var(--font-display);text-transform:none;letter-spacing:0}
+.evres ul{margin:0;padding-left:1.2em;display:grid;gap:5px;font-size:.95rem;line-height:1.45}
+.evdet{border:1px solid var(--line);border-radius:12px;padding:8px 12px;display:grid;gap:10px}
+.evdet[open] > summary{margin-bottom:8px}
+.evdet > summary{cursor:pointer;font-weight:700;color:var(--navy)}
 .evdash{background:var(--panel-2);border-left:6px solid var(--navy);box-shadow:inset 0 0 0 1px rgba(27,58,138,.08)}
 .evdash h4{color:var(--navy)}
 .evdash .evset{font-size:.78rem;color:var(--muted);margin:-2px 0 6px;padding:5px 8px;border-radius:7px;background:var(--panel)}
@@ -529,9 +535,6 @@ details summary{cursor:pointer;font-weight:600;font-size:.85rem}
 .adv-sub{font-size:.86rem;font-weight:600}
 .adv-why{font-size:.8rem;color:var(--muted)}
 .rule-head{align-items:center}
-.a3prof{display:flex;gap:4px;flex-wrap:wrap}
-.a3prof .btn{padding:3px 10px;font-size:.76rem}
-.a3prof .btn[aria-pressed="true"]{background:var(--navy);color:#fff;border-color:var(--navy)}
 .qp{grid-template-columns:10px 1fr}
 .qp em{grid-column:2}
 button.qp{font:inherit;color:inherit;text-align:left;cursor:pointer}
@@ -781,7 +784,6 @@ button.qp:hover{border-color:var(--navy-2)}
       <div class="ctl"><label for="cHold">Difesa minima (sedute)<button class="hb" type="button" data-help="hold" aria-label="Spiegazione">?</button></label><input type="number" id="cHold" min="1" max="120" value="21" style="width:80px"></div>
       <div class="ctl"><label for="cLvl">Esposizione in difesa<button class="hb" type="button" data-help="lvl" aria-label="Spiegazione">?</button></label><select id="cLvl"><option value="0">0% (tutto liquido)</option><option value="0.1">10%</option><option value="0.2">20%</option><option value="0.3">30%</option><option value="0.4">40%</option><option value="0.5">50%</option></select></div>
       <div class="ctl"><label for="cTrend">Filtro di tendenza<button class="hb" type="button" data-help="trend" aria-label="Spiegazione">?</button></label><select id="cTrend"><option value="1">Anche se S&amp;P &lt; media 200g</option><option value="0">Solo indice di rischio</option></select></div>
-      <div class="ctl"><label>Profilo algoritmo 3.0<button class="hb" type="button" data-help="a3" aria-label="Spiegazione">?</button></label><div class="a3prof"><button class="btn" type="button" data-prof="prudente">Prudente</button><button class="btn" type="button" data-prof="bilanciato">Bilanciato</button><button class="btn" type="button" data-prof="reattivo">Reattivo</button></div></div>
       <div class="ctl"><label for="cStart">Dal</label><input type="date" id="cStart" min="2000-01-03" value="2000-01-03"></div>
     </div></details>
     <div class="bt-show" id="btShow"><span class="muted">Mostra nel grafico:</span></div>
@@ -845,8 +847,9 @@ button.qp:hover{border-color:var(--navy-2)}
 const TRIGGER_ID = "trig_01RFskvnKEXEMuPW4wo8Haxw";      // compito "aggiorna dati"
 const EVAL_TRIGGER_ID = "trig_01JUVzUSZf92iP2qE7fLPynn"; // compito "valutazione attuale"
 // Versione della dashboard: aumenta a OGNI modifica di pagina o modello (non con gli aggiornamenti dei dati).
-const APP_VERSION = '3.5.2';
+const APP_VERSION = '3.6.0';
 const CHANGELOG = [
+  ['3.6.0', '30/10/2026', ['Un solo messaggio sulla quota in azioni: tolto l\'algoritmo 3.0 da descrizioni, Consiglio, report, Prova sul passato e valutazione (confondeva con l\'allocazione adattiva). La casella "Regola del backtest 100%" diventa "Freno d\'emergenza: Non attivo/Attivo", così non sembra in contrasto con la quota consigliata (es. 60%). Valutazione riorganizzata: prima "Il risultato in breve" e "Cosa significa in pratica", poi la sintesi; i dettagli (dashboard, fonti, cosa tenere d\'occhio) in una sezione da aprire.']],
   ['3.5.2', '30/10/2026', ['Ottimizzazione: tolto codice non più usato (nessun cambiamento ai numeri né all\'aspetto).']],
   ['3.5.1', '30/10/2026', ['Riquadro "Segnale di shock": ora occupa tutta la larghezza (le 3 colonne, da bordo a bordo) e ha lo sfondo colorato in base al livello (verde, giallo, arancione, rosso).']],
   ['3.5.0', '30/10/2026', ['Allocazione adattiva: dopo uno shock (anche una sola delle 3 condizioni del riquadro "Segnale di shock") la quota in azioni può scendere ma non salire per 21 sedute; gli aumenti riprendono dopo. Nel test 1999–2026 (S&P senza costi) la perdita massima passa da circa −22% a −14% e il rendimento da 4,5% a 3,3% l\'anno (circa 1,2 punti in meno); i cambi di quota scendono da 29 a 17 l\'anno. Il Consiglio e il grafico "Quota in azioni" usano la nuova regola; i risultati citati nelle spiegazioni (+5,3% / −16%) sono quelli della versione precedente.']],
@@ -918,9 +921,7 @@ const st = {
   w: {}, wc: {}, gF: 1, gS: 1, gI: 0, gSe: 0, gM: 0, th: 70, hold: 21, lvl: 0, trend: true, start: '2000-01-03', sel: null, years: 10,
   show: {split: true, def: true, fs: false, ma: true}, calNear: true, btShow: {}, prof: 'bilanciato'
 };
-try { const pv = localStorage.getItem('rm-a3-prof'); if (pv && ['prudente', 'bilanciato', 'reattivo'].includes(pv)) st.prof = pv; } catch (e) {}
-document.addEventListener('click', (ev) => { const b = ev.target.closest('[data-prof]'); if (!b) return; ev.stopPropagation(); st.prof = b.dataset.prof; try { localStorage.setItem('rm-a3-prof', st.prof); } catch (e) {} computeA3(); renderAll(); }, true);
-let IFI, FRAG, STRS, SIG, EXPO, ALLOC, Q2, Q3, Q3L, Q3W, VOLE, AV; const XG = {};
+let IFI, FRAG, STRS, SIG, EXPO, AV; const XG = {};
 const XGROUPS = [['INST', 'Grandi investitori istituzionali', ['cot_am', 'cot_lev'], 'gI'], ['SENT', 'Sentiment dei risparmiatori', ['aaii'], 'gSe'], ['MACRO', 'Valutazione e macro', ['cape', 'curve', 'nfci', 'baa63', 'tnx63'], 'gM']];
 
 // ------------------------------------------------------------------ dati
@@ -1003,8 +1004,6 @@ function recompute() {
   EXPO = new Float64Array(N);
   const td = COL.trend_down;
   for (let i = 0; i < N; i++) { const def = SIG[i] || (st.trend && td[i] === 1); EXPO[i] = def ? st.lvl : 1; }
-  // v3.0 algoritmo 3.0 = 2.0 (tendenza, blocco indice ≥75, volatilità obiettivo 18%) + rientri a tranche sui rimbalzi
-  computeA3();
   computeAAV();
 }
 
@@ -1047,61 +1046,7 @@ function shockAt(i) {
 }
 const SHOCKLAB = ['Nessuno', 'Lieve', 'In corso', 'Forte'];
 
-// ------------------------------------------------------------------ algoritmo 3.0
-// 2.0: 0% se S&P scende oltre il 2% sotto la media 200 giorni (rientra quando torna sopra la media), 0% per 21 sedute dopo indice ≥ 75,
-//      altrimenti quota = 18 / volatilità EWMA (λ 0,94), arrotondata per difetto al 10%, massimo 100%.
-// 3.0: quota = max(quota 2.0, tranche di rientro). Tranche 25 → 45 → 70 → 85% (un gradino al giorno) dopo un ribasso ≥ 9% dal massimo a 126 sedute,
-//      con recupero dal minimo a 20 sedute, rendimento 5 sedute > 0, chiusura sopra la media 10 e almeno una conferma (indice o volatilità in calo
-//      in 5 sedute, o rendimento 10 sedute > 0). Gradini: sopra media 20 = 45, sopra 10 e 20 = 70, sopra 10, 20 e 50 = 85; tetti con indice alto;
-//      stop se il recupero dal minimo scende sotto l'1% (nuovo minimo), poi pausa; fine quando il 2.0 torna almeno alla tranche.
-const A3P = {
-  prudente: {k: 'Prudente', rec: 0.06, cool: 10, c1: 85, c2: 75, c3: 70, d: 'rientra solo dopo un recupero del 6% dal minimo, con tetti più bassi quando l\'indice è alto e 10 sedute di pausa dopo un falso rimbalzo'},
-  bilanciato: {k: 'Bilanciato', rec: 0.045, cool: 5, c1: 88, c2: 78, c3: 75, d: 'rientra dopo un recupero del 4,5% dal minimo; 5 sedute di pausa dopo un falso rimbalzo'},
-  reattivo: {k: 'Reattivo', rec: 0.03, cool: 3, c1: 92, c2: 82, c3: 78, d: 'rientra già dopo un recupero del 3%; più ingressi e più falsi rimbalzi'}
-};
-const A3LV = [0, 25, 45, 70, 85], A3 = {dd: 0.09, stop: 0.01, exitdd: 0.05, vt: 18, th: 75, lock: 21, band: 0.02};
-function computeA3() {
-  const P = A3P[st.prof] || A3P.bilanciato, spx = COL.spx;
-  VOLE = new Float64Array(N).fill(NaN); Q2 = new Float64Array(N); Q3 = new Float64Array(N); Q3L = new Float64Array(N); Q3W = new Array(N);
-  let v2 = NaN, prev = NaN;
-  for (let i = 0; i < N; i++) { const p = spx[i]; if (!isNaN(p) && !isNaN(prev)) { const r = p / prev - 1; v2 = isNaN(v2) ? r * r : 0.94 * v2 + 0.06 * r * r; } if (!isNaN(p)) prev = p; VOLE[i] = isNaN(v2) ? NaN : Math.round(Math.sqrt(v2 * 252) * 1000) / 10; }
-  const ma = (n) => { const o = new Float64Array(N).fill(NaN); let s = 0, c = 0; for (let i = 0; i < N; i++) { s += spx[i]; c++; if (c > n) { s -= spx[i - n]; c--; } if (c === n) o[i] = s / n; } return o; };
-  const m10 = ma(10), m20 = ma(20), m50 = ma(50);
-  let tr = false, lockN = 0, L = 0, cool = 0;
-  for (let i = 0; i < N; i++) {
-    const p = spx[i], dv = p / COL.ma200[i] - 1;
-    if (!tr && dv < -A3.band) tr = true; else if (tr && dv > 0) tr = false;
-    if (IFI[i] >= A3.th) lockN = A3.lock;
-    const locked = lockN > 0; lockN = Math.max(0, lockN - 1);
-    const vt = isNaN(VOLE[i]) || VOLE[i] <= 0 ? 100 : Math.min(100, Math.floor(A3.vt / VOLE[i] * 10 + 1e-9) * 10);
-    const q2 = isNaN(IFI[i]) ? 100 : (tr || locked) ? 0 : vt; Q2[i] = q2;
-    let hi = -Infinity, lo = Infinity; for (let k = Math.max(0, i - 125); k <= i; k++) hi = Math.max(hi, spx[k]); for (let k = Math.max(0, i - 19); k <= i; k++) lo = Math.min(lo, spx[k]);
-    const dd = p / hi - 1, rec = p / lo - 1, r5 = i >= 5 ? p / spx[i - 5] - 1 : NaN, r10 = i >= 10 ? p / spx[i - 10] - 1 : NaN;
-    const conf = (i >= 5 && (IFI[i] < IFI[i - 5] || VOLE[i] < VOLE[i - 5])) || r10 > 0;
-    if (cool > 0) cool--;
-    let ev = '';
-    if (L === 0) {
-      if (cool === 0 && q2 < 100 && dd <= -A3.dd && rec >= P.rec && r5 > 0 && p > m10[i] && conf) { L = 1; ev = 'avvio'; }
-    } else if (rec < A3.stop) { L = 0; cool = P.cool; ev = 'stop'; }
-    else {
-      let tg = 1;
-      if (p > m20[i]) tg = 2;
-      if (p > m20[i] && p > m10[i]) tg = 3;
-      if (tg === 3 && p > m50[i]) tg = 4;
-      if (IFI[i] >= P.c1) tg = Math.min(tg, 1); else if (IFI[i] >= P.c2) tg = Math.min(tg, 2); else if (IFI[i] >= P.c3) tg = Math.min(tg, 3);
-      if (tg > L) { L++; ev = 'su'; } else if (tg < L) { L = Math.max(tg, L - 1); ev = 'giu'; }
-    }
-    if (L && q2 >= A3LV[L] && q2 > 0 && dd > -A3.exitdd) { L = 0; ev = 'fine'; }
-    Q3L[i] = A3LV[L]; Q3[i] = Math.round(Math.max(q2, A3LV[L]) / 10) * 10;
-    Q3W[i] = Q3[i] > q2 ? (ev === 'avvio' ? 'rientro: prima tranche dopo il rimbalzo' : 'rientro sul rimbalzo (tranche ' + A3LV[L] + '%)')
-      : ev === 'stop' ? 'falso rimbalzo: tranche chiusa'
-      : tr ? 'S&P sotto la media 200 giorni (uscito sotto −2%)' : locked ? 'indice di rischio ≥ ' + A3.th + ': difesa per ' + A3.lock + ' sedute'
-      : vt < 100 ? 'volatilità ' + nf(VOLE[i], 1) + '%: quota = 18 / volatilità' : 'tutto regolare: pieno investimento';
-  }
-  ALLOC = Float64Array.from(Q3, x => x / 100);
-}
-
-// ------------------------------------------------------------------ allocazione adattiva 3.0 (file adaptive_allocation_view, modello 3.0-research.1)
+// ------------------------------------------------------------------ allocazione adattiva (quota in azioni consigliata)
 // Pilastri 0–100 (100 = favorevole): tendenza, rischio interno, ampiezza, credito, valutazione e sentiment, tassi.
 // Componenti: tendenza strutturale (media esponenziale 20 della tendenza) 20%, momento veloce (rendimenti 5 e 20 sedute) 20%, ampiezza 20%, rischio interno 20%, credito 15%, macro 5%.
 // Regime: rialzo confermato 80–100%, fragile 50–70%, stress ribassista 20–40%, ripresa iniziale 40–70% (gradino 1: 40%, gradino 2: 65%); quota base = banda × composito;
@@ -1230,8 +1175,8 @@ function renderHero() {
   if (isNaN(v)) tk = 'Dati insufficienti per calcolare l\'indice in questa data.';
   else {
     const drv = (f >= sr) ? 'la fragilità interna (' + Math.round(f) + ')' : 'lo stress di mercato (' + Math.round(sr) + ')';
-    if (s.k === 'red' && v >= st.th) tk = 'Indice sopra la soglia di ' + st.th + ', spinto soprattutto da ' + drv + '. Con la regola del backtest l\'esposizione sarebbe ridotta.';
-    else if (s.k === 'red') tk = 'Indice sotto soglia, ma l\'S&P è sotto la media a 200 giorni: la regola con filtro di tendenza è in difesa.';
+    if (s.k === 'red' && v >= st.th) tk = 'Indice sopra la soglia di ' + st.th + ', spinto soprattutto da ' + drv + '. La quota in azioni consigliata è nel riquadro Consiglio.';
+    else if (s.k === 'red') tk = 'Indice sotto soglia, ma l\'S&P è sotto la media a 200 giorni: tendenza negativa, serve prudenza.';
     else if (s.k === 'amber') tk = 'Livello di attenzione: ' + (sp ? 'è attivo il segnale di spaccatura (molti nuovi minimi con l\'indice vicino al massimo). ' : '') + 'Il fattore più alto è ' + drv + '.';
     else tk = (s.k === 'yel' ? 'Rischio nella media degli ultimi 5 anni: fragilità ' : 'Rischio contenuto: fragilità ') + Math.round(f) + ', stress ' + Math.round(sr) + '. L\'S&P è ' + (dd > -0.005 ? 'sui massimi' : 'al ' + nf(dd * 100, 1) + '% dal massimo') + '.';
   }
@@ -1272,7 +1217,7 @@ function renderHero() {
   const cov = COL.coverage[i], lvC = TL.coverage;
   mk('Copertura dati', nf(cov, 0) + '%', 'Titoli dell\'indice con prezzi disponibili quel giorno', null, null, pillOf(lvC, cov >= 97 ? 'dati completi' : cov >= 95 ? 'quasi completi' : cov >= 90 ? 'qualche dato mancante' : 'dati insufficienti'), 'coverage', lvC);
   const ex = EXPO[i], lvE = TL.regola;
-  mk('Regola del backtest', Math.round(ex * 100) + '%', 'Quota in azioni indicata dalla regola con le impostazioni attuali (soglia ' + st.th + (st.trend ? ', filtro di tendenza' : '') + ')', null, null, pillOf(lvE, ex < 1 ? 'in difesa' : 'investito'), 'regola', lvE);
+  mk('Freno d\'emergenza', ex < 1 ? 'Attivo' : 'Non attivo', 'Scatta se l\'indice di rischio supera ' + st.th + (st.trend ? ' o se l\'S&P scende sotto la media a 200 giorni' : '') + '. La quota da tenere è nel riquadro Consiglio.', null, null, pillOf(lvE, ex < 1 ? 'emergenza' : 'nessuna emergenza'), 'regola', lvE);
   const SH = shockAt(i), shWhy = document.createElement('div'); shWhy.className = 'why';
   const shList = [SH.A ? 'indice di rischio +' + nf(SH.d1, 0) + ' in un giorno' : '', SH.C ? 'S&P ' + nf(SH.r1 * 100, 1) + '% in un giorno' : '', SH.D ? 'S&P ' + nf(SH.dd20 * 100, 1) + '% dal massimo a 20 sedute con indice in salita' : ''].filter(Boolean);
   shWhy.textContent = (SH.n ? 'Scattate: ' + shList.join('; ') + '. ' : 'Nessuna condizione di shock scattata oggi. ') + (AV.frz[i] ? 'Gli aumenti della quota in azioni sono sospesi per 21 sedute dopo uno shock: la quota può solo scendere. ' : '') + 'Nei test su 26 anni dopo queste condizioni il mercato ha perso almeno un altro 3% in circa un caso su quattro, ma sospendere gli aumenti ha ridotto la perdita massima.';
@@ -1284,11 +1229,10 @@ function renderHero() {
   renderAdvice(i);
 }
 
-// v3.0: quota in azioni dell'algoritmo 3.0 mese per mese (ultimi 24 mesi + data attuale)
+// quota in azioni consigliata mese per mese (ultimi 24 mesi + data attuale)
 const MESI3 = ['gen', 'feb', 'mar', 'apr', 'mag', 'giu', 'lug', 'ago', 'set', 'ott', 'nov', 'dic'];
 const quotaLv = x => x >= 0.85 ? 's-ok' : x >= 0.65 ? 's-yel' : x >= 0.45 ? 's-warn' : 's-risk';
 const LVCOL = {'s-ok': '--ok', 's-yel': '--yel', 's-warn': '--amber', 's-risk': '--risk'};
-function quotaWhy(i) { return Q3W[i] || ''; }
 function ruleMonths(i) {
   const ym = d => d.getUTCFullYear() * 12 + d.getUTCMonth();
   const cur = ym(T[i]), out = [];
@@ -1495,7 +1439,7 @@ function renderReport() {
   { const ie = Math.max(0, d3.bisectRight(T, new Date(R.end + 'T00:00:00Z')) - 1), ip = prevMonthEnd(ie);
     if (AV && ie > 0) { const qa = Math.round(AV.q[ie] * 100), qp = Math.round(AV.q[ip] * 100), dq = qa - qp, act = dq <= -10 ? (qa <= 20 ? 'Esci' : 'Riduci') : dq >= 10 ? (qp <= 20 ? 'Entra' : 'Aumenta') : 'Mantieni';
       const qv = document.createElement('div'); qv.className = 'rep-parere rep-quota'; qv.dataset.help = 'consiglio'; const b = document.createElement('b'); b.textContent = 'Quota in azioni a fine mese: ';
-      qv.append(b, document.createTextNode('allocazione adattiva ' + qa + '% (' + act + ', fine mese prima ' + qp + '%; ' + REGIT[AV.reg[ie]] + ') · algoritmo 3.0 ' + Math.round(Q3[ie]) + '%.')); head.append(qv); } }
+      qv.append(b, document.createTextNode('allocazione adattiva ' + qa + '% (' + act + ', fine mese prima ' + qp + '%; ' + REGIT[AV.reg[ie]] + ').')); head.append(qv); } }
   const cols = document.createElement('div'); cols.className = 'rep-cols';
   const mkList = (title, items, color) => { const d = document.createElement('div'); const t = document.createElement('h4'); t.textContent = title; t.style.margin = '0 0 4px'; t.style.color = css(color); d.append(t); const ul = document.createElement('ul'); (items.length ? items : ['nessuno']).forEach(x => { const li = document.createElement('li'); li.textContent = x; ul.append(li); }); d.append(ul); return d; };
   cols.append(mkList('Da tenere d\'occhio', R.recap, '--risk'), mkList('Cosa va bene', R.good, '--ok'));
@@ -1766,7 +1710,6 @@ function renderBacktest() {
     st.trend ? {id: 'ifi', k: 'Solo indice di rischio', d: 'senza media 200 giorni', r: btRun(ifiOnly, a, b), c: css('--amber')} : null,
     {id: 'ma', k: 'Solo media 200 giorni', d: 'senza indice', r: btRun(trendOnly, a, b), c: css('--navy-2')},
     {id: 'aav', k: 'Allocazione adattiva (grafico a barre)', d: 'regimi di mercato, 6 componenti, volatilità obiettivo 12%', r: btRun(AV.q, a, b), c: css('--amber')},
-    {id: 'a3', k: 'Algoritmo 3.0 · ' + (A3P[st.prof] || A3P.bilanciato).k, d: 'protezione + rientri a tranche sui rimbalzi', r: btRun(ALLOC, a, b), c: css('--ok')},
   ].filter(Boolean)};
   renderBtSummary();
   const tb = document.querySelector('#metTable tbody'); tb.replaceChildren();
@@ -1974,8 +1917,8 @@ const HELP = {
   split: ['Segnale di spaccatura', 'Si accende quando l\'S&P 500 è vicino al suo massimo ma molte società toccano il loro minimo dell\'ultimo anno: almeno il 4% dei titoli e più del doppio di quelli che toccano un nuovo massimo, per almeno 2 giorni in un mese.', 'Viene calcolato ogni giorno dai prezzi delle singole società, non copiato. Dal 1998 si è acceso 12 volte; in 8 casi è seguito un calo di almeno il 10% entro 6 mesi.'],
   coverage: ['Copertura dati', 'Percentuale delle società dell\'S&P 500 di quel giorno per cui ho i prezzi. Oggi è vicina al 100%. Negli anni 2000 è più bassa perché le società fallite o comprate non sono più su Yahoo: per quegli anni i numeri interni sono meno precisi.'],
   shock: ['Segnale di shock', 'Si accende quando il mercato cambia in fretta. Tre condizioni: l\'indice di rischio sale di almeno 8 punti in un giorno; l\'S&P 500 perde almeno l\'1,5% in un giorno; l\'S&P è almeno il 3% sotto il massimo delle ultime 20 sedute e l\'indice è salito di almeno 5 punti in due giorni. Verde nessuna condizione, giallo una, arancione due, rosso tre. Se scatta anche una sola condizione, per 21 sedute la quota in azioni dell\'allocazione adattiva può scendere ma non salire. Nei test 1999–2026 dopo queste condizioni il mercato ha perso almeno un altro 3% nelle due settimane successive in circa un caso su quattro; ridurre subito le azioni non ha migliorato i risultati, mentre sospendere solo gli aumenti ha portato la perdita massima da circa −22% a −14%, al costo di circa 1,2 punti di rendimento l\'anno (4,5% contro 3,3%).'],
-  regola: ['Regola del backtest', 'Mostra cosa farebbe una regola semplice: se l\'indice supera la soglia (o l\'S&P scende sotto la media a 200 giorni) si riduce l\'investimento in azioni per almeno un mese. 100% = tutto investito. È un esempio per valutare l\'indice, non un consiglio di investimento.'],
-  quota: ['Quota in azioni · allocazione adattiva', 'Quanta parte di un portafoglio interamente azionario tenere in azioni secondo l\'allocazione adattiva (modello del file adaptive_allocation_view, calcolato sui dati reali della dashboard); il resto in liquidità. Una barra per ogni fine mese degli ultimi 2 anni; l\'ultima è la situazione attuale.', 'È un modello distinto dall\'algoritmo 3.0, che invece guida il riquadro Consiglio e la Prova sul passato. Sotto il grafico: regime di mercato, punteggio composito, tendenza strutturale, momento, i pilastri ampiezza, rischio interno e credito, la volatilità; poi il motivo della quota di oggi. Passando sopra una barra vedi il motivo di quel mese.', 'Come funziona e risultati sul passato: vedi il ? accanto ad "allocazione adattiva".'],
+  regola: ['Freno d\'emergenza', 'Controllo semplice di sicurezza: scatta se l\'indice di rischio supera la soglia (di base 70) o se l\'S&P 500 scende sotto la media a 200 giorni. "Non attivo" = nessuna emergenza; "Attivo" = situazione di forte prudenza. Non indica quanta quota tenere in azioni: quella è nel riquadro Consiglio. Lo stesso controllo serve alla Prova sul passato.'],
+  quota: ['Quota in azioni · allocazione adattiva', 'Quanta parte di un portafoglio interamente azionario tenere in azioni secondo l\'allocazione adattiva (calcolata sui dati reali della dashboard); il resto in liquidità. Una barra per ogni fine mese degli ultimi 2 anni; l\'ultima è la situazione attuale.', 'È la stessa quota del riquadro Consiglio. Sotto il grafico: regime di mercato, punteggio composito, tendenza strutturale, momento, i pilastri ampiezza, rischio interno e credito, la volatilità; poi il motivo della quota di oggi. Passando sopra una barra vedi il motivo di quel mese.', 'Come funziona e risultati sul passato: vedi il ? accanto ad "allocazione adattiva".'],
   datasel: ['Situazione di un giorno passato', 'Cliccando su un punto del grafico principale (prezzo dell\'S&P 500 e indice di rischio) la dashboard mostra com\'era il mercato quel giorno: indice di rischio, riquadro Consiglio, caselle colorate, tabella dei fattori e "Situazione al …" passano tutti alla data scelta. In basso compare la banda arancione con la data, così sai sempre che non stai guardando oggi.', 'Esempio: clicchi sul 3 gennaio 2023 e vedi l\'indice di quel giorno e la quota in azioni che il modello indicava allora; serve a capire come si sarebbe comportata la dashboard in un momento del passato (per esempio prima di un ribasso).', 'Per tornare a oggi: bottone "Torna a oggi" nella banda, oppure "Torna all\'ultima seduta" nel riquadro dell\'indice, oppure ricarica la pagina (la data scelta non viene salvata). Il report PDF usa sempre l\'ultima seduta.'],
   myeq: ['Convertitore: My equity %', 'Il Consiglio indica la quota in azioni per un portafoglio tutto azionario. Nel menu "My equity %" scegli quanta parte del tuo portafoglio è in azioni (da 0 a 100%, a passi del 5%): la dashboard la ricorda su questo browser.', 'Sotto compare la quota reale di azioni da tenere: tua quota × quota del Consiglio. Esempio di oggi: con un portafoglio al 50% in azioni e Consiglio al 60%, le azioni reali sono 50% × 60% = 30% del portafoglio; il 20% liberato va nella parte non azionaria (liquidità o obbligazioni brevi). Con My equity 100% coincide con il Consiglio.', 'È una semplice proporzione: non considera tasse, costi e la tua situazione. Non è un consiglio personalizzato.'],
   consiglio: ['Consiglio', 'Indica la quota in azioni dell\'allocazione adattiva (la stessa del grafico Quota in azioni) e cosa fare rispetto alla quota precedente, cioè quella di fine mese scorso (la barra prima di "oggi"). Esci = scesa di almeno 10 punti fino al 20% o meno; Riduci = scesa di almeno 10 punti; Mantieni = cambiata meno di 10 punti; Aumenta = salita di almeno 10 punti; Entra = salita partendo dal 20% o meno. Tutte le quote sono a passi del 10%.', 'Indicazione generale su un portafoglio interamente azionario, non un consiglio personalizzato: non considera tasse, costi, orizzonte e la tua situazione.'],
@@ -1985,9 +1928,8 @@ const HELP = {
   aav_tr: ['Tendenza strutturale', 'Dice se il mercato è in una tendenza di fondo positiva. Parte dal pilastro tendenza (100 se l\'S&P è più del 2% sopra la media a 200 giorni, 0 se è più del 2% sotto, graduale in mezzo) e lo smussa con una media esponenziale a 20 sedute, così un singolo giorno non cambia il giudizio. Sopra 60 la tendenza è considerata attiva, sotto 40 spenta; in mezzo resta com\'era.'],
   aav_mom: ['Momento', 'Misura la spinta di breve: media del rendimento dell\'S&P a 5 sedute e a 20 sedute. 50 = mercato fermo; 100 = rialzo medio del 5% o più; 0 = calo medio del 5% o più. Sopra 60 conta come segnale positivo per la ripresa; a 45 o meno per 2 sedute fa fallire una ripresa in corso.'],
   aav_fav: ['Favore: ampiezza, rischio interno, credito', 'Tre pilastri della dashboard trasformati in punteggi di favore da 0 a 100 (100 = favorevole alle azioni, cioè il contrario di un indice di rischio). Ampiezza: 100 senza spaccatura, 50 se la spaccatura è vicina, 0 se è accesa. Rischio interno: dall\'indice di rischio, 100 con indice 40 o meno, 0 con indice 85 o più (indice 59 → favore 57). Credito: dai percentili di spread high yield, costo del debito aziendale e condizioni finanziarie (100 se tranquilli, 0 se tesi).', 'Se ampiezza resta sotto 25 e rischio interno sotto 60 per 2 settimane, scatta il tetto di fragilità al 60%; se rischio interno o credito scendono a 20 o meno, tetto di emergenza al 20%.'],
-  aav_vol: ['Volatilità a 20 sedute', 'Quanto oscilla l\'S&P: deviazione dei rendimenti giornalieri delle ultime 20 sedute, in percentuale annua. L\'allocazione adattiva punta a una volatilità del 12%: se il mercato oscilla di più, la quota si moltiplica per 12 / volatilità (al massimo 1). È diversa dalla volatilità usata dall\'algoritmo 3.0 (media esponenziale, obiettivo 18%), per questo i numeri possono differire di poco.'],
-  aav: ['Come funziona l\'allocazione adattiva (grafico Quota in azioni)', 'È il modello del file adaptive_allocation_view (versione 3.0-research.1) applicato ai dati della dashboard. Usa i 6 pilastri della dashboard, ognuno da 0 (sfavorevole) a 100 (favorevole): tendenza (S&P rispetto alla media a 200 giorni), rischio interno (indice di rischio con i pesi che hai scelto), ampiezza (segnale di spaccatura), credito, valutazione e sentiment, tassi.', '1) Composito: tendenza strutturale (media esponenziale a 20 sedute della tendenza) 20%, momento (rendimenti a 5 e 20 sedute: 50 = fermo, 100 = +5% o più) 20%, ampiezza 20%, rischio interno 20%, credito 15%, macro (valutazione e tassi) 5%.', '2) Regime: rialzo confermato se la tendenza strutturale è attiva (entra sopra 60, esce sotto 40) e ampiezza ≥ 50, rischio interno ≥ 60, credito ≥ 50 → quota fra 80 e 100%; rialzo fragile se la tendenza è attiva ma il resto è debole → 50–70%; stress ribassista se la tendenza è spenta o credito o rischio interno sono sotto 35 → 20–40%; ripresa iniziale se in stress almeno 2 segnali su 3 migliorano (ampiezza +5, momento ≥ 60, credito stabile e ≥ 40): dopo 2 sedute 40%, dopo 5 sedute 65%; se il momento scende a 45 o meno per 2 sedute la ripresa è fallita. Dentro la banda la quota sale con il composito. Esempio: rialzo fragile con composito 59 → 50% + 20% × 0,59 = 62%.', '3) Rischio: la quota si moltiplica per 12% / volatilità a 20 sedute (al massimo 1). Tetti: 20% in emergenza (rischio interno o credito a 20 o meno); 60% se per 2 settimane di fila ampiezza sotto 25 e rischio interno sotto 60, salvo conferma di prezzo e credito per 5 sedute.', '4) Esecuzione graduale: si parte dal 20%; le riduzioni sono al massimo di 20 punti al giorno, gli aumenti di 10 punti a fine settimana (25 punti al giorno in ripresa iniziale); variazioni sotto 2 punti si ignorano. La quota mostrata e usata è arrotondata al 10%.', 'Sul passato (S&P 500 senza dividendi, liquidità remunerata, senza costi, dati al 23/10/2026, pesi consigliati): 2000–2026 +5,3% l\'anno, perdita massima −16% (versione precedente, prima della sospensione degli aumenti dopo uno shock), in media 61% in azioni, circa 29 cambi di quota l\'anno (a passi del 10%); 2000–2009 +2,7% (sempre investito −2,6%); 2010–2026 +6,8% (sempre investito +12,0%, algoritmo 3.0 +10,4%). Protegge molto (perdita massima −16%) ma resta spesso fuori dal mercato nei rialzi: sul passato ha reso meno dell\'algoritmo 3.0.', 'Limiti: il file stesso dichiara il modello «ricerca non validata» e la specifica numerica originale incompleta; era stato provato solo su 180 sedute artificiali. Le righe del file sono un esempio su dati artificiali: qui il modello è calcolato sui dati reali della dashboard. Ho controllato le formule del composito e delle bande sulle 9 righe di esempio; dettagli non scritti (durata della settimana, trattamento dei dati mancanti, ordine dei controlli) sono una mia interpretazione. Molti piccoli ribilanciamenti: costi e tasse reali li ridurrebbero. Non è un consiglio personalizzato.'],
-  a3: ['Come funziona l\'algoritmo 3.0', 'Unisce una protezione di base e i rientri sui rimbalzi. Si calcola ogni giorno con i dati della dashboard e con i pesi dell\'indice che hai scelto.', 'Protezione di base: quota 0% se l\'S&P 500 scende oltre il 2% sotto la media a 200 giorni (si rientra quando torna sopra la media); 0% per 21 sedute dopo che l\'indice di rischio tocca 75; negli altri casi quota = 18 diviso la volatilità del mercato (media esponenziale, λ 0,94), arrotondata per difetto al 10% e al massimo 100%. Esempio: volatilità 24% → 18/24 = 75% → 70%.', 'Rientro sul rimbalzo (3.0): dopo un ribasso di almeno il 9% dal massimo degli ultimi 6 mesi, se il mercato recupera dal minimo degli ultimi 20 giorni (4,5% nel profilo bilanciato, 6% prudente, 3% reattivo), sale nelle ultime 5 sedute, chiude sopra la media a 10 giorni e c\'è almeno una conferma (indice o volatilità in calo, o rialzo a 10 sedute), entra una prima tranche del 25%. Poi sale di un gradino al giorno: 45% sopra la media a 20 giorni, 70% sopra le medie a 10 e 20, 85% anche sopra la media a 50. Con l\'indice molto alto la tranche ha un tetto (bilanciato: 25% da 88, 45% da 78, 70% da 75). Se il mercato torna sui minimi (recupero sotto l\'1%) la tranche si chiude e c\'è una pausa (5 sedute nel bilanciato). La quota finale è la più alta tra protezione di base e tranche, arrotondata al 10%.', 'Sul passato, S&P 500 senza dividendi, liquidità remunerata, senza costi, dati al 23/10/2026 con pesi consigliati: 2000–2026 profilo bilanciato +7,7% l\'anno, perdita massima −19%, in media 72% in azioni, circa 16 cambi di quota l\'anno; sempre investito +6,4%, −57%. 2010–2026 +10,4% (sempre investito +12,0%). 2000–2009, anni non usati per progettarlo: +3,2%, perdita massima −19%: nei mercati ribassisti lunghi i rimbalzi falliti costano. Profili (2000–2026, calcolo della pagina): vedi la tabella di Prova sul passato cambiando profilo.', 'Limiti: le regole del 3.0 sono state progettate nel 2026 guardando il 2010–2026; questa è una ricostruzione dalle regole descritte nella cartella Algoritmo 3.0 (la protezione di base coincide al 98% con la serie originale, la quota finale differisce in media di circa 1 punto). Più operazioni = più costi e tasse, non inclusi qui. Non prevede il minimo: entra su un recupero già avvenuto.'],
+  aav_vol: ['Volatilità a 20 sedute', 'Quanto oscilla l\'S&P: deviazione dei rendimenti giornalieri delle ultime 20 sedute, in percentuale annua. L\'allocazione adattiva punta a una volatilità del 12%: se il mercato oscilla di più, la quota si moltiplica per 12 / volatilità (al massimo 1).'],
+  aav: ['Come funziona l\'allocazione adattiva (grafico Quota in azioni)', 'È il modello che calcola la quota in azioni consigliata (riquadro Consiglio e grafico Quota in azioni), applicato ai dati della dashboard. Usa i 6 pilastri della dashboard, ognuno da 0 (sfavorevole) a 100 (favorevole): tendenza (S&P rispetto alla media a 200 giorni), rischio interno (indice di rischio con i pesi che hai scelto), ampiezza (segnale di spaccatura), credito, valutazione e sentiment, tassi.', '1) Composito: tendenza strutturale (media esponenziale a 20 sedute della tendenza) 20%, momento (rendimenti a 5 e 20 sedute: 50 = fermo, 100 = +5% o più) 20%, ampiezza 20%, rischio interno 20%, credito 15%, macro (valutazione e tassi) 5%.', '2) Regime: rialzo confermato se la tendenza strutturale è attiva (entra sopra 60, esce sotto 40) e ampiezza ≥ 50, rischio interno ≥ 60, credito ≥ 50 → quota fra 80 e 100%; rialzo fragile se la tendenza è attiva ma il resto è debole → 50–70%; stress ribassista se la tendenza è spenta o credito o rischio interno sono sotto 35 → 20–40%; ripresa iniziale se in stress almeno 2 segnali su 3 migliorano (ampiezza +5, momento ≥ 60, credito stabile e ≥ 40): dopo 2 sedute 40%, dopo 5 sedute 65%; se il momento scende a 45 o meno per 2 sedute la ripresa è fallita. Dentro la banda la quota sale con il composito. Esempio: rialzo fragile con composito 59 → 50% + 20% × 0,59 = 62%.', '3) Rischio: la quota si moltiplica per 12% / volatilità a 20 sedute (al massimo 1). Tetti: 20% in emergenza (rischio interno o credito a 20 o meno); 60% se per 2 settimane di fila ampiezza sotto 25 e rischio interno sotto 60, salvo conferma di prezzo e credito per 5 sedute.', '4) Esecuzione graduale: si parte dal 20%; le riduzioni sono al massimo di 20 punti al giorno, gli aumenti di 10 punti a fine settimana (25 punti al giorno in ripresa iniziale); variazioni sotto 2 punti si ignorano. La quota mostrata e usata è arrotondata al 10%.', 'Sul passato (S&P 500 senza dividendi, liquidità remunerata, senza costi, dati al 23/10/2026, pesi consigliati): 2000–2026 +5,3% l\'anno, perdita massima −16% (versione precedente, prima della sospensione degli aumenti dopo uno shock), in media 61% in azioni, circa 29 cambi di quota l\'anno (a passi del 10%); 2000–2009 +2,7% (sempre investito −2,6%); 2010–2026 +6,8% (sempre investito +12,0%). Protegge molto (perdita massima −16%) ma resta spesso fuori dal mercato nei rialzi: nei periodi di forte salita rende meno di chi resta sempre investito.', 'Limiti: è un modello di ricerca non validato da terzi; alcuni dettagli di calcolo (durata della settimana, trattamento dei dati mancanti, ordine dei controlli) sono una mia interpretazione. Molti piccoli ribilanciamenti: costi e tasse reali li ridurrebbero. Non è un consiglio personalizzato.'],
   grafico: ['Il grafico principale', 'Sopra: l\'S&P 500 in scala logaritmica (una salita del 10% ha sempre la stessa altezza, che l\'indice sia a 1.000 o a 7.000). Sotto: l\'indice di rischio da 0 a 100 con la soglia tratteggiata. Le fasce rosa sono i periodi in cui la regola sarebbe stata "in difesa". I triangoli sono i segnali di spaccatura. Clicca un giorno per vedere tutti i valori di quella data.'],
   pesiscelta: ['Come sono stati scelti i pesi', 'Ho provato a far \"scegliere\" i pesi al modello sui dati dal 1999: sui periodi nuovi prevedeva peggio dei pesi uguali (con così pochi crolli, una ventina, i pesi stimati si adattano al passato). Per questo la base resta 1 e salgono a 1,25 solo i tre fattori che hanno funzionato in tutti e tre i periodi di prova (1999–2008, 2009–2016, 2017–2026): titoli sopra la media 200 giorni, titoli vicino ai massimi e MOVE. Rispetto ai pesi uguali la capacità di previsione è simile nel complesso, un po\' migliore nei primi due periodi e quasi uguale nell\'ultimo: è una correzione prudente, non una garanzia. I gruppi sperimentali partono da 0. Se cambi i pesi restano memorizzati; \"Reset\" torna a questi valori.'],
   pesi: ['Pesi del modello', 'Ogni cursore decide quanto conta un ingrediente. 1 = peso normale, 0 = escluso, 3 = triplo. Il grafico, il semaforo e il backtest si ricalcolano subito. Di base tre fattori stabili in tutti i periodi di prova pesano 1,25 e gli altri 1: pesi stimati liberamente per far tornare il passato hanno previsto peggio sui dati nuovi.'],
@@ -2068,7 +2010,7 @@ const EX = {
   split: 'S&P a −2% dal massimo, ma il 5% delle società tocca il minimo dell\'ultimo anno e solo il 2% il massimo, per 2 giorni nell\'ultimo mese: il segnale si accende. L\'indice regge solo perché pochi grandi titoli salgono.',
   coverage: 'Copertura 98% = per circa 490 delle 500 società ho il prezzo di quel giorno. Sotto il 90% (anni 2000) le misure di ampiezza sono meno affidabili.',
   shock: 'Il 30 ottobre 2026 l\'S&P perde l\'1,8% e l\'indice di rischio passa da 48 a 56 (+8): due condizioni su tre, quindi arancione. Con la sola perdita dell\'1,6% in un giorno e l\'indice invariato sarebbe giallo, ma gli aumenti della quota resterebbero comunque sospesi per 21 sedute.',
-  regola: 'Con soglia 70: l\'indice arriva a 72, la regola porta le azioni allo 0% (o alla quota scelta) per almeno 21 sedute, circa un mese. Se dopo un mese l\'indice è a 60 e l\'S&P è sopra la media a 200 giorni, si torna al 100%.',
+  regola: 'Con soglia 70: l\'indice arriva a 72 e il freno d\'emergenza diventa "Attivo" per almeno 21 sedute, circa un mese. Se dopo un mese l\'indice è a 60 e l\'S&P è sopra la media a 200 giorni, torna "Non attivo".',
   grafico: 'Clicca su un giorno di marzo 2020: in basso vedi i fattori del crollo Covid, con stress al massimo e fragilità che sale insieme. Con "Tutto" vedi anche il 2008.',
   tg_split: 'Le righe viola verticali segnano i giorni con il segnale di spaccatura acceso: S&P vicino al massimo ma molte società ai minimi annuali. Esempio: se compaiono più righe viola ravvicinate con l\'S&P ancora sui massimi, la salita è sostenuta da pochi titoli; nella tabella "Segnale di spaccatura: storico" vedi cosa è successo dopo ogni accensione passata.',
   tg_def: 'Le fasce rosa coprono i periodi in cui la regola del backtest sarebbe stata fuori dalle azioni (indice sopra la soglia o S&P sotto la media a 200 giorni). Esempio: gran parte del 2008 e del 2022 è rosa: in quei periodi la regola avrebbe tenuto liquidità mentre l\'S&P scendeva. Le fasce corte nei rialzi sono i falsi allarmi, il costo della protezione.',
@@ -2143,7 +2085,7 @@ Object.assign(HELP, {
   tg_fs: ['Fragilità e stress separati', 'Accende due linee al posto dell\'indice unico: la fragilità interna (arancio) misura quanto il rialzo è sostenuto da poche società; lo stress (viola) misura la paura già visibile su volatilità, credito e tassi.', 'Di solito la fragilità sale prima, nei mesi in cui l\'indice è ancora vicino ai massimi; lo stress sale quando il calo è già in corso.'],
   tg_ma: ['Media 200 giorni', 'La linea tratteggiata sul prezzo è la media delle chiusure dell\'S&P 500 nelle ultime 200 sedute (circa 10 mesi). È il riferimento più usato per la tendenza di lungo periodo.', 'Prezzo sopra la media = tendenza positiva; sotto = negativa. Il filtro di tendenza della regola usa proprio questa linea.']
 });
-const SBMAP = {a3: 'consiglio', aav: 'consiglio', aav_reg: 'quota', aav_comp: 'quota', aav_tr: 'quota', aav_mom: 'quota', aav_fav: 'quota', aav_vol: 'quota', tg_split: 'split', tg_def: 'regola', tg_fs: 'ifi', tg_ma: 'spx', grafico: 'ifi', pesi: 'ifi', fattori: 'ifi', backtest: 'regola', soglia: 'regola', hold: 'regola', lvl: 'regola', trend: 'spx'};
+const SBMAP = {aav: 'consiglio', aav_reg: 'quota', aav_comp: 'quota', aav_tr: 'quota', aav_mom: 'quota', aav_fav: 'quota', aav_vol: 'quota', tg_split: 'split', tg_def: 'regola', tg_fs: 'ifi', tg_ma: 'spx', grafico: 'ifi', pesi: 'ifi', fattori: 'ifi', backtest: 'regola', soglia: 'regola', hold: 'regola', lvl: 'regola', trend: 'spx'};
 function helpContent(k) {
   const h = HELP[k], out = []; if (!h) return out;
   h.slice(1).forEach(t => { const p = document.createElement('p'); p.textContent = t; out.push(p); });
@@ -2183,21 +2125,21 @@ function sitBox(k) {
   } else if (k === 'quota') {
     const q = AV.q[i]; lv = quotaLv(q);
     title = 'Quota in azioni (allocazione adattiva): ' + Math.round(q * 100) + '%';
-    text = 'Perché: ' + AV.why[i] + '. Per confronto: algoritmo 3.0 ' + Math.round(Q3[i]) + '%.';
+    text = 'Perché: ' + AV.why[i] + '.';
   } else if (k === 'consiglio') {
     const a = adviceAt(i); lv = a.k === 0 ? 's-risk' : a.k === 1 ? 's-warn' : a.k === 2 ? 's-yel' : 's-ok';
     title = 'Consiglio: ' + ADV[a.k][0] + ' · azioni ' + a.q + '% (allocazione adattiva)';
-    text = 'Quota di fine mese precedente ' + a.q0 + '%, oggi ' + a.q + '%. Motivo: ' + AV.why[i] + '. Algoritmo 3.0: ' + Math.round(Q3[i]) + '%.';
+    text = 'Quota di fine mese precedente ' + a.q0 + '%, oggi ' + a.q + '%. Motivo: ' + AV.why[i] + '.';
   } else if (k === 'shock') {
     const S = shockAt(i); lv = S.lv;
     title = 'Segnale di shock: ' + SHOCKLAB[S.n].toLowerCase() + ' (' + S.n + ' condizioni su 3)';
     text = 'S&P ' + nf(S.r1 * 100, 1) + '% in un giorno, ' + nf(S.dd20 * 100, 1) + '% dal massimo a 20 sedute; indice di rischio ' + (S.d1 > 0 ? '+' : '') + nf(S.d1, 0) + ' in un giorno e ' + (S.d2 > 0 ? '+' : '') + nf(S.d2, 0) + ' in due. Per 21 sedute la quota in azioni può scendere ma non salire.';
   } else if (['spx', 'split', 'coverage', 'regola'].includes(k)) {
     const TL = tileLevels(i); lv = TL[k];
-    title = {spx: 'S&P 500', split: 'Segnale di spaccatura', coverage: 'Copertura dati', regola: 'Regola del backtest'}[k] + ': ' + LVTXT[lv];
+    title = {spx: 'S&P 500', split: 'Segnale di spaccatura', coverage: 'Copertura dati', regola: 'Freno d\'emergenza'}[k] + ': ' + LVTXT[lv];
     text = k === 'spx' ? 'S&P ' + fmtIt.format(COL.spx[i]) + ', ' + nf(COL.dd[i] * 100, 1) + '% dal massimo, ' + (COL.trend_down[i] === 1 ? 'sotto' : 'sopra') + ' la media a 200 giorni (' + fmtIt.format(COL.ma200[i]) + ').'
       : k === 'split' ? (COL.split[i] === 1 ? 'Acceso: indice vicino ai massimi con molti titoli ai minimi annuali.' : 'Spento') + ' · minimi ' + nf(COL.nl[i], 1) + '%, massimi ' + nf(COL.nh[i], 1) + '%.'
-      : k === 'coverage' ? nf(COL.coverage[i], 0) + '% dei titoli con dati disponibili.' : 'Quota in azioni indicata dalla regola: ' + Math.round(EXPO[i] * 100) + '%.';
+      : k === 'coverage' ? nf(COL.coverage[i], 0) + '% dei titoli con dati disponibili.' : (EXPO[i] < 1 ? 'Attivo: indice sopra la soglia o S&P sotto la media a 200 giorni.' : 'Non attivo: nessuna emergenza.');
   } else {
     const v = IFI[i]; lv = lev(v); const s0 = stateAt(i);
     const v4 = IFI[back(i, 21)];
@@ -2380,7 +2322,7 @@ function snapshot() {
     indice_rischio: r1(IFI[i]), fragilita: r1(FRAG[i]), stress: r1(STRS[i]), stato: s.t,
     variazioni_indice: {sett1: dlt(IFI, 5), sett4: dlt(IFI, 21), sett13: dlt(IFI, 63)}, variazioni_fragilita: {sett4: dlt(FRAG, 21)}, variazioni_stress: {sett4: dlt(STRS, 21)},
     gruppi_sperimentali: Object.fromEntries(XGROUPS.map(([g, name, , gk]) => [name, {peso: st[gk], valore: r1(XG[g][i])}])),
-    esposizione_regola_pct: Math.round(EXPO[i] * 100), allocazione_adattiva: {quota_azioni_pct: Math.round(AV.q[i] * 100), regime: REGIT[AV.reg[i]], composito: r1(AV.comp[i]), motivo: AV.why[i]}, algoritmo_3: {profilo: (A3P[st.prof] || A3P.bilanciato).k, quota_azioni_pct: Math.round(Q3[i]), quota_protezione_pct: Math.round(Q2[i]), tranche_rientro_pct: Q3L[i], volatilita_ewma_pct: r1(VOLE[i]), quota_5_sedute_fa_pct: Math.round(Q3[back(i, 5)]), motivo: quotaWhy(i)}, consiglio: {azione: ADV[adviceAt(i).k][0], basato_su: 'allocazione adattiva', quota_oggi_pct: adviceAt(i).q, quota_fine_mese_precedente_pct: adviceAt(i).q0}, segnale_spaccatura: COL.split[i] === 1, nuovi_minimi_pct: r1(COL.nl[i]), nuovi_massimi_pct: r1(COL.nh[i]), copertura_pct: r1(COL.coverage[i]),
+    freno_emergenza_attivo: EXPO[i] < 1, quota_azioni_consigliata_pct: Math.round(AV.q[i] * 100), allocazione_adattiva: {quota_azioni_pct: Math.round(AV.q[i] * 100), regime: REGIT[AV.reg[i]], composito: r1(AV.comp[i]), motivo: AV.why[i]}, consiglio: {azione: ADV[adviceAt(i).k][0], basato_su: 'allocazione adattiva', quota_oggi_pct: adviceAt(i).q, quota_fine_mese_precedente_pct: adviceAt(i).q0}, segnale_spaccatura: COL.split[i] === 1, nuovi_minimi_pct: r1(COL.nl[i]), nuovi_massimi_pct: r1(COL.nh[i]), copertura_pct: r1(COL.coverage[i]),
     fattori: fac, altri_indicatori: conf,
     peso_primi10_titoli_pct: DATA.holdings ? DATA.holdings.top10 : null,
     storico_indice_simile: {giorni: tot, quota_cali10_entro60: tot ? r1(hit / tot * 100) : null, quota_media_tutti_i_giorni: totAll ? r1(hitAll / totAll * 100) : null}};
@@ -2415,20 +2357,24 @@ function renderEval() {
   if (v.data_as_of && v.data_as_of !== DATA.as_of) warns.push('Nel frattempo i dati della dashboard sono stati aggiornati (ora al ' + fmtDl(T[N - 1]) + ').');
   if (Date.now() - Date.parse(v.at) > 3 * 864e5) warns.push('La valutazione ha più di 3 giorni: il quadro esterno potrebbe essere cambiato.');
   if (warns.length) evBody.append(el('p', 'warnbox', warns.join(' ')));
+  if (Array.isArray(v.in_breve) && v.in_breve.length) { const r = el('div', 'evres'); r.append(el('h4', null, 'Il risultato in breve')); const ul = el('ul'); v.in_breve.forEach(t => ul.append(el('li', null, t))); r.append(ul); evBody.append(r); }
+  if (v.orientamento) { const b = el('div', 'box'); b.append(el('h4', null, 'Cosa significa in pratica'), el('div', null, v.orientamento), el('div', 'ev-meta', 'Indicazione generale basata sul modello della dashboard: non è un consiglio di investimento personalizzato.')); evBody.append(b); }
   if (v.sintesi) evBody.append(el('p', null, v.sintesi));
+  const det = el('details', 'evdet'); det.append(el('summary', null, 'Come ci siamo arrivati: dashboard, fonti esterne, cosa tenere d\'occhio'));
   const cols = el('div', 'grid2');
   const c1 = el('div', 'evcol evdash'); c1.append(el('h4', null, 'Cosa dice la dashboard'), el('div', 'evset', 'Impostazioni usate: ' + (v.settings_label || 'non indicate') + '. Soglia di rischio: in difesa da ' + ((v.settings_label || '').match(/soglia (\d+)/) ? (v.settings_label.match(/soglia (\d+)/)[1]) : '70') + '; colori dell\'indice: verde sotto 40, giallo 40–54, arancione 55–69, rosso da 70.')); const ul1 = el('ul'); (v.dashboard || []).forEach(t => ul1.append(el('li', null, t))); c1.append(ul1);
   const c2 = el('div', 'evcol evext'); c2.append(el('h4', null, 'Cosa dicono le fonti esterne')); const ul2 = el('ul', 'ext');
   (v.esterno || []).forEach(x => { const li = el('li'); const sg = String(x.segno || '').toLowerCase(); const k = sg.startsWith('più') || sg.startsWith('piu') ? 'piu' : sg.startsWith('meno') ? 'meno' : 'neutro';
     const t = el('div'); t.append(el('span', 'seg-pill ' + k, k === 'piu' ? 'più rischio' : k === 'meno' ? 'meno rischio' : 'neutro'), el('b', null, x.tema || '')); li.append(t, el('div', null, x.lettura || ''));
     const src = el('div', 'src'); src.append(link(x.fonte, x.url, x.data)); li.append(src); ul2.append(li); });
-  c2.append(ul2); cols.append(c1, c2); evBody.append(cols);
-  if (v.concordanza) { const b = el('div', 'box'); b.append(el('h4', null, 'Dashboard e fonti a confronto'), el('div', null, v.concordanza)); evBody.append(b); }
+  c2.append(ul2); cols.append(c1, c2); det.append(cols);
+  if (v.concordanza) { const b = el('div', 'box'); b.append(el('h4', null, 'Dashboard e fonti a confronto'), el('div', null, v.concordanza)); det.append(b); }
   if (v.monitorare && v.monitorare.length) {
     const d = el('div'); d.append(el('h4', null, 'Cosa tenere d\'occhio'));
     const tw = el('div', 'tbl-wrap'); const tb = el('table'); const th = el('thead'); const trh = el('tr'); ['Cosa', 'Perché conta', 'Cosa cambierebbe la valutazione'].forEach(h => trh.append(el('th', null, h))); th.append(trh); tb.append(th);
-    const bd = el('tbody'); v.monitorare.forEach(m => { const tr = el('tr'); [m.cosa, m.perche, m.soglia].forEach(t => tr.append(el('td', null, t || ''))); bd.append(tr); }); tb.append(bd); tw.append(tb); d.append(tw); evBody.append(d);
+    const bd = el('tbody'); v.monitorare.forEach(m => { const tr = el('tr'); [m.cosa, m.perche, m.soglia].forEach(t => tr.append(el('td', null, t || ''))); bd.append(tr); }); tb.append(bd); tw.append(tb); d.append(tw); det.append(d);
   }
+  evBody.append(det);
   { // idee da approfondire (titoli, ETF, materie prime, obbligazioni)
     const box = el('div', 'ideas'); const h = el('h4'); h.append(document.createTextNode('◆ Idee da approfondire: titoli, ETF, materie prime, obbligazioni')); box.append(h);
     const w = el('div', 'warn'); w.append(el('b', null, 'Solo una valutazione da approfondire, non un consiglio d\'investimento. '), document.createTextNode('Sono spunti di analisi scelti da Claude con il metodo di un gestore, sulla base dei dati della dashboard e delle fonti consultate il ' + whenIt(v.at) + '. Non tengono conto della tua situazione, dei tuoi obiettivi e della tua tolleranza al rischio. Prima di qualsiasi decisione verifica prezzo, costi, fiscalità, rischio di cambio e adeguatezza, se serve con un consulente abilitato. Possono cambiare a ogni nuova valutazione.')); box.append(w);
@@ -2466,7 +2412,6 @@ function renderEval() {
     } else box.append(el('p', 'prem', 'Questa valutazione è stata preparata prima dell\'introduzione delle idee: compariranno con la prossima "Nuova valutazione".'));
     evBody.append(box);
   }
-  if (v.orientamento) { const b = el('div', 'box'); b.append(el('h4', null, 'Cosa significa in pratica'), el('div', null, v.orientamento), el('div', 'ev-meta', 'Indicazione generale basata sulla regola della dashboard: non è un consiglio di investimento personalizzato.')); evBody.append(b); }
   const foot = el('div', 'grid2');
   const l1 = el('div'); l1.append(el('h4', null, 'Limiti di questa valutazione')); const ul3 = el('ul'); (v.limiti || []).forEach(t => ul3.append(el('li', null, t))); l1.append(ul3);
   const l2 = el('div'); l2.append(el('h4', null, 'Fonti')); const ol = el('ol'); ol.style.margin = '0'; ol.style.paddingLeft = '1.2em'; ol.style.fontSize = '.8rem';
@@ -2771,7 +2716,7 @@ async function makePdf(ch) {
       ['S&P 500', fmtIt.format(COL.spx[i]), S2I[TLv.spx], nf(COL.dd[i] * 100, 1) + '% dal massimo · media 200g ' + fmtIt.format(COL.ma200[i])],
       ['Segnale di spaccatura', sp ? 'Acceso' : TLv.close ? 'Vicino' : 'Spento', S2I[TLv.split], nf(COL.nl[i], 1) + '% titoli ai minimi annuali · ' + nf(COL.nh[i], 1) + '% ai massimi'],
       ['Copertura dati', nf(cov, 0) + '%', S2I[TLv.coverage], 'titoli dell\'indice con prezzi disponibili'],
-      ['Regola del backtest', Math.round(EXPO[i] * 100) + '%', S2I[TLv.regola], 'quota in azioni con soglia ' + st.th + (st.trend ? ' e filtro di tendenza' : '')]];
+      ['Freno d\'emergenza', EXPO[i] < 1 ? 'Attivo' : 'Non attivo', S2I[TLv.regola], 'soglia ' + st.th + (st.trend ? ' e filtro di tendenza' : '')]];
     items.forEach(([lab, val, l, sub], k) => { const x = M + (k % 3) * (w + gap), yy = y1 + Math.floor(k / 3) * (h + gap); card(x, yy, w, h, l == null ? C.muted : LV[l]);
       const [lt, ls] = fit(lab.toUpperCase(), w - 7, 7, true, 5.8); font(ls, true, C.muted); doc.text(lt, x + 3.5, yy + 6.5);
       const [vt, vs] = fit(val, w - 7, 16, true, 10); font(vs, true, l == null ? C.ink : (l === 1 ? [150, 118, 0] : LV[l])); doc.text(vt, x + 3.5, yy + 14);
@@ -2815,13 +2760,14 @@ async function makePdf(ch) {
       h1('Valutazione attuale', C.strs, 'preparata il ' + whenIt(E.at));
       box((LEV[String(E.livello).toLowerCase()] || 'Livello') + ': ' + (E.titolo || ''), [E.sintesi], {color: LI == null ? C.strs : LV[LI], bg: LI == null ? C['panel-2'] : LVS[LI], size: 10.5});
       para('Impostazioni: ' + (E.settings_label || '—') + ' · dati di mercato al ' + (E.data_as_of || '—'), {size: 8.5, color: C.muted});
+      if ((E.in_breve || []).length) { h2('Il risultato in breve', C.navy); bullets(E.in_breve, {dot: C.navy}); }
+      if (E.orientamento) box('Cosa significa in pratica', [E.orientamento, 'Indicazione generale basata sul modello della dashboard: non è un consiglio personalizzato.'], {color: C.navy});
       if ((E.dashboard || []).length) { h2('Cosa dice la dashboard', C.navy); bullets(E.dashboard, {dot: C.navy}); }
       if ((E.esterno || []).length) { h2('Cosa dicono le fonti esterne', C.sky);
         table([{h: 'Tema', w: 30}, {h: 'Lettura', w: 90}, {h: 'Segno', w: 22}, {h: 'Fonte', w: 30}], E.esterno.map(x => { const sg = String(x.segno || '').toLowerCase(); const c = sg.startsWith('più') || sg.startsWith('piu') ? C.risk : sg.startsWith('meno') ? C.ok : C.muted;
           return [{t: x.tema, bold: true}, x.lettura, {t: x.segno, color: c, bold: true}, {t: x.fonte + (x.data ? ' (' + x.data + ')' : ''), link: x.url}]; }), {size: 8.8}); }
       if (E.concordanza) box('Dashboard e fonti a confronto', [E.concordanza]);
       if (COMP && (E.monitorare || []).length) { h2('Cosa tenere d\'occhio'); table([{h: 'Cosa', w: 40}, {h: 'Perché conta', w: 70}, {h: 'Cosa cambierebbe la valutazione', w: 62}], E.monitorare.map(m => [{t: m.cosa, bold: true}, m.perche, m.soglia]), {size: 8.8}); }
-      if (E.orientamento) box('Cosa significa in pratica', [E.orientamento, 'Indicazione generale basata sulla regola della dashboard: non è un consiglio personalizzato.'], {color: C.navy});
       const ideas = E.idee || [], isRisk = x => /rischios|alto rischio|speculat/i.test(x.direzione || ''), base = ideas.filter(x => !isRisk(x)), risky = ideas.filter(isRisk);
       if (ideas.length) {
         h2('Idee da approfondire', C.idea);

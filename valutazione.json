@@ -5,16 +5,15 @@
  "app_version": "3.5.0",
  "data_as_of": "2026-10-30",
  "settings_key": "2bbtr5",
- "settings_label": "impostazioni standard · fragilità 1, stress 1 · soglia 70 + filtro media 200g · algoritmo 3.0 profilo Bilanciato",
+ "settings_label": "impostazioni standard · fragilità 1, stress 1 · soglia 70 + filtro media 200g",
  "livello": "elevato",
- "titolo": "Rischio elevato: l'indice risale a 56 dopo la vendita del 30 ottobre sui titoli tecnologici; la tendenza resta positiva ma il mercato è più nervoso.",
- "sintesi": "L'indice di rischio della dashboard sale a 56 (era 48 nella valutazione di stamattina), soprattutto per lo stress: VIX a 19,4 e struttura a termine della volatilità quasi piatta (0,93). Il 30 ottobre l'S&P 500 ha perso l'1,8% a 7.580 punti e il Nasdaq il 2,9%, per i timori sulle spese per l'intelligenza artificiale dopo Amazon, Alphabet e Intel. L'indice resta però sopra la media a 200 giorni (7.310, +3,7%) e a solo il 3% dal massimo: la regola indica ancora il 100% in azioni. L'allocazione adattiva è al 60% perché, dopo lo shock recente, gli aumenti restano sospesi per 21 sedute; l'algoritmo 3.0 resta al 100%. Fuori dalla dashboard pesano tassi alti, petrolio sopra 100 dollari e un'inflazione ancora elevata; il credito invece non segnala tensioni.",
+ "titolo": "Rischio elevato (indice 56): il mercato è più nervoso dopo la vendita del 30 ottobre sui titoli tecnologici, ma la tendenza di fondo resta positiva.",
+ "sintesi": "L'indice di rischio della dashboard è salito a 56 (da 48 di stamattina), soprattutto per lo stress: la volatilità attesa (VIX) è a 19,4. L'S&P 500 resta però sopra la sua media a 200 giorni (+3,7%) e a solo il 3% dal massimo: la tendenza di fondo è ancora positiva. La quota in azioni consigliata è 60%: dopo una scossa come quella del 30 ottobre, per 21 sedute (circa un mese) la dashboard non consiglia di aumentare le azioni. Fuori dalla dashboard pesano tassi alti, petrolio sopra 100 dollari e inflazione ancora elevata; il credito invece non mostra tensioni.",
  "dashboard": [
-  "Indice di rischio 56 (stato 'Attenzione'): fragilità 52,8, stress 59,3. In una settimana −3,8 punti ma +24,5 in 13 settimane; nelle ultime 4 settimane la fragilità è scesa (−36,8) mentre lo stress è salito (+13,7).",
-  "Fattori più alti: small cap contro S&P 500 (percentile di rischio 79), credito high yield contro Treasury a 63 giorni (78), struttura a termine del VIX (74), VIX (64). Più bassi: peso uguale contro indice (33) e volatilità realizzata a 21 giorni (37). Segnale di spaccatura spento; nuovi minimi 1%, nuovi massimi 9%.",
-  "Regola: indice sotto la soglia 70 e S&P sopra la media a 200 giorni → esposizione suggerita 100%. Nei giorni storici con indice simile (986 casi) un calo del 10% entro 60 sedute è arrivato nel 17,3% dei casi, appena sopra la media del 16%.",
-  "Allocazione adattiva: regime 'rialzo confermato', composito 80, quota obiettivo 96% ma quota attuale 60% perché uno shock recente sospende gli aumenti per 21 sedute. Consiglio mostrato: 'Mantieni' (60% oggi come a fine settembre).",
-  "Algoritmo 3.0 (profilo Bilanciato): 100% in azioni, protezione di base piena e nessuna tranche di rientro necessaria; volatilità stimata 11,9%. La differenza con l'allocazione adattiva nasce dal blocco prudenziale dopo lo shock, non da un giudizio diverso sulla tendenza.",
+  "Indice di rischio 56 su 100 (livello «attenzione»): fragilità 52,8, stress 59,3. In una settimana è sceso di 3,8 punti, ma in 13 settimane è salito di 24,5.",
+  "Pesano di più: piccole società contro S&P 500 (79 su 100), credito high yield contro Treasury (78), struttura a termine del VIX (74) e VIX (64). Pesano meno: peso uguale contro indice (33) e volatilità realizzata (37). Segnale di spaccatura spento.",
+  "Quota in azioni consigliata: 60% (Mantieni, come a fine settembre). Il quadro di fondo permetterebbe di arrivare al 96%, ma dopo la scossa del 30 ottobre gli aumenti restano sospesi per 21 sedute.",
+  "Freno d'emergenza non attivo: indice sotto 70 e S&P 500 sopra la media a 200 giorni. Nei giorni passati con un indice simile (986 casi) un calo del 10% entro 60 sedute è arrivato nel 17,3% dei casi, poco sopra la media (16%).",
   "Report di settembre: quadro giallo; ampiezza e tassi in rosso (Treasury 10 anni 5,29% a fine mese), petrolio +32% in 3 mesi. Estero: Buy per Europa, Giappone ed emergenti, Sell per la Cina; gli Stati Uniti guidano ancora sul resto del mondo."
  ],
  "esterno": [
@@ -91,21 +90,21 @@
    "data": "2026-10-30"
   }
  ],
- "concordanza": "Le fonti esterne confermano il salto dello stress: il 30 ottobre il VIX è salito del 13% e il Nasdaq ha chiuso ottobre a −5,2%, il mese peggiore da marzo 2025. Divergono in parte credito e tassi: lo spread high yield era al 3,14% il 28 ottobre e il Treasury 10 anni è sceso al 4,93%, segnali più distesi di quanto dica il fattore credito della dashboard. Ne deduco che il livello 'elevato' (56) è corretto senza aggiustamenti: il rischio è concentrato nei grandi titoli tecnologici più che nel sistema.",
+ "concordanza": "Le fonti esterne confermano il salto dello stress: il 30 ottobre il VIX è salito del 13% e il Nasdaq ha chiuso ottobre a −5,2%, il mese peggiore da marzo 2025. Su credito e tassi le fonti sono più tranquille della dashboard (spread high yield al 3,14% il 28 ottobre, Treasury 10 anni sceso al 4,93%). Ne deduco che il livello «elevato» è giusto: il rischio è concentrato nei grandi titoli tecnologici più che nell'intero sistema.",
  "monitorare": [
   {
    "cosa": "Indice di rischio della dashboard",
    "perche": "È salito da 48 a 56 in un giorno, trainato dallo stress.",
-   "soglia": "Sotto 55 → di nuovo 'moderato'; sopra 70 la regola passa in difesa"
+   "soglia": "Sotto 55 → di nuovo 'moderato'; sopra 70 scatta il freno d'emergenza"
   },
   {
    "cosa": "S&P 500 rispetto alla media a 200 giorni",
-   "perche": "Il filtro di tendenza porta la regola in difesa e influenza l'algoritmo 3.0.",
+   "perche": "Sotto questa media la tendenza diventa negativa e la dashboard passa alla massima prudenza.",
    "soglia": "Chiusura sotto circa 7.310 punti (−3,6% dal livello attuale)"
   },
   {
-   "cosa": "Allocazione adattiva e consiglio",
-   "perche": "Gli aumenti sono sospesi per 21 sedute dopo lo shock; la quota obiettivo è 96%.",
+   "cosa": "Quota in azioni consigliata (riquadro Consiglio)",
+   "perche": "Gli aumenti sono sospesi per 21 sedute dopo la scossa; la quota di fondo sarebbe 96%.",
    "soglia": "Fine della sospensione senza nuovi shock (quota in salita) o riaccensione del segnale di spaccatura"
   },
   {
@@ -129,7 +128,7 @@
    "soglia": "Spread sopra il 4% (da 3,14%)"
   }
  ],
- "orientamento": "Con queste impostazioni la regola indica il 100% in azioni, l'algoritmo 3.0 il 100% e l'allocazione adattiva il 60% con consiglio 'Mantieni'. Ne deduco che la tendenza di fondo resta positiva, ma con rischio in salita è prudente non aumentare l'esposizione finché lo stress non si calma, preferire qualità e diversificazione rispetto ai grandi titoli dell'IA, e rivedere le scelte se l'S&P scende sotto la media a 200 giorni o l'indice supera 70. Non è un consiglio personalizzato.",
+ "orientamento": "La dashboard consiglia di mantenere la quota in azioni al 60% (Mantieni): la tendenza di fondo resta positiva, ma con il rischio in salita è prudente non aumentare le azioni finché lo stress non si calma, preferire qualità e diversificazione rispetto ai grandi titoli dell'intelligenza artificiale, e rivedere le scelte se l'S&P 500 scende sotto la media a 200 giorni o l'indice supera 70. Non è un consiglio personalizzato.",
  "idee_premessa": "Logica d'insieme: con rischio elevato ma tendenza ancora positiva preferisco qualità e diversificazione: pesi uguali invece dell'indice concentrato, Europa (segnale Buy), sanità con utili in crescita, assicurazioni e infrastrutture elettriche, un po' di energia come copertura contro l'inflazione. Evito di aumentare semiconduttori e grandi titoli dell'IA, colpiti dai timori sugli investimenti. Obbligazioni a breve scadenza invece che a lunga, con tassi e inflazione alti. Con l'euro/dollaro intorno a 1,12-1,13 gli attivi in dollari non perdono per il cambio, ma un recupero dell'euro li penalizzerebbe; le opportunità rischiose restano scommesse su una piccola parte del capitale.",
  "idee": [
   {
@@ -483,10 +482,11 @@
   }
  ],
  "limiti": [
-  "Valutazione sullo snapshot della seduta del 30 ottobre 2026 (chiusa), impostazioni standard, algoritmo 3.0 profilo Bilanciato. Rispetto alla valutazione di stamattina è stata aggiornata solo la parte di mercato del 30 ottobre; le altre fonti esterne (Fed, utili FactSet, credito, BCE) sono di 2–7 giorni fa.",
+  "Valutazione sullo snapshot della seduta del 30 ottobre 2026 (chiusa), impostazioni standard. Rispetto alla valutazione di stamattina è stata aggiornata solo la parte di mercato del 30 ottobre; le altre fonti esterne (Fed, utili FactSet, credito, BCE) sono di 2–7 giorni fa.",
   "Alcuni dati del 30 ottobre (Brent in chiusura, oro, spread high yield) non erano disponibili: lo spread high yield più recente su FRED è del 28 ottobre.",
   "Per 6 delle 9 opportunità ad alto rischio lo sconto è una stima automatica sui flussi di cassa o un confronto di multipli riportato dai broker; queste stime cambiano molto con le ipotesi. Prezzi indicati con la loro data e da ricontrollare dopo la seduta del 30 ottobre.",
-  "Le idee sono spunti di analisi da approfondire, non raccomandazioni personalizzate. Link solo dove la pagina è stata verificata: mancano per Ackermans & Van Haaren, Textron e Halliburton."
+  "Le idee sono spunti di analisi da approfondire, non raccomandazioni personalizzate. Link solo dove la pagina è stata verificata: mancano per Ackermans & Van Haaren, Textron e Halliburton.",
+  "I testi sono stati semplificati e riordinati il 30/10/2026 senza nuove ricerche: dati, fonti e idee non sono cambiati."
  ],
  "fonti": [
   {
@@ -659,5 +659,11 @@
    "url": "https://www.milanofinanza.it/news/borse-oggi-diretta-30-ottobre-2026-chiusura-apertura-europee-borsa-milano-ftse-mib-piazza-affari-202610300831365967",
    "data": "2026-10-30"
   }
+ ],
+ "in_breve": [
+  "Livello di rischio: elevato (indice 56 su 100, era 48 stamattina). Il rialzo continua, ma è più fragile e più nervoso.",
+  "Quota in azioni consigliata: 60% (Mantieni). Non è il momento di aumentare le azioni finché la tensione non cala; non c'è però un'emergenza che imponga di uscire.",
+  "Cosa è successo: il 30 ottobre l'S&P 500 ha perso l'1,8% (Nasdaq −2,9%) per i timori sulle spese in intelligenza artificiale dopo i conti dei grandi gruppi tecnologici.",
+  "Cosa cambierebbe il quadro: indice di rischio sopra 70, S&P 500 sotto circa 7.310 punti (media a 200 giorni) o nuovi crolli dei grandi titoli tecnologici."
  ]
 }
