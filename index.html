@@ -847,10 +847,12 @@ button.qp:hover{border-color:var(--navy-2)}
 (() => {
 const TRIGGER_ID = "trig_01RFskvnKEXEMuPW4wo8Haxw";      // compito "aggiorna dati"
 const EVAL_TRIGGER_ID = "trig_01JUVzUSZf92iP2qE7fLPynn"; // compito "valutazione attuale"
-// Versione della dashboard (v3.7.0): aumenta a OGNI modifica di pagina o modello (non con gli aggiornamenti dei dati).
-const APP_VERSION = '3.7.0';
+// Versione della dashboard (v3.7.1): aumenta a OGNI modifica di pagina o modello (non con gli aggiornamenti dei dati).
+const APP_VERSION = '3.7.2';
 const DEF_GI = 0.5; // peso predefinito del gruppo «Grandi investitori istituzionali»
 const CHANGELOG = [
+  ['3.7.2', '01/11/2026', ['Anche le finestre «Nascondi / Apri» e i riquadri a tendina (per esempio «Cambia la regola» e «Episodi di allerta») restano come li lasci, su ogni browser e computer: se le chiudi o le apri, le ritrovi così alla prossima apertura della pagina.']],
+  ['3.7.1', '01/11/2026', ['Memoria condivisa di tutte le selezioni: oltre ai pesi si salvano soglia dell\'indice, difesa minima, esposizione in difesa, filtro di tendenza, data di inizio della prova sul passato, periodo del grafico, linee mostrate, curve della prova sul passato, opzione dell\'affidabilità, «My equity %», sezioni chiuse e scelte del report PDF. Riaprendo la pagina da un altro browser o computer ritrovi le stesse impostazioni (serve essere collegato a claude.ai). Il salvataggio avviene da solo a ogni modifica e alla chiusura della pagina.']],
   ['3.7.0', '01/11/2026', ['Fattori e pesi: all\'apertura valgono i pesi consigliati, con in più il gruppo «Grandi investitori istituzionali» a 0,50 (sentiment e macro restano esclusi). Il confronto «standard» e il pulsante Reset usano questi valori. I risultati di test citati in precedenza (backtest, affidabilità) si riferiscono ai pesi consigliati senza grandi investitori.','I pesi che imposti vengono memorizzati in un archivio condiviso della dashboard: li ritrovi uguali su tutti i browser e dispositivi (oltre che nel browser corrente). I pesi salvati con le versioni precedenti vengono azzerati una volta.','Nuovo report del mese: ottobre 2026.']],
   ['3.6.2', '30/10/2026', ['Valutazione: la sezione «Come ci siamo arrivati» è aperta all\'ingresso e si può chiudere (e riaprire) con un clic.']],
   ['3.6.1', '30/10/2026', ['Valutazione senza ripetizioni: ogni informazione compare in un solo punto. «Il risultato in breve» (rischio e cosa fare) contiene anche l\'indicazione pratica; tolti «Cosa significa in pratica» e la sintesi, che ripetevano gli stessi concetti. Dettagli, fonti e cosa tenere d\'occhio restano nella sezione apribile.']],
@@ -934,7 +936,7 @@ fetch('ifi_data.json', {cache: 'no-store'}).then(r => { if (!r.ok) throw new Err
   document.getElementById('app').textContent = 'Non riesco a leggere i dati della dashboard (' + e.message + '). Riprova tra poco o chiedi a Claude di rigenerarli.';
 });
 
-function init(d) {
+async function init(d) {
   DATA = d; N = d.dates.length;
   T = d.dates.map(s => new Date(s + 'T00:00:00Z'));
   d.cols.forEach((c, j) => { const a = new Float64Array(N); for (let i = 0; i < N; i++) { const v = d.rows[i][j]; a[i] = v == null ? NaN : v; } COL[c] = a; });
@@ -942,13 +944,22 @@ function init(d) {
   d.confirm.forEach(f => { if (COL['p_' + f.id]) st.wc[f.id] = 1; });
   const app = document.getElementById('app'); app.className = ''; app.replaceChildren(document.getElementById('tpl').content.cloneNode(true));
   app.style.display = 'grid'; app.style.gap = '12px';
-  const restored = loadWeights();
+  let restored = false, late = false;
+  const got = await Promise.race([DBP, new Promise(r => setTimeout(() => r(null), 6000))]);
+  if (got) restored = applyDbDoc(got); else late = true;
+  if (!restored) restored = loadWeights();
   setMeta(); buildWeights();
   if (restored) { const ws = document.getElementById('wSaved'); if (ws) ws.textContent = 'Pesi ripristinati dalla tua ultima visita.'; if (st.preset) document.querySelectorAll('[data-preset]').forEach(x => x.setAttribute('aria-pressed', x.dataset.preset === st.preset)); }
   const ci = d.stats.auc_ci, cn = d.stats.auc_ci_near;
   if (ci) document.getElementById('aucCi').textContent = 'Margine d\'incertezza (pesi standard, anni ricampionati, 90%): AUC tra ' + nf(ci[0], 2) + ' e ' + nf(ci[1], 2) + (cn ? '; vicino ai massimi tra ' + nf(cn[0], 2) + ' e ' + nf(cn[1], 2) : '') + '. Anche nel caso peggiore resta sopra 0,5.'; bindControls(); buildConfirm(); buildSplit(); buildAucTable();
-  st.sel = N - 1; STD_IFI = computeStd();
-  recompute(); renderAll(); renderReport(); setupFolds(); setupArchive(); initDbW();
+  st.sel = N - 1; STD_IFI = computeStd(); syncUi();
+  recompute(); renderAll(); renderReport(); setupFolds(); setupArchive(); if (!late) applyDet();
+  if (got && DBREADY && !(got.d && got.d.json)) saveWeights();
+  if (late) DBP.then(r => { if (applyDbDoc(r)) { buildWeights(); syncUi(); recompute(); renderAll(); renderReport(); setupFolds(); applyDet(); if (st.preset) document.querySelectorAll('[data-preset]').forEach(x => x.setAttribute('aria-pressed', x.dataset.preset === st.preset)); } else { DETOK = true; if (r && r.ok) saveWeights(); } });
+  // salva ogni selezione (controlli, grafici, sezioni chiuse, report): un breve ritardo lascia chiudere i gestori propri
+  let uiT; ['change', 'click', 'input'].forEach(ev => document.addEventListener(ev, () => { clearTimeout(uiT); uiT = setTimeout(saveWeights, 400); }, true));
+  document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') { saveWeights(); flushW(); } });
+  window.addEventListener('pagehide', () => { saveWeights(); flushW(); });
   new ResizeObserver(debounce(() => { drawMain(); drawEq(); drawCal(); }, 120)).observe(document.getElementById('grafico'));
 }
 function debounce(fn, ms) { let t; return () => { clearTimeout(t); t = setTimeout(fn, ms); }; }
@@ -1148,30 +1159,66 @@ function computeStd() {
   return out;
 }
 const isStdW = () => DATA.factors.every(f => st.w[f.id] === DEFW[f.id]) && st.gF === 1 && st.gS === 1 && st.gI === DEF_GI && !st.gSe && !st.gM && XGROUPS[0][2].every(id => st.wc[id] == null || st.wc[id] === 1);
+let pendJ = null;
+function flushW() { clearTimeout(pushT); if (pendJ == null || !DBW || !DBREADY) return; const j = pendJ; pendJ = null; lastPush = j; try { DBW.set({json: j, v3: 1, t: Date.now()}).catch(() => {}); } catch (e) {} }
 function pushW(p) {
   if (!DBW || !DBREADY) return;
-  const j = JSON.stringify({w: p.w, wc: p.wc, gF: p.gF, gS: p.gS, gI: p.gI, gSe: p.gSe, gM: p.gM, preset: p.preset}); if (j === lastPush) return;
-  clearTimeout(pushT); pushT = setTimeout(() => { lastPush = j; try { DBW.set({json: j, v3: 1, t: Date.now()}).catch(() => {}); } catch (e) {} }, 800);
+  const j = JSON.stringify({w: p.w, wc: p.wc, gF: p.gF, gS: p.gS, gI: p.gI, gSe: p.gSe, gM: p.gM, preset: p.preset, ui: p.ui}); if (j === lastPush) { pendJ = null; return; }
+  pendJ = j; clearTimeout(pushT); pushT = setTimeout(flushW, 800);
 }
-async function initDbW() {
-  try {
-    const db = await claude.use('db'); if (!db) return;
-    DBW = db.doc('settings/weights'); const snap = await DBW.get(); const d = snap.exists ? snap.data() : null;
-    if (d && d.json) {
-      const o = JSON.parse(d.json); o.v3 = 1; lastPush = d.json;
-      if (applyW(o)) { buildWeights(); recompute(); renderAll(); if (st.preset) document.querySelectorAll('[data-preset]').forEach(x => x.setAttribute('aria-pressed', x.dataset.preset === st.preset)); const ws = document.getElementById('wSaved'); if (ws) ws.textContent = 'Pesi ripristinati dall\'archivio condiviso (uguali su tutti i browser).'; }
-      DBREADY = true;
-    } else { DBREADY = true; saveWeights(); }
-  } catch (e) { DBW = null; }
+// tutte le altre selezioni (oltre ai pesi), salvate insieme
+function uiState() {
+  return {th: st.th, hold: st.hold, lvl: st.lvl, trend: st.trend, start: st.start, years: st.years, show: st.show, calNear: st.calNear, btShow: st.btShow, prof: st.prof, myeq: MYEQ, folds: lsGet2(LSF) || {}, pdf: lsGet2(LSP) || {}, det: DETOK ? [...document.querySelectorAll('#app details')].map(d => d.open ? 1 : 0) : (st._det || [])};
 }
-function saveWeights() { const p = {w: st.w, wc: st.wc, gF: st.gF, gS: st.gS, gI: st.gI, gSe: st.gSe, gM: st.gM, preset: st.preset || null, v3: 1, t: Date.now()}; lsSet2(LSW, p); pushW(p); }
+function applyUi(u) {
+  if (!u || typeof u !== 'object') return;
+  if (typeof u.th === 'number' && u.th >= 50 && u.th <= 90) st.th = u.th;
+  if (typeof u.hold === 'number' && u.hold >= 1 && u.hold <= 250) st.hold = Math.round(u.hold);
+  if (typeof u.lvl === 'number' && u.lvl >= 0 && u.lvl <= 0.5) st.lvl = u.lvl;
+  if (typeof u.trend === 'boolean') st.trend = u.trend;
+  if (typeof u.start === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(u.start) && u.start >= '2000-01-03' && u.start < DATA.as_of) st.start = u.start;
+  if ([0, 1, 3, 5, 10].includes(u.years)) st.years = u.years;
+  if (u.show && typeof u.show === 'object') for (const k of Object.keys(st.show)) if (typeof u.show[k] === 'boolean') st.show[k] = u.show[k];
+  if (typeof u.calNear === 'boolean') st.calNear = u.calNear;
+  if (u.btShow && typeof u.btShow === 'object') { st.btShow = {}; for (const k of Object.keys(u.btShow)) if (typeof u.btShow[k] === 'boolean') st.btShow[k] = u.btShow[k]; }
+  if (typeof u.prof === 'string') st.prof = u.prof;
+  if (typeof u.myeq === 'number' && u.myeq >= 0 && u.myeq <= 100 && u.myeq % 5 === 0) { MYEQ = u.myeq; try { localStorage.setItem('rm-my-eq', String(MYEQ)); } catch (e) {} }
+  if (u.folds && typeof u.folds === 'object') lsSet2(LSF, u.folds);
+  if (u.pdf && typeof u.pdf === 'object') lsSet2(LSP, u.pdf);
+  if (Array.isArray(u.det)) st._det = u.det.slice(0, 40).map(x => x ? 1 : 0);
+}
+// porta i comandi della pagina allo stato salvato
+function syncUi() {
+  const $ = id => document.getElementById(id), set = (id, f) => { const e = $(id); if (e) f(e); };
+  set('cTh', e => e.value = st.th); set('cThV', e => e.textContent = st.th); set('cHold', e => e.value = st.hold);
+  set('cLvl', e => e.value = String(st.lvl)); set('cTrend', e => e.value = st.trend ? '1' : '0'); set('cStart', e => e.value = st.start);
+  set('calNear', e => e.checked = st.calNear);
+  [['tgSplit', 'split'], ['tgDef', 'def'], ['tgFS', 'fs'], ['tgMA', 'ma']].forEach(([id, k]) => set(id, e => e.checked = !!st.show[k]));
+  document.querySelectorAll('#rangeSeg button').forEach(b => b.setAttribute('aria-pressed', +b.dataset.y === st.years ? 'true' : 'false'));
+}
+let DBP = null, DETOK = false;
+function applyDet() { if (Array.isArray(st._det)) document.querySelectorAll('#app details').forEach((d, i) => { if (st._det[i] != null) d.open = !!st._det[i]; }); DETOK = true; }
+function preloadDb() {
+  DBP = (async () => {
+    try { const db = await claude.use('db'); if (!db) return {ok: false}; DBW = db.doc('settings/weights'); const snap = await DBW.get(); return {ok: true, d: snap.exists ? snap.data() : null}; }
+    catch (e) { DBW = null; return {ok: false}; }
+  })();
+}
+preloadDb();
+function applyDbDoc(r) {
+  if (!r || !r.ok) return false;
+  let applied = false;
+  if (r.d && r.d.json) { try { const o = JSON.parse(r.d.json); o.v3 = 1; lastPush = r.d.json; applied = applyW(o); } catch (e) {} }
+  DBREADY = true; return applied;
+}
+function saveWeights() { const p = {w: st.w, wc: st.wc, gF: st.gF, gS: st.gS, gI: st.gI, gSe: st.gSe, gM: st.gM, preset: st.preset || null, ui: uiState(), v3: 1, t: Date.now()}; lsSet2(LSW, p); pushW(p); }
 function loadWeights() { return applyW(lsGet2(LSW)); }
 function applyW(v) {
   if (!v || !v.w || !v.v3) return false;
   for (const k of Object.keys(st.w)) if (typeof v.w[k] === 'number') st.w[k] = v.w[k];
   for (const k of Object.keys(st.wc)) if (v.wc && typeof v.wc[k] === 'number') st.wc[k] = v.wc[k];
   for (const k of ['gF', 'gS', 'gI', 'gSe', 'gM']) if (typeof v[k] === 'number') st[k] = v[k];
-  st.preset = v.preset || null; return true;
+  st.preset = v.preset || null; applyUi(v.ui); return true;
 }
 function lsGet2(k) { try { return JSON.parse(localStorage.getItem(k) || 'null'); } catch (e) { return null; } }
 function lsSet2(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }

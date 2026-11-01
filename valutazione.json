@@ -1,19 +1,23 @@
 {
- "rid": "vmvvh5e5s",
+ "rid": "vmvy4vlo4",
  "state": "ok",
- "at": "2026-10-30T21:21:46Z",
- "app_version": "3.5.0",
+ "at": "2026-11-01T18:03:24Z",
+ "app_version": "3.7.2",
  "data_as_of": "2026-10-30",
- "settings_key": "2bbtr5",
- "settings_label": "impostazioni standard · fragilità 1, stress 1 · soglia 70 + filtro media 200g",
+ "settings_key": "10lt6nt",
+ "settings_label": "impostazioni standard · fragilità 1, stress 1, istituzionali 0.5 · soglia 70 + filtro media 200g",
  "livello": "elevato",
- "titolo": "Rischio elevato: il mercato è più nervoso, ma la tendenza di fondo resta positiva.",
+ "titolo": "Rischio elevato: il mercato è nervoso e il modello consiglia prudenza, ma la tendenza di fondo resta positiva.",
+ "in_breve": [
+  "Rischio: indice 62 su 100, più alto della valutazione precedente (56, calcolata con impostazioni diverse). Pesa soprattutto lo stress: il credito rischioso perde terreno e la volatilità è salita dopo il calo del 30 ottobre.",
+  "Cosa fare: il Consiglio indica «Riduci», con il 30% in azioni (era 40% a fine del mese precedente). In pratica: meno di un terzo in azioni, preferendo qualità e diversificazione, e il resto in strumenti prudenti come titoli di Stato a breve. È un'indicazione del modello, non un consiglio personalizzato."
+ ],
  "dashboard": [
-  "Componenti dell'indice: fragilità 52,8 e stress 59,3. In una settimana è sceso di 3,8 punti, in 13 settimane è salito di 24,5.",
-  "Pesano di più: piccole società contro S&P 500 (79 su 100), credito high yield contro Treasury (78), struttura a termine del VIX (74) e VIX (64). Pesano meno: peso uguale contro indice (33) e volatilità realizzata (37). Segnale di spaccatura spento.",
-  "Senza la scossa del 30 ottobre la quota consigliata sarebbe 96%: gli aumenti restano sospesi per 21 sedute (circa un mese).",
-  "Freno d'emergenza non attivo (indice sotto 70, S&P 500 sopra la media a 200 giorni). Nei 986 giorni passati con un indice simile, un calo del 10% entro 60 sedute è arrivato nel 17,3% dei casi, contro il 16% medio.",
-  "Report di settembre: quadro giallo; ampiezza e tassi in rosso, petrolio +32% in 3 mesi. Estero: Buy per Europa, Giappone ed emergenti, Sell per la Cina."
+  "Componenti: fragilità 52,7 (−36,8 in 4 settimane) e stress 61,5 (+15,8). L'indice è sceso di 1,1 punti in una settimana e di 9,6 in quattro, ma è salito di 23,6 in 13 settimane. I grandi investitori istituzionali (peso dimezzato) sono a 81,6 su 100: hanno già molte azioni, quindi meno spazio per nuovi acquisti.",
+  "Pesano di più: credito high yield contro Treasury (89 su 100), piccole società contro S&P 500 (79) e struttura a termine del VIX (74: la paura a breve è più alta di quella a 3 mesi). Pesano meno: peso uguale contro indice (33) e volatilità effettiva dell'ultimo mese (37).",
+  "Perché la quota è bassa: la dashboard vede un «rialzo fragile» e, dopo la scossa recente, sospende gli aumenti per 21 sedute (circa un mese); poi la quota potrà risalire solo per gradi.",
+  "Freno d'emergenza non attivo. Nei 1.062 giorni passati con un indice simile, un calo del 10% entro 60 sedute è arrivato nel 26,2% dei casi, contro il 16% medio.",
+  "Report di ottobre: quadro giallo. In rosso settori (i difensivi battono i ciclici) e materie prime (petrolio +30% in 3 mesi); credito in allerta. Estero: Europa e Giappone in tendenza positiva, Cina ed emergenti deboli; novembre è storicamente un mese favorevole."
  ],
  "esterno": [
   {
@@ -23,14 +27,6 @@
    "fonte": "Federal Reserve (comunicato FOMC); Yahoo Finance (CME FedWatch)",
    "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm",
    "data": "2026-10-28"
-  },
-  {
-   "tema": "Tassi dei Treasury",
-   "lettura": "Il 30 ottobre il Treasury 10 anni è sceso al 4,93% (5,05% il 28 ottobre, Fed H.15): in calo dai massimi ma ancora alto.",
-   "segno": "neutro",
-   "fonte": "Yahoo Finance; Federal Reserve H.15",
-   "url": "https://finance.yahoo.com/markets/live/stock-market-today-friday-october-30-dow-sp-500-nasdaq-amazon-intel-131609630.html",
-   "data": "2026-10-30"
   },
   {
    "tema": "Crescita e inflazione USA",
@@ -50,19 +46,19 @@
   },
   {
    "tema": "Grandi titoli tecnologici e IA",
-   "lettura": "Il 30 ottobre S&P 500 −1,82% a 7.580, Nasdaq −2,86%, Dow −1,09%, per i timori sulle spese per l'IA dopo i conti di Amazon e Alphabet e le prospettive deboli di Intel. In ottobre S&P −1,2%, Nasdaq −5,2% (peggior mese da marzo 2025), Dow +1,5%.",
+   "lettura": "Il 30 ottobre S&P 500 −1,82% a 7.580 e Nasdaq −2,86% per i timori sulle spese per l'intelligenza artificiale dopo i conti di Amazon, Alphabet e Intel; nella settimana S&P −0,57% e Nasdaq −2,0%.",
    "segno": "più rischio",
-   "fonte": "Yahoo Finance",
+   "fonte": "Yahoo Finance; FXEmpire",
    "url": "https://finance.yahoo.com/markets/live/stock-market-today-friday-october-30-dow-sp-500-nasdaq-amazon-intel-131609630.html",
    "data": "2026-10-30"
   },
   {
    "tema": "Credito",
-   "lettura": "Lo spread delle obbligazioni high yield (premio di rendimento dei titoli più rischiosi sui Treasury) è sceso al 3,14% il 28 ottobre, dal 3,40% del 22: il credito non segnala tensioni.",
-   "segno": "meno rischio",
+   "lettura": "Lo spread high yield (premio di rendimento delle obbligazioni più rischiose sui Treasury) è risalito al 3,26% il 29 ottobre dal 3,14% del giorno prima: piccolo peggioramento, ma livello ancora basso.",
+   "segno": "neutro",
    "fonte": "FRED – ICE BofA US High Yield OAS",
    "url": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2",
-   "data": "2026-10-28"
+   "data": "2026-10-29"
   },
   {
    "tema": "Volatilità",
@@ -73,23 +69,31 @@
    "data": "2026-10-30"
   },
   {
-   "tema": "Petrolio e geopolitica",
-   "lettura": "Il 30 ottobre il WTI è salito dello 0,8% a 102,82 dollari; il Brent era sopra 112 dollari in mattinata (Milano Finanza). Il petrolio caro tiene alta l'inflazione.",
+   "tema": "Petrolio e oro",
+   "lettura": "Il 30 ottobre il greggio a New York era intorno a 104 dollari al barile e l'oro a circa 3.905 dollari l'oncia: petrolio caro (più inflazione), oro debole.",
    "segno": "più rischio",
-   "fonte": "Yahoo Finance; Milano Finanza",
-   "url": "https://finance.yahoo.com/markets/live/stock-market-today-friday-october-30-dow-sp-500-nasdaq-amazon-intel-131609630.html",
+   "fonte": "SoldiOnline",
+   "url": "https://www.soldionline.it/notizie/azioni-italia/borsa-italiana-commento-giornata-30-ottobre-2026",
    "data": "2026-10-30"
   },
   {
-   "tema": "BCE ed Europa",
-   "lettura": "Il 29 ottobre la BCE ha lasciato il tasso sui depositi al 2,50% (rialzo a dicembre probabile, ANSA). Il 30 ottobre il FTSE MIB ha perso l'1% con le banche deboli; spread BTP-Bund a 118 punti base e BTP 10 anni al 4,51%.",
+   "tema": "BCE, BTP e Piazza Affari",
+   "lettura": "La BCE il 29 ottobre ha lasciato il tasso sui depositi al 2,50%; il 30 ottobre il FTSE MIB ha chiuso a 49.501 (−1%) e lo spread BTP-Bund (differenza di rendimento tra titoli italiani e tedeschi a 10 anni) a 118 punti.",
    "segno": "neutro",
-   "fonte": "ANSA",
-   "url": "https://www.ansa.it/sito/notizie/economia/2026/10/30/borsa-milano-in-calo-con-le-banche-deboli-scivola-amplifon_589fc273-d10a-49b0-80c6-d72b44132524.html",
+   "fonte": "ANSA; SoldiOnline",
+   "url": "https://www.ansa.it/sito/notizie/topnews/2026/10/30/lo-spread-tra-btp-e-bund-chiude-in-lieve-rialzo-a-118-punti-base_9c1ccf87-639a-4602-8527-9c9ec1842183.html",
    "data": "2026-10-30"
+  },
+  {
+   "tema": "Calendario prossime settimane",
+   "lettura": "Settimana densa: indice ISM manifatturiero il 2 novembre, elezioni USA di metà mandato il 3, dati sul lavoro il 6 (attesi +63 mila posti, disoccupazione 4,2%), trimestrali di Apple, Palantir, AMD e Novo Nordisk; poi Nvidia a fine mese e Fed il 9 dicembre.",
+   "segno": "neutro",
+   "fonte": "FXEmpire; TipRanks",
+   "url": "https://www.fxempire.com/forecasts/article/the-week-ahead-ai-earnings-u-s-midterms-and-jobs-data-test-u-s-stocks-1641771",
+   "data": "2026-11-01"
   }
  ],
- "concordanza": "Le fonti esterne confermano il salto dello stress, ma su credito e tassi sono più tranquille della dashboard. Ne deduco che il livello «elevato» è giusto: il rischio è concentrato nei grandi titoli tecnologici più che nell'intero sistema.",
+ "concordanza": "Le fonti esterne confermano più tensione a breve (tecnologici, volatilità, petrolio), mentre utili e credito restano solidi. Ne deduco che il livello «elevato» è corretto, senza correzioni.",
  "monitorare": [
   {
    "cosa": "Indice di rischio",
@@ -103,13 +107,13 @@
   },
   {
    "cosa": "Grandi titoli tecnologici e spese per l'IA",
-   "perche": "I primi 10 titoli pesano il 37% dell'indice; Nvidia deve ancora pubblicare i conti.",
+   "perche": "I primi 10 titoli pesano il 37% dell'indice; questa settimana AMD e Palantir, a fine mese Nvidia.",
    "soglia": "Nasdaq −10% dal massimo o nuovi crolli a doppia cifra"
   },
   {
-   "cosa": "Fed (9 dicembre), dati USA e credito",
-   "perche": "Un rialzo è in gran parte atteso; contano lavoro, inflazione e spread high yield (il «canarino nella miniera»).",
-   "soglia": "Treasury 10 anni stabilmente sopra 5,25% o spread high yield sopra 4% (ora 3,14%)"
+   "cosa": "Lavoro, Fed (9 dicembre) e credito",
+   "perche": "Un rialzo dei tassi è in gran parte atteso; contano i dati sul lavoro del 6 novembre e lo spread high yield (il «canarino nella miniera»).",
+   "soglia": "Treasury 10 anni stabilmente sopra 5,25% o spread high yield sopra 4%"
   },
   {
    "cosa": "Petrolio e Golfo Persico",
@@ -117,7 +121,7 @@
    "soglia": "Brent sopra 120 dollari (più rischio) o sotto 100 con un accordo USA–Iran (meno rischio)"
   }
  ],
- "idee_premessa": "Logica d'insieme: con rischio elevato ma tendenza ancora positiva preferisco qualità e diversificazione: pesi uguali invece dell'indice concentrato, Europa (segnale Buy), sanità con utili in crescita, assicurazioni e infrastrutture elettriche, un po' di energia come copertura contro l'inflazione. Evito di aumentare semiconduttori e grandi titoli dell'IA, colpiti dai timori sugli investimenti. Obbligazioni a breve scadenza invece che a lunga, con tassi e inflazione alti. Con l'euro/dollaro intorno a 1,12-1,13 gli attivi in dollari non perdono per il cambio, ma un recupero dell'euro li penalizzerebbe; le opportunità rischiose restano scommesse su una piccola parte del capitale.",
+ "idee_premessa": "Logica d'insieme: con rischio elevato ma tendenza ancora positiva preferisco qualità e diversificazione: pesi uguali invece dell'indice concentrato, Europa (segnale Buy), sanità con utili in crescita, infrastrutture elettriche, un po' di energia come copertura contro l'inflazione. Evito di aumentare semiconduttori e grandi titoli dell'IA, colpiti dai timori sugli investimenti. Obbligazioni a breve scadenza invece che a lunga, con tassi e inflazione alti. Con l'euro/dollaro intorno a 1,12-1,13 gli attivi in dollari non perdono per il cambio, ma un recupero dell'euro li penalizzerebbe; le opportunità rischiose restano scommesse su una piccola parte del capitale.",
  "idee": [
   {
    "categoria": "azione",
@@ -139,19 +143,15 @@
   {
    "categoria": "azione",
    "mercato": "Italia",
-   "nome": "Unipol Assicurazioni",
-   "ticker": "UNI.MI",
+   "nome": "Eni",
    "direzione": "interessante",
-   "tesi": "Primo gruppo assicurativo danni in Italia. Utile netto del primo semestre 2026 salito a 883 milioni di euro da 600; capitalizzazione circa 18 miliardi. Le assicurazioni investono le riserve in obbligazioni e beneficiano di rendimenti più alti.",
-   "perche_ora": "Con BCE e Fed pronte a rialzare i tassi, i settori finanziari che guadagnano dai rendimenti sono coerenti con il quadro. Simply Wall St stimava (12/10) un prezzo di 25,40 € contro un valore sui flussi di cassa di 31,12 € (sconto 18%, stima meccanica).",
-   "rischi": "Crescita degli utili prevista più lenta del mercato italiano; un aumento di capitale da circa 2,5 miliardi ha diluito i soci; rischio di sinistri catastrofali e di spread BTP in salita (115 punti il 29/10).",
+   "tesi": "Gruppo energetico integrato: nel terzo trimestre utile netto rettificato 2,8 miliardi di euro (stima 2,48), più che raddoppiato; buyback 2026 alzato a 3,8 miliardi, dividendo straordinario di 0,46 € (pagamento 9 dicembre) oltre all'ordinario di 1,10 €; debito basso (gearing 9%).",
+   "perche_ora": "Con il petrolio sopra 100 dollari fa da copertura contro l'inflazione; il 30 ottobre è stato l'unico grande titolo di Milano in rialzo (+0,91%).",
+   "rischi": "Un calo rapido del petrolio (accordo USA–Iran, rallentamento) ridurrebbe utili e riacquisti; rischi politici nei paesi di produzione.",
    "orizzonte": "6–12 mesi",
-   "prezzo_rif": "25,40 € (12/10/2026, da ricontrollare)",
-   "link": "https://it.investing.com/equities/unipol",
-   "link_sito": "Investing.com",
-   "fonte": "Simply Wall St",
-   "url": "https://simplywall.st/stocks/it/insurance/bit-uni/unipol-assicurazioni-shares/news/october-2026s-european-stocks-that-may-be-trading-below-thei",
-   "data": "2026-10-12"
+   "fonte": "Investing.com Italia; SoldiOnline",
+   "url": "https://it.investing.com/news/earnings/eni-supera-le-stime-sullutile-q3-buyback-12-e-dividendo-straordinario-3602738",
+   "data": "2026-10-30"
   },
   {
    "categoria": "azione",
@@ -383,37 +383,38 @@
   {
    "categoria": "azione",
    "mercato": "Europa",
-   "nome": "Novo Nordisk (Danimarca)",
-   "ticker": "NOVO B (Copenaghen)",
+   "nome": "Erste Group Bank (Austria)",
+   "ticker": "EBS (Vienna)",
    "direzione": "opportunità rischiosa",
-   "tesi": "Pioniere dei farmaci per diabete e obesità, oggi valutato come un titolo senza crescita dopo anni di delusioni su vendite e previsioni.",
-   "sottovalutazione": "P/E di 9,7 contro circa 15,3 della media del settore farmaceutico e circa 57,8 dei concorrenti diretti; titolo −59,8% in tre anni (Simply Wall St, 10/10).",
-   "catalizzatori": "Nuovi trattamenti e ampliamento dei farmaci GLP-1 previsti fino al 2030; la prossima trimestrale; la domanda del settore resta forte, come mostrano i conti di Eli Lilly (+6,6% il 29/10).",
-   "perche_ora": "Il 29 ottobre la sanità è stata il settore migliore negli USA: un ritorno di interesse sul comparto può aiutare anche i titoli più penalizzati (ne deduco).",
-   "rischi": "Concorrenza durissima di Lilly, tagli dei prezzi negli USA, previsioni già ridotte più volte e giudizi degli analisti in calo (Morgan Stanley, BMO): il P/E basso può riflettere utili in discesa.",
+   "tesi": "Grande banca dell'Europa centro-orientale, con crescita dei prestiti superiore a quella delle banche dell'Eurozona.",
+   "sottovalutazione": "Stima sui flussi di cassa di Simply Wall St (19/10): prezzo 110,10 € contro un valore di 219,92 € (sconto 49,9%); capitalizzazione 42,7 miliardi. Stima DCF automatica, molto sensibile alle ipotesi.",
+   "catalizzatori": "Terzo trimestre: utile netto 1,12 miliardi (+24,5%); previsioni 2026 alzate: utile oltre 4 miliardi, redditività sul capitale tangibile oltre il 20%, utile per azione +20%.",
+   "perche_ora": "Conti record e previsioni più alte mentre il titolo resta a sconto secondo la stima (ne deduco).",
+   "rischi": "Esposizione a paesi più volatili (Romania, Ungheria, Polonia), tasse sulle banche, un calo dei tassi ridurrebbe il margine; lo sconto DCF è una stima di 13 giorni fa.",
    "orizzonte": "oltre 12 mesi",
-   "link": "https://it.investing.com/equities/novo-nordisk",
+   "prezzo_rif": "110,10 € (19/10/2026)",
+   "link": "https://it.investing.com/equities/erste-bank",
    "link_sito": "Investing.com",
-   "fonte": "Simply Wall St (via Webull)",
-   "url": "https://www.webull.com/news/15721124440196096",
-   "data": "2026-10-10"
+   "fonte": "Investing.com Italia; Simply Wall St (via Webull)",
+   "url": "https://it.investing.com/news/earnings/erste-group-alza-le-previsioni-annuali-dopo-un-utile-q3-in-crescita-del-25-3617031",
+   "data": "2026-10-19"
   },
   {
    "categoria": "azione",
    "mercato": "Europa",
-   "nome": "Ackermans & Van Haaren (Belgio)",
-   "ticker": "ACKB (Bruxelles)",
+   "nome": "Boliden (Svezia)",
+   "ticker": "BOL (Stoccolma)",
    "direzione": "opportunità rischiosa",
-   "tesi": "Holding diversificata belga: costruzioni e ingegneria marittima (DEME), banca privata, immobiliare e partecipazioni; le holding quotano spesso a sconto sul valore delle attività.",
-   "sottovalutazione": "Stima sui flussi di cassa di Simply Wall St (9/10): prezzo 258,6 € contro un valore di 437,9 € (sconto 40,9%); capitalizzazione 8,45 miliardi; gli analisti vedono un potenziale del 22,1%.",
-   "catalizzatori": "Utile cresciuto del 23,7% nell'ultimo anno e atteso in aumento nel 2026; domanda per l'ingegneria marittima (eolico offshore, porti, difesa delle coste).",
-   "perche_ora": "Settore lontano dall'IA e dalla tecnologia USA, coerente con un mercato che si sta allargando (ne deduco).",
-   "rischi": "Rendimento sul capitale previsto basso (8,5%) e crescita futura modesta; lo sconto delle holding può durare a lungo; progetti marittimi esposti a ritardi e costi. Stima sui flussi di cassa meccanica.",
+   "tesi": "Gruppo minerario e metallurgico (rame, zinco, metalli preziosi): beneficia di un'economia in accelerazione, come indica il rapporto rame/oro in salita nel report del mese.",
+   "sottovalutazione": "Stima sui flussi di cassa di Simply Wall St (19/10): prezzo 533,6 corone contro un valore di 948,96 (sconto 43,8%); capitalizzazione 151,5 miliardi di corone; utili +57,7% nell'ultimo anno. Stima DCF automatica.",
+   "catalizzatori": "Quota acquisita in Nexa Resources e avanzamento del progetto minerario Laver.",
+   "perche_ora": "Diversifica dalla tecnologia verso i metalli industriali in una fase di ciclo economico forte (ne deduco).",
+   "rischi": "Prezzi dei metalli molto volatili; un rallentamento della Cina li farebbe scendere; costi energetici e rischio di esecuzione dei progetti; valutazione di 13 giorni fa.",
    "orizzonte": "oltre 12 mesi",
-   "prezzo_rif": "258,6 € (9/10/2026, da ricontrollare)",
-   "fonte": "Simply Wall St",
-   "url": "https://simplywall.st/stocks/be/capital-goods/ebr-ackb/ackermans-van-haaren-shares/news/european-stocks-estimated-to-be-trading-below-fair-value-in-7",
-   "data": "2026-10-09"
+   "prezzo_rif": "533,6 SEK (19/10/2026)",
+   "fonte": "Simply Wall St (via Webull)",
+   "url": "https://www.webull.com/news/15773162627869697",
+   "data": "2026-10-19"
   },
   {
    "categoria": "azione",
@@ -439,17 +440,17 @@
    "ticker": "ZION",
    "direzione": "opportunità rischiosa",
    "tesi": "Banca regionale dell'Ovest USA con utili in crescita e crediti in buona salute, ma valutata con lo sconto tipico delle banche regionali dopo le crisi degli ultimi anni.",
-   "sottovalutazione": "Prezzo 62,23 $ (14/10) contro una stima sui flussi di cassa di 123,10 $ (sconto 49,4%, Simply Wall St). Con valore di libro tangibile di 43,50 $ e utile per azione trimestrale di 1,78 $ ne ricavo circa 1,4 volte il valore tangibile e un P/E annualizzato intorno a 9 (mio calcolo).",
+   "sottovalutazione": "Chiusura 30/10 a 65,37 $: P/E (prezzo su utili degli ultimi 12 mesi) 8,0 e prezzo su valore di libro 1,24; capitalizzazione 9,5 miliardi; prezzo obiettivo medio di 22 analisti 72,64 $. La stima sui flussi di cassa di Simply Wall St indicava un valore molto più alto, ma è una stima automatica.",
    "catalizzatori": "Terzo trimestre: utile per azione +20%, sofferenze nette quasi nulle (0,02% dei prestiti), capitale CET1 all'11,8%, valore di libro +14% in un anno; tassi più alti a lungo sostengono il margine d'interesse.",
-   "perche_ora": "Con Fed pronta a rialzare e credito calmo (spread high yield 3,14%), le banche con bilanci solidi sono coerenti con il quadro (ne deduco).",
+   "perche_ora": "Con la Fed pronta a rialzare e il credito ancora calmo, le banche con bilanci solidi sono coerenti con il quadro (ne deduco).",
    "rischi": "Banca regionale esposta a immobiliare commerciale e a singoli prestiti problematici (in passato il titolo è crollato per accantonamenti su frodi); margine d'interesse in leggero calo (3,23%); un rallentamento economico peggiorerebbe il credito.",
    "orizzonte": "6–12 mesi",
-   "prezzo_rif": "62,23 $ (14/10/2026, da ricontrollare)",
+   "prezzo_rif": "65,37 $ (30/10/2026)",
    "link": "https://it.investing.com/equities/zions-bancorp",
    "link_sito": "Investing.com",
-   "fonte": "Zions (comunicato, SEC 8-K); Simply Wall St",
-   "url": "https://www.sec.gov/Archives/edgar/data/0000109380/000010938026000125/exh991earningsrelease20260.htm",
-   "data": "2026-10-19"
+   "fonte": "Tickzen; Zions (comunicato)",
+   "url": "https://tickzen.app/stocks/zion/overview",
+   "data": "2026-10-30"
   },
   {
    "categoria": "azione",
@@ -466,15 +467,14 @@
    "prezzo_rif": "34,92 $ (26/10/2026)",
    "fonte": "Halliburton (comunicato, SEC 8-K); Simply Wall St",
    "url": "https://www.sec.gov/Archives/edgar/data/0000045012/000004501226000070/livemastererdocument.htm",
-   "data": "2026-10-20"
+   "data": "2026-10-26"
   }
  ],
  "limiti": [
-  "Valutazione sullo snapshot della seduta del 30 ottobre 2026 (chiusa), impostazioni standard. Rispetto alla valutazione di stamattina è stata aggiornata solo la parte di mercato del 30 ottobre; le altre fonti esterne (Fed, utili FactSet, credito, BCE) sono di 2–7 giorni fa.",
-  "Alcuni dati del 30 ottobre (Brent in chiusura, oro, spread high yield) non erano disponibili: lo spread high yield più recente su FRED è del 28 ottobre.",
-  "Per 6 delle 9 opportunità ad alto rischio lo sconto è una stima automatica sui flussi di cassa o un confronto di multipli riportato dai broker; queste stime cambiano molto con le ipotesi. Prezzi indicati con la loro data e da ricontrollare dopo la seduta del 30 ottobre.",
-  "Le idee sono spunti di analisi da approfondire, non raccomandazioni personalizzate. Link solo dove la pagina è stata verificata: mancano per Ackermans & Van Haaren, Textron e Halliburton.",
-  "Testi unificati e senza ripetizioni il 30/10/2026, senza nuove ricerche: dati, fonti e idee non sono cambiati."
+  "Valutazione sulla seduta del 30 ottobre 2026 (chiusa) con le impostazioni attuali, che includono a metà peso i grandi investitori istituzionali: per questo l'indice non è del tutto confrontabile con la valutazione precedente.",
+  "Nel fine settimana non ci sono nuovi dati di mercato; Fed, utili FactSet e crescita USA sono di 3–9 giorni fa. Lo spread high yield più recente su FRED è del 29 ottobre.",
+  "Per Erste Group e Boliden lo sconto è una stima automatica sui flussi di cassa del 19 ottobre; per Valmet, Textron e Halliburton è una stima dello stesso tipo. Queste stime cambiano molto con le ipotesi; i prezzi indicati vanno ricontrollati.",
+  "Rispetto alla valutazione precedente: tolte Unipol, Novo Nordisk e Ackermans & Van Haaren (fonti di oltre 10 giorni); aggiunte Eni, Erste Group e Boliden. Link solo dove la pagina è stata verificata: mancano per Eni, Boliden, Textron e Halliburton. Spunti di analisi, non raccomandazioni personalizzate."
  ],
  "fonti": [
   {
@@ -608,21 +608,6 @@
    "data": "2026-10-14"
   },
   {
-   "nome": "Simply Wall St – titoli europei sotto il valore stimato (12/10)",
-   "url": "https://simplywall.st/stocks/it/insurance/bit-uni/unipol-assicurazioni-shares/news/october-2026s-european-stocks-that-may-be-trading-below-thei",
-   "data": "2026-10-12"
-  },
-  {
-   "nome": "Simply Wall St – titoli europei sotto il valore stimato (9/10)",
-   "url": "https://simplywall.st/stocks/be/capital-goods/ebr-ackb/ackermans-van-haaren-shares/news/european-stocks-estimated-to-be-trading-below-fair-value-in-7",
-   "data": "2026-10-09"
-  },
-  {
-   "nome": "Simply Wall St – Novo Nordisk (via Webull)",
-   "url": "https://www.webull.com/news/15721124440196096",
-   "data": "2026-10-10"
-  },
-  {
    "nome": "justETF – schede ETF/ETC",
    "url": "https://www.justetf.com/it/",
    "data": "2026-10-30"
@@ -646,10 +631,41 @@
    "nome": "Milano Finanza – Borse oggi 30 ottobre 2026",
    "url": "https://www.milanofinanza.it/news/borse-oggi-diretta-30-ottobre-2026-chiusura-apertura-europee-borsa-milano-ftse-mib-piazza-affari-202610300831365967",
    "data": "2026-10-30"
+  },
+  {
+   "nome": "FXEmpire – settimana 2–6 novembre",
+   "url": "https://www.fxempire.com/forecasts/article/the-week-ahead-ai-earnings-u-s-midterms-and-jobs-data-test-u-s-stocks-1641771",
+   "data": "2026-11-01"
+  },
+  {
+   "nome": "TipRanks – trimestrali 2–6 novembre",
+   "url": "https://www.tipranks.com/news/major-earnings-this-week-november-2-6-2026",
+   "data": "2026-11-01"
+  },
+  {
+   "nome": "SoldiOnline – seduta 30/10",
+   "url": "https://www.soldionline.it/notizie/azioni-italia/borsa-italiana-commento-giornata-30-ottobre-2026",
+   "data": "2026-10-30"
+  },
+  {
+   "nome": "Investing.com – Eni Q3",
+   "url": "https://it.investing.com/news/earnings/eni-supera-le-stime-sullutile-q3-buyback-12-e-dividendo-straordinario-3602738",
+   "data": "2026-10-23"
+  },
+  {
+   "nome": "Investing.com – Erste Group Q3 (consultato il 1/11)",
+   "url": "https://it.investing.com/news/earnings/erste-group-alza-le-previsioni-annuali-dopo-un-utile-q3-in-crescita-del-25-3617031",
+   "data": "2026-11-01"
+  },
+  {
+   "nome": "Simply Wall St via Webull – titoli europei sotto il valore stimato",
+   "url": "https://www.webull.com/news/15773162627869697",
+   "data": "2026-10-19"
+  },
+  {
+   "nome": "Tickzen – Zions",
+   "url": "https://tickzen.app/stocks/zion/overview",
+   "data": "2026-10-30"
   }
- ],
- "in_breve": [
-  "Rischio: indice 56 su 100 (stamattina 48). È salito lo stress dopo la vendita del 30 ottobre sui titoli tecnologici legati all'intelligenza artificiale; non c'è però un'emergenza.",
-  "Cosa fare: tenere le azioni al 60% (Mantieni) e non aumentarle finché la tensione non cala. Meglio qualità e diversificazione che i grandi titoli dell'intelligenza artificiale. Le soglie che cambierebbero il quadro sono nella tabella «Cosa tenere d'occhio»."
  ]
 }
