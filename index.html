@@ -26,6 +26,7 @@
 </head>
 <body>
 
+
 <title>Analisi Finanziaria</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -846,9 +847,11 @@ button.qp:hover{border-color:var(--navy-2)}
 (() => {
 const TRIGGER_ID = "trig_01RFskvnKEXEMuPW4wo8Haxw";      // compito "aggiorna dati"
 const EVAL_TRIGGER_ID = "trig_01JUVzUSZf92iP2qE7fLPynn"; // compito "valutazione attuale"
-// Versione della dashboard: aumenta a OGNI modifica di pagina o modello (non con gli aggiornamenti dei dati).
-const APP_VERSION = '3.6.2';
+// Versione della dashboard (v3.7.0): aumenta a OGNI modifica di pagina o modello (non con gli aggiornamenti dei dati).
+const APP_VERSION = '3.7.0';
+const DEF_GI = 0.5; // peso predefinito del gruppo «Grandi investitori istituzionali»
 const CHANGELOG = [
+  ['3.7.0', '01/11/2026', ['Fattori e pesi: all\'apertura valgono i pesi consigliati, con in più il gruppo «Grandi investitori istituzionali» a 0,50 (sentiment e macro restano esclusi). Il confronto «standard» e il pulsante Reset usano questi valori. I risultati di test citati in precedenza (backtest, affidabilità) si riferiscono ai pesi consigliati senza grandi investitori.','I pesi che imposti vengono memorizzati in un archivio condiviso della dashboard: li ritrovi uguali su tutti i browser e dispositivi (oltre che nel browser corrente). I pesi salvati con le versioni precedenti vengono azzerati una volta.','Nuovo report del mese: ottobre 2026.']],
   ['3.6.2', '30/10/2026', ['Valutazione: la sezione «Come ci siamo arrivati» è aperta all\'ingresso e si può chiudere (e riaprire) con un clic.']],
   ['3.6.1', '30/10/2026', ['Valutazione senza ripetizioni: ogni informazione compare in un solo punto. «Il risultato in breve» (rischio e cosa fare) contiene anche l\'indicazione pratica; tolti «Cosa significa in pratica» e la sintesi, che ripetevano gli stessi concetti. Dettagli, fonti e cosa tenere d\'occhio restano nella sezione apribile.']],
   ['3.6.0', '30/10/2026', ['Un solo messaggio sulla quota in azioni: tolto l\'algoritmo 3.0 da descrizioni, Consiglio, report, Prova sul passato e valutazione (confondeva con l\'allocazione adattiva). La casella "Regola del backtest 100%" diventa "Freno d\'emergenza: Non attivo/Attivo", così non sembra in contrasto con la quota consigliata (es. 60%). Valutazione riorganizzata: prima "Il risultato in breve" e "Cosa significa in pratica", poi la sintesi; i dettagli (dashboard, fonti, cosa tenere d\'occhio) in una sezione da aprire.']],
@@ -920,7 +923,7 @@ const FMT = {
 let DATA, N, T, COL = {};
 const DEFW = {};
 const st = {
-  w: {}, wc: {}, gF: 1, gS: 1, gI: 0, gSe: 0, gM: 0, th: 70, hold: 21, lvl: 0, trend: true, start: '2000-01-03', sel: null, years: 10,
+  w: {}, wc: {}, gF: 1, gS: 1, gI: DEF_GI, gSe: 0, gM: 0, th: 70, hold: 21, lvl: 0, trend: true, start: '2000-01-03', sel: null, years: 10,
   show: {split: true, def: true, fs: false, ma: true}, calNear: true, btShow: {}, prof: 'bilanciato'
 };
 let IFI, FRAG, STRS, SIG, EXPO, AV; const XG = {};
@@ -944,8 +947,8 @@ function init(d) {
   if (restored) { const ws = document.getElementById('wSaved'); if (ws) ws.textContent = 'Pesi ripristinati dalla tua ultima visita.'; if (st.preset) document.querySelectorAll('[data-preset]').forEach(x => x.setAttribute('aria-pressed', x.dataset.preset === st.preset)); }
   const ci = d.stats.auc_ci, cn = d.stats.auc_ci_near;
   if (ci) document.getElementById('aucCi').textContent = 'Margine d\'incertezza (pesi standard, anni ricampionati, 90%): AUC tra ' + nf(ci[0], 2) + ' e ' + nf(ci[1], 2) + (cn ? '; vicino ai massimi tra ' + nf(cn[0], 2) + ' e ' + nf(cn[1], 2) : '') + '. Anche nel caso peggiore resta sopra 0,5.'; bindControls(); buildConfirm(); buildSplit(); buildAucTable();
-  st.sel = N - 1;
-  recompute(); renderAll(); renderReport(); setupFolds(); setupArchive();
+  st.sel = N - 1; STD_IFI = computeStd();
+  recompute(); renderAll(); renderReport(); setupFolds(); setupArchive(); initDbW();
   new ResizeObserver(debounce(() => { drawMain(); drawEq(); drawCal(); }, 120)).observe(document.getElementById('grafico'));
 }
 function debounce(fn, ms) { let t; return () => { clearTimeout(t); t = setTimeout(fn, ms); }; }
@@ -1130,11 +1133,41 @@ function computeAAV() {
 function back(i, k) { const j = i - k; return j >= 0 ? j : 0; }
 
 // ------------------------------------------------------------------ render
-const LSW = 'rm-weights-v1';
-function saveWeights() { lsSet2(LSW, {w: st.w, wc: st.wc, gF: st.gF, gS: st.gS, gI: st.gI, gSe: st.gSe, gM: st.gM, preset: st.preset || null, v2: 1, t: Date.now()}); }
-function loadWeights() {
-  const v = lsGet2(LSW); if (!v || !v.w) return false;
-  if (!v.v2 && (v.preset === 'eq' || v.preset == null) && Object.values(v.w).every(x => x === 1) && v.gF === 1 && v.gS === 1 && !v.gI && !v.gSe && !v.gM) return false; // pesi standard vecchi: passa ai consigliati
+const LSW = 'rm-weights-v3';
+let STD_IFI, DBW = null, DBREADY = false, lastPush = '', pushT;
+// indice «standard» = pesi predefiniti (consigliati + grandi investitori a DEF_GI)
+function computeStd() {
+  const out = new Float64Array(N).fill(NaN), ids = XGROUPS[0][2].filter(id => COL['p_' + id]);
+  for (let i = 0; i < N; i++) {
+    let s = 0, w = 0; const f = COL.p_FRAG[i], q = COL.p_STRS[i]; if (isNaN(f) || isNaN(q)) continue;
+    s += f + q; w += 2;
+    let a = 0, n = 0; for (const id of ids) { const v = COL['p_' + id][i]; if (!isNaN(v)) { a += v; n++; } }
+    if (n && DEF_GI > 0) { s += DEF_GI * a / n; w += DEF_GI; }
+    out[i] = s / w;
+  }
+  return out;
+}
+const isStdW = () => DATA.factors.every(f => st.w[f.id] === DEFW[f.id]) && st.gF === 1 && st.gS === 1 && st.gI === DEF_GI && !st.gSe && !st.gM && XGROUPS[0][2].every(id => st.wc[id] == null || st.wc[id] === 1);
+function pushW(p) {
+  if (!DBW || !DBREADY) return;
+  const j = JSON.stringify({w: p.w, wc: p.wc, gF: p.gF, gS: p.gS, gI: p.gI, gSe: p.gSe, gM: p.gM, preset: p.preset}); if (j === lastPush) return;
+  clearTimeout(pushT); pushT = setTimeout(() => { lastPush = j; try { DBW.set({json: j, v3: 1, t: Date.now()}).catch(() => {}); } catch (e) {} }, 800);
+}
+async function initDbW() {
+  try {
+    const db = await claude.use('db'); if (!db) return;
+    DBW = db.doc('settings/weights'); const snap = await DBW.get(); const d = snap.exists ? snap.data() : null;
+    if (d && d.json) {
+      const o = JSON.parse(d.json); o.v3 = 1; lastPush = d.json;
+      if (applyW(o)) { buildWeights(); recompute(); renderAll(); if (st.preset) document.querySelectorAll('[data-preset]').forEach(x => x.setAttribute('aria-pressed', x.dataset.preset === st.preset)); const ws = document.getElementById('wSaved'); if (ws) ws.textContent = 'Pesi ripristinati dall\'archivio condiviso (uguali su tutti i browser).'; }
+      DBREADY = true;
+    } else { DBREADY = true; saveWeights(); }
+  } catch (e) { DBW = null; }
+}
+function saveWeights() { const p = {w: st.w, wc: st.wc, gF: st.gF, gS: st.gS, gI: st.gI, gSe: st.gSe, gM: st.gM, preset: st.preset || null, v3: 1, t: Date.now()}; lsSet2(LSW, p); pushW(p); }
+function loadWeights() { return applyW(lsGet2(LSW)); }
+function applyW(v) {
+  if (!v || !v.w || !v.v3) return false;
   for (const k of Object.keys(st.w)) if (typeof v.w[k] === 'number') st.w[k] = v.w[k];
   for (const k of Object.keys(st.wc)) if (v.wc && typeof v.wc[k] === 'number') st.wc[k] = v.wc[k];
   for (const k of ['gF', 'gS', 'gI', 'gSe', 'gM']) if (typeof v[k] === 'number') st[k] = v[k];
@@ -1144,7 +1177,7 @@ function lsGet2(k) { try { return JSON.parse(localStorage.getItem(k) || 'null');
 function lsSet2(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
 let lastLive = null;
 function renderLive() {
-  const el = document.getElementById('wLive'); if (!el) return; const i = N - 1, v = IFI[i], sv = COL.p_IFI[i], s0 = stateAt(i), lv = lev(v);
+  const el = document.getElementById('wLive'); if (!el) return; const i = N - 1, v = IFI[i], sv = STD_IFI[i], s0 = stateAt(i), lv = lev(v);
   el.classList.remove('c-ok', 'c-yel', 'c-warn', 'c-risk'); el.classList.add(S2C[lv] || 'c-yel');
   el.replaceChildren();
   const a = document.createElement('span'); a.className = 'd'; a.textContent = 'Indice di rischio oggi con questi pesi';
@@ -1335,7 +1368,7 @@ function buildWeights() {
   let sepDone = false;
   for (const [g, name, list, gk, x] of groups) {
     if (!list.length) continue;
-    if (x && !sepDone) { const s = document.createElement('tr'); s.className = 'wsep-row'; const td = document.createElement('td'); td.colSpan = 5; td.textContent = 'Gruppi sperimentali · di base esclusi dall\'indice (peso del gruppo 0)'; s.append(td); tb.append(s); sepDone = true; }
+    if (x && !sepDone) { const s = document.createElement('tr'); s.className = 'wsep-row'; const td = document.createElement('td'); td.colSpan = 5; td.textContent = 'Gruppi sperimentali · di base solo i grandi investitori (0,50), gli altri esclusi (0)'; s.append(td); tb.append(s); sepDone = true; }
     const gr = document.createElement('tr'); gr.className = 'grp clickable' + (x ? ' xgrp' : ''); gr.dataset.g = g; gr.dataset.help = g; gr.tabIndex = 0; gr.title = 'Clicca per la spiegazione';
     const td = document.createElement('td'); td.colSpan = 4; const nm = document.createElement('span'); const gi = document.createElement('span'); gi.className = 'gi'; gi.textContent = 'ⓘ spiegazione'; td.append(nm, gi);
     const ws = slider('w_' + gk, st[gk], v => st[gk] = v); const wl = document.createElement('span'); wl.className = 'wlab'; wl.textContent = 'peso del gruppo'; ws.prepend(wl);
@@ -1367,7 +1400,7 @@ function buildWeights() {
 let recalcT;
 function scheduleRecalc() { clearTimeout(recalcT); recalcT = setTimeout(() => { recompute(); renderAll(); }, 60); }
 function setPreset(p) {
-  DATA.factors.forEach(f => st.w[f.id] = DEFW[f.id]); st.gF = 1; st.gS = 1; st.gI = 0; st.gSe = 0; st.gM = 0; Object.keys(st.wc).forEach(k => st.wc[k] = 1);
+  DATA.factors.forEach(f => st.w[f.id] = DEFW[f.id]); st.gF = 1; st.gS = 1; st.gI = p === 'eq' ? DEF_GI : 0; st.gSe = 0; st.gM = 0; Object.keys(st.wc).forEach(k => st.wc[k] = 1);
   if (p === 'frag') st.gS = 0; if (p === 'strs') st.gF = 0;
   if (p === 'breadth') { st.gS = 0; st.w.rut63 = 0; st.w.ewcap63 = 0; }
   if (p === 'all') { st.gI = 1; st.gSe = 1; st.gM = 1; }
@@ -1875,7 +1908,7 @@ function buildSplit() {
 function bindControls() {
   document.querySelectorAll('#rangeSeg button').forEach(b => b.addEventListener('click', () => { st.years = +b.dataset.y; document.querySelectorAll('#rangeSeg button').forEach(x => x.setAttribute('aria-pressed', x === b)); drawMain(); }));
   [['tgSplit', 'split'], ['tgDef', 'def'], ['tgFS', 'fs'], ['tgMA', 'ma']].forEach(([id, k]) => document.getElementById(id).addEventListener('change', e => { st.show[k] = e.target.checked; drawMain(); }));
-  const PRE = {"eq": "Ottimizzato: fragilità interna e stress di mercato contano metà ciascuno; dentro i gruppi pesano un po' di più (1,25) i tre fattori che hanno funzionato in tutti i periodi di prova dal 1999: titoli sopra la media 200 giorni, titoli vicino ai massimi e MOVE. Gli altri a 1. Sentiment, grandi investitori e macro restano fuori.", "frag": "Solo fragilità: guarda solo la salute interna del mercato (quante società partecipano al rialzo). Avvisa prima, quando l'indice è ancora alto ma la base si restringe; dà però più falsi allarmi e non vede i ribassi causati da shock improvvisi.", "strs": "Solo stress: guarda solo paura e tensione già presenti (volatilità, VIX, credito, tassi). Reagisce in fretta quando il calo è cominciato, ma raramente prima: serve a confermare, non ad anticipare.", "breadth": "Solo ampiezza: tiene soltanto i conteggi delle società (quante sopra la media, quante sui minimi, quante vicino ai massimi). Esclude il confronto con le grandi società e con le piccole. È la versione più vicina al classico segnale di 'spaccatura'.", "all": "Tutto: oltre a fragilità e stress inserisce con peso uguale anche le posizioni dei grandi investitori (CFTC), il sentiment dei risparmiatori (AAII) e valutazione e macro (CAPE, curva dei tassi…). Nei test questa versione prevede un po' peggio: serve per vedere l'effetto, non è quella consigliata."};
+  const PRE = {"eq": "Ottimizzato: fragilità interna e stress di mercato contano metà ciascuno; dentro i gruppi pesano un po' di più (1,25) i tre fattori che hanno funzionato in tutti i periodi di prova dal 1999: titoli sopra la media 200 giorni, titoli vicino ai massimi e MOVE. Gli altri a 1. I grandi investitori istituzionali entrano con peso 0,50; sentiment e macro restano fuori.", "frag": "Solo fragilità: guarda solo la salute interna del mercato (quante società partecipano al rialzo). Avvisa prima, quando l'indice è ancora alto ma la base si restringe; dà però più falsi allarmi e non vede i ribassi causati da shock improvvisi.", "strs": "Solo stress: guarda solo paura e tensione già presenti (volatilità, VIX, credito, tassi). Reagisce in fretta quando il calo è cominciato, ma raramente prima: serve a confermare, non ad anticipare.", "breadth": "Solo ampiezza: tiene soltanto i conteggi delle società (quante sopra la media, quante sui minimi, quante vicino ai massimi). Esclude il confronto con le grandi società e con le piccole. È la versione più vicina al classico segnale di 'spaccatura'.", "all": "Tutto: oltre a fragilità e stress inserisce con peso uguale anche le posizioni dei grandi investitori (CFTC), il sentiment dei risparmiatori (AAII) e valutazione e macro (CAPE, curva dei tassi…). Nei test questa versione prevede un po' peggio: serve per vedere l'effetto, non è quella consigliata."};
   const pd = document.getElementById('presetDesc'), pdDef = pd.textContent;
   document.querySelectorAll('[data-preset]').forEach(b => {
     b.title = PRE[b.dataset.preset] || '';
@@ -1891,10 +1924,10 @@ function bindControls() {
     const show = () => { pd.textContent = XPRE[k]; pd.classList.add('on'); };
     b.addEventListener('mouseenter', show); b.addEventListener('focus', show);
     b.addEventListener('mouseleave', () => { pd.textContent = st.preset ? PRE[st.preset] : pdDef; pd.classList.toggle('on', !!st.preset); });
-    b.addEventListener('click', () => { const on = !(st[k] > 0); st[k] = on ? 1 : 0; if (on) { const g = XGROUPS.find(x => x[3] === k); g[2].forEach(id => { if (st.wc[id] != null && !(st.wc[id] > 0)) st.wc[id] = 1; }); }
+    b.addEventListener('click', () => { const on = !(st[k] > 0); st[k] = on ? (k === 'gI' ? DEF_GI : 1) : 0; if (on) { const g = XGROUPS.find(x => x[3] === k); g[2].forEach(id => { if (st.wc[id] != null && !(st.wc[id] > 0)) st.wc[id] = 1; }); }
       st.preset = null; document.querySelectorAll('[data-preset]').forEach(x => x.setAttribute('aria-pressed', 'false')); buildWeights(); recompute(); renderAll(); show(); });
   });
-  document.getElementById('btnWReset').addEventListener('click', () => { st.preset = 'eq'; setPreset('eq'); document.querySelectorAll('[data-preset]').forEach(x => x.setAttribute('aria-pressed', x.dataset.preset === 'eq')); pd.textContent = 'Pesi riportati ai valori consigliati: 1,25 a titoli sopra la media 200 giorni, titoli vicino ai massimi e MOVE, 1 agli altri fattori; fragilità e stress a 1; gruppi sperimentali esclusi (0).'; pd.classList.add('on'); document.getElementById('wSaved').textContent = 'Pesi consigliati ripristinati.'; });
+  document.getElementById('btnWReset').addEventListener('click', () => { st.preset = 'eq'; setPreset('eq'); document.querySelectorAll('[data-preset]').forEach(x => x.setAttribute('aria-pressed', x.dataset.preset === 'eq')); pd.textContent = 'Pesi riportati ai valori consigliati: 1,25 a titoli sopra la media 200 giorni, titoli vicino ai massimi e MOVE, 1 agli altri fattori; fragilità e stress a 1; grandi investitori istituzionali a 0,50; sentiment e macro esclusi (0).'; pd.classList.add('on'); document.getElementById('wSaved').textContent = 'Pesi consigliati ripristinati.'; });
   const th = document.getElementById('cTh'); th.addEventListener('input', () => { st.th = +th.value; document.getElementById('cThV').textContent = st.th; scheduleRecalc(); });
   document.getElementById('cHold').addEventListener('change', e => { const v = Math.round(+e.target.value); if (v >= 1 && v <= 250) { st.hold = v; scheduleRecalc(); } });
   document.getElementById('cLvl').addEventListener('change', e => { st.lvl = +e.target.value; scheduleRecalc(); });
@@ -1933,7 +1966,7 @@ const HELP = {
   aav_vol: ['Volatilità a 20 sedute', 'Quanto oscilla l\'S&P: deviazione dei rendimenti giornalieri delle ultime 20 sedute, in percentuale annua. L\'allocazione adattiva punta a una volatilità del 12%: se il mercato oscilla di più, la quota si moltiplica per 12 / volatilità (al massimo 1).'],
   aav: ['Come funziona l\'allocazione adattiva (grafico Quota in azioni)', 'È il modello che calcola la quota in azioni consigliata (riquadro Consiglio e grafico Quota in azioni), applicato ai dati della dashboard. Usa i 6 pilastri della dashboard, ognuno da 0 (sfavorevole) a 100 (favorevole): tendenza (S&P rispetto alla media a 200 giorni), rischio interno (indice di rischio con i pesi che hai scelto), ampiezza (segnale di spaccatura), credito, valutazione e sentiment, tassi.', '1) Composito: tendenza strutturale (media esponenziale a 20 sedute della tendenza) 20%, momento (rendimenti a 5 e 20 sedute: 50 = fermo, 100 = +5% o più) 20%, ampiezza 20%, rischio interno 20%, credito 15%, macro (valutazione e tassi) 5%.', '2) Regime: rialzo confermato se la tendenza strutturale è attiva (entra sopra 60, esce sotto 40) e ampiezza ≥ 50, rischio interno ≥ 60, credito ≥ 50 → quota fra 80 e 100%; rialzo fragile se la tendenza è attiva ma il resto è debole → 50–70%; stress ribassista se la tendenza è spenta o credito o rischio interno sono sotto 35 → 20–40%; ripresa iniziale se in stress almeno 2 segnali su 3 migliorano (ampiezza +5, momento ≥ 60, credito stabile e ≥ 40): dopo 2 sedute 40%, dopo 5 sedute 65%; se il momento scende a 45 o meno per 2 sedute la ripresa è fallita. Dentro la banda la quota sale con il composito. Esempio: rialzo fragile con composito 59 → 50% + 20% × 0,59 = 62%.', '3) Rischio: la quota si moltiplica per 12% / volatilità a 20 sedute (al massimo 1). Tetti: 20% in emergenza (rischio interno o credito a 20 o meno); 60% se per 2 settimane di fila ampiezza sotto 25 e rischio interno sotto 60, salvo conferma di prezzo e credito per 5 sedute.', '4) Esecuzione graduale: si parte dal 20%; le riduzioni sono al massimo di 20 punti al giorno, gli aumenti di 10 punti a fine settimana (25 punti al giorno in ripresa iniziale); variazioni sotto 2 punti si ignorano. La quota mostrata e usata è arrotondata al 10%.', 'Sul passato (S&P 500 senza dividendi, liquidità remunerata, senza costi, dati al 23/10/2026, pesi consigliati): 2000–2026 +5,3% l\'anno, perdita massima −16% (versione precedente, prima della sospensione degli aumenti dopo uno shock), in media 61% in azioni, circa 29 cambi di quota l\'anno (a passi del 10%); 2000–2009 +2,7% (sempre investito −2,6%); 2010–2026 +6,8% (sempre investito +12,0%). Protegge molto (perdita massima −16%) ma resta spesso fuori dal mercato nei rialzi: nei periodi di forte salita rende meno di chi resta sempre investito.', 'Limiti: è un modello di ricerca non validato da terzi; alcuni dettagli di calcolo (durata della settimana, trattamento dei dati mancanti, ordine dei controlli) sono una mia interpretazione. Molti piccoli ribilanciamenti: costi e tasse reali li ridurrebbero. Non è un consiglio personalizzato.'],
   grafico: ['Il grafico principale', 'Sopra: l\'S&P 500 in scala logaritmica (una salita del 10% ha sempre la stessa altezza, che l\'indice sia a 1.000 o a 7.000). Sotto: l\'indice di rischio da 0 a 100 con la soglia tratteggiata. Le fasce rosa sono i periodi in cui la regola sarebbe stata "in difesa". I triangoli sono i segnali di spaccatura. Clicca un giorno per vedere tutti i valori di quella data.'],
-  pesiscelta: ['Come sono stati scelti i pesi', 'Ho provato a far \"scegliere\" i pesi al modello sui dati dal 1999: sui periodi nuovi prevedeva peggio dei pesi uguali (con così pochi crolli, una ventina, i pesi stimati si adattano al passato). Per questo la base resta 1 e salgono a 1,25 solo i tre fattori che hanno funzionato in tutti e tre i periodi di prova (1999–2008, 2009–2016, 2017–2026): titoli sopra la media 200 giorni, titoli vicino ai massimi e MOVE. Rispetto ai pesi uguali la capacità di previsione è simile nel complesso, un po\' migliore nei primi due periodi e quasi uguale nell\'ultimo: è una correzione prudente, non una garanzia. I gruppi sperimentali partono da 0. Se cambi i pesi restano memorizzati; \"Reset\" torna a questi valori.'],
+  pesiscelta: ['Come sono stati scelti i pesi', 'Ho provato a far \"scegliere\" i pesi al modello sui dati dal 1999: sui periodi nuovi prevedeva peggio dei pesi uguali (con così pochi crolli, una ventina, i pesi stimati si adattano al passato). Per questo la base resta 1 e salgono a 1,25 solo i tre fattori che hanno funzionato in tutti e tre i periodi di prova (1999–2008, 2009–2016, 2017–2026): titoli sopra la media 200 giorni, titoli vicino ai massimi e MOVE. Rispetto ai pesi uguali la capacità di previsione è simile nel complesso, un po\' migliore nei primi due periodi e quasi uguale nell\'ultimo: è una correzione prudente, non una garanzia. Il gruppo dei grandi investitori parte da 0,50 (sentiment e macro da 0): i dati CFTC nei test della pagina non sono un predittore stabile, quindi l\'effetto è volutamente contenuto. Se cambi i pesi restano memorizzati su tutti i tuoi browser; \"Reset\" torna a questi valori.'],
   pesi: ['Pesi del modello', 'Ogni cursore decide quanto conta un ingrediente. 1 = peso normale, 0 = escluso, 3 = triplo. Il grafico, il semaforo e il backtest si ricalcolano subito. Di base tre fattori stabili in tutti i periodi di prova pesano 1,25 e gli altri 1: pesi stimati liberamente per far tornare il passato hanno previsto peggio sui dati nuovi.'],
   fattori: ['Fattori e pesi', 'Per ogni ingrediente vedi il valore reale e il "percentile di rischio": 80 vuol dire che oggi quel fattore è più preoccupante dell\'80% dei giorni degli ultimi 5 anni. La colonna Δ 4 sett. dice se sta peggiorando (+, rosso) o migliorando (−, verde). Clicca una riga per la spiegazione.'],
   backtest: ['Il backtest', 'Simula cosa sarebbe successo applicando la regola dal 2000 a oggi: quando l\'indice è sopra la soglia si esce (o si riduce) dalle azioni e si tiene liquidità. Il grafico mostra quanto sarebbe diventato 1 euro investito. Attenzione: sono calcoli sul passato, senza tasse e costi.'],
@@ -2296,7 +2329,7 @@ function currentSettings() {
   const w = {}; for (const f of DATA.factors) w[f.id] = st.w[f.id];
   const wc = {}; for (const k of Object.keys(st.wc)) wc[k] = st.wc[k];
   const s = {gruppi: {fragilita: st.gF, stress: st.gS, istituzionali: st.gI, sentiment: st.gSe, macro: st.gM}, pesi_fattori: w, pesi_sperimentali: wc, soglia: st.th, difesa_minima_sedute: st.hold, esposizione_in_difesa: st.lvl, filtro_tendenza: st.trend};
-  const std = DATA.factors.every(f => st.w[f.id] === DEFW[f.id]) && st.gF === 1 && st.gS === 1 && !st.gI && !st.gSe && !st.gM;
+  const std = DATA.factors.every(f => st.w[f.id] === DEFW[f.id]) && st.gF === 1 && st.gS === 1 && st.gI === DEF_GI && !st.gSe && !st.gM;
   s.standard = std && st.th === 70 && st.hold === 21 && st.lvl === 0 && st.trend === true;
   s.key = hashStr(JSON.stringify([s.gruppi, w, (st.gI || st.gSe || st.gM) ? wc : 0, st.th, st.hold, st.lvl, st.trend]));
   s.app_version = APP_VERSION;
@@ -2328,7 +2361,7 @@ function snapshot() {
     fattori: fac, altri_indicatori: conf,
     peso_primi10_titoli_pct: DATA.holdings ? DATA.holdings.top10 : null,
     storico_indice_simile: {giorni: tot, quota_cali10_entro60: tot ? r1(hit / tot * 100) : null, quota_media_tutti_i_giorni: totAll ? r1(hitAll / totAll * 100) : null}};
-  const std = {indice_rischio: r1(COL.p_IFI[i]), fragilita: r1(COL.p_FRAG[i]), stress: r1(COL.p_STRS[i])};
+  const std = {indice_rischio: r1(STD_IFI[i]), fragilita: r1(COL.p_FRAG[i]), stress: r1(COL.p_STRS[i])};
   const bt = BT ? {dal: DATA.dates[BT.a], righe: BT.rows.map(r => ({strategia: r.k, rend_annuo_pct: r1(r.r.cagr * 100), max_perdita_pct: r1(r.r.mdd * 100), volatilita_pct: r1(r.r.vol * 100), tempo_in_difesa_pct: r1(r.r.def * 100)}))} : null;
   const ci = DATA.stats.auc_ci;
   const RM = DATA.monthly; const rep = RM ? {mese: RM.month, quadro: QN[RM.overall], sintesi_estero: RM.estero || null, riquadri: RM.cards.map(c => ({id: c.id, titolo: c.title, area: c.area || 'usa', colore: QN[c.status], valore: c.value, testo: c.text}))} : null;
@@ -2811,7 +2844,7 @@ async function makePdf(ch) {
     }
     if (k === 'fattori') {
       h1('Fattori e pesi del modello', C.frag, 'dati al ' + asOf);
-      const std = DATA.factors.every(f => st.w[f.id] === DEFW[f.id]) && st.gF === 1 && st.gS === 1 && !st.gI && !st.gSe && !st.gM;
+      const std = DATA.factors.every(f => st.w[f.id] === DEFW[f.id]) && st.gF === 1 && st.gS === 1 && st.gI === DEF_GI && !st.gSe && !st.gM;
       para((std ? 'Pesi consigliati' : 'Pesi personalizzati') + ': fragilità ' + nf(st.gF, 2) + ', stress ' + nf(st.gS, 2) + '. Ogni fattore è un percentile rispetto agli ultimi 5 anni: 90 = più rischioso del 90% dei giorni.', {size: 10});
       const rowsF = [];
       for (const [g, name, arr] of [['FRAG', 'Fragilità interna', FRAG], ['STRS', 'Stress di mercato', STRS]]) {
@@ -2924,6 +2957,7 @@ async function makePdf(ch) {
 
 })();
 </script>
+
 
 <script>
 (function(){
