@@ -847,10 +847,11 @@ button.qp:hover{border-color:var(--navy-2)}
 (() => {
 const TRIGGER_ID = "trig_01RFskvnKEXEMuPW4wo8Haxw";      // compito "aggiorna dati"
 const EVAL_TRIGGER_ID = "trig_01JUVzUSZf92iP2qE7fLPynn"; // compito "valutazione attuale"
-// Versione della dashboard (v3.7.1): aumenta a OGNI modifica di pagina o modello (non con gli aggiornamenti dei dati).
-const APP_VERSION = '3.7.2';
+// Versione della dashboard (v3.8.0): aumenta a ogni modifica di pagina o modello (non con gli aggiornamenti dei dati).
+const APP_VERSION = '3.8.0';
 const DEF_GI = 0.5; // peso predefinito del gruppo «Grandi investitori istituzionali»
 const CHANGELOG = [
+  ['3.8.0', '05/11/2026', ['Allocazione adattiva: il blocco degli aumenti dopo uno shock non dura più 21 sedute fisse. Gli aumenti restano sospesi finché lo stress non rientra: servono almeno 10 sedute dallo shock, indice di rischio sotto 55 e S&P sopra la sua media a 20 giorni; in ogni caso il blocco finisce dopo 21 sedute, e un nuovo shock lo fa ripartire. Il taglio della quota resta immediato. Scopo: non perdere il rimbalzo dopo una caduta rapida, mantenendo la protezione. Nel test 2000–2026 (S&P senza dividendi e senza costi) il rendimento sale da 4,4% a 4,9% l\'anno, la perdita massima passa da −9,7% a −14,9% (nel ribasso 2000–03); dal 2010 6,3% contro 5,8% con perdita massima −10,1% contro −9,7%. Sono prove sul passato con regole scelte guardando il passato: non garantiscono i risultati futuri. Oggi l\'indice è sopra 55 e il Consiglio non cambia.']],
   ['3.7.2', '01/11/2026', ['Anche le finestre «Nascondi / Apri» e i riquadri a tendina (per esempio «Cambia la regola» e «Episodi di allerta») restano come li lasci, su ogni browser e computer: se le chiudi o le apri, le ritrovi così alla prossima apertura della pagina.']],
   ['3.7.1', '01/11/2026', ['Memoria condivisa di tutte le selezioni: oltre ai pesi si salvano soglia dell\'indice, difesa minima, esposizione in difesa, filtro di tendenza, data di inizio della prova sul passato, periodo del grafico, linee mostrate, curve della prova sul passato, opzione dell\'affidabilità, «My equity %», sezioni chiuse e scelte del report PDF. Riaprendo la pagina da un altro browser o computer ritrovi le stesse impostazioni (serve essere collegato a claude.ai). Il salvataggio avviene da solo a ogni modifica e alla chiusura della pagina.']],
   ['3.7.0', '01/11/2026', ['Fattori e pesi: all\'apertura valgono i pesi consigliati, con in più il gruppo «Grandi investitori istituzionali» a 0,50 (sentiment e macro restano esclusi). Il confronto «standard» e il pulsante Reset usano questi valori. I risultati di test citati in precedenza (backtest, affidabilità) si riferiscono ai pesi consigliati senza grandi investitori.','I pesi che imposti vengono memorizzati in un archivio condiviso della dashboard: li ritrovi uguali su tutti i browser e dispositivi (oltre che nel browser corrente). I pesi salvati con le versioni precedenti vengono azzerati una volta.','Nuovo report del mese: ottobre 2026.']],
@@ -1089,7 +1090,7 @@ function computeAAV() {
   const wk = d => { const x = new Date(d); const day = (x.getUTCDay() + 6) % 7; x.setUTCDate(x.getUTCDate() - day); return x.getTime(); };
   AV = {q: new Float64Array(N), reg: new Array(N), comp: new Float64Array(N), st: new Float64Array(N), fm: new Float64Array(N), vol: new Float64Array(N), vm: new Float64Array(N), cap: new Float64Array(N), stage: new Uint8Array(N), why: new Array(N), P};
   const a = 2 / (C.ema + 1); let e = nz(P.tr[0], 50);
-  AV.frz = new Uint8Array(N); let shl = 0;
+  AV.frz = new Uint8Array(N); let shl = 0, fa = 0;
   let q = C.q0, ton = false, cs = false, rs = false, stage = 0, rconf = 0, fconf = 0, wfr = 0, xconf = 0;
   const rets = new Float64Array(N).fill(NaN); for (let i = 1; i < N; i++) rets[i] = spx[i] / spx[i - 1] - 1;
   for (let i = 0; i < N; i++) {
@@ -1124,7 +1125,12 @@ function computeAAV() {
     if (R === 'EARLY_RECOVERY') base = Math.max(base, stage === 2 ? C.s2q : C.s1q);
     const vm = Math.min(1, C.volT / Math.max(vol, 1e-6));
     let cap = 1; if (emerg) cap = Math.min(cap, C.emCap); if (wfr >= C.frW && !exc) cap = Math.min(cap, C.frCap);
-    if (shockAt(i).n >= 1) shl = 21; // v3.5: dopo uno shock gli aumenti restano sospesi per 21 sedute (la quota può solo scendere)
+    // v3.8: blocco condizionato "h3": dopo uno shock gli aumenti restano sospesi finché passano >= 10 sedute, indice < 55 e S&P sopra la media a 20 sedute (tetto 21 sedute); un nuovo shock azzera il conteggio
+    if (shockAt(i).n >= 1) { shl = 1; fa = 0; }
+    else if (shl > 0) {
+      fa++; let m20 = 0; for (let k = i - 19; k <= i; k++) m20 += spx[k]; m20 /= 20;
+      if ((fa >= 10 && !(IFI[i] >= 55) && spx[i] >= m20) || fa >= 21) shl = 0;
+    }
     const des = Math.min(base * vm, cap), d = des - q, frozen = shl > 0 && d > C.dead;
     AV.frz[i] = shl > 0 ? 1 : 0;
     if (Math.abs(d) > C.dead) {
@@ -1133,10 +1139,10 @@ function computeAAV() {
       else if (R === 'EARLY_RECOVERY') q = Math.min(des, q + C.upR);
       else if (weekEnd) q = Math.min(des, q + C.up);
     }
-    q = Math.min(q, cap); shl = Math.max(0, shl - 1);
+    q = Math.min(q, cap);
     AV.q[i] = Math.round(q * 10) / 10; AV.reg[i] = R; AV.comp[i] = comp; AV.st[i] = e; AV.fm[i] = fm; AV.vol[i] = vol; AV.vm[i] = vm; AV.cap[i] = cap; AV.stage[i] = stage;
     const lim = []; if (emerg) lim.push('emergenza (rischio interno o credito ≤ 20): massimo 20%'); else if (cap < 1) lim.push('fragilità da 2 settimane (ampiezza e rischio interno deboli): massimo 60%');
-    if (frozen) lim.push('shock di mercato recente: gli aumenti restano sospesi per 21 sedute');
+    if (frozen) lim.push('shock di mercato recente: gli aumenti restano sospesi finché lo stress non rientra (minimo 10, massimo 21 sedute)');
     if (vm < 0.995) lim.push('volatilità ' + nf(vol * 100, 1) + '%: quota ridotta a ' + Math.round(vm * 100) + '% della base');
     AV.why[i] = REGIT[R] + (R === 'EARLY_RECOVERY' ? ' (gradino ' + stage + ')' : '') + ', composito ' + Math.round(comp) + (failed ? ', ripresa fallita' : '') + (lim.length ? '; ' + lim.join('; ') : '') + (Math.abs(des - q) > C.dead ? '; quota obiettivo ' + Math.round(des * 100) + '%, raggiunta per gradi' : '');
   }
@@ -1302,7 +1308,7 @@ function renderHero() {
   mk('Freno d\'emergenza', ex < 1 ? 'Attivo' : 'Non attivo', 'Scatta se l\'indice di rischio supera ' + st.th + (st.trend ? ' o se l\'S&P scende sotto la media a 200 giorni' : '') + '. La quota da tenere è nel riquadro Consiglio.', null, null, pillOf(lvE, ex < 1 ? 'emergenza' : 'nessuna emergenza'), 'regola', lvE);
   const SH = shockAt(i), shWhy = document.createElement('div'); shWhy.className = 'why';
   const shList = [SH.A ? 'indice di rischio +' + nf(SH.d1, 0) + ' in un giorno' : '', SH.C ? 'S&P ' + nf(SH.r1 * 100, 1) + '% in un giorno' : '', SH.D ? 'S&P ' + nf(SH.dd20 * 100, 1) + '% dal massimo a 20 sedute con indice in salita' : ''].filter(Boolean);
-  shWhy.textContent = (SH.n ? 'Scattate: ' + shList.join('; ') + '. ' : 'Nessuna condizione di shock scattata oggi. ') + (AV.frz[i] ? 'Gli aumenti della quota in azioni sono sospesi per 21 sedute dopo uno shock: la quota può solo scendere. ' : '') + 'Nei test su 26 anni dopo queste condizioni il mercato ha perso almeno un altro 3% in circa un caso su quattro, ma sospendere gli aumenti ha ridotto la perdita massima.';
+  shWhy.textContent = (SH.n ? 'Scattate: ' + shList.join('; ') + '. ' : 'Nessuna condizione di shock scattata oggi. ') + (AV.frz[i] ? 'Gli aumenti della quota in azioni sono sospesi dopo uno shock finché lo stress non rientra (minimo 10 e massimo 21 sedute): la quota può solo scendere. ' : '') + 'Nei test su 26 anni dopo queste condizioni il mercato ha perso almeno un altro 3% in circa un caso su quattro; sospendere gli aumenti fino al rientro dello stress ha ridotto la perdita massima, al costo di una parte dei rimbalzi.';
   mk('Segnale di shock', SHOCKLAB[SH.n], 'Oggi: S&P ' + nf(SH.r1 * 100, 1) + '% in un giorno · indice di rischio ' + (SH.d1 > 0 ? '+' : '') + nf(SH.d1, 0) + ' in un giorno', null, null, wrap(shWhy, pillOf(SH.lv, SH.n + ' condizioni su 3')), 'shock', SH.lv);
   const lg = document.createElement('div'); lg.className = 'legend';
   lg.innerHTML = LEGEND4 + '<span>Indici 0–100: verde sotto 40, giallo 40–54, arancione 55–69, rosso da 70. Clicca una casella per la spiegazione.</span>';
@@ -1998,7 +2004,7 @@ const HELP = {
   spx: ['S&P 500', 'L\'indice delle 500 maggiori società americane, il riferimento del mercato azionario mondiale. "Dal massimo" indica quanto è sceso dal suo record. La media a 200 giorni è il prezzo medio dell\'ultimo anno lavorativo: stare sopra è considerato tendenza positiva.'],
   split: ['Segnale di spaccatura', 'Si accende quando l\'S&P 500 è vicino al suo massimo ma molte società toccano il loro minimo dell\'ultimo anno: almeno il 4% dei titoli e più del doppio di quelli che toccano un nuovo massimo, per almeno 2 giorni in un mese.', 'Viene calcolato ogni giorno dai prezzi delle singole società, non copiato. Dal 1998 si è acceso 12 volte; in 8 casi è seguito un calo di almeno il 10% entro 6 mesi.'],
   coverage: ['Copertura dati', 'Percentuale delle società dell\'S&P 500 di quel giorno per cui ho i prezzi. Oggi è vicina al 100%. Negli anni 2000 è più bassa perché le società fallite o comprate non sono più su Yahoo: per quegli anni i numeri interni sono meno precisi.'],
-  shock: ['Segnale di shock', 'Si accende quando il mercato cambia in fretta. Tre condizioni: l\'indice di rischio sale di almeno 8 punti in un giorno; l\'S&P 500 perde almeno l\'1,5% in un giorno; l\'S&P è almeno il 3% sotto il massimo delle ultime 20 sedute e l\'indice è salito di almeno 5 punti in due giorni. Verde nessuna condizione, giallo una, arancione due, rosso tre. Se scatta anche una sola condizione, per 21 sedute la quota in azioni dell\'allocazione adattiva può scendere ma non salire. Nei test 1999–2026 dopo queste condizioni il mercato ha perso almeno un altro 3% nelle due settimane successive in circa un caso su quattro; ridurre subito le azioni non ha migliorato i risultati, mentre sospendere solo gli aumenti ha portato la perdita massima da circa −22% a −14%, al costo di circa 1,2 punti di rendimento l\'anno (4,5% contro 3,3%).'],
+  shock: ['Segnale di shock', 'Si accende quando il mercato cambia in fretta. Tre condizioni: l\'indice di rischio sale di almeno 8 punti in un giorno; l\'S&P 500 perde almeno l\'1,5% in un giorno; l\'S&P è almeno il 3% sotto il massimo delle ultime 20 sedute e l\'indice è salito di almeno 5 punti in due giorni. Verde nessuna condizione, giallo una, arancione due, rosso tre. Se scatta anche una sola condizione, la quota in azioni dell\'allocazione adattiva può scendere ma non salire finché lo stress non rientra: servono almeno 10 sedute, indice di rischio sotto 55 e S&P sopra la media a 20 giorni; il blocco finisce comunque dopo 21 sedute. Nei test 1999–2026 dopo queste condizioni il mercato ha perso almeno un altro 3% nelle due settimane successive in circa un caso su quattro; ridurre subito le azioni non ha migliorato i risultati, mentre sospendere gli aumenti ha ridotto la perdita massima (da circa −57% a −15%), al costo di circa 1,5 punti di rendimento l\'anno (4,9% contro 6,4% sempre investito). Sono prove sul passato, non garanzie.'],
   regola: ['Freno d\'emergenza', 'Controllo semplice di sicurezza: scatta se l\'indice di rischio supera la soglia (di base 70) o se l\'S&P 500 scende sotto la media a 200 giorni. "Non attivo" = nessuna emergenza; "Attivo" = situazione di forte prudenza. Non indica quanta quota tenere in azioni: quella è nel riquadro Consiglio. Lo stesso controllo serve alla Prova sul passato.'],
   quota: ['Quota in azioni · allocazione adattiva', 'Quanta parte di un portafoglio interamente azionario tenere in azioni secondo l\'allocazione adattiva (calcolata sui dati reali della dashboard); il resto in liquidità. Una barra per ogni fine mese degli ultimi 2 anni; l\'ultima è la situazione attuale.', 'È la stessa quota del riquadro Consiglio. Sotto il grafico: regime di mercato, punteggio composito, tendenza strutturale, momento, i pilastri ampiezza, rischio interno e credito, la volatilità; poi il motivo della quota di oggi. Passando sopra una barra vedi il motivo di quel mese.', 'Come funziona e risultati sul passato: vedi il ? accanto ad "allocazione adattiva".'],
   datasel: ['Situazione di un giorno passato', 'Cliccando su un punto del grafico principale (prezzo dell\'S&P 500 e indice di rischio) la dashboard mostra com\'era il mercato quel giorno: indice di rischio, riquadro Consiglio, caselle colorate, tabella dei fattori e "Situazione al …" passano tutti alla data scelta. In basso compare la banda arancione con la data, così sai sempre che non stai guardando oggi.', 'Esempio: clicchi sul 3 gennaio 2023 e vedi l\'indice di quel giorno e la quota in azioni che il modello indicava allora; serve a capire come si sarebbe comportata la dashboard in un momento del passato (per esempio prima di un ribasso).', 'Per tornare a oggi: bottone "Torna a oggi" nella banda, oppure "Torna all\'ultima seduta" nel riquadro dell\'indice, oppure ricarica la pagina (la data scelta non viene salvata). Il report PDF usa sempre l\'ultima seduta.'],
@@ -2091,7 +2097,7 @@ const EX = {
   spx: 'S&P a 7.000 punti, massimo storico 7.200, media a 200 giorni 6.800: è a −2,8% dal massimo e sopra la media, quindi in tendenza positiva. Se scendesse a 6.700 sarebbe sotto la media: tendenza negativa.',
   split: 'S&P a −2% dal massimo, ma il 5% delle società tocca il minimo dell\'ultimo anno e solo il 2% il massimo, per 2 giorni nell\'ultimo mese: il segnale si accende. L\'indice regge solo perché pochi grandi titoli salgono.',
   coverage: 'Copertura 98% = per circa 490 delle 500 società ho il prezzo di quel giorno. Sotto il 90% (anni 2000) le misure di ampiezza sono meno affidabili.',
-  shock: 'Il 30 ottobre 2026 l\'S&P perde l\'1,8% e l\'indice di rischio passa da 48 a 56 (+8): due condizioni su tre, quindi arancione. Con la sola perdita dell\'1,6% in un giorno e l\'indice invariato sarebbe giallo, ma gli aumenti della quota resterebbero comunque sospesi per 21 sedute.',
+  shock: 'Il 30 ottobre 2026 l\'S&P perde l\'1,8% e l\'indice di rischio passa da 48 a 56 (+8): due condizioni su tre, quindi arancione. Con la sola perdita dell\'1,6% in un giorno e l\'indice invariato sarebbe giallo, ma gli aumenti della quota resterebbero comunque sospesi per almeno 10 sedute.',
   regola: 'Con soglia 70: l\'indice arriva a 72 e il freno d\'emergenza diventa "Attivo" per almeno 21 sedute, circa un mese. Se dopo un mese l\'indice è a 60 e l\'S&P è sopra la media a 200 giorni, torna "Non attivo".',
   grafico: 'Clicca su un giorno di marzo 2020: in basso vedi i fattori del crollo Covid, con stress al massimo e fragilità che sale insieme. Con "Tutto" vedi anche il 2008.',
   tg_split: 'Le righe viola verticali segnano i giorni con il segnale di spaccatura acceso: S&P vicino al massimo ma molte società ai minimi annuali. Esempio: se compaiono più righe viola ravvicinate con l\'S&P ancora sui massimi, la salita è sostenuta da pochi titoli; nella tabella "Segnale di spaccatura: storico" vedi cosa è successo dopo ogni accensione passata.',
@@ -2215,7 +2221,7 @@ function sitBox(k) {
   } else if (k === 'shock') {
     const S = shockAt(i); lv = S.lv;
     title = 'Segnale di shock: ' + SHOCKLAB[S.n].toLowerCase() + ' (' + S.n + ' condizioni su 3)';
-    text = 'S&P ' + nf(S.r1 * 100, 1) + '% in un giorno, ' + nf(S.dd20 * 100, 1) + '% dal massimo a 20 sedute; indice di rischio ' + (S.d1 > 0 ? '+' : '') + nf(S.d1, 0) + ' in un giorno e ' + (S.d2 > 0 ? '+' : '') + nf(S.d2, 0) + ' in due. Per 21 sedute la quota in azioni può scendere ma non salire.';
+    text = 'S&P ' + nf(S.r1 * 100, 1) + '% in un giorno, ' + nf(S.dd20 * 100, 1) + '% dal massimo a 20 sedute; indice di rischio ' + (S.d1 > 0 ? '+' : '') + nf(S.d1, 0) + ' in un giorno e ' + (S.d2 > 0 ? '+' : '') + nf(S.d2, 0) + ' in due. Finché lo stress non rientra (minimo 10, massimo 21 sedute) la quota in azioni può scendere ma non salire.';
   } else if (['spx', 'split', 'coverage', 'regola'].includes(k)) {
     const TL = tileLevels(i); lv = TL[k];
     title = {spx: 'S&P 500', split: 'Segnale di spaccatura', coverage: 'Copertura dati', regola: 'Freno d\'emergenza'}[k] + ': ' + LVTXT[lv];
