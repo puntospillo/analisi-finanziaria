@@ -1,83 +1,83 @@
 {
- "rid": "vmw45obji",
+ "rid": "vmw9qo1p5",
  "state": "ok",
- "at": "2026-11-05T23:12:03Z",
- "app_version": "3.8.0",
- "data_as_of": "2026-11-05",
+ "at": "2026-11-09T20:58:03Z",
+ "app_version": "3.8.1",
+ "data_as_of": "2026-11-09",
  "settings_key": "10lt6nt",
  "settings_label": "impostazioni standard · fragilità 1, stress 1, istituzionali 0.5 · soglia 70 + filtro media 200g",
  "livello": "elevato",
- "titolo": "Rischio elevato: la paura è salita con il crollo dei titoli tecnologici e la borsa americana è appena sopra la sua tendenza di fondo.",
+ "titolo": "Rischio elevato ma in calo: la paura si sta sgonfiando dopo il crollo dei titoli tecnologici e la tendenza di fondo resta positiva.",
  "in_breve": [
-  "Rischio: indice 66 su 100, più alto della valutazione precedente (62). La causa principale è lo stress di mercato, salito con il crollo dei titoli legati all'intelligenza artificiale del 5 novembre.",
+  "Rischio: indice 58 su 100, più basso della valutazione precedente (66). La causa principale è lo stress di mercato, sceso con il ritorno della calma dopo il crollo dei titoli tecnologici del 5 novembre, ma ancora alto.",
   "Cosa fare: il Consiglio indica «Mantieni», con il 30% in azioni (come a fine del mese precedente). In pratica: meno di un terzo in azioni, preferendo qualità e diversificazione, e il resto in strumenti prudenti come titoli di Stato a breve scadenza. È un'indicazione del modello, non un consiglio personalizzato."
  ],
  "dashboard": [
-  "Componenti: fragilità 47 (−40,9 in 4 settimane: più titoli partecipano al rialzo) e stress 78,4 (+44,4). L'indice è salito di 12,7 punti in una settimana e di 33,7 in 13 settimane. I grandi investitori istituzionali (peso dimezzato) sono a 81 su 100: hanno già molte azioni, quindi meno spazio per nuovi acquisti.",
-  "Pesano di più: struttura a termine del VIX (99 su 100: la paura a breve supera quella a 3 mesi, segnale tipico dei momenti di panico), VIX (92), credito high yield contro Treasury (85), volatilità effettiva dell'ultimo mese (80) e piccole società contro S&P 500 (77). Pesano meno: peso uguale contro indice (10), volatilità dei Treasury (44) e quota di titoli sopra la media a 200 giorni (48).",
-  "Perché la quota resta bassa: la dashboard vede un «rialzo fragile»; dopo lo shock recente sospende gli aumenti finché lo stress non rientra (da 10 a 21 sedute) e, con la volatilità vicina al 20%, applica solo il 60% della quota di base. Poi la quota potrà risalire solo per gradi.",
-  "Freno d'emergenza non attivo. Nei 912 giorni passati con un indice simile, un calo del 10% entro 60 sedute è arrivato nel 28,4% dei casi, contro il 16% medio.",
+  "Componenti: fragilità 40,4 (-43,6 in 4 settimane: più titoli partecipano al rialzo) e stress 67,6 (+35,1). L'indice è sceso di 2 punti in una settimana e di 5,6 in 4, ma è ancora 25,1 punti sopra 13 settimane fa. I grandi investitori istituzionali (peso dimezzato) sono a 74 su 100: hanno già molte azioni.",
+  "Pesano di più: credito high yield contro Treasury (87), volatilità effettiva dell'ultimo mese (85), struttura a termine del VIX (80), piccole società contro S&P 500 (71), VIX (66) su 100. Pesano meno: peso uguale contro indice (18), volatilità dei Treasury (29), quota di titoli sopra la media a 200 giorni (31). La struttura a termine del VIX alta vuol dire che la paura a breve è vicina a quella a 3 mesi.",
+  "Perché la quota resta bassa: ora la dashboard vede un «rialzo confermato», ma dopo lo shock recente tiene sospesi gli aumenti finché lo stress non rientra (da 10 a 21 sedute); con la volatilità al 22% applica solo circa metà della quota di base. Poi la quota potrà salire solo per gradi.",
+  "Freno d'emergenza non attivo. Nei 1268 giorni passati con un indice simile, un calo del 10% entro 60 sedute è arrivato nel 19,7% dei casi, contro il 16% medio.",
   "Report di ottobre: quadro giallo. In rosso settori (i difensivi battono i ciclici) e materie prime (petrolio in forte rialzo, oro e argento in calo); credito in allerta. Estero: Europa e Giappone in tendenza positiva, Cina ed emergenti deboli."
  ],
  "esterno": [
   {
-   "tema": "Borsa USA e intelligenza artificiale",
-   "lettura": "Il 5 novembre l'S&P 500 ha perso il 4,4%, la giornata peggiore dall'aprile 2025, e il Nasdaq è entrato in correzione (oltre −10% dal massimo): vendite sui titoli dei data center (a metà seduta AMD −15,9%, Nvidia −8,3%) per il timore di frenate agli investimenti dopo il voto.",
-   "segno": "più rischio",
-   "fonte": "AP / Spectrum News; WGEM",
-   "url": "https://spectrumlocalnews.com/us/snplus/business/2026/11/05/stock-market-ai-chip-selloff",
-   "data": "2026-11-05"
-  },
-  {
-   "tema": "Elezioni di metà mandato",
-   "lettura": "Il 4 novembre, dopo la vittoria dei Democratici in Camera e Senato, il Dow ha guadagnato il 3,03% e l'S&P 500 l'1,58%, con il VIX sceso a 16,6 e il petrolio WTI giù di circa l'8%: il rialzo è stato cancellato il giorno dopo.",
+   "tema": "Borsa USA oggi",
+   "lettura": "Il 9 novembre, a metà seduta, l'S&P 500 saliva del 2,3% con il rimbalzo dei titoli dell'intelligenza artificiale, ma Nvidia perdeva il 4-5% per un'indagine interna sul suo amministratore delegato.",
    "segno": "neutro",
-   "fonte": "Yahoo Finance",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-dow-futures-135650348.html",
-   "data": "2026-11-04"
+   "fonte": "TheStreet",
+   "url": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-nov-09-202",
+   "data": "2026-11-09"
   },
   {
-   "tema": "Fed e tassi",
-   "lettura": "Dopo il voto le probabilità di un rialzo dei tassi Fed il 9 dicembre sono scese al 67% circa (33% per una pausa); il Treasury a 10 anni è sceso dal 4,97% al 4,89% il 4 novembre e verso il 4,84% il 5.",
+   "tema": "Lavoro e Fed",
+   "lettura": "A ottobre gli USA hanno creato 165.000 posti di lavoro (attesi 59.000), con disoccupazione al 4,1%: la probabilità di un rialzo dei tassi Fed l'8-9 dicembre è salita al 77% circa e il Treasury a 10 anni al 4,87%.",
+   "segno": "più rischio",
+   "fonte": "InvestmentNews (CME FedWatch)",
+   "url": "https://www.investmentnews.com/fixed-income/october-jobs-report-beats-forecasts-lifting-december-fed-hike-odds/268915",
+   "data": "2026-11-06"
+  },
+  {
+   "tema": "Utili e prezzi delle azioni",
+   "lettura": "L'84% delle società che hanno pubblicato i conti ha battuto le stime, gli utili del trimestre crescono del 31,4% e il rapporto prezzo/utili atteso a 12 mesi (quanti anni di utili futuri si pagano) è 17,7, sotto la media di 5 anni (19,8).",
    "segno": "meno rischio",
-   "fonte": "Bloomingbit; Yahoo Finance; AP",
-   "url": "https://en.bloomingbit.io/feed/news/123761",
+   "fonte": "FactSet",
+   "url": "https://insight.factset.com/sp-500-earnings-season-update-november-6-2026",
+   "data": "2026-11-06"
+  },
+  {
+   "tema": "Credito e paura",
+   "lettura": "Il rendimento extra chiesto alle obbligazioni rischiose (spread high yield) era 3,48% il 5 novembre, appena sopra il 3,44% del 30 ottobre, mentre il VIX (indice della paura) quel giorno era a 28,2: il credito ha tenuto anche nel giorno del crollo.",
+   "segno": "neutro",
+   "fonte": "FRED (ICE BofA, Cboe)",
+   "url": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2",
    "data": "2026-11-05"
   },
   {
    "tema": "Petrolio e oro",
-   "lettura": "Il 5 novembre il Brent è risalito a circa 96,7 dollari (+2,2%) dopo il crollo del giorno prima, e l'oro è tornato sopra 4.100 dollari l'oncia come bene rifugio.",
-   "segno": "neutro",
-   "fonte": "AP / Spectrum News; FXStreet",
-   "url": "https://fxstreet.com/news/gold-rallies-above-4-100-as-nasdaq-100-crashes-december-hike-bets-fade-202611052023",
-   "data": "2026-11-05"
-  },
-  {
-   "tema": "Europa, BTP e Piazza Affari",
-   "lettura": "Il 5 novembre il FTSE MIB ha chiuso a 50.506 (−1,03%), con STMicroelectronics −9,3% e Tenaris +3,7%; spread BTP-Bund (differenza di rendimento con la Germania) a 108 punti e BTP decennale al 4,33%; la Banca d'Inghilterra ha alzato i tassi al 4%.",
-   "segno": "più rischio",
-   "fonte": "Money.it; Teleborsa",
-   "url": "https://www.money.it/piazza-affari-chiude-in-calo-ftse-mib-05-11-2026",
-   "data": "2026-11-05"
-  },
-  {
-   "tema": "Utili delle aziende",
-   "lettura": "Secondo l'ultimo aggiornamento letto (23 ottobre), l'83% delle società dell'S&P 500 ha battuto le stime e gli utili del terzo trimestre crescono di circa il 29,5%: i conti restano solidi.",
+   "lettura": "Il 9 novembre il Brent è sceso del 3,6% a 94,75 dollari e il WTI a 88,11 dopo che Trump ha definito «molto improbabili» nuovi attacchi all'Iran; l'oro è salito dell'1,2% a 4.122,6 dollari l'oncia.",
    "segno": "meno rischio",
-   "fonte": "FactSet",
-   "url": "https://insight.factset.com/sp-500-earnings-season-update-october-23-2026",
-   "data": "2026-10-23"
+   "fonte": "TheStreet",
+   "url": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-nov-09-202",
+   "data": "2026-11-09"
+  },
+  {
+   "tema": "Piazza Affari e BTP",
+   "lettura": "Il 9 novembre il FTSE MIB ha chiuso a 51.399 (+2,69%), la migliore borsa d'Europa, con Banco BPM +10,6% per la proposta di fusione di Crédit Agricole e UniCredit +6,2%; spread BTP-Bund (differenza di rendimento con la Germania) sceso a 103 punti.",
+   "segno": "meno rischio",
+   "fonte": "ANSA",
+   "url": "https://www.ansa.it/sito/notizie/economia/2026/11/09/borsa-milano-chiude-in-forte-rialzo-ftse-mib-269_715fcd25-4783-4993-8dc4-a2270981ec05.html",
+   "data": "2026-11-09"
   },
   {
    "tema": "Calendario prossime settimane",
-   "lettura": "Dati sul lavoro USA il 6 novembre, conti di Nvidia a fine mese, riunione della Fed il 9 dicembre.",
+   "lettura": "Conti di Nvidia a fine novembre e riunione della Fed l'8-9 dicembre.",
    "segno": "neutro",
-   "fonte": "FXEmpire",
+   "fonte": "FXEmpire; InvestmentNews",
    "url": "https://www.fxempire.com/forecasts/article/the-week-ahead-ai-earnings-u-s-midterms-and-jobs-data-test-u-s-stocks-1641771",
    "data": "2026-11-01"
   }
  ],
- "concordanza": "Le fonti confermano ciò che vede la dashboard: paura e volatilità in forte salita, concentrate sui titoli tecnologici, mentre utili e tassi offrono un po' di sostegno. Ne deduco che il livello «elevato» è corretto, ma al limite: se l'S&P 500 chiude sotto la media a 200 giorni diventa «alto».",
+ "concordanza": "Le fonti confermano ciò che vede la dashboard: la paura rientra, gli utili sono forti e il credito tiene, ma la Fed si avvia a un nuovo rialzo e i titoli dell'intelligenza artificiale restano fragili. Ne deduco che il livello «elevato» è corretto, vicino al confine con «moderato».",
  "monitorare": [
   {
    "cosa": "Indice di rischio",
@@ -87,25 +87,25 @@
   {
    "cosa": "S&P 500 e media a 200 giorni",
    "perche": "Sotto questa media la tendenza diventa negativa e la dashboard passa alla massima prudenza.",
-   "soglia": "Chiusura sotto circa 7.320 punti (appena −0,4%)"
+   "soglia": "Chiusura sotto circa 7.330 punti (−3% dal livello di oggi)"
   },
   {
-   "cosa": "Titoli tecnologici e dell'IA",
-   "perche": "I primi 10 titoli pesano il 38% dell'indice; a fine mese i conti di Nvidia.",
+   "cosa": "Nvidia e titoli dell'IA",
+   "perche": "I primi 10 titoli pesano il 38% dell'indice; contano l'indagine su Nvidia e i suoi conti di fine mese.",
    "soglia": "Nasdaq −20% dal massimo (mercato «orso»)"
   },
   {
-   "cosa": "Lavoro, Fed e credito",
-   "perche": "Contano i dati del 6 novembre, la Fed del 9 dicembre e lo spread high yield (il «canarino nella miniera»).",
+   "cosa": "Fed, inflazione e credito",
+   "perche": "Il lavoro forte spinge la Fed verso un rialzo l'8-9 dicembre.",
    "soglia": "Treasury 10 anni sopra 5,25% o spread high yield sopra 4%"
   },
   {
    "cosa": "Petrolio",
-   "perche": "Il petrolio alimenta l'inflazione e quindi i rialzi dei tassi.",
+   "perche": "Il petrolio alimenta l'inflazione e quindi i rialzi dei tassi; ora dipende dai negoziati con l'Iran.",
    "soglia": "Brent sopra 110 dollari (più rischio) o stabilmente sotto 90 (meno rischio)"
   }
  ],
- "idee_premessa": "Logica d'insieme: con rischio elevato ma tendenza ancora positiva preferisco qualità e diversificazione: pesi uguali invece dell'indice concentrato, Europa (segnale Buy), sanità con utili in crescita, infrastrutture elettriche, un po' di energia come copertura contro l'inflazione. Evito di aumentare semiconduttori e grandi titoli dell'IA, colpiti dai timori sugli investimenti. Obbligazioni a breve scadenza invece che a lunga, con tassi e inflazione alti. Con l'euro/dollaro intorno a 1,12-1,13 gli attivi in dollari non perdono per il cambio, ma un recupero dell'euro li penalizzerebbe; le opportunità rischiose restano scommesse su una piccola parte del capitale. Dopo il crollo del 5 novembre resto lontano da chip e data center.",
+ "idee_premessa": "Logica d'insieme: con rischio elevato ma tendenza ancora positiva preferisco qualità e diversificazione: pesi uguali invece dell'indice concentrato, Europa (segnale Buy), sanità con utili in crescita, infrastrutture elettriche, un po' di energia come copertura contro l'inflazione. Evito di aumentare semiconduttori e grandi titoli dell'IA, colpiti dai timori sugli investimenti. Obbligazioni a breve scadenza invece che a lunga, con tassi e inflazione alti. Con l'euro/dollaro intorno a 1,12-1,13 gli attivi in dollari non perdono per il cambio, ma un recupero dell'euro li penalizzerebbe; le opportunità rischiose restano scommesse su una piccola parte del capitale. Dopo il crollo del 5 novembre e l'indagine su Nvidia resto lontano da chip e data center; tra le banche italiane preferisco chi ha conti record.",
  "idee": [
   {
    "categoria": "azione",
@@ -136,6 +136,23 @@
    "fonte": "Investing.com Italia; SoldiOnline",
    "url": "https://it.investing.com/news/earnings/eni-supera-le-stime-sullutile-q3-buyback-12-e-dividendo-straordinario-3602738",
    "data": "2026-10-30"
+  },
+  {
+   "categoria": "azione",
+   "mercato": "Italia",
+   "nome": "UniCredit",
+   "direzione": "interessante",
+   "tesi": "Banca con utili record nei primi nove mesi e previsioni per il 2026 alzate: con tassi ancora alti i margini restano solidi.",
+   "catalizzatori": "Previsioni 2026 alzate; controllo di Commerzbank ottenuto (Reuters); risiko bancario italiano in movimento.",
+   "perche_ora": "Il 9 novembre è salita del 6,2% dopo conti del terzo trimestre sopra le attese, con un utile del 17% oltre il consenso degli analisti (OraFinanza).",
+   "rischi": "Integrazione di Commerzbank, titolo già salito molto, possibile calo dei tassi o rallentamento economico; le banche italiane soffrono se lo spread BTP risale.",
+   "orizzonte": "12 mesi",
+   "prezzo_rif": "81,62 € (chiusura 09/11/2026, ANSA)",
+   "link": "https://it.investing.com/equities/unicredito",
+   "fonte": "ANSA; Reuters e OraFinanza via Investing.com",
+   "url": "https://www.ansa.it/sito/notizie/economia/2026/11/09/borsa-milano-chiude-in-forte-rialzo-ftse-mib-269_715fcd25-4783-4993-8dc4-a2270981ec05.html",
+   "data": "2026-11-09",
+   "link_sito": "Investing.com"
   },
   {
    "categoria": "azione",
@@ -278,14 +295,14 @@
    "isin": "IE00BMC38736",
    "direzione": "da evitare",
    "tesi": "Settore molto concentrato e legato agli investimenti nell'IA: da evitare di aumentare il peso finché il mercato giudica severamente chi spende senza generare cassa.",
-   "perche_ora": "Il 5 novembre il crollo è partito proprio dai chip e dai data center: a metà seduta AMD −15,9% e Nvidia −8,3%, a Milano STMicroelectronics −9,3%. Meglio non aumentare il peso finché la volatilità non rientra.",
+   "perche_ora": "Dopo il crollo dei chip del 5 novembre, il 9 novembre Nvidia ha perso il 4-5% per un'indagine interna sul suo amministratore delegato, mentre il resto della tecnologia rimbalzava: il settore resta il più esposto ai timori sull'intelligenza artificiale.",
    "rischi": "Se i prossimi conti di Nvidia sorprendono in positivo il settore può rimbalzare in fretta: ridurre non significa azzerare.",
    "orizzonte": "3–6 mesi",
    "link": "https://www.justetf.com/it/etf-profile.html?isin=IE00BMC38736",
    "link_sito": "justETF",
-   "fonte": "AP / Spectrum News; Money.it",
-   "url": "https://spectrumlocalnews.com/us/snplus/business/2026/11/05/stock-market-ai-chip-selloff",
-   "data": "2026-11-05"
+   "fonte": "TheStreet",
+   "url": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-nov-09-202",
+   "data": "2026-11-09"
   },
   {
    "categoria": "azione",
@@ -454,44 +471,39 @@
   }
  ],
  "limiti": [
-  "Valutazione sulla seduta del 5 novembre 2026, chiusa; alcuni dati esterni (titoli peggiori, Treasury, Brent) sono di metà seduta.",
-  "L'ultimo aggiornamento FactSet letto è del 23 ottobre e lo spread high yield più recente su FRED non è stato verificato oggi; alcune pagine (FactSet, borse.it) non erano leggibili.",
-  "Per Valmet, Textron e Halliburton lo sconto è una stima automatica sui flussi di cassa; per Alstom e Rheinmetall le fonti non danno multipli. I prezzi indicati vanno ricontrollati.",
-  "Rispetto alla valutazione precedente: tolte Erste Group e Boliden (fonti di oltre 10 giorni), aggiunte Alstom e Rheinmetall. Mancano i link per Eni, Textron e Halliburton. Spunti di analisi, non raccomandazioni personalizzate."
+  "Valutazione sulla seduta del 9 novembre ancora in corso: i dati USA sono di metà seduta; credito e VIX su FRED sono fermi al 5 novembre.",
+  "Nessuna nuova notizia sulla BCE letta oggi e rendimento del BTP decennale non verificato; dalla BCE non risultano novità dopo l'ultima riunione.",
+  "Diverse idee si basano sulle trimestrali di fine ottobre (fonti di 10-14 giorni), ancora le più recenti; per Valmet, Textron e Halliburton lo sconto è una stima automatica sui flussi di cassa. I prezzi vanno ricontrollati.",
+  "Rispetto alla valutazione precedente: aggiunta UniCredit, aggiornata la scheda sui semiconduttori. Mancano i link per Eni, Textron e Halliburton. Spunti di analisi, non raccomandazioni personalizzate."
  ],
  "fonti": [
   {
-   "nome": "AP / Spectrum News; WGEM – Borsa USA e intelligenza artificiale",
-   "url": "https://spectrumlocalnews.com/us/snplus/business/2026/11/05/stock-market-ai-chip-selloff",
+   "nome": "TheStreet – Borsa USA oggi",
+   "url": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-nov-09-202",
+   "data": "2026-11-09"
+  },
+  {
+   "nome": "InvestmentNews (CME FedWatch) – Lavoro e Fed",
+   "url": "https://www.investmentnews.com/fixed-income/october-jobs-report-beats-forecasts-lifting-december-fed-hike-odds/268915",
+   "data": "2026-11-06"
+  },
+  {
+   "nome": "FactSet – Utili e prezzi delle azioni",
+   "url": "https://insight.factset.com/sp-500-earnings-season-update-november-6-2026",
+   "data": "2026-11-06"
+  },
+  {
+   "nome": "FRED (ICE BofA, Cboe) – Credito e paura",
+   "url": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2",
    "data": "2026-11-05"
   },
   {
-   "nome": "Yahoo Finance – Elezioni di metà mandato",
-   "url": "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-dow-futures-135650348.html",
-   "data": "2026-11-04"
+   "nome": "ANSA – Piazza Affari e BTP",
+   "url": "https://www.ansa.it/sito/notizie/economia/2026/11/09/borsa-milano-chiude-in-forte-rialzo-ftse-mib-269_715fcd25-4783-4993-8dc4-a2270981ec05.html",
+   "data": "2026-11-09"
   },
   {
-   "nome": "Bloomingbit; Yahoo Finance; AP – Fed e tassi",
-   "url": "https://en.bloomingbit.io/feed/news/123761",
-   "data": "2026-11-05"
-  },
-  {
-   "nome": "AP / Spectrum News; FXStreet – Petrolio e oro",
-   "url": "https://fxstreet.com/news/gold-rallies-above-4-100-as-nasdaq-100-crashes-december-hike-bets-fade-202611052023",
-   "data": "2026-11-05"
-  },
-  {
-   "nome": "Money.it; Teleborsa – Europa, BTP e Piazza Affari",
-   "url": "https://www.money.it/piazza-affari-chiude-in-calo-ftse-mib-05-11-2026",
-   "data": "2026-11-05"
-  },
-  {
-   "nome": "FactSet – Utili delle aziende",
-   "url": "https://insight.factset.com/sp-500-earnings-season-update-october-23-2026",
-   "data": "2026-10-23"
-  },
-  {
-   "nome": "FXEmpire – Calendario prossime settimane",
+   "nome": "FXEmpire; InvestmentNews – Calendario prossime settimane",
    "url": "https://www.fxempire.com/forecasts/article/the-week-ahead-ai-earnings-u-s-midterms-and-jobs-data-test-u-s-stocks-1641771",
    "data": "2026-11-01"
   },
