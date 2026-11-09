@@ -26,9 +26,9 @@
 </head>
 <body>
 
-
 <title>Analisi Finanziaria</title>
 <meta name="claude:viewport-fit-sides" content="cover">
+<script>/* sempre tema chiaro: niente modalità notte */(function(){var r=document.documentElement;function f(){if(r.getAttribute('data-theme')!=='light')r.setAttribute('data-theme','light');}f();new MutationObserver(f).observe(r,{attributes:true,attributeFilter:['data-theme']});})();</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
@@ -847,10 +847,11 @@ button.qp:hover{border-color:var(--navy-2)}
 (() => {
 const TRIGGER_ID = "trig_01RFskvnKEXEMuPW4wo8Haxw";      // compito "aggiorna dati"
 const EVAL_TRIGGER_ID = "trig_01JUVzUSZf92iP2qE7fLPynn"; // compito "valutazione attuale"
-// Versione della dashboard (v3.8.0): aumenta a ogni modifica di pagina o modello (non con gli aggiornamenti dei dati).
-const APP_VERSION = '3.8.0';
+// Versione della dashboard (v3.8.1): aumenta a ogni modifica di pagina o modello (non con gli aggiornamenti dei dati).
+const APP_VERSION = '3.8.1';
 const DEF_GI = 0.5; // peso predefinito del gruppo «Grandi investitori istituzionali»
 const CHANGELOG = [
+  ['3.8.1', '09/11/2026', ['La pagina resta sempre in tema chiaro: non passa più alla modalità notte, né con l\'impostazione del dispositivo né con quella del contenitore.']],
   ['3.8.0', '05/11/2026', ['Allocazione adattiva: il blocco degli aumenti dopo uno shock non dura più 21 sedute fisse. Gli aumenti restano sospesi finché lo stress non rientra: servono almeno 10 sedute dallo shock, indice di rischio sotto 55 e S&P sopra la sua media a 20 giorni; in ogni caso il blocco finisce dopo 21 sedute, e un nuovo shock lo fa ripartire. Il taglio della quota resta immediato. Scopo: non perdere il rimbalzo dopo una caduta rapida, mantenendo la protezione. Nel test 2000–2026 (S&P senza dividendi e senza costi) il rendimento sale da 4,4% a 4,9% l\'anno, la perdita massima passa da −9,7% a −14,9% (nel ribasso 2000–03); dal 2010 6,3% contro 5,8% con perdita massima −10,1% contro −9,7%. Sono prove sul passato con regole scelte guardando il passato: non garantiscono i risultati futuri. Oggi l\'indice è sopra 55 e il Consiglio non cambia.']],
   ['3.7.2', '01/11/2026', ['Anche le finestre «Nascondi / Apri» e i riquadri a tendina (per esempio «Cambia la regola» e «Episodi di allerta») restano come li lasci, su ogni browser e computer: se le chiudi o le apri, le ritrovi così alla prossima apertura della pagina.']],
   ['3.7.1', '01/11/2026', ['Memoria condivisa di tutte le selezioni: oltre ai pesi si salvano soglia dell\'indice, difesa minima, esposizione in difesa, filtro di tendenza, data di inizio della prova sul passato, periodo del grafico, linee mostrate, curve della prova sul passato, opzione dell\'affidabilità, «My equity %», sezioni chiuse e scelte del report PDF. Riaprendo la pagina da un altro browser o computer ritrovi le stesse impostazioni (serve essere collegato a claude.ai). Il salvataggio avviene da solo a ogni modifica e alla chiusura della pagina.']],
@@ -3010,7 +3011,6 @@ async function makePdf(ch) {
 
 })();
 </script>
-
 
 <script>
 (function(){
