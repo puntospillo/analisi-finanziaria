@@ -879,7 +879,15 @@ body.tech-on .secnav .tl{display:inline-block}
 .ind-per button{border:1px solid var(--line);background:var(--panel);border-radius:8px;padding:4px 10px;margin-right:6px;cursor:pointer}
 .ind-per button[aria-pressed=true]{background:var(--navy);color:#fff}
 @media(max-width:640px){.ind-t .ind-hide{display:none}.ind-sp{width:56px}}
+/* bottoni in alto: una sola riga */
+.hdr-row{flex-wrap:wrap}
+.hdr .upd{display:flex!important;flex-wrap:nowrap!important;gap:6px!important;flex:1 1 auto!important;max-width:none!important;margin-left:auto;justify-content:flex-end;min-width:0}
+.hdr .upd .btn{width:auto!important;flex:1 1 0;min-width:0;min-height:38px!important;padding:6px 8px!important;font-size:.8rem!important;gap:5px!important;white-space:nowrap;overflow:hidden}
+.hdr .upd .btn .blab{overflow:hidden;text-overflow:ellipsis}
+@media (max-width:1100px){.hdr .upd{flex-basis:100%!important}}
+@media (max-width:640px){.hdr .upd .btn .blab{display:none}.hdr .upd .btn{min-height:42px!important}.hdr .upd .btn-eval{grid-column:auto!important}}
 </style>
+
 
 <div class="wrap">
   <header class="top hdr">
@@ -3554,9 +3562,14 @@ function btnProg(b, p, label, state) {
 
 // ------------------------------------------------------------------ report PDF (documento vero: testo nitido, impaginato per A4)
 const PDF_SECS = [
-  ['stato', 'Situazione di oggi', 1, 3], ['grafico', 'Grafico S&P 500 e indice', 1, 2], ['fattori', 'Fattori dell\'indice', 1, 5],
-  ['conferma', 'Indicatori esterni', 1, 4],
-  ['backtest', 'Prova sul passato', 1, 3], ['calibrazione', 'Affidabilità', 1, 2], ['spaccatura', 'Segnale di spaccatura', 1, 2], ['metodo', 'Metodo e limiti', 1, 1]
+  ['stato', 'Situazione di oggi', 1, 1], ['estero', 'Mercati esteri', 1, 1], ['indici', 'Indici, materie prime, cambi, cripto', 2, 2], ['conferma', 'Indicatori esterni', 1, 1],
+  ['grafico', 'Grafico S&P 500 e indice', 1, 2], ['fattori', 'Fattori dell\'indice', 1, 1], ['calibrazione', 'Affidabilità', 1, 1], ['spaccatura', 'Segnale di spaccatura', 1, 1],
+  ['metodo', 'Metodo e limiti', 1, 1], ['backtest', 'Prova sul passato', 1, 2], ['report', 'Report attuale: mercato americano', 2, 2]
+];
+// istruzioni e spiegazioni: gruppo a parte, selezionabile, in fondo al documento
+const PDF_ISTR = [
+  ['i_stato', 'Come leggere i numeri', 2], ['i_grafico', 'Legenda del grafico', 2], ['i_fattori', 'I fattori uno per uno', 3], ['i_conferma', 'Gli indicatori esterni uno per uno', 3],
+  ['i_calibrazione', 'Affidabilità: come si legge', 1], ['i_spaccatura', 'Spaccatura: come si legge', 1], ['i_backtest', 'Misure della prova sul passato', 1]
 ];
 const LSP = 'rm-pdf-v2';
 const LIBS = ['lib/jspdf.umd.min.js', 'lib/html-to-image.min.js'];
@@ -3567,8 +3580,10 @@ function pdfChoice() {
   document.querySelectorAll('#pdfSecs input').forEach(i => c.secs[i.value] = i.checked); return c;
 }
 function pdfEstimate() {
-  const c = pdfChoice(), comp = c.v === 'c'; let n = 1 + (c.eval && !document.getElementById('pdfEval').disabled ? (comp ? 4 : 2) : 0);
-  PDF_SECS.forEach(([k, , s, f]) => { if (c.secs[k]) n += comp ? f : s; });
+  const c = pdfChoice(), comp = c.v === 'c'; let n = 2 + (c.eval && !document.getElementById('pdfEval').disabled ? (comp ? 9 : 6) : 0);
+  const cs = (DATA.monthly && DATA.monthly.cards) || [], nUS = cs.filter(x => x.area !== 'estero').length, nEx = cs.length - nUS;
+  PDF_SECS.forEach(([k, , s, f]) => { if (!c.secs[k]) return; n += comp ? (k === 'report' ? 2 + nUS : k === 'estero' ? 1 + nEx : f) : s; });
+  PDF_ISTR.forEach(([k, , p]) => { if (c.secs[k]) n += p; });
   document.getElementById('pdfEst').textContent = 'Circa ' + n + ' pagine';
 }
 function buildPdfDlg() {
@@ -3577,14 +3592,13 @@ function buildPdfDlg() {
   const ev = document.getElementById('pdfEval'), has = !!(EVAL && EVAL.state === 'ok'); ev.checked = has && saved.eval !== false; ev.disabled = !has;
   document.getElementById('pdfEvalNote').textContent = has ? '(' + (LEV[String(EVAL.livello).toLowerCase()] || '') + ', preparata il ' + whenIt(EVAL.at) + ')' : '(nessuna valutazione salvata)';
   const R0 = DATA.monthly, gen = new Date(DATA.generated_at).toLocaleString('it-IT', {timeZone: 'Europe/Rome', day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit'});
-  const MONTHLY = ['report', 'estero'];
   const groups = [
-    ['upd', 'Aggiornate all\'ultimo aggiornamento', 'Dati di mercato al ' + fmtDl(T[N - 1]).trim() + ' · calcolati il ' + gen, PDF_SECS.filter(x => !MONTHLY.includes(x[0]))],
-    ['mon', 'Report del mese appena passato', R0 ? R0.month + ' · dati fino al ' + fmtDl(new Date(R0.end + 'T00:00:00Z')).trim() + ' · cambia dal 1° del mese' : 'report non disponibile', PDF_SECS.filter(x => MONTHLY.includes(x[0]))]].filter(g => g[3].length);
+    ['upd', 'Dati aggiornati all\'ultimo aggiornamento', 'Tutto calcolato su dati al ' + fmtDl(T[N - 1]).trim() + ' · aggiornato il ' + gen + ' · stesso ordine della pagina', PDF_SECS],
+    ['mon', 'Istruzioni e spiegazioni', 'Come leggere ogni dato: si aggiungono in fondo al documento, scegli solo quelle che ti servono', PDF_ISTR.map(x => [x[0], x[1]])]];
   for (const [gk, gt, gd, list] of groups) {
     const g = document.createElement('div'); g.className = 'psec-g ' + gk; const h = document.createElement('div'); h.className = 'psec-h'; const b = document.createElement('b'); b.textContent = gt; const d = document.createElement('span'); d.textContent = gd; h.append(b, d); g.append(h);
     const grid = document.createElement('div'); grid.className = 'psecs';
-    for (const [k, name] of list) { const l = document.createElement('label'); l.className = 'psec'; const i = document.createElement('input'); i.type = 'checkbox'; i.value = k; i.checked = saved.secs ? saved.secs[k] !== false : true; if (gk === 'mon' && !R0) { i.checked = false; i.disabled = true; } const s = document.createElement('span'); s.textContent = name; l.append(i, s); grid.append(l); }
+    for (const [k, name] of list) { const l = document.createElement('label'); l.className = 'psec'; const i = document.createElement('input'); i.type = 'checkbox'; i.value = k; i.checked = saved.secs ? saved.secs[k] !== false : true; if (k === 'report' && !R0) { i.checked = false; i.disabled = true; } if (gk === 'mon') i.checked = !!(saved.secs && saved.secs[k]); const s = document.createElement('span'); s.textContent = name; l.append(i, s); grid.append(l); }
     g.append(grid); box.append(g);
   }
   pdfEstimate();
@@ -3719,7 +3733,7 @@ async function makePdf(ch) {
   const i = N - 1, asOf = fmtDl(T[i]).trim(), today = new Date().toLocaleDateString('it-IT', {day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Europe/Rome'});
   const R = REP || DATA.monthly, TL = tileLevels(i), s0 = stateAt(i);
   const hasEval = ch.eval && EVAL && EVAL.state === 'ok';
-  const steps = (hasEval ? ['eval'] : []).concat(PDF_SECS.map(x => x[0]).filter(k => ch.secs[k] && (k !== 'report' && k !== 'estero' || R)));
+  const steps = (hasEval ? ['eval'] : []).concat(PDF_SECS.map(x => x[0]).filter(k => ch.secs[k] && (k !== 'report' && k !== 'estero' || R))).concat(PDF_ISTR.map(x => x[0]).filter(k => ch.secs[k]));
   let done = 0; const tick = (t) => { prog(6 + 86 * done / Math.max(1, steps.length), t); };
 
   // ---------- copertina
@@ -3796,7 +3810,7 @@ async function makePdf(ch) {
   newPage();
   h2('In breve');
   const brief = [];
-  if (R) brief.push({label: 'Report di ' + R.month + ':', t: QN[R.overall] + ' (' + QL[R.overall] + '). ' + R.parere});
+  if (R) brief.push({label: 'Report attuale (' + R.month + '):', t: QN[R.overall] + ' (' + QL[R.overall] + '). ' + R.parere});
   if (R && R.estero) brief.push({label: 'Mercati esteri:', t: R.estero});
   if (EVAL && EVAL.state === 'ok') brief.push({label: 'Valutazione del ' + whenIt(EVAL.at) + ':', t: (LEV[String(EVAL.livello).toLowerCase()] || '') + '. ' + (EVAL.titolo || '')});
   bullets(brief, {size: 10});
@@ -3804,7 +3818,7 @@ async function makePdf(ch) {
 
   // ---------- sezioni
   for (const k of steps) {
-    tick(k === 'eval' ? 'Valutazione attuale' : (PDF_SECS.find(x => x[0] === k) || [])[1]);
+    tick(k === 'eval' ? 'Valutazione attuale' : (PDF_SECS.find(x => x[0] === k) || PDF_ISTR.find(x => x[0] === k) || [])[1]);
     if (k === 'eval') {
       const E = EVAL, LI = {basso: 0, moderato: 1, elevato: 2, alto: 3}[String(E.livello).toLowerCase()];
       h1('Valutazione attuale', C.strs, 'preparata il ' + whenIt(E.at));
@@ -3847,15 +3861,13 @@ async function makePdf(ch) {
       box('In sintesi', [document.getElementById('takeaway').textContent], {color: LV[lv], bg: LVS[lv], size: 10.5});
       const lis = [...document.querySelectorAll('#factNow li')].map(li => { const b = li.querySelector('b'); const lab = b ? b.textContent.trim() : ''; return {label: lab, t: li.textContent.slice(b ? b.textContent.length : 0).trim()}; });
       if (lis.length) { h2('Situazione dei fattori al ' + asOf); bullets(lis, {size: 10}); }
-      if (COMP) { h2('Come leggere questi numeri'); ['ifi', 'FRAG', 'STRS', 'split', 'regola'].forEach(x => helpBlock(x)); }
     }
     if (k === 'grafico') {
       h1('Grafico S&P 500 e indice di rischio', C.sky, COMP ? 'fragilità e stress separati' : '');
       st.show.fs = COMP; drawMain(); await new Promise(r => setTimeout(r, 60));
       await image(document.getElementById('mainChart'), document.getElementById('mainFoot').textContent + '. Sopra il prezzo (scala logaritmica), sotto l\'indice 0–100. Righe viola: segnale di spaccatura; fasce rosa: periodi in difesa' + (COMP ? '; linee arancio e viola: fragilità e stress.' : '.'), {maxH: 135});
       st.show.fs = oldFs; drawMain();
-      if (COMP) { h2('La legenda del grafico'); ['tg_split', 'tg_def', 'tg_fs', 'tg_ma'].forEach(x => helpBlock(x)); }
-      else para('Come si legge: quando l\'indice resta sopra la soglia (' + st.th + ') o il prezzo scende sotto la media a 200 giorni, la regola va in difesa (fasce rosa). Le righe viola segnalano un rialzo sostenuto da pochi titoli.', {size: 10});
+      para('Come si legge: quando l\'indice resta sopra la soglia (' + st.th + ') o il prezzo scende sotto la media a 200 giorni, la regola va in difesa (fasce rosa). Le righe viola segnalano un rialzo sostenuto da pochi titoli.', {size: 10});
     }
     if (k === 'fattori') {
       h1('Fattori e pesi del modello', C.frag, 'dati al ' + asOf);
@@ -3867,7 +3879,6 @@ async function makePdf(ch) {
         DATA.factors.filter(f => f.group === g).forEach(f => { const p = COL['p_' + f.id][i], q = lvOf(p); rowsF.push(['   ' + f.name, g === 'FRAG' ? 'fragilità' : 'stress', nf(st.w[f.id], 2), FMT[f.id] ? FMT[f.id](COL[f.id][i]) : nf(COL[f.id][i], 2), {t: isNaN(p) ? '—' : Math.round(p), bold: true, fill: q == null ? null : LVS[q], color: q == null ? C.ink : (q === 1 ? [120, 96, 0] : LV[q])}, sgn(p - COL['p_' + f.id][back(i, 21)], 0, '')]); });
       }
       table([{h: 'Fattore', w: 70}, {h: 'Gruppo', w: 20}, {h: 'Peso', w: 13, align: 'r'}, {h: 'Valore', w: 22, align: 'r'}, {h: 'Percentile', w: 20, align: 'r'}, {h: 'Var. 4 sett.', w: 20, align: 'r'}], rowsF, {size: 9});
-      if (COMP) { h2('I fattori uno per uno'); DATA.factors.forEach(f => { helpBlock(f.id); }); }
     }
     const repTable = (cards) => table([{h: 'Area', w: 26}, {h: 'Indicatore', w: 58}, {h: 'Colore', w: 24}, {h: 'Valore', w: 34}, {h: 'Rispetto al mese prima', w: 34}],
       cards.map(c => [c.sec, {t: c.title, bold: true}, {t: QN[c.status], bold: true, fill: LVS[c.status], color: c.status === 1 ? [120, 96, 0] : LV[c.status]}, c.value, c.prev_status == null ? '—' : c.prev_status === c.status ? 'invariato' : (c.status > c.prev_status ? 'peggiorato da ' : 'migliorato da ') + QN[c.prev_status]]), {size: 9});
@@ -3887,8 +3898,8 @@ async function makePdf(ch) {
       para(c.how, {label: 'Colori:', size: 9.2});
     };
     if (k === 'report' && R) {
-      h1('Report del mese: ' + R.month, LV[R.overall], 'dati al ' + fmtDl(new Date(R.end + 'T00:00:00Z')).trim());
-      box('Quadro di ' + R.month + ': ' + levelName(R.overall), [R.headline, 'Cosa conviene fare: ' + R.parere], {color: LV[R.overall], bg: LVS[R.overall], size: 10.4});
+      h1('Report attuale: ' + R.month, LV[R.overall], 'dati al ' + fmtDl(new Date(R.end + 'T00:00:00Z')).trim());
+      box('Quadro attuale (' + R.month + '): ' + levelName(R.overall), [R.headline, 'Cosa conviene fare: ' + R.parere], {color: LV[R.overall], bg: LVS[R.overall], size: 10.4});
       const prevM = R.prev_end ? itLocale.utcFormat('%B')(new Date(R.prev_end + 'T00:00:00Z')) : 'il mese prima';
       if (R.recap.length) { h3('Da tenere d\'occhio', C.risk); bullets(R.recap, {size: 9.8, dot: C.risk}); }
       if (R.good.length) { h3('Cosa va bene', C.ok); para(R.good.join(' · '), {size: 9.8}); }
@@ -3911,7 +3922,6 @@ async function makePdf(ch) {
       for (const [g, name, ids, gk] of XGROUPS) ids.forEach(id => { const f = DATA.confirm.find(x => x.id === id), a = COL[id]; if (!f || !a) return; let last = N - 1; while (last > 0 && isNaN(a[last])) last--; const p = COL['p_' + id] ? COL['p_' + id][last] : NaN, q = lvOf(p);
         rowsC.push([{t: f.name, bold: true}, name, FMT[id] ? FMT[id](a[last]) : nf(a[last], 2), {t: isNaN(p) ? '—' : Math.round(p), bold: true, fill: q == null ? null : LVS[q], color: q == null ? C.ink : (q === 1 ? [120, 96, 0] : LV[q])}, st[gk] > 0 && st.wc[id] > 0 ? 'sì' : 'no', fmtDl(T[last]).trim()]); });
       table([{h: 'Indicatore', w: 58}, {h: 'Gruppo', w: 34}, {h: 'Ultimo', w: 22, align: 'r'}, {h: 'Percentile', w: 18, align: 'r'}, {h: 'Nell\'indice', w: 16}, {h: 'Dato al', w: 22}], rowsC, {size: 8.8});
-      if (COMP) { h2('Gli indicatori uno per uno'); ['INST', 'SENT', 'MACRO'].forEach(x => helpBlock(x)); DATA.confirm.forEach(f => { if (HELP[f.id]) helpBlock(f.id); }); }
     }
     if (k === 'backtest') {
       h1('Prova sul passato', C.risk, 'regola della dashboard');
@@ -3926,7 +3936,7 @@ async function makePdf(ch) {
       para(document.getElementById('btNote').textContent, {size: 8.6, color: C.muted});
       if (COMP) { const ep = [...document.querySelectorAll('#epTable tbody tr')].map(tr => [...tr.children].map(td => td.textContent));
         if (ep.length) { h2('Episodi di allerta e cosa è successo dopo'); table([...document.querySelectorAll('#epTable thead th')].map((th, j) => ({h: th.textContent, w: j < 2 ? 26 : 20, align: j > 1 ? 'r' : null})), ep, {size: 8.4}); }
-        h2('Le misure in breve'); ['cagr', 'maxdd', 'vol', 'tdef'].forEach(x => helpBlock(x)); }
+        }
     }
     if (k === 'calibrazione') {
       h1('Affidabilità dell\'indice', C['navy-2'], 'capacità di previsione');
@@ -3934,20 +3944,35 @@ async function makePdf(ch) {
       const ar = [...document.querySelectorAll('#aucTable tbody tr')].map(tr => [...tr.children].map(td => td.textContent));
       if (ar.length) table([...document.querySelectorAll('#aucTable thead th')].map((th, j) => ({h: th.textContent, w: j ? 26 : 40, align: j ? 'r' : null})), ar, {size: 9});
       para('AUC: 0,5 = come tirare una moneta, 1 = perfetto. ' + document.getElementById('aucCi').textContent, {size: 9.6});
-      if (COMP) ['calibrazione', 'auc'].forEach(x => helpBlock(x));
     }
     if (k === 'spaccatura') {
       h1('Segnale di spaccatura', C.split || C.risk, 'storico');
       [...document.querySelectorAll('#spaccatura .prose p')].forEach(p => { const b = p.querySelector('b'); para(b ? p.textContent.slice(b.textContent.length).trim() : p.textContent, {label: b ? b.textContent : null, size: 10}); });
       const sr = [...document.querySelectorAll('#splitTable tbody tr')].map(tr => [...tr.children].map(td => ({t: td.textContent, color: td.style.color ? C.risk : null})));
       if (sr.length) table([{h: 'Segnale acceso il', w: 60}, {h: 'Minimo nei 60 giorni', w: 50, align: 'r'}, {h: 'Minimo nei 6 mesi', w: 50, align: 'r'}], sr, {size: 9});
-      if (COMP) helpBlock('split');
     }
     if (k === 'metodo') {
       h1('Metodo, fonti e limiti', C.muted);
       document.querySelectorAll('#metodo h3').forEach(hh => { h2(hh.textContent); const ul = hh.nextElementSibling; bullets([...(ul ? ul.querySelectorAll('li') : [])].map(li => { const b = li.querySelector('b'); return b ? {label: b.textContent, t: li.textContent.slice(b.textContent.length).trim()} : li.textContent; }), {size: 9.8}); });
       para('Indicazioni generali basate su dati di mercato: non sono una consulenza personalizzata né una previsione certa.', {size: 9.6, color: C.muted});
     }
+    if (k === 'indici') {
+      let IX = null; try { const r = await fetch('indici.json?' + Date.now(), {cache: 'no-store'}); if (r.ok) IX = await r.json(); } catch (e) {}
+      if (IX && IX.gruppi) {
+        const dI = d => new Date(d + 'T00:00:00Z').toLocaleDateString('it-IT', {day: 'numeric', month: 'short', timeZone: 'UTC'}), pc = (v, rate) => v == null ? '—' : (v > 0 ? '+' : v < 0 ? '-' : '') + Math.abs(v).toLocaleString('it-IT', {maximumFractionDigits: rate ? 2 : 1}) + (rate ? ' pt' : '%');
+        h1('Indici, materie prime, cambi, cripto', C.sky, 'ultimo prezzo disponibile ' + dI(IX.gruppi[0].righe[0].data));
+        for (const g of IX.gruppi) { const rate = g.g.startsWith('Tassi'); h2(g.g);
+          table([{h: 'Strumento', w: 56}, {h: 'Ultimo', w: 26, align: 'r'}, {h: '1 giorno', w: 22, align: 'r'}, {h: '1 mese', w: 22, align: 'r'}, {h: 'Da inizio anno', w: 24, align: 'r'}, {h: '1 anno', w: 22, align: 'r'}],
+            g.righe.map(r => [{t: r.n, bold: true}, nf(r.p, r.p < 10 ? 3 : 2), {t: pc(r.g1, rate), color: r.g1 > 0 ? C.ok : r.g1 < 0 ? C.risk : C.muted}, {t: pc(r.m1, rate), color: r.m1 > 0 ? C.ok : r.m1 < 0 ? C.risk : C.muted}, {t: pc(r.y0, rate), color: r.y0 > 0 ? C.ok : r.y0 < 0 ? C.risk : C.muted}, {t: pc(r.a1, rate), color: r.a1 > 0 ? C.ok : r.a1 < 0 ? C.risk : C.muted}]), {size: 8.6}); }
+      } else { h1('Indici, materie prime, cambi, cripto', C.sky); para('Dati non disponibili al momento della creazione del report.', {size: 10}); }
+    }
+    if (k === 'i_stato') { h1('Istruzioni · come leggere i numeri', C.muted); ['ifi', 'FRAG', 'STRS', 'split', 'regola'].forEach(x => helpBlock(x)); }
+    if (k === 'i_grafico') { h1('Istruzioni · legenda del grafico', C.muted); ['tg_split', 'tg_def', 'tg_fs', 'tg_ma'].forEach(x => helpBlock(x)); }
+    if (k === 'i_fattori') { h1('Istruzioni · i fattori uno per uno', C.muted); DATA.factors.forEach(f => helpBlock(f.id)); }
+    if (k === 'i_conferma') { h1('Istruzioni · gli indicatori esterni', C.muted); ['INST', 'SENT', 'MACRO'].forEach(x => helpBlock(x)); DATA.confirm.forEach(f => { if (HELP[f.id]) helpBlock(f.id); }); }
+    if (k === 'i_calibrazione') { h1('Istruzioni · affidabilità', C.muted); ['calibrazione', 'auc'].forEach(x => helpBlock(x)); }
+    if (k === 'i_spaccatura') { h1('Istruzioni · segnale di spaccatura', C.muted); helpBlock('split'); }
+    if (k === 'i_backtest') { h1('Istruzioni · misure della prova sul passato', C.muted); ['cagr', 'maxdd', 'vol', 'tdef'].forEach(x => helpBlock(x)); }
     done++;
   }
   prog(94, 'Indice e numeri di pagina');
