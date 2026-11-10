@@ -1150,9 +1150,10 @@ body.tech-on .secnav .tl{display:inline-block}
 const TRIGGER_ID = "trig_01RFskvnKEXEMuPW4wo8Haxw";      // compito "aggiorna dati"
 const EVAL_TRIGGER_ID = "trig_01JUVzUSZf92iP2qE7fLPynn"; // compito "valutazione attuale"
 // Versione della dashboard (v3.8.1): aumenta a ogni modifica di pagina o modello (non con gli aggiornamenti dei dati).
-const APP_VERSION = '2.0';
+const APP_VERSION = '2.1';
 const DEF_GI = 0.5; // peso predefinito del gruppo «Grandi investitori istituzionali»
 const CHANGELOG = [
+  ['2.1', '10/11/2026', ['Nuovo pulsante Indici: indici mondiali, materie prime, cambi, tassi e cripto, aggiornati a ogni aggiornamento, con grafico al clic.', 'Dati esteri, materie prime e report calcolati all\'ultima seduta, non più sul report del mese.', 'Pulsanti in alto su una sola riga.', 'Report PDF riordinato come la pagina, con sezione Indici; istruzioni e spiegazioni a parte e selezionabili; Idee da approfondire separate dalla Valutazione attuale.', 'Prezzi di riferimento delle idee aggiornati a ogni aggiornamento.']],
   ['2.0', '10/11/2026', ['Nuova versione 2.0: sostituisce la 3.8.1 con un modello semplificato e un pannello pensato per chi investe.', 'Pulsanti in alto: Notizie (la valutazione di mercato con fonti), Idee da approfondire, Peso S&P 500 e Report. Cliccando una voce di «Da seguire» si aprono le notizie approfondite su quel punto.', 'Cliccando il grafico dell\'indice di rischio si vede l\'andamento a 12 mesi con i numeri colorati e la data al passaggio del mouse.', 'Ogni indicatore di sentiment, grandi investitori, valutazione e macro ha la sua scheda con grafici, indicazioni e storico.', 'Nuovo modello di quota: al modello di base (allocazione adattiva, invariato) si aggiungono i segnali precoci (ampiezza, titoli medi contro indice, credito, grandi titoli tecnologici, rotazione verso i difensivi) e una regola di rientro a tranche.', 'Pannello della propensione al rischio: quattro domande, tre profili fissi (Prudente, Bilanciato, Dinamico) e quota massima in azioni.', 'Pesi e soglie fissi: tolti i cursori dei pesi e i comandi della regola.', 'Esposizione semplificata: in alto solo il Consiglio con una frase che spiega il motivo, l\'indice di rischio e la quota mese per mese. Metodo e numeri sono dietro al bottone «Come ci siamo arrivati».', 'La valutazione di mercato è nel corpo della pagina al posto del report del mese, con la data di aggiornamento in evidenza e i temi del momento con i loro grafici.', 'Fattori dell\'indice in forma compatta; i pesi si vedono dal bottone «Come sono distribuiti i pesi».', 'Nuova sezione Prove del modello: risultati sul passato per profilo.', 'Alla prima apertura chiede il nome e il profilo di investitore; restano memorizzati e si possono cambiare quando si vuole.', 'Funziona con un doppio clic, senza internet: dati e librerie sono nella cartella.']],
   ['3.8.1', '09/11/2026', ['La pagina resta sempre in tema chiaro: non passa più alla modalità notte, né con l\'impostazione del dispositivo né con quella del contenitore.']],
   ['3.8.0', '05/11/2026', ['Allocazione adattiva: il blocco degli aumenti dopo uno shock non dura più 21 sedute fisse. Gli aumenti restano sospesi finché lo stress non rientra: servono almeno 10 sedute dallo shock, indice di rischio sotto 55 e S&P sopra la sua media a 20 giorni; in ogni caso il blocco finisce dopo 21 sedute, e un nuovo shock lo fa ripartire. Il taglio della quota resta immediato. Scopo: non perdere il rimbalzo dopo una caduta rapida, mantenendo la protezione. Nel test 2000–2026 (S&P senza dividendi e senza costi) il rendimento sale da 4,4% a 4,9% l\'anno, la perdita massima passa da −9,7% a −14,9% (nel ribasso 2000–03); dal 2010 6,3% contro 5,8% con perdita massima −10,1% contro −9,7%. Sono prove sul passato con regole scelte guardando il passato: non garantiscono i risultati futuri. Oggi l\'indice è sopra 55 e il Consiglio non cambia.']],
@@ -3564,7 +3565,7 @@ function btnProg(b, p, label, state) {
 const PDF_SECS = [
   ['stato', 'Situazione di oggi', 1, 1], ['estero', 'Mercati esteri', 1, 1], ['indici', 'Indici, materie prime, cambi, cripto', 2, 2], ['conferma', 'Indicatori esterni', 1, 1],
   ['grafico', 'Grafico S&P 500 e indice', 1, 2], ['fattori', 'Fattori dell\'indice', 1, 1], ['calibrazione', 'Affidabilità', 1, 1], ['spaccatura', 'Segnale di spaccatura', 1, 1],
-  ['metodo', 'Metodo e limiti', 1, 1], ['backtest', 'Prova sul passato', 1, 2], ['report', 'Report attuale: mercato americano', 2, 2]
+  ['metodo', 'Metodo e limiti', 1, 1], ['backtest', 'Prova sul passato', 1, 2], ['report', 'Report attuale: mercato americano', 2, 2], ['idee', 'Idee da approfondire (dalla valutazione)', 3, 5]
 ];
 // istruzioni e spiegazioni: gruppo a parte, selezionabile, in fondo al documento
 const PDF_ISTR = [
@@ -3598,7 +3599,7 @@ function buildPdfDlg() {
   for (const [gk, gt, gd, list] of groups) {
     const g = document.createElement('div'); g.className = 'psec-g ' + gk; const h = document.createElement('div'); h.className = 'psec-h'; const b = document.createElement('b'); b.textContent = gt; const d = document.createElement('span'); d.textContent = gd; h.append(b, d); g.append(h);
     const grid = document.createElement('div'); grid.className = 'psecs';
-    for (const [k, name] of list) { const l = document.createElement('label'); l.className = 'psec'; const i = document.createElement('input'); i.type = 'checkbox'; i.value = k; i.checked = saved.secs ? saved.secs[k] !== false : true; if (k === 'report' && !R0) { i.checked = false; i.disabled = true; } if (gk === 'mon') i.checked = !!(saved.secs && saved.secs[k]); const s = document.createElement('span'); s.textContent = name; l.append(i, s); grid.append(l); }
+    for (const [k, name] of list) { const l = document.createElement('label'); l.className = 'psec'; const i = document.createElement('input'); i.type = 'checkbox'; i.value = k; i.checked = saved.secs ? saved.secs[k] !== false : true; if (k === 'report' && !R0 || k === 'idee' && !(EVAL && EVAL.state === 'ok')) { i.checked = false; i.disabled = true; } if (gk === 'mon') i.checked = !!(saved.secs && saved.secs[k]); const s = document.createElement('span'); s.textContent = name; l.append(i, s); grid.append(l); }
     g.append(grid); box.append(g);
   }
   pdfEstimate();
@@ -3733,7 +3734,7 @@ async function makePdf(ch) {
   const i = N - 1, asOf = fmtDl(T[i]).trim(), today = new Date().toLocaleDateString('it-IT', {day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Europe/Rome'});
   const R = REP || DATA.monthly, TL = tileLevels(i), s0 = stateAt(i);
   const hasEval = ch.eval && EVAL && EVAL.state === 'ok';
-  const steps = (hasEval ? ['eval'] : []).concat(PDF_SECS.map(x => x[0]).filter(k => ch.secs[k] && (k !== 'report' && k !== 'estero' || R))).concat(PDF_ISTR.map(x => x[0]).filter(k => ch.secs[k]));
+  const steps = (hasEval ? ['eval'] : []).concat(PDF_SECS.map(x => x[0]).filter(k => ch.secs[k] && (k !== 'report' && k !== 'estero' || R) && (k !== 'idee' || (EVAL && EVAL.state === 'ok' && (EVAL.idee || []).length)))).concat(PDF_ISTR.map(x => x[0]).filter(k => ch.secs[k]));
   let done = 0; const tick = (t) => { prog(6 + 86 * done / Math.max(1, steps.length), t); };
 
   // ---------- copertina
@@ -3832,6 +3833,11 @@ async function makePdf(ch) {
           return [{t: x.tema, bold: true}, x.lettura, {t: x.segno, color: c, bold: true}, {t: x.fonte + (x.data ? ' (' + x.data + ')' : ''), link: x.url}]; }), {size: 8.8}); }
       if (E.concordanza) box('Dashboard e fonti a confronto', [E.concordanza]);
       if (COMP && (E.monitorare || []).length) { h2('Cosa tenere d\'occhio'); table([{h: 'Cosa', w: 40}, {h: 'Perché conta', w: 70}, {h: 'Cosa cambierebbe la valutazione', w: 62}], E.monitorare.map(m => [{t: m.cosa, bold: true}, m.perche, m.soglia]), {size: 8.8}); }
+      if (COMP && (E.limiti || []).length) { h2('Limiti di questa valutazione'); bullets(E.limiti, {size: 9.6, dot: C.muted}); }
+      if (COMP && (E.fonti || []).length) { h2('Fonti'); table([{h: 'Fonte', w: 120}, {h: 'Data', w: 30}], E.fonti.map(f => [{t: f.nome, link: f.url}, f.data || '']), {size: 8.4}); }
+    }
+    if (k === 'idee') {
+      const E = EVAL; h1('Idee da approfondire', C.risk, 'preparate con la valutazione del ' + whenIt(E.at) + ' · non sono consigli personalizzati');
       const ideas = E.idee || [], isRisk = x => /rischios|alto rischio|speculat/i.test(x.direzione || ''), base = ideas.filter(x => !isRisk(x)), risky = ideas.filter(isRisk);
       if (ideas.length) {
         h2('Idee da approfondire', C.idea);
@@ -3849,8 +3855,6 @@ async function makePdf(ch) {
             para(x.sottovalutazione, {label: 'Perché è sottovalutato:', size: 10, after: 1}); para(x.catalizzatori, {label: 'Cosa può farlo risalire:', size: 10, after: 1}); para(x.rischi, {label: 'Rischi:', size: 10, labelColor: C.risk, after: 1}); if (COMP) para(x.tesi, {label: 'Tesi:', size: 10, after: 1});
             if (x.link && safeUrl(x.link)) { need(6); font(9.5, true, C['navy-2']); doc.textWithLink(san('Apri su ' + (x.link_sito || 'sito') + ' ->'), M, y + 4, {url: x.link}); y += 6; } y += 2.5; }); }
       }
-      if (COMP && (E.limiti || []).length) { h2('Limiti di questa valutazione'); bullets(E.limiti, {size: 9.6, dot: C.muted}); }
-      if (COMP && (E.fonti || []).length) { h2('Fonti'); table([{h: 'Fonte', w: 120}, {h: 'Data', w: 30}], E.fonti.map(f => [{t: f.nome, link: f.url}, f.data || '']), {size: 8.4}); }
     }
     if (k === 'stato') {
       h1('Situazione di oggi', LV[lv], 'dati al ' + asOf);
