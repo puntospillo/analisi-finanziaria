@@ -1,0 +1,7 @@
+  <div class="tech" id="tech">
+  <section class="card tech-intro" id="come"><div class="tech-h"><h2>Come ci siamo arrivati</h2><button class="btn" type="button" data-tech="0">Chiudi questa parte</button></div><p>Il metodo e tutti i numeri dietro al Consiglio: i motivi della quota, i segnali precoci, il grafico storico, le prove sul passato e i fattori dell'indice. Le sezioni di approfondimento in fondo si aprono con "Apri"; ogni voce si può cliccare per la spiegazione.</p></section>
+  <section class="tech-top">
+    <div class="card mot-card" id="motCard"></div>
+    <div class="card sig-card" id="sigCard"></div>
+    <div class="card" style="grid-column:1/-1;padding:10px 14px"><div class="more-h" style="margin-bottom:8px">Componenti del modello di base<span class="muted">clicca per la spiegazione</span></div><div id="aavBox"></div></div>
+  </section>

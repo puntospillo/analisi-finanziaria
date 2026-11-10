@@ -1,0 +1,9 @@
+<dialog class="help wide" id="profDlg" aria-labelledby="profTitle"><div class="help-in">
+  <div class="lab" id="profLab">Il tuo profilo</div><h3 id="profTitle">Profilo di investitore</h3>
+  <p style="margin:0">Il nome, quattro domande e la quota massima in azioni: restano memorizzati su questo computer. Il profilo non cambia la misura del rischio di mercato, che è uguale per tutti: cambia quanto si riduce quando i segnali precoci sono confermati e quanto in fretta si rientra. Puoi cambiarlo quando vuoi: consiglio, grafici e prove sul passato si ricalcolano subito.</p>
+  <form class="prof-form" id="profForm" onsubmit="return false"></form>
+  <div class="prof-res" id="profRes"></div>
+  <div class="tbl-wrap"><table class="metrics" id="profTable"><thead><tr><th>Profilo</th><th class="r">Quota di oggi</th><th class="r">Tetto in riduzione</th><th class="r">Rientro senza conferme</th><th>Dopo uno shock</th><th class="r">Dal 2000: rend. / perdita max</th><th class="r">Dal 2010: rend. / perdita max</th></tr></thead><tbody></tbody></table></div>
+  <p class="muted" style="font-size:.78rem;margin:0">Risultati sul passato calcolati sui soli prezzi dell'S&amp;P 500, senza costi e tasse; modello in prova, non validato. Non è un questionario di adeguatezza e non è consulenza personalizzata: serve solo a scegliere tra tre regole fisse.</p>
+  <div class="prof-act"><button class="btn" type="button" id="profClose">Chiudi senza salvare</button><button class="btn btn-primary" type="button" id="profSave">Salva profilo</button></div>
+</div></dialog>

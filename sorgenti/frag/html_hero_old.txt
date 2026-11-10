@@ -1,0 +1,4 @@
+    <div class="card adv-card clickable" id="advCard" data-help="consiglio" tabindex="0"></div>
+    <div class="tiles" id="tiles"></div>
+    <div class="shockbar" id="shockBar"></div>
+    <div class="card rule-card clickable" id="ruleCard" data-help="quota" tabindex="0"></div>

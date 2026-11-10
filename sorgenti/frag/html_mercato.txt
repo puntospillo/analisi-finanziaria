@@ -1,0 +1,9 @@
+  <section class="card mkt" id="mercato">
+    <div class="card-head"><div><h2>Valutazione di mercato<button class="hb" type="button" data-help="valutazione" aria-label="Spiegazione">?</button></h2><p>La situazione dei mercati, riscritta a ogni nuova valutazione.</p></div></div>
+    <div class="mkt-upd clickable" id="mktUpd" data-help="mk_data"></div>
+    <div class="mkt-body" id="mktBody"></div>
+  </section>
+  <section class="card" id="esteri">
+    <div class="card-head"><div><h2>Mercati esteri e materie prime</h2><p id="estUpd"></p></div></div>
+    <div id="estBody"></div>
+  </section>

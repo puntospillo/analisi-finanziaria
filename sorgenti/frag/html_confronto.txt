@@ -1,0 +1,7 @@
+  <section class="card" id="confronto">
+    <div class="card-head"><div><h2>Prove del modello 2.0<button class="hb" type="button" data-help="confronto" aria-label="Spiegazione">?</button></h2><p>Cosa avrebbe reso ogni profilo sul passato, a confronto con il modello di base e con il restare sempre investiti.</p></div></div>
+    <div class="tbl-wrap"><table class="metrics" id="cmpBt"><thead><tr><th>Strategia</th><th class="r">Rend. l'anno dal 2000</th><th class="r">Perdita max dal 2000</th><th class="r">Rend. l'anno dal 2010</th><th class="r">Perdita max dal 2010</th><th class="r">Azioni in media</th><th class="r">Quota di oggi</th></tr></thead><tbody></tbody></table></div>
+    <p class="muted" style="font-size:.78rem;margin:6px 0 10px" id="cmpBtNote"></p>
+    <div class="exbox"><b>Cosa dicono le prove</b><p id="cmpVerdict"></p></div>
+  </section>
+

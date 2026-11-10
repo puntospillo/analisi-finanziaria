@@ -1,0 +1,2 @@
+    <div class="card rule-card clickable" id="ruleCard" data-help="quota" tabindex="0"></div>
+    <div class="card more-card" id="moreCard"><div class="more-h">Altri numeri di oggi<span class="muted">clicca su ogni riquadro per la spiegazione</span></div><div class="more-in"><div class="tiles" id="tiles"></div><div class="shockbar" id="shockBar"></div></div></div>
