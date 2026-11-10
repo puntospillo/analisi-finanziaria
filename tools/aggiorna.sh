@@ -12,6 +12,7 @@ fail() { echo "ERRORE: $1"; tail -5 "$L"; echo "Dati pubblicati invariati."; exi
 python3 "$R/code/fetch_data.py" "$W" >"$L" 2>&1 || fail "scarico dati"
 python3 "$R/code/ifi_pipeline.py" "$W" >>"$L" 2>&1 || fail "calcolo indice"
 python3 -W ignore "$R/code/scarica_extra.py" "$W/dati/ifi_data.json" "$W/extra_data.json" >>"$L" 2>&1 || fail "serie aggiuntive"
+python3 -W ignore "$R/code/scarica_indici.py" "$W/indici.json" >>"$L" 2>&1 && cp "$W/indici.json" "$R/indici.json" || echo "WARN indici non aggiornati"
 python3 "$R/tools/dopo_dati.py" "$W" "$R" >>"$L" 2>&1 || fail "controllo finale"; grep -h "^DATI" "$L"
 python3 "$R/tools/contesto.py" --breve || { git -C "$R" checkout -q -- . ; fail "la pagina non si apre con i nuovi dati"; }
 grep -h "^WARN" "$L" | head -3

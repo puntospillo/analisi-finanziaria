@@ -61,3 +61,7 @@ op = [i for i in idee if i['direzione'] == 'opportunità rischiosa']; ap = R + '
 A['voci'] = [v for v in A['voci'] if v.get('data') != day] + [{'data': day, 'rid': rid, 'livello': n['livello'], 'titolo': n['titolo'], 'opportunita': op}]
 json.dump(A, open(ap, 'w'), ensure_ascii=False, separators=(',', ':'))
 print('VALUTAZIONE salvata · %s · %d idee (%d opportunità rischiose) · %d fonti' % (n['livello'], len(idee), len(op), len(fonti)))
+# prezzi di riferimento delle idee all'ultima chiusura (Yahoo Finance)
+try:
+    import subprocess; subprocess.run([sys.executable, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'code', 'prezzi_idee.py')], timeout=120)
+except Exception as e: print('WARN prezzi idee non aggiornati:', e)

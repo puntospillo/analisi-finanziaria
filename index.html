@@ -861,6 +861,24 @@ body.tech-on .secnav .tl{display:inline-block}
 .mkt-seg li b{color:var(--navy);font-size:.9rem}.mkt-seg li .sg{color:var(--ink,inherit);font-size:.82rem}.mkt-seg li .more{font-style:normal;font-size:.76rem;font-weight:700;color:var(--link,#2563b8);margin-top:auto;padding-top:4px}
 .verfoot{display:flex;gap:8px;align-items:center;justify-content:center}.verfoot .ver{margin:0}
 .verfoot{margin-top:-18px!important}
+
+/* indici */
+.btn-ind{background:linear-gradient(135deg,#0ea5e9,#2563eb);color:#fff;border-color:transparent}
+.ind .ev-top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.ind-g{margin:10px 0 4px;font-size:.78rem;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);font-weight:700}
+.ind-t{width:100%;border-collapse:collapse;font-size:.86rem}
+.ind-t td,.ind-t th{padding:6px 8px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+.ind-t th{font-size:.7rem;color:var(--muted);font-weight:600;text-transform:uppercase}
+.ind-t td:first-child,.ind-t th:first-child{text-align:left;white-space:normal}
+.ind-t tbody tr{cursor:pointer}.ind-t tbody tr:hover{background:rgba(37,99,235,.07)}
+.ind-up{color:var(--ok);font-weight:600}.ind-dn{color:var(--risk);font-weight:600}.ind-fl{color:var(--muted)}
+.ind-sp{width:84px;height:24px;vertical-align:middle}
+.ind-det .ind-big{display:flex;flex-wrap:wrap;gap:10px;margin:6px 0}
+.ind-det .ind-k{padding:8px 12px;border:1px solid var(--line);border-radius:10px;min-width:96px}
+.ind-det .ind-k b{display:block;font-size:1.05rem}.ind-det .ind-k span{font-size:.7rem;color:var(--muted);text-transform:uppercase}
+.ind-per button{border:1px solid var(--line);background:var(--panel);border-radius:8px;padding:4px 10px;margin-right:6px;cursor:pointer}
+.ind-per button[aria-pressed=true]{background:var(--navy);color:#fff}
+@media(max-width:640px){.ind-t .ind-hide{display:none}.ind-sp{width:56px}}
 </style>
 
 <div class="wrap">
@@ -874,7 +892,7 @@ body.tech-on .secnav .tl{display:inline-block}
       </div>
     </div>
     <div class="upd">
-      <button class="btn btn-eval" id="btnEval" type="button" hidden><span class="spark"></span><span class="blab"></span></button><button class="btn btn-eval" id="btnNotizie" type="button" title="Le notizie del momento: dashboard, fonti esterne, cosa seguire"><span class="spark" aria-hidden="true">◔</span><span class="blab">Notizie</span></button><button class="btn btn-eval" id="btnIdee" type="button" title="Idee di approfondimento: società e temi da studiare, con le fonti"><span class="spark" aria-hidden="true">✦</span><span class="blab">Idee da approfondire</span></button><button class="btn btn-peso" id="btnPeso" type="button" title="I primi 50 titoli dell'S&P 500 per peso nell'indice"><span class="ic" aria-hidden="true">▦</span><span class="blab">Peso S&amp;P 500</span></button>
+      <button class="btn btn-eval" id="btnEval" type="button" hidden><span class="spark"></span><span class="blab"></span></button><button class="btn btn-eval" id="btnNotizie" type="button" title="Le notizie del momento: dashboard, fonti esterne, cosa seguire"><span class="spark" aria-hidden="true">◔</span><span class="blab">Notizie</span></button><button class="btn btn-eval btn-ind" id="btnIndici" type="button" title="Indici mondiali, materie prime, cambi, tassi e cripto: clicca una riga per il grafico"><span class="spark" aria-hidden="true">📈</span> Indici</button><button class="btn btn-eval" id="btnIdee" type="button" title="Idee di approfondimento: società e temi da studiare, con le fonti"><span class="spark" aria-hidden="true">✦</span><span class="blab">Idee da approfondire</span></button><button class="btn btn-peso" id="btnPeso" type="button" title="I primi 50 titoli dell'S&P 500 per peso nell'indice"><span class="ic" aria-hidden="true">▦</span><span class="blab">Peso S&amp;P 500</span></button>
       <button class="btn btn-rep" id="btnReport" type="button" title="Crea un PDF con tutti i dati della dashboard: scegli tu le sezioni e il livello di dettaglio"><span class="ic" aria-hidden="true">⎙</span><span class="blab">Report</span></button>
       <button class="btn btn-primary" id="btnUpdate" type="button" title="Scarica i dati di mercato più recenti e ricalcola l'indice"><span class="ic" aria-hidden="true">↻</span><span class="blab">Aggiorna ora</span></button>
     </div>
@@ -888,6 +906,7 @@ body.tech-on .secnav .tl{display:inline-block}
   <div id="app" class="loading">Caricamento della serie storica…</div>
 </div>
 <dialog class="help wide" id="topDlg" aria-labelledby="topTitle"><div class="help-in"><div class="lab">Composizione dell'S&amp;P 500</div><h3 id="topTitle">Primi 50 titoli per peso</h3><p id="topNote"></p><div class="tbl-wrap" style="max-height:60vh;overflow:auto"><table class="top50" id="topTable"><thead><tr><th class="r">#</th><th>Società</th><th class="r">Peso</th><th class="r">Peso cumulato</th><th class="r">1 giorno</th><th class="r">1 mese</th><th class="r">3 mesi</th><th class="r">1 anno</th><th class="r">Dal massimo</th><th>Media 200g</th></tr></thead><tbody></tbody></table></div><button class="btn help-close" type="button" id="topClose">Chiudi</button></div></dialog>
+<dialog class="help wide" id="indDlg" aria-labelledby="indTitle"><div class="help-in ind"><div class="ev-top"><h3 id="indTitle">Indici, materie prime, cambi, tassi e cripto</h3><button type="button" class="hclose" id="indClose" aria-label="Chiudi">×</button></div><p class="muted" id="indUpd"></p><div id="indBody"></div></div></dialog>
 <dialog class="help wide" id="evalDlg" aria-labelledby="evTitle"><div class="help-in ev">
   <div class="ev-top"><div class="ev-run"><button class="btn btn-eval" type="button" id="evRun"><span class="spark" aria-hidden="true">✦</span>Nuova valutazione con le impostazioni attuali</button><div class="ev-last" id="evLast">Ultimo aggiornamento: —</div></div>
   <div class="lab">Valutazione del mercato · ricerca di Claude su fonti professionali + dati della dashboard<button class="hb" type="button" data-help="valutazione" aria-label="Spiegazione">?</button></div></div>
@@ -2039,13 +2058,13 @@ function renderEsteri() {
     const v = el('div', 'ev', c.value); v.style.color = css(QV[c.status]);
     b.append(hd, v, el('div', 'et', c.text));
     const cb = el('div', 'est-chart'); b.append(cb);
-    if (c.chart) b.append(el('div', 'cap', 'Ultimi due anni' + (c.chart.marks && c.chart.marks.length ? ' · triangoli verdi = segnale Buy, rossi = Sell; linea tratteggiata = media a 10 mesi' : (c.chart.series.some(s => s.role === 'ma') ? ' · linea tratteggiata = media' : '')) + ' · dati di fine mese'));
+    if (c.chart) b.append(el('div', 'cap', 'Ultimi due anni' + (c.chart.marks && c.chart.marks.length ? ' · triangoli verdi = segnale Buy, rossi = Sell; linea tratteggiata = media a 10 mesi' : (c.chart.series.some(s => s.role === 'ma') ? ' · linea tratteggiata = media' : '')) + ' · aggiornati all\'ultima seduta'));
     if (c.impl) { const i = el('div', 'ei'); i.append(el('b', null, 'Cosa significa: '), c.impl); b.append(i); }
     const op = () => openRepCard(k); b.addEventListener('click', op); b.addEventListener('keydown', e => { if (e.key === 'Enter') op(); });
     g.append(b); requestAnimationFrame(() => estChart(cb, c)); }); return g; };
   const OTH = ['materie', 'cambio', 'tassi', 'cripto'];
   const E = R.cards.filter(c => c.area === 'estero'), O = R.cards.filter(c => OTH.includes(c.id));
-  const up = document.getElementById('estUpd'); if (up) up.textContent = 'Dati di fine ' + (R.month_label || R.month || 'mese') + ' · le tendenze si basano sul prezzo mensile rispetto alla media di 10 mesi · clicca un riquadro per la spiegazione';
+  const up = document.getElementById('estUpd'); if (up) up.textContent = 'Dati all\'ultima seduta, ' + (R.end ? fmtDl(new Date(R.end + 'T00:00:00Z')).trim() : '') + ' · le tendenze si basano sul prezzo mensile rispetto alla media di 10 mesi · clicca un riquadro per la spiegazione';
   const g1 = mk(c => c.area === 'estero'), g2 = mk(c => OTH.includes(c.id));
   if (g1.children.length) {
     box.append(el('h3', 'est-h', 'Mercati azionari esteri'));
@@ -2065,6 +2084,56 @@ document.body.classList.add('tech-on');
 
 document.getElementById('btnIdee')?.addEventListener('click', () => { if (DATA) openIdee('idee'); });
 document.getElementById('btnNotizie')?.addEventListener('click', () => { if (DATA) openIdee('notizie'); });
+
+// ---- indici mondiali, materie prime, cambi, tassi e cripto (indici.json, aggiornato a ogni "aggiorna")
+(function () {
+  let IND = null;
+  const NS = 'http://www.w3.org/2000/svg', fm = (v, rate) => rate ? v.toLocaleString('it-IT', {minimumFractionDigits: 2, maximumFractionDigits: 3}) : v.toLocaleString('it-IT', {maximumFractionDigits: Math.abs(v) < 10 ? 4 : Math.abs(v) < 1000 ? 2 : 0});
+  const sg = (v, rate) => v == null ? '–' : (v > 0 ? '+' : v < 0 ? '−' : '') + Math.abs(v).toLocaleString('it-IT', {maximumFractionDigits: rate ? 2 : 1}) + (rate ? ' pt' : '%'), cl = v => v == null || v === 0 ? 'ind-fl' : v > 0 ? 'ind-up' : 'ind-dn';
+  const dIt = s => new Date(s + 'T00:00:00Z').toLocaleDateString('it-IT', {day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC'});
+  function spark(r) { const v = r.sp, lo = Math.min(...v), hi = Math.max(...v), W = 84, H = 24, x = i => i * (W - 2) / (v.length - 1) + 1, y = a => H - 2 - (a - lo) / ((hi - lo) || 1) * (H - 4);
+    const s = document.createElementNS(NS, 'svg'); s.setAttribute('viewBox', `0 0 ${W} ${H}`); s.setAttribute('class', 'ind-sp'); const p = document.createElementNS(NS, 'path'); p.setAttribute('d', v.map((a, i) => (i ? 'L' : 'M') + x(i).toFixed(1) + ',' + y(a).toFixed(1)).join('')); p.setAttribute('fill', 'none'); p.setAttribute('stroke', v[v.length - 1] >= v[0] ? getComputedStyle(document.documentElement).getPropertyValue('--ok') || '#16a34a' : getComputedStyle(document.documentElement).getPropertyValue('--risk') || '#dc2626'); p.setAttribute('stroke-width', '1.6'); s.append(p); return s; }
+  function list() {
+    const box = document.getElementById('indBody'); box.replaceChildren(); document.getElementById('indUpd').textContent = 'Ultimo prezzo disponibile (' + dIt(IND.gruppi[0].righe[0].data) + '), aggiornato a ogni «aggiorna». Verde = in salita, rosso = in calo. Clicca una riga per il grafico.';
+    IND.gruppi.forEach(g => { const rate = g.g.startsWith('Tassi'), h = document.createElement('div'); h.className = 'ind-g'; h.textContent = g.g; const t = document.createElement('table'); t.className = 'ind-t';
+      t.innerHTML = '<thead><tr><th></th><th>Ultimo</th><th>Oggi</th><th class="ind-hide">1 mese</th><th>Da inizio anno</th><th class="ind-hide">1 anno</th><th class="ind-hide">12 mesi</th></tr></thead><tbody></tbody>'; const tb = t.querySelector('tbody');
+      g.righe.forEach(r => { const tr = document.createElement('tr'), td0 = document.createElement('td'); td0.textContent = r.n; tr.append(td0);
+        [[fm(r.p, rate), ''], [sg(r.g1, rate), cl(r.g1)], [sg(r.m1, rate), cl(r.m1) + ' ind-hide'], [sg(r.y0, rate), cl(r.y0)], [sg(r.a1, rate), cl(r.a1) + ' ind-hide']].forEach(c => { const td = document.createElement('td'); td.textContent = c[0]; td.className = c[1]; tr.append(td); });
+        const ts = document.createElement('td'); ts.className = 'ind-hide'; ts.append(spark(r)); tr.append(ts); tr.tabIndex = 0; tr.addEventListener('click', () => detail(r, rate)); tr.addEventListener('keydown', e => { if (e.key === 'Enter') detail(r, rate); }); tb.append(tr); });
+      box.append(h, t); });
+  }
+  function chart(box, r, n, rate) {
+    const D = r.sd.slice(-n), V = r.sp.slice(-n), W = Math.max(300, box.clientWidth || 640), H = 300, m = {l: 52, r: 12, t: 10, b: 24}, lo = Math.min(...V), hi = Math.max(...V), pad = (hi - lo) * .06 || 1;
+    const x = d3.scaleTime().domain([new Date(D[0]), new Date(D[D.length - 1])]).range([m.l, W - m.r]), y = d3.scaleLinear().domain([lo - pad, hi + pad]).nice().range([H - m.b, m.t]);
+    const col = V[V.length - 1] >= V[0] ? css('--ok') : css('--risk'), svg = d3.create('svg').attr('viewBox', `0 0 ${W} ${H}`).style('width', '100%').style('height', 'auto');
+    y.ticks(5).forEach(tk => { svg.append('line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', y(tk)).attr('y2', y(tk)).attr('stroke', css('--line')).attr('stroke-width', .7); svg.append('text').attr('x', m.l - 6).attr('y', y(tk) + 3).attr('text-anchor', 'end').attr('font-size', 10).attr('fill', css('--muted')).text(fm(tk, rate)); });
+    x.ticks(6).forEach(tk => svg.append('text').attr('x', x(tk)).attr('y', H - 6).attr('text-anchor', 'middle').attr('font-size', 10).attr('fill', css('--muted')).text(tk.toLocaleDateString('it-IT', {month: 'short', year: '2-digit'})));
+    const ln = d3.line().x((d, i) => x(new Date(D[i]))).y(d => y(d));
+    svg.append('path').attr('d', d3.area().x((d, i) => x(new Date(D[i]))).y0(H - m.b).y1(d => y(d))(V)).attr('fill', col).attr('opacity', .12);
+    svg.append('path').attr('d', ln(V)).attr('fill', 'none').attr('stroke', col).attr('stroke-width', 2);
+    const cur = svg.append('g').style('display', 'none'), dot = cur.append('circle').attr('r', 4).attr('fill', col), vl = cur.append('line').attr('stroke', css('--muted')).attr('stroke-dasharray', '3 3'), tx = cur.append('text').attr('font-size', 11).attr('font-weight', 700).attr('fill', css('--ink'));
+    const ov = svg.append('rect').attr('x', m.l).attr('y', m.t).attr('width', W - m.l - m.r).attr('height', H - m.t - m.b).attr('fill', 'transparent');
+    const mv = ev => { const pt = svg.node().createSVGPoint(); const c = ev.touches ? ev.touches[0] : ev; pt.x = c.clientX; pt.y = c.clientY; const q = pt.matrixTransform(svg.node().getScreenCTM().inverse()); const i = Math.max(0, Math.min(V.length - 1, Math.round((q.x - m.l) / (W - m.l - m.r) * (V.length - 1))));
+      cur.style('display', null); dot.attr('cx', x(new Date(D[i]))).attr('cy', y(V[i])); vl.attr('x1', x(new Date(D[i]))).attr('x2', x(new Date(D[i]))).attr('y1', m.t).attr('y2', H - m.b); const left = x(new Date(D[i])) > W / 2; tx.attr('text-anchor', left ? 'end' : 'start').attr('x', x(new Date(D[i])) + (left ? -8 : 8)).attr('y', m.t + 12).text(dIt(D[i]) + ' · ' + fm(V[i], rate)); };
+    ov.on('mousemove', mv).on('touchmove', mv).on('mouseleave', () => cur.style('display', 'none')); box.replaceChildren(svg.node());
+  }
+  function detail(r, rate) {
+    const box = document.getElementById('indBody'); box.replaceChildren(); const w = document.createElement('div'); w.className = 'ind-det';
+    const back = document.createElement('button'); back.type = 'button'; back.className = 'btn'; back.textContent = '‹ Tutti gli indici'; back.addEventListener('click', list);
+    const h = document.createElement('h3'); h.textContent = r.n + ' · ' + fm(r.p, rate) + (rate ? ' %' : ''); const k = document.createElement('div'); k.className = 'ind-big';
+    [['Oggi', sg(r.g1, rate), cl(r.g1)], ['1 mese', sg(r.m1, rate), cl(r.m1)], ['Da inizio anno', sg(r.y0, rate), cl(r.y0)], ['12 mesi', sg(r.a1, rate), cl(r.a1)], ['Dal massimo 12 mesi', sg(r.dmax, false), cl(r.dmax)]].forEach(a => { const d = document.createElement('div'); d.className = 'ind-k'; d.innerHTML = '<span></span><b class="' + a[2] + '"></b>'; d.firstChild.textContent = a[0]; d.lastChild.textContent = a[1]; k.append(d); });
+    const per = document.createElement('div'); per.className = 'ind-per'; const cb = document.createElement('div'), n0 = r.sp.length;
+    [['3 mesi', Math.round(n0 / 4)], ['6 mesi', Math.round(n0 / 2)], ['1 anno', n0]].forEach((a, i) => { const b = document.createElement('button'); b.type = 'button'; b.textContent = a[0]; b.setAttribute('aria-pressed', i === 2); b.addEventListener('click', () => { per.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b)); chart(cb, r, a[1], rate); }); per.append(b); });
+    const cap = document.createElement('p'); cap.className = 'muted'; cap.textContent = 'Dati di Yahoo Finance, chiusure giornaliere (un punto ogni due giorni). Passa il mouse o il dito sul grafico per leggere data e valore.' + (rate ? ' Per i tassi la variazione è in punti percentuali.' : '');
+    w.append(back, h, k, per, cb, cap); box.append(w); requestAnimationFrame(() => chart(cb, r, n0, rate));
+  }
+  document.getElementById('btnIndici')?.addEventListener('click', async () => {
+    const dlg = document.getElementById('indDlg'); document.getElementById('indBody').textContent = 'Caricamento…'; if (!dlg.open) dlg.showModal();
+    try { if (!IND) { const r = await fetch('indici.json?' + Date.now(), {cache: 'no-store'}); if (!r.ok) throw new Error(r.status); IND = await r.json(); } list(); }
+    catch (e) { document.getElementById('indBody').textContent = 'Dati degli indici non disponibili (' + e.message + ').'; }
+  });
+  document.getElementById('indClose')?.addEventListener('click', () => document.getElementById('indDlg').close());
+})();
 document.getElementById('btnPeso')?.addEventListener('click', () => { const b = document.getElementById('btnTop50'); if (b) b.click(); });
 
 function drawIfiSpark(i) {
@@ -2365,7 +2434,7 @@ function fillRepCard(k, body, labEl, titleEl) {
   const cl = 'c-' + ['ok', 'yel', 'warn', 'risk'][c.status];
   const sec = (title, cls) => { const d = document.createElement('div'); d.className = 'rsec' + (cls ? ' ' + cls : ''); const h = document.createElement('h4'); h.textContent = title; d.append(h); body.append(d); return d; };
   const para = (box, t) => { const p = document.createElement('p'); p.textContent = t; box.append(p); return p; };
-  labEl.textContent = 'Report di ' + R.month + ' · ' + c.sec;
+  labEl.textContent = 'Dati al ' + fmtDl(new Date(R.end + 'T00:00:00Z')).trim() + ' · ' + c.sec;
   titleEl.textContent = c.title;
   // 1. situazione e parere subito
   const sb = document.createElement('div'); sb.className = 'sitbox ' + cl;

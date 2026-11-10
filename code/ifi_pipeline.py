@@ -655,17 +655,18 @@ PARERE['m_rot'] = ['Leadership americana solida: nessun motivo di tendenza per r
 IMPL['m_rot'] = ['Gli Stati Uniti battono il resto del mondo e il vantaggio cresce.', 'Gli Stati Uniti sono ancora davanti, ma il resto del mondo recupera.',
                  'Il resto del mondo è davanti, ma gli Stati Uniti stanno recuperando.', 'Il resto del mondo batte gli Stati Uniti e il divario cresce: rotazione della leadership.']
 
-def build_report(f, P, C, today=None):
+def build_report(f, P, C, today=None, live=False):
     today = today or dt.datetime.now(dt.timezone(dt.timedelta(hours=1))).date()
     first = pd.Timestamp(today.year, today.month, 1)
     dates = f.index
     me_c = dates[dates < first]
+    if live: me_c = dates                           # modalità «live»: ultima seduta disponibile, non fine mese
     if not len(me_c): return None
-    me = me_c[-1]                                   # ultima seduta del mese del report
+    me = me_c[-1]                                   # ultima seduta del mese del report (o di oggi se live)
     m0 = pd.Timestamp(me.year, me.month, 1)
     pe_c = dates[dates < m0]
     pe = pe_c[-1] if len(pe_c) else None            # ultima seduta del mese prima
-    month_name = MESI[me.month - 1] + ' ' + str(me.year)
+    month_name = MESI[me.month - 1] + ' ' + str(me.year) + (' (finora)' if live else '')
     px = lambda t: C[t].ffill() if t in C else pd.Series(dtype=float)
     spx = f['spx']
     ma = lambda s, n: s.rolling(n, min_periods=int(n * .8)).mean()
@@ -706,7 +707,7 @@ def build_report(f, P, C, today=None):
         v = _at(ifi, d); mm = ifi[(ifi.index >= pd.Timestamp(d.year, d.month, 1)) & (ifi.index <= d)].mean()
         st = 0 if v < 40 else 1 if v < 55 else 2 if v < 70 else 3
         exp = 0 if (v >= 70 or _at(f['trend_down'], d) == 1) else 100
-        return st, _f(v, 0) + '/100', f'Indice di rischio a fine mese {_f(v, 0)} (media del mese {_f(mm, 0)}). La regola della dashboard indicava un\'esposizione azionaria del {exp}%.'
+        return st, _f(v, 0) + '/100', f'Indice di rischio {"oggi" if live else "a fine mese"} {_f(v, 0)} (media del mese {_f(mm, 0)}). La regola della dashboard indicava un\'esposizione azionaria del {exp}%.'
     card('rischio', 'Azioni', 'Modello di rischio della dashboard', f_risk,
          _series(me, [('Indice di rischio', ifi, 'main')], ref=[{'y': 70, 'label': 'soglia 70'}, {'y': 55, 'label': '55'}], ymin=0, ymax=100),
          'È l\'indice di questa dashboard: fragilità interna del mercato più stress (volatilità, credito, tassi), da 0 a 100.',
@@ -953,7 +954,7 @@ def build_report(f, P, C, today=None):
     sev = sorted(cards_us, key=lambda c: -c['status'])
     recap = [c['title'] + ': ' + c['text'] for c in sev if c['status'] >= 2][:5]
     good = [c['title'] for c in cards_us if c['status'] == 0]
-    head = (f'S&P 500 {_sg(ret_m, 1, "%")} a {MESI[me.month - 1]} ({_sg(ret_y, 1, "%")} da inizio anno), chiusura a {_f(s_m.iloc[-1], 0)} punti, '
+    head = (f'S&P 500 {_sg(ret_m, 1, "%")} a {MESI[me.month - 1]}' + (' finora' if live else '') + f' ({_sg(ret_y, 1, "%")} da inizio anno), chiusura a {_f(s_m.iloc[-1], 0)} punti, '
             + ('sul massimo storico. ' if dd_m > -0.5 else f'{_f(dd_m, 1, "%")} dal massimo storico. ')
             + f'Su {len(cards_us)} indicatori del mercato americano: {cnts[0]} verdi, {cnts[1]} gialli, {cnts[2]} arancioni, {cnts[3]} rossi.')
     reds = [c['title'] for c in cards_us if c['status'] == 3]
@@ -970,7 +971,7 @@ def build_report(f, P, C, today=None):
         estero = ((('In tendenza positiva ' + ', '.join(pos_m)) if pos_m else 'Nessun mercato estero in tendenza positiva')
                   + ('; deboli ' + ', '.join(neg_m) if neg_m else '') + '. '
                   + ('' if rot is None else ['La borsa americana resta la più forte: nessun motivo di tendenza per spostarsi.', 'Gli Stati Uniti restano davanti ma il vantaggio si riduce: diversificare fuori dall\'America ha senso per chi è molto concentrato.', 'Il resto del mondo è davanti: chi ha solo azioni americane può valutare una quota estera nelle aree con segnale Buy.', 'Rotazione in corso fuori dagli Stati Uniti: le aree con segnale Buy sono candidate per una quota di diversificazione, con ingressi graduali.'][rot['status']]))
-    return dict(parere=parere, month=month_name, month_key=me.strftime('%Y-%m'), end=me.strftime('%Y-%m-%d'), prev_end=None if pe is None else pe.strftime('%Y-%m-%d'),
+    return dict(parere=parere, month=month_name, month_key=('live' if live else me.strftime('%Y-%m')), end=me.strftime('%Y-%m-%d'), prev_end=None if pe is None else pe.strftime('%Y-%m-%d'),
                 generated_for=str(today), overall=overall, counts=cnts, headline=head,
                 spx=dict(close=round(float(s_m.iloc[-1]), 2), ret_m=None if np.isnan(ret_m) else round(ret_m, 2), ret_ytd=None if np.isnan(ret_y) else round(ret_y, 2), from_ath=round(dd_m, 2),
                          hi=round(float(s_m.max()), 2), lo=round(float(s_m.min()), 2)),
@@ -1047,7 +1048,7 @@ def main():
         'confirm': [dict(id=c, dir=s, name=n, desc=ds) for c, s, n, ds in CONFIRM if c in f],
         'stats': stats,
         'holdings': safe(load_holdings, C_ALL),
-        'monthly': safe(build_report, f, P, C_ALL),
+        'monthly': safe(build_report, f, P, C_ALL, None, True),   # sempre all'ultima seduta, mai a fine mese
     }
     with open(os.path.join(OUT, 'ifi_data.json'), 'w') as fh:
         json.dump(data, fh, separators=(',', ':'), allow_nan=False)

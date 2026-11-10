@@ -14,7 +14,7 @@ for f in ('aaii_sentiment.xls', 'cape.html'):
 if os.path.getsize(W + '/dati/raw/fred.txt') > 1000: shutil.copy2(W + '/dati/raw/fred.txt', R + '/code/fred_cache.txt')
 now = dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
 m = new.get('monthly') or {}; ip = R + '/archivio/indice.json'; idx = json.load(open(ip)); msg = ''
-if m.get('month_key') and m['month_key'] not in [r['key'] for r in idx['reports']]:
+if False and m.get('month_key') and m['month_key'] not in [r['key'] for r in idx['reports']]:
     json.dump({**m, 'archivio': {'ricostruito': False, 'salvato': now}}, open(R + '/archivio/%s.json' % m['month_key'], 'w'), ensure_ascii=False, separators=(',', ':'))
     idx['reports'].append({'key': m['month_key'], 'month': m.get('month'), 'overall': m.get('overall'), 'end': m.get('end'), 'ricostruito': False})
     json.dump(idx, open(ip, 'w'), ensure_ascii=False, separators=(',', ':')); msg = ' · archiviato il report di ' + str(m.get('month'))
