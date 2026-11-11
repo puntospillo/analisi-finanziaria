@@ -713,7 +713,11 @@
  ],
  "report": {
   "precedente": [
-   "Il 10 novembre la valutazione era «elevato»: la paura rientrava dopo il crollo dei titoli dell'IA del 5 novembre e il rimbalzo proseguiva anche in Europa."
+   "Valutazione del 10 novembre (mattina): livello «elevato», con il titolo «Rischio elevato, ma la paura rientra: dopo il crollo dei titoli dell'IA del 5 novembre il rimbalzo prosegue oggi anche in Europa».",
+   "Numeri di partenza: indice di rischio 58 su 100 (quattro settimane prima 64), con stress di mercato ancora alto (67) e fragilità interna più bassa (42). Quota in azioni indicata: 30% per tutti e tre i profili («Mantieni»).",
+   "Quadro: tendenza di fondo positiva (S&P 500 circa il 3% sotto il massimo e sopra la media a 200 giorni), più titoli che partecipano al rialzo e utili forti (84% di società sopra le attese). Due punti deboli: i tassi (Treasury a 10 anni al 4,87%, con la Fed verso un rialzo) e i titoli dell'intelligenza artificiale, fragili per le notizie su Nvidia.",
+   "Cosa si teneva d'occhio: indice sotto 55 per tornare «moderato» o sopra 70 per «alto»; S&P 500 sotto circa 7.330 punti (media a 200 giorni); Nasdaq −20% dal massimo; Treasury a 10 anni sopra 5,25% o spread high yield sopra 4%; Brent sopra 110 o sotto 90 dollari.",
+   "Da allora: nessuna soglia è stata superata e l'indice di rischio è rimasto a 58. Cambia il tono: i prezzi al consumo di ottobre sono usciti sopra le attese e il Treasury a 10 anni è salito a circa il 4,98%, mentre Nvidia ha perso il 5,5% (martedì) e il Nasdaq lo 0,7%. Il rimbalzo del giorno prima si è quindi fermato."
   ],
   "cambiato": [
    "Il CPI di ottobre è uscito sopra le attese (+0,4% totale, +0,3% core) e il rialzo di 25 punti base a dicembre è ormai dato per certo.",
@@ -830,7 +834,8 @@
     "data": "2026-11-09"
    }
   ],
-  "nota": "Le idee sono state riconfermate senza modifiche: il forte calo del petrolio indebolisce la tesi di Eni, TotalEnergies e Halliburton, che vanno riesaminate con più attenzione di quanto dica il loro testo precedente."
+  "nota": "Le idee sono state riconfermate senza modifiche: il forte calo del petrolio indebolisce la tesi di Eni, TotalEnergies e Halliburton, che vanno riesaminate con più attenzione di quanto dica il loro testo precedente.",
+  "precedente_titolo": "10 novembre, mattina"
  },
  "titoli_giorno": {
   "metodo": "Tra i 30 titoli più pesanti dell'S&P 500 conta chi ha spostato di più l'indice nell'ultima seduta (peso × variazione del giorno), con un bonus se è stato scambiato molto più del solito: di solito c'è una notizia.",
