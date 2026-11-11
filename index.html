@@ -912,16 +912,6 @@ body.tech-on .secnav .tl{display:inline-block}
 .est-live .lv-chip b{font:800 .98rem var(--font-display);font-variant-numeric:tabular-nums}
 .est-live .lv-chip i{font-style:normal;font-size:.78rem;font-weight:700}
 .est-live .lv-cap{flex:1 0 100%;font-size:.66rem;color:var(--muted)}
-.est-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important;align-items:stretch}
-.est-grid>.est-card:last-child:nth-child(4n+1){grid-column:1/-1}
-.est-grid>.est-card:last-child:nth-child(4n+2){grid-column:span 3}
-@media (max-width:1100px){.est-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
-  .est-grid>.est-card:last-child:nth-child(4n+1),.est-grid>.est-card:last-child:nth-child(4n+2){grid-column:auto}
-  .est-grid>.est-card:last-child:nth-child(3n+1){grid-column:1/-1}.est-grid>.est-card:last-child:nth-child(3n+2){grid-column:span 2}}
-@media (max-width:720px){.est-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
-  .est-grid>.est-card:last-child:nth-child(3n+1),.est-grid>.est-card:last-child:nth-child(3n+2){grid-column:auto}
-  .est-grid>.est-card:last-child:nth-child(2n+1){grid-column:1/-1}}
-@media (max-width:480px){.est-grid{grid-template-columns:1fr!important}.est-grid>.est-card:last-child{grid-column:auto!important}}
 .est-card .est-chart{min-height:112px}
 </style>
 
