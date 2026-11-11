@@ -831,5 +831,140 @@
    }
   ],
   "nota": "Le idee sono state riconfermate senza modifiche: il forte calo del petrolio indebolisce la tesi di Eni, TotalEnergies e Halliburton, che vanno riesaminate con più attenzione di quanto dica il loro testo precedente."
+ },
+ "titoli_giorno": {
+  "metodo": "Tra i 30 titoli più pesanti dell'S&P 500 conta chi ha spostato di più l'indice nell'ultima seduta (peso × variazione del giorno), con un bonus se è stato scambiato molto più del solito: di solito c'è una notizia.",
+  "pesi_al": "06-Nov-2026",
+  "titoli": [
+   {
+    "nome": "Nvidia",
+    "ticker": "NVDA",
+    "peso": 7.1,
+    "prezzo": 168.89,
+    "data": "2026-11-10",
+    "g1": -5.47,
+    "vol_rel": 3.11,
+    "contributo": -0.388,
+    "perche": "È il titolo che ha spostato di più l'indice: −5,5% con scambi oltre 3 volte il solito. Da solo ha tolto circa 0,39 punti all'S&P 500.",
+    "situazione": [
+     "Chiusura del 10 novembre: 168,89 $ (−5,5%), con volumi 3,1 volte la media delle ultime 20 sedute. È il 29% sotto il massimo di un anno (239,24 $ del 6 ottobre) e il 25% sotto un mese fa.",
+     "Il 9 novembre la società ha detto di verificare se il suo amministratore delegato, Jensen Huang, fosse nel mirino di un'operazione di intelligence straniera. Dopo la chiusura il titolo era già sceso di circa il 3,4%.",
+     "Il 5 novembre aveva perso il 9,3% insieme a tutti i chip, senza notizie specifiche della società.",
+     "Prossimo evento: i conti del terzo trimestre il 17 novembre; la società ha indicato ricavi intorno a 108 miliardi di dollari (±2%)."
+    ],
+    "analisi": [
+     "Cosa è successo: due spinte che si sommano. La prima riguarda tutto il settore: dopo le elezioni del 3 novembre la stampa finanziaria parla di timori su un rallentamento dei data center. Il 10 novembre si è aggiunto il rialzo dei tassi dopo l'inflazione di ottobre, più alta del previsto, che pesa sui tecnologici. La seconda è la notizia sull'amministratore delegato, che aggiunge incertezza prima dei conti. Il motivo esatto della caduta del 10 novembre non è confermato da una fonte unica: è una lettura di mercato.",
+     "Perché conta per l'indice: Nvidia pesa il 7,1% dell'S&P 500 e, con Apple e Microsoft, circa un quinto dell'indice. Quando cade così, l'indice perde terreno anche se gli altri titoli reggono, ed è uno dei motivi per cui lo stress di mercato resta alto.",
+     "Valutazione: dopo il calo il titolo vale circa 14 volte gli utili attesi (FactSet, 5 novembre), molto meno di un anno fa. Vuol dire che il mercato prezza già dubbi sulla crescita, non che il titolo sia 'a sconto': dipende da quanto reggeranno gli ordini.",
+     "Cosa guardare: (1) i conti del 17 novembre, in particolare ricavi dei data center rispetto alla guida di 108 miliardi; (2) cosa dirà la società sulla domanda dei grandi clienti americani, che valgono circa il 69% dei ricavi; (3) novità sull'indagine interna.",
+     "Rischi: movimenti molto ampi in poche sedute (−9% il 5 novembre, −5,5% il 10) e dipendenza da pochi grandi clienti. Se i conti deludessero, il peso del titolo renderebbe difficile un recupero dell'indice. È un'informazione di mercato, non un consiglio."
+    ],
+    "fonti": [
+     {
+      "nome": "Trefis · Perché Nvidia è scesa il 5 novembre",
+      "url": "https://www.trefis.com/stock/nvda/articles/623357/what-sent-nvidia-stock-lower/2026-11-06",
+      "data": "2026-11-06"
+     },
+     {
+      "nome": "Tech Insider (da Reuters) · indagine sull'amministratore delegato",
+      "url": "https://tech-insider.org/nvidia-after-hours-falls-3-4-percent-hyperliquid-huang-probe-2026/",
+      "data": "2026-11-09"
+     },
+     {
+      "nome": "TIKR · Nvidia e timori sui data center",
+      "url": "https://www.tikr.com/blog/nvidia-sinks-9-as-midterm-data-center-fears-deepen-ai-chip-rout-absolute-slaughter",
+      "data": "2026-11-05"
+     },
+     {
+      "nome": "TechFlow · CPI di ottobre e Treasury a 10 anni",
+      "url": "https://www.techflowpost.com/en-US/article/35264",
+      "data": "2026-11-10"
+     }
+    ]
+   },
+   {
+    "nome": "Microsoft",
+    "ticker": "MSFT",
+    "peso": 6.19,
+    "prezzo": 533.16,
+    "data": "2026-11-10",
+    "g1": -2.2,
+    "vol_rel": 1.04,
+    "contributo": -0.136,
+    "perche": "Secondo per rilievo: −2,2% su un peso del 6,2%, cioè circa 0,14 punti tolti all'S&P 500. Scambi nella norma: sembra un movimento del settore più che una notizia sua.",
+    "situazione": [
+     "Chiusura del 10 novembre: 533,16 $ (−2,2%), con volumi normali (1,04 volte la media). Il titolo è il 4% sotto il massimo di un anno.",
+     "Lo stesso giorno sono usciti i prezzi al consumo di ottobre sopra le attese (+0,4% sul mese, atteso +0,3%) e il rendimento del Treasury a 10 anni è salito a circa il 4,98%.",
+     "Conti del 28 ottobre: ricavi +19% a 92,3 miliardi di dollari, Azure (il cloud) +48%.",
+     "Il 4 novembre aveva guadagnato il 6,7% nel rimbalzo delle grandi società tecnologiche; il 2 novembre aveva perso il 2,8%.",
+     "Stacco del dividendo (0,98 $ per azione) il 19 novembre."
+    ],
+    "analisi": [
+     "Cosa è successo: non ho trovato una notizia specifica sul titolo per il 10 novembre. Lo stesso giorno i prezzi al consumo sono usciti sopra le attese e i tassi sono saliti: quando i rendimenti salgono, i titoli di crescita come i grandi tecnologici soffrono di più. È una lettura plausibile ma non confermata, e il titolo si è mosso insieme ai titoli dell'intelligenza artificiale.",
+     "Perché conta per l'indice: con Apple e Nvidia è tra i tre titoli più pesanti (circa il 21% dell'indice insieme). Un calo del 2% basta a muovere l'S&P 500 anche se il resto del mercato è fermo.",
+     "Cosa lo rende diverso da Nvidia: i conti sono forti (cloud +48%) e il titolo è vicino ai massimi, mentre Nvidia è in forte ribasso. Il mercato qui discute soprattutto del costo dell'intelligenza artificiale: la società prevede circa 190 miliardi di investimenti nel 2026, e il dubbio è quando arriveranno i ritorni.",
+     "Cosa guardare: la crescita del cloud nei prossimi conti, l'andamento degli investimenti in data center e se il titolo regge sopra la media a 200 giorni.",
+     "Rischi: se il settore dell'IA continuasse a scendere, anche un titolo con conti solidi seguirebbe. È un'informazione di mercato, non un consiglio."
+    ],
+    "fonti": [
+     {
+      "nome": "TechFlow · CPI di ottobre e Treasury a 10 anni",
+      "url": "https://www.techflowpost.com/en-US/article/35264",
+      "data": "2026-11-10"
+     },
+     {
+      "nome": "Gotrade · Microsoft, conti del 28 ottobre e seduta del 2 novembre",
+      "url": "https://www.heygotrade.com/id/news/saham-microsoft-msft-turun-3-november-2026/",
+      "data": "2026-11-03"
+     },
+     {
+      "nome": "Yahoo Finance · Microsoft e i 190 miliardi di spesa in IA",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/microsoft-falls-5-despite-q3-154026185.html",
+      "data": "2026"
+     },
+     {
+      "nome": "MarketBeat · dividendo e stacco del 19 novembre",
+      "url": "https://www.marketbeat.com/instant-alerts/price-microsoft-nasdaq-msft-stock-falls-13-heres-why-2026-09-28/",
+      "data": "2026-09-28"
+     }
+    ]
+   },
+   {
+    "nome": "Broadcom",
+    "ticker": "AVGO",
+    "peso": 2.19,
+    "prezzo": 331.98,
+    "data": "2026-11-10",
+    "g1": 3.91,
+    "vol_rel": 1.14,
+    "contributo": 0.086,
+    "perche": "L'unico dei tre in rialzo: +3,9% (peso 2,2%), circa +0,09 punti per l'S&P 500. Interessa perché sale mentre Nvidia scende: i chip non si muovono tutti insieme.",
+    "situazione": [
+     "Chiusura del 10 novembre: 331,98 $ (+3,9%), con volumi leggermente sopra la media (1,14 volte).",
+     "Il titolo è il 31% sotto il massimo di un anno, ma ha già guadagnato circa il 7,7% il 9 novembre (fonti secondarie, da verificare).",
+     "I conti dell'anno fiscale 2026 saranno pubblicati il 9 dicembre, secondo una fonte secondaria.",
+     "Una fonte secondaria segnala la guida sul margine lordo del quarto trimestre intorno al 73%, contro circa il 78% di prima."
+    ],
+    "analisi": [
+     "Cosa è successo: due sedute di rialzo dopo un periodo difficile. Le notizie che ho trovato sono di fonti secondarie (siti di dati automatici): le uso solo per il contesto, il rialzo in sé è confermato dal prezzo di Yahoo Finance.",
+     "Perché conta per l'indice: pesa meno di Nvidia, ma è il segnale che il mercato distingue tra i produttori di chip. Broadcom fa chip su misura per i grandi clienti, e per questo viene considerata un'alternativa a Nvidia.",
+     "Cosa lo rende fragile: il titolo vale ancora molto meno di un anno fa, e i margini potrebbero scendere perché i chip su misura rendono meno degli altri prodotti. Una fonte parla anche di impegni legati al finanziamento di infrastrutture per l'intelligenza artificiale, da verificare.",
+     "Cosa guardare: i conti del 9 dicembre (margini e ordini legati all'IA), la distanza dalla media a 200 giorni e se il rimbalzo prosegue anche quando Nvidia presenta i conti il 17 novembre.",
+     "Rischi: movimenti ampi e fonti incomplete. È un'informazione di mercato, non un consiglio."
+    ],
+    "fonti": [
+     {
+      "nome": "Money365 · Broadcom +7,7% prima dei conti (fonte secondaria)",
+      "url": "https://www.money365.market/news/latest/broadcom-shares-rise-7-7-ahead-of-fiscal-fourth-quarter-e923f620",
+      "data": "2026-11-09"
+     },
+     {
+      "nome": "TradingKey · Broadcom +7,7% il 9 novembre (fonte secondaria)",
+      "url": "https://www.tradingkey.com/news/market-movers/262296509-market-movers-avgo-20261109",
+      "data": "2026-11-09"
+     }
+    ]
+   }
+  ]
  }
 }

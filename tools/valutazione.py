@@ -54,7 +54,7 @@ for t in rp['temi']: addf(t.get('fonte'), t.get('url'), t.get('data'))
 for i in idee: addf(i.get('fonte'), i.get('url'), i.get('data'))
 out = {'rid': rid, 'state': 'ok', 'at': at, 'app_version': cx.get('versione', '2.0'), 'data_as_of': cx['as_of'], 'settings_key': old.get('settings_key'), 'settings_label': old.get('settings_label'),
        'livello': n['livello'], 'titolo': n['titolo'], 'in_breve': n['in_breve'], 'dashboard': dash, 'esterno': n['esterno'], 'concordanza': n['concordanza'], 'monitorare': n['monitorare'],
-       'idee_premessa': n.get('idee_premessa') or old.get('idee_premessa'), 'idee': idee, 'limiti': n.get('limiti') or old.get('limiti'), 'fonti': fonti, 'report': rp}
+       'idee_premessa': n.get('idee_premessa') or old.get('idee_premessa'), 'idee': idee, 'limiti': n.get('limiti') or old.get('limiti'), 'fonti': fonti, 'report': rp, 'titoli_giorno': n.get('titoli_giorno') or old.get('titoli_giorno')}
 json.dump(out, open(R + '/valutazione.json', 'w'), ensure_ascii=False, separators=(',', ':'))
 json.dump({'rid': rid, 'state': 'ok', 'at': at}, open(R + '/valutazione_stato.json', 'w'))
 op = [i for i in idee if i['direzione'] == 'opportunità rischiosa']; ap = R + '/archivio/opportunita.json'; A = json.load(open(ap)); day = at[:10]

@@ -13,7 +13,7 @@ Non scrivere quota e azione (le calcola la pagina) né spiegazioni del metodo.
   "idee": [ {"riusa":"<nome esatto della precedente>"}                                   // tesi ancora valida: costa pochissimo
             | {"categoria":"azione|etf|materia prima|obbligazioni","mercato","nome","ticker","direzione":"interessante|da evitare|opportunità rischiosa",
                "tesi","perche_ora","rischi","orizzonte","prezzo_rif","fonte","url","data"} ],   // 8–24; sostituisci solo quelle superate dai fatti
-  "report": { "precedente":[1–4 righe], "cambiato":[3–5 fatti nuovi], "situazione":[3–5 paragrafi],
+  "report": { "precedente":[5–6 righe: data e livello della valutazione prima di questa, indice e quota, cosa diceva (cause, quadro), le soglie che si guardavano, cosa è successo da allora], "precedente_titolo":"es. 9 novembre sera", "cambiato":[3–5 fatti nuovi], "situazione":[3–5 paragrafi],
               "temi":[ {"titolo","testo" (2–3 frasi),"segno","grafico"?,"fonte"?,"url"?,"data"?} ],
               "nota": "solo se serve" } }
 ```
@@ -21,3 +21,7 @@ Non scrivere quota e azione (le calcola la pagina) né spiegazioni del metodo.
 Facoltativi (se mancano restano quelli precedenti): `idee_premessa`, `limiti`.
 
 Regola: «aggiorna tutto» NON usa il report del mese. Tutto (esteri, materie prime, cambi, tassi, cripto, indici) è calcolato all'ultima seduta da `aggiorna.sh`. `valutazione.py` aggiorna da solo i prezzi di riferimento delle idee (`code/prezzi_idee.py`, simboli in `code/simboli_idee.json`: aggiungi il simbolo Yahoo delle idee nuove).
+
+`titoli_giorno` (obbligatorio, sotto «Da seguire»): esegui `python3 code/titoli_giorno.py /tmp/titoli_cand.json` (dopo `aggiorna.sh`): sceglie i 3 titoli con più rilievo tra i primi 30 per peso (peso SPY × variazione dell'ultima seduta, bonus ×2 per volumi alti). Per ognuno dei primi 3 cerca la notizia del giorno (1 ricerca ciascuno) e scrivi:
+`{"metodo": <dal file>, "pesi_al": <dal file>, "titoli":[ {"nome","ticker","peso","prezzo","data","g1","vol_rel","contributo" (copiati dal file), "perche" (1–2 frasi), "situazione":[3–4 fatti con numeri], "analisi":[5 punti: cosa è successo · perché conta per l'indice · valutazione · cosa guardare · rischi], "fonti":[{"nome","url","data"}]} ]}`.
+Se la causa del movimento non si trova, scrivilo («non verificata»). Fonti secondarie/automatiche: dichiarale tali. Mai «compra/vendi».

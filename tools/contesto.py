@@ -33,3 +33,9 @@ P = {'del': v.get('at'), 'livello': v.get('livello'), 'titolo': v.get('titolo'),
      'idee': ['%s [%s, %s]' % (i.get('nome'), i.get('categoria'), i.get('direzione')) for i in v.get('idee', [])]}
 json.dump({'numeri': N, 'precedente': P}, open('/tmp/af_contesto.json', 'w'), ensure_ascii=False)
 print('NUMERI', json.dumps(N, ensure_ascii=False)); print('PRECEDENTE', json.dumps(P, ensure_ascii=False))
+# candidati «3 titoli del giorno» (metodo in code/titoli_giorno.py)
+try:
+    import subprocess, os
+    subprocess.run(['python3', '-W', 'ignore', os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'code', 'titoli_giorno.py'), '/tmp/titoli_cand.json'], check=True, capture_output=True, timeout=120)
+    print('TITOLI_GIORNO', json.dumps(json.load(open('/tmp/titoli_cand.json'))['candidati'][:3], ensure_ascii=False))
+except Exception as e: print('WARN titoli del giorno non calcolati:', e)

@@ -886,7 +886,46 @@ body.tech-on .secnav .tl{display:inline-block}
 .hdr .upd .btn .blab{overflow:hidden;text-overflow:ellipsis}
 @media (max-width:1100px){.hdr .upd{flex-basis:100%!important}}
 @media (max-width:640px){.hdr .upd .btn .blab{display:none}.hdr .upd .btn{min-height:42px!important}.hdr .upd .btn-eval{grid-column:auto!important}}
+/* grafico principale: legenda ordinata su tablet e telefono */
+#chartToggles{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:8px 16px}
+#chartToggles label{display:flex;flex-wrap:nowrap;align-items:center;gap:6px;min-width:0;padding:6px 10px;border:1px solid var(--line);border-radius:10px;background:var(--panel);white-space:nowrap}
+#chartToggles label .hb{margin-left:auto}
+@media (max-width:640px){#chartToggles{grid-template-columns:1fr 1fr}#chartToggles label{white-space:normal;font-size:.76rem}}
+@media (min-width:641px) and (max-width:1100px){#mainChart{min-height:560px}}
+/* titoli del giorno + valutazione precedente */
+.mkt-two .mkt-prec{grid-column:1/-1}
+.mkt-prec ul{font-size:.92rem;line-height:1.5;gap:7px}
+.tit-met{margin:0 0 8px;font-size:.8rem;color:var(--muted)}
+.tit-grid{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))}
+.tit-card{border:1px solid var(--line);border-left:5px solid var(--muted);border-radius:12px;padding:10px 12px;background:var(--panel);cursor:pointer;display:grid;gap:5px}
+.tit-card.up{border-left-color:var(--ok)}.tit-card.dn{border-left-color:var(--risk)}
+.tit-card:hover{border-color:var(--navy-2)}
+.tit-top{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}.tit-top b{font-size:1rem}.tit-top .tk{font-size:.74rem;color:var(--muted);font-weight:700}
+.tit-top .chg{margin-left:auto;font-weight:800}.tit-card.up .chg{color:var(--ok)}.tit-card.dn .chg{color:var(--risk)}
+.tit-sub{font-size:.74rem;color:var(--muted)}.tit-card p{margin:0;font-size:.86rem;line-height:1.4}
+.tit-card .more{font-style:normal;font-size:.78rem;color:var(--navy-2);font-weight:700}
+/* mercati esteri e materie prime: prezzi reali + griglia ordinata */
+.est-live{display:flex;flex-wrap:wrap;gap:6px;align-items:stretch}
+.est-live .lv-chip{display:grid;gap:1px;padding:5px 9px;border:1px solid var(--line);border-radius:9px;background:rgba(255,255,255,.75);min-width:64px;flex:1 1 64px}
+.est-live .lv-chip em{font-style:normal;font-size:.68rem;color:var(--muted);line-height:1.2}
+.est-live .lv-chip b{font:800 .98rem var(--font-display);font-variant-numeric:tabular-nums}
+.est-live .lv-chip i{font-style:normal;font-size:.78rem;font-weight:700}
+.est-live .lv-cap{flex:1 0 100%;font-size:.66rem;color:var(--muted)}
+.est-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important;align-items:stretch}
+.est-grid>.est-card:last-child:nth-child(4n+1){grid-column:1/-1}
+.est-grid>.est-card:last-child:nth-child(4n+2){grid-column:span 3}
+@media (max-width:1100px){.est-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+  .est-grid>.est-card:last-child:nth-child(4n+1),.est-grid>.est-card:last-child:nth-child(4n+2){grid-column:auto}
+  .est-grid>.est-card:last-child:nth-child(3n+1){grid-column:1/-1}.est-grid>.est-card:last-child:nth-child(3n+2){grid-column:span 2}}
+@media (max-width:720px){.est-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .est-grid>.est-card:last-child:nth-child(3n+1),.est-grid>.est-card:last-child:nth-child(3n+2){grid-column:auto}
+  .est-grid>.est-card:last-child:nth-child(2n+1){grid-column:1/-1}}
+@media (max-width:480px){.est-grid{grid-template-columns:1fr!important}.est-grid>.est-card:last-child{grid-column:auto!important}}
+.est-card .est-chart{min-height:112px}
 </style>
+
+
+
 
 
 <div class="wrap">
@@ -1150,9 +1189,10 @@ body.tech-on .secnav .tl{display:inline-block}
 const TRIGGER_ID = "trig_01RFskvnKEXEMuPW4wo8Haxw";      // compito "aggiorna dati"
 const EVAL_TRIGGER_ID = "trig_01JUVzUSZf92iP2qE7fLPynn"; // compito "valutazione attuale"
 // Versione della dashboard (v3.8.1): aumenta a ogni modifica di pagina o modello (non con gli aggiornamenti dei dati).
-const APP_VERSION = '2.1';
+const APP_VERSION = '2.2';
 const DEF_GI = 0.5; // peso predefinito del gruppo «Grandi investitori istituzionali»
 const CHANGELOG = [
+  ['2.2', '11/11/2026', ['Mercati esteri e materie prime: nei riquadri ci sono i prezzi reali aggiornati (Brent, oro, argento, Euro/Dollaro, Treasury, Bitcoin, indici delle borse) con la variazione dell\'ultima seduta; il grafico di materie prime dichiara la base 100. Griglia riordinata, senza riquadri spaiati.', 'Nuova sezione «I 3 titoli del giorno» sotto «Da seguire»: i titoli che hanno mosso di più l\'S&P 500 nell\'ultima seduta (peso × variazione, con bonus per i volumi), con il perché; al clic situazione e analisi approfondita con fonti.', '«Dalla valutazione precedente» ora è un riepilogo completo: livello, numeri, indicazione, quadro, soglie che si guardavano e cosa è successo da allora.', 'Grafico dell\'indice di rischio più alto e leggibile su iPad, con legenda ordinata ed etichette senza sovrapposizioni.']],
   ['2.1', '10/11/2026', ['Nuovo pulsante Indici: indici mondiali, materie prime, cambi, tassi e cripto, aggiornati a ogni aggiornamento, con grafico al clic.', 'Dati esteri, materie prime e report calcolati all\'ultima seduta, non più sul report del mese.', 'Pulsanti in alto su una sola riga.', 'Report PDF riordinato come la pagina, con sezione Indici; istruzioni e spiegazioni a parte e selezionabili; Idee da approfondire separate dalla Valutazione attuale.', 'Prezzi di riferimento delle idee aggiornati a ogni aggiornamento.']],
   ['2.0', '10/11/2026', ['Nuova versione 2.0: sostituisce la 3.8.1 con un modello semplificato e un pannello pensato per chi investe.', 'Pulsanti in alto: Notizie (la valutazione di mercato con fonti), Idee da approfondire, Peso S&P 500 e Report. Cliccando una voce di «Da seguire» si aprono le notizie approfondite su quel punto.', 'Cliccando il grafico dell\'indice di rischio si vede l\'andamento a 12 mesi con i numeri colorati e la data al passaggio del mouse.', 'Ogni indicatore di sentiment, grandi investitori, valutazione e macro ha la sua scheda con grafici, indicazioni e storico.', 'Nuovo modello di quota: al modello di base (allocazione adattiva, invariato) si aggiungono i segnali precoci (ampiezza, titoli medi contro indice, credito, grandi titoli tecnologici, rotazione verso i difensivi) e una regola di rientro a tranche.', 'Pannello della propensione al rischio: quattro domande, tre profili fissi (Prudente, Bilanciato, Dinamico) e quota massima in azioni.', 'Pesi e soglie fissi: tolti i cursori dei pesi e i comandi della regola.', 'Esposizione semplificata: in alto solo il Consiglio con una frase che spiega il motivo, l\'indice di rischio e la quota mese per mese. Metodo e numeri sono dietro al bottone «Come ci siamo arrivati».', 'La valutazione di mercato è nel corpo della pagina al posto del report del mese, con la data di aggiornamento in evidenza e i temi del momento con i loro grafici.', 'Fattori dell\'indice in forma compatta; i pesi si vedono dal bottone «Come sono distribuiti i pesi».', 'Nuova sezione Prove del modello: risultati sul passato per profilo.', 'Alla prima apertura chiede il nome e il profilo di investitore; restano memorizzati e si possono cambiare quando si vuole.', 'Funziona con un doppio clic, senza internet: dati e librerie sono nella cartella.']],
   ['3.8.1', '09/11/2026', ['La pagina resta sempre in tema chiaro: non passa più alla modalità notte, né con l\'impostazione del dispositivo né con quella del contenitore.']],
@@ -2002,8 +2042,8 @@ function renderMkt() {
   up.append(el('span', 'sub', (d > 3 ? 'Non è recente: per aggiornarla chiedi a Claude una nuova valutazione. ' : '') + 'Fatta sui dati di mercato del ' + fmtDl(new Date(EVAL.data_as_of + 'T00:00:00Z')).trim() + (same ? ', gli stessi di questa pagina.' : '; i numeri della pagina sono del ' + fmtDl(T[i]).trim() + '.')));
   const R = EVAL.report || {};
   body.append(el('p', 'mkt-title', EVAL.titolo || ''));
-  const two = el('div', 'mkt-two'), boxUl = (title, arr, help) => { if (!arr || !arr.length) return; const b = el('div', 'mkt-box'); b.dataset.help = help; b.append(el('h3', null, title)); const ul = el('ul'); arr.forEach(t => ul.append(el('li', null, t))); b.append(ul); two.append(b); };
-  boxUl('Dalla valutazione precedente', R.precedente, 'mk_prec'); boxUl('Cosa è cambiato', R.cambiato, 'mk_cambiato'); if (two.children.length) body.append(two);
+  const two = el('div', 'mkt-two'), boxUl = (title, arr, help) => { if (!arr || !arr.length) return; const b = el('div', 'mkt-box' + (help === 'mk_prec' ? ' mkt-prec' : '')); b.dataset.help = help; b.append(el('h3', null, title)); const ul = el('ul'); arr.forEach(t => ul.append(el('li', null, t))); b.append(ul); two.append(b); };
+  boxUl('Dalla valutazione precedente' + (R.precedente_titolo ? ' · ' + R.precedente_titolo : ''), R.precedente, 'mk_prec'); boxUl('Cosa è cambiato', R.cambiato, 'mk_cambiato'); if (two.children.length) body.append(two);
   const sec = el('div', 'mkt-sec'); sec.append(el('h3', null, 'La situazione')); (R.situazione && R.situazione.length ? R.situazione : (EVAL.in_breve || [])).forEach(t => sec.append(el('p', null, t))); body.append(sec);
   const a = adviceAt(i), ind = el('div', 'mkt-ind'); ind.dataset.help = 'consiglio'; ind.style.borderLeftColor = css(LVCOL[quotaLv(a.q / 100)]);
   const ib = el('b', null, ADV[a.k][0] + ' · ' + a.q + '% in azioni'); ib.style.color = css(LVCOL[quotaLv(a.q / 100)]);
@@ -2016,6 +2056,12 @@ function renderMkt() {
       if (t.fonte) { const s = el('div', 'src'); s.append('Fonte: '); const u = safeUrl(t.url); if (u) { const an = el('a', null, t.fonte); an.href = u; an.target = '_blank'; an.rel = 'noopener noreferrer'; s.append(an); } else s.append(t.fonte); if (t.data) s.append(' · ' + t.data.split('-').reverse().join('/')); c.append(s); } }
     const ws = el('div', 'mkt-sec'); ws.append(el('h3', null, 'I temi del momento'), g); body.append(ws); }
   if (EVAL.monitorare && EVAL.monitorare.length) { const ws = el('div', 'mkt-sec'), ul = el('ul', 'mkt-seg'); ws.append(el('h3', null, 'Da seguire')); EVAL.monitorare.forEach((mm, idx) => { const li = el('li'); li.dataset.help = 'seg' + idx; HELP['seg' + idx] = [(mm.cosa || '') + ': le notizie', 'Quello che sta succedendo adesso su questo punto, con le fonti. Sotto trovi perché conta e la soglia che cambierebbe il quadro.']; li.title = 'Clicca per le notizie approfondite'; li.append(el('b', null, mm.cosa || ''), el('span', 'sg', mm.soglia || ''), el('em', 'more', 'Notizie approfondite ›')); ul.append(li); }); ws.append(ul); body.append(ws); }
+  if (EVAL.titoli_giorno && (EVAL.titoli_giorno.titoli || []).length) { const TG = EVAL.titoli_giorno, ws = el('div', 'mkt-sec'), hd = el('h3', null, 'I 3 titoli del giorno '), hb = el('button', 'hb', '?'); hb.type = 'button'; hb.dataset.help = 'mk_titoli'; hb.setAttribute('aria-label', 'Come li scelgo'); hd.append(hb); ws.append(hd);
+    ws.append(el('p', 'tit-met', TG.metodo || ''));
+    const g = el('div', 'tit-grid'); TG.titoli.forEach((t, idx) => { const c = el('div', 'tit-card ' + (t.g1 >= 0 ? 'up' : 'dn')); c.dataset.help = 'tit' + idx; HELP['tit' + idx] = [t.nome + ' (' + t.ticker + '): situazione e analisi', 'Cosa sta succedendo e perché conta, con le fonti.']; c.title = 'Clicca per situazione e analisi approfondita';
+      const top = el('div', 'tit-top'); top.append(el('b', null, t.nome), el('span', 'tk', t.ticker), el('span', 'chg', (t.g1 > 0 ? '+' : t.g1 < 0 ? '−' : '') + Math.abs(t.g1).toLocaleString('it-IT', {maximumFractionDigits: 1}) + '%'));
+      c.append(top, el('div', 'tit-sub', 'Peso ' + nf(t.peso, 1) + '% dell\'S&P 500 · contributo ' + (t.contributo > 0 ? '+' : t.contributo < 0 ? '−' : '') + Math.abs(t.contributo).toLocaleString('it-IT', {maximumFractionDigits: 2}) + ' punti · scambi ' + nf(t.vol_rel, 1) + '× il solito'), el('p', null, t.perche || ''), el('em', 'more', 'Situazione e analisi ›')); g.append(c); });
+    ws.append(g); body.append(ws); }
   renderEsteri();
   { const e = document.getElementById('esteri'), c = document.getElementById('conferma'); if (e && c && e.nextElementSibling !== c) e.after(c); }
 }
@@ -2065,9 +2111,9 @@ function renderEsteri() {
     const b = el('div', 'est-card clickable ' + CL[c.status]); b.tabIndex = 0; b.title = 'Clicca per la spiegazione completa';
     const hd = el('div', 'eh'); hd.append(el('span', 'dot4'), el('b', null, c.title)); hd.firstChild.style.background = css(QV[c.status]);
     const v = el('div', 'ev', c.value); v.style.color = css(QV[c.status]);
-    b.append(hd, v, el('div', 'et', c.text));
+    const lv = el('div', 'est-live'); lv.dataset.card = c.id; b.append(hd, v, lv, el('div', 'et', c.text));
     const cb = el('div', 'est-chart'); b.append(cb);
-    if (c.chart) b.append(el('div', 'cap', 'Ultimi due anni' + (c.chart.marks && c.chart.marks.length ? ' · triangoli verdi = segnale Buy, rossi = Sell; linea tratteggiata = media a 10 mesi' : (c.chart.series.some(s => s.role === 'ma') ? ' · linea tratteggiata = media' : '')) + ' · aggiornati all\'ultima seduta'));
+    if (c.chart) b.append(el('div', 'cap', 'Ultimi due anni' + (c.chart.marks && c.chart.marks.length ? ' · triangoli verdi = segnale Buy, rossi = Sell; linea tratteggiata = media a 10 mesi' : (c.chart.series.some(s => s.role === 'ma') ? ' · linea tratteggiata = media' : '')) + ' · aggiornati all\'ultima seduta' + (c.id === 'materie' ? ' · valori del grafico in base 100 a inizio periodo' : '')));
     if (c.impl) { const i = el('div', 'ei'); i.append(el('b', null, 'Cosa significa: '), c.impl); b.append(i); }
     const op = () => openRepCard(k); b.addEventListener('click', op); b.addEventListener('keydown', e => { if (e.key === 'Enter') op(); });
     g.append(b); requestAnimationFrame(() => estChart(cb, c)); }); return g; };
@@ -2088,6 +2134,21 @@ function renderEsteri() {
     const e = el('div', 'rep-est'); e.append(el('b', null, 'In sintesi: ')); e.append(O.map(c => first(c.impl || c.text)).join(' '));
     box.append(e, g2);
   }
+  fillEstLive();
+}
+// prezzi reali aggiornati (indici.json) dentro i riquadri: strumenti mostrati per riquadro
+const EST_LIVE = {m_eu: ['^STOXX50E', '^GDAXI', 'FTSEMIB.MI'], m_cn: ['000001.SS', '^HSI'], m_jp: ['^N225'], m_em: ['^KS11', '^BSESN', '^BVSP'], m_rot: ['^GSPC'],
+  tassi: ['^IRX', '^TNX', '^TYX'], cambio: ['EURUSD=X', 'DX-Y.NYB', 'USDJPY=X'], materie: ['BZ=F', 'CL=F', 'GC=F', 'SI=F'], cripto: ['BTC-USD', 'ETH-USD']};
+let EST_IND = null;
+async function fillEstLive() {
+  try { if (!EST_IND) { const r = await fetch('indici.json?' + Date.now(), {cache: 'no-store'}); if (!r.ok) throw new Error(r.status); EST_IND = await r.json(); } } catch (e) { return; }
+  const M = {}; EST_IND.gruppi.forEach(g => g.righe.forEach(r => { M[r.s] = Object.assign({rate: g.g.startsWith('Tassi')}, r); }));
+  const fmt = (r) => r.p >= 1000 ? r.p.toLocaleString('it-IT', {maximumFractionDigits: 0}) : r.p.toLocaleString('it-IT', {minimumFractionDigits: r.rate ? 2 : r.p < 10 ? 4 : 2, maximumFractionDigits: r.rate ? 2 : r.p < 10 ? 4 : 2});
+  const dm = d => new Date(d + 'T00:00:00Z').toLocaleDateString('it-IT', {day: 'numeric', month: 'short', timeZone: 'UTC'});
+  document.querySelectorAll('.est-live').forEach(box => { const ids = EST_LIVE[box.dataset.card] || []; box.replaceChildren(); let last = '';
+    ids.forEach(sy => { const r = M[sy]; if (!r) return; last = last > r.data ? last : r.data; const chip = el('span', 'lv-chip'), g = r.g1, cls = g > 0 ? 'ind-up' : g < 0 ? 'ind-dn' : 'ind-fl';
+      chip.append(el('em', null, r.n.replace(/ \(.*\)/, '')), el('b', null, fmt(r) + (r.rate ? '%' : '')), el('i', cls, g == null ? '–' : (g > 0 ? '+' : g < 0 ? '−' : '') + Math.abs(g).toLocaleString('it-IT', {maximumFractionDigits: r.rate ? 2 : 1}) + (r.rate ? ' pt' : '%'))); box.append(chip); });
+    if (last) box.append(el('span', 'lv-cap', 'Prezzi di mercato al ' + dm(last) + ' · variazione dell\'ultima seduta')); });
 }
 document.body.classList.add('tech-on');
 
@@ -2564,9 +2625,9 @@ function renderNow() {
 function rangeStart() { if (!st.years) return 0; const t0 = new Date(T[N - 1]); t0.setUTCFullYear(t0.getUTCFullYear() - st.years); return Math.max(0, d3.bisectLeft(T, t0)); }
 function drawMain() {
   const box = document.getElementById('mainChart'); if (!box) return;
-  const W = Math.max(320, box.clientWidth), narrow = W < 560;
-  const m = {l: narrow ? 44 : 56, r: narrow ? 30 : 40, t: 10, b: 44}, gap = 18;
-  const h1 = narrow ? 210 : 290, h2 = narrow ? 130 : 160, H = m.t + h1 + gap + h2 + m.b;
+  const W = Math.max(320, box.clientWidth), narrow = W < 560, tab = !narrow && W < 960; // tablet (iPad): più alto, per non apparire schiacciato
+  const m = {l: narrow ? 44 : 56, r: narrow ? 30 : 40, t: 10, b: 44}, gap = tab ? 22 : 18;
+  const h1 = narrow ? 210 : tab ? 330 : 290, h2 = narrow ? 130 : tab ? 200 : 160, H = m.t + h1 + gap + h2 + m.b;
   box.style.minHeight = H + 'px';
   const i0 = rangeStart(), idx = d3.range(i0, N);
   const x = d3.scaleUtc([T[i0], T[N - 1]], [m.l, W - m.r]);
@@ -2618,14 +2679,14 @@ function drawMain() {
     svg.append('path').attr('d', d3.line().defined(i => !isNaN(STRS[i])).x(i => x(T[i])).y(i => y2(STRS[i]))(idx)).attr('fill', 'none').attr('stroke', css('--strs')).attr('stroke-width', 1).attr('opacity', .9);
   }
   svg.append('path').attr('d', d3.line().defined(okI).x(i => x(T[i])).y(i => y2(IFI[i]))(idx)).attr('fill', 'none').attr('stroke', css('--risk')).attr('stroke-width', 1.7).attr('stroke-linejoin', 'round');
-  svg.append('text').attr('x', m.l + 6).attr('y', m.t + h1 - 6).attr('fill', css('--muted')).attr('font-size', 11).text('S&P 500 (scala log)');
+  svg.append('text').attr('x', m.l + 6).attr('y', m.t + 14).attr('fill', css('--muted')).attr('font-size', 11.5).attr('font-weight', 600).attr('paint-order', 'stroke').attr('stroke', '#fff').attr('stroke-width', 4).attr('stroke-linejoin', 'round').text('S&P 500 (scala log)');
   // ultimo giorno: punto e data sulla destra
   { const xl = x(T[N - 1]);
     svg.append('line').attr('x1', xl).attr('x2', xl).attr('y1', m.t).attr('y2', y2top + h2).attr('stroke', css('--navy-2')).attr('stroke-width', 1).attr('stroke-dasharray', '2 2').attr('opacity', .7);
     svg.append('circle').attr('cx', xl).attr('cy', y1(COL.spx[N - 1])).attr('r', 3).attr('fill', css('--price'));
     const halo = t => t.attr('stroke', css('--panel')).attr('stroke-width', 4).attr('paint-order', 'stroke').attr('stroke-linejoin', 'round');
     halo(svg.append('text').attr('x', xl - 6).attr('y', y2(IFI[N - 1]) + 4).attr('text-anchor', 'end').attr('font-size', 11).attr('font-weight', 700).attr('fill', riskColor(IFI[N - 1])).text(isNaN(IFI[N - 1]) ? '' : Math.round(IFI[N - 1]))); }
-  svg.append('text').attr('x', m.l + 6).attr('y', y2top + 12).attr('fill', css('--muted')).attr('font-size', 11).text('Indice di rischio 0–100');
+  svg.append('text').attr('x', m.l + 6).attr('y', y2top + 12).attr('fill', css('--muted')).attr('font-size', 11.5).attr('font-weight', 600).attr('paint-order', 'stroke').attr('stroke', '#fff').attr('stroke-width', 4).attr('stroke-linejoin', 'round').text('Indice di rischio 0–100');
   // selezione
   const sel = svg.append('g'); const selI = Math.max(st.sel, i0);
   sel.append('line').attr('x1', x(T[selI])).attr('x2', x(T[selI])).attr('y1', m.t).attr('y2', y2top + h2).attr('stroke', css('--ink')).attr('stroke-width', 1).attr('opacity', .55);
@@ -3097,6 +3158,7 @@ Object.assign(HELP, {
   mk_settori: ['Settori difensivi e ciclici', 'Il grafico confronta i settori difensivi (servizi pubblici, beni di prima necessità, salute) con quelli ciclici (consumi non essenziali, industria, finanza, tecnologia), partendo da 100 due anni fa.', 'Come si legge: se la linea sale, gli investitori preferiscono i settori che reggono meglio nei ribassi: è un segno di prudenza.'],
   mk_vix: ['Volatilità', 'Il grafico mostra il VIX, chiamato indice della paura: misura quanto costa assicurarsi contro i ribassi dell\'S&P 500.', 'Come si legge: sotto 20 il mercato è tranquillo; tra 20 e 30 c\'è tensione; sopra 30 c\'è paura vera.'],
   mk_quota: ['Quota in azioni del modello', 'Il grafico mostra la quota in azioni consigliata nell\'ultimo anno, con il tuo profilo.'],
+  mk_titoli: ['Come scelgo i 3 titoli del giorno', 'Guardo i 30 titoli più pesanti dell\'S&P 500 (pesi ufficiali dell\'ETF SPY). Per ognuno calcolo il contributo all\'indice dell\'ultima seduta: peso × variazione del giorno. Poi lo moltiplico per un bonus fino a 2 se il titolo è stato scambiato molto più del solito, perché di solito vuol dire che c\'è una notizia. Scelgo i 3 con il punteggio più alto, in rialzo o in ribasso.', 'Perché così: sono i titoli che hanno davvero mosso l\'indice e quindi il rischio, non quelli più chiacchierati. Il limite è che escludo i titoli piccoli, anche se in forte movimento.', 'Sono informazioni di mercato, non consigli di acquisto o vendita.'],
   mk_seguire: ['Da seguire', 'Le poche cose da tenere d\'occhio nelle prossime settimane, ognuna con il livello che cambierebbe il quadro. Servono a sapere in anticipo cosa farebbe scattare un cambio di indicazione.'],
   fattori: ['Fattori dell\'indice di rischio', 'L\'indice di rischio nasce da pochi fattori calcolati ogni giorno. Per ognuno vedi il valore di oggi, il livello di rischio rispetto agli ultimi 5 anni (0 = tranquillo, 100 = massimo) e la variazione in 4 settimane. Clicca su un fattore per la spiegazione.', 'I pesi sono fissi: per vedere come sono distribuiti clicca "Come sono distribuiti i pesi".'],
   pesidist: ['Come sono distribuiti i pesi', 'Ogni fattore ha un peso fisso: non si può cambiare, così il risultato non dipende da scelte fatte dopo aver visto i numeri. L\'ultima colonna dice quanto conta ogni fattore nell\'indice finale.', 'Tre fattori hanno peso 1,25 perché sono gli unici rimasti affidabili in tutti i periodi provati (1999–2008, 2009–2016, 2017–2026). Il gruppo dei grandi investitori conta la metà degli altri due.']
@@ -3136,6 +3198,15 @@ function segBox(k) {
   const n = document.createElement('p'); n.className = 'ev-meta'; n.textContent = 'Informazioni di mercato, non consigli di acquisto o vendita.'; d.append(n);
   return d;
 }
+function titBox(k) {
+  const i = +k.slice(3), t = EVAL && EVAL.titoli_giorno && EVAL.titoli_giorno.titoli ? EVAL.titoli_giorno.titoli[i] : null, d = document.createElement('div'); d.className = 'segnews'; if (!t) return d;
+  const sec = (title, arr, ordered) => { const h = document.createElement('h4'); h.textContent = title; const ul = document.createElement(ordered ? 'ol' : 'ul'); ul.className = 'ext'; arr.forEach(x => { const li = document.createElement('li'); li.textContent = x; ul.append(li); }); d.append(h, ul); };
+  const lead = document.createElement('div'); lead.className = 'box'; const lh = document.createElement('h4'); lh.textContent = 'Perché è tra i 3 di oggi'; const lp = document.createElement('div'); lp.textContent = t.perche || ''; lead.append(lh, lp); d.append(lead);
+  sec('Situazione', t.situazione || []); sec('Analisi approfondita', t.analisi || []);
+  const h = document.createElement('h4'); h.textContent = 'Fonti'; const ul = document.createElement('ul'); ul.className = 'ext';
+  (t.fonti || []).forEach(x => { const li = document.createElement('li'); li.append(link(x.nome, x.url, x.data || '')); ul.append(li); }); d.append(h, ul);
+  const n = document.createElement('p'); n.className = 'ev-meta'; n.textContent = 'Prezzi di Yahoo Finance del ' + (t.data || '').split('-').reverse().join('/') + '. Informazioni di mercato, non consigli di acquisto o vendita.'; d.append(n); return d;
+}
 function helpContent(k) {
   const h = HELP[k], out = []; if (!h) return out;
   h.slice(1).forEach(t => { const p = document.createElement('p'); p.textContent = t; out.push(p); });
@@ -3145,6 +3216,7 @@ function helpContent(k) {
     g.querySelector('.hi span').textContent = t.hi; g.querySelector('.lo span').textContent = t.lo; out.push(g);
   }
   if (/^seg\d+$/.test(k)) out.push(segBox(k));
+  if (/^tit\d+$/.test(k)) out.push(titBox(k));
   if (k === 'pesidist') out.push(pesiTable());
   if (EX[k]) out.push(exBox(typeof EX[k] === 'function' ? EX[k]() : EX[k]));
   return out;
