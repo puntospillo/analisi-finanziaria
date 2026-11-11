@@ -21,7 +21,7 @@ def get(t):
         g1 = (c1 / c0 - 1) * 100; vr = D[ks[-1]][1] / vm if vm else 1
         contr = t['weight'] * g1 / 100; score = abs(contr) * (1 + min(max(vr - 1, 0), 1))
         return {'nome': t['name'], 'ticker': t['ticker'], 'peso': round(t['weight'], 2), 'prezzo': round(c1, 2), 'data': ks[-1], 'g1': round(g1, 2),
-                'vol_rel': round(vr, 2), 'contributo': round(contr, 3), 'punteggio': round(score, 4), 'da_massimo_1a': round((c1 / mx - 1) * 100, 1), 'r21': round(r21, 1)}
+                'vol_rel': round(vr, 2), 'contributo': round(contr, 3), 'punteggio': round(score, 4), 'da_massimo_1a': round((c1 / mx - 1) * 100, 1), 'r21': round(r21, 1), 'serie': [[k, round(D[k][0], 2)] for k in ks[-252:]]}
     except Exception: return None
 with cf.ThreadPoolExecutor(8) as ex: res = [r for r in ex.map(get, top) if r]
 res.sort(key=lambda r: -r['punteggio'])
