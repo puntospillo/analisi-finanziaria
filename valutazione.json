@@ -1,54 +1,54 @@
 {
- "rid": "vmwbsj6q1",
+ "rid": "vmwe35t0w",
  "state": "ok",
- "at": "2026-11-11T07:21:37Z",
- "app_version": "2.1",
- "data_as_of": "2026-11-10",
+ "at": "2026-11-12T21:54:41Z",
+ "app_version": "2.2",
+ "data_as_of": "2026-11-12",
  "settings_key": "10lt6nt",
  "settings_label": "impostazioni standard · fragilità 1, stress 1, istituzionali 0.5 · soglia 70 + filtro media 200g",
  "livello": "elevato",
- "titolo": "Rischio elevato: l'inflazione di ottobre più alta del previsto fa scontare un rialzo dei tassi a dicembre e riapre la pressione sui titoli dell'IA.",
+ "titolo": "Rischio elevato ma in calo sul mese: l'IA rimbalza e l'S&P 500 torna a 2,9% dal massimo, ma i tassi in rialzo restano il freno.",
  "in_breve": [
-  "Rischio: l'indice è a 58 (era 61 quattro settimane fa), livello «elevato». Il rimbalzo di lunedì ha recuperato metà del calo dell'IA, ma martedì l'inflazione di ottobre, più alta del previsto, ha riportato in vendita i tecnologici.",
+  "Rischio: l'indice è a 59 (68 quattro settimane fa), livello «elevato». Il mercato ha recuperato quasi tutto il calo dell'IA del 5 novembre, ma l'inflazione di ottobre sopra le attese e il rialzo dei tassi già scontato per dicembre tengono alta la tensione.",
   "Cosa fare: il modello indica prudenza, con quote in azioni basse per tutti e tre i profili. Le idee sotto sono solo spunti da approfondire, non indicazioni di acquisto o vendita."
  ],
  "dashboard": [
-  "Indice di rischio 58 su 100 (Attenzione); quattro settimane fa era 61. Fragilità 42, stress 66.",
-  "S&P 500 a 7521: +2.6% rispetto alla media a 200 giorni (7331) e -3.8% dal massimo. Il 66% dei titoli è sopra la propria media a 200 giorni. VIX 19.5.",
+  "Indice di rischio 59 su 100 (Attenzione); quattro settimane fa era 68. Fragilità 44, stress 66.",
+  "S&P 500 a 7592: +3.5% rispetto alla media a 200 giorni (7337) e -2.9% dal massimo. Il 65% dei titoli è sopra la propria media a 200 giorni. VIX 18.7.",
   "Quota in azioni indicata dal modello: prudente 30%, bilanciato 30%, dinamico 30% (modello di base 30%)."
  ],
  "esterno": [
   {
-   "tema": "Wall Street, 9–10 novembre",
-   "lettura": "Lunedì S&P 500 a 7.549,94 (+2,35%), con tutti gli 11 settori in rialzo. Martedì 7.520,93 (−0,38%) e Nasdaq −0,74%, con i tecnologici in calo.",
-   "segno": "neutro",
-   "fonte": "TechFlow (da Chaoxiang Research)",
-   "url": "https://www.techflowpost.com/en-US/article/35264",
-   "data": "2026-11-10"
+   "tema": "Wall Street, 11 novembre",
+   "lettura": "S&P 500 a 7.619,38 (+1,3%), Nasdaq +1,6%, a 2,6% dal massimo di ottobre. CoreWeave +24,7% dopo i conti, Micron +11,9%, Nvidia +2,9%, Broadcom +4%.",
+   "segno": "meno rischio",
+   "fonte": "WPTF (AP)",
+   "url": "https://www.wptf.com/2026/11/11/19156/",
+   "data": "2026-11-11"
   },
   {
    "tema": "Inflazione e Fed",
-   "lettura": "Il CPI di ottobre è +0,4% sul mese (atteso +0,3%), core +0,3% (atteso +0,2%). Il rialzo di 25 punti base a dicembre è dato per scontato; Waller non esclude 50 punti se il core resta intorno a 0,3%.",
+   "lettura": "Dopo il CPI di ottobre (+0,4% totale, +0,3% core) il rialzo di 25 punti base a dicembre è dato per scontato. Waller non esclude 50 punti; Logan vede almeno altri due rialzi da 25.",
    "segno": "più rischio",
-   "fonte": "TechFlow (da Chaoxiang Research)",
-   "url": "https://www.techflowpost.com/en-US/article/35264",
-   "data": "2026-11-10"
+   "fonte": "The Edge Malaysia (Bloomberg)",
+   "url": "https://theedgemalaysia.com/node/825230",
+   "data": "2026-11-11"
   },
   {
    "tema": "Rendimenti dei Treasury",
-   "lettura": "Il Treasury a 10 anni è salito di oltre 9 punti base a 4,986% dopo il CPI. Tassi più alti pesano sulle valutazioni di azioni e obbligazioni a lunga scadenza.",
+   "lettura": "Il 10 novembre il rendimento a 10 anni è salito di oltre 9 punti base a 4,986% e quello a 2 anni ha avuto il rialzo maggiore da aprile 2025. L'11 novembre il mercato obbligazionario era chiuso.",
    "segno": "più rischio",
-   "fonte": "TechFlow (da Chaoxiang Research)",
+   "fonte": "TechFlow, The Edge Malaysia",
    "url": "https://www.techflowpost.com/en-US/article/35264",
    "data": "2026-11-10"
   },
   {
-   "tema": "Titoli dell'IA e Nvidia",
-   "lettura": "Nvidia ha perso il 5,5% martedì (168,78 dollari) dopo l'indagine del consiglio sul CEO Jensen Huang, secondo giorno di calo. Lunedì AMD +9,6% e Broadcom, Lam Research in rialzo: il denaro si sposta dentro il settore, non esce del tutto.",
-   "segno": "più rischio",
-   "fonte": "TradingNews e TradingKey",
-   "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/262299537-us-october-cpi-tops-forecasts-nasdaq-falls-nvidia-stock-drops-tradingkey",
-   "data": "2026-11-10"
+   "tema": "Titoli dell'IA",
+   "lettura": "Il rimbalzo si è allargato: lunedì Amazon +5,5%, Alphabet +3,5%, Microsoft +2,6% (rotazione fuori da Nvidia, sotto indagine del consiglio sul CEO). Nvidia resta debole e il 12 novembre perde ancora il 4,3% (dati di borsa della dashboard).",
+   "segno": "neutro",
+   "fonte": "Coinpaper, WPTF",
+   "url": "https://coinpaper.com/38567/nvidia-stock-sinks-as-amazon-jumps-5-5-microsoft-and-alphabet-rally-in-ai-rebound",
+   "data": "2026-11-09"
   },
   {
    "tema": "Utili delle società",
@@ -59,58 +59,58 @@
    "data": "2026-11-06"
   },
   {
-   "tema": "Petrolio e oro",
-   "lettura": "Brent a 93,44 dollari (−4,96%) lunedì per le speranze di pace con l'Iran, dopo −16,4% nella settimana precedente. Oro a circa 4.123 dollari. Martedì Brent a 91,49.",
-   "segno": "meno rischio",
-   "fonte": "Journal Arta, Mitrade, TechFlow",
-   "url": "https://journalarta.com/en/2026/11/09/oil-price-today-brent-falls-4-96-to-93-44-on-iran-peace-hopes-as-gold-climbs/",
-   "data": "2026-11-09"
+   "tema": "Petrolio",
+   "lettura": "Il Brent è risalito dell'1,4% a 92,76 dollari l'11 novembre, dopo il calo del 16,4% della settimana al 6 novembre per le speranze di pace con l'Iran.",
+   "segno": "neutro",
+   "fonte": "WPTF (AP), Mitrade",
+   "url": "https://www.wptf.com/2026/11/11/19156/",
+   "data": "2026-11-11"
   },
   {
    "tema": "Piazza Affari",
-   "lettura": "Lunedì il FTSE MIB ha chiuso a 51.399 punti (+2,69%), il migliore tra i grandi listini europei, con UniCredit +6,28% dopo i conti e Banco BPM +10,67% per la proposta di fusione con Crédit Agricole Italia.",
+   "lettura": "Il 10 novembre il FTSE MIB ha chiuso a 51.755 punti (+0,69%); UniCredit +2,36% a 83,55 euro dopo l'aumento dei prezzi obiettivo degli analisti, Banco BPM −0,77% dopo il +10,67% del giorno prima.",
    "segno": "meno rischio",
    "fonte": "Milano Finanza",
-   "url": "https://www.milanofinanza.it/news/borsa-commento-di-chiusura-202611091828018258",
-   "data": "2026-11-09"
+   "url": "https://www.milanofinanza.it/news/borsa-commento-di-chiusura-202611101828017995",
+   "data": "2026-11-10"
   }
  ],
- "concordanza": "Dashboard e fonti concordano sul rischio elevato ma non estremo: gli utili sono molto solidi e il petrolio cala, ma l'inflazione sopra le attese e il rialzo dei tassi già scontato tengono alta la tensione. La dashboard non misura il solo rischio dei tecnologici, che nelle fonti è il tema più nervoso.",
+ "concordanza": "Dashboard e fonti concordano: il mercato ha recuperato quasi tutto il calo dell'IA e gli utili sono molto solidi, ma il costo del denaro sale e la Fed è pronta ad alzare i tassi. Le fonti sono più ottimiste della dashboard sul breve periodo (S&P a 2,6% dal massimo), mentre la dashboard resta prudente perché l'indice di rischio interno è ancora sopra 55.",
  "monitorare": [
   {
    "cosa": "Indice di rischio",
-   "perche": "Misura lo stress interno del mercato: è a 58 e scende da 61.",
+   "perche": "Misura lo stress interno del mercato: è a 59 e scende da 68 di quattro settimane fa.",
    "soglia": "Sotto 55: torna «moderato». Sopra 70: rischio «alto».",
    "guardare": "Una discesa sotto 55 con l'S&P sopra la media a 200 giorni sarebbe il segnale di normalizzazione.",
    "notizie": [
     {
-     "testo": "Rimbalzo di lunedì (S&P +2,35%), poi −0,38% martedì: il mercato recupera ma resta fragile.",
-     "fonte": "TechFlow",
-     "url": "https://www.techflowpost.com/en-US/article/35264",
-     "data": "2026-11-10"
+     "testo": "S&P 500 a 7.619,38 l'11 novembre (+1,3%), a 2,6% dal massimo di ottobre.",
+     "fonte": "WPTF (AP)",
+     "url": "https://www.wptf.com/2026/11/11/19156/",
+     "data": "2026-11-11"
     },
     {
-     "testo": "S&P 500 ancora circa 4% sotto il massimo a 52 settimane e Nasdaq oltre 9% sotto il record.",
-     "fonte": "TradingNews",
-     "url": "https://www.tradingnews.com/news/sp500-hirts-7517-nasdaq-jumps-578-points-dow-climbs-to-52139",
-     "data": "2026-11-09"
+     "testo": "Il 10 novembre l'S&P 500 aveva chiuso a 7.520,93 (−0,38%) dopo il CPI.",
+     "fonte": "TradingKey",
+     "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/262299537-us-october-cpi-tops-forecasts-nasdaq-falls-nvidia-stock-drops-tradingkey",
+     "data": "2026-11-10"
     }
    ]
   },
   {
    "cosa": "S&P 500 e media a 200 giorni",
    "perche": "Una chiusura sotto la media di lungo periodo cambia il regime del modello.",
-   "soglia": "Chiusura sotto circa 7.330 punti (−2,5% dal livello di oggi).",
-   "guardare": "Oggi l'indice è circa 2,6% sopra la media: il margine è ridotto.",
+   "soglia": "Chiusura sotto circa 7.340 punti (−3,3% dal livello di oggi).",
+   "guardare": "Oggi l'indice è circa 3,5% sopra la media: il margine è più ampio di due giorni fa.",
    "notizie": [
     {
-     "testo": "S&P 500 chiuso a 7.520,93 martedì 10 novembre.",
-     "fonte": "TradingKey",
-     "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/262299537-us-october-cpi-tops-forecasts-nasdaq-falls-nvidia-stock-drops-tradingkey",
-     "data": "2026-11-10"
+     "testo": "L'11 novembre tutti e tre i principali indici in rialzo: Dow +0,5%, Nasdaq +1,6%.",
+     "fonte": "WPTF (AP)",
+     "url": "https://www.wptf.com/2026/11/11/19156/",
+     "data": "2026-11-11"
     },
     {
-     "testo": "Lunedì tutti gli 11 settori in rialzo, guidati da industriali (+3,78%) e consumi discrezionali (+3,05%).",
+     "testo": "Lunedì 9 novembre S&P 500 +2,35% con tutti gli 11 settori in rialzo.",
      "fonte": "The Star",
      "url": "https://www.thestar.com.my/news/world/2026/11/10/us-stocks-close-higher",
      "data": "2026-11-09"
@@ -121,19 +121,19 @@
    "cosa": "Nvidia e titoli dell'IA",
    "perche": "I tecnologici dell'IA pesano molto sull'indice: la loro caduta del 5 novembre ha scosso il mercato.",
    "soglia": "Nasdaq −20% dal massimo (mercato «orso»); oggi è circa 9% sotto il record.",
-   "guardare": "Seguire la vicenda del consiglio di Nvidia e i conti di Applied Materials e Cisco di giovedì 12.",
+   "guardare": "Indagine del consiglio di Nvidia, conti di Applied Materials e Cisco (dopo la chiusura del 12) e di Nvidia nella settimana del 16.",
    "notizie": [
     {
-     "testo": "Nvidia −5,5% a 168,78 dollari, secondo calo di fila, dopo l'indagine del consiglio sul CEO.",
-     "fonte": "TradingKey",
-     "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/262299537-us-october-cpi-tops-forecasts-nasdaq-falls-nvidia-stock-drops-tradingkey",
-     "data": "2026-11-10"
+     "testo": "Il consiglio di Nvidia ha avviato un'indagine indipendente su notizie riguardanti il CEO Jensen Huang; il titolo aveva perso il 9,26% il 5 novembre.",
+     "fonte": "Coinpaper",
+     "url": "https://coinpaper.com/38567/nvidia-stock-sinks-as-amazon-jumps-5-5-microsoft-and-alphabet-rally-in-ai-rebound",
+     "data": "2026-11-09"
     },
     {
-     "testo": "Lunedì AMD +9,6% per un upgrade degli analisti: rotazione dentro il settore.",
-     "fonte": "TradingNews",
-     "url": "https://www.tradingnews.com/news/sp500-hirts-7517-nasdaq-jumps-578-points-dow-climbs-to-52139",
-     "data": "2026-11-09"
+     "testo": "CoreWeave +24,7% e Micron +11,9% l'11 novembre dopo conti e previsioni migliori delle attese.",
+     "fonte": "WPTF (AP)",
+     "url": "https://www.wptf.com/2026/11/11/19156/",
+     "data": "2026-11-11"
     },
     {
      "testo": "Giovedì dopo la chiusura i conti di Applied Materials e Cisco: attenzione agli ordini legati all'IA.",
@@ -147,19 +147,19 @@
    "cosa": "Fed, inflazione e tassi",
    "perche": "Un rialzo dei tassi più deciso del previsto danneggia azioni e obbligazioni.",
    "soglia": "Treasury 10 anni sopra 5,25% oppure probabilità di rialzo di 50 punti base molto più alta di oggi (circa 14%).",
-   "guardare": "PPI di venerdì 13 (atteso +0,4%) e interventi dei membri della Fed: il rialzo di dicembre è già nei prezzi.",
+   "guardare": "PPI di venerdì 13 (atteso +0,4%) e interventi dei membri della Fed.",
    "notizie": [
     {
-     "testo": "CPI di ottobre +0,4% (atteso +0,3%), core +0,3% (atteso +0,2%): rendimento a 10 anni a 4,986%.",
-     "fonte": "TechFlow",
-     "url": "https://www.techflowpost.com/en-US/article/35264",
-     "data": "2026-11-10"
+     "testo": "Waller: un rialzo di 50 punti base a dicembre potrebbe servire; Logan: almeno altri due rialzi da 25.",
+     "fonte": "The Edge Malaysia (Bloomberg)",
+     "url": "https://theedgemalaysia.com/node/825230",
+     "data": "2026-11-11"
     },
     {
-     "testo": "La Fed ha tenuto i tassi al 3,75–4,00% il 28 ottobre con voto 10–2 (due contrari volevano un rialzo).",
-     "fonte": "Political.org",
-     "url": "https://political.org/2026/11/09/inflation-stays-hot-ahead-of-key-october-cpi-report-as-fed-rate-hike-odds-climb-before-december-meeting/",
-     "data": "2026-11-09"
+     "testo": "Goldman Sachs Asset Management considera il rialzo di dicembre lo scenario di base; per Evercore è «scontato» salvo forte stretta delle condizioni finanziarie.",
+     "fonte": "The Edge Malaysia (Bloomberg)",
+     "url": "https://theedgemalaysia.com/node/825230",
+     "data": "2026-11-11"
     },
     {
      "testo": "Prossimo CPI il 10 dicembre; riunione della Fed l'8–9 dicembre.",
@@ -173,13 +173,13 @@
    "cosa": "Petrolio",
    "perche": "Il calo del greggio ha ridotto i timori di inflazione; un nuovo rialzo li riaccenderebbe.",
    "soglia": "Brent sopra 110 dollari (più rischio) o stabilmente sotto 90 (meno rischio).",
-   "guardare": "Le trattative Stati Uniti–Iran e i rischi di attacchi alle navi nello stretto di Hormuz.",
+   "guardare": "Le trattative Stati Uniti–Iran e i rischi per le navi nello stretto di Hormuz.",
    "notizie": [
     {
-     "testo": "Brent a 93,44 dollari lunedì (−4,96%), a 91,49 martedì.",
-     "fonte": "Journal Arta, TechFlow",
-     "url": "https://journalarta.com/en/2026/11/09/oil-price-today-brent-falls-4-96-to-93-44-on-iran-peace-hopes-as-gold-climbs/",
-     "data": "2026-11-09"
+     "testo": "Brent +1,4% a 92,76 dollari l'11 novembre.",
+     "fonte": "WPTF (AP)",
+     "url": "https://www.wptf.com/2026/11/11/19156/",
+     "data": "2026-11-11"
     },
     {
      "testo": "Brent −16,4% nella settimana al 6 novembre, il calo più forte dal 2020.",
@@ -202,7 +202,7 @@
    "perche_ora": "Il mercato si allarga oltre i titoli tecnologici: Prysmian beneficia degli stessi investimenti (reti elettriche e data center) senza dipendere dai margini dei grandi gruppi dell'IA. Il 29 ottobre ha chiuso a 114,90 € (+6,64%).",
    "rischi": "Utile netto del trimestre −31,4%: va capito il motivo. Il titolo è già salito molto e un taglio degli investimenti nei data center colpirebbe le attese.",
    "orizzonte": "6–12 mesi",
-   "prezzo_rif": "107,20 € (Yahoo Finance, 10/11/2026)",
+   "prezzo_rif": "110,50 € (Yahoo Finance, 12/11/2026)",
    "link": "https://it.investing.com/equities/prysmian",
    "link_sito": "Investing.com",
    "fonte": "Investing.com Italia; Money.it",
@@ -221,7 +221,7 @@
    "fonte": "Investing.com Italia; SoldiOnline",
    "url": "https://it.investing.com/news/earnings/eni-supera-le-stime-sullutile-q3-buyback-12-e-dividendo-straordinario-3602738",
    "data": "2026-10-30",
-   "prezzo_rif": "24,75 € (Yahoo Finance, 10/11/2026)"
+   "prezzo_rif": "25,47 € (Yahoo Finance, 12/11/2026)"
   },
   {
    "categoria": "azione",
@@ -233,7 +233,7 @@
    "perche_ora": "Il 9 novembre è salita del 6,2% dopo conti del terzo trimestre sopra le attese, con un utile del 17% oltre il consenso degli analisti (OraFinanza).",
    "rischi": "Integrazione di Commerzbank, titolo già salito molto, possibile calo dei tassi o rallentamento economico; le banche italiane soffrono se lo spread BTP risale.",
    "orizzonte": "12 mesi",
-   "prezzo_rif": "83,55 € (Yahoo Finance, 10/11/2026)",
+   "prezzo_rif": "84,24 € (Yahoo Finance, 12/11/2026)",
    "link": "https://it.investing.com/equities/unicredito",
    "fonte": "ANSA; Reuters e OraFinanza via Investing.com",
    "url": "https://www.ansa.it/sito/notizie/economia/2026/11/09/borsa-milano-chiude-in-forte-rialzo-ftse-mib-269_715fcd25-4783-4993-8dc4-a2270981ec05.html",
@@ -255,7 +255,7 @@
    "fonte": "Novartis (comunicato)",
    "url": "https://www.novartis.com/news/media-releases/novartis-delivered-sales-growth-and-core-margin-expansion-q3-raised-fy-core-operating-income-guidance",
    "data": "2026-10-27",
-   "prezzo_rif": "134,48 CHF (Yahoo Finance, 10/11/2026)"
+   "prezzo_rif": "134,22 CHF (Yahoo Finance, 12/11/2026)"
   },
   {
    "categoria": "azione",
@@ -272,7 +272,7 @@
    "fonte": "TotalEnergies (modulo 6-K alla SEC)",
    "url": "https://www.sec.gov/Archives/edgar/data/0000879764/000110465926119833/tm2628392d1_ex99-1.htm",
    "data": "2026-10-29",
-   "prezzo_rif": "78,20 € (Yahoo Finance, 10/11/2026)"
+   "prezzo_rif": "80,63 € (Yahoo Finance, 12/11/2026)"
   },
   {
    "categoria": "azione",
@@ -289,7 +289,7 @@
    "fonte": "Seoul Economic Daily",
    "url": "https://en.sedaily.com/international/2026/10/30/alphabet-plunges-13-percent-on-capex-shock-dragging-nasdaq",
    "data": "2026-10-29",
-   "prezzo_rif": "533,16 $ (Yahoo Finance, 10/11/2026)"
+   "prezzo_rif": "523,00 $ (Yahoo Finance, 12/11/2026)"
   },
   {
    "categoria": "azione",
@@ -306,7 +306,7 @@
    "fonte": "Cappnotes – Closing Look",
    "url": "https://cappnotes.substack.com/p/closing-look-thursday-october-29",
    "data": "2026-10-29",
-   "prezzo_rif": "1432,29 $ (Yahoo Finance, 10/11/2026)"
+   "prezzo_rif": "1427,28 $ (Yahoo Finance, 12/11/2026)"
   },
   {
    "categoria": "etf",
@@ -341,7 +341,7 @@
    "fonte": "ANSA; justETF",
    "url": "https://www.ansa.it/sito/notizie/economia/2026/10/29/la-bce-si-ferma-sui-tassi-in-bilico-il-rialzo-di-dicembre_fff36f02-6e9c-4e87-af42-4776abe0acc8.html",
    "data": "2026-10-29",
-   "prezzo_rif": "40,16 € (Yahoo Finance, 10/11/2026)"
+   "prezzo_rif": "40,28 € (Yahoo Finance, 12/11/2026)"
   },
   {
    "categoria": "materia prima",
@@ -377,7 +377,7 @@
    "fonte": "ANSA; justETF",
    "url": "https://www.ansa.it/sito/notizie/economia/2026/10/29/la-bce-si-ferma-sui-tassi-in-bilico-il-rialzo-di-dicembre_fff36f02-6e9c-4e87-af42-4776abe0acc8.html",
    "data": "2026-10-29",
-   "prezzo_rif": "139,83 € (Yahoo Finance, 10/11/2026)"
+   "prezzo_rif": "139,73 € (Yahoo Finance, 12/11/2026)"
   },
   {
    "categoria": "etf",
@@ -408,7 +408,7 @@
    "perche_ora": "Conti del 28 ottobre sopra le attese su ricavi e risultato operativo: il titolo è salito fino al +15% e il 29 ha ceduto l'1,4%. Il 5 novembre ha ceduto il 4,5% nella giornata negativa di Milano (Money.it).",
    "rischi": "Cassa bruciata per 4 miliardi nel trimestre, Europa in perdita operativa (−311 milioni), dazi per circa 1 miliardo nel 2026, margini allo 0,7%. Citi prevede pressione sul titolo finché i benefici non si vedono nei conti.",
    "orizzonte": "oltre 12 mesi",
-   "prezzo_rif": "3,83 € (Yahoo Finance, 10/11/2026)",
+   "prezzo_rif": "3,56 € (Yahoo Finance, 12/11/2026)",
    "link": "https://it.investing.com/equities/fiat",
    "link_sito": "Investing.com",
    "fonte": "Milano Finanza; Money.it",
@@ -427,7 +427,7 @@
    "perche_ora": "Il 29 ottobre il titolo ha perso il 6,64% a 6,13 € con volumi molto alti dopo i conti: ne deduco un pessimismo concentrato sul Nord America.",
    "rischi": "USA in calo per l'anno, dazi per circa 20 milioni, consumi di alcolici in calo strutturale tra i giovani; l'indebitamento non è riportato nelle fonti consultate e va verificato. Il titolo è già crollato più volte dopo le trimestrali.",
    "orizzonte": "oltre 12 mesi",
-   "prezzo_rif": "6,87 € (Yahoo Finance, 10/11/2026)",
+   "prezzo_rif": "6,78 € (Yahoo Finance, 12/11/2026)",
    "link": "https://it.investing.com/equities/campari",
    "link_sito": "Investing.com",
    "fonte": "Il Sole 24 Ore; Money.it; Affaritaliani",
@@ -452,7 +452,7 @@
    "fonte": "ANSA; Milano Finanza; Affaritaliani",
    "url": "https://www.ansa.it/sito/notizie/economia/2026/10/30/borsa-milano-in-calo-con-le-banche-deboli-scivola-amplifon_589fc273-d10a-49b0-80c6-d72b44132524.html",
    "data": "2026-10-30",
-   "prezzo_rif": "12,09 € (Yahoo Finance, 10/11/2026)"
+   "prezzo_rif": "11,54 € (Yahoo Finance, 12/11/2026)"
   },
   {
    "categoria": "azione",
@@ -466,7 +466,7 @@
    "perche_ora": "Ordini molto sopra le attese il 28 ottobre: possibile inizio di un nuovo ciclo positivo (ne deduco).",
    "rischi": "Utile per azione −18% nel trimestre; ricavi 2026 previsti fermi e crescita attesa inferiore al mercato finlandese; settore ciclico legato alla carta e ai dazi. La stima sui flussi di cassa è meccanica.",
    "orizzonte": "oltre 12 mesi",
-   "prezzo_rif": "28,74 € (Yahoo Finance, 10/11/2026)",
+   "prezzo_rif": "28,98 € (Yahoo Finance, 12/11/2026)",
    "link": "https://it.investing.com/equities/valmt",
    "link_sito": "Investing.com",
    "fonte": "Valmet (comunicato via Inderes); Simply Wall St",
@@ -485,7 +485,7 @@
    "perche_ora": "Conti del 29 ottobre sopra le attese con previsioni alzate, mentre il prezzo era ai minimi (ne deduco un possibile cambio di percezione).",
    "rischi": "Ricavi Bell −9% e utile in calo; dipendenza da programmi militari e dal ciclo dei jet d'affari; esecuzione del nuovo elicottero. Stima sui flussi di cassa meccanica.",
    "orizzonte": "6–12 mesi",
-   "prezzo_rif": "86,82 $ (Yahoo Finance, 10/11/2026)",
+   "prezzo_rif": "84,31 $ (Yahoo Finance, 12/11/2026)",
    "fonte": "Textron (comunicato, SEC 8-K); Simply Wall St",
    "url": "https://www.sec.gov/Archives/edgar/data/0000217346/000021734626000043/q320268-kex991.htm",
    "data": "2026-10-29"
@@ -502,7 +502,7 @@
    "perche_ora": "Con la Fed pronta a rialzare e il credito ancora calmo, le banche con bilanci solidi sono coerenti con il quadro (ne deduco).",
    "rischi": "Banca regionale esposta a immobiliare commerciale e a singoli prestiti problematici (in passato il titolo è crollato per accantonamenti su frodi); margine d'interesse in leggero calo (3,23%); un rallentamento economico peggiorerebbe il credito.",
    "orizzonte": "6–12 mesi",
-   "prezzo_rif": "66,32 $ (Yahoo Finance, 10/11/2026)",
+   "prezzo_rif": "65,95 $ (Yahoo Finance, 12/11/2026)",
    "link": "https://it.investing.com/equities/zions-bancorp",
    "link_sito": "Investing.com",
    "fonte": "Tickzen; Zions (comunicato)",
@@ -521,7 +521,7 @@
    "perche_ora": "Con petrolio caro e tensioni nel Golfo, le società di servizi possono beneficiare di più investimenti dei produttori (ne deduco); diversifica dalla tecnologia.",
    "rischi": "Un calo rapido del petrolio (accordo USA–Iran, recessione) ridurrebbe gli investimenti dei clienti; Nord America ancora debole; settore molto ciclico. Stima sui flussi di cassa meccanica.",
    "orizzonte": "6–12 mesi",
-   "prezzo_rif": "31,86 $ (Yahoo Finance, 10/11/2026)",
+   "prezzo_rif": "32,76 $ (Yahoo Finance, 12/11/2026)",
    "fonte": "Halliburton (comunicato, SEC 8-K); Simply Wall St",
    "url": "https://www.sec.gov/Archives/edgar/data/0000045012/000004501226000070/livemastererdocument.htm",
    "data": "2026-10-26"
@@ -542,7 +542,7 @@
    "fonte": "Reuters via Euronext",
    "url": "https://live.euronext.com/en/financial-news/alstom-plunges-it-slashes-outlook-second-time-2026",
    "data": "2026-11-02",
-   "prezzo_rif": "10,45 € (Yahoo Finance, 10/11/2026)"
+   "prezzo_rif": "10,33 € (Yahoo Finance, 12/11/2026)"
   },
   {
    "categoria": "azione",
@@ -555,7 +555,7 @@
    "perche_ora": "Il 5 novembre il titolo ha chiuso a 841,50 euro (−16,1%), il peggiore del DAX, nonostante utile operativo del trimestre +62% e utile netto quasi raddoppiato.",
    "rischi": "Nuovi ritardi nei programmi pubblici; margine 2026 ridotto a circa il 18,5%; un eventuale accordo di pace in Ucraina ridurrebbe l'urgenza degli ordini; titolo molto volatile.",
    "orizzonte": "oltre 12 mesi",
-   "prezzo_rif": "853,30 € (Yahoo Finance, 10/11/2026)",
+   "prezzo_rif": "772,60 € (Yahoo Finance, 12/11/2026)",
    "link": "https://it.investing.com/equities/rheinmetall",
    "link_sito": "Investing.com",
    "fonte": "dpa-AFX via MarketScreener",
@@ -571,14 +571,24 @@
  ],
  "fonti": [
   {
-   "nome": "TechFlow (da Chaoxiang Research)",
+   "nome": "WPTF (AP)",
+   "url": "https://www.wptf.com/2026/11/11/19156/",
+   "data": "2026-11-11"
+  },
+  {
+   "nome": "The Edge Malaysia (Bloomberg)",
+   "url": "https://theedgemalaysia.com/node/825230",
+   "data": "2026-11-11"
+  },
+  {
+   "nome": "TechFlow, The Edge Malaysia",
    "url": "https://www.techflowpost.com/en-US/article/35264",
    "data": "2026-11-10"
   },
   {
-   "nome": "TradingNews e TradingKey",
-   "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/262299537-us-october-cpi-tops-forecasts-nasdaq-falls-nvidia-stock-drops-tradingkey",
-   "data": "2026-11-10"
+   "nome": "Coinpaper, WPTF",
+   "url": "https://coinpaper.com/38567/nvidia-stock-sinks-as-amazon-jumps-5-5-microsoft-and-alphabet-rally-in-ai-rebound",
+   "data": "2026-11-09"
   },
   {
    "nome": "FactSet Earnings Insight",
@@ -586,19 +596,14 @@
    "data": "2026-11-06"
   },
   {
-   "nome": "Journal Arta, Mitrade, TechFlow",
-   "url": "https://journalarta.com/en/2026/11/09/oil-price-today-brent-falls-4-96-to-93-44-on-iran-peace-hopes-as-gold-climbs/",
-   "data": "2026-11-09"
-  },
-  {
    "nome": "Milano Finanza",
-   "url": "https://www.milanofinanza.it/news/borsa-commento-di-chiusura-202611091828018258",
-   "data": "2026-11-09"
+   "url": "https://www.milanofinanza.it/news/borsa-commento-di-chiusura-202611101828017995",
+   "data": "2026-11-10"
   },
   {
-   "nome": "TradingNews",
-   "url": "https://www.tradingnews.com/news/sp500-hirts-7517-nasdaq-jumps-578-points-dow-climbs-to-52139",
-   "data": "2026-11-09"
+   "nome": "TradingKey",
+   "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/262299537-us-october-cpi-tops-forecasts-nasdaq-falls-nvidia-stock-drops-tradingkey",
+   "data": "2026-11-10"
   },
   {
    "nome": "The Star",
@@ -619,6 +624,21 @@
    "nome": "Mitrade",
    "url": "https://www.mitrade.com/insights/commodity-analysis/weekly/weekly-report-commodity-20261109J1105",
    "data": "2026-11-09"
+  },
+  {
+   "nome": "TradingNews",
+   "url": "https://www.tradingnews.com/news/sp500-hirts-7517-nasdaq-jumps-578-points-dow-climbs-to-52139",
+   "data": "2026-11-09"
+  },
+  {
+   "nome": "Journal Arta",
+   "url": "https://journalarta.com/en/2026/11/09/oil-price-today-brent-falls-4-96-to-93-44-on-iran-peace-hopes-as-gold-climbs/",
+   "data": "2026-11-09"
+  },
+  {
+   "nome": "HeyGoTrade, Thrive in Markets",
+   "url": "https://thriveinmarkets.com/calendar/2026-11-16/",
+   "data": "2026-11-12"
   },
   {
    "nome": "Investing.com Italia; Money.it",
@@ -712,58 +732,56 @@
   }
  ],
  "report": {
+  "precedente_titolo": "11 novembre mattina",
   "precedente": [
-   "Livello «elevato»: «la paura rientra dopo il crollo dei titoli dell'IA del 5 novembre». Indice di rischio 58 su 100, quota in azioni 30% («Mantieni»).",
-   "Quadro: tendenza di fondo positiva e utili forti; punti deboli i tassi (Treasury a 10 anni al 4,87%) e i titoli dell'IA, fragili per le notizie su Nvidia.",
-   "Soglie in osservazione: indice di rischio 55 e 70, S&P 500 sotto 7.330, Treasury sopra 5,25%, Brent sopra 110 o sotto 90 dollari. Nessuna è stata superata.",
-   "Da allora: inflazione di ottobre sopra le attese, Treasury a circa 4,98% e Nvidia −5,5%: il rimbalzo del giorno prima si è fermato."
+   "L'ultima valutazione, dell'11 novembre mattina, dava rischio «elevato» con indice di rischio a 58 e quota in azioni al 30%.",
+   "Il quadro: CPI di ottobre sopra le attese, rialzo dei tassi a dicembre dato per scontato, Treasury a 10 anni vicino al 5% e nuova pressione su Nvidia e sull'IA.",
+   "Le soglie osservate: indice sotto 55 (moderato) o sopra 70 (alto), S&P 500 sotto la media a 200 giorni (circa 7.330), Nasdaq −20% dal massimo, Treasury a 10 anni sopra 5,25%, Brent sopra 110 o sotto 90.",
+   "Da allora: l'indice è salito a 59, l'S&P 500 è risalito da 7.521 a 7.592 (+0,9%, +3,5% sulla media) e il Brent è a circa 92,8: nessuna soglia è stata superata."
   ],
   "cambiato": [
-   "Il CPI di ottobre è uscito sopra le attese (+0,4% totale, +0,3% core) e il rialzo di 25 punti base a dicembre è ormai dato per certo.",
-   "Il rendimento del Treasury a 10 anni è salito di oltre 9 punti base a 4,986%.",
-   "Nvidia ha perso il 5,5% martedì dopo l'indagine del consiglio sul CEO; il Nasdaq ha perso lo 0,74%.",
-   "Lunedì il mercato aveva rimbalzato (S&P 500 +2,35%) grazie al calo del petrolio sulle speranze di pace con l'Iran.",
-   "A Piazza Affari il FTSE MIB ha guadagnato il 2,69% lunedì, trainato dalle banche."
+   "L'11 novembre l'S&P 500 ha guadagnato l'1,3% (7.619,38) e il Nasdaq l'1,6%, guidati da CoreWeave (+24,7%) e Micron (+11,9%).",
+   "Il 12 novembre l'S&P 500 ha ceduto circa lo 0,4% (7.592 secondo i dati della dashboard); Nvidia −4,3% a 166,19, Broadcom +5,5%, AMD +5,9%.",
+   "I responsabili della Fed hanno alzato i toni: Waller non esclude un rialzo di 50 punti base a dicembre, Logan chiede almeno altri due rialzi da 25.",
+   "L'indice di rischio è salito di un punto (59) ma resta sotto il 68 di quattro settimane fa; l'ampiezza è stabile, con il 65% dei titoli sopra la media a 200 giorni.",
+   "Il Brent è tornato a 92,76 dollari (+1,4%) l'11 novembre dopo il crollo della settimana precedente."
   ],
   "situazione": [
-   "L'indice di rischio della dashboard è a 58 su 100, livello «elevato», in calo dal 61 di quattro settimane fa. Il mercato si è ripreso dal crollo dell'IA ma non ha cancellato il danno: l'S&P 500 è circa 4% sotto il massimo.",
-   "Il quadro dei prezzi è cambiato nella settimana: il petrolio è crollato (Brent circa 91–93 dollari dopo oltre 112 a inizio mese) e questo aiuta l'inflazione futura, ma i dati di ottobre mostrano prezzi ancora vivaci e la Fed si prepara ad alzare i tassi.",
-   "Gli utili restano il punto di forza: nel terzo trimestre crescono del 31,4% e il P/E atteso a 12 mesi (17,7) è sotto le medie storiche. Il problema è il costo del denaro, non gli utili.",
-   "I titoli dell'IA sono la zona più instabile: dentro il settore il denaro si sposta (AMD, Broadcom e Lam Research in rialzo), mentre Nvidia scende per la vicenda del consiglio e per i dubbi sul costo di finanziare i centri dati.",
-   "Cosa guardare: PPI di venerdì 13, conti di Applied Materials e Cisco giovedì 12, trattative con l'Iran e la chiusura dell'S&P 500 sopra o sotto i 7.330 punti."
+   "L'indice di rischio della dashboard è a 59 su 100, livello «elevato», in calo dal 68 di quattro settimane fa. L'S&P 500 è a 7.592, circa 2,9% sotto il massimo e 3,5% sopra la media a 200 giorni: il mercato ha recuperato quasi tutto il calo dell'IA del 5 novembre.",
+   "Il problema principale è il costo del denaro. Dopo il CPI di ottobre i rendimenti sono saliti, il rialzo di dicembre è dato per certo e i membri della Fed parlano anche di mosse più grandi. Questo pesa soprattutto su titoli molto valutati e su chi si finanzia a debito.",
+   "Gli utili restano il punto di forza: nel terzo trimestre crescono del 31,4% e il P/E atteso a 12 mesi (17,7) è sotto le medie storiche. Anche la reazione ai conti dell'IA (CoreWeave, Micron) mostra che il mercato premia i numeri solidi.",
+   "Nell'IA il denaro si sposta, non esce: Broadcom e AMD salgono mentre Nvidia, sotto indagine del consiglio sul CEO, resta debole. Per l'indice conta soprattutto Nvidia (peso 6,4% dell'S&P 500).",
+   "Cosa guardare: i conti di Applied Materials e Cisco (esiti non ancora verificati), il PPI di venerdì 13, poi nella settimana del 16 vendite al dettaglio, verbali della Fed e conti di Nvidia (date esatte da confermare), e la chiusura dell'S&P 500 sopra o sotto i 7.340 punti."
   ],
   "temi": [
    {
     "titolo": "S&P 500",
-    "testo": "Chiusura a 7.520,93 martedì (−0,38%) dopo i 7.549,94 di lunedì (+2,35%). Resta circa 4% sotto il massimo e 2,6% sopra la media a 200 giorni.",
+    "testo": "Chiusura a 7.619,38 l'11 novembre (+1,3%), a 7.592 il 12 (dati della dashboard). Resta circa 2,9% sotto il massimo e 3,5% sopra la media a 200 giorni.",
     "segno": "neutro",
     "grafico": "spx",
-    "fonte": "TradingKey",
-    "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/262299537-us-october-cpi-tops-forecasts-nasdaq-falls-nvidia-stock-drops-tradingkey",
-    "data": "2026-11-10"
+    "fonte": "WPTF (AP)",
+    "url": "https://www.wptf.com/2026/11/11/19156/",
+    "data": "2026-11-11"
    },
    {
     "titolo": "Nasdaq 100",
-    "testo": "Il Nasdaq Composite ha perso lo 0,74% martedì (25.065,87), dopo +2,74% lunedì. Circa 9% sotto il record: la soglia del mercato «orso» è a −20%.",
-    "segno": "più rischio",
+    "testo": "Il Nasdaq Composite è salito dell'1,6% l'11 novembre a 25.466,19. Resta sotto il record di ottobre: la soglia del mercato «orso» è a −20%.",
+    "segno": "neutro",
     "grafico": "ndx",
-    "fonte": "TechFlow",
-    "url": "https://www.techflowpost.com/en-US/article/35264",
-    "data": "2026-11-10"
+    "fonte": "WPTF (AP)",
+    "url": "https://www.wptf.com/2026/11/11/19156/",
+    "data": "2026-11-11"
    },
    {
     "titolo": "Ampiezza del mercato",
-    "testo": "Il 66% dei titoli è sopra la media a 200 giorni: la tenuta di fondo è buona, ma lunedì il rialzo era molto largo (563 titoli in rialzo contro 34 in ribasso all'apertura) e martedì si è concentrato la debolezza nei grandi tecnologici.",
+    "testo": "Il 65% dei titoli è sopra la media a 200 giorni (66% due giorni fa): la tenuta di fondo è discreta, ma il mercato dipende ancora da pochi grandi titoli tecnologici.",
     "segno": "neutro",
-    "grafico": "ampiezza",
-    "fonte": "TradingNews",
-    "url": "https://www.tradingnews.com/news/sp500-hirts-7517-nasdaq-jumps-578-points-dow-climbs-to-52139",
-    "data": "2026-11-09"
+    "grafico": "ampiezza"
    },
    {
     "titolo": "VIX (volatilità)",
-    "testo": "Il VIX è a circa 19,5 dopo essere sceso del 17,6% lunedì a 21,14 (valore a metà mattina). Sotto 20 la paura è moderata.",
-    "segno": "neutro",
+    "testo": "Il VIX è a circa 18,7, sotto 20: la paura è moderata e in calo rispetto a lunedì (21,14 a metà mattina).",
+    "segno": "meno rischio",
     "grafico": "vix",
     "fonte": "TradingNews",
     "url": "https://www.tradingnews.com/news/sp500-hirts-7517-nasdaq-jumps-578-points-dow-climbs-to-52139",
@@ -777,16 +795,16 @@
    },
    {
     "titolo": "Settori",
-    "testo": "Lunedì tutti gli 11 settori in rialzo: industriali +3,78%, consumi discrezionali +3,05%, energia +0,41% (il più basso). Martedì in testa al ribasso i tecnologici e i semiconduttori (indice SOX −0,35%).",
+    "testo": "L'11 novembre il rialzo è stato guidato dalla tecnologia e dai titoli dell'IA (CoreWeave, Micron); i costruttori di case (D.R. Horton −1,5%, PulteGroup −0,8%) hanno sofferto per i rendimenti più alti.",
     "segno": "neutro",
     "grafico": "settori",
-    "fonte": "The Star, TradingKey",
-    "url": "https://www.thestar.com.my/news/world/2026/11/10/us-stocks-close-higher",
-    "data": "2026-11-09"
+    "fonte": "WPTF (AP)",
+    "url": "https://www.wptf.com/2026/11/11/19156/",
+    "data": "2026-11-11"
    },
    {
     "titolo": "Tassi e banche centrali",
-    "testo": "Tassi della Fed al 3,75–4,00%; rialzo di 25 punti base a dicembre dato per scontato, probabilità del 13,6% per 50 punti. Treasury a 10 anni a 4,986%.",
+    "testo": "Tassi della Fed al 3,75–4,00%; rialzo di 25 punti base a dicembre dato per scontato, con probabilità di 50 punti intorno al 14% (10 novembre). Treasury a 10 anni a 4,986% il 10 novembre.",
     "segno": "più rischio",
     "fonte": "TechFlow",
     "url": "https://www.techflowpost.com/en-US/article/35264",
@@ -802,23 +820,23 @@
    },
    {
     "titolo": "Petrolio e oro",
-    "testo": "Brent a 93,44 dollari lunedì e 91,49 martedì, WTI a 86,04. Oro sopra 4.100 dollari, rimbalzato dal minimo a un anno di 3.869,85 del 30 ottobre.",
-    "segno": "meno rischio",
-    "fonte": "Mitrade, Journal Arta",
+    "testo": "Brent a 92,76 dollari l'11 novembre (+1,4%). Oro sopra 4.100 dollari a inizio settimana, rimbalzato dal minimo a un anno di 3.869,85 del 30 ottobre; non ho trovato un dato più recente.",
+    "segno": "neutro",
+    "fonte": "WPTF (AP), Mitrade",
     "url": "https://www.mitrade.com/insights/commodity-analysis/weekly/weekly-report-commodity-20261109J1105",
     "data": "2026-11-09"
    },
    {
     "titolo": "Italia",
-    "testo": "FTSE MIB a 51.399 punti (+2,69%) lunedì 9 novembre, il migliore d'Europa. UniCredit +6,28% dopo utili record del trimestre; Banco BPM +10,67% per la proposta di fusione con Crédit Agricole Italia (premio del 20%).",
+    "testo": "FTSE MIB a 51.755 punti (+0,69%) il 10 novembre, con le banche protagoniste: UniCredit +2,36% a 83,55 euro dopo i conti, Bper +2,9%. Non ho trovato fonti sul 12 novembre.",
     "segno": "meno rischio",
     "fonte": "Milano Finanza",
-    "url": "https://www.milanofinanza.it/news/borsa-commento-di-chiusura-202611091828018258",
-    "data": "2026-11-09"
+    "url": "https://www.milanofinanza.it/news/borsa-commento-di-chiusura-202611101828017995",
+    "data": "2026-11-10"
    },
    {
     "titolo": "Valute",
-    "testo": "Il dollaro si è indebolito lunedì: indice del dollaro in calo dello 0,49% a 101,795.",
+    "testo": "Nessun dato nuovo trovato oggi sul cambio euro-dollaro. L'ultimo dato verificato: l'indice del dollaro in calo dello 0,49% a 101,795 il 9 novembre.",
     "segno": "neutro",
     "fonte": "Journal Arta",
     "url": "https://journalarta.com/en/2026/11/09/oil-price-today-brent-falls-4-96-to-93-44-on-iran-peace-hopes-as-gold-climbs/",
@@ -826,69 +844,29 @@
    },
    {
     "titolo": "Calendario",
-    "testo": "Mercoledì 11 mercati obbligazionari chiusi (Veterans Day). Giovedì 12 conti di Applied Materials e Cisco dopo la chiusura. Venerdì 13 PPI di ottobre (atteso +0,4%). Il 10 dicembre il CPI di novembre; l'8–9 dicembre riunione della Fed.",
+    "testo": "Giovedì 12 dopo la chiusura i conti di Applied Materials e Cisco. Venerdì 13 PPI di ottobre (atteso +0,4%). Settimana del 16: vendite al dettaglio, verbali della Fed e conti di Nvidia (date da confermare). L'8–9 dicembre riunione della Fed, il 10 dicembre il CPI di novembre.",
     "segno": "neutro",
-    "fonte": "HeyGoTrade",
-    "url": "https://www.heygotrade.com/en/news/weekly-economic-outlook-2026-11-09/",
-    "data": "2026-11-09"
+    "fonte": "HeyGoTrade, Thrive in Markets",
+    "url": "https://thriveinmarkets.com/calendar/2026-11-16/",
+    "data": "2026-11-12"
    }
   ],
-  "nota": "Le idee sono state riconfermate senza modifiche: il forte calo del petrolio indebolisce la tesi di Eni, TotalEnergies e Halliburton, che vanno riesaminate con più attenzione di quanto dica il loro testo precedente.",
-  "precedente_titolo": "10 novembre, mattina"
+  "nota": "Le 21 idee sono riconfermate senza modifiche. Il petrolio resta volatile (Brent circa 92–93 dollari) e Eni, TotalEnergies e Halliburton vanno riesaminate con più attenzione di quanto dica il loro testo precedente."
  },
  "titoli_giorno": {
   "metodo": "Tra i 30 titoli più pesanti dell'S&P 500 conta chi ha spostato di più l'indice nell'ultima seduta (peso × variazione del giorno), con un bonus se è stato scambiato molto più del solito: di solito c'è una notizia.",
-  "pesi_al": "09-Nov-2026",
+  "pesi_al": "11-Nov-2026",
   "titoli": [
    {
-    "nome": "Nvidia",
+    "nome": "Nvidia Corp",
     "ticker": "NVDA",
-    "peso": 6.64,
-    "prezzo": 168.89,
-    "data": "2026-11-10",
-    "g1": -5.47,
-    "vol_rel": 3.11,
-    "contributo": -0.363,
-    "perche": "È il titolo che ha spostato di più l'indice: −5,5% con scambi oltre 3 volte il solito. Da solo ha tolto circa 0,36 punti all'S&P 500.",
-    "cosa_fa": "Progetta i chip (processori grafici) che servono ad addestrare e far funzionare l'intelligenza artificiale nei data center.",
-    "situazione": [
-     "Chiusura del 10 novembre: 168,89 $ (−5,5%), con volumi 3,1 volte la media delle ultime 20 sedute. È il 29% sotto il massimo di un anno (239,24 $ del 6 ottobre) e il 25% sotto un mese fa.",
-     "Il 9 novembre la società ha detto di verificare se il suo amministratore delegato, Jensen Huang, fosse nel mirino di un'operazione di intelligence straniera. Dopo la chiusura il titolo era già sceso di circa il 3,4%.",
-     "Il 5 novembre aveva perso il 9,3% insieme a tutti i chip, senza notizie specifiche della società.",
-     "Prossimo evento: i conti del terzo trimestre il 17 novembre; la società ha indicato ricavi intorno a 108 miliardi di dollari (±2%)."
-    ],
-    "commento": "È il titolo che ha spostato di più l'indice: −5,5% con scambi oltre 3 volte il solito, circa 0,36 punti tolti all'S&P 500. Il calo unisce tre cose: la vendita di tutto il settore dei chip dopo le elezioni (timori su un rallentamento dei data center), il rialzo dei tassi dopo l'inflazione di ottobre e la notizia del 9 novembre sulla verifica interna se l'amministratore delegato fosse nel mirino di un'operazione di intelligence straniera. Dopo la discesa vale circa 14 volte gli utili attesi: il mercato prezza già dubbi sulla crescita. Da guardare: i conti del 17 novembre (ricavi attesi intorno a 108 miliardi di dollari) e la domanda dei grandi clienti americani, circa il 69% dei ricavi. Il motivo esatto del calo del 10 novembre non è confermato da una fonte unica.",
-    "fonti": [
-     {
-      "nome": "Trefis · Perché Nvidia è scesa il 5 novembre",
-      "url": "https://www.trefis.com/stock/nvda/articles/623357/what-sent-nvidia-stock-lower/2026-11-06",
-      "data": "2026-11-06"
-     },
-     {
-      "nome": "Tech Insider (da Reuters) · indagine sull'amministratore delegato",
-      "url": "https://tech-insider.org/nvidia-after-hours-falls-3-4-percent-hyperliquid-huang-probe-2026/",
-      "data": "2026-11-09"
-     },
-     {
-      "nome": "TIKR · Nvidia e timori sui data center",
-      "url": "https://www.tikr.com/blog/nvidia-sinks-9-as-midterm-data-center-fears-deepen-ai-chip-rout-absolute-slaughter",
-      "data": "2026-11-05"
-     },
-     {
-      "nome": "TechFlow · CPI di ottobre e Treasury a 10 anni",
-      "url": "https://www.techflowpost.com/en-US/article/35264",
-      "data": "2026-11-10"
-     }
-    ],
+    "peso": 6.39,
+    "prezzo": 166.19,
+    "data": "2026-11-12",
+    "g1": -4.34,
+    "vol_rel": 4.43,
+    "contributo": -0.278,
     "serie": [
-     [
-      "2025-11-11",
-      193.16
-     ],
-     [
-      "2025-11-12",
-      193.8
-     ],
      [
       "2025-11-13",
       186.86
@@ -1884,1096 +1862,53 @@
      [
       "2026-11-10",
       168.89
+     ],
+     [
+      "2026-11-11",
+      173.73
+     ],
+     [
+      "2026-11-12",
+      166.19
      ]
-    ]
-   },
-   {
-    "nome": "Microsoft",
-    "ticker": "MSFT",
-    "peso": 6.21,
-    "prezzo": 533.16,
-    "data": "2026-11-10",
-    "g1": -2.2,
-    "vol_rel": 1.04,
-    "contributo": -0.137,
-    "perche": "Secondo per rilievo: −2,2% su un peso del 6,2%, cioè circa 0,14 punti tolti all'S&P 500. Scambi nella norma: sembra un movimento del settore più che una notizia sua.",
-    "cosa_fa": "Software e cloud: Windows, Office, Azure (il cloud) e i servizi di intelligenza artificiale per le aziende.",
-    "situazione": [
-     "Chiusura del 10 novembre: 533,16 $ (−2,2%), con volumi normali (1,04 volte la media). Il titolo è il 4% sotto il massimo di un anno.",
-     "Lo stesso giorno sono usciti i prezzi al consumo di ottobre sopra le attese (+0,4% sul mese, atteso +0,3%) e il rendimento del Treasury a 10 anni è salito a circa il 4,98%.",
-     "Conti del 28 ottobre: ricavi +19% a 92,3 miliardi di dollari, Azure (il cloud) +48%.",
-     "Il 4 novembre aveva guadagnato il 6,7% nel rimbalzo delle grandi società tecnologiche; il 2 novembre aveva perso il 2,8%.",
-     "Stacco del dividendo (0,98 $ per azione) il 19 novembre."
     ],
-    "commento": "Calo in linea con i grandi tecnologici: non ho trovato una notizia specifica, ma il 10 novembre l'inflazione è uscita sopra le attese e i tassi sono saliti, e i titoli di crescita ne soffrono di più (lettura plausibile, non confermata). I conti sono forti (ricavi +19%, cloud +48%) e il titolo è a soli 4% dal massimo: il dubbio del mercato è il costo dell'IA, circa 190 miliardi di investimenti nel 2026. Con Apple e Nvidia vale circa un quinto dell'indice. Da guardare: la crescita del cloud e gli investimenti in data center; il dividendo (0,98 $) si stacca il 19 novembre.",
+    "perche": "Il titolo con più peso nell'S&P 500 perde ancora il 4,3% su volumi molto alti: è il maggiore freno all'indice oggi.",
+    "cosa_fa": "Progetta i chip per l'intelligenza artificiale più usati nei centri dati.",
+    "situazione": [
+     "Chiude a 166,19 dollari (−4,34%), con volumi 4,4 volte la norma.",
+     "È circa 30,5% sotto il massimo di un anno e −24,9% in 21 sedute.",
+     "Il 9–10 novembre aveva perso rispettivamente il 3,9% e il 5,5% dopo l'indagine del consiglio sul CEO.",
+     "L'11 novembre aveva recuperato il 2,9% con il rimbalzo dell'IA."
+    ],
+    "commento": "Nvidia pesa il 6,4% dell'S&P 500, quindi da sola toglie circa 0,28 punti percentuali all'indice oggi. La causa precisa del calo del 12 novembre non è verificata: il contesto è l'indagine indipendente del consiglio sul CEO Jensen Huang e i dubbi sulle valutazioni dell'IA. Conviene seguire i conti di Nvidia attesi nella settimana del 16 (data da confermare). Limite: per il 12 novembre non ho trovato articoli sulla causa, quindi i fatti sul giorno vengono solo dai dati di borsa della dashboard.",
     "fonti": [
      {
-      "nome": "TechFlow · CPI di ottobre e Treasury a 10 anni",
+      "nome": "Coinpaper (indagine del consiglio, 9 nov)",
+      "url": "https://coinpaper.com/38567/nvidia-stock-sinks-as-amazon-jumps-5-5-microsoft-and-alphabet-rally-in-ai-rebound",
+      "data": "2026-11-09"
+     },
+     {
+      "nome": "TechFlow (−5,5% il 10 nov)",
       "url": "https://www.techflowpost.com/en-US/article/35264",
       "data": "2026-11-10"
      },
      {
-      "nome": "Gotrade · Microsoft, conti del 28 ottobre e seduta del 2 novembre",
-      "url": "https://www.heygotrade.com/id/news/saham-microsoft-msft-turun-3-november-2026/",
-      "data": "2026-11-03"
-     },
-     {
-      "nome": "Yahoo Finance · Microsoft e i 190 miliardi di spesa in IA",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/microsoft-falls-5-despite-q3-154026185.html",
-      "data": "2026"
-     },
-     {
-      "nome": "MarketBeat · dividendo e stacco del 19 novembre",
-      "url": "https://www.marketbeat.com/instant-alerts/price-microsoft-nasdaq-msft-stock-falls-13-heres-why-2026-09-28/",
-      "data": "2026-09-28"
+      "nome": "WPTF/AP (+2,9% l'11 nov)",
+      "url": "https://www.wptf.com/2026/11/11/19156/",
+      "data": "2026-11-11"
      }
-    ],
-    "serie": [
-     [
-      "2025-11-11",
-      508.68
-     ],
-     [
-      "2025-11-12",
-      511.14
-     ],
-     [
-      "2025-11-13",
-      503.29
-     ],
-     [
-      "2025-11-14",
-      510.18
-     ],
-     [
-      "2025-11-17",
-      507.49
-     ],
-     [
-      "2025-11-18",
-      493.79
-     ],
-     [
-      "2025-11-19",
-      487.12
-     ],
-     [
-      "2025-11-20",
-      478.43
-     ],
-     [
-      "2025-11-21",
-      472.12
-     ],
-     [
-      "2025-11-24",
-      474.0
-     ],
-     [
-      "2025-11-25",
-      476.99
-     ],
-     [
-      "2025-11-26",
-      485.5
-     ],
-     [
-      "2025-11-28",
-      492.01
-     ],
-     [
-      "2025-12-01",
-      486.74
-     ],
-     [
-      "2025-12-02",
-      490.0
-     ],
-     [
-      "2025-12-03",
-      477.73
-     ],
-     [
-      "2025-12-04",
-      480.84
-     ],
-     [
-      "2025-12-05",
-      483.16
-     ],
-     [
-      "2025-12-08",
-      491.02
-     ],
-     [
-      "2025-12-09",
-      492.02
-     ],
-     [
-      "2025-12-10",
-      478.56
-     ],
-     [
-      "2025-12-11",
-      483.47
-     ],
-     [
-      "2025-12-12",
-      478.53
-     ],
-     [
-      "2025-12-15",
-      474.82
-     ],
-     [
-      "2025-12-16",
-      476.39
-     ],
-     [
-      "2025-12-17",
-      476.12
-     ],
-     [
-      "2025-12-18",
-      483.98
-     ],
-     [
-      "2025-12-19",
-      485.92
-     ],
-     [
-      "2025-12-22",
-      484.92
-     ],
-     [
-      "2025-12-23",
-      486.85
-     ],
-     [
-      "2025-12-24",
-      488.02
-     ],
-     [
-      "2025-12-26",
-      487.71
-     ],
-     [
-      "2025-12-29",
-      487.1
-     ],
-     [
-      "2025-12-30",
-      487.48
-     ],
-     [
-      "2025-12-31",
-      483.62
-     ],
-     [
-      "2026-01-02",
-      472.94
-     ],
-     [
-      "2026-01-05",
-      472.85
-     ],
-     [
-      "2026-01-06",
-      478.51
-     ],
-     [
-      "2026-01-07",
-      483.47
-     ],
-     [
-      "2026-01-08",
-      478.11
-     ],
-     [
-      "2026-01-09",
-      479.28
-     ],
-     [
-      "2026-01-12",
-      477.18
-     ],
-     [
-      "2026-01-13",
-      470.67
-     ],
-     [
-      "2026-01-14",
-      459.38
-     ],
-     [
-      "2026-01-15",
-      456.66
-     ],
-     [
-      "2026-01-16",
-      459.86
-     ],
-     [
-      "2026-01-20",
-      454.52
-     ],
-     [
-      "2026-01-21",
-      444.11
-     ],
-     [
-      "2026-01-22",
-      451.14
-     ],
-     [
-      "2026-01-23",
-      465.95
-     ],
-     [
-      "2026-01-26",
-      470.28
-     ],
-     [
-      "2026-01-27",
-      480.58
-     ],
-     [
-      "2026-01-28",
-      481.63
-     ],
-     [
-      "2026-01-29",
-      433.5
-     ],
-     [
-      "2026-01-30",
-      430.29
-     ],
-     [
-      "2026-02-02",
-      423.37
-     ],
-     [
-      "2026-02-03",
-      411.21
-     ],
-     [
-      "2026-02-04",
-      414.19
-     ],
-     [
-      "2026-02-05",
-      393.67
-     ],
-     [
-      "2026-02-06",
-      401.14
-     ],
-     [
-      "2026-02-09",
-      413.6
-     ],
-     [
-      "2026-02-10",
-      413.27
-     ],
-     [
-      "2026-02-11",
-      404.37
-     ],
-     [
-      "2026-02-12",
-      401.84
-     ],
-     [
-      "2026-02-13",
-      401.32
-     ],
-     [
-      "2026-02-17",
-      396.86
-     ],
-     [
-      "2026-02-18",
-      399.6
-     ],
-     [
-      "2026-02-19",
-      398.46
-     ],
-     [
-      "2026-02-20",
-      397.23
-     ],
-     [
-      "2026-02-23",
-      384.47
-     ],
-     [
-      "2026-02-24",
-      389.0
-     ],
-     [
-      "2026-02-25",
-      400.6
-     ],
-     [
-      "2026-02-26",
-      401.72
-     ],
-     [
-      "2026-02-27",
-      392.74
-     ],
-     [
-      "2026-03-02",
-      398.55
-     ],
-     [
-      "2026-03-03",
-      403.93
-     ],
-     [
-      "2026-03-04",
-      405.2
-     ],
-     [
-      "2026-03-05",
-      410.68
-     ],
-     [
-      "2026-03-06",
-      408.96
-     ],
-     [
-      "2026-03-09",
-      409.41
-     ],
-     [
-      "2026-03-10",
-      405.76
-     ],
-     [
-      "2026-03-11",
-      404.88
-     ],
-     [
-      "2026-03-12",
-      401.86
-     ],
-     [
-      "2026-03-13",
-      395.55
-     ],
-     [
-      "2026-03-16",
-      399.95
-     ],
-     [
-      "2026-03-17",
-      399.41
-     ],
-     [
-      "2026-03-18",
-      391.79
-     ],
-     [
-      "2026-03-19",
-      389.02
-     ],
-     [
-      "2026-03-20",
-      381.87
-     ],
-     [
-      "2026-03-23",
-      383.0
-     ],
-     [
-      "2026-03-24",
-      372.74
-     ],
-     [
-      "2026-03-25",
-      371.04
-     ],
-     [
-      "2026-03-26",
-      365.97
-     ],
-     [
-      "2026-03-27",
-      356.77
-     ],
-     [
-      "2026-03-30",
-      358.96
-     ],
-     [
-      "2026-03-31",
-      370.17
-     ],
-     [
-      "2026-04-01",
-      369.37
-     ],
-     [
-      "2026-04-02",
-      373.46
-     ],
-     [
-      "2026-04-06",
-      372.88
-     ],
-     [
-      "2026-04-07",
-      372.29
-     ],
-     [
-      "2026-04-08",
-      374.33
-     ],
-     [
-      "2026-04-09",
-      373.07
-     ],
-     [
-      "2026-04-10",
-      370.87
-     ],
-     [
-      "2026-04-13",
-      384.37
-     ],
-     [
-      "2026-04-14",
-      393.11
-     ],
-     [
-      "2026-04-15",
-      411.22
-     ],
-     [
-      "2026-04-16",
-      420.26
-     ],
-     [
-      "2026-04-17",
-      422.79
-     ],
-     [
-      "2026-04-20",
-      418.07
-     ],
-     [
-      "2026-04-21",
-      424.16
-     ],
-     [
-      "2026-04-22",
-      432.92
-     ],
-     [
-      "2026-04-23",
-      415.75
-     ],
-     [
-      "2026-04-24",
-      424.62
-     ],
-     [
-      "2026-04-27",
-      424.82
-     ],
-     [
-      "2026-04-28",
-      429.25
-     ],
-     [
-      "2026-04-29",
-      424.46
-     ],
-     [
-      "2026-04-30",
-      407.78
-     ],
-     [
-      "2026-05-01",
-      414.44
-     ],
-     [
-      "2026-05-04",
-      413.62
-     ],
-     [
-      "2026-05-05",
-      411.38
-     ],
-     [
-      "2026-05-06",
-      413.96
-     ],
-     [
-      "2026-05-07",
-      420.77
-     ],
-     [
-      "2026-05-08",
-      415.12
-     ],
-     [
-      "2026-05-11",
-      412.66
-     ],
-     [
-      "2026-05-12",
-      407.77
-     ],
-     [
-      "2026-05-13",
-      405.21
-     ],
-     [
-      "2026-05-14",
-      409.43
-     ],
-     [
-      "2026-05-15",
-      421.92
-     ],
-     [
-      "2026-05-18",
-      423.54
-     ],
-     [
-      "2026-05-19",
-      417.42
-     ],
-     [
-      "2026-05-20",
-      421.06
-     ],
-     [
-      "2026-05-21",
-      419.09
-     ],
-     [
-      "2026-05-22",
-      418.57
-     ],
-     [
-      "2026-05-26",
-      416.03
-     ],
-     [
-      "2026-05-27",
-      412.67
-     ],
-     [
-      "2026-05-28",
-      426.99
-     ],
-     [
-      "2026-05-29",
-      450.24
-     ],
-     [
-      "2026-06-01",
-      460.52
-     ],
-     [
-      "2026-06-02",
-      441.31
-     ],
-     [
-      "2026-06-03",
-      427.34
-     ],
-     [
-      "2026-06-04",
-      428.05
-     ],
-     [
-      "2026-06-05",
-      416.67
-     ],
-     [
-      "2026-06-08",
-      411.74
-     ],
-     [
-      "2026-06-09",
-      403.41
-     ],
-     [
-      "2026-06-10",
-      397.36
-     ],
-     [
-      "2026-06-11",
-      390.34
-     ],
-     [
-      "2026-06-12",
-      390.74
-     ],
-     [
-      "2026-06-15",
-      399.76
-     ],
-     [
-      "2026-06-16",
-      393.83
-     ],
-     [
-      "2026-06-17",
-      378.91
-     ],
-     [
-      "2026-06-18",
-      379.4
-     ],
-     [
-      "2026-06-22",
-      367.34
-     ],
-     [
-      "2026-06-23",
-      373.94
-     ],
-     [
-      "2026-06-24",
-      365.46
-     ],
-     [
-      "2026-06-25",
-      352.83
-     ],
-     [
-      "2026-06-26",
-      372.97
-     ],
-     [
-      "2026-06-29",
-      368.57
-     ],
-     [
-      "2026-06-30",
-      373.02
-     ],
-     [
-      "2026-07-01",
-      384.28
-     ],
-     [
-      "2026-07-02",
-      390.49
-     ],
-     [
-      "2026-07-06",
-      386.74
-     ],
-     [
-      "2026-07-07",
-      388.84
-     ],
-     [
-      "2026-07-08",
-      383.34
-     ],
-     [
-      "2026-07-09",
-      384.36
-     ],
-     [
-      "2026-07-10",
-      385.1
-     ],
-     [
-      "2026-07-13",
-      390.99
-     ],
-     [
-      "2026-07-14",
-      384.93
-     ],
-     [
-      "2026-07-15",
-      395.63
-     ],
-     [
-      "2026-07-16",
-      401.1
-     ],
-     [
-      "2026-07-17",
-      393.82
-     ],
-     [
-      "2026-07-20",
-      402.29
-     ],
-     [
-      "2026-07-21",
-      397.75
-     ],
-     [
-      "2026-07-22",
-      390.34
-     ],
-     [
-      "2026-07-23",
-      381.58
-     ],
-     [
-      "2026-07-24",
-      381.7
-     ],
-     [
-      "2026-07-27",
-      389.1
-     ],
-     [
-      "2026-07-28",
-      393.35
-     ],
-     [
-      "2026-07-29",
-      390.54
-     ],
-     [
-      "2026-07-30",
-      451.1
-     ],
-     [
-      "2026-07-31",
-      464.72
-     ],
-     [
-      "2026-08-03",
-      487.65
-     ],
-     [
-      "2026-08-04",
-      492.81
-     ],
-     [
-      "2026-08-05",
-      487.46
-     ],
-     [
-      "2026-08-06",
-      499.86
-     ],
-     [
-      "2026-08-07",
-      499.99
-     ],
-     [
-      "2026-08-10",
-      506.06
-     ],
-     [
-      "2026-08-11",
-      503.81
-     ],
-     [
-      "2026-08-12",
-      492.43
-     ],
-     [
-      "2026-08-13",
-      496.88
-     ],
-     [
-      "2026-08-14",
-      495.4
-     ],
-     [
-      "2026-08-17",
-      480.35
-     ],
-     [
-      "2026-08-18",
-      481.63
-     ],
-     [
-      "2026-08-19",
-      484.31
-     ],
-     [
-      "2026-08-20",
-      481.15
-     ],
-     [
-      "2026-08-21",
-      483.24
-     ],
-     [
-      "2026-08-24",
-      487.31
-     ],
-     [
-      "2026-08-25",
-      491.71
-     ],
-     [
-      "2026-08-26",
-      496.37
-     ],
-     [
-      "2026-08-27",
-      505.06
-     ],
-     [
-      "2026-08-28",
-      513.53
-     ],
-     [
-      "2026-08-31",
-      507.29
-     ],
-     [
-      "2026-09-01",
-      501.02
-     ],
-     [
-      "2026-09-02",
-      496.82
-     ],
-     [
-      "2026-09-03",
-      510.12
-     ],
-     [
-      "2026-09-04",
-      499.7
-     ],
-     [
-      "2026-09-08",
-      493.95
-     ],
-     [
-      "2026-09-09",
-      491.65
-     ],
-     [
-      "2026-09-10",
-      492.44
-     ],
-     [
-      "2026-09-11",
-      495.63
-     ],
-     [
-      "2026-09-14",
-      505.41
-     ],
-     [
-      "2026-09-15",
-      497.12
-     ],
-     [
-      "2026-09-16",
-      490.3
-     ],
-     [
-      "2026-09-17",
-      497.75
-     ],
-     [
-      "2026-09-18",
-      493.78
-     ],
-     [
-      "2026-09-21",
-      501.61
-     ],
-     [
-      "2026-09-22",
-      498.0
-     ],
-     [
-      "2026-09-23",
-      500.59
-     ],
-     [
-      "2026-09-24",
-      497.93
-     ],
-     [
-      "2026-09-25",
-      516.17
-     ],
-     [
-      "2026-09-28",
-      509.22
-     ],
-     [
-      "2026-09-29",
-      508.96
-     ],
-     [
-      "2026-09-30",
-      512.9
-     ],
-     [
-      "2026-10-01",
-      512.8
-     ],
-     [
-      "2026-10-02",
-      517.53
-     ],
-     [
-      "2026-10-05",
-      525.18
-     ],
-     [
-      "2026-10-06",
-      529.3
-     ],
-     [
-      "2026-10-07",
-      529.76
-     ],
-     [
-      "2026-10-08",
-      522.61
-     ],
-     [
-      "2026-10-09",
-      535.07
-     ],
-     [
-      "2026-10-12",
-      541.15
-     ],
-     [
-      "2026-10-13",
-      543.45
-     ],
-     [
-      "2026-10-14",
-      533.69
-     ],
-     [
-      "2026-10-15",
-      539.44
-     ],
-     [
-      "2026-10-16",
-      529.05
-     ],
-     [
-      "2026-10-19",
-      533.52
-     ],
-     [
-      "2026-10-20",
-      531.87
-     ],
-     [
-      "2026-10-21",
-      532.95
-     ],
-     [
-      "2026-10-22",
-      521.08
-     ],
-     [
-      "2026-10-23",
-      524.51
-     ],
-     [
-      "2026-10-26",
-      532.6
-     ],
-     [
-      "2026-10-27",
-      531.33
-     ],
-     [
-      "2026-10-28",
-      531.01
-     ],
-     [
-      "2026-10-29",
-      530.14
-     ],
-     [
-      "2026-10-30",
-      521.91
-     ],
-     [
-      "2026-11-02",
-      507.12
-     ],
-     [
-      "2026-11-03",
-      520.99
-     ],
-     [
-      "2026-11-04",
-      555.8
-     ],
-     [
-      "2026-11-05",
-      535.93
-     ],
-     [
-      "2026-11-06",
-      530.61
-     ],
-     [
-      "2026-11-09",
-      545.18
-     ],
-     [
-      "2026-11-10",
-      533.16
-     ]
     ]
    },
    {
-    "nome": "Broadcom",
+    "nome": "Broadcom Inc",
     "ticker": "AVGO",
-    "peso": 2.33,
-    "prezzo": 331.98,
-    "data": "2026-11-10",
-    "g1": 3.91,
-    "vol_rel": 1.14,
-    "contributo": 0.091,
-    "perche": "L'unico dei tre in rialzo: +3,9% (peso 2,3%), circa +0,09 punti per l'S&P 500. Interessa perché sale mentre Nvidia scende: i chip non si muovono tutti insieme.",
-    "cosa_fa": "Produce chip per reti e data center, anche su misura per l'intelligenza artificiale, e software per le aziende (VMware).",
-    "situazione": [
-     "Chiusura del 10 novembre: 331,98 $ (+3,9%), con volumi leggermente sopra la media (1,14 volte).",
-     "Il titolo è il 31% sotto il massimo di un anno, ma ha già guadagnato circa il 7,7% il 9 novembre (fonti secondarie, da verificare).",
-     "I conti dell'anno fiscale 2026 saranno pubblicati il 9 dicembre, secondo una fonte secondaria.",
-     "Una fonte secondaria segnala la guida sul margine lordo del quarto trimestre intorno al 73%, contro circa il 78% di prima."
-    ],
-    "commento": "Sale mentre Nvidia scende: il mercato distingue tra i produttori di chip, e Broadcom è vista come alternativa a Nvidia per i chip su misura. È ancora il 31% sotto il massimo di un anno. Le notizie sul rialzo del 9 novembre e sui margini in calo (guida intorno al 73% da circa 78%) vengono da fonti secondarie e vanno verificate. Da guardare: i conti del 9 dicembre e se il rimbalzo regge dopo quelli di Nvidia del 17 novembre.",
-    "fonti": [
-     {
-      "nome": "Money365 · Broadcom +7,7% prima dei conti (fonte secondaria)",
-      "url": "https://www.money365.market/news/latest/broadcom-shares-rise-7-7-ahead-of-fiscal-fourth-quarter-e923f620",
-      "data": "2026-11-09"
-     },
-     {
-      "nome": "TradingKey · Broadcom +7,7% il 9 novembre (fonte secondaria)",
-      "url": "https://www.tradingkey.com/news/market-movers/262296509-market-movers-avgo-20261109",
-      "data": "2026-11-09"
-     }
-    ],
+    "peso": 2.5,
+    "prezzo": 364.36,
+    "data": "2026-11-12",
+    "g1": 5.54,
+    "vol_rel": 1.67,
+    "contributo": 0.138,
     "serie": [
-     [
-      "2025-11-11",
-      351.96
-     ],
-     [
-      "2025-11-12",
-      355.22
-     ],
      [
       "2025-11-13",
       339.98
@@ -3969,7 +2904,1072 @@
      [
       "2026-11-10",
       331.98
+     ],
+     [
+      "2026-11-11",
+      345.22
+     ],
+     [
+      "2026-11-12",
+      364.36
      ]
+    ],
+    "perche": "Broadcom sale del 5,5% su volumi alti ed è il maggiore contributo positivo dell'indice oggi.",
+    "cosa_fa": "Produce chip e software per reti, centri dati e acceleratori di IA personalizzati.",
+    "situazione": [
+     "Chiude a 364,36 dollari (+5,54%), con volumi 1,7 volte la norma.",
+     "Il titolo è ancora 24,3% sotto il massimo di un anno, ma +5,2% in 21 sedute.",
+     "L'11 novembre era salito del 4%, il 10 aveva avuto il miglior giorno da quasi un anno (fonti non verificate nel dettaglio)."
+    ],
+    "commento": "Il rialzo di Broadcom è parte della rotazione dentro i chip dell'IA: mentre Nvidia scende, Broadcom e AMD guadagnano. Contribuisce con circa +0,14 punti all'indice. La causa del 12 novembre non è verificata; il contesto è il rimbalzo dei semiconduttori dopo il crollo del 5 novembre. Da guardare: se il rimbalzo si allarga o resta concentrato su pochi titoli. Limite: la fonte sull'11 novembre è un'agenzia (AP) che non spiega la causa del rialzo di Broadcom.",
+    "fonti": [
+     {
+      "nome": "WPTF/AP (Broadcom +4% l'11 nov)",
+      "url": "https://www.wptf.com/2026/11/11/19156/",
+      "data": "2026-11-11"
+     },
+     {
+      "nome": "Coinpaper (Broadcom +6,5% il 9 nov)",
+      "url": "https://coinpaper.com/38567/nvidia-stock-sinks-as-amazon-jumps-5-5-microsoft-and-alphabet-rally-in-ai-rebound",
+      "data": "2026-11-09"
+     }
+    ]
+   },
+   {
+    "nome": "Advanced Micro Devices",
+    "ticker": "AMD",
+    "peso": 1.37,
+    "prezzo": 585.3,
+    "data": "2026-11-12",
+    "g1": 5.86,
+    "vol_rel": 1.71,
+    "contributo": 0.08,
+    "serie": [
+     [
+      "2025-11-13",
+      247.96
+     ],
+     [
+      "2025-11-14",
+      246.81
+     ],
+     [
+      "2025-11-17",
+      240.52
+     ],
+     [
+      "2025-11-18",
+      230.29
+     ],
+     [
+      "2025-11-19",
+      223.55
+     ],
+     [
+      "2025-11-20",
+      206.02
+     ],
+     [
+      "2025-11-21",
+      203.78
+     ],
+     [
+      "2025-11-24",
+      215.05
+     ],
+     [
+      "2025-11-25",
+      206.13
+     ],
+     [
+      "2025-11-26",
+      214.24
+     ],
+     [
+      "2025-11-28",
+      217.53
+     ],
+     [
+      "2025-12-01",
+      219.76
+     ],
+     [
+      "2025-12-02",
+      215.24
+     ],
+     [
+      "2025-12-03",
+      217.6
+     ],
+     [
+      "2025-12-04",
+      215.98
+     ],
+     [
+      "2025-12-05",
+      217.97
+     ],
+     [
+      "2025-12-08",
+      221.11
+     ],
+     [
+      "2025-12-09",
+      221.62
+     ],
+     [
+      "2025-12-10",
+      221.42
+     ],
+     [
+      "2025-12-11",
+      221.43
+     ],
+     [
+      "2025-12-12",
+      210.78
+     ],
+     [
+      "2025-12-15",
+      207.58
+     ],
+     [
+      "2025-12-16",
+      209.17
+     ],
+     [
+      "2025-12-17",
+      198.11
+     ],
+     [
+      "2025-12-18",
+      201.06
+     ],
+     [
+      "2025-12-19",
+      213.43
+     ],
+     [
+      "2025-12-22",
+      214.95
+     ],
+     [
+      "2025-12-23",
+      214.9
+     ],
+     [
+      "2025-12-24",
+      215.04
+     ],
+     [
+      "2025-12-26",
+      214.99
+     ],
+     [
+      "2025-12-29",
+      215.61
+     ],
+     [
+      "2025-12-30",
+      215.34
+     ],
+     [
+      "2025-12-31",
+      214.16
+     ],
+     [
+      "2026-01-02",
+      223.47
+     ],
+     [
+      "2026-01-05",
+      221.08
+     ],
+     [
+      "2026-01-06",
+      214.35
+     ],
+     [
+      "2026-01-07",
+      210.02
+     ],
+     [
+      "2026-01-08",
+      204.68
+     ],
+     [
+      "2026-01-09",
+      203.17
+     ],
+     [
+      "2026-01-12",
+      207.69
+     ],
+     [
+      "2026-01-13",
+      220.97
+     ],
+     [
+      "2026-01-14",
+      223.6
+     ],
+     [
+      "2026-01-15",
+      227.92
+     ],
+     [
+      "2026-01-16",
+      231.83
+     ],
+     [
+      "2026-01-20",
+      231.92
+     ],
+     [
+      "2026-01-21",
+      249.8
+     ],
+     [
+      "2026-01-22",
+      253.73
+     ],
+     [
+      "2026-01-23",
+      259.68
+     ],
+     [
+      "2026-01-26",
+      251.31
+     ],
+     [
+      "2026-01-27",
+      252.03
+     ],
+     [
+      "2026-01-28",
+      252.74
+     ],
+     [
+      "2026-01-29",
+      252.18
+     ],
+     [
+      "2026-01-30",
+      236.73
+     ],
+     [
+      "2026-02-02",
+      246.27
+     ],
+     [
+      "2026-02-03",
+      242.11
+     ],
+     [
+      "2026-02-04",
+      200.19
+     ],
+     [
+      "2026-02-05",
+      192.5
+     ],
+     [
+      "2026-02-06",
+      208.44
+     ],
+     [
+      "2026-02-09",
+      216.0
+     ],
+     [
+      "2026-02-10",
+      213.57
+     ],
+     [
+      "2026-02-11",
+      213.58
+     ],
+     [
+      "2026-02-12",
+      205.94
+     ],
+     [
+      "2026-02-13",
+      207.32
+     ],
+     [
+      "2026-02-17",
+      203.08
+     ],
+     [
+      "2026-02-18",
+      200.12
+     ],
+     [
+      "2026-02-19",
+      203.37
+     ],
+     [
+      "2026-02-20",
+      200.15
+     ],
+     [
+      "2026-02-23",
+      196.6
+     ],
+     [
+      "2026-02-24",
+      213.84
+     ],
+     [
+      "2026-02-25",
+      210.86
+     ],
+     [
+      "2026-02-26",
+      203.68
+     ],
+     [
+      "2026-02-27",
+      200.21
+     ],
+     [
+      "2026-03-02",
+      198.62
+     ],
+     [
+      "2026-03-03",
+      190.95
+     ],
+     [
+      "2026-03-04",
+      202.07
+     ],
+     [
+      "2026-03-05",
+      199.45
+     ],
+     [
+      "2026-03-06",
+      192.43
+     ],
+     [
+      "2026-03-09",
+      202.68
+     ],
+     [
+      "2026-03-10",
+      203.23
+     ],
+     [
+      "2026-03-11",
+      204.83
+     ],
+     [
+      "2026-03-12",
+      197.74
+     ],
+     [
+      "2026-03-13",
+      193.39
+     ],
+     [
+      "2026-03-16",
+      196.58
+     ],
+     [
+      "2026-03-17",
+      196.31
+     ],
+     [
+      "2026-03-18",
+      199.46
+     ],
+     [
+      "2026-03-19",
+      205.27
+     ],
+     [
+      "2026-03-20",
+      201.33
+     ],
+     [
+      "2026-03-23",
+      202.68
+     ],
+     [
+      "2026-03-24",
+      205.37
+     ],
+     [
+      "2026-03-25",
+      220.27
+     ],
+     [
+      "2026-03-26",
+      203.77
+     ],
+     [
+      "2026-03-27",
+      201.99
+     ],
+     [
+      "2026-03-30",
+      196.04
+     ],
+     [
+      "2026-03-31",
+      203.43
+     ],
+     [
+      "2026-04-01",
+      210.21
+     ],
+     [
+      "2026-04-02",
+      217.5
+     ],
+     [
+      "2026-04-06",
+      220.18
+     ],
+     [
+      "2026-04-07",
+      221.53
+     ],
+     [
+      "2026-04-08",
+      231.82
+     ],
+     [
+      "2026-04-09",
+      236.64
+     ],
+     [
+      "2026-04-10",
+      245.04
+     ],
+     [
+      "2026-04-13",
+      246.83
+     ],
+     [
+      "2026-04-14",
+      255.07
+     ],
+     [
+      "2026-04-15",
+      258.12
+     ],
+     [
+      "2026-04-16",
+      278.26
+     ],
+     [
+      "2026-04-17",
+      278.39
+     ],
+     [
+      "2026-04-20",
+      274.95
+     ],
+     [
+      "2026-04-21",
+      284.49
+     ],
+     [
+      "2026-04-22",
+      303.46
+     ],
+     [
+      "2026-04-23",
+      305.33
+     ],
+     [
+      "2026-04-24",
+      347.81
+     ],
+     [
+      "2026-04-27",
+      334.63
+     ],
+     [
+      "2026-04-28",
+      323.21
+     ],
+     [
+      "2026-04-29",
+      337.11
+     ],
+     [
+      "2026-04-30",
+      354.49
+     ],
+     [
+      "2026-05-01",
+      360.54
+     ],
+     [
+      "2026-05-04",
+      341.54
+     ],
+     [
+      "2026-05-05",
+      355.26
+     ],
+     [
+      "2026-05-06",
+      421.39
+     ],
+     [
+      "2026-05-07",
+      408.46
+     ],
+     [
+      "2026-05-08",
+      455.19
+     ],
+     [
+      "2026-05-11",
+      458.79
+     ],
+     [
+      "2026-05-12",
+      448.29
+     ],
+     [
+      "2026-05-13",
+      445.5
+     ],
+     [
+      "2026-05-14",
+      449.7
+     ],
+     [
+      "2026-05-15",
+      424.1
+     ],
+     [
+      "2026-05-18",
+      420.99
+     ],
+     [
+      "2026-05-19",
+      414.05
+     ],
+     [
+      "2026-05-20",
+      447.58
+     ],
+     [
+      "2026-05-21",
+      449.59
+     ],
+     [
+      "2026-05-22",
+      467.51
+     ],
+     [
+      "2026-05-26",
+      503.89
+     ],
+     [
+      "2026-05-27",
+      495.54
+     ],
+     [
+      "2026-05-28",
+      518.09
+     ],
+     [
+      "2026-05-29",
+      516.1
+     ],
+     [
+      "2026-06-01",
+      510.13
+     ],
+     [
+      "2026-06-02",
+      521.54
+     ],
+     [
+      "2026-06-03",
+      542.52
+     ],
+     [
+      "2026-06-04",
+      523.2
+     ],
+     [
+      "2026-06-05",
+      466.38
+     ],
+     [
+      "2026-06-08",
+      490.33
+     ],
+     [
+      "2026-06-09",
+      475.51
+     ],
+     [
+      "2026-06-10",
+      452.4
+     ],
+     [
+      "2026-06-11",
+      488.45
+     ],
+     [
+      "2026-06-12",
+      511.57
+     ],
+     [
+      "2026-06-15",
+      547.26
+     ],
+     [
+      "2026-06-16",
+      507.29
+     ],
+     [
+      "2026-06-17",
+      512.48
+     ],
+     [
+      "2026-06-18",
+      537.37
+     ],
+     [
+      "2026-06-22",
+      551.63
+     ],
+     [
+      "2026-06-23",
+      519.85
+     ],
+     [
+      "2026-06-24",
+      519.74
+     ],
+     [
+      "2026-06-25",
+      532.57
+     ],
+     [
+      "2026-06-26",
+      521.58
+     ],
+     [
+      "2026-06-29",
+      539.49
+     ],
+     [
+      "2026-06-30",
+      580.91
+     ],
+     [
+      "2026-07-01",
+      540.88
+     ],
+     [
+      "2026-07-02",
+      517.82
+     ],
+     [
+      "2026-07-06",
+      552.05
+     ],
+     [
+      "2026-07-07",
+      516.11
+     ],
+     [
+      "2026-07-08",
+      517.41
+     ],
+     [
+      "2026-07-09",
+      546.72
+     ],
+     [
+      "2026-07-10",
+      557.89
+     ],
+     [
+      "2026-07-13",
+      534.39
+     ],
+     [
+      "2026-07-14",
+      548.13
+     ],
+     [
+      "2026-07-15",
+      529.14
+     ],
+     [
+      "2026-07-16",
+      500.94
+     ],
+     [
+      "2026-07-17",
+      495.76
+     ],
+     [
+      "2026-07-20",
+      503.57
+     ],
+     [
+      "2026-07-21",
+      544.43
+     ],
+     [
+      "2026-07-22",
+      552.33
+     ],
+     [
+      "2026-07-23",
+      539.69
+     ],
+     [
+      "2026-07-24",
+      521.95
+     ],
+     [
+      "2026-07-27",
+      494.95
+     ],
+     [
+      "2026-07-28",
+      454.62
+     ],
+     [
+      "2026-07-29",
+      429.56
+     ],
+     [
+      "2026-07-30",
+      485.39
+     ],
+     [
+      "2026-07-31",
+      476.15
+     ],
+     [
+      "2026-08-03",
+      484.64
+     ],
+     [
+      "2026-08-04",
+      518.58
+     ],
+     [
+      "2026-08-05",
+      482.05
+     ],
+     [
+      "2026-08-06",
+      489.28
+     ],
+     [
+      "2026-08-07",
+      483.36
+     ],
+     [
+      "2026-08-10",
+      469.56
+     ],
+     [
+      "2026-08-11",
+      474.32
+     ],
+     [
+      "2026-08-12",
+      482.93
+     ],
+     [
+      "2026-08-13",
+      483.01
+     ],
+     [
+      "2026-08-14",
+      514.39
+     ],
+     [
+      "2026-08-17",
+      506.0
+     ],
+     [
+      "2026-08-18",
+      484.39
+     ],
+     [
+      "2026-08-19",
+      466.42
+     ],
+     [
+      "2026-08-20",
+      469.46
+     ],
+     [
+      "2026-08-21",
+      473.25
+     ],
+     [
+      "2026-08-24",
+      456.75
+     ],
+     [
+      "2026-08-25",
+      479.18
+     ],
+     [
+      "2026-08-26",
+      480.93
+     ],
+     [
+      "2026-08-27",
+      476.67
+     ],
+     [
+      "2026-08-28",
+      465.58
+     ],
+     [
+      "2026-08-31",
+      470.72
+     ],
+     [
+      "2026-09-01",
+      459.61
+     ],
+     [
+      "2026-09-02",
+      457.06
+     ],
+     [
+      "2026-09-03",
+      456.16
+     ],
+     [
+      "2026-09-04",
+      477.57
+     ],
+     [
+      "2026-09-08",
+      505.74
+     ],
+     [
+      "2026-09-09",
+      521.1
+     ],
+     [
+      "2026-09-10",
+      503.6
+     ],
+     [
+      "2026-09-11",
+      516.13
+     ],
+     [
+      "2026-09-14",
+      493.41
+     ],
+     [
+      "2026-09-15",
+      504.2
+     ],
+     [
+      "2026-09-16",
+      512.5
+     ],
+     [
+      "2026-09-17",
+      545.09
+     ],
+     [
+      "2026-09-18",
+      559.82
+     ],
+     [
+      "2026-09-21",
+      615.52
+     ],
+     [
+      "2026-09-22",
+      623.77
+     ],
+     [
+      "2026-09-23",
+      614.61
+     ],
+     [
+      "2026-09-24",
+      629.26
+     ],
+     [
+      "2026-09-25",
+      630.63
+     ],
+     [
+      "2026-09-28",
+      607.87
+     ],
+     [
+      "2026-09-29",
+      607.57
+     ],
+     [
+      "2026-09-30",
+      611.76
+     ],
+     [
+      "2026-10-01",
+      615.73
+     ],
+     [
+      "2026-10-02",
+      633.91
+     ],
+     [
+      "2026-10-05",
+      631.75
+     ],
+     [
+      "2026-10-06",
+      649.42
+     ],
+     [
+      "2026-10-07",
+      645.86
+     ],
+     [
+      "2026-10-08",
+      620.68
+     ],
+     [
+      "2026-10-09",
+      608.1
+     ],
+     [
+      "2026-10-12",
+      594.24
+     ],
+     [
+      "2026-10-13",
+      605.53
+     ],
+     [
+      "2026-10-14",
+      570.82
+     ],
+     [
+      "2026-10-15",
+      562.23
+     ],
+     [
+      "2026-10-16",
+      528.75
+     ],
+     [
+      "2026-10-19",
+      538.05
+     ],
+     [
+      "2026-10-20",
+      534.74
+     ],
+     [
+      "2026-10-21",
+      552.72
+     ],
+     [
+      "2026-10-22",
+      507.93
+     ],
+     [
+      "2026-10-23",
+      516.79
+     ],
+     [
+      "2026-10-26",
+      531.28
+     ],
+     [
+      "2026-10-27",
+      560.26
+     ],
+     [
+      "2026-10-28",
+      578.44
+     ],
+     [
+      "2026-10-29",
+      566.42
+     ],
+     [
+      "2026-10-30",
+      504.8
+     ],
+     [
+      "2026-11-02",
+      466.84
+     ],
+     [
+      "2026-11-03",
+      483.9
+     ],
+     [
+      "2026-11-04",
+      488.78
+     ],
+     [
+      "2026-11-05",
+      404.4
+     ],
+     [
+      "2026-11-06",
+      449.04
+     ],
+     [
+      "2026-11-09",
+      508.58
+     ],
+     [
+      "2026-11-10",
+      515.21
+     ],
+     [
+      "2026-11-11",
+      552.9
+     ],
+     [
+      "2026-11-12",
+      585.3
+     ]
+    ],
+    "perche": "AMD guadagna il 5,9% su volumi alti, in linea con la rotazione dentro i chip dell'IA.",
+    "cosa_fa": "Produce processori e acceleratori per computer e centri dati.",
+    "situazione": [
+     "Chiude a 585,30 dollari (+5,86%), con volumi 1,7 volte la norma.",
+     "È 9,9% sotto il massimo di un anno e +2,5% in 21 sedute.",
+     "Il 9 novembre era salita del 9,6% dopo un upgrade degli analisti, il 10 del 7,25%.",
+     "Dal 6 al 12 novembre Nvidia ha perso circa l'11% (da 186,64 a 166,19)."
+    ],
+    "commento": "AMD è tra i titoli che beneficiano dello spostamento di denaro fuori da Nvidia. Contribuisce con circa +0,08 punti all'indice, poco rispetto alla perdita di Nvidia. Il motivo del rialzo del 12 novembre non è verificato; il 9 novembre era legato a un upgrade degli analisti. Da guardare: i conti di Applied Materials e Cisco dopo la chiusura per capire se la domanda per l'IA regge. Limite: dati di prezzo della dashboard (Yahoo) e fonti secondarie su giorni precedenti.",
+    "fonti": [
+     {
+      "nome": "TradingNews (AMD +9,6% il 9 nov, upgrade)",
+      "url": "https://www.tradingnews.com/news/sp500-hirts-7517-nasdaq-jumps-578-points-dow-climbs-to-52139",
+      "data": "2026-11-09"
+     },
+     {
+      "nome": "TechFlow (AMD +7,25% il 10 nov)",
+      "url": "https://www.techflowpost.com/en-US/article/35264",
+      "data": "2026-11-10"
+     }
     ]
    }
   ]
