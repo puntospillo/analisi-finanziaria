@@ -35,7 +35,7 @@ Segnali precoci: se confermati mettono un tetto (Prudente 40%, Bilanciato 50%, D
 Dal 2000: Bilanciato 6,5% / −12%, sempre investito 8,3% / −55%. Il vantaggio è sulla perdita massima, non sul rendimento; si concentra in poche crisi (2000–03, 2008, 2020, 2022) ed è in-sample.
 
 ## Cosa portare nell'altra chat
-1. Questo documento e i due CSV (sono anche nei documenti del progetto Finanza).
+1. Questo documento e i due CSV (il mensile è nei documenti del progetto Finanza, il giornaliero si scarica dal link qui sopra).
 2. Il portafoglio di esempio, per ogni strumento: nome, ticker e/o ISIN, peso % (o importo), se è **azionario** o no (obbligazioni, oro, liquidità…), valuta.
 3. Il profilo da usare (se non lo indichi: Bilanciato) e le scelte della simulazione (se non le indichi si usano quelle tra parentesi):
    - capitale iniziale (100.000 €) e data di inizio (primo giorno di borsa del 2010);
