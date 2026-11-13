@@ -1248,9 +1248,10 @@ const EVAL_TRIGGER_ID = "trig_01JUVzUSZf92iP2qE7fLPynn"; // compito "valutazione
   sm.call(this);
   if (this.classList.contains('help')) { const top = () => { this.scrollTop = 0; const h = this.querySelector('.help-in'); if (h) h.scrollTop = 0; }; top(); requestAnimationFrame(top); setTimeout(top, 400); }
 }; })();
-const APP_VERSION = '2.5.2';
+const APP_VERSION = '2.5.3';
 const DEF_GI = 0.5; // peso predefinito del gruppo «Grandi investitori istituzionali»
 const CHANGELOG = [
+  ['2.5.3', '14/11/2026', ['Spread BTP-Bund nella scheda Italia: tolte le barre mensili OECD ferme ad agosto; restano solo le chiusure giornaliere recenti, ciascuna con il commento di Teleborsa e il link alla fonte.']],
   ['2.5.2', '14/11/2026', ['Scheda Italia: lo spread BTP-Bund non si ferma più ad agosto. Accanto alla media mensile OECD (in ritardo di 2–3 mesi) compaiono le chiusure giornaliere (Teleborsa su Borsa Italiana), con il valore di oggi e il rendimento del BTP a 10 anni; la serie giornaliera si allunga a ogni aggiornamento.']],
   ['2.5.1', '14/11/2026', ['Cliccando un riquadro (Italia, altri mercati, indicatori) la spiegazione si apre dall\'inizio e non più dal fondo: la finestra torna in cima anche dopo il caricamento dei dati.']],
   ['2.5', '14/11/2026', ['Blocco degli aumenti dopo uno shock forte diverso per profilo: al massimo 15 sedute per Prudente e Bilanciato, 10 per il Dinamico, 5 per il Reattivo.', 'Nuovo profilo Reattivo: tetto 70% in riduzione, rientro ogni 3 sedute (20 punti con conferme), aumenti anche a metà settimana. Prende prima i rientri ma opera di più.', 'Profilo: sei domande, quattro sul rischio e due su quanto spesso vuoi operare e quanto ti pesano costi e tasse.']],
@@ -2692,18 +2693,21 @@ async function italyDeep(body) {
   }
   // 5) spread BTP-Bund
   const SP = I.spread;
-  if (SP && SP.v && SP.v.length > 3) { const n = SP.v.length, last = SP.v[n - 1], y1 = n > 12 ? SP.v[n - 13] : null, lv = last >= 250 ? 's-risk' : last >= 180 ? 's-warn' : last >= 120 ? 's-yel' : 's-ok';
+  if ((I.recente && I.recente.v && I.recente.v.length) || (SP && SP.v && SP.v.length > 3)) { const n = SP.v.length, last = SP.v[n - 1], y1 = n > 12 ? SP.v[n - 13] : null, lv = last >= 250 ? 's-risk' : last >= 180 ? 's-warn' : last >= 120 ? 's-yel' : 's-ok';
     const s5 = sec('Spread BTP-Bund a 10 anni'), kp = el('div', 'it-kpi'), dLab = d => { const t = new Date(d + 'T00:00:00Z'); return MESI3[t.getUTCMonth()] + ' ' + t.getUTCFullYear(); };
     [['Ultimo (' + dLab(SP.d[n - 1]) + ')', last + ' punti', lv], ['Un anno prima', y1 == null ? '—' : y1 + ' punti', null], ['Rendimento BTP 10 anni', nf(SP.it[n - 1], 2) + '%', null], ['Rendimento Bund 10 anni', nf(SP.de[n - 1], 2) + '%', null]].forEach(([k, v, l]) => { const c = el('div', 'it-k'); const b = el('b', null, v); if (l) b.style.color = css(LVCOL[l]); c.append(el('em', null, k), b); kp.append(c); });
     const RC = I.recente, nr = RC && RC.v ? RC.v.length : 0, dGi = d => fmtDl(new Date(d + 'T00:00:00Z')).trim();
     if (nr) { const rl = RC.v[nr - 1], rlv = rl >= 250 ? 's-risk' : rl >= 180 ? 's-warn' : rl >= 120 ? 's-yel' : 's-ok', rb = RC.btp && RC.btp[nr - 1];
       const kr = el('div', 'it-kpi'); [['Oggi (' + dGi(RC.d[nr - 1]) + ')', nf(rl, rl % 1 ? 1 : 0) + ' punti', rlv], ['Rendimento BTP 10 anni', rb ? nf(rb, 2) + '%' : '—', null], ['Fonte', 'Teleborsa / Borsa Italiana', null]].forEach(([k, v, l]) => { const c = el('div', 'it-k'); const b = el('b', null, v); if (l) b.style.color = css(LVCOL[l]); if (k === 'Fonte') b.style.fontSize = '.8em'; c.append(el('em', null, k), b); kr.append(c); }); s5.append(kr); }
-    s5.append(kp); const bars = el('div', 'it-bars'), mx = Math.max(...SP.v, ...(nr ? RC.v : []), 1);
-    SP.v.forEach((v, j) => { const b = el('i'); b.style.height = Math.max(3, v / mx * 100) + '%'; b.title = dLab(SP.d[j]) + ': ' + v + ' punti (media mensile OECD)'; if (j === n - 1 && !nr) b.className = 'now'; bars.append(b); });
-    if (nr) { const gap = el('i'); gap.style.cssText = 'flex:0 0 6px;background:none'; bars.append(gap); RC.v.forEach((v, j) => { const b = el('i', 'rec'); b.style.height = Math.max(3, v / mx * 100) + '%'; b.title = dGi(RC.d[j]) + ': ' + nf(v, v % 1 ? 2 : 0) + ' punti (chiusura giornaliera)'; if (j === nr - 1) b.classList.add('now'); bars.append(b); }); }
-    s5.append(bars);
-    if (nr) s5.append(el('p', 'it-note', 'Barre grigio-blu: media mensile OECD (si ferma ad agosto 2026). Barre arancioni: chiusure giornaliere più recenti (' + RC.d.map((d, j) => dGi(d) + ' ' + nf(RC.v[j], RC.v[j] % 1 ? 2 : 0)).join(' · ') + '). Le due misure non sono identiche (mensile contro giornaliera) ma sono confrontabili come ordine di grandezza. La serie giornaliera cresce a ogni aggiornamento.'));
-    s5.append(el('p', 'it-note', 'Differenza tra il rendimento dei titoli di Stato italiani e tedeschi a 10 anni, in punti base (100 = 1%). Più è basso, più i mercati considerano sicuro il debito italiano: aiuta banche e BTP. Sotto 120 tranquillo, 120–180 nella norma, 180–250 attenzione, oltre 250 tensione. Il dato mensile OECD (fonte FRED) arriva con 2–3 mesi di ritardo e serve a vedere la tendenza; il valore di oggi è quello giornaliero indicato sopra.'));
+    if (nr) {
+      const bars = el('div', 'it-bars'), mx = Math.max(...RC.v, 1); RC.v.forEach((v, j) => { const b = el('i', 'rec'); b.style.height = Math.max(3, v / mx * 100) + '%'; b.style.maxWidth = '48px'; b.title = dGi(RC.d[j]) + ': ' + nf(v, v % 1 ? 2 : 0) + ' punti'; if (j === nr - 1) b.classList.add('now'); bars.append(b); }); s5.append(bars);
+      const lst = el('div', 'it-tb'); RC.d.map((d, j) => j).reverse().forEach(j => { const r = el('p', 'it-note'); r.append(el('b', null, dGi(RC.d[j]) + ' · ' + nf(RC.v[j], RC.v[j] % 1 ? 2 : 0) + ' punti' + (RC.btp && RC.btp[j] ? ' · BTP ' + nf(RC.btp[j], 2) + '%' : '') + '. '), document.createTextNode((RC.t && RC.t[j] ? RC.t[j] + ' ' : '') + '(Teleborsa, ')); if (RC.url && RC.url[j]) { const a = el('a', null, 'fonte'); a.href = RC.url[j]; a.target = '_blank'; a.rel = 'noopener'; r.append(a); } r.append(document.createTextNode(')')); lst.append(r); }); s5.append(lst);
+      s5.append(el('p', 'it-note', 'Differenza tra il rendimento dei titoli di Stato italiani e tedeschi a 10 anni, in punti base (100 = 1%). Più è basso, più i mercati considerano sicuro il debito italiano: aiuta banche e BTP. Sotto 120 tranquillo, 120–180 nella norma, 180–250 attenzione, oltre 250 tensione. Sono mostrate solo le chiusure giornaliere recenti; la serie si allunga a ogni aggiornamento.'));
+    } else {
+      s5.append(kp); const bars = el('div', 'it-bars'), mx = Math.max(...SP.v, 1);
+      SP.v.forEach((v, j) => { const b = el('i'); b.style.height = Math.max(3, v / mx * 100) + '%'; b.title = dLab(SP.d[j]) + ': ' + v + ' punti (media mensile OECD)'; if (j === n - 1) b.className = 'now'; bars.append(b); }); s5.append(bars);
+      s5.append(el('p', 'it-note', 'Differenza tra il rendimento dei titoli di Stato italiani e tedeschi a 10 anni, in punti base (100 = 1%). Dato mensile OECD (fonte FRED), pubblicato con 2–3 mesi di ritardo: serve a vedere la tendenza, non il valore di oggi.'));
+    }
   }
   const s6 = sec('Come si legge'); s6.append(el('p', null, 'Il colore del riquadro Italia segue le stesse regole degli altri mercati (segnale sulla media di 10 mesi, rendimento a 6 mesi, forza rispetto alla borsa mondiale, media a 200 giorni). Questo approfondimento aggiunge il quadro in euro, i settori e i titoli più importanti: sono informazioni per capire, non indicazioni di acquisto o vendita.'));
 }

@@ -72,7 +72,8 @@ def spread_recente():
     prec = {}
     try:
         old = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'indici.json')))['italia'].get('recente') or {}
-        for d, v, b, u in zip(old.get('d', []), old.get('v', []), old.get('btp', []), old.get('url', [])): prec[d] = [v, b, u]
+        tt = old.get('t', []) + [''] * 60
+        for d, v, b, u, x in zip(old.get('d', []), old.get('v', []), old.get('btp', []), old.get('url', []), tt): prec[d] = [v, b, u, x]
     except Exception: pass
     nuovi = {}
     for pg in range(1, 7):
@@ -82,15 +83,16 @@ def spread_recente():
             if m and m.group(1) not in nuovi:
                 t = _h.unescape(re.sub(r'<[^>]+>', ' ', _get(u if u.startswith('http') else BI + u)))
                 k = re.search(r'Spread Btp/Bund chiude a \+?(-?\d+(?:[.,]\d+)?) punti', t)
-                if k: nuovi[m.group(1)] = [float(k.group(1).replace(',', '.')), None, u.split('?')[0]]
+                x = re.search(r'Lo spread tra Btp e Bund[^.]*\.', t)
+                if k: nuovi[m.group(1)] = [float(k.group(1).replace(',', '.')), None, u.split('?')[0], x.group(0) if x else '']
             m2 = re.search(r'/btp-rendimento-(\d+)-alle-1800[^/]*_(\d{4}-\d\d-\d\d)_TLB', u)
             if m2: nuovi.setdefault(m2.group(2) + '#btp', float(m2.group(1)) / 100)
     for d in [k for k in nuovi if k.endswith('#btp')]:
         b = nuovi.pop(d); dd = d[:10]
         if dd in nuovi: nuovi[dd][1] = b
-    prec.update({d: [v[0], v[1] if v[1] is not None else (prec.get(d) or [0, None])[1], v[2]] for d, v in nuovi.items()})
+    prec.update({d: [v[0], v[1] if v[1] is not None else (prec.get(d) or [0, None])[1], v[2], v[3]] for d, v in nuovi.items()})
     ds = sorted(prec)[-60:]
-    return {'d': ds, 'v': [prec[d][0] for d in ds], 'btp': [prec[d][1] for d in ds], 'url': [prec[d][2] for d in ds], 'fonte': 'Teleborsa su Borsa Italiana, chiusura giornaliera'} if ds else None
+    return {'d': ds, 'v': [prec[d][0] for d in ds], 'btp': [prec[d][1] for d in ds], 'url': [prec[d][2] for d in ds], 't': [prec[d][3] for d in ds], 'fonte': 'Teleborsa su Borsa Italiana, chiusura giornaliera'} if ds else None
 out['italia']['recente'] = spread_recente()
 json.dump(out, open(sys.argv[1], 'w'), ensure_ascii=False, separators=(',', ':'))
 print('INDICI: %d simboli su %d · Italia: %d titoli, spread %s' % (sum(len(x['righe']) for x in out['gruppi']), len(syms), len(it_rows), out['italia']['spread']['d'][-1] if out['italia']['spread'] else 'non disponibile'))
