@@ -2,7 +2,7 @@
 
 Dashboard sul rischio del mercato azionario americano (S&P 500): indice di rischio 0–100, quota in azioni consigliata per profilo (modello 2.0: allocazione adattiva + segnali precoci + rientro a tranche), valutazione di mercato con fonti, idee da approfondire, mercati esteri e materie prime, indicatori di sentiment e macro, prova sul passato.
 
-**Sito:** https://puntospillo.github.io/analisi-finanziaria/ · versione in fondo alla pagina (v2.5).
+**Sito:** https://puntospillo.github.io/analisi-finanziaria/ · versione in fondo alla pagina (v2.5.1).
 
 ## Come si aggiorna (solo su richiesta, con Claude)
 - **«aggiorna»** → `bash tools/aggiorna.sh`: scarica i dati di borsa, ricalcola, controlla che la pagina si apra e pubblica (circa 1 minuto e mezzo). Se qualcosa fallisce i file pubblicati restano invariati.
