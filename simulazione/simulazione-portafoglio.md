@@ -1,38 +1,38 @@
 # Simulazione di un portafoglio con i segnali della dashboard (2010 → oggi)
 
-Dashboard Analisi Finanziaria **v2.3** (13/11/2026) · modello di base (allocazione adattiva) + segnali precoci per profilo · segnali calcolati con i dati al 12/11/2026 e i pesi predefiniti (consigliati + Grandi investitori istituzionali 0,50).
+Dashboard Analisi Finanziaria **v2.5** (14/11/2026) · modello di base (allocazione adattiva, calcolato per profilo) + segnali precoci · segnali calcolati con i dati al 13/11/2026 e i pesi predefiniti (consigliati + Grandi investitori istituzionali 0,50).
 
-Novità rispetto alla versione del 9/11/2026: le quote sono quelle della 2.3 (blocco degli aumenti al massimo 10 sedute, rientro più rapido) e ci sono le quote dei tre profili. I valori **non coincidono con i file precedenti**: la 2.2 e la 3.8.x tenevano gli aumenti bloccati molto più a lungo.
+Novità rispetto al 13/11/2026: quattro profili (nuovo **Reattivo**) e blocco degli aumenti dopo uno shock diverso per profilo (15 sedute Prudente e Bilanciato, 10 Dinamico, 5 Reattivo). I valori **non coincidono con i file precedenti**.
 
 ## File allegati
 
 | File | Contenuto |
 |---|---|
-| `segnali_giornalieri_2010_oggi.csv` | Una riga per seduta (01/12/2009 → 12/11/2026, 4.264 righe). File principale. Separatore `;`, decimali con la virgola. Si scarica da https://puntospillo.github.io/analisi-finanziaria/simulazione/segnali_giornalieri_2010_oggi.csv (troppo grande per i documenti del progetto). |
-| `segnali_mensili_2010_oggi.csv` | Una riga per mese: quote a fine mese (novembre 2026 = 12/11). Separatore `;`. |
+| `segnali_giornalieri_2010_oggi.csv` | Una riga per seduta (01/12/2009 → 13/11/2026, 4.265 righe). File principale. Separatore `;`, decimali con la virgola. Si scarica da https://puntospillo.github.io/analisi-finanziaria/simulazione/segnali_giornalieri_2010_oggi.csv (troppo grande per i documenti del progetto). |
+| `segnali_mensili_2010_oggi.csv` | Una riga per mese: quote a fine mese (novembre 2026 = 13/11). Separatore `;`. |
 
 ### Colonne (file giornaliero)
-- `quota_prudente`, `quota_bilanciato`, `quota_dinamico`: quota in azioni consigliata (0–100, passi del 10%) alla chiusura USA della seduta, per profilo. È la quota del riquadro Consiglio.
-- `quota_prudente_da_applicare`, `quota_bilanciato_da_applicare`, `quota_dinamico_da_applicare`: le stesse spostate di una seduta. **Sono quelle da usare nelle simulazioni** (il segnale di oggi si esegue domani).
-- `quota_base`: quota del modello di base, prima dei segnali precoci.
-- `aumenti_sospesi`: 1 se in quella seduta gli aumenti erano bloccati dopo uno shock forte.
+- `quota_prudente`, `quota_bilanciato`, `quota_dinamico`, `quota_reattivo`: quota in azioni consigliata (0–100, passi del 10%) alla chiusura USA della seduta, per profilo. È la quota del riquadro Consiglio.
+- `quota_<profilo>_da_applicare`: le stesse spostate di una seduta. **Sono quelle da usare nelle simulazioni** (il segnale di oggi si esegue domani).
+- `quota_base_bilanciato` e `aumenti_sospesi`: quota del modello di base e blocco dopo shock (1 = aumenti sospesi) del profilo Bilanciato.
 - `indice_rischio` (0–100), `volatilita_20g` (% annua a 20 sedute), `sp500` (solo prezzo), `sp500_con_dividendi` (indice con dividendi reinvestiti, `^SP500TR`), `media200`.
 - `liquidita_rend_giorno`: rendimento giornaliero della liquidità in dollari (T-bill a 3 mesi / 252).
 
 ### Come nasce la quota (per capirla, non serve ricalcolarla)
-Modello di base: sei pilastri 0–100 (tendenza 20%, momento 20%, ampiezza 20%, rischio interno 20%, credito 15%, macro 5%) → regime (rialzo confermato 80–100, fragile 50–70, stress 20–40, ripresa 40–70) → × 12% / volatilità a 20 sedute (tra 0,35 e 1) → tetti 20% (emergenza) e 60% (fragilità) → esecuzione graduale (tagli fino a 20 punti al giorno, aumenti di 20 punti a fine settimana, 25 al giorno in ripresa).
-Blocco dopo uno shock forte (almeno 2 condizioni su 3): gli aumenti sono sospesi al massimo 10 sedute dal primo shock, sblocco anticipato dalla 3ª seduta con indice < 60 e S&P sopra la media a 20 giorni.
-Segnali precoci: se confermati mettono un tetto (Prudente 40%, Bilanciato 50%, Dinamico 60%), che poi risale a tranche di 10 punti.
+Modello di base: sei pilastri 0–100 (tendenza 20%, momento 20%, ampiezza 20%, rischio interno 20%, credito 15%, macro 5%) → regime (rialzo confermato 80–100, fragile 50–70, stress 20–40, ripresa 40–70) → × 12% / volatilità a 20 sedute (tra 0,35 e 1) → tetti 20% (emergenza) e 60% (fragilità) → esecuzione graduale (tagli fino a 20 punti al giorno, aumenti di 20 punti a fine settimana, 25 al giorno in ripresa; Reattivo 10 punti in ogni seduta).
+Blocco dopo uno shock forte (almeno 2 condizioni su 3): aumenti sospesi al massimo 15 sedute (Prudente, Bilanciato), 10 (Dinamico), 5 (Reattivo) dal primo shock, con sblocco anticipato se l'indice di rischio scende e l'S&P torna sopra la media a 20 giorni.
+Segnali precoci: se confermati mettono un tetto (Prudente 40%, Bilanciato 50%, Dinamico 60%, Reattivo 70%), che poi risale a tranche di 10 punti (Reattivo 20 con conferme).
 
 ### Riferimento (S&P 500 con dividendi reinvestiti, senza costi, liquidità al T-bill, quota `_da_applicare`)
 | Dal 2010 | Rendimento annuo | Perdita massima | Quota media |
 |---|---|---|---|
-| Prudente | 7,2% | −11,5% | 60% |
-| Bilanciato | 7,7% | −11,0% | 65% |
-| Dinamico | 8,0% | −11,2% | 67% |
+| Prudente | 7,2% | −11,2% | 60% |
+| Bilanciato | 7,7% | −11,4% | 65% |
+| Dinamico | 8,0% | −11,3% | 67% |
+| Reattivo | 8,7% | −12,0% | 70% |
 | Sempre investito | 14,0% | −34% | 100% |
 
-Dal 2000: Bilanciato 6,5% / −12%, sempre investito 8,3% / −55%. Il vantaggio è sulla perdita massima, non sul rendimento; si concentra in poche crisi (2000–03, 2008, 2020, 2022) ed è in-sample.
+Dal 2000: Bilanciato 6,5% / −12%, Reattivo 7,2% / −13%, sempre investito 8,3% / −55%. Il Reattivo cambia quota circa 35 volte l'anno (Bilanciato 26): con costi dello 0,1% per operazione perde circa mezzo punto l'anno, tasse escluse. Il vantaggio dei modelli è sulla perdita massima, non sul rendimento; si concentra in poche crisi ed è in-sample.
 
 ## Cosa portare nell'altra chat
 1. Questo documento e i due CSV (il mensile è nei documenti del progetto Finanza, il giornaliero si scarica dal link qui sopra).
