@@ -619,6 +619,7 @@ IMPL = {
 
 
 WHAT_MK = {
+    'm_it': 'Borsa italiana (banche, energia, assicurazioni, industria, lusso) attraverso l\'ETF iShares MSCI Italy (EWI), quotato in dollari: stessi controlli degli altri mercati. Il FTSE MIB in euro e i principali titoli sono nell\'approfondimento.',
     'm_eu': 'Borse dell\'Europa sviluppata (Regno Unito, Francia, Svizzera, Germania, Paesi Bassi, Italia…) attraverso l\'ETF Vanguard FTSE Europe (VGK), quotato in dollari.',
     'm_cn': 'Grandi società cinesi quotate a Hong Kong attraverso l\'ETF iShares China Large-Cap (FXI), quotato in dollari.',
     'm_jp': 'Borsa giapponese attraverso l\'ETF iShares MSCI Japan (EWJ), quotato in dollari.',
@@ -631,7 +632,8 @@ _MK_DET = ('Il segnale automatico è la regola della media a 10 mesi, usata da m
            'Sopra la media = Buy (si tiene o si costruisce la posizione), sotto = Sell (si riduce o si copre). Cambia poche volte l\'anno e serve a evitare le fasi ribassiste lunghe, '
            'non a prendere i minimi. La forza relativa dice se l\'area fa meglio o peggio della borsa mondiale: un mercato che sale ma meno del mondo non merita un sovrappeso. '
            'Gli ETF sono in dollari: per chi investe in euro conta anche il cambio (vedi il riquadro Euro/Dollaro).')
-for _k, _x in {'m_eu': ' Per l\'Europa il cambio pesa di meno se si usa un ETF in euro: l\'andamento in valuta locale può essere diverso da quello in dollari.',
+for _k, _x in {'m_it': ' L\'Italia pesa molto sulle banche e sull\'energia: segue i tassi della BCE, lo spread BTP-Bund e il petrolio più della media europea. L\'ETF in dollari risente anche del cambio: per chi investe in euro conta il FTSE MIB, mostrato nell\'approfondimento.',
+               'm_eu': ' Per l\'Europa il cambio pesa di meno se si usa un ETF in euro: l\'andamento in valuta locale può essere diverso da quello in dollari.',
                'm_cn': ' La Cina ha movimenti molto ampi e dipende dalle decisioni di Pechino (stimoli, regole su tecnologia e immobiliare) e dai rapporti commerciali con gli Stati Uniti: i segnali possono invertirsi in fretta.',
                'm_jp': ' Per il Giappone lo yen conta molto: un ETF in dollari unisce l\'andamento della borsa a quello della valuta. La borsa giapponese beneficia di uno yen debole, il possessore estero no.',
                'm_em': ' Gli emergenti dipendono dal dollaro (un dollaro debole li aiuta), dalle materie prime e dalla Cina, che ne pesa circa un quarto. Una rottura dei massimi di molti anni è un segnale di tendenza importante.'}.items():
@@ -921,6 +923,7 @@ def build_report(f, P, C, today=None, live=False):
         marks = [dict(d=s[s.index <= x].index[-1].strftime('%Y-%m-%d'), t='buy' if b else 'sell') for x, b in chg.items() if x >= me - pd.DateOffset(years=5) and x <= me + pd.offsets.MonthEnd(0) and (s.index <= x).any()]
         ch = _series(me, [(name + ' (' + tick + ', $)', s, 'main'), ('media 10 mesi', sma_d, 'ma')], marks=marks)
         card(id, 'Mercati esteri', name, f_mk, ch, WHAT_MK[id], HOW_MK, tgt=s, tgt_name=name + ' (' + tick + ')', area='estero')
+    mk_market('m_it', 'EWI', 'Italia')
     mk_market('m_eu', 'VGK', 'Europa')
     mk_market('m_cn', 'FXI', 'Cina')
     mk_market('m_jp', 'EWJ', 'Giappone')
@@ -968,7 +971,7 @@ def build_report(f, P, C, today=None, live=False):
     rot = next((c for c in xc if c['id'] == 'm_rot'), None)
     estero = None
     if mk:
-        estero = ((('In tendenza positiva ' + ', '.join(pos_m)) if pos_m else 'Nessun mercato estero in tendenza positiva')
+        estero = ((('In tendenza positiva ' + ', '.join(pos_m)) if pos_m else 'Nessun altro mercato in tendenza positiva')
                   + ('; deboli ' + ', '.join(neg_m) if neg_m else '') + '. '
                   + ('' if rot is None else ['La borsa americana resta la più forte: nessun motivo di tendenza per spostarsi.', 'Gli Stati Uniti restano davanti ma il vantaggio si riduce: diversificare fuori dall\'America ha senso per chi è molto concentrato.', 'Il resto del mondo è davanti: chi ha solo azioni americane può valutare una quota estera nelle aree con segnale Buy.', 'Rotazione in corso fuori dagli Stati Uniti: le aree con segnale Buy sono candidate per una quota di diversificazione, con ingressi graduali.'][rot['status']]))
     return dict(parere=parere, month=month_name, month_key=('live' if live else me.strftime('%Y-%m')), end=me.strftime('%Y-%m-%d'), prev_end=None if pe is None else pe.strftime('%Y-%m-%d'),

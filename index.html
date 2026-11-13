@@ -6,7 +6,30 @@
 <link rel="icon" href="logo-spillo.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="apple-mobile-web-app-title" content="Analisi Finanziaria">
-<style>:root{color-scheme:light;box-sizing:border-box}html{-webkit-text-size-adjust:100%;text-size-adjust:100%}body{margin:0;padding:0}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+<style>:root{color-scheme:light;box-sizing:border-box}html{-webkit-text-size-adjust:100%;text-size-adjust:100%}body{margin:0;padding:0}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}/* v2.4: mercati compatti (6 riquadri azionari) e approfondimento Italia */
+#esteri .est-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:10px}
+#esteri .est-card{padding:8px 10px;gap:4px;border-top-width:4px}
+#esteri .est-card .eh{font-size:.86rem;gap:6px;flex-wrap:wrap}
+#esteri .est-card .ev{font-size:1.08rem}
+#esteri .est-card .et{font-size:.74rem;line-height:1.4}
+#esteri .est-card .ei{font-size:.72rem;line-height:1.4}
+#esteri .est-card .cap{font-size:.6rem;line-height:1.3}
+#esteri .est-card .est-chart{min-height:86px}
+#esteri .est-live{gap:4px}#esteri .est-live .lv-chip{padding:3px 7px;min-width:54px;flex:1 1 54px;border-radius:8px}#esteri .est-live .lv-chip em{font-size:.6rem}#esteri .est-live .lv-chip b{font-size:.86rem}#esteri .est-live .lv-chip i{font-size:.7rem}#esteri .est-live .lv-cap{font-size:.6rem}
+#esteri .rep-est{font-size:.84rem;padding:8px 12px}
+.deep-tag{margin-left:auto;font-size:.64rem;font-weight:700;color:var(--navy);background:var(--panel-2);border:1px solid var(--line);border-radius:999px;padding:1px 7px;white-space:nowrap}
+#esteri .est-card.est-it{box-shadow:0 0 0 2px color-mix(in srgb,var(--navy) 25%,transparent)}
+.it-deep{display:grid;gap:12px;padding:12px 14px;border:1px solid var(--line);border-left:5px solid var(--navy);border-radius:12px;background:color-mix(in srgb,var(--navy) 4%,var(--panel,#fff))}
+.it-h{margin:0;font-size:1.05rem}
+.it-kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:6px}
+.it-k{display:grid;gap:1px;padding:6px 9px;border:1px solid var(--line);border-radius:9px;background:var(--panel,#fff)}.it-k em{font-style:normal;font-size:.66rem;color:var(--muted)}.it-k b{font:800 1rem var(--font-display);font-variant-numeric:tabular-nums}
+.it-ch svg{width:100%;height:auto;display:block}
+.it-note{font-size:.8rem;line-height:1.45;color:var(--ink);margin:0}
+.it-tab{width:100%;border-collapse:collapse;font-size:.8rem}.it-tab th{text-align:left;font-size:.66rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);padding:4px 6px;border-bottom:1px solid var(--line);white-space:nowrap}.it-tab td{padding:4px 6px;border-bottom:1px solid var(--line)}.it-tab .r{text-align:right}.it-tab tr.me td{font-weight:700;background:var(--panel-2)}
+.it-sets{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:6px}
+.it-set{display:grid;gap:2px;padding:6px 9px;border:1px solid var(--line);border-radius:9px;background:var(--panel,#fff)}.it-set b{font-size:.8rem}.it-set span{font-size:.72rem;color:var(--muted)}.it-set i{display:block;height:5px;border-radius:3px;margin-top:2px}
+.it-bars{display:flex;align-items:flex-end;gap:2px;height:60px;padding-top:4px}.it-bars i{flex:1;background:color-mix(in srgb,var(--navy) 45%,transparent);border-radius:2px 2px 0 0}.it-bars i.now{background:var(--navy)}
+</style>
 </head>
 <body>
 
@@ -1215,9 +1238,10 @@ body.tech-on .secnav .tl{display:inline-block}
 const TRIGGER_ID = "trig_01RFskvnKEXEMuPW4wo8Haxw";      // compito "aggiorna dati"
 const EVAL_TRIGGER_ID = "trig_01JUVzUSZf92iP2qE7fLPynn"; // compito "valutazione attuale"
 // Versione della dashboard (v3.8.1): aumenta a ogni modifica di pagina o modello (non con gli aggiornamenti dei dati).
-const APP_VERSION = '2.3';
+const APP_VERSION = '2.4';
 const DEF_GI = 0.5; // peso predefinito del gruppo «Grandi investitori istituzionali»
 const CHANGELOG = [
+  ['2.4', '13/11/2026', ['Mercati azionari: nuovo riquadro Italia (ETF iShares MSCI Italy, stessi controlli degli altri mercati) prima dell\'Europa. Cliccandolo si apre un approfondimento: FTSE MIB in euro con grafico a un anno, confronto con le altre borse, settori, principali titoli e spread BTP-Bund.', 'La sezione si chiama «Altri mercati azionari»; riquadri più compatti, che si adattano allo spazio.']],
   ['2.3', '13/11/2026', ['Indicatore più reattivo. Il blocco degli aumenti dopo uno shock poteva durare più di un anno (fino a 386 sedute nel 2007–2009) perché ogni nuovo scossone ricominciava il conteggio: ora parte solo con uno shock forte (almeno 2 condizioni su 3), dura al massimo 10 sedute dal primo shock e si sblocca dopo 3 sedute se l\'indice di rischio è sotto 60 e l\'S&P sopra la media a 20 giorni.', 'Rientro più rapido ma graduale: gli aumenti a fine settimana sono di 20 punti invece di 10; la tendenza positiva conta come quarto segnale di ripresa; la sola volatilità non porta più la quota sotto il 35% di quella di base.', 'Segnali precoci: durante una riduzione vale solo il tetto del profilo, come previsto; prima la quota restava ferma al livello più basso. Il ricontrollo del profilo Prudente dopo uno shock dura al massimo 42 sedute dal primo shock forte.', 'Nuova indicazione in alto nel Consiglio: Proteggi, Neutro o Rientro, con il motivo. È un\'indicazione da interpretare, non un ordine.', 'Consiglio più compatto: l\'azione (Riduci, Mantieni, Aumenta…) ora confronta la quota con la seduta precedente invece che con la fine del mese scorso, con la data dell\'ultima variazione e un piccolo grafico della quota nelle ultime 15 sedute. Lancetta e indicazione a destra della quota; il motivo dell\'indicazione si legge cliccandola. Cliccando «Per il tuo portafoglio» si apre il dettaglio da inizio mese, seduta per seduta, con spiegazioni.', 'Correzioni: la quota dell\'ultima seduta non cambia più a fine settimana (prima l\'ultima seduta veniva trattata sempre come venerdì); avviso quando una serie (per esempio gli spread FRED) non si aggiorna; le serie dei segnali precoci si agganciano per data; servono almeno 4 famiglie di segnali su 5; prove sul passato con i dividendi reinvestiti (prima solo prezzi).']],
   ['2.2', '11/11/2026', ['Mercati esteri e materie prime: nei riquadri ci sono i prezzi reali aggiornati (Brent, oro, argento, Euro/Dollaro, Treasury, Bitcoin, indici delle borse) con la variazione dell\'ultima seduta; il grafico di materie prime dichiara la base 100. Griglia riordinata, senza riquadri spaiati.', 'Nuova sezione «I 3 titoli del giorno» sotto «Da seguire»: i titoli che hanno mosso di più l\'S&P 500 nell\'ultima seduta (peso × variazione, con bonus per i volumi), riquadro colorato come lo stato; al clic cosa fa, grafico interattivo, situazione, commento e fonti.', '«Dalla valutazione precedente» ora è un riepilogo di 4 righe, affiancato a «Cosa è cambiato».', 'Grafico dell\'indice di rischio più alto e leggibile su iPad, con legenda ordinata ed etichette senza sovrapposizioni.']],
   ['2.1', '10/11/2026', ['Nuovo pulsante Indici: indici mondiali, materie prime, cambi, tassi e cripto, aggiornati a ogni aggiornamento, con grafico al clic.', 'Dati esteri, materie prime e report calcolati all\'ultima seduta, non più sul report del mese.', 'Pulsanti in alto su una sola riga.', 'Report PDF riordinato come la pagina, con sezione Indici; istruzioni e spiegazioni a parte e selezionabili; Idee da approfondire separate dalla Valutazione attuale.', 'Prezzi di riferimento delle idee aggiornati a ogni aggiornamento.']],
@@ -2174,7 +2198,7 @@ function pesiTable() {
 // ---- mercati esteri, materie prime, cambio, tassi (dati di fine mese del modello mensile)
 function estChart(box, c) {
   const ch = c.chart; if (!ch || !ch.dates || !ch.series || !ch.series.length) return false;
-  const W = Math.max(240, box.clientWidth || 300), H = 112, multi = ch.series.some(s => s.role === 'second'), m = {l: 6, r: multi ? 74 : 46, t: 6, b: 16};
+  const W = Math.max(200, box.clientWidth || 260), H = 92, multi = ch.series.some(s => s.role === 'second'), m = {l: 6, r: multi ? 74 : 46, t: 6, b: 16};
   const n = ch.dates.length, tEnd = Date.parse(ch.dates[n - 1] + 'T00:00:00Z') - 2 * 365.25 * 864e5; let i0 = ch.dates.findIndex(d => Date.parse(d + 'T00:00:00Z') >= tEnd); if (i0 < 0) i0 = 0; const D = ch.dates.slice(i0).map(d => new Date(d + 'T00:00:00Z'));
   const S = ch.series.map(s => ({name: s.name, role: s.role, v: s.values.slice(i0)}));
   const all = []; S.forEach(s => s.v.forEach(v => { if (v != null && !isNaN(v)) all.push(v); }));
@@ -2203,7 +2227,7 @@ function renderEsteri() {
   const CL = ['c-ok', 'c-yel', 'c-warn', 'c-risk'], first = s => String(s || '').split(/(?<=[.!?])\s/)[0];
   const mk = (pick) => { const g = el('div', 'est-grid'); R.cards.forEach((c, k) => { if (!pick(c)) return;
     const b = el('div', 'est-card clickable ' + CL[c.status]); b.tabIndex = 0; b.title = 'Clicca per la spiegazione completa';
-    const hd = el('div', 'eh'); hd.append(el('span', 'dot4'), el('b', null, c.title)); hd.firstChild.style.background = css(QV[c.status]);
+    const hd = el('div', 'eh'); hd.append(el('span', 'dot4'), el('b', null, c.title)); hd.firstChild.style.background = css(QV[c.status]); if (c.id === 'm_it') { hd.append(el('span', 'deep-tag', 'approfondimento ›')); b.classList.add('est-it'); b.title = 'Clicca per l\'approfondimento sull\'Italia'; }
     const v = el('div', 'ev', c.value); v.style.color = css(QV[c.status]);
     const lv = el('div', 'est-live'); lv.dataset.card = c.id; b.append(hd, v, lv, el('div', 'et', c.text));
     const cb = el('div', 'est-chart'); b.append(cb);
@@ -2216,7 +2240,7 @@ function renderEsteri() {
   const up = document.getElementById('estUpd'); if (up) up.textContent = 'Dati all\'ultima seduta, ' + (R.end ? fmtDl(new Date(R.end + 'T00:00:00Z')).trim() : '') + ' · le tendenze si basano sul prezzo mensile rispetto alla media di 10 mesi · clicca un riquadro per la spiegazione';
   const g1 = mk(c => c.area === 'estero'), g2 = mk(c => OTH.includes(c.id));
   if (g1.children.length) {
-    box.append(el('h3', 'est-h', 'Mercati azionari esteri'));
+    box.append(el('h3', 'est-h', 'Altri mercati azionari'));
     const buy = E.filter(c => /^Buy/.test(c.value) && c.id !== 'm_rot').map(c => c.title), sell = E.filter(c => /^Sell/.test(c.value)).map(c => c.title), rot = E.find(c => c.id === 'm_rot');
     const e = el('div', 'rep-est'); e.append(el('b', null, 'In sintesi: '), (R.estero || '') + ' ');
     if (buy.length || sell.length) e.append((buy.length ? 'Segnale Buy (tendenza positiva): ' + buy.join(', ') + '. ' : '') + (sell.length ? 'Segnale Sell (tendenza negativa): ' + sell.join(', ') + '. ' : ''));
@@ -2231,7 +2255,7 @@ function renderEsteri() {
   fillEstLive();
 }
 // prezzi reali aggiornati (indici.json) dentro i riquadri: strumenti mostrati per riquadro
-const EST_LIVE = {m_eu: ['^STOXX50E', '^GDAXI', 'FTSEMIB.MI'], m_cn: ['000001.SS', '^HSI'], m_jp: ['^N225'], m_em: ['^KS11', '^BSESN', '^BVSP'], m_rot: ['^GSPC'],
+const EST_LIVE = {m_it: ['FTSEMIB.MI'], m_eu: ['^STOXX50E', '^GDAXI', '^FCHI'], m_cn: ['000001.SS', '^HSI'], m_jp: ['^N225'], m_em: ['^KS11', '^BSESN', '^BVSP'], m_rot: ['^GSPC'],
   tassi: ['^IRX', '^TNX', '^TYX'], cambio: ['EURUSD=X', 'DX-Y.NYB', 'USDJPY=X'], materie: ['BZ=F', 'CL=F', 'GC=F', 'SI=F'], cripto: ['BTC-USD', 'ETH-USD']};
 let EST_IND = null;
 async function fillEstLive() {
@@ -2582,16 +2606,78 @@ function renderReport() {
   box.append(sub('Mercato americano', R.cards.filter(c => c.area !== 'estero').length + ' indicatori · determinano il quadro del mese'), grid);
   if (gridX.children.length) {
     const xc = R.xcounts || [0, 0, 0, 0];
-    box.append(sub('Mercati azionari esteri', 'Europa, Cina, Giappone, emergenti e rotazione Stati Uniti / resto del mondo · ' + xc[0] + ' verdi, ' + xc[1] + ' gialli, ' + xc[2] + ' arancioni, ' + xc[3] + ' rossi'));
+    box.append(sub('Altri mercati azionari', 'Italia, Europa, Cina, Giappone, emergenti e rotazione Stati Uniti / resto del mondo · ' + xc[0] + ' verdi, ' + xc[1] + ' gialli, ' + xc[2] + ' arancioni, ' + xc[3] + ' rossi'));
     if (R.estero) { const e = document.createElement('div'); e.className = 'rep-est'; const b = document.createElement('b'); b.textContent = 'In sintesi: '; e.append(b, document.createTextNode(R.estero + ' (Indicazione generale, non consulenza personalizzata.)')); box.append(e); }
     box.append(gridX);
   }
 }
 function openRepCard(k) {
   const dlg = document.getElementById('repDlg'), draw = fillRepCard(k, document.getElementById('repDlgBody'), document.getElementById('repDlgLab'), document.getElementById('repDlgTitle'));
+  const RC = (REP || DATA.monthly).cards[k]; if (RC && RC.id === 'm_it') italyDeep(document.getElementById('repDlgBody'));
   if (typeof dlg.showModal === 'function' && !dlg.open) dlg.showModal(); else dlg.setAttribute('open', '');
   dlg.querySelector('.help-in').scrollTop = 0;
   requestAnimationFrame(draw);
+}
+// v2.4: approfondimento Italia (dati di indici.json: FTSE MIB, altre borse, principali titoli, spread BTP-Bund OECD)
+async function italyDeep(body) {
+  const wrap = el('div', 'it-deep'); wrap.append(el('h3', 'it-h', 'Approfondimento Italia')); body.prepend(wrap);
+  try { if (!EST_IND) { const r = await fetch('indici.json?' + Date.now(), {cache: 'no-store'}); if (!r.ok) throw new Error(r.status); EST_IND = await r.json(); } } catch (e) { wrap.append(el('p', 'muted', 'Dati dell\'approfondimento non disponibili in questo momento.')); return; }
+  const M = {}; EST_IND.gruppi.forEach(g => g.righe.forEach(r => { M[r.s] = r; })); const I = EST_IND.italia || {}, T0 = I.titoli || [];
+  const pc = (v, d = 1) => v == null ? '—' : (v > 0 ? '+' : '') + nf(v, d) + '%', col = v => v == null ? css('--muted') : v > 0 ? css('--ok') : v < 0 ? css('--risk') : css('--ink');
+  const num = v => v >= 1000 ? v.toLocaleString('it-IT', {maximumFractionDigits: 0}) : v.toLocaleString('it-IT', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+  const sec = t => { const d = el('div', 'rsec'); d.append(el('h4', null, t)); wrap.append(d); return d; };
+  const cell = (v, d) => { const td = el('td', 'r mono', pc(v, d)); td.style.color = col(v); return td; };
+  const avg = a => { const b = a.filter(v => v != null); return b.length ? b.reduce((x, y) => x + y, 0) / b.length : null; };
+  // 1) FTSE MIB in euro
+  const F = M['FTSEMIB.MI'];
+  if (F) {
+    const s1 = sec('FTSE MIB, in euro · ' + fmtDl(new Date(F.data + 'T00:00:00Z')).trim()), kp = el('div', 'it-kpi');
+    [['Livello', num(F.p), null], ['1 giorno', pc(F.g1, 2), F.g1], ['1 mese', pc(F.m1), F.m1], ['Da inizio anno', pc(F.y0), F.y0], ['1 anno', pc(F.a1), F.a1], ['Dal massimo di 1 anno', pc(F.dmax), F.dmax]].forEach(([k, v, x]) => { const c = el('div', 'it-k'); const b = el('b', null, v); if (x != null) b.style.color = col(x); c.append(el('em', null, k), b); kp.append(c); });
+    s1.append(kp);
+    if (F.sd && F.sp && F.sp.length > 10) { const box = el('div', 'it-ch'); s1.append(box);
+      requestAnimationFrame(() => { const W = Math.max(280, box.clientWidth || 600), H = 150, m = {l: 44, r: 10, t: 8, b: 18}, D = F.sd.map(d => new Date(d + 'T00:00:00Z')), V = F.sp;
+        const x = d3.scaleUtc().domain(d3.extent(D)).range([m.l, W - m.r]), y = d3.scaleLinear().domain(d3.extent(V)).nice().range([H - m.b, m.t]);
+        const svg = d3.create('svg').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img').attr('aria-label', 'FTSE MIB, ultimo anno');
+        y.ticks(4).forEach(t => { svg.append('line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', y(t)).attr('y2', y(t)).attr('stroke', css('--line')).attr('stroke-dasharray', '2 3'); svg.append('text').attr('x', m.l - 5).attr('y', y(t) + 3).attr('text-anchor', 'end').attr('font-size', 9).attr('fill', css('--muted')).text(t.toLocaleString('it-IT')); });
+        x.ticks(5).forEach(t => svg.append('text').attr('x', x(t)).attr('y', H - 4).attr('text-anchor', 'middle').attr('font-size', 9).attr('fill', css('--muted')).text(itLocale.utcFormat('%b %y')(t)));
+        svg.append('path').attr('d', d3.area().x((d, i) => x(D[i])).y0(H - m.b).y1(d => y(d))(V)).attr('fill', css('--navy')).attr('fill-opacity', 0.08);
+        svg.append('path').attr('d', d3.line().x((d, i) => x(D[i])).y(d => y(d))(V)).attr('fill', 'none').attr('stroke', css('--navy')).attr('stroke-width', 1.8);
+        const im = V.indexOf(Math.max(...V)); svg.append('circle').attr('cx', x(D[im])).attr('cy', y(V[im])).attr('r', 3).attr('fill', css('--ok'));
+        svg.append('circle').attr('cx', x(D[D.length - 1])).attr('cy', y(V[V.length - 1])).attr('r', 3.5).attr('fill', css('--navy'));
+        box.replaceChildren(svg.node()); }); }
+    s1.append(el('p', 'it-note', 'Il riquadro usa l\'ETF in dollari (EWI) per confrontare l\'Italia con gli altri mercati con gli stessi controlli; per chi investe in euro conta il FTSE MIB qui sopra.' + (M['EURUSD=X'] && M['EURUSD=X'].a1 != null ? ' In un anno l\'euro è ' + (M['EURUSD=X'].a1 >= 0 ? 'salito' : 'sceso') + ' del ' + nf(Math.abs(M['EURUSD=X'].a1), 1) + '% sul dollaro: ' + (M['EURUSD=X'].a1 >= 0 ? 'in dollari l\'Italia rende di più che in euro.' : 'in dollari l\'Italia rende di meno che in euro.') : '')));
+  }
+  // 2) confronto con le altre borse
+  const CMP = [['FTSEMIB.MI', 'FTSE MIB (Italia)'], ['^STOXX50E', 'Euro Stoxx 50'], ['^GDAXI', 'DAX (Germania)'], ['^FCHI', 'CAC 40 (Francia)'], ['^IBEX', 'IBEX 35 (Spagna)'], ['^GSPC', 'S&P 500 (USA)'], ['^N225', 'Nikkei 225']].filter(([sy]) => M[sy]);
+  if (CMP.length > 1) { const s2 = sec('Italia e altre borse (valute locali)'), tw = el('div', 'tbl-wrap'), tb = el('table', 'it-tab'); tw.append(tb); s2.append(tw);
+    tb.innerHTML = '<thead><tr><th>Indice</th><th class="r">1 mese</th><th class="r">Da inizio anno</th><th class="r">1 anno</th><th class="r">Dal massimo</th></tr></thead>'; const tbo = el('tbody'); tb.append(tbo);
+    CMP.forEach(([sy, n]) => { const r = M[sy], tr = el('tr'); if (sy === 'FTSEMIB.MI') tr.className = 'me'; tr.append(el('td', null, n), cell(r.m1), cell(r.y0), cell(r.a1), cell(r.dmax)); tbo.append(tr); });
+    const it = M['FTSEMIB.MI'], eu = M['^STOXX50E']; if (it && eu && it.a1 != null && eu.a1 != null) s2.append(el('p', 'it-note', 'In un anno il FTSE MIB ha fatto ' + (it.a1 >= eu.a1 ? 'meglio' : 'peggio') + ' dell\'Euro Stoxx 50 di ' + nf(Math.abs(it.a1 - eu.a1), 1) + ' punti.')); }
+  // 3) settori e 4) titoli
+  if (T0.length) {
+    const bySet = {}; T0.forEach(r => (bySet[r.set] = bySet[r.set] || []).push(r));
+    const banks = T0.filter(r => r.set === 'Banche'), rest = T0.filter(r => r.set !== 'Banche'), bA = avg(banks.map(r => r.a1)), rA = avg(rest.map(r => r.a1));
+    const s3 = sec('Settori: media dei titoli principali'), g = el('div', 'it-sets');
+    Object.entries(bySet).map(([k, L]) => [k, avg(L.map(r => r.m1)), avg(L.map(r => r.a1)), L.length]).sort((a, b) => (b[2] ?? -999) - (a[2] ?? -999)).forEach(([k, m1, a1, n]) => {
+      const c = el('div', 'it-set'), bar = el('i'); bar.style.width = Math.min(100, Math.abs(a1 || 0) / 1.2) + '%'; bar.style.background = col(a1);
+      c.append(el('b', null, k + (n > 1 ? ' (' + n + ')' : '')), el('span', 'mono', '1 anno ' + pc(a1, 0) + ' · 1 mese ' + pc(m1, 1)), bar); g.append(c); });
+    s3.append(g);
+    if (bA != null && rA != null) s3.append(el('p', 'it-note', 'Le banche pesano molto sulla borsa italiana: in un anno i titoli bancari qui sopra hanno fatto in media ' + pc(bA, 0) + ', gli altri ' + pc(rA, 0) + '. ' + (bA > rA ? 'La salita è stata guidata soprattutto dalle banche, che dipendono dai tassi della BCE e dallo spread.' : 'Le banche non sono state il motore principale.')));
+    const s4 = sec('Principali titoli del FTSE MIB · ordinati per rendimento da inizio anno'), tw = el('div', 'tbl-wrap'), tb = el('table', 'it-tab'); tw.append(tb); s4.append(tw);
+    tb.innerHTML = '<thead><tr><th>Titolo</th><th>Settore</th><th class="r">Prezzo €</th><th class="r">1 giorno</th><th class="r">1 mese</th><th class="r">Da inizio anno</th><th class="r">1 anno</th><th class="r">Dal massimo</th></tr></thead>'; const tbo = el('tbody'); tb.append(tbo);
+    T0.slice().sort((a, b) => (b.y0 ?? -999) - (a.y0 ?? -999)).forEach(r => { const tr = el('tr'); tr.append(el('td', null, r.n), el('td', 'muted', r.set), el('td', 'r mono', num(r.p)), cell(r.g1, 1), cell(r.m1), cell(r.y0), cell(r.a1), cell(r.dmax)); tbo.append(tr); });
+    s4.append(el('p', 'it-note', 'Prezzi di Yahoo Finance alla chiusura del ' + fmtDl(new Date(T0[0].data + 'T00:00:00Z')).trim() + '. Elenco scelto tra le società più grandi del FTSE MIB: non è l\'indice completo e non indica i pesi.'));
+  }
+  // 5) spread BTP-Bund
+  const SP = I.spread;
+  if (SP && SP.v && SP.v.length > 3) { const n = SP.v.length, last = SP.v[n - 1], y1 = n > 12 ? SP.v[n - 13] : null, lv = last >= 250 ? 's-risk' : last >= 180 ? 's-warn' : last >= 120 ? 's-yel' : 's-ok';
+    const s5 = sec('Spread BTP-Bund a 10 anni'), kp = el('div', 'it-kpi'), dLab = d => { const t = new Date(d + 'T00:00:00Z'); return MESI3[t.getUTCMonth()] + ' ' + t.getUTCFullYear(); };
+    [['Ultimo (' + dLab(SP.d[n - 1]) + ')', last + ' punti', lv], ['Un anno prima', y1 == null ? '—' : y1 + ' punti', null], ['Rendimento BTP 10 anni', nf(SP.it[n - 1], 2) + '%', null], ['Rendimento Bund 10 anni', nf(SP.de[n - 1], 2) + '%', null]].forEach(([k, v, l]) => { const c = el('div', 'it-k'); const b = el('b', null, v); if (l) b.style.color = css(LVCOL[l]); c.append(el('em', null, k), b); kp.append(c); });
+    s5.append(kp); const bars = el('div', 'it-bars'), mx = Math.max(...SP.v, 1);
+    SP.v.forEach((v, j) => { const b = el('i'); b.style.height = Math.max(3, v / mx * 100) + '%'; b.title = dLab(SP.d[j]) + ': ' + v + ' punti'; if (j === n - 1) b.className = 'now'; bars.append(b); }); s5.append(bars);
+    s5.append(el('p', 'it-note', 'Differenza tra il rendimento dei titoli di Stato italiani e tedeschi a 10 anni, in punti base (100 = 1%). Più è basso, più i mercati considerano sicuro il debito italiano: aiuta banche e BTP. Sotto 120 tranquillo, 120–180 nella norma, 180–250 attenzione, oltre 250 tensione. Dato mensile OECD (fonte FRED), pubblicato con 2–3 mesi di ritardo: serve a vedere la tendenza, non il valore di oggi.'));
+  }
+  const s6 = sec('Come si legge'); s6.append(el('p', null, 'Il colore del riquadro Italia segue le stesse regole degli altri mercati (segnale sulla media di 10 mesi, rendimento a 6 mesi, forza rispetto alla borsa mondiale, media a 200 giorni). Questo approfondimento aggiunge il quadro in euro, i settori e i titoli più importanti: sono informazioni per capire, non indicazioni di acquisto o vendita.'));
 }
 function fillRepCard(k, body, labEl, titleEl) {
   const R = REP || DATA.monthly, c = R.cards[k]; body.replaceChildren();

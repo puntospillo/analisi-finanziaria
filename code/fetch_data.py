@@ -24,7 +24,7 @@ UA = {'User-Agent': 'Mozilla/5.0', 'Accept': '*/*'}   # Yahoo risponde 429 a use
 EXTRA = ['^GSPC', '^VIX', '^VIX3M', '^VIX9D', '^VVIX', 'RSP', 'SPY', '^SPXEW', 'HYG', 'LQD', 'IEF', 'TLT', 'SHY', 'JNK',
          '^TNX', '^IRX', '^FVX', '^TYX', '^MOVE', 'HG=F', 'GC=F', 'CL=F', '^DSPX', '^SKEW', 'QQQ', 'IWM', '^RUT', '^NDX',
          'XLU', 'XLP', 'XLY', 'XLK', 'XLF', 'XLI', 'XLV', 'KRE', '^NYA', '^DJI', '^IXIC', '^OEX', 'VWEHX', 'VFITX', 'VUSTX',
-         'EURUSD=X', 'DX-Y.NYB', 'SI=F', 'BTC-USD', 'VGK', 'FXI', 'EWJ', 'EEM', 'ACWI', 'ACWX']
+         'EURUSD=X', 'DX-Y.NYB', 'SI=F', 'BTC-USD', 'VGK', 'FXI', 'EWJ', 'EEM', 'ACWI', 'ACWX', 'EWI']
 log = []
 def say(*a):
     s = ' '.join(str(x) for x in a); print(s, flush=True); log.append(s)

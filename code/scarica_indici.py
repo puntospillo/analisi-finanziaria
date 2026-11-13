@@ -31,7 +31,7 @@ def chg(P, days):
 syms = [s for _, L in G for s, _ in L]
 with cf.ThreadPoolExecutor(8) as ex: R = dict(ex.map(one, syms))
 out = {'generated_at': dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'), 'gruppi': []}
-for g, L in G:
+def build_rows(g, L, R):
     rows = []
     for s, n in L:
         P = R.get(s)
@@ -46,6 +46,21 @@ for g, L in G:
                      'y0': None if not y0 else (round(P[-1][1] - y0[-1], 3) if rate else round((P[-1][1] / y0[-1] - 1) * 100, 1)),
                      'a1': None if chg(P, 364) is None else (round(P[-1][1] - [c for t, c in P if t <= P[-1][0] - 364 * 86400][-1], 3) if rate else round(chg(P, 364), 1)),
                      'dmax': round((P[-1][1] / hi - 1) * 100, 1), 'sd': [dt.datetime.fromtimestamp(t, dt.timezone.utc).strftime('%Y-%m-%d') for t, c in P][::-2][::-1], 'sp': [round(c, 3) for t, c in P][::-2][::-1]})
-    out['gruppi'].append({'g': g, 'righe': rows})
+    return rows
+for g, L in G: out['gruppi'].append({'g': g, 'righe': build_rows(g, L, R)})
+# v2.4: approfondimento Italia - principali titoli del FTSE MIB (settore) e spread BTP-Bund a 10 anni (OECD via FRED, mensile)
+IT = [('ISP.MI', 'Intesa Sanpaolo', 'Banche'), ('UCG.MI', 'UniCredit', 'Banche'), ('BAMI.MI', 'Banco BPM', 'Banche'), ('BMPS.MI', 'Monte dei Paschi', 'Banche'), ('BPE.MI', 'BPER Banca', 'Banche'), ('FBK.MI', 'FinecoBank', 'Banche'),
+      ('G.MI', 'Generali', 'Assicurazioni'), ('PST.MI', 'Poste Italiane', 'Servizi finanziari'), ('ENEL.MI', 'Enel', 'Energia elettrica'), ('ENI.MI', 'Eni', 'Petrolio e gas'), ('TRN.MI', 'Terna', 'Reti elettriche'), ('SRG.MI', 'Snam', 'Reti gas'),
+      ('RACE.MI', 'Ferrari', 'Auto e lusso'), ('MONC.MI', 'Moncler', 'Lusso'), ('STLAM.MI', 'Stellantis', 'Auto'), ('LDO.MI', 'Leonardo', 'Difesa'), ('PRY.MI', 'Prysmian', 'Industria'), ('STMMI.MI', 'STMicroelectronics', 'Semiconduttori'), ('TIT.MI', 'Telecom Italia', 'Telecomunicazioni')]
+with cf.ThreadPoolExecutor(8) as ex: RI = dict(ex.map(one, [x[0] for x in IT]))
+it_rows = build_rows('Italia', [(a, b) for a, b, _ in IT], RI); SET = {a: c for a, _, c in IT}
+for r in it_rows: r['set'] = SET[r['s']]; r.pop('sd', None); r.pop('sp', None)
+def fred(sid):
+    try:
+        t = urllib.request.urlopen('https://fred.stlouisfed.org/graph/fredgraph.csv?id=' + sid, timeout=20).read().decode().strip().splitlines()[1:]
+        return {a: float(b) for a, b in (l.split(',') for l in t) if b not in ('', '.')}
+    except Exception: return {}
+yi, yd = fred('IRLTLT01ITM156N'), fred('IRLTLT01DEM156N'); ds = sorted(set(yi) & set(yd))[-36:]
+out['italia'] = {'titoli': it_rows, 'spread': {'d': ds, 'it': [yi[d] for d in ds], 'de': [yd[d] for d in ds], 'v': [round((yi[d] - yd[d]) * 100) for d in ds], 'fonte': 'OECD via FRED (IRLTLT01ITM156N, IRLTLT01DEM156N), media mensile'} if ds else None}
 json.dump(out, open(sys.argv[1], 'w'), ensure_ascii=False, separators=(',', ':'))
-print('INDICI: %d simboli su %d' % (sum(len(x['righe']) for x in out['gruppi']), len(syms)))
+print('INDICI: %d simboli su %d · Italia: %d titoli, spread %s' % (sum(len(x['righe']) for x in out['gruppi']), len(syms), len(it_rows), out['italia']['spread']['d'][-1] if out['italia']['spread'] else 'non disponibile'))
