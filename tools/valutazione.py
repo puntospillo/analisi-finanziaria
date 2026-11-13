@@ -43,7 +43,7 @@ def b36(x):
 rid = 'v' + b36(int(time.time() * 1000)); q = cx.get('quote_pct', {})
 dash = ['Indice di rischio %s su 100 (%s); quattro settimane fa era %s. Fragilità %s, stress %s.' % (cx['ifi'], cx.get('stato', ''), cx['ifi_4sett'], cx['frag'], cx['stress']),
         'S&P 500 a %s: %+.1f%% rispetto alla media a 200 giorni (%s) e %+.1f%% dal massimo. Il %s%% dei titoli è sopra la propria media a 200 giorni. VIX %s.' % (cx['spx'], cx['spx_vs_ma200_pct'], cx['ma200'], cx['dal_massimo_pct'], cx['titoli_sopra_ma200_pct'], cx['vix']),
-        'Quota in azioni indicata dal modello: prudente %s%%, bilanciato %s%%, dinamico %s%% (modello di base %s%%).' % (q.get('prudente'), q.get('bilanciato'), q.get('dinamico'), cx.get('quota_base_pct'))]
+        'Quota in azioni indicata dal modello: prudente %s%%, bilanciato %s%%, dinamico %s%%, reattivo %s%% (modello di base del profilo Bilanciato %s%%).' % (q.get('prudente'), q.get('bilanciato'), q.get('dinamico'), q.get('reattivo'), cx.get('quota_base_pct'))]
 fonti, seen = [], set()
 def addf(nome, u, d):
     if url(u) and u not in seen: seen.add(u); fonti.append({'nome': nome or u, 'url': u, 'data': d or ''})

@@ -24,8 +24,8 @@ try:
 except Exception as e: N['nota'] = 'pagina non letta: ' + str(e)[:80]
 if '--breve' in sys.argv:
     if N.get('nota') or N.get('errori_pagina'): print('ERRORE pagina:', N.get('nota') or N['errori_pagina']); sys.exit(1)
-    print('PAGINA ok · dati al %s · indice di rischio %s (%s; 4 settimane fa %s) · fragilità %s, stress %s · S&P 500 %s, %+.1f%% sulla media a 200 giorni · quota in azioni: prudente %s%%, bilanciato %s%%, dinamico %s%%'
-          % (N['as_of'], N['ifi'], N['stato'], N['ifi_4sett'], N['frag'], N['stress'], N['spx'], N['spx_vs_ma200_pct'], N['quote_pct'].get('prudente'), N['quote_pct'].get('bilanciato'), N['quote_pct'].get('dinamico')))
+    print('PAGINA ok · dati al %s · indice di rischio %s (%s; 4 settimane fa %s) · fragilità %s, stress %s · S&P 500 %s, %+.1f%% sulla media a 200 giorni · quota in azioni: prudente %s%%, bilanciato %s%%, dinamico %s%%, reattivo %s%%'
+          % (N['as_of'], N['ifi'], N['stato'], N['ifi_4sett'], N['frag'], N['stress'], N['spx'], N['spx_vs_ma200_pct'], N['quote_pct'].get('prudente'), N['quote_pct'].get('bilanciato'), N['quote_pct'].get('dinamico'), N['quote_pct'].get('reattivo')))
     sys.exit(0)
 v = json.load(open(R + '/valutazione.json'))
 P = {'del': v.get('at'), 'livello': v.get('livello'), 'titolo': v.get('titolo'), 'da_seguire': [m['cosa'] + ' → ' + m['soglia'] for m in v.get('monitorare', [])],

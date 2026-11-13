@@ -1,13 +1,16 @@
+// v2.5: il modello di base si calcola per profilo nella pagina (computeAAVAll -> AVP[profilo]); runIFI2 usa AVP[pk]
 // ================================================================== motore 2.0 (segnali precoci + rientro + profilo)
 // Ricerca non validata. Parametri fissati prima delle prove sul passato (dalla specifica IFI-2.0), uguali per tutti:
 // il profilo dell'utente NON cambia la misura del rischio, cambia solo quanto si riduce e quanto in fretta si rientra.
 const E2 = {win: 1260, minObs: 252, on: 65, off: 55, kOn: 3, kWin: 5, fam: 65, step: 1, minFam: 4,
   w: {br: 0.30, dv: 0.20, cr: 0.20, bt: 0.15, df: 0.15},
   rw: {rb: 0.30, rc: 0.25, rv: 0.20, rm: 0.15, re: 0.10}, rOn: 65, rImp: 60, rConf: 2, rGap: 5, noShock: 3, rchk: 42, rchkShock: 2};
+// v2.5: ogni profilo ha il suo blocco degli aumenti dopo uno shock forte (base: shMin, shCap, shIfi) e il suo rientro (cap, slow, stepC)
 const PROF = {
-  prudente: {lab: 'Prudente', cap: 4, slow: 15, recheck: true},
-  bilanciato: {lab: 'Bilanciato', cap: 5, slow: 10, recheck: false},
-  dinamico: {lab: 'Dinamico', cap: 6, slow: 5, recheck: false}
+  prudente: {lab: 'Prudente', cap: 4, slow: 15, stepC: 1, recheck: true, base: {shMin: 5, shCap: 15, shIfi: 58}},
+  bilanciato: {lab: 'Bilanciato', cap: 5, slow: 10, stepC: 1, recheck: false, base: {shMin: 5, shCap: 15, shIfi: 58}},
+  dinamico: {lab: 'Dinamico', cap: 6, slow: 5, stepC: 1, recheck: false, base: {shMin: 3, shCap: 10, shIfi: 60}},
+  reattivo: {lab: 'Reattivo', cap: 7, slow: 3, stepC: 2, recheck: false, base: {shMin: 2, shCap: 5, shIfi: 62, upDaily: true, up: 0.1}}
 };
 const FAM2 = {br: 'Ampiezza in peggioramento', dv: 'Indice che regge, titoli medi no', cr: 'Credito', bt: 'Grandi titoli tecnologici', df: 'Rotazione verso i difensivi'};
 const REC2 = {rb: 'Ampiezza in ripresa', rc: 'Credito in ripresa', rv: 'Volatilità in calo', rm: 'Prezzi sopra la media a 20 sedute', re: 'Titoli medi in recupero'};
@@ -74,14 +77,14 @@ function computeFeat2() {
 // precoci sono confermati (tetto del profilo, raggiunto a 10 punti per seduta); il tetto risale a tranche di 10 punti.
 // Il tetto agisce solo quando la quota di base è ancora alta: non somma una seconda riduzione a quella già fatta dal modello di base.
 function runIFI2(pk) {
-  const P = PROF[pk], q = new Float64Array(N), stt = new Array(N), capA = new Uint8Array(N), actA = new Uint8Array(N), why = new Array(N);
+  const P = PROF[pk], A = AVP[pk], q = new Float64Array(N), stt = new Array(N), capA = new Uint8Array(N), actA = new Uint8Array(N), why = new Array(N);
   let cap = 10, act = false, sinceOff = 0, lastTr = -1e9, lastShock = -1e9, shk0 = -1e9, prev = null;
   for (let i = 0; i < N; i++) {
-    const leg = Math.round(AV.q[i] * 10), s = F2.ew[i], ok = F2.nok[i] >= (F2.has ? E2.minFam : 3) && !isNaN(s);   // v2.3: almeno 4 famiglie su 5 (3 solo se le serie aggiuntive mancano del tutto: avviso nel riquadro)
+    const leg = Math.round(A.q[i] * 10), s = F2.ew[i], ok = F2.nok[i] >= (F2.has ? E2.minFam : 3) && !isNaN(s);   // v2.3: almeno 4 famiglie su 5 (3 solo se le serie aggiuntive mancano del tutto: avviso nel riquadro)
     const shn = shockAt(i).n; if (shn >= 1) lastShock = i;
     // v2.3: il ricontrollo del Prudente parte dal primo shock forte e dura al massimo rchk sedute: nuovi shock non lo allungano
     if (shn >= E2.rchkShock && i - shk0 > E2.rchk) shk0 = i;
-    const hard = AV.cap[i] <= AAV.emCap + 1e-9;
+    const hard = A.cap[i] <= AAV.emCap + 1e-9;
     let t, state, w = '';
     if (!ok) { t = prev == null ? leg : Math.min(prev, leg); state = 'dati'; w = 'dati insufficienti per i segnali precoci: nessun aumento'; }
     else {
@@ -92,7 +95,7 @@ function runIFI2(pk) {
       const rconf = rsok && F2.nimp[i] >= 3 && (i - lastShock) > E2.noShock && !hard;
       if (act) { cap = Math.max(P.cap, cap - E2.step); state = 'riduzione'; w = 'segnali precoci confermati: ' + hiC + ' chiusure su 5 sopra ' + E2.on + ', ' + F2.nfam[i] + ' famiglie in peggioramento; tetto ' + cap * 10 + '%'; }
       else if (cap < 10) { sinceOff++;
-        if (rconf && i - lastTr >= E2.rGap) { cap += E2.step; lastTr = i; w = 'rientro confermato: tetto alzato a ' + cap * 10 + '%'; }
+        if (rconf && i - lastTr >= E2.rGap) { cap = Math.min(10, cap + E2.step * P.stepC); lastTr = i; w = 'rientro confermato: tetto alzato a ' + cap * 10 + '%'; }
         else if (sinceOff >= P.slow && i - lastTr >= P.slow && s < E2.off && (i - lastShock) > E2.noShock && !hard) { cap += E2.step; lastTr = i; w = 'allerta rientrata da ' + sinceOff + ' sedute: tetto alzato a ' + cap * 10 + '%'; }
         else w = 'allerta rientrata, tetto ' + cap * 10 + '% in attesa di conferme';
         state = 'rientro'; }
