@@ -1030,8 +1030,8 @@ def main():
     S = f[keep_f].join(P.add_prefix('p_')).loc[start:]
     S.to_csv(os.path.join(OUT, 'ifi_serie.csv'), float_format='%.4f')
     cols = list(S.columns)
-    # precisione per colonna: percentili a 1 decimale, prezzi a 2, il resto a 4 (file più leggero, nessuna perdita utile)
-    DEC = [1 if c.startswith('p_') or c in ('coverage', 'pct200', 'near_hi', 'pct50') else 2 if c in ('spx', 'ma200', 'vix', 'move') else 0 if c in ('split', 'trend_down') else 4 for c in cols]
+    # precisione per colonna: percentili a 1 decimale, prezzi a 2, liquidità a 8, il resto a 4 (file più leggero, nessuna perdita utile)
+    DEC = [1 if c.startswith('p_') or c in ('coverage', 'pct200', 'near_hi', 'pct50') else 2 if c in ('spx', 'ma200', 'vix', 'move') else 0 if c in ('split', 'trend_down') else 8 if c == 'cash' else 4 for c in cols]   # v2.3: liquidità a 8 decimali (a 4 il rendimento giornaliero valeva solo 0%, 2,5% o 5% l'anno)
     def enc(v, k=4):
         if v is None or (isinstance(v, float) and np.isnan(v)): return None
         r = round(float(v), k); return int(r) if k == 0 else r
