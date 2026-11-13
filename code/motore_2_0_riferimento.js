@@ -1,9 +1,9 @@
 // ================================================================== motore 2.0 (segnali precoci + rientro + profilo)
 // Ricerca non validata. Parametri fissati prima delle prove sul passato (dalla specifica IFI-2.0), uguali per tutti:
 // il profilo dell'utente NON cambia la misura del rischio, cambia solo quanto si riduce e quanto in fretta si rientra.
-const E2 = {win: 1260, minObs: 252, on: 65, off: 55, kOn: 3, kWin: 5, fam: 65, step: 1, minCov: 0.70,
+const E2 = {win: 1260, minObs: 252, on: 65, off: 55, kOn: 3, kWin: 5, fam: 65, step: 1, minFam: 4,
   w: {br: 0.30, dv: 0.20, cr: 0.20, bt: 0.15, df: 0.15},
-  rw: {rb: 0.30, rc: 0.25, rv: 0.20, rm: 0.15, re: 0.10}, rOn: 65, rImp: 60, rConf: 2, rGap: 5, noShock: 3, rchk: 42};
+  rw: {rb: 0.30, rc: 0.25, rv: 0.20, rm: 0.15, re: 0.10}, rOn: 65, rImp: 60, rConf: 2, rGap: 5, noShock: 3, rchk: 42, rchkShock: 2};
 const PROF = {
   prudente: {lab: 'Prudente', cap: 4, slow: 15, recheck: true},
   bilanciato: {lab: 'Bilanciato', cap: 5, slow: 10, recheck: false},
@@ -20,9 +20,15 @@ function pr2(x) {
     if (n >= E2.minObs) out[i] = 100 * (b + 0.5 * e) / n; }
   return out;
 }
+// v2.3: le serie aggiuntive si agganciano per data; senza date si accettano solo se lunghezza e ultima seduta coincidono
+let X2ERR = '';
 function loadExtra(x) {
-  X2 = {}; if (!x || !x.rows || x.rows.length !== N) return false;
-  x.cols.forEach((c, j) => { const a = new Float64Array(N); for (let i = 0; i < N; i++) { const v = x.rows[i][j]; a[i] = v == null ? NaN : v; } X2[c] = a; });
+  X2 = {}; F2 = null; X2ERR = '';
+  if (!x || !x.rows || !x.cols) { X2ERR = 'file delle serie aggiuntive non disponibile'; return false; }
+  let map = null;
+  if (x.dates) { const pos = new Map(x.dates.map((d, k) => [d, k])); map = DATA.dates.map(d => pos.has(d) ? pos.get(d) : -1); const miss = map.filter(k => k < 0).length; if (miss > 5 || map[N - 1] < 0) { X2ERR = 'serie aggiuntive non allineate alle date dei dati (' + miss + ' sedute mancanti)'; X2 = {}; return false; } }
+  else if (x.rows.length !== N || x.as_of !== DATA.as_of) { X2ERR = 'serie aggiuntive di un altro aggiornamento (' + (x.as_of || 'data sconosciuta') + ')'; return false; }
+  x.cols.forEach((c, j) => { const a = new Float64Array(N); for (let i = 0; i < N; i++) { const k = map ? map[i] : i, v = k < 0 ? null : x.rows[k][j]; a[i] = v == null ? NaN : v; } X2[c] = a; });
   return true;
 }
 function computeFeat2() {
@@ -48,10 +54,10 @@ function computeFeat2() {
     const rel = k => { const d = bas(['XLU', 'XLP', 'XLV'], k), c = bas(['XLY', 'XLI', 'XLF', 'XLK'], k), o = A(N); for (let i = 0; i < N; i++) o[i] = d[i] - c[i]; return o; };
     df = mean([pr2(rel(20)), pr2(rel(60))]);
   } else cr = COL.p_hy63;
-  const fam = {br, dv, cr, bt, df}, ew = A(N), cov = new Float64Array(N), nfam = new Uint8Array(N), brAbs = new Uint8Array(N);
+  const fam = {br, dv, cr, bt, df}, ew = A(N), cov = new Float64Array(N), nfam = new Uint8Array(N), nok = new Uint8Array(N), brAbs = new Uint8Array(N);
   for (let i = 0; i < N; i++) { let s = 0, w = 0, n = 0;
     brAbs[i] = (d200[i] <= -10 || d50[i] <= -15) ? 1 : 0;
-    for (const k in E2.w) { const v = fam[k][i]; if (!isNaN(v)) { s += E2.w[k] * v; w += E2.w[k]; if (v >= E2.fam || (k === 'br' && brAbs[i])) n++; } }
+    for (const k in E2.w) { const v = fam[k][i]; if (!isNaN(v)) { s += E2.w[k] * v; w += E2.w[k]; nok[i]++; if (v >= E2.fam || (k === 'br' && brAbs[i])) n++; } }
     cov[i] = w; ew[i] = w > 0 ? s / w : NaN; nfam[i] = n; }
   // --- componenti del rientro (0-100, alto = meglio)
   const rb = mean([pr2(dif(COL.pct50, 5)), pr2(dif(COL.pct50, 10))]);
@@ -62,17 +68,19 @@ function computeFeat2() {
   const re = pr2(dif(COL.ewcap63, 10));
   const rec = {rb, rc, rv, rm, re}, rs = A(N), nimp = new Uint8Array(N);
   for (let i = 0; i < N; i++) { let s = 0, w = 0, n = 0; for (const k in E2.rw) { const v = rec[k][i]; if (!isNaN(v)) { s += E2.rw[k] * v; w += E2.rw[k]; if (v >= E2.rImp) n++; } } rs[i] = w >= 0.7 ? s / w : NaN; nimp[i] = n; }
-  F2 = {fam, ew, cov, nfam, brAbs, rec, rs, nimp, d200, d50, has};
+  F2 = {fam, ew, cov, nfam, nok, brAbs, rec, rs, nimp, d200, d50, has, hyg: has ? X2.HYG.map(v => !isNaN(v)) : null};
 }
 // quota 2.0 per un profilo: parte dalla quota dell'allocazione adattiva (invariata) e le mette un tetto quando i segnali
 // precoci sono confermati (tetto del profilo, raggiunto a 10 punti per seduta); il tetto risale a tranche di 10 punti.
 // Il tetto agisce solo quando la quota di base è ancora alta: non somma una seconda riduzione a quella già fatta dal modello di base.
 function runIFI2(pk) {
   const P = PROF[pk], q = new Float64Array(N), stt = new Array(N), capA = new Uint8Array(N), actA = new Uint8Array(N), why = new Array(N);
-  let cap = 10, act = false, sinceOff = 0, lastTr = -1e9, lastShock = -1e9, prev = null;
+  let cap = 10, act = false, sinceOff = 0, lastTr = -1e9, lastShock = -1e9, shk0 = -1e9, prev = null;
   for (let i = 0; i < N; i++) {
-    const leg = Math.round(AV.q[i] * 10), s = F2.ew[i], ok = F2.cov[i] >= E2.minCov - 1e-9 && !isNaN(s);
-    if (shockAt(i).n >= 1) lastShock = i;
+    const leg = Math.round(AV.q[i] * 10), s = F2.ew[i], ok = F2.nok[i] >= (F2.has ? E2.minFam : 3) && !isNaN(s);   // v2.3: almeno 4 famiglie su 5 (3 solo se le serie aggiuntive mancano del tutto: avviso nel riquadro)
+    const shn = shockAt(i).n; if (shn >= 1) lastShock = i;
+    // v2.3: il ricontrollo del Prudente parte dal primo shock forte e dura al massimo rchk sedute: nuovi shock non lo allungano
+    if (shn >= E2.rchkShock && i - shk0 > E2.rchk) shk0 = i;
     const hard = AV.cap[i] <= AAV.emCap + 1e-9;
     let t, state, w = '';
     if (!ok) { t = prev == null ? leg : Math.min(prev, leg); state = 'dati'; w = 'dati insufficienti per i segnali precoci: nessun aumento'; }
@@ -80,7 +88,8 @@ function runIFI2(pk) {
       let hiC = 0, loC = 0; for (let k = Math.max(0, i - E2.kWin + 1); k <= i; k++) { if (F2.ew[k] >= E2.on) hiC++; if (F2.ew[k] < E2.off) loC++; }
       if (!act && hiC >= E2.kOn && F2.nfam[i] >= 2) { act = true; if (cap >= 10) cap = Math.max(P.cap, prev == null ? leg : prev); }
       else if (act && loC >= E2.kOn) { act = false; sinceOff = 0; }
-      const rconf = i >= 1 && F2.rs[i] >= E2.rOn && F2.rs[i - 1] >= E2.rOn && F2.nimp[i] >= 3 && (i - lastShock) > E2.noShock && !hard;
+      let rsok = i >= E2.rConf - 1; for (let k = 0; rsok && k < E2.rConf; k++) rsok = F2.rs[i - k] >= E2.rOn;   // v2.3: usa il parametro rConf (prima 2 era scritto nel codice)
+      const rconf = rsok && F2.nimp[i] >= 3 && (i - lastShock) > E2.noShock && !hard;
       if (act) { cap = Math.max(P.cap, cap - E2.step); state = 'riduzione'; w = 'segnali precoci confermati: ' + hiC + ' chiusure su 5 sopra ' + E2.on + ', ' + F2.nfam[i] + ' famiglie in peggioramento; tetto ' + cap * 10 + '%'; }
       else if (cap < 10) { sinceOff++;
         if (rconf && i - lastTr >= E2.rGap) { cap += E2.step; lastTr = i; w = 'rientro confermato: tetto alzato a ' + cap * 10 + '%'; }
@@ -90,8 +99,8 @@ function runIFI2(pk) {
       else { state = s >= E2.off ? 'allerta' : 'normale'; w = state === 'allerta' ? 'segnali precoci in aumento, non ancora confermati' : 'nessun segnale precoce'; }
       t = Math.min(leg, cap);
       if (prev != null && t > prev) {
-        if (act) t = prev;
-        else if (P.recheck && (i - lastShock) <= E2.rchk && IFI[i] >= 55) { t = prev; w += '; ricontrollo dopo lo shock: indice ancora da 55 in su, nessun aumento'; }
+        // v2.3: durante la riduzione vale solo il tetto del profilo (come da specifica): prima la quota restava ferma al livello più basso anche se il tetto era più alto
+        if (P.recheck && (i - shk0) <= E2.rchk && IFI[i] >= 55) { t = prev; w += '; ricontrollo dopo lo shock: indice ancora da 55 in su, nessun aumento'; }
       }
     }
     q[i] = t / 10; stt[i] = state; capA[i] = cap; actA[i] = act ? 1 : 0; why[i] = w; prev = t;

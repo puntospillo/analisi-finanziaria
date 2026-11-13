@@ -248,7 +248,7 @@ def build():
         if k not in fred: return pd.Series(np.nan, index=dates)
         s = fred[k].copy(); s.index = s.index + pd.Timedelta(days=lag)
         return s.reindex(dates.union(s.index)).ffill().reindex(dates)
-    baa = fr('BAA10Y')
+    baa = fr('BAA10Y', lag=1)          # v2.3: dato del giorno pubblicato da FRED il giorno lavorativo dopo
     f['baa'] = baa
     f['baa63'] = baa.diff(63)
     # credito da Yahoo (sempre disponibile): fondo high yield Vanguard VWEHX vs Treasury intermedi VFITX, dal 1996

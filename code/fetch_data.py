@@ -175,15 +175,36 @@ def fetch_holdings():
         say('WARN pesi SPY non raggiungibili', type(e).__name__)
 
 def fetch_fred():
+    """v2.3: serie per serie; se una non risponde resta la sua copia precedente (prima bastava un errore per tenere vecchie tutte)."""
     ids = ['BAA10Y', 'AAA10Y', 'T10Y3M', 'T10Y2Y', 'NFCI', 'ANFCI', 'STLFSI4', 'BAMLH0A0HYM2', 'BAMLC0A0CM', 'DGS10', 'DTB3', 'VIXCLS']
-    parts = []
+    old = {}
+    p = os.path.join(RAW, 'fred.txt')
+    if os.path.exists(p):
+        for block in open(p).read().split('#')[1:]:
+            name, body = block.split('\n', 1); old[name.strip()] = body.strip('\n')
+    new, bad = {}, []
     for i in ids:
         try:
-            t = get('https://fred.stlouisfed.org/graph/fredgraph.csv?id=' + i, timeout=15, tries=1).decode()
-            parts.append('#' + i + '\n' + t + '\n')
-        except Exception as e:
-            say('WARN FRED non raggiungibile da qui: resta la copia precedente (solo pannello di confronto)'); return
-    atomic_write('fred.txt', ''.join(parts).encode()); say('OK  FRED')
+            # v2.3: FRED resta in attesa senza rispondere con l'intestazione "Mozilla/5.0" usata per Yahoo (causa dei dati FRED fermi):
+            # si usa l'intestazione standard di Python, poi quella di Yahoo come riserva
+            t = None
+            for k, hdr in enumerate([{}, UA]):
+                try:
+                    with urllib.request.urlopen(urllib.request.Request('https://fred.stlouisfed.org/graph/fredgraph.csv?id=' + i, headers=hdr), timeout=15) as r:
+                        t = r.read().decode(); break
+                except Exception:
+                    if k == 1: raise
+                    time.sleep(1)
+            if t.count('\n') < 10: raise ValueError('risposta vuota')
+            new[i] = t.strip('\n')
+        except Exception:
+            bad.append(i)
+    if not new:
+        say('WARN FRED non raggiungibile da qui: resta la copia precedente'); return
+    old.update(new)
+    atomic_write('fred.txt', ''.join('#' + k + '\n' + v + '\n\n' for k, v in old.items()).encode())
+    say('OK  FRED' + (' (copia precedente per: ' + ', '.join(bad) + ')' if bad else ''))
+    if bad: say('WARN FRED: non aggiornate ' + ', '.join(bad))
 
 def incremental_start():
     """data d'inizio della finestra recente, se esiste lo storico dell'ampiezza già calcolato"""
