@@ -1,7 +1,7 @@
 {
- "rid": "vmwfl0qj7",
+ "rid": "vmwfmhu1w",
  "state": "ok",
- "at": "2026-11-13T23:02:23Z",
+ "at": "2026-11-13T23:43:41Z",
  "app_version": "2.4",
  "data_as_of": "2026-11-13",
  "settings_key": "10lt6nt",
@@ -15,7 +15,7 @@
  "dashboard": [
   "Indice di rischio 57 su 100 (Attenzione); quattro settimane fa era 65. Fragilità 40, stress 66.",
   "S&P 500 a 7562: +3.0% rispetto alla media a 200 giorni (7340) e -3.3% dal massimo. Il 66% dei titoli è sopra la propria media a 200 giorni. VIX 19.3.",
-  "Quota in azioni indicata dal modello: prudente 40%, bilanciato 50%, dinamico 50% (modello di base 50%)."
+  "Quota in azioni indicata dal modello: prudente 40%, bilanciato 50%, dinamico 50%, reattivo None% (modello di base del profilo Bilanciato 50%)."
  ],
  "esterno": [
   {
@@ -620,6 +620,11 @@
    "data": "2026-11-09"
   },
   {
+   "nome": "Teleborsa / Borsa Italiana",
+   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/commenti/piazza-affari-chiude-in-rialzo-trainata-da-difesa-e-banche-217_2026-11-10_TLB.html?lang=it",
+   "data": "2026-11-10"
+  },
+  {
    "nome": "Journal Arta",
    "url": "https://journalarta.com/en/2026/11/09/oil-price-today-brent-falls-4-96-to-93-44-on-iran-peace-hopes-as-gold-climbs/",
    "data": "2026-11-09"
@@ -816,10 +821,10 @@
    },
    {
     "titolo": "Italia",
-    "testo": "FTSE MIB a 51.755 punti (+0,69%) il 10 novembre, con le banche protagoniste: UniCredit +2,36% a 83,55 euro dopo i conti, Bper +2,9%. Non ho trovato fonti sulle sedute dopo il 10.",
+    "testo": "Spread BTP-Bund a 104 punti base (invariato) e rendimento del BTP a 10 anni al 4,35% il 10 novembre; FTSE MIB a 51.755 punti (+0,69%), con le banche protagoniste: UniCredit +2,36% a 83,55 euro dopo i conti. Il grafico dello spread nella scheda usa dati OECD mensili e si ferma ad agosto (80 punti base): non è confrontabile con il dato giornaliero. Non ho trovato fonti sulle sedute dopo il 10.",
     "segno": "meno rischio",
-    "fonte": "Milano Finanza",
-    "url": "https://www.milanofinanza.it/news/borsa-commento-di-chiusura-202611101828017995",
+    "fonte": "Teleborsa / Borsa Italiana",
+    "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/commenti/piazza-affari-chiude-in-rialzo-trainata-da-difesa-e-banche-217_2026-11-10_TLB.html?lang=it",
     "data": "2026-11-10"
    },
    {
