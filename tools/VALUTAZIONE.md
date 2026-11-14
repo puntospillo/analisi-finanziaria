@@ -26,3 +26,10 @@ Regola: «aggiorna tutto» NON usa il report del mese. Tutto (esteri, materie pr
 `{"metodo","pesi_al" (dal file), "titoli":[ {"nome","ticker","peso","prezzo","data","g1","vol_rel","contributo","serie" (tutti copiati dal file), "perche" (1–2 frasi), "cosa_fa" (1 riga: che cosa fa la società), "situazione":[3–4 fatti con numeri], "commento" (UN solo paragrafo: cosa è successo, perché conta per l'indice, cosa guardare, limiti), "fonti":[{"nome","url","data"}]} ]}`.
 Il colore del riquadro lo calcola la pagina dalla variazione del giorno. Se la causa non si trova scrivilo («non verificata»). Fonti secondarie/automatiche: dichiarale tali. Mai «compra/vendi».
 `report.precedente`: 4 righe (livello e indice, quadro, soglie osservate, cosa è successo da allora).
+
+## Notizie per fonte (v2.6)
+A ogni «aggiorna tutto» cercare le novità di 3 fonti e scrivere `/tmp/notizie_nuove.json` (lista di voci), poi `python3 tools/notizie.py /tmp/notizie_nuove.json` (deduplica, tiene 365 giorni in `notizie.json`; le voci dell'ultimo aggiornamento sono le «nuove», le altre stanno sotto «Precedenti»).
+- Voce: `{fonte: casario|zerohedge|scenarieconomici, titolo, sintesi, url, data (YYYY-MM-DD|null), tema}`; titolo e sintesi in italiano, parafrasi con parole proprie (mai testo copiato, citazioni <15 parole), 3–7 voci per fonte.
+- Marco Casario: Substack/Telegram non trovati (v2.6); si usano i suoi episodi YouTube/podcast «The 10Min Trader» via ricerca web. Se l'utente indica il link esatto del canale, usarlo.
+- ZeroHedge: WebFetch di zerohedge.com (articoli «Premium» solo titolo); Scenari Economici: WebFetch di scenarieconomici.it/economia/finanza/ (date solo relative: stimarle).
+- Pubblicare anche `notizie.json` (aggiungerlo a `tools/pubblica.sh` se non è già incluso).

@@ -909,6 +909,36 @@ body.tech-on .secnav .tl{display:inline-block}
 .ifi-spark{flex:1;min-width:0;max-width:210px}
 .ifi-spark svg{width:100%;height:auto;display:block}
 /* v2.5 notizie / idee */
+.giornale{display:grid;gap:16px}
+.gz-mast{text-align:center;border-top:4px double var(--navy);border-bottom:2px solid var(--navy);padding:10px 8px 8px;background:linear-gradient(180deg,color-mix(in srgb,var(--navy-2) 8%,var(--panel)),var(--panel))}
+.gz-kick{font:800 .7rem var(--font-display);letter-spacing:.22em;text-transform:uppercase;color:var(--navy-2)}
+.gz-name{margin:2px 0;font:900 clamp(1.5rem,4.5vw,2.3rem) Georgia,'Times New Roman',serif;color:var(--navy);letter-spacing:.01em}
+.gz-date{font-size:.82rem;color:var(--muted)}
+.gz-art{border:1px solid var(--line);border-top:6px solid var(--navy-2);border-radius:12px;padding:14px 16px;display:grid;gap:10px;background:var(--panel)}
+.gz-art.c-ok{border-top-color:#2e9e5b}.gz-art.c-yel{border-top-color:#e0b100}.gz-art.c-warn{border-top-color:#ec8a1c}.gz-art.c-risk{border-top-color:#d6382f}
+.gz-hd{display:grid;gap:6px;justify-items:start}
+.gz-sec{font:800 .72rem var(--font-display);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.gz-title{margin:0;font:800 clamp(1.25rem,3.6vw,1.8rem)/1.2 Georgia,'Times New Roman',serif;color:var(--navy)}
+.gz-body{display:grid;gap:8px;font-size:.97rem;line-height:1.55;columns:1}
+@media(min-width:900px){.gz-body{display:block;column-count:2;column-gap:28px;column-rule:1px solid var(--line)}.gz-body>*{break-inside:avoid;margin:0 0 8px}}
+.gz-lead{margin:0;padding-left:1.1em;font-weight:600}
+.gz-or::first-letter{font:900 2.4em/0.9 Georgia,serif;float:left;padding:3px 6px 0 0;color:var(--navy-2)}
+.gz-ext{display:grid;gap:10px}
+.gz-h{margin:0;padding:6px 12px;font:800 1.05rem var(--font-display);color:#fff;background:linear-gradient(90deg,var(--navy),var(--navy-2));border-radius:8px;letter-spacing:.02em}
+.gz-extg{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.gz-ec{border:1px solid var(--line);border-left:5px solid var(--muted);border-radius:10px;padding:10px 12px;display:grid;gap:4px;font-size:.9rem;background:var(--panel)}
+.gz-ec.piu{border-left-color:#d6382f;background:color-mix(in srgb,#d6382f 6%,var(--panel))}.gz-ec.meno{border-left-color:#2e9e5b;background:color-mix(in srgb,#2e9e5b 6%,var(--panel))}.gz-ec.neutro{border-left-color:#e0b100}
+.gz-ec p{margin:0;line-height:1.45}
+.gz-conc{margin:0;font-size:.92rem;border-left:4px solid var(--navy-2);padding:6px 12px;background:color-mix(in srgb,var(--navy-2) 7%,var(--panel));border-radius:0 8px 8px 0}
+.gz-mon{border:1px dashed var(--line);border-radius:10px;padding:8px 12px;font-size:.88rem}.gz-mon h4{margin:0 0 4px}.gz-mon ul{margin:0;padding-left:1.1em;display:grid;gap:3px}
+.gz-news{display:grid;gap:10px}
+.gz-cols{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));align-items:start}
+.gz-col{border:1px solid var(--line);border-top:6px solid var(--navy-2);border-radius:12px;padding:10px;display:grid;gap:8px;background:var(--panel)}
+.gz-col.nf-cas{border-top-color:#7a3fd1}.gz-col.nf-zh{border-top-color:#1f6fd6}.gz-col.nf-se{border-top-color:#e0701c}
+.gz-colh{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px}.gz-colh a{font:900 1.1rem Georgia,serif;color:var(--navy);text-decoration:none}.gz-colh .sub{font-size:.72rem;color:var(--muted);flex:1 1 100%;order:3}.gz-colh .cnt{margin-left:auto;font:800 .7rem var(--font-display);background:var(--navy-2);color:#fff;border-radius:99px;padding:2px 8px}
+.gz-card{border-top:1px solid var(--line);padding-top:8px;display:grid;gap:3px}.gz-card h4{text-transform:none;letter-spacing:0;margin:0;font:800 .95rem/1.3 Georgia,serif}.gz-card h4 a{color:var(--navy);text-decoration:none}.gz-card h4 a:hover{text-decoration:underline}.gz-card p{margin:0;font-size:.86rem;line-height:1.45}.gz-card.old{opacity:.85}
+.gz-meta{display:flex;gap:8px;align-items:center;font-size:.72rem;color:var(--muted)}.gz-meta .tag{background:color-mix(in srgb,var(--navy-2) 12%,var(--panel));color:var(--navy);border-radius:99px;padding:1px 8px;font-weight:700}
+.gz-btn{justify-self:start}.gz-prec{display:grid;gap:8px}
 #evalDlg[data-mode="notizie"] #evBody > .ideas,#evalDlg[data-mode="notizie"] #evBody > .grid2{display:none!important}
 #evalDlg[data-mode="idee"] #evBody > :not(.ideas):not(.grid2):not(.ev-actions){display:none!important}
 .hdr .upd{grid-template-columns:repeat(4,minmax(0,1fr))!important;max-width:760px!important}
@@ -1248,9 +1278,10 @@ const EVAL_TRIGGER_ID = "trig_01JUVzUSZf92iP2qE7fLPynn"; // compito "valutazione
   sm.call(this);
   if (this.classList.contains('help')) { const top = () => { this.scrollTop = 0; const h = this.querySelector('.help-in'); if (h) h.scrollTop = 0; }; top(); requestAnimationFrame(top); setTimeout(top, 400); }
 }; })();
-const APP_VERSION = '2.5.3';
+const APP_VERSION = '2.6';
 const DEF_GI = 0.5; // peso predefinito del gruppo «Grandi investitori istituzionali»
 const CHANGELOG = [
+  ['2.6', '14/11/2026', ['Notizie impaginate come un quotidiano: valutazione di mercato in prima pagina, «Cosa dicono le fonti esterne», poi notizie divise per fonte (Marco Casario, ZeroHedge, Scenari Economici) in italiano.', 'Le nuove notizie di ogni aggiornamento sono in evidenza, con il bottone «Precedenti» (archivio di un anno). Tolto «Come ci siamo arrivati» dalle notizie.']],
   ['2.5.3', '14/11/2026', ['Spread BTP-Bund nella scheda Italia: tolte le barre mensili OECD ferme ad agosto; restano solo le chiusure giornaliere recenti, ciascuna con il commento di Teleborsa e il link alla fonte.']],
   ['2.5.2', '14/11/2026', ['Scheda Italia: lo spread BTP-Bund non si ferma più ad agosto. Accanto alla media mensile OECD (in ritardo di 2–3 mesi) compaiono le chiusure giornaliere (Teleborsa su Borsa Italiana), con il valore di oggi e il rendimento del BTP a 10 anni; la serie giornaliera si allunga a ogni aggiornamento.']],
   ['2.5.1', '14/11/2026', ['Cliccando un riquadro (Italia, altri mercati, indicatori) la spiegazione si apre dall\'inizio e non più dal fondo: la finestra torna in cima anche dopo il caricamento dei dati.']],
@@ -2170,7 +2201,7 @@ function miniChart(box, key) {
 const SEGCL = {'più rischio': 'c-risk', 'meno rischio': 'c-ok', 'neutro': 'c-yel'};
 const SEGNO = {'più rischio': '--risk', 'meno rischio': '--ok', 'neutro': '--yel'};
 function daysAgoRome(iso) { const f = d => new Date(d).toLocaleDateString('sv-SE', {timeZone: 'Europe/Rome'}); return Math.round((Date.parse(f(Date.now()) + 'T00:00:00Z') - Date.parse(f(iso) + 'T00:00:00Z')) / 864e5); }
-function openIdee(mode) { mode = mode === 'notizie' ? 'notizie' : 'idee'; renderEval(); evDlg.dataset.mode = mode; const dt = evDlg.querySelector('.evdet'); if (dt) dt.open = (mode === 'notizie'); if (evDlg.showModal && !evDlg.open) evDlg.showModal(); else evDlg.setAttribute('open', ''); }
+function openIdee(mode) { mode = mode === 'notizie' ? 'notizie' : 'idee'; renderEval(); evDlg.dataset.mode = mode; if (evDlg.showModal && !evDlg.open) evDlg.showModal(); else evDlg.setAttribute('open', ''); }
 function renderMkt() {
   const up = document.getElementById('mktUpd'), body = document.getElementById('mktBody'); if (!up || !body || !QF) return;
   up.replaceChildren(); body.replaceChildren(); up.classList.remove('c-ok', 'c-yel', 'c-warn', 'c-risk');
@@ -3702,6 +3733,26 @@ const LEV = {basso: 'Rischio basso', moderato: 'Rischio moderato', elevato: 'Ris
 const safeUrl = (u) => (typeof u === 'string' && /^https:\/\/[^\s"'<>]+$/.test(u)) ? u : null;
 function el(tag, cls, text) { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
 function link(nome, url, data) { const u = safeUrl(url); const a = u ? el('a', null, nome || u) : el('span', null, nome || ''); if (u) { a.href = u; a.target = '_blank'; a.rel = 'noopener noreferrer'; } const w = el('span'); w.append(a); if (data) w.append(document.createTextNode(' · ' + data)); return w; }
+// ---- notizie per fonte (notizie.json, archivio di 1 anno)
+let NEWS = null; fetch('notizie.json', {cache: 'no-store'}).then(r => r.ok ? r.json() : null).then(j => { NEWS = j; if (typeof evBody !== 'undefined' && EVAL && EVAL.state === 'ok') renderEval(); }).catch(() => {});
+const NFONTI = [['casario', 'Marco Casario', 'Telegram · Substack · YouTube', 'nf-cas', 'https://www.youtube.com/user/marcocasario'], ['zerohedge', 'ZeroHedge', 'zerohedge.com · tradotto in italiano', 'nf-zh', 'https://www.zerohedge.com'], ['scenarieconomici', 'Scenari Economici', 'Economia e finanza', 'nf-se', 'https://scenarieconomici.it/economia/finanza/']];
+function renderNotizieFonti() {
+  const sec = el('section', 'gz-news'); sec.append(el('h3', 'gz-h', 'Notizie da:'));
+  if (!NEWS || !(NEWS.voci || []).length) { sec.append(el('p', 'muted', 'Notizie in arrivo: compaiono con il prossimo «aggiorna tutto».')); return sec; }
+  const fmt = d => d ? new Date(d + 'T12:00:00Z').toLocaleDateString('it-IT', {day: 'numeric', month: 'long'}) : '';
+  const grid = el('div', 'gz-cols');
+  for (const [id, nome, sub, cls, home] of NFONTI) {
+    const all = NEWS.voci.filter(x => x.fonte === id).sort((a, b) => (b.agg - a.agg) || String(b.data || b.visto).localeCompare(String(a.data || a.visto)));
+    const nuove = all.filter(x => x.agg === NEWS.ultimo_agg), prec = all.filter(x => x.agg !== NEWS.ultimo_agg);
+    const col = el('div', 'gz-col ' + cls); const h = el('div', 'gz-colh'); const a = el('a', null, nome); a.href = home; a.target = '_blank'; a.rel = 'noopener noreferrer'; h.append(a, el('span', 'sub', sub), el('span', 'cnt', nuove.length + ' nuove')); col.append(h);
+    const card = (x, old) => { const c = el('article', 'gz-card' + (old ? ' old' : '')); const m = el('div', 'gz-meta'); if (x.tema) m.append(el('span', 'tag', x.tema)); m.append(el('span', null, x.data ? fmt(x.data) : 'rilevata il ' + fmt(x.visto))); c.append(m);
+      const u = safeUrl(x.url); const t = el('h4'); if (u) { const l = el('a', null, x.titolo); l.href = u; l.target = '_blank'; l.rel = 'noopener noreferrer'; t.append(l); } else t.append(x.titolo); c.append(t, el('p', null, x.sintesi)); return c; };
+    if (!nuove.length) col.append(el('p', 'muted', 'Nessuna novità in questo aggiornamento.')); nuove.forEach(x => col.append(card(x, false)));
+    if (prec.length) { const box = el('div', 'gz-prec'); box.hidden = true; const bt = el('button', 'btn gz-btn', 'Precedenti (' + prec.length + ')'); bt.type = 'button';
+      bt.addEventListener('click', () => { if (!box.children.length) prec.forEach(x => box.append(card(x, true))); box.hidden = !box.hidden; bt.textContent = box.hidden ? 'Precedenti (' + prec.length + ')' : 'Nascondi precedenti'; }); col.append(bt, box); }
+    grid.append(col); }
+  sec.append(grid, el('p', 'ev-meta', 'Sintesi in italiano scritte con parole nostre; il titolo apre l\'articolo originale. L\'archivio conserva un anno di notizie. Fonti segnalate dall\'utente, non verificate: sono opinioni e cronaca, non dati del modello.')); return sec;
+}
 function renderEval() {
   evBody.replaceChildren();
   const v = EVAL;
@@ -3711,36 +3762,30 @@ function renderEval() {
     p.textContent = 'Non c\'è ancora una valutazione salvata. Premi "Nuova valutazione": Claude cerca la situazione attuale del mercato su fonti professionali e la confronta con i numeri della dashboard, usando le impostazioni che hai scelto. Servono circa 3–6 minuti.';
     evBody.append(p); return;
   }
-  const head = el('div'); head.style.display = 'grid'; head.style.gap = '6px';
-  const lv = String(v.livello || '').toLowerCase(); const chip = el('span', 'evlev ' + (LEV[lv] ? lv : 'moderato')); chip.append(el('span', 'dot'), document.createTextNode(LEV[lv] || 'Livello non indicato'));
-  head.append(chip, el('h3', 'ev-title', v.titolo || ''));
-  head.id = 'evTitle';
-  const cur = currentSettings();
-  head.append(el('div', 'ev-meta', 'Preparata il ' + whenIt(v.at) + ' · dati di mercato al ' + (v.data_as_of ? fmtDl(new Date(v.data_as_of + 'T00:00:00Z')) : '—') + ' · ' + (v.settings_label || '') + (v.app_version ? ' · dashboard v' + v.app_version : '')));
-  evBody.append(head);
-  const warns = [];
-  if (v.settings_key && v.settings_key !== cur.key) warns.push('Questa valutazione usa impostazioni diverse da quelle che vedi ora. Premi "Nuova valutazione" per averla con i pesi attuali.');
-  if (v.data_as_of && v.data_as_of !== DATA.as_of) warns.push('Nel frattempo i dati della dashboard sono stati aggiornati (ora al ' + fmtDl(T[N - 1]) + ').');
+  const gz = el('div', 'giornale'), LEVC = {basso: 'c-ok', moderato: 'c-yel', elevato: 'c-warn', alto: 'c-risk'};
+  const lv = String(v.livello || '').toLowerCase();
+  const mh = el('div', 'gz-mast'); mh.append(el('div', 'gz-kick', 'Analisi Finanziaria'), el('h2', 'gz-name', 'Il Quotidiano dei Mercati'), el('div', 'gz-date', new Date(v.at).toLocaleDateString('it-IT', {timeZone: 'Europe/Rome', weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'}) + ' · dati di mercato al ' + (v.data_as_of ? fmtDl(new Date(v.data_as_of + 'T00:00:00Z')).trim() : '—'))); gz.append(mh);
+  const art = el('article', 'gz-art ' + (LEVC[lv] || 'c-yel')); const chip = el('span', 'evlev ' + (LEV[lv] ? lv : 'moderato')); chip.append(el('span', 'dot'), document.createTextNode(LEV[lv] || 'Livello non indicato'));
+  const hd = el('div', 'gz-hd'); hd.id = 'evTitle'; hd.append(el('div', 'gz-sec', 'Valutazione di mercato'), chip, el('h3', 'gz-title', v.titolo || '')); art.append(hd);
+  const cur = currentSettings(), warns = [];
+  if (v.settings_key && v.settings_key !== cur.key) warns.push('Questa valutazione usa impostazioni diverse da quelle che vedi ora.');
+  if (v.data_as_of && v.data_as_of !== DATA.as_of) warns.push('Nel frattempo i dati della dashboard sono stati aggiornati (ora al ' + fmtDl(T[N - 1]).trim() + ').');
   if (Date.now() - Date.parse(v.at) > 3 * 864e5) warns.push('La valutazione ha più di 3 giorni: il quadro esterno potrebbe essere cambiato.');
-  if (warns.length) evBody.append(el('p', 'warnbox', warns.join(' ')));
-  if (Array.isArray(v.in_breve) && v.in_breve.length) { const r = el('div', 'evres'); r.append(el('h4', null, 'Il risultato in breve')); const ul = el('ul'); v.in_breve.forEach(t => ul.append(el('li', null, t))); r.append(ul); r.append(el('div', 'ev-meta', 'Indicazione generale basata sul modello della dashboard: non è un consiglio di investimento personalizzato.')); evBody.append(r); }
-  if (v.orientamento) { const b = el('div', 'box'); b.append(el('h4', null, 'Cosa significa in pratica'), el('div', null, v.orientamento), el('div', 'ev-meta', 'Indicazione generale basata sul modello della dashboard: non è un consiglio di investimento personalizzato.')); evBody.append(b); }
-  if (v.sintesi) evBody.append(el('p', null, v.sintesi));
-  const det = el('details', 'evdet'); det.append(el('summary', null, 'Come ci siamo arrivati: dashboard, fonti esterne, cosa tenere d\'occhio')); det.open = true;
-  const cols = el('div', 'grid2');
-  const c1 = el('div', 'evcol evdash'); c1.append(el('h4', null, 'Cosa dice la dashboard'), el('div', 'evset', 'Impostazioni usate: ' + (v.settings_label || 'non indicate') + '. Soglia di rischio: in difesa da ' + ((v.settings_label || '').match(/soglia (\d+)/) ? (v.settings_label.match(/soglia (\d+)/)[1]) : '70') + '; colori dell\'indice: verde sotto 40, giallo 40–54, arancione 55–69, rosso da 70.')); const ul1 = el('ul'); (v.dashboard || []).forEach(t => ul1.append(el('li', null, t))); c1.append(ul1);
-  const c2 = el('div', 'evcol evext'); c2.append(el('h4', null, 'Cosa dicono le fonti esterne')); const ul2 = el('ul', 'ext');
-  (v.esterno || []).forEach(x => { const li = el('li'); const sg = String(x.segno || '').toLowerCase(); const k = sg.startsWith('più') || sg.startsWith('piu') ? 'piu' : sg.startsWith('meno') ? 'meno' : 'neutro';
-    const t = el('div'); t.append(el('span', 'seg-pill ' + k, k === 'piu' ? 'più rischio' : k === 'meno' ? 'meno rischio' : 'neutro'), el('b', null, x.tema || '')); li.append(t, el('div', null, x.lettura || ''));
-    const src = el('div', 'src'); src.append(link(x.fonte, x.url, x.data)); li.append(src); ul2.append(li); });
-  c2.append(ul2); cols.append(c1, c2); det.append(cols);
-  if (v.concordanza) { const b = el('div', 'box'); b.append(el('h4', null, 'Dashboard e fonti a confronto'), el('div', null, v.concordanza)); det.append(b); }
-  if (v.monitorare && v.monitorare.length) {
-    const d = el('div'); d.append(el('h4', null, 'Cosa tenere d\'occhio'));
-    const tw = el('div', 'tbl-wrap'); const tb = el('table'); const th = el('thead'); const trh = el('tr'); ['Cosa', 'Perché conta', 'Cosa cambierebbe la valutazione'].forEach(h => trh.append(el('th', null, h))); th.append(trh); tb.append(th);
-    const bd = el('tbody'); v.monitorare.forEach(m => { const tr = el('tr'); [m.cosa, m.perche, m.soglia].forEach(t => tr.append(el('td', null, t || ''))); bd.append(tr); }); tb.append(bd); tw.append(tb); d.append(tw); det.append(d);
-  }
-  evBody.append(det);
+  if (warns.length) art.append(el('p', 'warnbox', warns.join(' ')));
+  const txt = el('div', 'gz-body');
+  if (Array.isArray(v.in_breve) && v.in_breve.length) { const ul = el('ul', 'gz-lead'); v.in_breve.forEach(t => ul.append(el('li', null, t))); txt.append(ul); }
+  if (v.orientamento) txt.append(el('p', 'gz-or', v.orientamento));
+  if (v.sintesi) txt.append(el('p', null, v.sintesi));
+  art.append(txt, el('div', 'ev-meta', 'Indicazione generale basata sul modello della dashboard: non è un consiglio di investimento personalizzato.')); gz.append(art);
+  const ext = el('section', 'gz-ext'); ext.append(el('h3', 'gz-h', 'Cosa dicono le fonti esterne')); const eg = el('div', 'gz-extg');
+  (v.esterno || []).forEach(x => { const sg = String(x.segno || '').toLowerCase(), k = sg.startsWith('più') || sg.startsWith('piu') ? 'piu' : sg.startsWith('meno') ? 'meno' : 'neutro'; const c = el('div', 'gz-ec ' + k);
+    c.append(el('span', 'seg-pill ' + k, k === 'piu' ? 'più rischio' : k === 'meno' ? 'meno rischio' : 'neutro'), el('b', null, x.tema || ''), el('p', null, x.lettura || '')); const src = el('div', 'src'); src.append(link(x.fonte, x.url, x.data)); c.append(src); eg.append(c); });
+  ext.append(eg);
+  if (v.concordanza) ext.append(el('p', 'gz-conc', v.concordanza));
+  if (v.monitorare && v.monitorare.length) { const d = el('div', 'gz-mon'); d.append(el('h4', null, 'Cosa tenere d\'occhio')); const ul = el('ul'); v.monitorare.forEach(m => { const li = el('li'); li.append(el('b', null, (m.cosa || '') + ': '), document.createTextNode((m.perche || '') + (m.soglia ? ' → ' + m.soglia : ''))); ul.append(li); }); d.append(ul); ext.append(d); }
+  gz.append(ext);
+  gz.append(renderNotizieFonti());
+  evBody.append(gz);
   { // idee da approfondire (titoli, ETF, materie prime, obbligazioni)
     const box = el('div', 'ideas'); const h = el('h4'); h.append(document.createTextNode('◆ Idee da approfondire: titoli, ETF, materie prime, obbligazioni')); box.append(h);
     const w = el('div', 'warn'); w.append(el('b', null, 'Solo una valutazione da approfondire, non un consiglio d\'investimento. '), document.createTextNode('Sono spunti di analisi scelti da Claude con il metodo di un gestore, sulla base dei dati della dashboard e delle fonti consultate il ' + whenIt(v.at) + '. Non tengono conto della tua situazione, dei tuoi obiettivi e della tua tolleranza al rischio. Prima di qualsiasi decisione verifica prezzo, costi, fiscalità, rischio di cambio e adeguatezza, se serve con un consulente abilitato. Possono cambiare a ogni nuova valutazione.')); box.append(w);
