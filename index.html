@@ -323,6 +323,7 @@ dialog.help.wide{max-width:min(1000px,calc(100vw - 32px))}
 .tile[data-help]:hover,.gauge-card[data-help]:hover{border-color:var(--navy-2)}
 .metrics tbody tr[data-help]:hover td,#factTable tbody tr.clickable:hover td{background:var(--panel-2)}
 dialog.help{border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--ink);max-width:min(620px,calc(100vw - 32px));width:100%;padding:0;box-shadow:0 20px 60px rgba(0,0,0,.25)}
+.xtop{position:sticky;top:6px;z-index:20;justify-self:end;margin:-4px 0 -22px;font:700 .78rem var(--font-display);background:#fff;color:var(--navy);border:1px solid var(--line);border-radius:99px;padding:4px 12px;box-shadow:0 2px 8px rgba(10,18,34,.18);cursor:pointer}.xtop:hover{background:var(--navy);color:#fff}#indDlg .hclose{display:none}
 dialog.help::backdrop{background:rgba(10,18,34,.45)}
 .help-in{padding:18px 20px;display:grid;gap:10px}
 .help-in h3{font-size:1.1rem}
@@ -3914,6 +3915,8 @@ if (lsGet(LSA) === 'go') { lsSet(LSA, null); const go = () => { if (!DATA) retur
 btnEval.addEventListener('click', () => { const mk = document.getElementById('mercato'); if (mk) { if (mk.classList.contains('collapsed')) { setFold(mk, false); mk._syncFold && mk._syncFold(); } mk.scrollIntoView({behavior: 'smooth', block: 'start'}); return; } if (!DATA) return; renderEval(); if (!evSt.textContent) evSay('', EVAL && EVAL.state === 'ok' ? 'Puoi richiederne una nuova con le impostazioni attuali.' : ''); evDlg.showModal ? evDlg.showModal() : evDlg.setAttribute('open', ''); });
 document.getElementById('evClose').addEventListener('click', () => evDlg.close());
 evDlg.addEventListener('click', (e) => { if (e.target === evDlg) evDlg.close(); });
+// Tasto «Chiudi» sempre in alto (fisso mentre si scorre) in tutte le finestre
+document.querySelectorAll('dialog.help').forEach(d => { const hi = d.querySelector('.help-in'); if (!hi || hi.querySelector('.xtop')) return; const b = el('button', 'xtop', '✕ Chiudi'); b.type = 'button'; b.setAttribute('aria-label', 'Chiudi'); b.addEventListener('click', () => d.close()); hi.prepend(b); });
 // regola: se i dati sono stati aggiornati nelle ultime 12 ore la valutazione parte subito;
 // altrimenti prima "Aggiorna ora", poi la pagina si ricarica e la valutazione parte da sola con i dati nuovi
 evRun.addEventListener('click', async () => {
