@@ -946,6 +946,17 @@ body.tech-on .secnav .tl{display:inline-block}
 .gz-card{border-top:0;padding:0 0 10px;border-bottom:1px solid var(--line)}
 .gz-mast{background:linear-gradient(100deg,#e8f0ff,#fff3e0 55%,#ffe8ee)}
 .gz-h{box-shadow:0 3px 10px color-mix(in srgb,var(--navy-2) 30%,transparent)}
+.gz-brand{display:flex;align-items:center;gap:8px;border-radius:10px;padding:8px 10px;color:#fff;flex-wrap:wrap;background:linear-gradient(120deg,var(--navy-2),var(--navy))}
+.gz-brand .sig{font:900 1.05rem Georgia,serif;background:#fff;color:#111;border-radius:6px;padding:2px 7px;letter-spacing:.02em}.gz-brand .bn{font:900 .9rem Georgia,serif;letter-spacing:.14em;text-transform:uppercase}.gz-brand .sub{flex:1 1 100%;font-size:.7rem;opacity:.9}
+.nf-mf .gz-brand{background:linear-gradient(120deg,#c8102e,#7d0a1c)}.nf-mf .sig{color:#c8102e}.nf-se .gz-brand{background:linear-gradient(120deg,#ff9a3c,#d8541a)}.nf-se .sig{color:#d8541a}
+.nf-zh .gz-brand{background:linear-gradient(120deg,#2b2f36,#0d0f12)}.nf-zh .sig{color:#0d0f12}.nf-web .gz-brand{background:linear-gradient(120deg,#12a58a,#0b5fa8)}.nf-web .sig{font-size:1rem}
+.gz-col.nf-mf{border-top-color:#c8102e}.gz-col.nf-se{border-top-color:#e0701c}.gz-col.nf-zh{border-top-color:#2b2f36}.gz-col.nf-web{border-top-color:#12a58a}
+.gz-colh .nm{font:900 1.1rem Georgia,serif;color:var(--navy)}
+.gz-card.lock{background:repeating-linear-gradient(135deg,transparent 0 10px,color-mix(in srgb,var(--muted) 6%,transparent) 10px 20px);border-radius:8px;padding:6px 8px 10px}
+.gz-card h4 .lk{margin-right:6px}.gz-pay{font-size:.74rem;font-weight:700;color:#8a5a00;background:#fff4d6;border:1px solid #f0d58a;border-radius:6px;padding:2px 8px;justify-self:start}
+.gz-meta .tag.sito{background:color-mix(in srgb,#12a58a 16%,var(--panel))}
+#evalDlg[data-mode="notizie"] .ev-top,#evalDlg[data-mode="notizie"] .evprog{display:none!important}
+.gz-cols{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
 .gz-btn{justify-self:start}.gz-prec{display:grid;gap:8px}
 #evalDlg[data-mode="notizie"] #evBody > .ideas,#evalDlg[data-mode="notizie"] #evBody > .grid2{display:none!important}
 #evalDlg[data-mode="idee"] #evBody > :not(.ideas):not(.grid2):not(.ev-actions){display:none!important}
@@ -1289,7 +1300,7 @@ const EVAL_TRIGGER_ID = "trig_01JUVzUSZf92iP2qE7fLPynn"; // compito "valutazione
 const APP_VERSION = '2.6';
 const DEF_GI = 0.5; // peso predefinito del gruppo «Grandi investitori istituzionali»
 const CHANGELOG = [
-  ['2.6', '14/11/2026', ['Notizie impaginate come un quotidiano: valutazione di mercato in prima pagina, «Cosa dicono le fonti esterne», poi notizie divise per fonte (Marco Casario, ZeroHedge, Scenari Economici) in italiano.', 'Le nuove notizie di ogni aggiornamento sono in evidenza, con il bottone «Precedenti» (archivio di un anno). Tolto «Come ci siamo arrivati» dalle notizie.']],
+  ['2.6', '14/11/2026', ['Notizie impaginate come un quotidiano, solo notizie: colonne per fonte (Milano Finanza, Scenari Economici, ZeroHedge, Notizie dal web) con riassunti in italiano più completi.', 'Articoli a pagamento segnalati con il lucchetto e senza link. Le nuove di ogni aggiornamento sono in evidenza, con «Precedenti» (archivio di un anno).']],
   ['2.5.3', '14/11/2026', ['Spread BTP-Bund nella scheda Italia: tolte le barre mensili OECD ferme ad agosto; restano solo le chiusure giornaliere recenti, ciascuna con il commento di Teleborsa e il link alla fonte.']],
   ['2.5.2', '14/11/2026', ['Scheda Italia: lo spread BTP-Bund non si ferma più ad agosto. Accanto alla media mensile OECD (in ritardo di 2–3 mesi) compaiono le chiusure giornaliere (Teleborsa su Borsa Italiana), con il valore di oggi e il rendimento del BTP a 10 anni; la serie giornaliera si allunga a ogni aggiornamento.']],
   ['2.5.1', '14/11/2026', ['Cliccando un riquadro (Italia, altri mercati, indicatori) la spiegazione si apre dall\'inizio e non più dal fondo: la finestra torna in cima anche dopo il caricamento dei dati.']],
@@ -2209,7 +2220,7 @@ function miniChart(box, key) {
 const SEGCL = {'più rischio': 'c-risk', 'meno rischio': 'c-ok', 'neutro': 'c-yel'};
 const SEGNO = {'più rischio': '--risk', 'meno rischio': '--ok', 'neutro': '--yel'};
 function daysAgoRome(iso) { const f = d => new Date(d).toLocaleDateString('sv-SE', {timeZone: 'Europe/Rome'}); return Math.round((Date.parse(f(Date.now()) + 'T00:00:00Z') - Date.parse(f(iso) + 'T00:00:00Z')) / 864e5); }
-function openIdee(mode) { mode = mode === 'notizie' ? 'notizie' : 'idee'; renderEval(); evDlg.dataset.mode = mode; if (evDlg.showModal && !evDlg.open) evDlg.showModal(); else evDlg.setAttribute('open', ''); }
+function openIdee(mode) { mode = mode === 'notizie' ? 'notizie' : 'idee'; evDlg.dataset.mode = mode; renderEval(); if (evDlg.showModal && !evDlg.open) evDlg.showModal(); else evDlg.setAttribute('open', ''); }
 function renderMkt() {
   const up = document.getElementById('mktUpd'), body = document.getElementById('mktBody'); if (!up || !body || !QF) return;
   up.replaceChildren(); body.replaceChildren(); up.classList.remove('c-ok', 'c-yel', 'c-warn', 'c-risk');
@@ -3742,28 +3753,36 @@ const safeUrl = (u) => (typeof u === 'string' && /^https:\/\/[^\s"'<>]+$/.test(u
 function el(tag, cls, text) { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
 function link(nome, url, data) { const u = safeUrl(url); const a = u ? el('a', null, nome || u) : el('span', null, nome || ''); if (u) { a.href = u; a.target = '_blank'; a.rel = 'noopener noreferrer'; } const w = el('span'); w.append(a); if (data) w.append(document.createTextNode(' · ' + data)); return w; }
 // ---- notizie per fonte (notizie.json, archivio di 1 anno)
-let NEWS = null; fetch('notizie.json', {cache: 'no-store'}).then(r => r.ok ? r.json() : null).then(j => { NEWS = j; if (typeof evBody !== 'undefined' && EVAL && EVAL.state === 'ok') renderEval(); }).catch(() => {});
+let NEWS = null; fetch('notizie.json', {cache: 'no-store'}).then(r => r.ok ? r.json() : null).then(j => { NEWS = j; if (typeof evDlg !== 'undefined' && evDlg.open) renderEval(); }).catch(() => {});
 const TEMAICO = {Azioni: '📈', Tecnologia: '💻', IPO: '🚀', Liquidità: '💧', Mercati: '🏛️', 'Materie prime': '🪙', Macro: '🌐', Geopolitica: '🌍', Energia: '⛽', USA: '🇺🇸', Cripto: '₿', Banche: '🏦', Valute: '💱'};
-const NFONTI = [['casario', 'Marco Casario', 'Substack · Telegram · YouTube', 'nf-cas', 'https://substack.com/@marcocasario'], ['zerohedge', 'ZeroHedge', 'zerohedge.com · tradotto in italiano', 'nf-zh', 'https://www.zerohedge.com'], ['scenarieconomici', 'Scenari Economici', 'Economia e finanza', 'nf-se', 'https://scenarieconomici.it/economia/finanza/']];
+const NFONTI = [['milanofinanza', 'Milano Finanza', 'Borsa e finanza italiana', 'nf-mf', 'https://www.milanofinanza.it/', 'MF', 'Milano Finanza'], ['scenarieconomici', 'Scenari Economici', 'Economia e finanza', 'nf-se', 'https://scenarieconomici.it/economia/finanza/', 'SE', 'Scenari Economici'], ['zerohedge', 'ZeroHedge', 'Mercati, macro e geopolitica · tradotto', 'nf-zh', 'https://www.zerohedge.com/', 'ZH', 'ZERO HEDGE'], ['web', 'Notizie dal web', 'Le più rilevanti dai siti esteri di finanza', 'nf-web', null, '🌐', 'DAL MONDO']];
 function renderNotizieFonti() {
   const sec = el('section', 'gz-news'); sec.append(el('h3', 'gz-h', 'Notizie da:'));
   if (!NEWS || !(NEWS.voci || []).length) { sec.append(el('p', 'muted', 'Notizie in arrivo: compaiono con il prossimo «aggiorna tutto».')); return sec; }
   const fmt = d => d ? new Date(d + 'T12:00:00Z').toLocaleDateString('it-IT', {day: 'numeric', month: 'long'}) : '';
   const grid = el('div', 'gz-cols');
-  for (const [id, nome, sub, cls, home] of NFONTI) {
+  for (const [id, nome, sub, cls, home, sig, brand] of NFONTI) {
     const all = NEWS.voci.filter(x => x.fonte === id).sort((a, b) => (b.agg - a.agg) || String(b.data || b.visto).localeCompare(String(a.data || a.visto)));
     const nuove = all.filter(x => x.agg === NEWS.ultimo_agg), prec = all.filter(x => x.agg !== NEWS.ultimo_agg);
-    const col = el('div', 'gz-col ' + cls); const h = el('div', 'gz-colh'); const a = el('a', null, nome); a.href = home; a.target = '_blank'; a.rel = 'noopener noreferrer'; h.append(a, el('span', 'sub', sub), el('span', 'cnt', nuove.length + ' nuove')); col.append(h);
-    const card = (x, old, lead) => { const c = el('article', 'gz-card' + (old ? ' old' : '') + (lead ? ' lead' : '')); const th = el('div', 'gz-thumb'); th.append(el('span', 'gz-ico', TEMAICO[x.tema] || '📰'), el('span', 'gz-tt', x.tema || nome)); c.append(th); const m = el('div', 'gz-meta'); if (x.tema) m.append(el('span', 'tag', x.tema)); m.append(el('span', null, x.data ? fmt(x.data) : 'rilevata il ' + fmt(x.visto))); c.append(m);
-      const u = safeUrl(x.url); const t = el('h4'); if (u) { const l = el('a', null, x.titolo); l.href = u; l.target = '_blank'; l.rel = 'noopener noreferrer'; t.append(l); } else t.append(x.titolo); c.append(t, el('p', null, x.sintesi)); return c; };
-    if (!nuove.length) col.append(el('p', 'muted', 'Nessuna novità in questo aggiornamento.')); nuove.forEach((x, k) => col.append(card(x, false, k === 0)));
+    const col = el('div', 'gz-col ' + cls); const h = el('div', 'gz-colh');
+    const nm = home ? el('a', null, nome) : el('span', 'nm', nome); if (home) { nm.href = home; nm.target = '_blank'; nm.rel = 'noopener noreferrer'; }
+    h.append(nm, el('span', 'cnt', nuove.length + ' nuove')); col.append(h);
+    const br = el('div', 'gz-brand'); br.append(el('b', 'sig', sig), el('span', 'bn', brand), el('span', 'sub', sub)); col.append(br);
+    const card = (x, old) => { const c = el('article', 'gz-card' + (old ? ' old' : '') + (x.abbonamento ? ' lock' : '')); const m = el('div', 'gz-meta');
+      if (x.tema) m.append(el('span', 'tag', x.tema)); if (x.sito) m.append(el('span', 'tag sito', x.sito)); m.append(el('span', null, x.data ? fmt(x.data) : 'rilevata il ' + fmt(x.visto))); c.append(m);
+      const u = x.abbonamento ? null : safeUrl(x.url); const t = el('h4');
+      if (x.abbonamento) t.append(el('span', 'lk', '🔒'), document.createTextNode(x.titolo)); else if (u) { const l = el('a', null, x.titolo); l.href = u; l.target = '_blank'; l.rel = 'noopener noreferrer'; t.append(l); } else t.append(x.titolo);
+      c.append(t, el('p', null, x.sintesi)); if (x.abbonamento) c.append(el('div', 'gz-pay', '🔒 Articolo per abbonati: qui solo il riassunto, senza link')); return c; };
+    if (!nuove.length) col.append(el('p', 'muted', 'Nessuna novità in questo aggiornamento.')); nuove.forEach(x => col.append(card(x, false)));
     if (prec.length) { const box = el('div', 'gz-prec'); box.hidden = true; const bt = el('button', 'btn gz-btn', 'Precedenti (' + prec.length + ')'); bt.type = 'button';
       bt.addEventListener('click', () => { if (!box.children.length) prec.forEach(x => box.append(card(x, true))); box.hidden = !box.hidden; bt.textContent = box.hidden ? 'Precedenti (' + prec.length + ')' : 'Nascondi precedenti'; }); col.append(bt, box); }
     grid.append(col); }
-  sec.append(grid, el('p', 'ev-meta', 'Sintesi in italiano scritte con parole nostre; il titolo apre l\'articolo originale. L\'archivio conserva un anno di notizie. Fonti segnalate dall\'utente, non verificate: sono opinioni e cronaca, non dati del modello.')); return sec;
+  sec.append(grid, el('p', 'ev-meta', 'Riassunti in italiano scritti con parole nostre; il titolo apre l\'articolo originale (🔒 = a pagamento, senza link). L\'archivio conserva un anno. Sono cronaca e opinioni di terzi, non dati del modello.')); return sec;
 }
 function renderEval() {
   evBody.replaceChildren();
+  if (evDlg.dataset.mode === 'notizie') { const gz = el('div', 'giornale'), mh = el('div', 'gz-mast'); const ag = NEWS && NEWS.aggiornato ? new Date(NEWS.aggiornato + 'T12:00:00Z').toLocaleDateString('it-IT', {day: 'numeric', month: 'long', year: 'numeric'}) : '';
+    mh.append(el('div', 'gz-kick', 'Analisi Finanziaria'), el('h2', 'gz-name', 'Il Quotidiano dei Mercati'), el('div', 'gz-date', 'Notizie aggiornate al ' + ag)); gz.append(mh, renderNotizieFonti()); evBody.append(gz); document.getElementById('evLast').textContent = 'Notizie aggiornate al ' + ag; return; }
   const v = EVAL;
   document.getElementById('evLast').textContent = 'Ultimo aggiornamento: ' + (v && v.state === 'ok' && v.at ? whenIt(v.at) : 'nessuna valutazione salvata');
   if (!v || v.state !== 'ok') {

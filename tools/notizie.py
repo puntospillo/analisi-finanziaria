@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Unisce le nuove notizie (per fonte) in notizie.json e tiene 365 giorni.
 Uso: python3 tools/notizie.py /tmp/notizie_nuove.json
-Ogni voce: {fonte: casario|zerohedge|scenarieconomici, titolo, sintesi (italiano, parafrasi), url, data (YYYY-MM-DD o null), tema}"""
+Ogni voce: {fonte: milanofinanza|scenarieconomici|zerohedge|web, titolo, sintesi (italiano, parafrasi), url, data (YYYY-MM-DD o null), tema, abbonamento (true se a pagamento: senza link), sito (solo per web)}"""
 import json, sys, datetime as dt
-F = 'notizie.json'; FONTI = {'casario', 'zerohedge', 'scenarieconomici'}; oggi = dt.date.today().isoformat()
+F = 'notizie.json'; FONTI = {'milanofinanza', 'scenarieconomici', 'zerohedge', 'web'}; oggi = dt.date.today().isoformat()
 try: arc = json.load(open(F))
 except Exception: arc = {'voci': []}
 nuove = json.load(open(sys.argv[1])); noti = {v['url'] + '|' + v['titolo'] for v in arc['voci']}
