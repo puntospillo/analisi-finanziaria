@@ -30,6 +30,6 @@ Il colore del riquadro lo calcola la pagina dalla variazione del giorno. Se la c
 ## Notizie per fonte (v2.6)
 A ogni «aggiorna tutto» cercare le novità di 3 fonti e scrivere `/tmp/notizie_nuove.json` (lista di voci), poi `python3 tools/notizie.py /tmp/notizie_nuove.json` (deduplica, tiene 365 giorni in `notizie.json`; le voci dell'ultimo aggiornamento sono le «nuove», le altre stanno sotto «Precedenti»).
 - Voce: `{fonte: casario|zerohedge|scenarieconomici, titolo, sintesi, url, data (YYYY-MM-DD|null), tema}`; titolo e sintesi in italiano, parafrasi con parole proprie (mai testo copiato, citazioni <15 parole), 3–7 voci per fonte.
-- Marco Casario: Substack/Telegram non trovati (v2.6); si usano i suoi episodi YouTube/podcast «The 10Min Trader» via ricerca web. Se l'utente indica il link esatto del canale, usarlo.
+- Marco Casario: profilo Substack https://substack.com/@marcocasario (≈29.000 iscritti; newsletter marcocasario.substack.com, NON raggiungibile da WebFetch: fuori allowlist); la pagina profilo non elenca i post. Telegram non trovato. Si usano i suoi episodi YouTube/podcast «The 10Min Trader» via ricerca web. Se l'utente indica il link esatto del canale, usarlo.
 - ZeroHedge: WebFetch di zerohedge.com (articoli «Premium» solo titolo); Scenari Economici: WebFetch di scenarieconomici.it/economia/finanza/ (date solo relative: stimarle).
 - Pubblicare anche `notizie.json` (aggiungerlo a `tools/pubblica.sh` se non è già incluso).

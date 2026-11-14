@@ -3735,7 +3735,7 @@ function el(tag, cls, text) { const e = document.createElement(tag); if (cls) e.
 function link(nome, url, data) { const u = safeUrl(url); const a = u ? el('a', null, nome || u) : el('span', null, nome || ''); if (u) { a.href = u; a.target = '_blank'; a.rel = 'noopener noreferrer'; } const w = el('span'); w.append(a); if (data) w.append(document.createTextNode(' · ' + data)); return w; }
 // ---- notizie per fonte (notizie.json, archivio di 1 anno)
 let NEWS = null; fetch('notizie.json', {cache: 'no-store'}).then(r => r.ok ? r.json() : null).then(j => { NEWS = j; if (typeof evBody !== 'undefined' && EVAL && EVAL.state === 'ok') renderEval(); }).catch(() => {});
-const NFONTI = [['casario', 'Marco Casario', 'Telegram · Substack · YouTube', 'nf-cas', 'https://www.youtube.com/user/marcocasario'], ['zerohedge', 'ZeroHedge', 'zerohedge.com · tradotto in italiano', 'nf-zh', 'https://www.zerohedge.com'], ['scenarieconomici', 'Scenari Economici', 'Economia e finanza', 'nf-se', 'https://scenarieconomici.it/economia/finanza/']];
+const NFONTI = [['casario', 'Marco Casario', 'Substack · Telegram · YouTube', 'nf-cas', 'https://substack.com/@marcocasario'], ['zerohedge', 'ZeroHedge', 'zerohedge.com · tradotto in italiano', 'nf-zh', 'https://www.zerohedge.com'], ['scenarieconomici', 'Scenari Economici', 'Economia e finanza', 'nf-se', 'https://scenarieconomici.it/economia/finanza/']];
 function renderNotizieFonti() {
   const sec = el('section', 'gz-news'); sec.append(el('h3', 'gz-h', 'Notizie da:'));
   if (!NEWS || !(NEWS.voci || []).length) { sec.append(el('p', 'muted', 'Notizie in arrivo: compaiono con il prossimo «aggiorna tutto».')); return sec; }
