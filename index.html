@@ -957,9 +957,9 @@ body.tech-on .secnav .tl{display:inline-block}
 .gz-meta .tag.sito{background:color-mix(in srgb,#12a58a 16%,var(--panel))}
 #evalDlg[data-mode="notizie"] .ev-top,#evalDlg[data-mode="notizie"] .evprog{display:none!important}
 .gz-cols{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
-.gz-card.fresh{background:linear-gradient(180deg,#fff8dc,#fff1c2);border:1px solid #f0d36a;border-radius:10px;padding:8px 10px 10px;box-shadow:0 2px 8px rgba(224,177,0,.18)}
-.gz-card.fresh::before{content:'NUOVA';justify-self:start;font:800 .62rem var(--font-display);letter-spacing:.12em;background:#e0b100;color:#3a2a00;border-radius:4px;padding:1px 6px}
-.gz-card.lock.fresh{background:repeating-linear-gradient(135deg,#fff8dc 0 10px,#fff1c2 10px 20px)}
+.gz-card.fresh{background:#fff;border:1px solid #cfe9d6;border-radius:10px;padding:8px 10px 10px}
+.gz-card.fresh::before{content:'NUOVA';justify-self:start;font:800 .62rem var(--font-display);letter-spacing:.12em;background:#cfe9d6;color:#1d5a32;border-radius:4px;padding:1px 6px}
+.gz-card.lock.fresh{background:repeating-linear-gradient(135deg,transparent 0 10px,color-mix(in srgb,var(--muted) 6%,transparent) 10px 20px)}
 #evalDlg[data-mode="notizie"]{max-width:min(1560px,calc(100vw - 24px))}
 .gz-cols{grid-template-columns:repeat(4,minmax(0,1fr))!important}
 @media(max-width:1100px){.gz-cols{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
@@ -3763,18 +3763,20 @@ function link(nome, url, data) { const u = safeUrl(url); const a = u ? el('a', n
 // ---- notizie per fonte (notizie.json, archivio di 1 anno)
 let NEWS = null; fetch('notizie.json', {cache: 'no-store'}).then(r => r.ok ? r.json() : null).then(j => { NEWS = j; if (typeof evDlg !== 'undefined' && evDlg.open) renderEval(); }).catch(() => {});
 const TEMAICO = {Azioni: '📈', Tecnologia: '💻', IPO: '🚀', Liquidità: '💧', Mercati: '🏛️', 'Materie prime': '🪙', Macro: '🌐', Geopolitica: '🌍', Energia: '⛽', USA: '🇺🇸', Cripto: '₿', Banche: '🏦', Valute: '💱'};
-const NFONTI = [['milanofinanza', 'Milano Finanza', 'Borsa e finanza italiana', 'nf-mf', 'https://www.milanofinanza.it/', 'MF', 'Milano Finanza'], ['scenarieconomici', 'Scenari Economici', 'Economia e finanza', 'nf-se', 'https://scenarieconomici.it/economia/finanza/', 'SE', 'Scenari Economici'], ['zerohedge', 'ZeroHedge', 'Mercati, macro e geopolitica · tradotto', 'nf-zh', 'https://www.zerohedge.com/', 'ZH', 'ZERO HEDGE'], ['web', 'Notizie dal web', 'Le più rilevanti dai siti esteri di finanza', 'nf-web', null, '🌐', 'DAL MONDO']];
+const NFONTI = [['web', 'Notizie dal web', 'Le più rilevanti dai siti esteri di finanza', 'nf-web', null, '🌐', 'DAL MONDO'], ['milanofinanza', 'Milano Finanza', 'Borsa e finanza italiana', 'nf-mf', 'https://www.milanofinanza.it/', 'MF', 'Milano Finanza'], ['scenarieconomici', 'Scenari Economici', 'Economia e finanza', 'nf-se', 'https://scenarieconomici.it/economia/finanza/', 'SE', 'Scenari Economici'], ['zerohedge', 'ZeroHedge', 'Mercati, macro e geopolitica · tradotto', 'nf-zh', 'https://www.zerohedge.com/', 'ZH', 'ZERO HEDGE']];
 function renderNotizieFonti() {
   const sec = el('section', 'gz-news'); sec.append(el('h3', 'gz-h', 'Notizie da:'));
   if (!NEWS || !(NEWS.voci || []).length) { sec.append(el('p', 'muted', 'Notizie in arrivo: compaiono con il prossimo «aggiorna tutto».')); return sec; }
   const fmt = d => d ? new Date(d + 'T12:00:00Z').toLocaleDateString('it-IT', {day: 'numeric', month: 'long'}) : '';
   const grid = el('div', 'gz-cols');
   for (const [id, nome, sub, cls, home, sig, brand] of NFONTI) {
-    const lim = new Date(Date.now() - 7 * 864e5).toISOString().slice(0, 10), isNew = x => x.agg === NEWS.ultimo_agg;
-    const cmp = (a, b) => (isNew(b) - isNew(a)) || String(b.data || b.visto).localeCompare(String(a.data || a.visto));
-    const vis = NEWS.voci.filter(x => x.fonte === id && (isNew(x) || String(x.data || x.visto) >= lim));
+    const dAgo = n => new Date(Date.now() - n * 864e5).toISOString().slice(0, 10), l7 = dAgo(7), l30 = dAgo(30), isNew = x => x.agg === NEWS.ultimo_agg, dd = x => String(x.data || x.visto);
+    const cmp = (a, b) => (isNew(b) - isNew(a)) || dd(b).localeCompare(dd(a));
+    const mine = NEWS.voci.filter(x => x.fonte === id);
+    const vis = mine.filter(x => isNew(x) || dd(x) >= l7);
     const nuove = vis.filter(x => !x.abbonamento).sort(cmp).concat(vis.filter(x => x.abbonamento).sort(cmp));
-    const prec = NEWS.voci.filter(x => x.fonte === id && !vis.includes(x)).sort(cmp);
+    const prosegui = mine.filter(x => !vis.includes(x) && dd(x) >= l30).sort(cmp);
+    const prec = mine.filter(x => !vis.includes(x) && dd(x) < l30).sort(cmp);
     const nNew = vis.filter(isNew).length;
     const col = el('div', 'gz-col ' + cls); const h = el('div', 'gz-colh');
     const nm = home ? el('a', null, nome) : el('span', 'nm', nome); if (home) { nm.href = home; nm.target = '_blank'; nm.rel = 'noopener noreferrer'; }
@@ -3785,11 +3787,12 @@ function renderNotizieFonti() {
       const u = x.abbonamento ? null : safeUrl(x.url); const t = el('h4');
       if (x.abbonamento) t.append(el('span', 'lk', '🔒'), document.createTextNode(x.titolo)); else if (u) { const l = el('a', null, x.titolo); l.href = u; l.target = '_blank'; l.rel = 'noopener noreferrer'; t.append(l); } else t.append(x.titolo);
       c.append(t, el('p', null, x.sintesi)); if (x.abbonamento) c.append(el('div', 'gz-pay', '🔒 Articolo per abbonati: qui solo il riassunto, senza link')); return c; };
-    if (!nuove.length) col.append(el('p', 'muted', 'Nessuna notizia negli ultimi 7 giorni.')); nuove.forEach(x => col.append(card(x, false)));
-    if (prec.length) { const box = el('div', 'gz-prec'); box.hidden = true; const bt = el('button', 'btn gz-btn', 'Precedenti (' + prec.length + ')'); bt.type = 'button';
-      bt.addEventListener('click', () => { if (!box.children.length) prec.forEach(x => box.append(card(x, true))); box.hidden = !box.hidden; bt.textContent = box.hidden ? 'Precedenti (' + prec.length + ')' : 'Nascondi precedenti'; }); col.append(bt, box); }
+    if (!nuove.length) col.append(el('p', 'muted', 'Nessuna notizia negli ultimi 7 giorni: usa «Prosegui».')); nuove.forEach(x => col.append(card(x, false)));
+    const more = (list, lab, hide) => { if (!list.length) return; const box = el('div', 'gz-prec'); box.hidden = true; const bt = el('button', 'btn gz-btn', lab + ' (' + list.length + ')'); bt.type = 'button';
+      bt.addEventListener('click', () => { if (!box.children.length) list.forEach(x => box.append(card(x, true))); box.hidden = !box.hidden; bt.textContent = box.hidden ? lab + ' (' + list.length + ')' : hide; }); col.append(bt, box); };
+    more(prosegui, 'Prosegui ▾', 'Nascondi'); more(prec, 'Archivio (oltre un mese)', 'Nascondi archivio');
     grid.append(col); }
-  sec.append(grid, el('p', 'ev-meta', 'Riassunti in italiano scritti con parole nostre; il titolo apre l\'articolo originale (🔒 = a pagamento, senza link). L\'archivio conserva un anno. Sono cronaca e opinioni di terzi, non dati del modello.')); return sec;
+  sec.append(grid, el('p', 'ev-meta', 'Riassunti in italiano scritti con parole nostre; il titolo apre l\'articolo originale (🔒 = a pagamento, senza link). In linea gli ultimi 7 giorni, «Prosegui» arriva a un mese, l\'archivio conserva un anno. Sono cronaca e opinioni di terzi, non dati del modello.')); return sec;
 }
 function renderEval() {
   evBody.replaceChildren();

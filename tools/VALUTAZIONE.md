@@ -35,3 +35,4 @@ Pagina Notizie = solo notizie (niente valutazione). A ogni «aggiorna tutto» ce
 - Scenari Economici: WebFetch di scenarieconomici.it/economia/finanza/ (date solo relative: stimarle). ZeroHedge: WebFetch di zerohedge.com (articoli «Premium» = abbonamento:true).
 - Notizie dal web: le più rilevanti da siti esteri di finanza (Reuters, AP, Bloomberg, CNBC, Yahoo Finance, Motley Fool…) via WebSearch in modalità «extended» con la data odierna e di ieri nella query (es. «Wall Street close November 13»); scartare risultati più vecchi di 2 giorni, salvo analisi eccezionali.
 - Marco Casario: tolto (richiesta del 14/11).
+- REGOLA FISSA (14/11): cercare sempre le notizie PIÙ RECENTI (oggi e ieri), per ogni fonte; mai riempire con articoli vecchi. Layout: nuove in alto (sfondo bianco, etichetta «NUOVA»), ultimi 7 giorni in linea, «Prosegui» in fondo fino a 30 giorni, «Archivio» oltre il mese (365 giorni).
