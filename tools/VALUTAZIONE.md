@@ -33,5 +33,5 @@ Pagina Notizie = solo notizie (niente valutazione). A ogni «aggiorna tutto» ce
 - Titolo e sintesi in italiano, parafrasi con parole proprie (mai testo copiato, citazioni <15 parole); sintesi di 3-6 frasi con cifre e nomi; 4-10 voci per fonte.
 - Milano Finanza: WebFetch di milanofinanza.it NON consentito (fuori allowlist): usare WebSearch con allowed_domains ["milanofinanza.it"] (dirette «Borse oggi in diretta», Btp/spread).
 - Scenari Economici: WebFetch di scenarieconomici.it/economia/finanza/ (date solo relative: stimarle). ZeroHedge: WebFetch di zerohedge.com (articoli «Premium» = abbonamento:true).
-- Notizie dal web: le più rilevanti da siti esteri di finanza (Reuters, AP, Bloomberg, Zacks…) via WebSearch.
+- Notizie dal web: le più rilevanti da siti esteri di finanza (Reuters, AP, Bloomberg, CNBC, Yahoo Finance, Motley Fool…) via WebSearch in modalità «extended» con la data odierna e di ieri nella query (es. «Wall Street close November 13»); scartare risultati più vecchi di 2 giorni, salvo analisi eccezionali.
 - Marco Casario: tolto (richiesta del 14/11).
