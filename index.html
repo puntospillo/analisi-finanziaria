@@ -955,6 +955,9 @@ body.tech-on .secnav .tl{display:inline-block}
 .gz-card.lock{background:repeating-linear-gradient(135deg,transparent 0 10px,color-mix(in srgb,var(--muted) 6%,transparent) 10px 20px);border-radius:8px;padding:6px 8px 10px}
 .gz-card h4 .lk{margin-right:6px}.gz-pay{font-size:.74rem;font-weight:700;color:#8a5a00;background:#fff4d6;border:1px solid #f0d58a;border-radius:6px;padding:2px 8px;justify-self:start}
 .gz-meta .tag.sito{background:color-mix(in srgb,#12a58a 16%,var(--panel))}
+.gz-meta{flex-wrap:wrap;gap:4px 6px}.gz-meta .tag{--tc:#4a5d8f;background:color-mix(in srgb,var(--tc) 14%,#fff);color:var(--tc);border:1px solid color-mix(in srgb,var(--tc) 35%,#fff);white-space:nowrap;font-size:.7rem;letter-spacing:.02em}
+.gz-meta .tag.sito{--tc:#0b6b74;background:#e4f5f3;border-color:#b6e0db}.gz-meta .dt{margin-left:auto;white-space:nowrap;font-weight:600;font-size:.7rem}
+.gz-brand{text-decoration:none;position:relative}.gz-brand .cnt{margin-left:auto;font:800 .72rem var(--font-display);background:rgba(255,255,255,.95);color:#12304f;border-radius:99px;padding:2px 10px;white-space:nowrap}
 #evalDlg[data-mode="notizie"] .ev-top,#evalDlg[data-mode="notizie"] .evprog{display:none!important}
 .gz-cols{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
 .gz-card.fresh{background:#fff;border:1px solid #cfe9d6;border-radius:10px;padding:8px 10px 10px}
@@ -3763,6 +3766,7 @@ function link(nome, url, data) { const u = safeUrl(url); const a = u ? el('a', n
 // ---- notizie per fonte (notizie.json, archivio di 1 anno)
 let NEWS = null; fetch('notizie.json', {cache: 'no-store'}).then(r => r.ok ? r.json() : null).then(j => { NEWS = j; if (typeof evDlg !== 'undefined' && evDlg.open) renderEval(); }).catch(() => {});
 const TEMAICO = {Azioni: '📈', Tecnologia: '💻', IPO: '🚀', Liquidità: '💧', Mercati: '🏛️', 'Materie prime': '🪙', Macro: '🌐', Geopolitica: '🌍', Energia: '⛽', USA: '🇺🇸', Cripto: '₿', Banche: '🏦', Valute: '💱'};
+const TEMACOL = {Mercati: '#2b6cb0', 'Piazza Affari': '#c8102e', Tassi: '#7a3fb0', Macro: '#0e7c86', USA: '#1f4f9e', Tecnologia: '#6b46c1', Energia: '#d9730d', 'Materie prime': '#a67c00', Geopolitica: '#b4283c', Banche: '#12805c', Obbligazioni: '#3a7d44', Valute: '#0b7fab', Cripto: '#e08a00'};
 const NFONTI = [['web', 'Notizie dal web', 'Le più rilevanti dai siti esteri di finanza', 'nf-web', null, '🌐', 'DAL MONDO'], ['milanofinanza', 'Milano Finanza', 'Borsa e finanza italiana', 'nf-mf', 'https://www.milanofinanza.it/', 'MF', 'Milano Finanza'], ['scenarieconomici', 'Scenari Economici', 'Economia e finanza', 'nf-se', 'https://scenarieconomici.it/economia/finanza/', 'SE', 'Scenari Economici'], ['zerohedge', 'ZeroHedge', 'Mercati, macro e geopolitica · tradotto', 'nf-zh', 'https://www.zerohedge.com/', 'ZH', 'ZERO HEDGE']];
 function renderNotizieFonti() {
   const sec = el('section', 'gz-news'); sec.append(el('h3', 'gz-h', 'Notizie da:'));
@@ -3778,12 +3782,11 @@ function renderNotizieFonti() {
     const prosegui = mine.filter(x => !vis.includes(x) && dd(x) >= l30).sort(cmp);
     const prec = mine.filter(x => !vis.includes(x) && dd(x) < l30).sort(cmp);
     const nNew = vis.filter(isNew).length;
-    const col = el('div', 'gz-col ' + cls); const h = el('div', 'gz-colh');
-    const nm = home ? el('a', null, nome) : el('span', 'nm', nome); if (home) { nm.href = home; nm.target = '_blank'; nm.rel = 'noopener noreferrer'; }
-    h.append(nm, el('span', 'cnt', nNew + ' nuove')); col.append(h);
-    const br = el('div', 'gz-brand'); br.append(el('b', 'sig', sig), el('span', 'bn', brand), el('span', 'sub', sub)); col.append(br);
+    const col = el('div', 'gz-col ' + cls);
+    const br = el(home ? 'a' : 'div', 'gz-brand'); if (home) { br.href = home; br.target = '_blank'; br.rel = 'noopener noreferrer'; br.title = 'Apri ' + nome; }
+    br.append(el('b', 'sig', sig), el('span', 'bn', brand), el('span', 'cnt', nNew + (nNew === 1 ? ' nuova' : ' nuove')), el('span', 'sub', sub)); col.append(br);
     const card = (x, old) => { const c = el('article', 'gz-card' + (old ? ' old' : '') + (x.abbonamento ? ' lock' : '') + (!old && x.agg === NEWS.ultimo_agg ? ' fresh' : '')); const m = el('div', 'gz-meta');
-      if (x.tema) m.append(el('span', 'tag', x.tema)); if (x.sito && x.sito !== x.tema) m.append(el('span', 'tag sito', x.sito)); m.append(el('span', null, x.data ? fmt(x.data) : 'rilevata il ' + fmt(x.visto))); c.append(m);
+      if (x.tema) { const tg = el('span', 'tag', x.tema); tg.style.setProperty('--tc', TEMACOL[x.tema] || '#4a5d8f'); m.append(tg); } if (x.sito && x.sito !== x.tema) m.append(el('span', 'tag sito', x.sito)); m.append(el('span', 'dt', x.data ? fmt(x.data) : 'rilevata il ' + fmt(x.visto))); c.append(m);
       const u = x.abbonamento ? null : safeUrl(x.url); const t = el('h4');
       if (x.abbonamento) t.append(el('span', 'lk', '🔒'), document.createTextNode(x.titolo)); else if (u) { const l = el('a', null, x.titolo); l.href = u; l.target = '_blank'; l.rel = 'noopener noreferrer'; t.append(l); } else t.append(x.titolo);
       c.append(t, el('p', null, x.sintesi)); if (x.abbonamento) c.append(el('div', 'gz-pay', '🔒 Articolo per abbonati: qui solo il riassunto, senza link')); return c; };
