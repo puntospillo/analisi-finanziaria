@@ -1,7 +1,7 @@
 {
- "rid": "vmwjrl1bm",
+ "rid": "vmwjrvcrn",
  "state": "ok",
- "at": "2026-11-16T21:17:13Z",
+ "at": "2026-11-16T21:25:14Z",
  "app_version": "2.6",
  "data_as_of": "2026-11-16",
  "settings_key": "10lt6nt",
@@ -214,13 +214,13 @@
    "mercato": "Italia",
    "nome": "Eni",
    "direzione": "interessante",
-   "tesi": "Gruppo energetico integrato: nel terzo trimestre utile netto rettificato 2,8 miliardi di euro (stima 2,48), più che raddoppiato; buyback 2026 alzato a 3,8 miliardi, dividendo straordinario di 0,46 € (pagamento 9 dicembre) oltre all'ordinario di 1,10 €; debito basso (gearing 9%).",
-   "perche_ora": "Con il petrolio sopra 100 dollari fa da copertura contro l'inflazione; il 30 ottobre è stato l'unico grande titolo di Milano in rialzo (+0,91%).",
-   "rischi": "Un calo rapido del petrolio (accordo USA–Iran, rallentamento) ridurrebbe utili e riacquisti; rischi politici nei paesi di produzione.",
+   "tesi": "Gruppo energetico integrato: terzo trimestre con utile netto rettificato 2,8 miliardi di euro (più che raddoppiato) e flusso di cassa 2026 atteso a 16,5 miliardi; buyback 2026 a 3,8 miliardi, dividendo straordinario 0,46 € (pagamento 9 dicembre) oltre all'ordinario di 1,10 €.",
+   "perche_ora": "Il 16 novembre il Brent è sceso a 92,3 dollari (−3,7%) e l'IEA prevede un surplus di offerta nel quarto trimestre. La politica di Eni distribuisce il 60% dell'extra flusso di cassa fino a uno scenario Brent di 90 dollari: sotto quella soglia i riacquisti aggiuntivi si ridurrebbero. Il titolo è un test di quanto il petrolio più basso sia già nei prezzi.",
+   "rischi": "Un Brent stabilmente sotto 90 dollari taglierebbe utili e riacquisti; il dividendo straordinario è già annunciato ma non quello del 2027. Rischi politici nei paesi di produzione.",
    "orizzonte": "6–12 mesi",
-   "fonte": "Investing.com Italia; SoldiOnline",
-   "url": "https://it.investing.com/news/earnings/eni-supera-le-stime-sullutile-q3-buyback-12-e-dividendo-straordinario-3602738",
-   "data": "2026-10-30",
+   "fonte": "Teleborsa (risultati del 23/10); Teleborsa (petrolio, 16/11)",
+   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/petrolio-in-calo-aumenta-l-attesa-per-un-surplus-di-offerta-tornano-a-crescere-i-flussi-dal-medio-oriente-169_2026-11-16_TLB.html",
+   "data": "2026-11-16",
    "prezzo_rif": "25,84 € (Yahoo Finance, 16/11/2026)"
   },
   {
@@ -239,6 +239,23 @@
    "url": "https://www.ansa.it/sito/notizie/economia/2026/11/09/borsa-milano-chiude-in-forte-rialzo-ftse-mib-269_715fcd25-4783-4993-8dc4-a2270981ec05.html",
    "data": "2026-11-09",
    "link_sito": "Investing.com"
+  },
+  {
+   "categoria": "azione",
+   "mercato": "Italia",
+   "nome": "Leonardo",
+   "ticker": "LDO.MI",
+   "direzione": "interessante",
+   "tesi": "Gruppo italiano di difesa, aerospazio e sicurezza: nei primi nove mesi ordini 23,3 miliardi di euro (+27,8%), portafoglio ordini sopra 60 miliardi per la prima volta, ricavi 15,3 miliardi (+14,2%) e utile netto rettificato 812 milioni (+74,2%). Guidance ordini 2026 alzata a circa 29,5 miliardi.",
+   "perche_ora": "Il 16 novembre la difesa è stata tra i pochi settori in rialzo a Milano (Leonardo +0,86%, Avio +3,43%) mentre tecnologia e auto cedevano: offre una domanda indipendente dai tassi e dall'IA. Dopo i conti del 5 novembre il titolo non ha però brillato.",
+   "rischi": "Indebitamento netto 3,3 miliardi (+43,8%) dopo l'acquisizione di IDV; il settore difesa è volatile e sensibile a notizie su Ucraina e bilanci pubblici; guidance su ricavi ed EBITA solo confermata.",
+   "orizzonte": "6–12 mesi",
+   "link": "https://it.investing.com/equities/leonardo",
+   "link_sito": "Investing.com",
+   "fonte": "Teleborsa (conti 9 mesi, 05/11; commento Milano 16/11)",
+   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/leonardo-alza-guidance-su-ordini-portafoglio-sfonda-quota-60-miliardi-di-euro-nei-9-mesi-13_2026-11-05_TLB.html?lang=it",
+   "data": "2026-11-05",
+   "prezzo_rif": "50,53 € (Yahoo Finance, 16/11/2026)"
   },
   {
    "categoria": "azione",
@@ -263,15 +280,15 @@
    "nome": "TotalEnergies (Francia)",
    "ticker": "TTE (Parigi)",
    "direzione": "interessante",
-   "tesi": "Utile netto rettificato del terzo trimestre a 9,1 miliardi di dollari (da 6,0 nel secondo), flusso di cassa operativo 12,3 miliardi e debito netto sceso a 13,8 miliardi (indebitamento al 9,1% del capitale). Riacquisti per 1,5 miliardi nel trimestre.",
-   "perche_ora": "Copertura naturale contro il rischio petrolio (Brent a 115 dollari) e contro l'inflazione che spinge le banche centrali a rialzare; bilancio molto solido.",
-   "rischi": "Un accordo USA–Iran può far scendere rapidamente il petrolio; il Brent medio del trimestre era già sceso a 97 dollari dai 104 del secondo. Rischi politici e fiscali sui profitti energetici in Europa.",
+   "tesi": "Compagnia petrolifera e dell'energia elettrica: nel terzo trimestre utile netto rettificato 9,1 miliardi di dollari (+51% sul secondo trimestre), flusso di cassa 12,3 miliardi, buyback di 2,5 miliardi per i prossimi due trimestri e acconto sul dividendo di 0,90 € (+5,9%).",
+   "perche_ora": "Il Brent medio del terzo trimestre è stato 97 dollari (103,8 nel secondo); oggi è a circa 92. I conti record riflettono prezzi che stanno già scendendo: il mercato deve decidere se i riacquisti reggono con un petrolio più basso.",
+   "rischi": "Il petrolio in calo ridurrebbe utili e flussi del quarto trimestre; la parte elettrica e rinnovabile pesa poco sull'utile; eventi geopolitici possono invertire il quadro in entrambe le direzioni.",
    "orizzonte": "6–12 mesi",
    "link": "https://it.investing.com/equities/total",
    "link_sito": "Investing.com",
-   "fonte": "TotalEnergies (modulo 6-K alla SEC)",
-   "url": "https://www.sec.gov/Archives/edgar/data/0000879764/000110465926119833/tm2628392d1_ex99-1.htm",
-   "data": "2026-10-29",
+   "fonte": "TotalEnergies (comunicato 29/10); Teleborsa (petrolio, 16/11)",
+   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/petrolio-in-calo-aumenta-l-attesa-per-un-surplus-di-offerta-tornano-a-crescere-i-flussi-dal-medio-oriente-169_2026-11-16_TLB.html",
+   "data": "2026-11-16",
    "prezzo_rif": "81,96 € (Yahoo Finance, 16/11/2026)"
   },
   {
@@ -306,7 +323,7 @@
    "fonte": "Cappnotes – Closing Look",
    "url": "https://cappnotes.substack.com/p/closing-look-thursday-october-29",
    "data": "2026-10-29",
-   "prezzo_rif": "1434,38 $ (Yahoo Finance, 16/11/2026)"
+   "prezzo_rif": "1431,67 $ (Yahoo Finance, 16/11/2026)"
   },
   {
    "categoria": "etf",
@@ -387,14 +404,14 @@
    "isin": "IE00BMC38736",
    "direzione": "da evitare",
    "tesi": "Settore molto concentrato e legato agli investimenti nell'IA: da evitare di aumentare il peso finché il mercato giudica severamente chi spende senza generare cassa.",
-   "perche_ora": "Dopo il crollo dei chip del 5 novembre, il 9 novembre Nvidia ha perso il 4-5% per un'indagine interna sul suo amministratore delegato, mentre il resto della tecnologia rimbalzava: il settore resta il più esposto ai timori sull'intelligenza artificiale.",
-   "rischi": "Se i prossimi conti di Nvidia sorprendono in positivo il settore può rimbalzare in fretta: ridurre non significa azzerare.",
+   "perche_ora": "Il 16 novembre l'indice dei semiconduttori SOX ha perso il 3,7% (Intel −6,4%, Micron −5,8%, Nvidia −4,1%): Nvidia presenta i conti il 17 novembre a mercati chiusi, ha perso il CEO Jensen Huang e gli Stati Uniti hanno annunciato nuove restrizioni sui chip per la Cina.",
+   "rischi": "Se i conti di Nvidia sorprendono in positivo il settore può rimbalzare in fretta: ridurre non significa azzerare. Dopo cali così ampi il rischio di movimenti violenti in entrambe le direzioni è alto.",
    "orizzonte": "3–6 mesi",
    "link": "https://www.justetf.com/it/etf-profile.html?isin=IE00BMC38736",
    "link_sito": "justETF",
-   "fonte": "TheStreet",
-   "url": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-nov-09-202",
-   "data": "2026-11-09"
+   "fonte": "Teleborsa (Wall Street, 16/11)",
+   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/commenti/wall-street-in-rosso-nasdaq-e-sp-500-perdono-oltre-il-2-riflettori-su-nvidia-e-anthropic-233_2026-11-16_TLB.html",
+   "data": "2026-11-16"
   },
   {
    "categoria": "azione",
@@ -515,16 +532,16 @@
    "nome": "Halliburton",
    "ticker": "HAL",
    "direzione": "opportunità rischiosa",
-   "tesi": "Secondo gruppo mondiale di servizi petroliferi: flussi di cassa solidi e riacquisti, con il petrolio sopra 100 dollari.",
+   "tesi": "Secondo gruppo mondiale di servizi petroliferi: nel terzo trimestre ricavi 5,7 miliardi di dollari (stabili), utile netto rettificato 501 milioni ($0,60 per azione), riacquisti di 250 milioni e dividendo di $0,17. Nord America −5% sul trimestre precedente, estero +3%.",
    "sottovalutazione": "Stima sui flussi di cassa di Simply Wall St (26/10): prezzo 34,92 $ contro un valore di 66,27 $ (sconto 47,3%).",
-   "catalizzatori": "Terzo trimestre: utile netto 417 milioni (da 18), flusso di cassa libero dei nove mesi 947 milioni, riacquisti per 250 milioni nel trimestre; il management prevede crescita dei ricavi a una cifra media e margini intorno al 15%, con la ripresa della fratturazione in Nord America come rialzo aggiuntivo.",
-   "perche_ora": "Con petrolio caro e tensioni nel Golfo, le società di servizi possono beneficiare di più investimenti dei produttori (ne deduco); diversifica dalla tecnologia.",
-   "rischi": "Un calo rapido del petrolio (accordo USA–Iran, recessione) ridurrebbe gli investimenti dei clienti; Nord America ancora debole; settore molto ciclico. Stima sui flussi di cassa meccanica.",
+   "catalizzatori": "Il management prevede per il 2027 ricavi in crescita a una cifra media e margini operativi intorno al 15% (oggi 12,8% rettificato), senza contare una ripresa della fratturazione in Nord America («solo rialzo aggiuntivo»).",
+   "perche_ora": "Con il Brent sceso a 92 dollari e il surplus IEA previsto, i clienti potrebbero frenare gli investimenti: il titolo è un rischio più alto di due settimane fa, ma anche un possibile rimbalzo se il Nord America si stabilizza.",
+   "rischi": "Petrolio in calo e surplus di offerta riducono gli investimenti dei produttori; Nord America ancora debole; settore molto ciclico; la stima di sconto di Simply Wall St (47,3% al 26/10) è meccanica e non aggiornata.",
    "orizzonte": "6–12 mesi",
    "prezzo_rif": "32,50 $ (Yahoo Finance, 16/11/2026)",
-   "fonte": "Halliburton (comunicato, SEC 8-K); Simply Wall St",
-   "url": "https://www.sec.gov/Archives/edgar/data/0000045012/000004501226000070/livemastererdocument.htm",
-   "data": "2026-10-26"
+   "fonte": "Halliburton (comunicato del 20/10); Simply Wall St; Teleborsa (petrolio, 16/11)",
+   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/petrolio-in-calo-aumenta-l-attesa-per-un-surplus-di-offerta-tornano-a-crescere-i-flussi-dal-medio-oriente-169_2026-11-16_TLB.html",
+   "data": "2026-11-16"
   },
   {
    "categoria": "azione",
@@ -621,24 +638,19 @@
    "data": "2026-10-29"
   },
   {
-   "nome": "Investing.com Italia; SoldiOnline",
-   "url": "https://it.investing.com/news/earnings/eni-supera-le-stime-sullutile-q3-buyback-12-e-dividendo-straordinario-3602738",
-   "data": "2026-10-30"
-  },
-  {
    "nome": "ANSA; Reuters e OraFinanza via Investing.com",
    "url": "https://www.ansa.it/sito/notizie/economia/2026/11/09/borsa-milano-chiude-in-forte-rialzo-ftse-mib-269_715fcd25-4783-4993-8dc4-a2270981ec05.html",
    "data": "2026-11-09"
   },
   {
+   "nome": "Teleborsa (conti 9 mesi, 05/11; commento Milano 16/11)",
+   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/leonardo-alza-guidance-su-ordini-portafoglio-sfonda-quota-60-miliardi-di-euro-nei-9-mesi-13_2026-11-05_TLB.html?lang=it",
+   "data": "2026-11-05"
+  },
+  {
    "nome": "Novartis (comunicato)",
    "url": "https://www.novartis.com/news/media-releases/novartis-delivered-sales-growth-and-core-margin-expansion-q3-raised-fy-core-operating-income-guidance",
    "data": "2026-10-27"
-  },
-  {
-   "nome": "TotalEnergies (modulo 6-K alla SEC)",
-   "url": "https://www.sec.gov/Archives/edgar/data/0000879764/000110465926119833/tm2628392d1_ex99-1.htm",
-   "data": "2026-10-29"
   },
   {
    "nome": "Seoul Economic Daily",
@@ -654,11 +666,6 @@
    "nome": "ANSA; justETF",
    "url": "https://www.ansa.it/sito/notizie/economia/2026/10/29/la-bce-si-ferma-sui-tassi-in-bilico-il-rialzo-di-dicembre_fff36f02-6e9c-4e87-af42-4776abe0acc8.html",
    "data": "2026-10-29"
-  },
-  {
-   "nome": "TheStreet",
-   "url": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-nov-09-202",
-   "data": "2026-11-09"
   },
   {
    "nome": "Milano Finanza; Money.it",
@@ -689,11 +696,6 @@
    "nome": "Tickzen; Zions (comunicato)",
    "url": "https://tickzen.app/stocks/zion/overview",
    "data": "2026-10-30"
-  },
-  {
-   "nome": "Halliburton (comunicato, SEC 8-K); Simply Wall St",
-   "url": "https://www.sec.gov/Archives/edgar/data/0000045012/000004501226000070/livemastererdocument.htm",
-   "data": "2026-10-26"
   },
   {
    "nome": "Reuters via Euronext",
@@ -825,7 +827,7 @@
     "data": "2026-11-16"
    }
   ],
-  "nota": "Le 21 idee sono riconfermate senza modifiche; Eni, TotalEnergies e Halliburton vanno riesaminate con il petrolio in calo. Credito e utili sono dati del 6-9 novembre; le cause dei cali di Amazon e Alphabet non sono verificate."
+  "nota": "Idee: riscritte Eni, TotalEnergies, Halliburton (petrolio in calo e surplus IEA) e il giudizio «da evitare» sui semiconduttori (seduta del 16 novembre); aggiunta Leonardo (difesa, conti del 5 novembre). Le altre restano riconfermate. Credito e utili sono dati del 6-9 novembre; le cause dei cali di Amazon e Alphabet non sono verificate."
  },
  "titoli_giorno": {
   "metodo": "Tra i 30 titoli più pesanti dell'S&P 500 conta chi ha spostato di più l'indice nell'ultima seduta (peso × variazione del giorno), con un bonus se è stato scambiato molto più del solito: di solito c'è una notizia.",
