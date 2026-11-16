@@ -452,8 +452,80 @@
    "tema": "Cripto",
    "agg": 1,
    "visto": "2026-11-14"
+  },
+  {
+   "fonte": "web",
+   "sito": "Teleborsa (Borsa Italiana)",
+   "titolo": "Wall Street in rosso: Nasdaq e S&P 500 perdono oltre il 2%",
+   "sintesi": "S&P 500 e Nasdaq cedono oltre il 2% mentre prosegue la debolezza dei titoli dell'intelligenza artificiale. Si attendono i conti di Nvidia, il 17 novembre a mercati chiusi, e il debutto in Borsa di Anthropic previsto giovedì. L'indice dei semiconduttori SOX perde il 3,7%, con Intel −6,4% e Micron −5,8%. Il CEO di Nvidia Jensen Huang ha lasciato la carica e il Financial Times parla di un possibile ritorno; gli Stati Uniti hanno presentato norme provvisorie per limitare l'accesso della Cina ai chip avanzati.",
+   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/commenti/wall-street-in-rosso-nasdaq-e-sp-500-perdono-oltre-il-2-riflettori-su-nvidia-e-anthropic-233_2026-11-16_TLB.html",
+   "data": "2026-11-16",
+   "tema": "USA",
+   "abbonamento": false,
+   "agg": 2,
+   "visto": "2026-11-16"
+  },
+  {
+   "fonte": "web",
+   "sito": "Teleborsa (Borsa Italiana)",
+   "titolo": "In rosso Milano e le altre Borse europee: pesa il tech",
+   "sintesi": "Giornata negativa per Piazza Affari e le principali Borse europee, con il tech sotto pressione per Nvidia e Anthropic. Il FTSE MIB scende a 51.521 punti (−0,65%); male Technoprobe (−4,19%), Stellantis (−3,92%) e STMicroelectronics (−2,06%), bene la difesa con Avio +3,43%. Lo spread BTP-Bund resta a +105 punti base, con il BTP decennale al 4,43%. Il petrolio WTI scende del 2,44% a 86,4 dollari.",
+   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/commenti/in-rosso-milano-e-gli-altri-listini-europei-pesa-il-tech-occhi-puntati-sui-conti-di-nvidia-207_2026-11-16_TLB.html",
+   "data": "2026-11-16",
+   "tema": "Piazza Affari",
+   "abbonamento": false,
+   "agg": 2,
+   "visto": "2026-11-16"
+  },
+  {
+   "fonte": "web",
+   "sito": "Teleborsa (Borsa Italiana)",
+   "titolo": "Oro ai minimi da un anno: il mercato sconta nuovi rialzi dei tassi USA",
+   "sintesi": "L'oro spot scambia a 3.871 dollari l'oncia dopo aver toccato 3.830, il livello più basso da ottobre 2025, penalizzato dal dollaro forte e dalle attese di un rialzo dei tassi della Fed a dicembre. Secondo il CME FedWatch la probabilità di un aumento di 25 punti base è del 91% e di 50 punti base del 9%. I verbali dell'ultima riunione Fed sono attesi mercoledì. L'argento cede il 3,1% a 47,22 dollari.",
+   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/oro-ai-minimi-da-un-anno-il-mercato-sconta-nuovi-rialzi-dei-tassi-usa-175_2026-11-16_TLB.html",
+   "data": "2026-11-16",
+   "tema": "Materie prime",
+   "abbonamento": false,
+   "agg": 2,
+   "visto": "2026-11-16"
+  },
+  {
+   "fonte": "web",
+   "sito": "Teleborsa (Borsa Italiana)",
+   "titolo": "Petrolio in calo: aumenta l'attesa per un surplus di offerta",
+   "sintesi": "Il Brent cede il 2,6% a 93,3 dollari e il WTI il 2,2% a 86,6. I flussi attraverso lo Stretto di Hormuz stanno riprendendo, ma restano incidenti con le petroliere. L'IEA prevede un ritorno al surplus nel quarto trimestre, con offerta media di 105 milioni di barili al giorno. Goldman Sachs stima il Brent a 88 dollari in media nel 2027.",
+   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/petrolio-in-calo-aumenta-l-attesa-per-un-surplus-di-offerta-tornano-a-crescere-i-flussi-dal-medio-oriente-169_2026-11-16_TLB.html",
+   "data": "2026-11-16",
+   "tema": "Energia",
+   "abbonamento": false,
+   "agg": 2,
+   "visto": "2026-11-16"
+  },
+  {
+   "fonte": "web",
+   "sito": "Teleborsa (Borsa Italiana)",
+   "titolo": "Warsh (Fed): l'IA può rivoluzionare l'economia, ma crescono i rischi per il lavoro",
+   "sintesi": "Il presidente della Fed Kevin Warsh ha presentato tre scenari sull'impatto dell'intelligenza artificiale: crescita più forte con benefici condivisi, crescita con forti perdite di posti di lavoro, oppure investimenti sotto le attese con calo delle valutazioni azionarie, rallentamento e più disoccupazione. Ha precisato che sono ipotesi e non previsioni, elaborate da una task force della Fed.",
+   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/warsh-fed-avverte-l-ia-puo-rivoluzionare-l-economia-ma-crescono-i-rischi-per-il-lavoro-221_2026-11-16_TLB.html",
+   "data": "2026-11-16",
+   "tema": "Tassi",
+   "abbonamento": false,
+   "agg": 2,
+   "visto": "2026-11-16"
+  },
+  {
+   "fonte": "web",
+   "sito": "Teleborsa (Borsa Italiana)",
+   "titolo": "Prysmian, Battaini: «Non vediamo una bolla dell'AI»",
+   "sintesi": "L'amministratore delegato Massimo Battaini dice che nel terzo e quarto trimestre la domanda di cavi di potenza e ottici è aumentata ancora rispetto al primo semestre e che gli hyperscaler continuano a chiedere grandi volumi. Il gruppo ha investito circa 9 miliardi in acquisizioni negli Stati Uniti. Sulla fibra, la carenza di capacità è legata in parte alle applicazioni militari.",
+   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/prysmian-battaini-non-vediamo-una-bolla-dell-ai-185_2026-11-16_TLB.html",
+   "data": "2026-11-16",
+   "tema": "Tecnologia",
+   "abbonamento": false,
+   "agg": 2,
+   "visto": "2026-11-16"
   }
  ],
- "aggiornato": "2026-11-14",
- "ultimo_agg": 1
+ "aggiornato": "2026-11-16",
+ "ultimo_agg": 2
 }
