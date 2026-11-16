@@ -36,3 +36,10 @@ Pagina Notizie = solo notizie. Colonne da sinistra: Notizie dal web, Milano Fina
 - Layout (lo fa la pagina): nuove in alto con etichetta «NUOVA» e conteggio nel riquadro colorato; ultimi 7 giorni in linea; «Prosegui» fino a 30 giorni; «Archivio» oltre il mese; articoli a pagamento in fondo con lucchetto.
 - Recupero di un periodo passato: stesse voci con `arretrato:true` e `data` reale (non compaiono come nuove).
 - Marco Casario: tolto (14/11).
+
+## Rotazione delle idee (regola dal 16/11)
+Ogni «aggiorna tutto» deve cambiare almeno 4 idee: non basta che la tesi regga. Mai riconfermare tutte (`riusa`) come il 12–16/11.
+- Riscrivi con fatti nuovi (con fonte e data) le idee toccate dalla seduta: es. petrolio → energetiche, tassi → banche, IA → semiconduttori e tecnologia.
+- Aggiungi o sostituisci almeno 1–2 idee con candidati nuovi, cercati con ricerche dedicate (conti trimestrali recenti, settori che reggono quando il mercato scende). Non inserire un nome senza cifre verificate e data; se manca un dato (es. capitalizzazione ≥1 mld per le opportunità rischiose) non inserirlo.
+- Se non trovi 4 cambi con fonti valide, dillo nella `nota` del report e nella risposta, indicando quali idee restano ferme e perché.
+- Aggiungi il simbolo Yahoo delle idee nuove in `code/simboli_idee.json`. Vincoli sui minimi per categoria e mercato restano invariati.
