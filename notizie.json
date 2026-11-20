@@ -1393,8 +1393,30 @@
    "abbonamento": false,
    "agg": 0,
    "visto": "2026-11-06"
+  },
+  {
+   "fonte": "zerohedge",
+   "titolo": "Anthropic scivola verso il prezzo IPO di 83 dollari: Wall Street attende un «clearing event» sull'IA",
+   "sintesi": "Dopo l'apertura a 111,50 dollari, il massimo di 115,10 e la chiusura a 97,17 di giovedì, il titolo scambia prima dell'apertura a circa 87,63 (quasi −10%) e tocca un minimo vicino a 83,46: circa −25% dal massimo in meno di un giorno. L'offerta è stata sottoscritta 6-7 volte; i 147 milioni di azioni dell'opzione di sovrallocazione sono stati collocati a 83, per proventi lordi di circa 93,5 miliardi di dollari. Il titolo dovrebbe entrare nel Nasdaq 100 il 21 dicembre, con una domanda passiva stimata in circa 19 miliardi. La valutazione è di circa 1.140 miliardi sulle azioni base e 1.580 miliardi diluita.",
+   "url": "https://zerohedge.com/markets/if-everyone-needs-one-it-wont-anthropic-slides-toward-83-ipo-price-wall-street-waits-ai",
+   "data": "2026-11-20",
+   "tema": "Tecnologia",
+   "abbonamento": false,
+   "agg": 8,
+   "visto": "2026-11-21"
+  },
+  {
+   "fonte": "zerohedge",
+   "titolo": "Futures in calo mentre i chip asiatici crollano all'inizio della prima settimana di conti di Nvidia senza Huang",
+   "sintesi": "Il 16 novembre i future S&P 500 perdono circa lo 0,5% (7.542) e quelli Nasdaq l'1,3%; Taiex −6,03%, Kospi −4,03%, Nikkei −2,42%. Nvidia è in calo del 34,6% in sei settimane secondo JPMorgan e le opzioni scontano un movimento di circa 7,8% sui conti. Il Treasury a 10 anni è al 5,13% e gli swap prezzano pienamente un rialzo Fed a dicembre. WTI a 88,21, Brent 95,15, oro a 3.862 dollari.",
+   "url": "https://www.zerohedge.com/markets/futures-slide-asian-chip-carnage-greets-nvidias-first-post-huang-earnings-week",
+   "data": "2026-11-16",
+   "tema": "Mercati",
+   "abbonamento": false,
+   "agg": 0,
+   "visto": "2026-11-16"
   }
  ],
  "aggiornato": "2026-11-21",
- "ultimo_agg": 7
+ "ultimo_agg": 8
 }
