@@ -793,6 +793,7 @@ observation_date,BAMLH0A0HYM2
 2026-11-13,3.23
 2026-11-16,3.34
 2026-11-17,3.43
+2026-11-18,3.47
 
 #BAMLC0A0CM
 observation_date,BAMLC0A0CM
@@ -1589,6 +1590,7 @@ observation_date,BAMLC0A0CM
 2026-11-13,0.89
 2026-11-16,0.90
 2026-11-17,0.92
+2026-11-18,0.93
 
 #T10Y3M
 observation_date,T10Y3M
@@ -46317,6 +46319,7 @@ observation_date,DGS10
 2026-11-13,5.15
 2026-11-16,5.12
 2026-11-17,5.10
+2026-11-18,5.07
 
 #DTB3
 observation_date,DTB3
@@ -65332,6 +65335,7 @@ observation_date,DTB3
 2026-11-13,4.13
 2026-11-16,4.16
 2026-11-17,4.15
+2026-11-18,4.16
 
 #BAMLH0A3HYC
 observation_date,BAMLH0A3HYC
@@ -80390,6 +80394,7 @@ observation_date,VIXCLS
 2026-11-13,19.30
 2026-11-16,22.91
 2026-11-17,25.46
+2026-11-18,24.56
 
 #SP500
 observation_date,SP500
