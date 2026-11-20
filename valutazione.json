@@ -1,7 +1,7 @@
 {
- "rid": "vmwpliiye",
+ "rid": "vmwpmcpvb",
  "state": "ok",
- "at": "2026-11-20T23:13:55Z",
+ "at": "2026-11-20T23:37:24Z",
  "app_version": "2.7",
  "data_as_of": "2026-11-20",
  "settings_key": "10lt6nt",
@@ -244,16 +244,19 @@
   {
    "categoria": "azione",
    "mercato": "Italia",
-   "nome": "Eni",
+   "nome": "Snam",
+   "ticker": "SRG.MI",
    "direzione": "interessante",
-   "tesi": "Gruppo energetico integrato: terzo trimestre con utile netto rettificato 2,8 miliardi di euro (più che raddoppiato) e flusso di cassa 2026 atteso a 16,5 miliardi; buyback 2026 a 3,8 miliardi, dividendo straordinario 0,46 € (pagamento 9 dicembre) oltre all'ordinario di 1,10 €.",
-   "perche_ora": "Il 18 novembre il Brent è sceso a 89,5 dollari (−2,6%), sotto i 90 usati dalla politica di Eni per distribuire il 60% dell'extra flusso di cassa; le scorte USA di greggio sono salite di 3,4 milioni di barili (attesa −0,5). Il settore energia dell'S&P 500 ha perso il 3,5%. Eni ha comunque acquistato azioni proprie per 115 milioni di euro tra il 9 e il 13 novembre.",
-   "rischi": "Con il Brent sotto 90 dollari i riacquisti aggiuntivi si ridurrebbero; il dividendo straordinario è già annunciato ma non quello del 2027. Rischi politici nei paesi di produzione.",
-   "orizzonte": "6–12 mesi",
-   "fonte": "Teleborsa (buyback Eni e scorte USA, 18/11); Dashboard (Brent)",
-   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/eni-acquistate-azioni-proprie-per-115-milioni-di-euro-tra-il-9-e-il-13-novembre-2026-169_2026-11-18_TLB.html",
-   "data": "2026-11-18",
-   "prezzo_rif": "24,16 € (Yahoo Finance, 20/11/2026)"
+   "tesi": "Nei primi nove mesi 2026 Snam ha ricavi totali di 3.043 milioni di euro (+8,7%), EBITDA adjusted di 2.402 milioni (+8,1%) e utile netto adjusted di 1.111 milioni (+0,5%); gli investimenti salgono a 2.313 milioni da 1.767. La guidance 2026 è confermata: EBITDA adjusted oltre 3,1 miliardi, utile netto adjusted oltre 1,45 miliardi, investimenti 2,8 miliardi, RAB 28,8 miliardi. Acconto sul dividendo di 0,1257 euro (+4%), pagamento il 20 gennaio 2027.",
+   "perche_ora": "Infrastruttura regolata del gas (reti e stoccaggi) con guidance confermata, in una seduta in cui il ribasso è concentrato su chip e IA (Nasdaq 100 −5,6% il 20/11). Il dato di oggi del titolo non è verificato.",
+   "rischi": "Il debito finanziario netto sale a 18.328 milioni (+819 milioni da fine 2025) e gli oneri finanziari adjusted crescono del 16,5% (283 milioni); utile quasi fermo (+0,5%); sensibile ai tassi e alla regolazione (deduzione sui tassi); investimenti elevati.",
+   "orizzonte": "12 mesi",
+   "link": "https://finance.yahoo.com/quote/SRG.MI",
+   "link_sito": "Yahoo Finance",
+   "fonte": "Teleborsa (Snam, nove mesi, 11/11)",
+   "url": "https://www.teleborsa.it/DettaglioNews/147_2026-11-11_TLB/Snam-conferma-guidance-dopo-9-mesi-in-crescita-Acconto-sul-dividendo-da-01257-euro.html",
+   "data": "2026-11-11",
+   "prezzo_rif": "6,00 € (Yahoo Finance, 20/11/2026)"
   },
   {
    "categoria": "azione",
@@ -292,19 +295,19 @@
   {
    "categoria": "azione",
    "mercato": "Italia",
-   "nome": "Generali",
-   "ticker": "G.MI",
+   "nome": "Terna",
+   "ticker": "TRN.MI",
    "direzione": "interessante",
-   "tesi": "Assicuratore e gestore di risparmio: all'Investor Day del 18 novembre indica per fine 2026 una crescita media annua dell'utile per azione normalizzato oltre il 14% rispetto al 2024 (obiettivo 8-10%), flussi di cassa cumulati della holding oltre 7,6 miliardi nei primi due anni (obiettivo oltre 11 miliardi al 2027), dividendo in crescita oltre il 10% annuo e buyback da 1,5 miliardi già eseguito per 1 miliardo.",
-   "perche_ora": "Con le Borse in calo e i tassi in rialzo, è un titolo con flussi di cassa e distribuzione agli azionisti dichiarati. Il CEO Donnet conferma inoltre un dialogo con UniCredit su bancassurance, asset e wealth management.",
-   "rischi": "Il dialogo con UniCredit è «prematuro» e non vincolante; l'andamento dipende da mercati finanziari e spread BTP-Bund (deduzione: gli assicuratori detengono molti titoli di Stato); i target sono dichiarazioni della società, non verificate in modo indipendente.",
+   "tesi": "Nei primi nove mesi 2026 Terna ha ricavi di 3.114,6 milioni di euro (+8,1%), EBITDA di 2.172,0 milioni (+7,2%) e utile netto di 857,2 milioni (+0,5%), con investimenti di 2.353,1 milioni (+12,7%). Il debito finanziario netto scende a 12.071 milioni da 13.000,2 a fine 2025. La guidance 2026 è confermata: ricavi 4,41 miliardi, EBITDA 2,93 miliardi, utile netto 1,12 miliardi, investimenti circa 4,2 miliardi. Acconto sul dividendo 2026 di 11,92 centesimi, stacco il 23 novembre e pagamento dal 25.",
+   "perche_ora": "È una rete elettrica regolata, con ricavi poco legati ai cicli dei titoli tecnologici e dell'IA che oggi guidano il ribasso (S&P 500 −3,7%, FTSE MIB −2,48% il 20/11). Il dato di oggi del titolo non è verificato.",
+   "rischi": "L'utile netto è quasi fermo (+0,5%) con aliquota fiscale al 31,4% (29,8%) e oneri finanziari in aumento di 17 milioni; con rendimenti in salita (BTP al 4,41%, Fed verso un rialzo) i titoli a dividendo possono perdere appeal (deduzione); il nuovo piano industriale arriverà solo nel 2027; dipende dalla regolazione.",
    "orizzonte": "12 mesi",
-   "link": "https://finance.yahoo.com/quote/G.MI",
+   "link": "https://finance.yahoo.com/quote/TRN.MI",
    "link_sito": "Yahoo Finance",
-   "fonte": "Teleborsa (Investor Day Generali, 18/11)",
-   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/generali-investor-day-punta-a-superare-tutti-i-target-del-piano-al-2027-eps-oltre-il-14-annuo-15_2026-11-18_TLB.html",
-   "data": "2026-11-18",
-   "prezzo_rif": "43,34 € (Yahoo Finance, 20/11/2026)"
+   "fonte": "Teleborsa (Terna, nove mesi, 12/11)",
+   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/terna-9-mesi-in-crescita-con-investimenti-record-a-235-miliardi-acconto-su-dividendo-a-1192-centesimi-125_2026-11-12_TLB.html?lang=it",
+   "data": "2026-11-12",
+   "prezzo_rif": "9,46 € (Yahoo Finance, 20/11/2026)"
   },
   {
    "categoria": "azione",
@@ -359,20 +362,20 @@
   },
   {
    "categoria": "azione",
-   "mercato": "USA",
-   "nome": "Microsoft",
-   "ticker": "MSFT",
+   "mercato": "Stati Uniti",
+   "nome": "T-Mobile US",
+   "ticker": "TMUS",
    "direzione": "interessante",
-   "tesi": "Tra i grandi titoli dell'IA è quello che mostra meglio il ritorno degli investimenti: ricavi +19% e Azure (cloud) +48% nell'ultimo trimestre. Il 29 ottobre ha tenuto (−0,16%) mentre Alphabet perdeva il 12,6%.",
-   "perche_ora": "L'outlook 2027 di UBS (18/11) privilegia tra le tecnologiche gli hyperscaler solidi, con «monetizzazione evidente» e investimenti finanziati internamente: è il profilo che la tesi attribuisce a Microsoft. Fitch avverte però che le grandi emissioni di debito dei gruppi dell'IA possono aumentare la volatilità del credito.",
-   "rischi": "Pesa circa il 6% dell'S&P 500: un'ondata di vendite sull'IA lo coinvolge comunque; investimenti in forte crescita, valutazione elevata, tassi lunghi al 5,1% e Fed orientata a rialzi.",
-   "orizzonte": "oltre 12 mesi",
-   "link": "https://it.investing.com/equities/microsoft-corp",
-   "link_sito": "Investing.com",
-   "fonte": "Teleborsa (UBS e Fitch, 18/11)",
-   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/ubs-nel-2027-l-obiettivo-e-mantenere-la-resilienza-scenario-base-al-50-sp-500-a-8200-131_2026-11-18_TLB.html",
-   "data": "2026-11-18",
-   "prezzo_rif": "484,52 $ (Yahoo Finance, 20/11/2026)"
+   "tesi": "Nel terzo trimestre 2026 T-Mobile US ha ricavi di 23,58 miliardi di dollari (+7,4%), utile netto di 3,46 miliardi (+27,3%), utile per azione rettificato di 3,22 dollari, EBITDA core rettificato di 9,62 miliardi (+10,8%) e flusso di cassa libero rettificato di 5,07 miliardi (+5,3%). Ha alzato la guidance 2026: EBITDA core rettificato 37,35-37,45 miliardi, flusso di cassa libero 18,7-18,8 miliardi, aliquota fiscale 24-25% (prima 25-26%).",
+   "perche_ora": "È un'azienda di telecomunicazioni con ricavi da abbonamenti ricorrenti: il 20 novembre era tra i migliori del Nasdaq 100 a metà seduta (Teleborsa) mentre l'indice perdeva il 5,6% a fine giornata. Il dato di chiusura del titolo non è verificato.",
+   "rischi": "I nuovi clienti postpagati scendono a 274.000 da 396.000 un anno prima (l'obiettivo resta circa 1 milione nell'anno); investimenti di circa 10 miliardi; concorrenza e debito; titolo già in rialzo nella seduta (deduzione: rischio di ritracciamento).",
+   "orizzonte": "12 mesi",
+   "link": "https://finance.yahoo.com/quote/TMUS",
+   "link_sito": "Yahoo Finance",
+   "fonte": "Finviz (T-Mobile, terzo trimestre, 28/10)",
+   "url": "https://finviz.com/news/411750/t-mobile-reports-27-rise-in-q3-net-income-to-346-billion-and-raises-2026-outlook",
+   "data": "2026-10-28",
+   "prezzo_rif": "165,60 $ (Yahoo Finance, 20/11/2026)"
   },
   {
    "categoria": "azione",
@@ -729,9 +732,9 @@
    "data": "2026-10-29"
   },
   {
-   "nome": "Teleborsa (buyback Eni e scorte USA, 18/11); Dashboard (Brent)",
-   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/eni-acquistate-azioni-proprie-per-115-milioni-di-euro-tra-il-9-e-il-13-novembre-2026-169_2026-11-18_TLB.html",
-   "data": "2026-11-18"
+   "nome": "Teleborsa (Snam, nove mesi, 11/11)",
+   "url": "https://www.teleborsa.it/DettaglioNews/147_2026-11-11_TLB/Snam-conferma-guidance-dopo-9-mesi-in-crescita-Acconto-sul-dividendo-da-01257-euro.html",
+   "data": "2026-11-11"
   },
   {
    "nome": "Teleborsa (Orcel, 19/11); Scenari Economici (accordo con Berlino, 19/11)",
@@ -744,9 +747,9 @@
    "data": "2026-11-19"
   },
   {
-   "nome": "Teleborsa (Investor Day Generali, 18/11)",
-   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/generali-investor-day-punta-a-superare-tutti-i-target-del-piano-al-2027-eps-oltre-il-14-annuo-15_2026-11-18_TLB.html",
-   "data": "2026-11-18"
+   "nome": "Teleborsa (Terna, nove mesi, 12/11)",
+   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/terna-9-mesi-in-crescita-con-investimenti-record-a-235-miliardi-acconto-su-dividendo-a-1192-centesimi-125_2026-11-12_TLB.html?lang=it",
+   "data": "2026-11-12"
   },
   {
    "nome": "Teleborsa (Mariani su Avio, 19/11)",
@@ -764,9 +767,9 @@
    "data": "2026-11-16"
   },
   {
-   "nome": "Teleborsa (UBS e Fitch, 18/11)",
-   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/ubs-nel-2027-l-obiettivo-e-mantenere-la-resilienza-scenario-base-al-50-sp-500-a-8200-131_2026-11-18_TLB.html",
-   "data": "2026-11-18"
+   "nome": "Finviz (T-Mobile, terzo trimestre, 28/10)",
+   "url": "https://finviz.com/news/411750/t-mobile-reports-27-rise-in-q3-net-income-to-346-billion-and-raises-2026-outlook",
+   "data": "2026-10-28"
   },
   {
    "nome": "Teleborsa (Wall Street, 20/11)",
@@ -837,7 +840,7 @@
    "Nvidia −14,0% dopo la notizia Reuters di una revisione contabile della SEC; semiconduttori −10,7%, tutti i 30 titoli in calo.",
    "VIX a 35,9 (da 28,4); titoli sopra la media a 200 giorni al 48%; la quota in azioni scende al 20% per Prudente e Bilanciato.",
    "Cook (Fed) chiede un rialzo dei tassi al più presto; Treasury a 10 anni a 4,91%.",
-   "Idee: riscritte Walmart, Xtrackers S&P 500 Equal Weight UCITS ETF 1C, iShares STOXX Europe 600 Banks UCITS ETF (DE), Oro fisico tramite ETC — iShares Physical Gold ETC, Titoli di Stato euro a breve — iShares Euro Government Bond 1-3yr UCITS ETF, Semiconduttori — es. VanEck Semiconductor UCITS ETF."
+   "Idee: riscritte Walmart, Xtrackers S&P 500 Equal Weight UCITS ETF 1C, iShares STOXX Europe 600 Banks UCITS ETF (DE), Oro fisico tramite ETC — iShares Physical Gold ETC, Titoli di Stato euro a breve — iShares Euro Government Bond 1-3yr UCITS ETF, Semiconduttori — es. VanEck Semiconductor UCITS ETF; nuove Terna, Snam e T-Mobile US al posto di Generali, Eni e Microsoft."
   ],
   "situazione": [
    "L'indice di rischio è a 66 su 100, livello «elevato» (ieri 67), a quattro punti da «alto». Stress a 85 e fragilità a 62. L'S&P 500 è a 6.910, 11,6% sotto il massimo e 6,0% sotto la media a 200 giorni; il modello è in difesa, con il 20% di azioni per Prudente e Bilanciato e il 30% per Dinamico e Reattivo.",
@@ -941,7 +944,7 @@
     "data": "2026-11-20"
    }
   ],
-  "nota": "Dati: seduta del 20 novembre (Reuters via TradingKey; dashboard). Non verificati: la causa dei cali di Broadcom e Micron (probabile contagio dal settore, non provato), il dato di chiusura di Anthropic, la probabilità dei future Fed di oggi, il dato di credito di oggi e i settori a fine seduta. Il WSJ (17/11) e Reuters (20/11) parlano di esami SEC su Nvidia senza conclusioni di illeciti. ZeroHedge non è stato leggibile (accesso bloccato); Scenari Economici: i contenuti disponibili sono del 6 e 16 novembre."
+  "nota": "Dati: seduta del 20 novembre (Reuters via TradingKey; dashboard). Non verificati: la causa dei cali di Broadcom e Micron (probabile contagio dal settore, non provato), il dato di chiusura di Anthropic, la probabilità dei future Fed di oggi, il dato di credito di oggi e i settori a fine seduta. Il WSJ (17/11) e Reuters (20/11) parlano di esami SEC su Nvidia senza conclusioni di illeciti. ZeroHedge non è stato leggibile (accesso bloccato); Scenari Economici: i contenuti disponibili sono del 6 e 16 novembre. Idee nuove (21/11): Terna e Snam (conti nove mesi, Teleborsa) e T-Mobile US (terzo trimestre, Finviz); per tutte e tre il dato di prezzo del 20/11 non è verificato."
  },
  "titoli_giorno": {
   "metodo": "Tra i 30 titoli più pesanti dell'S&P 500 conta chi ha spostato di più l'indice nell'ultima seduta (peso × variazione del giorno), con un bonus se è stato scambiato molto più del solito: di solito c'è una notizia.",
