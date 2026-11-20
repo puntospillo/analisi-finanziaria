@@ -43,3 +43,11 @@ Ogni «aggiorna tutto» deve cambiare almeno 4 idee: non basta che la tesi regga
 - Aggiungi o sostituisci almeno 1–2 idee con candidati nuovi, cercati con ricerche dedicate (conti trimestrali recenti, settori che reggono quando il mercato scende). Non inserire un nome senza cifre verificate e data; se manca un dato (es. capitalizzazione ≥1 mld per le opportunità rischiose) non inserirlo.
 - Se non trovi 4 cambi con fonti valide, dillo nella `nota` del report e nella risposta, indicando quali idee restano ferme e perché.
 - Aggiungi il simbolo Yahoo delle idee nuove in `code/simboli_idee.json`. Vincoli sui minimi per categoria e mercato restano invariati.
+
+## Verifica dei dati esposti (regola fissa di Maurizio, 20/11/2026)
+Dopo OGNI aggiornamento («aggiorna» e «aggiorna tutto») controllare tutti i dati esposti prima di darli per buoni e dire nella risposta l'esito (verificato / non verificato / scostamenti).
+1. `python3 tools/verifica.py`: coerenza date, S&P e variazione giorno, massimo e media a 200 giorni, serie ferme, valutazione e notizie allineate ai dati (`aggiorna.sh` stampa già le righe non OK).
+2. Confronto con fonti esterne (WebSearch): chiusura S&P 500 e variazione (SPY come proxy), Nasdaq 100 (QQQ), VIX, rendimento Treasury a 10 anni; per i titoli del giorno e i numeri di cronaca della valutazione la variazione e la causa. Scostamenti piccoli su dati serali (es. VIX) si dichiarano; fonti discordanti (es. probabilità di rialzo Fed) si dichiarano.
+3. Testi ed etichette nuove: letti contro i numeri (es. «allerta rientrata» solo se il punteggio dei segnali precoci è sotto 55).
+4. Non scrivere come certo ciò che non è verificato: etichetta [VERIFICATO] / [DEDOTTO] / [NON VERIFICATO].
+

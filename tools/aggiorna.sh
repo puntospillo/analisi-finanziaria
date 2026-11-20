@@ -16,5 +16,6 @@ python3 -W ignore "$R/code/scarica_indici.py" "$W/indici.json" >>"$L" 2>&1 && cp
 python3 "$R/tools/dopo_dati.py" "$W" "$R" >>"$L" 2>&1 || fail "controllo finale"; grep -h "^DATI" "$L"
 python3 "$R/tools/contesto.py" --breve || { git -C "$R" checkout -q -- . ; fail "la pagina non si apre con i nuovi dati"; }
 grep -h "^WARN" "$L" | head -3
+python3 "$R/tools/verifica.py" | grep -v "^OK" || true   # controllo interno dei dati esposti (regola 20/11)
 [ "${1:-}" = "--no-push" ] && exit 0
 bash "$R/tools/pubblica.sh" "Aggiorna: dati al $(python3 -c "import json;print(json.load(open('$R/update_status.json'))['as_of'])")"
