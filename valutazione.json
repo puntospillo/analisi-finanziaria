@@ -1,7 +1,7 @@
 {
- "rid": "vmwpldl4w",
+ "rid": "vmwpliiye",
  "state": "ok",
- "at": "2026-11-20T23:10:05Z",
+ "at": "2026-11-20T23:13:55Z",
  "app_version": "2.7",
  "data_as_of": "2026-11-20",
  "settings_key": "10lt6nt",
@@ -76,14 +76,14 @@
   },
   {
    "tema": "Dati macro USA",
-   "lettura": "La fiducia dei consumatori dell'Università del Michigan è rivista a 51,5 a novembre (stima preliminare 41, ottobre 48), sopra il consenso di 51: il direttore dell'indagine osserva che chi ha più azioni riporta finanze personali più deboli.",
+   "lettura": "La fiducia dei consumatori dell'Università del Michigan è rivista a 51,5 a novembre (ottobre 48), sopra il consenso di 51: il direttore dell'indagine osserva che chi ha più azioni riporta finanze personali più deboli.",
    "segno": "neutro",
    "fonte": "Teleborsa (Michigan, 20/11); StockTitan",
    "url": "https://www.stocktitan.net/articles/stock-market-today-live-november-20-2026",
    "data": "2026-11-20"
   }
  ],
- "concordanza": "Dashboard e fonti concordano sui prezzi di chiusura. Divergenze: il Nvidia di Teleborsa/TradingKey a metà seduta era a −7%, la dashboard registra −14,0% a fine seduta; lo spread BTP-Bund è 110,74 (Teleborsa a fine seduta) contro 106,07 della pagina mattutina di Milano Finanza; l'oro è 3.539 per la dashboard e 3.515,7 per Teleborsa alle 19:30. L'indice di rischio scende di un punto (66 da 67) nonostante il crollo perché misura fragilità e stress strutturali: stress 85 e VIX 35,9 sono molto più alti di ieri, ma altri fattori compensano; il livello «elevato» è coerente con l'indice (55-69).",
+ "concordanza": "Dashboard e fonti concordano sui prezzi di chiusura. Divergenze: il Nvidia di Teleborsa/TradingKey a metà seduta era a −7%, la dashboard registra −14,0% a fine seduta; lo spread BTP-Bund è 110,74 (Teleborsa a fine seduta) contro 106,07 della pagina mattutina di Milano Finanza; l'oro è 3.539 per la dashboard e 3.515,7 per Teleborsa alle 19:30. L'indice scende di un punto (66 da 67) nonostante il crollo per un effetto di calcolo: fragilità (+0,7) e stress (+2,4) salgono, ma il gruppo «Grandi investitori» (dati CFTC settimanali con circa tre giorni di ritardo, posizioni del 17/11) passa da 57 a 37 e toglie 4,1 punti. Senza quel gruppo l'indice sarebbe 73,5, cioè «alto»; alla prossima uscita CFTC potrebbe superare 70. Il livello «elevato» resta coerente con l'indice (55-69).",
  "monitorare": [
   {
    "cosa": "Indice di rischio",
@@ -165,7 +165,7 @@
   },
   {
    "cosa": "Fed, inflazione e tassi",
-   "perche": "Cook chiede un nuovo rialzo al più presto; il Treasury a 10 anni scende a 4,91% (−14 punti base) per la fuga verso i titoli sicuri. La probabilità di +25 punti base a dicembre era circa 94% il 19/11; oggi non verificata.",
+   "perche": "Cook chiede un nuovo rialzo al più presto; il Treasury a 10 anni scende a 4,91% (−14 punti base) per la fuga verso i titoli sicuri. La probabilità di +25 punti base a dicembre il 19/11 era tra 94% (Reuters) e 96,4% (24/7 Wall St) a seconda della fonte; oggi non verificata.",
    "soglia": "Treasury 10 anni sopra 5,25% oppure sotto 4,60% (segnale di fuga dal rischio).",
    "guardare": "Riunione Fed dell'8-9 dicembre e prossimi dati sull'inflazione.",
    "notizie": [
@@ -176,7 +176,7 @@
      "data": "2026-11-20"
     },
     {
-     "testo": "Michigan: fiducia a 51,5 (prima stima 41).",
+     "testo": "Michigan: fiducia a 51,5 (ottobre 48).",
      "fonte": "Teleborsa (Borsa Italiana)",
      "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/economia/usa-fiducia-consumatori-universita-michigan-rivisto-al-rialzo-a-novembre-125_2026-11-20_TLB.html?lang=it",
      "data": "2026-11-20"
@@ -399,7 +399,7 @@
    "isin": "IE00BLNMYC90",
    "direzione": "interessante",
    "tesi": "Investe nei 500 titoli dell'S&P 500 con lo stesso peso (circa 0,2% ciascuno): riduce la dipendenza dai primi 10 titoli, che oggi pesano il 38% dell'indice tradizionale. Costo 0,15% annuo.",
-   "perche_ora": "Il 20 novembre l'S&P 500 perde il 3,7% e il Nasdaq 100 il 5,6%, il Dow Jones l'1,9%: il calo è concentrato su tecnologia e chip (a metà seduta informatica −4,9%, mentre utilities +0,8%, sanitario +0,7% e beni di consumo +1,75%, Teleborsa). Con peso uguale ai 500 titoli, il fondo ha meno esposizione ai pochi giganti dell'IA (deduzione).",
+   "perche_ora": "Il 20 novembre l'S&P 500 perde il 3,7% e il Nasdaq 100 il 5,6%, il Dow Jones l'1,9%: il calo è concentrato su tecnologia e chip (a metà seduta informatica −4,9%, mentre utilities +0,8%, sanitario +0,7% e beni di consumo per l'ufficio +1,75%, Teleborsa). Con peso uguale ai 500 titoli, il fondo ha meno esposizione ai pochi giganti dell'IA (deduzione).",
    "rischi": "Se i grandi titoli tecnologici tornano a guidare, rende meno dell'indice tradizionale; più esposto a società medie e cicliche e al cambio euro/dollaro. Scende comunque con il mercato: oggi solo il 48% dei titoli è sopra la media a 200 giorni; il confronto con l'indice tradizionale oggi non è stato verificato.",
    "orizzonte": "6–12 mesi",
    "link": "https://www.justetf.com/it/etf-profile.html?isin=IE00BLNMYC90",
@@ -470,7 +470,7 @@
    "isin": "IE00BMC38736",
    "direzione": "da evitare",
    "tesi": "Settore molto concentrato e legato agli investimenti nell'IA: da evitare di aumentare il peso finché il mercato giudica severamente chi spende senza generare cassa.",
-   "perche_ora": "Il 20 novembre l'indice dei semiconduttori perde il 10,73% con tutti i 30 titoli in calo (Micron −13,9%, AMD −13,3%, Applied Materials −10,8%); Nvidia −14,0% dopo la notizia di Reuters su una revisione contabile della SEC. Il settore è 40-50% sotto i massimi di un anno in molti casi. L'idea resta da evitare: forte volatilità, notizie societarie e debito legato all'IA ancora aperti.",
+   "perche_ora": "Il 20 novembre l'indice dei semiconduttori perde il 10,73% con tutti i 30 titoli in calo (Micron −13,9%, AMD −13,3%, Applied Materials −10,8%); Nvidia −14,0% dopo la notizia di Reuters su una revisione contabile della SEC. Nvidia è 47,5% e Micron 51,0% sotto i massimi di un anno (dashboard). L'idea resta da evitare: forte volatilità, notizie societarie e debito legato all'IA ancora aperti.",
    "rischi": "Se i conti di Nvidia sorprendono in positivo il settore può rimbalzare in fretta: ridurre non significa azzerare. Dopo cali così ampi il rischio di movimenti violenti in entrambe le direzioni è alto.",
    "orizzonte": "3–6 mesi",
    "link": "https://www.justetf.com/it/etf-profile.html?isin=IE00BMC38736",
@@ -828,7 +828,7 @@
   "precedente_titolo": "19 novembre sera",
   "precedente": [
    "L'ultima valutazione, del 19 novembre sera, dava rischio «elevato» con indice a 67.",
-   "Il quadro: S&P 500 a 7.176 e −2,0%, VIX a 28,4, debutto di Anthropic, rialzo Fed di 25 punti base a dicembre quasi scontato.",
+   "Il quadro: S&P 500 a 7.176 e −2,0%, VIX a 28,4, debutto di Anthropic, rialzo Fed di 25 punti base a dicembre quasi scontato (94-96%).",
    "Soglie osservate: indice sotto 55 o sopra 70; S&P 500 sotto 7.000 o due chiusure sopra 7.348; Nasdaq 100 a −20%; Treasury a 10 anni sopra 5,25%; Deutsche Bank −10% o spread sopra 120.",
    "Da allora: la soglia dell'S&P 500 sotto 7.000 è stata raggiunta (6.910); il Nasdaq 100 è a −19,8% (a un passo dal −20%); l'indice resta a 66; Treasury 4,91% e spread 110,74 non hanno raggiunto le soglie."
   ],
