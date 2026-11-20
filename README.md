@@ -2,14 +2,19 @@
 
 Dashboard sul rischio del mercato azionario americano (S&P 500): indice di rischio 0–100, quota in azioni consigliata per profilo (modello 2.0: allocazione adattiva + segnali precoci + rientro a tranche), valutazione di mercato con fonti, idee da approfondire, mercati esteri e materie prime, indicatori di sentiment e macro, prova sul passato.
 
-**Sito:** https://puntospillo.github.io/analisi-finanziaria/ · versione in fondo alla pagina (v2.5.3).
+**Sito:** https://puntospillo.github.io/analisi-finanziaria/ · versione in fondo alla pagina (v2.7.1).
 
 ## Come si aggiorna (solo su richiesta, con Claude)
-- **«aggiorna»** → `bash tools/aggiorna.sh`: scarica i dati di borsa, ricalcola, controlla che la pagina si apra e pubblica (circa 1 minuto e mezzo). Se qualcosa fallisce i file pubblicati restano invariati.
+- **«aggiorna»** → `bash tools/aggiorna.sh`: scarica i dati di borsa, ricalcola, controlla che la pagina si apra, esegue `tools/verifica.py` (controlli di coerenza sui dati) e pubblica (circa 1 minuto e mezzo). Se qualcosa fallisce i file pubblicati restano invariati.
 - **«aggiorna tutto»** → `bash tools/aggiorna.sh --no-push`, `python3 tools/contesto.py`, ricerca (≤8 ricerche per la valutazione + notizie per fonte → `python3 tools/notizie.py /tmp/notizie_nuove.json`), `nuova.json` secondo `tools/VALUTAZIONE.md`, `python3 tools/valutazione.py nuova.json`, `bash tools/pubblica.sh "<messaggio>"`.
 
 ## File
 `index.html` pagina · `lib/` librerie (d3, jsPDF, html-to-image) · `ifi_data.json` dati e indice · `extra_data.json` serie per i segnali precoci e S&P 500 con dividendi (`SPXTR`), agganciate per data · `valutazione.json` ultima valutazione · `update_status.json`, `valutazione_stato.json` stato · `archivio/` report mensili e opportunità · `cache/` dati riusati tra un aggiornamento e l'altro · `code/` calcolo · `tools/` comandi.
+
+## Ottimizzazione 2.7.1 (21/11/2026)
+Tolti 42 regole CSS e 3 costanti JavaScript non usati (circa 3 KB); aspetto e calcoli invariati (confronto pixel per pixel). Per ottimizzare di nuovo: cercare classi CSS e costanti mai citate, attenzione alle classi costruite dinamicamente (`'q' + n + 'b'`, `nf-` + fonte), poi confrontare screenshot prima/dopo.
+
+**Nota sull'indice:** nella pagina l'indice è (fragilità + stress + 0,5 × «Grandi investitori») / 2,5; il gruppo «Grandi investitori» usa i dati CFTC settimanali con circa 3 giorni di ritardo e può far scendere l'indice anche in una seduta di crollo.
 
 ## Modello 2.3 (13/11/2026)
 Blocco degli aumenti dopo uno shock forte (almeno 2 condizioni su 3): massimo 10 sedute dal primo shock, sblocco anticipato da 3 sedute con indice di rischio sotto 60 e S&P sopra la media a 20 giorni. Salita +20 punti a settimana, tendenza come quarto voto di ripresa, volatilità che non taglia oltre il 65%. Nel Consiglio: azione rispetto alla seduta precedente, indicazione Proteggi / Neutro / Rientro, ultime 15 sedute e dettaglio da inizio mese. Prove sul passato con i dividendi reinvestiti. Dati FRED scaricati serie per serie (FRED non risponde all'intestazione `Mozilla/5.0`).

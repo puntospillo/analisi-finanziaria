@@ -351,7 +351,6 @@ details summary{cursor:pointer;font-weight:600;font-size:.85rem}
 .ev a{color:var(--navy-2)}
 .ev .box{background:var(--panel-2);border-radius:8px;padding:10px 12px;font-size:.88rem}
 .ev .warnbox{margin:0}
-.ev-title{font-size:1.15rem;line-height:1.3}
 .ev-meta{font-size:.76rem;color:var(--muted)}
 .ev-actions{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:10px}
 .ev-status{font-size:.82rem}
@@ -376,8 +375,6 @@ details summary{cursor:pointer;font-weight:600;font-size:.85rem}
 .exbox{border:1px dashed var(--sky);background:var(--panel-2);border-radius:10px;padding:9px 12px;display:grid;gap:3px}
 .exbox b{font-size:.7rem;text-transform:uppercase;letter-spacing:.07em;color:var(--sky)}
 .exbox p{margin:0;font-size:.88rem;line-height:1.5}
-.nowcard{padding:12px 16px}
-.nowcard .nowbox{margin-top:0}
 .nowbox.wide{grid-template-columns:minmax(160px,210px) 1fr;align-items:start;column-gap:18px}
 .nowbox.wide ul{grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));column-gap:24px}
 .nowbox.wide .fdesc{grid-column:1/-1}
@@ -412,19 +409,6 @@ details summary{cursor:pointer;font-weight:600;font-size:.85rem}
 .rep-sub h3{font-size:1rem;margin:0}
 .rep-est{border:1px solid var(--line);border-left:5px solid var(--sky);border-radius:10px;padding:10px 12px;background:var(--panel-2);font-size:.88rem;margin-bottom:10px}
 /* v1.12.1 colonne valutazione */
-.evcol{border-radius:12px;padding:12px 14px;border:1px solid var(--line)}
-.evcol h4{margin:0 0 6px;font:800 .98rem var(--font-display)}
-.evres{border:2px solid var(--navy-2);border-left-width:8px;background:color-mix(in srgb,var(--navy-2) 11%,var(--panel));border-radius:12px;padding:12px 16px;display:grid;gap:4px}
-.evres h4{margin:0;color:var(--navy);font:800 1rem var(--font-display);text-transform:none;letter-spacing:0}
-.evres ul{margin:0;padding-left:1.2em;display:grid;gap:5px;font-size:.95rem;line-height:1.45}
-.evdet{border:1px solid var(--line);border-radius:12px;padding:8px 12px;display:grid;gap:10px}
-.evdet[open] > summary{margin-bottom:8px}
-.evdet > summary{cursor:pointer;font-weight:700;color:var(--navy)}
-.evdash{background:var(--panel-2);border-left:6px solid var(--navy);box-shadow:inset 0 0 0 1px rgba(27,58,138,.08)}
-.evdash h4{color:var(--navy)}
-.evdash .evset{font-size:.78rem;color:var(--muted);margin:-2px 0 6px;padding:5px 8px;border-radius:7px;background:var(--panel)}
-.evext{background:var(--panel);border-left:6px solid var(--sky)}
-.evext h4{color:var(--sky)}
 /* v1.12 idee */
 :root{--idea:#0d7f8c;--idea-2:#5b3fc4;--idea-soft:#e6f6f7}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--idea:#3cc4d2;--idea-2:#a58bff;--idea-soft:#0f2a30}}
@@ -534,7 +518,6 @@ details summary{cursor:pointer;font-weight:600;font-size:.85rem}
 .adv-card::after{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:var(--adv,var(--muted))}
 .adv-card:hover{border-color:var(--navy-2)}
 .adv-top{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
-.adv-alg{font-size:.78rem;font-weight:700;color:var(--navy);display:inline-flex;align-items:center;gap:2px}
 .adv-row{display:grid;grid-template-columns:1fr auto 1fr;align-items:baseline;gap:8px;font:800 1.45rem/1.1 var(--font-display);white-space:nowrap}
 .adv-card{container-type:inline-size}
 .adv-row{font-size:clamp(1.15rem,7.6cqi,1.5rem)}
@@ -550,7 +533,6 @@ details summary{cursor:pointer;font-weight:600;font-size:.85rem}
 .adv-g{width:min(100%,220px);justify-self:center}
 .advg{width:100%;height:auto;display:block}
 .adv-ends{display:flex;justify-content:space-between;font-size:.64rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-top:-4px}
-.adv-sub{font-size:.86rem;font-weight:600}
 /* v2.3: testata a due colonne (azione | indicazione), lancetta più bassa, grafico delle ultime 15 sedute */
 .adv-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:8px;align-items:stretch}
 .adv-act{display:flex;flex-direction:column;justify-content:center;gap:1px;min-width:0}
@@ -583,7 +565,6 @@ details summary{cursor:pointer;font-weight:600;font-size:.85rem}
 .adv-conv[data-help]{cursor:pointer}.adv-conv[data-help]:hover{border-color:var(--navy-2)}
 @container (max-width:300px){.adv-head{grid-template-columns:1fr}}
 @container (max-width:380px){.adv-card .adv-sema .sm-t{flex-basis:100%;order:3}}
-.adv-why{font-size:.8rem;color:var(--muted)}
 .rule-head{align-items:center}
 .qp{grid-template-columns:10px 1fr}
 .qp em{grid-column:2}
@@ -675,7 +656,6 @@ button.qp:hover{border-color:var(--navy-2)}
 .ev-last{color:var(--risk);font-weight:700;font-size:.84rem;font-variant-numeric:tabular-nums}
 
 /* ===== versione 2.0 (locale): esposizione semplificata ===== */
-.loc-badge{display:inline-block;background:var(--amber-soft);color:var(--amber);border-radius:999px;padding:0 8px;font-size:.72rem;font-weight:700}
 #btnUpdate,#evRun{display:none!important}
 .fw-bar,#wLive,#factTable .wcol,#factTable td.wcell,details.bt-set{display:none!important}
 .hero .sig-card{display:grid;gap:7px;align-content:start}
@@ -689,8 +669,6 @@ button.qp:hover{border-color:var(--navy-2)}
 .prof-chip.todo{border-color:var(--amber);background:var(--amber-soft);color:var(--amber);font-weight:700}
 .adv-top .eyebrow{display:inline-flex;align-items:center;gap:2px}
 .adv-conv .adv-me{font-weight:700;display:inline-flex;align-items:center;gap:2px}
-.adv-st{display:flex;align-items:center;gap:6px;margin-top:2px}
-.adv-st .pill{font-size:.8rem;padding:2px 10px}
 .adv-mot{list-style:none;margin:0;padding:0;display:grid;gap:5px}
 .adv-mot li{display:grid;grid-template-columns:10px 1fr;gap:7px;align-items:start;font-size:.8rem;line-height:1.35;border:1px solid var(--line);border-radius:9px;padding:5px 9px;background:var(--panel-2);cursor:pointer}
 .adv-mot li:hover{border-color:var(--navy-2)}
@@ -763,8 +741,6 @@ body.tech-on .secnav .tl{display:inline-block}
 .mkt-seg{margin:0;padding:0;list-style:none;display:grid;gap:6px;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
 .mkt-seg li{border:1px solid var(--line);border-radius:10px;padding:7px 11px;font-size:.84rem;line-height:1.4;background:var(--panel-2);cursor:pointer}
 .mkt-seg li b{display:block}
-.mkt-act{display:flex;gap:8px;flex-wrap:wrap}
-.mkt-nota{font-size:.74rem;color:var(--muted);margin:0}
 /* fattori compatti */
 #factNow{display:none!important}
 #factTable .fdesc{display:none}
@@ -875,7 +851,6 @@ body.tech-on .secnav .tl{display:inline-block}
 .hero .gauge-card .shockbar .tile{padding:8px 12px}
 .hero .more-card{padding:12px 16px!important}
 .hero .more-card .tile{border-radius:10px}
-.hero .rule-card .rule-bars{height:64px}
 @media (max-width:1100px){.hero{grid-template-columns:1fr 1fr!important}.hero #moreCard{grid-column:1/-1;grid-row:auto;border-left:0!important;border-top:1px solid var(--line)!important}.hero #ruleCard{grid-row:auto}}
 @media (max-width:820px){.hero{grid-template-columns:1fr!important}.hero #gaugeCard{border-left:0!important;border-top:1px solid var(--line)!important}}
 .hero #advCard .adv-g{max-height:none;margin-bottom:12px}
@@ -891,7 +866,6 @@ body.tech-on .secnav .tl{display:inline-block}
 .hero .more-card .tile .pill{margin-top:auto}
 .hero .more-card .tiles{grid-template-rows:none;align-content:stretch}
 .hero > .card{padding:9px 14px!important}
-.hero #advCard .adv-sub{display:none}
 .hero #advCard .adv-g svg{height:76px}
 .hero #advCard .adv-g{margin-bottom:6px}
 .hero #advCard .adv-row{margin-bottom:0}
@@ -934,16 +908,9 @@ body.tech-on .secnav .tl{display:inline-block}
 .gz-mon{border:1px dashed var(--line);border-radius:10px;padding:8px 12px;font-size:.88rem}.gz-mon h4{margin:0 0 4px}.gz-mon ul{margin:0;padding-left:1.1em;display:grid;gap:3px}
 .gz-news{display:grid;gap:10px}
 .gz-cols{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));align-items:start}
-.gz-col{border:1px solid var(--line);border-top:6px solid var(--navy-2);border-radius:12px;padding:10px;display:grid;gap:8px;background:var(--panel)}
-.gz-col.nf-cas{border-top-color:#7a3fd1}.gz-col.nf-zh{border-top-color:#1f6fd6}.gz-col.nf-se{border-top-color:#e0701c}
-.gz-colh{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px}.gz-colh a{font:900 1.1rem Georgia,serif;color:var(--navy);text-decoration:none}.gz-colh .sub{font-size:.72rem;color:var(--muted);flex:1 1 100%;order:3}.gz-colh .cnt{margin-left:auto;font:800 .7rem var(--font-display);background:var(--navy-2);color:#fff;border-radius:99px;padding:2px 8px}
+.gz-col{border:1px solid var(--line);border-top:6px solid var(--navy-2);border-radius:12px;padding:10px;display:grid;gap:8px;background:var(--panel)}.gz-col.nf-zh{border-top-color:#1f6fd6}.gz-col.nf-se{border-top-color:#e0701c}
 .gz-card{border-top:1px solid var(--line);padding-top:8px;display:grid;gap:3px}.gz-card h4{text-transform:none;letter-spacing:0;margin:0;font:800 .95rem/1.3 Georgia,serif}.gz-card h4 a{color:var(--navy);text-decoration:none}.gz-card h4 a:hover{text-decoration:underline}.gz-card p{margin:0;font-size:.86rem;line-height:1.45}.gz-card.old{opacity:.85}
 .gz-meta{display:flex;gap:8px;align-items:center;font-size:.72rem;color:var(--muted)}.gz-meta .tag{background:color-mix(in srgb,var(--navy-2) 12%,var(--panel));color:var(--navy);border-radius:99px;padding:1px 8px;font-weight:700}
-.gz-thumb{display:flex;align-items:center;gap:10px;height:54px;border-radius:10px;padding:0 12px;color:#fff;background:linear-gradient(120deg,var(--navy-2),var(--navy));position:relative;overflow:hidden}
-.gz-thumb::after{content:'';position:absolute;right:-20px;top:-30px;width:110px;height:110px;border-radius:50%;background:rgba(255,255,255,.14)}
-.nf-cas .gz-thumb{background:linear-gradient(120deg,#9b5de5,#5b2aa8)}.nf-zh .gz-thumb{background:linear-gradient(120deg,#2d8cff,#0b4aa8)}.nf-se .gz-thumb{background:linear-gradient(120deg,#ff9a3c,#d8541a)}
-.gz-ico{font-size:1.7rem;line-height:1;filter:drop-shadow(0 2px 3px rgba(0,0,0,.25))}.gz-tt{font:800 .78rem var(--font-display);letter-spacing:.1em;text-transform:uppercase;opacity:.95}
-.gz-card.lead .gz-thumb{height:96px}.gz-card.lead .gz-ico{font-size:2.8rem}.gz-card.lead h4{font-size:1.12rem}
 .gz-card{border-top:0;padding:0 0 10px;border-bottom:1px solid var(--line)}
 .gz-mast{background:linear-gradient(100deg,#e8f0ff,#fff3e0 55%,#ffe8ee)}
 .gz-h{box-shadow:0 3px 10px color-mix(in srgb,var(--navy-2) 30%,transparent)}
@@ -952,7 +919,6 @@ body.tech-on .secnav .tl{display:inline-block}
 .nf-mf .gz-brand{background:linear-gradient(120deg,#c8102e,#7d0a1c)}.nf-mf .sig{color:#c8102e}.nf-se .gz-brand{background:linear-gradient(120deg,#ff9a3c,#d8541a)}.nf-se .sig{color:#d8541a}
 .nf-zh .gz-brand{background:linear-gradient(120deg,#2b2f36,#0d0f12)}.nf-zh .sig{color:#0d0f12}.nf-web .gz-brand{background:linear-gradient(120deg,#12a58a,#0b5fa8)}.nf-web .sig{font-size:1rem}
 .gz-col.nf-mf{border-top-color:#c8102e}.gz-col.nf-se{border-top-color:#e0701c}.gz-col.nf-zh{border-top-color:#2b2f36}.gz-col.nf-web{border-top-color:#12a58a}
-.gz-colh .nm{font:900 1.1rem Georgia,serif;color:var(--navy)}
 .gz-card.lock{background:repeating-linear-gradient(135deg,transparent 0 10px,color-mix(in srgb,var(--muted) 6%,transparent) 10px 20px);border-radius:8px;padding:6px 8px 10px}
 .gz-card h4 .lk{margin-right:6px}.gz-pay{font-size:.74rem;font-weight:700;color:#8a5a00;background:#fff4d6;border:1px solid #f0d58a;border-radius:6px;padding:2px 8px;justify-self:start}
 .gz-meta .tag.sito{background:color-mix(in srgb,#12a58a 16%,var(--panel))}
@@ -1308,9 +1274,10 @@ const EVAL_TRIGGER_ID = "trig_01JUVzUSZf92iP2qE7fLPynn"; // compito "valutazione
   sm.call(this);
   if (this.classList.contains('help')) { const top = () => { this.scrollTop = 0; const h = this.querySelector('.help-in'); if (h) h.scrollTop = 0; }; top(); requestAnimationFrame(top); setTimeout(top, 400); }
 }; })();
-const APP_VERSION = '2.7';
+const APP_VERSION = '2.7.1';
 const DEF_GI = 0.5; // peso predefinito del gruppo «Grandi investitori istituzionali»
 const CHANGELOG = [
+  ['2.7.1', '21/11/2026', ['Ottimizzazione: tolti stili e costanti non più usati (circa 3 KB). Nessun cambiamento nei calcoli, nelle quote o nell\'aspetto: confronto pixel per pixel prima e dopo a 1350 e 390 px.']],
   ['2.7', '20/11/2026', ['Profili più distinti: ogni profilo ha una volatilità obiettivo diversa (Prudente 8%, Bilanciato 10%, Dinamico e Reattivo 12%). Prudente e Bilanciato scalano la quota prima quando il mercato si agita: dal 2000 la perdita massima passa da −12% a −9% con circa 0,7 e 0,4 punti di rendimento annuo in meno (prove sugli stessi dati delle regole, senza costi e tasse).', 'Grafico «Quota in azioni consigliata» su 3 anni (prima 2).', 'Etichette: «Divario indice – titolo medio»; stato «Allerta» (non «rientrata») quando i segnali precoci sono di nuovo in aumento.']],
   ['2.6', '14/11/2026', ['Notizie impaginate come un quotidiano, solo notizie: colonne per fonte (Milano Finanza, Scenari Economici, ZeroHedge, Notizie dal web) con riassunti in italiano più completi.', 'Articoli a pagamento segnalati con il lucchetto e senza link. Le nuove di ogni aggiornamento sono in evidenza, con «Precedenti» (archivio di un anno).']],
   ['2.5.3', '14/11/2026', ['Spread BTP-Bund nella scheda Italia: tolte le barre mensili OECD ferme ad agosto; restano solo le chiusure giornaliere recenti, ciascuna con il commento di Teleborsa e il link alla fonte.']],
@@ -1441,7 +1408,6 @@ function debounce(fn, ms) { let t; return () => { clearTimeout(t); t = setTimeou
 
 function setMeta() {
   const gen = new Date(DATA.generated_at);
-  const genTxt = gen.toLocaleString('it-IT', {timeZone: 'Europe/Rome', day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit'});
   const asof = new Date(DATA.as_of + 'T00:00:00Z');
   const age = Math.round((Date.now() - asof.getTime()) / 864e5);
   const el = document.getElementById('updMeta'); el.replaceChildren();
@@ -1510,7 +1476,6 @@ const stateColor = k => ({red: ['--risk', '--risk-soft'], amber: ['--amber', '--
 const riskColor = v => isNaN(v) ? css('--muted') : v >= 70 ? css('--risk') : v >= 55 ? css('--amber') : v >= 40 ? css('--yel') : css('--ok');
 const lev = v => isNaN(v) ? null : v >= 70 ? 's-risk' : v >= 55 ? 's-warn' : v >= 40 ? 's-yel' : 's-ok';
 const S2C = {'s-ok': 'c-ok', 's-yel': 'c-yel', 's-warn': 'c-warn', 's-risk': 'c-risk'};
-const LVTXT = {'s-ok': 'verde · tranquillo', 's-yel': 'giallo · nella media', 's-warn': 'arancione · attenzione', 's-risk': 'rosso · rischio'};
 // livelli delle caselle non 0–100 (usati sia nelle caselle sia nelle spiegazioni)
 const LEGEND4 = '<span><span class="legend-dot" style="background:var(--ok)"></span>verde: tranquillo</span><span><span class="legend-dot" style="background:var(--yel)"></span>giallo: nella media</span><span><span class="legend-dot" style="background:var(--amber)"></span>arancione: attenzione</span><span><span class="legend-dot" style="background:var(--risk)"></span>rosso: rischio</span>';
 function tileLevels(i) {
@@ -3769,7 +3734,6 @@ function el(tag, cls, text) { const e = document.createElement(tag); if (cls) e.
 function link(nome, url, data) { const u = safeUrl(url); const a = u ? el('a', null, nome || u) : el('span', null, nome || ''); if (u) { a.href = u; a.target = '_blank'; a.rel = 'noopener noreferrer'; } const w = el('span'); w.append(a); if (data) w.append(document.createTextNode(' · ' + data)); return w; }
 // ---- notizie per fonte (notizie.json, archivio di 1 anno)
 let NEWS = null; fetch('notizie.json', {cache: 'no-store'}).then(r => r.ok ? r.json() : null).then(j => { NEWS = j; if (typeof evDlg !== 'undefined' && evDlg.open) renderEval(); }).catch(() => {});
-const TEMAICO = {Azioni: '📈', Tecnologia: '💻', IPO: '🚀', Liquidità: '💧', Mercati: '🏛️', 'Materie prime': '🪙', Macro: '🌐', Geopolitica: '🌍', Energia: '⛽', USA: '🇺🇸', Cripto: '₿', Banche: '🏦', Valute: '💱'};
 const TEMACOL = {Mercati: '#2b6cb0', 'Piazza Affari': '#c8102e', Tassi: '#7a3fb0', Macro: '#0e7c86', USA: '#1f4f9e', Tecnologia: '#6b46c1', Energia: '#d9730d', 'Materie prime': '#a67c00', Geopolitica: '#b4283c', Banche: '#12805c', Obbligazioni: '#3a7d44', Valute: '#0b7fab', Cripto: '#e08a00'};
 const NFONTI = [['web', 'Notizie dal web', 'Le più rilevanti dai siti esteri di finanza', 'nf-web', null, '🌐', 'DAL MONDO'], ['milanofinanza', 'Milano Finanza', 'Borsa e finanza italiana', 'nf-mf', 'https://www.milanofinanza.it/', 'MF', 'Milano Finanza'], ['scenarieconomici', 'Scenari Economici', 'Economia e finanza', 'nf-se', 'https://scenarieconomici.it/economia/finanza/', 'SE', 'Scenari Economici'], ['zerohedge', 'ZeroHedge', 'Mercati, macro e geopolitica · tradotto', 'nf-zh', 'https://www.zerohedge.com/', 'ZH', 'ZERO HEDGE']];
 function renderNotizieFonti() {

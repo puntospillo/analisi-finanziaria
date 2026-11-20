@@ -51,3 +51,12 @@ Dopo OGNI aggiornamento («aggiorna» e «aggiorna tutto») controllare tutti i 
 3. Testi ed etichette nuove: letti contro i numeri (es. «allerta rientrata» solo se il punteggio dei segnali precoci è sotto 55).
 4. Non scrivere come certo ciò che non è verificato: etichetta [VERIFICATO] / [DEDOTTO] / [NON VERIFICATO].
 
+
+## Lezioni dell'aggiornamento del 21/11/2026 (errori da non ripetere)
+- **Chiusura contro metà seduta:** i comunicati Teleborsa a metà seduta e i commenti «al momento» non sono chiusure. Ogni numero di chiusura va da Reuters, dal riepilogo di chiusura o dalla dashboard; se si usa un dato intraday va scritto «a metà seduta». (Errore del 19/11: Anthropic «chiude a 95» era un dato di metà seduta, la chiusura fu 97,17, +17,1%.)
+- **Dati discordanti:** se due fonti divergono (es. petrolio a 91 contro 83, spread 110,74 contro 106,07, oro 3.539 contro 3.515,7) si riporta quello della dashboard o della fonte di chiusura e si dichiara lo scarto in `concordanza`; mai copiare un dato dubbio in una notizia senza marcarlo «non verificato».
+- **Probabilità dei future Fed:** variano per fonte (94% Reuters, 96,4% 24/7 Wall St): citare la fonte e l'ora oppure l'intervallo.
+- **Indice che scende in una seduta di crollo:** non spiegarlo a parole generiche. L'indice della pagina è (fragilità + stress + 0,5 × «Grandi investitori») / 2,5; il gruppo «Grandi investitori» (CFTC, uscita settimanale del venerdì con circa 3 giorni di ritardo) può calare e togliere punti. Calcolare i contributi da `ifi_data.json` (colonne `p_FRAG`, `p_STRS`, `p_cot_am`, `p_cot_lev`) e scriverli in `concordanza`.
+- **Soglie raggiunte:** se una soglia di «da monitorare» è stata superata, la voce successiva ne indica una nuova (nota: S&P 500 sotto 7.000 → ora 6.600).
+- **Fonti bloccate:** ZeroHedge (proxy) e Scenari Economici/ZeroHedge non sempre leggibili: dire quali fonti non sono state lette; le notizie con data vecchia si segnano `arretrato`.
+- **Etichette:** non usare «in molti casi» o simili senza numeri; citare i settori con il nome esatto della fonte.
