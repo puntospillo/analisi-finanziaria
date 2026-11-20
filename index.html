@@ -2163,11 +2163,13 @@ window.AF2 = () => ({N, T, COL, IFI, AV, F2, Q2, QF, PRF, MYEQ, PROF, E2, APP_VE
 // ---- v4.0: frase semplice del Consiglio, motivi (parte tecnica), valutazione di mercato nel corpo della pagina
 function inBreve(i) {
   const s = QF.st[i], R = AV.reg[i];
-  const base = {BULL_CONFIRMED: 'La tendenza del mercato è positiva', FRAGILE: 'La tendenza è positiva ma poggia su pochi titoli', BEAR_STRESS: 'Il mercato è in una fase negativa', EARLY_RECOVERY: 'Il mercato prova a ripartire dopo un ribasso'}[R];
-  const sig = {normale: 'e non ci sono segnali di allarme', allerta: 'ma compaiono i primi segnali di debolezza, non ancora confermati', riduzione: 'ma i segnali di debolezza sono confermati: meglio tenere meno azioni', rientro: 'e l\'allerta dei giorni scorsi è rientrata: si risale per gradi', dati: 'ma mancano alcuni dati: per prudenza la quota non aumenta'}[s];
+  let base = {BULL_CONFIRMED: 'La tendenza del mercato è positiva', FRAGILE: 'La tendenza è positiva ma poggia su pochi titoli', BEAR_STRESS: 'Il mercato è in una fase negativa', EARLY_RECOVERY: 'Il mercato prova a ripartire dopo un ribasso'}[R];
+  const trw = AV.P.tr[i]; // tendenza del giorno (0–100, 50 = sull'S&P esattamente sulla media a 200 giorni): la tendenza smussata dei regimi reagisce con ritardo
+  if ((R === 'FRAGILE' || R === 'BULL_CONFIRMED') && trw < 50) base = trw > 0 ? 'Il mercato è appena sotto la sua media a 200 giorni: la tendenza di fondo si sta indebolendo' : 'Il mercato è sceso di oltre il 2% sotto la sua media a 200 giorni: la tendenza di fondo si è indebolita';
+  let sig = {normale: 'e non ci sono segnali di allarme', allerta: 'ma compaiono i primi segnali di debolezza, non ancora confermati', riduzione: 'ma i segnali di debolezza sono confermati: meglio tenere meno azioni', rientro: 'e l\'allerta dei giorni scorsi è rientrata: si risale per gradi', dati: 'ma mancano alcuni dati: per prudenza la quota non aumenta'}[s];
   let lim = '';
   if (AV.cap[i] <= AAV.emCap + 1e-9) lim = ' È attiva l\'emergenza: quota al minimo.';
-  else if (AV.frz[i]) lim = ' Dopo lo scossone recente la quota non aumenta finché non torna la calma.';
+  else if (AV.frz[i]) { lim = ' Dopo lo scossone recente la quota non aumenta finché non torna la calma.'; sig = sig.replace(': si risale per gradi', ''); }
   else if (AV.vm[i] < 0.9) lim = ' Le oscillazioni sono forti, quindi la quota è più bassa del normale.';
   else if (AV.cap[i] < 1) lim = ' Il mercato è fragile da due settimane: quota limitata.';
   return base + ', ' + sig + '.' + lim;
