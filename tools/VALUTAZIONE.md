@@ -60,3 +60,13 @@ Dopo OGNI aggiornamento («aggiorna» e «aggiorna tutto») controllare tutti i 
 - **Soglie raggiunte:** se una soglia di «da monitorare» è stata superata, la voce successiva ne indica una nuova (nota: S&P 500 sotto 7.000 → ora 6.600).
 - **Fonti bloccate:** ZeroHedge (proxy) e Scenari Economici/ZeroHedge non sempre leggibili: dire quali fonti non sono state lette; le notizie con data vecchia si segnano `arretrato`.
 - **Etichette:** non usare «in molti casi» o simili senza numeri; citare i settori con il nome esatto della fonte.
+
+## Regole fisse di Maurizio (21/11/2026): da applicare a OGNI "aggiorna tutto"
+1. Idee normali: cambiane ALMENO 4 e inserisci ALMENO 1-2 nomi davvero nuovi (mai usati nelle ultime valutazioni), con ricerche dedicate sui candidati e cifre/date verificate. Riconfermare le stesse non vale come rotazione.
+2. Opportunità ad alto rischio: ruotano anch'esse. Sostituisci almeno 2 nomi con nomi nuovi (capitalizzazione >= 1 mld verificata, sconto con fonte e natura della stima dichiarata). Vincoli: >=2 IT, >=3 UE non IT, >=3 USA, max 3 per settore, 9-12 voci.
+3. Se non trovi nomi nuovi validi: non pubblicare in silenzio; dillo in `nota` e nella risposta, indicando cosa resta fermo e perché.
+4. Notizie: per ogni fonte (Milano Finanza, Scenari Economici, ZeroHedge) almeno 2-3 ricerche con query e forme di URL diverse (con/senza www, https, articolo da WebSearch con allowed_domains) PRIMA di dichiararla bloccata o illeggibile.
+5. Verifica finale obbligatoria: `python3 tools/verifica.py` + confronto esterno (S&P 500, Nasdaq 100, VIX, Treasury 10 anni); la risposta dice cosa è verificato e cosa no.
+6. Mai cifre Teleborsa di metà seduta come chiusure; fonti discordanti segnalate; calo/aumento dell'indice spiegato con i contributi dei gruppi (CFTC).
+7. Soglia di «da monitorare» raggiunta: la voce nuova ne indica una successiva.
+8. La risposta finale elenca esplicitamente: idee e opportunità NUOVE, RISCRITTE, INVARIATE.
