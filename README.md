@@ -18,7 +18,7 @@ Blocco degli aumenti dopo uno shock forte (almeno 2 condizioni su 3): massimo 10
 Pagina a quattro colonne (Notizie dal web, Milano Finanza, Scenari Economici, ZeroHedge) in `notizie.json`: nuove in alto con «NUOVA», 7 giorni in linea, «Prosegui» fino a un mese, «Archivio» fino a un anno, articoli a pagamento con lucchetto e senza link. Regole di ricerca e schema in `tools/VALUTAZIONE.md`; unione con `tools/notizie.py`. Il tasto «Chiudi» è sempre in alto in ogni finestra.
 
 ## Novità 2.5 (14/11/2026)
-Quattro profili con blocco dopo shock diverso: Prudente e Bilanciato 15 sedute, Dinamico 10, Reattivo 5 (nuovo: tetto 70%, rientro ogni 3 sedute, +20 con conferme, aumenti anche a metà settimana). Il modello di base si calcola per profilo (`computeAAVAll` → `AVP`). Questionario a 6 domande (4 rischio, 2 operatività).
+Quattro profili con volatilità obiettivo (Prudente 8%, Bilanciato 10%, Dinamico e Reattivo 12%) e blocco dopo shock diverso: Prudente e Bilanciato 15 sedute, Dinamico 10, Reattivo 5 (nuovo: tetto 70%, rientro ogni 3 sedute, +20 con conferme, aumenti anche a metà settimana). Il modello di base si calcola per profilo (`computeAAVAll` → `AVP`). Questionario a 6 domande (4 rischio, 2 operatività).
 
 ## Novità 2.4 (13/11/2026)
 Riquadro Italia (ETF EWI) negli «Altri mercati azionari», con approfondimento al clic: FTSE MIB in euro, confronto con le altre borse, settori, principali titoli e spread BTP-Bund (OECD via FRED). Dati in `indici.json` → `italia`.
