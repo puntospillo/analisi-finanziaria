@@ -1,7 +1,7 @@
 {
- "rid": "vmwpmcpvb",
+ "rid": "vmwpmgk99",
  "state": "ok",
- "at": "2026-11-20T23:37:24Z",
+ "at": "2026-11-20T23:40:23Z",
  "app_version": "2.7",
  "data_as_of": "2026-11-20",
  "settings_key": "10lt6nt",
@@ -562,19 +562,21 @@
   {
    "categoria": "azione",
    "mercato": "USA",
-   "nome": "Textron",
-   "ticker": "TXT",
+   "nome": "Nvidia",
+   "ticker": "NVDA",
    "direzione": "opportunità rischiosa",
-   "tesi": "Gruppo aerospaziale e della difesa (jet Cessna, elicotteri Bell, sistemi militari) vicino ai minimi annuali nonostante conti in miglioramento.",
-   "sottovalutazione": "Stima sui flussi di cassa di Simply Wall St (26/10): prezzo 76,83 $ contro un valore di 148,32 $ (sconto 48,2%). Con l'utile per azione rettificato atteso 2026 di 6,55–6,65 $ il P/E è circa 11,6 (mio calcolo). Il titolo ha toccato un minimo a 52 settimane a 75,5 $ (Investing.com).",
-   "catalizzatori": "Terzo trimestre: ricavi +4% a 3,8 miliardi, EPS rettificato 1,76 $ (da 1,55); previsioni 2026 alzate su utili e cassa dopo l'approvazione del programma MV-75 Cheyenne; portafoglio ordini Aviation 8,0 miliardi e Bell 7,6; riacquisti per 239 milioni.",
-   "perche_ora": "Conti del 29 ottobre sopra le attese con previsioni alzate, mentre il prezzo era ai minimi (ne deduco un possibile cambio di percezione).",
-   "rischi": "Ricavi Bell −9% e utile in calo; dipendenza da programmi militari e dal ciclo dei jet d'affari; esecuzione del nuovo elicottero. Stima sui flussi di cassa meccanica.",
-   "orizzonte": "6–12 mesi",
-   "prezzo_rif": "79,62 $ (Yahoo Finance, 20/11/2026)",
-   "fonte": "Textron (comunicato, SEC 8-K); Simply Wall St",
-   "url": "https://www.sec.gov/Archives/edgar/data/0000217346/000021734626000043/q320268-kex991.htm",
-   "data": "2026-10-29"
+   "tesi": "Chip per l'IA (GPU per data center). Il 20 novembre perde il 14,0% a 125,53 dollari (volumi 2,4 volte la norma) ed è il 47,5% sotto il massimo di un anno; pesa circa il 5,7% dell'S&P 500 (dashboard), quindi la capitalizzazione supera ampiamente 1 miliardo. Reuters riferisce che la SEC sta esaminando possibili problemi contabili; Jensen Huang si è dimesso da CEO la settimana prima (Reuters, 18/11).",
+   "sottovalutazione": "Investing.com (20/11) indica un P/E sugli utili attesi di 17,5 volte e un potenziale del 89% rispetto al valore equo (modello di terzi), con il titolo a 47,7% sotto il massimo di 52 settimane. Il dato di sconto è una stima automatica e non tiene conto di eventuali esiti negativi della revisione SEC.",
+   "catalizzatori": "Chiarimento sulla revisione SEC e sulla guida della società (Colette Kress è CEO ad interim, Scenari Economici 16/11); audizione di Huang alla Camera USA il 1° dicembre (segnalata il 19/11).",
+   "perche_ora": "Il crollo del 20 novembre ha ampliato lo sconto di valutazione, ma il motivo è un rischio non risolto (revisione SEC senza conclusioni, CEO dimissionario): non è uno sconto «normale».",
+   "rischi": "Rischio legale e contabile non quantificabile (la revisione non implica illeciti ma può durare a lungo); governance senza CEO; debito legato all'IA e rischio regolatorio sui data center; lo sconto del 89% è un modello di terzi; tendenza negativa per tutto il comparto.",
+   "orizzonte": "12 mesi",
+   "link": "https://finance.yahoo.com/quote/NVDA",
+   "link_sito": "Yahoo Finance",
+   "fonte": "Investing.com (20/11); Reuters via TradingKey (20/11)",
+   "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/262316111-nasdaq-falls-ai-stock-selloff-nvidia-sec-probe-tradingkey",
+   "data": "2026-11-20",
+   "prezzo_rif": "125,53 $ (Yahoo Finance, 20/11/2026)"
   },
   {
    "categoria": "azione",
@@ -598,19 +600,21 @@
   {
    "categoria": "azione",
    "mercato": "USA",
-   "nome": "Halliburton",
-   "ticker": "HAL",
+   "nome": "Micron",
+   "ticker": "MU",
    "direzione": "opportunità rischiosa",
-   "tesi": "Secondo gruppo mondiale di servizi petroliferi: nel terzo trimestre ricavi 5,7 miliardi di dollari (stabili), utile netto rettificato 501 milioni ($0,60 per azione), riacquisti di 250 milioni e dividendo di $0,17. Nord America −5% sul trimestre precedente, estero +3%.",
-   "sottovalutazione": "Stima sui flussi di cassa di Simply Wall St (26/10): prezzo 34,92 $ contro un valore di 66,27 $ (sconto 47,3%).",
-   "catalizzatori": "Il management prevede per il 2027 ricavi in crescita a una cifra media e margini operativi intorno al 15% (oggi 12,8% rettificato), senza contare una ripresa della fratturazione in Nord America («solo rialzo aggiuntivo»).",
-   "perche_ora": "Il 18 novembre il settore energia dell'S&P 500 ha perso il 3,5% (Chevron −4,7%), con Brent −2,6% a 89,5 dollari e scorte USA di greggio in aumento di 3,4 milioni di barili. Per i servizi petroliferi conta la spesa dei produttori: con il greggio più basso il rischio sale.",
-   "rischi": "Petrolio in calo e surplus di offerta riducono gli investimenti dei produttori; Nord America ancora debole; settore molto ciclico; la stima di sconto di Simply Wall St (47,3% al 26/10) è meccanica e non aggiornata.",
-   "orizzonte": "6–12 mesi",
-   "prezzo_rif": "30,53 $ (Yahoo Finance, 20/11/2026)",
-   "fonte": "Teleborsa (chiusura Wall Street e scorte, 18/11)",
-   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/commenti/giornata-da-dimenticare-per-il-mercato-americano-1_2026-11-19_TLB-AUTO.html",
-   "data": "2026-11-18"
+   "tesi": "Produttore di memorie DRAM e NAND, comprese le HBM usate nei chip per l'IA. Il 20 novembre perde il 13,9% a 594,51 dollari (volumi 1,8 volte la norma): è il 51% sotto il massimo di un anno e il 30,6% sotto un mese fa (dashboard). Capitalizzazione di circa 798 miliardi di dollari al prezzo di 734 usato da 24/7 Wall St, quindi ben oltre 1 miliardo.",
+   "sottovalutazione": "Sul prezzo del 20/11 Investing.com indica un P/E sugli utili attesi di 4,4 volte e un potenziale rispetto al valore equo del 80,7% (stima di un modello di terzi, non del titolo). 24/7 Wall St, con prezzo a 734 dollari, parla di P/E di circa 4 volte sugli utili dell'anno fiscale 2027 e di un obiettivo medio degli analisti di 1.561,91 dollari: sono pareri di terzi e il prezzo di riferimento è precedente al crollo.",
+   "catalizzatori": "Revisioni al rialzo delle stime sugli utili delle memorie e ripresa della fiducia sul comparto IA; Google, secondo la stampa sudcoreana, vorrebbe rifornirsi di memorie HBM direttamente dai produttori (Bernstein stima un risparmio di circa 50 miliardi di dollari): il nesso con Micron non è verificato.",
+   "perche_ora": "Il 20 novembre l'indice dei semiconduttori perde il 10,73% con tutti i 30 titoli in calo: il prezzo è sceso molto in una sola seduta, e multipli e stime di sconto vanno riletti con i nuovi prezzi.",
+   "rischi": "Titolo molto ciclico: i multipli bassi di un'azienda di memorie spesso riflettono utili vicini ai massimi del ciclo (deduzione); volatilità estrema (−13,9% in un giorno); contagio dal debito legato all'IA (Goldman: 545 miliardi di project financing nel 2027); le stime di sconto sono di terzi e con prezzi diversi tra le fonti; in contrasto con l'ETF sui semiconduttori da evitare: qui il rischio è alto e va accettato.",
+   "orizzonte": "12 mesi",
+   "link": "https://finance.yahoo.com/quote/MU",
+   "link_sito": "Yahoo Finance",
+   "fonte": "Investing.com (20/11); 24/7 Wall St (20/11); dashboard (Yahoo Finance)",
+   "url": "https://www.investing.com/news/stock-market-news/chip-stocks-to-consider-on-the-dip-micron-and-nvidia-lead-the-screen-93CH-5042540",
+   "data": "2026-11-20",
+   "prezzo_rif": "594,51 $ (Yahoo Finance, 20/11/2026)"
   },
   {
    "categoria": "azione",
@@ -802,19 +806,14 @@
    "data": "2026-10-28"
   },
   {
-   "nome": "Textron (comunicato, SEC 8-K); Simply Wall St",
-   "url": "https://www.sec.gov/Archives/edgar/data/0000217346/000021734626000043/q320268-kex991.htm",
-   "data": "2026-10-29"
-  },
-  {
    "nome": "Tickzen; Zions (comunicato)",
    "url": "https://tickzen.app/stocks/zion/overview",
    "data": "2026-10-30"
   },
   {
-   "nome": "Teleborsa (chiusura Wall Street e scorte, 18/11)",
-   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/commenti/giornata-da-dimenticare-per-il-mercato-americano-1_2026-11-19_TLB-AUTO.html",
-   "data": "2026-11-18"
+   "nome": "Investing.com (20/11); 24/7 Wall St (20/11); dashboard (Yahoo Finance)",
+   "url": "https://www.investing.com/news/stock-market-news/chip-stocks-to-consider-on-the-dip-micron-and-nvidia-lead-the-screen-93CH-5042540",
+   "data": "2026-11-20"
   },
   {
    "nome": "Teleborsa (Alstom, 18/11)",
@@ -840,7 +839,7 @@
    "Nvidia −14,0% dopo la notizia Reuters di una revisione contabile della SEC; semiconduttori −10,7%, tutti i 30 titoli in calo.",
    "VIX a 35,9 (da 28,4); titoli sopra la media a 200 giorni al 48%; la quota in azioni scende al 20% per Prudente e Bilanciato.",
    "Cook (Fed) chiede un rialzo dei tassi al più presto; Treasury a 10 anni a 4,91%.",
-   "Idee: riscritte Walmart, Xtrackers S&P 500 Equal Weight UCITS ETF 1C, iShares STOXX Europe 600 Banks UCITS ETF (DE), Oro fisico tramite ETC — iShares Physical Gold ETC, Titoli di Stato euro a breve — iShares Euro Government Bond 1-3yr UCITS ETF, Semiconduttori — es. VanEck Semiconductor UCITS ETF; nuove Terna, Snam e T-Mobile US al posto di Generali, Eni e Microsoft."
+   "Idee: riscritte Walmart, Xtrackers S&P 500 Equal Weight UCITS ETF 1C, iShares STOXX Europe 600 Banks UCITS ETF (DE), Oro fisico tramite ETC — iShares Physical Gold ETC, Titoli di Stato euro a breve — iShares Euro Government Bond 1-3yr UCITS ETF, Semiconduttori — es. VanEck Semiconductor UCITS ETF; nuove Terna, Snam e T-Mobile US al posto di Generali, Eni e Microsoft Opportunità rischiose: nuove Micron e Nvidia al posto di Halliburton e Textron."
   ],
   "situazione": [
    "L'indice di rischio è a 66 su 100, livello «elevato» (ieri 67), a quattro punti da «alto». Stress a 85 e fragilità a 62. L'S&P 500 è a 6.910, 11,6% sotto il massimo e 6,0% sotto la media a 200 giorni; il modello è in difesa, con il 20% di azioni per Prudente e Bilanciato e il 30% per Dinamico e Reattivo.",
@@ -944,7 +943,7 @@
     "data": "2026-11-20"
    }
   ],
-  "nota": "Dati: seduta del 20 novembre (Reuters via TradingKey; dashboard). Non verificati: la causa dei cali di Broadcom e Micron (probabile contagio dal settore, non provato), il dato di chiusura di Anthropic, la probabilità dei future Fed di oggi, il dato di credito di oggi e i settori a fine seduta. Il WSJ (17/11) e Reuters (20/11) parlano di esami SEC su Nvidia senza conclusioni di illeciti. ZeroHedge non è stato leggibile (accesso bloccato); Scenari Economici: i contenuti disponibili sono del 6 e 16 novembre. Idee nuove (21/11): Terna e Snam (conti nove mesi, Teleborsa) e T-Mobile US (terzo trimestre, Finviz); per tutte e tre il dato di prezzo del 20/11 non è verificato."
+  "nota": "Dati: seduta del 20 novembre (Reuters via TradingKey; dashboard). Non verificati: la causa dei cali di Broadcom e Micron (probabile contagio dal settore, non provato), il dato di chiusura di Anthropic, la probabilità dei future Fed di oggi, il dato di credito di oggi e i settori a fine seduta. Il WSJ (17/11) e Reuters (20/11) parlano di esami SEC su Nvidia senza conclusioni di illeciti. ZeroHedge non è stato leggibile (accesso bloccato); Scenari Economici: i contenuti disponibili sono del 6 e 16 novembre. Idee nuove (21/11): Terna e Snam (conti nove mesi, Teleborsa) e T-Mobile US (terzo trimestre, Finviz); per tutte e tre il dato di prezzo del 20/11 non è verificato. Opportunità rischiose nuove (21/11): Micron e Nvidia; gli sconti sono stime di terzi (Investing.com, 24/7 Wall St) con prezzi di riferimento diversi. Le altre 7 opportunità hanno fatti di ottobre-inizio novembre e non sono state rinnovate: per Italia ed Europa non ho trovato in questa sessione cifre verificate di sconto e capitalizzazione."
  },
  "titoli_giorno": {
   "metodo": "Tra i 30 titoli più pesanti dell'S&P 500 conta chi ha spostato di più l'indice nell'ultima seduta (peso × variazione del giorno), con un bonus se è stato scambiato molto più del solito: di solito c'è una notizia.",
