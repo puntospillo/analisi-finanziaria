@@ -3787,6 +3787,7 @@ function renderNotizieFonti() {
     const col = el('div', 'gz-col ' + cls);
     const br = el(home ? 'a' : 'div', 'gz-brand'); if (home) { br.href = home; br.target = '_blank'; br.rel = 'noopener noreferrer'; br.title = 'Apri ' + nome; }
     br.append(el('b', 'sig', sig), el('span', 'bn', brand), el('span', 'cnt', nNew + (nNew === 1 ? ' nuova' : ' nuove')), el('span', 'sub', sub)); col.append(br);
+    if (!nNew) { const ult = mine.map(dd).sort().pop(); col.append(el('p', 'muted', 'Nessuna novità in questo aggiornamento' + (ult ? ' · ultima voce del ' + fmt(ult) : '') + '.')); }
     const card = (x, old) => { const c = el('article', 'gz-card' + (old ? ' old' : '') + (x.abbonamento ? ' lock' : '') + (!old && x.agg === NEWS.ultimo_agg ? ' fresh' : '')); const m = el('div', 'gz-meta');
       if (x.tema) { const tg = el('span', 'tag', x.tema); tg.style.setProperty('--tc', TEMACOL[x.tema] || '#4a5d8f'); m.append(tg); } if (x.sito && x.sito !== x.tema) m.append(el('span', 'tag sito', x.sito)); const g = el('span', 'dtg'); if (!old && x.agg === NEWS.ultimo_agg) g.append(el('span', 'nuova', 'NUOVA')); g.append(el('span', 'dt', x.data ? fmt(x.data) : 'rilevata il ' + fmt(x.visto))); m.append(g); c.append(m);
       const u = x.abbonamento ? null : safeUrl(x.url); const t = el('h4');

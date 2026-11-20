@@ -656,8 +656,96 @@
    "abbonamento": false,
    "agg": 3,
    "visto": "2026-11-17"
+  },
+  {
+   "fonte": "scenarieconomici",
+   "titolo": "Inflazione italiana al 5,5% a ottobre, spinta dall'energia",
+   "sintesi": "Secondo l'Istat l'inflazione annua di ottobre 2026 è al 5,5%, dal 4,2% di settembre e sopra la stima preliminare del 5,4%; su base mensile i prezzi salgono dell'1,0%. A trainare sono gli energetici regolamentati (+61,6% annuo). L'inflazione di fondo, senza energia e alimentari freschi, è solo al 2,0%: l'autore ne deduce che non c'è una spirale salari-prezzi, con il PIL fermo sotto l'1%. Chiede misure d'emergenza e la sospensione dei pagamenti legati al sistema europeo delle quote di emissione (ETS). È un'analisi con posizione politica esplicita.",
+   "url": "https://scenarieconomici.it/economia-italiana-sulle-corde-linflazione-vola-al-55-a-ottobre-spinta-dal-caro-energia-perche-servono-misure-demergenza-e-lo-stop-agli-ets/",
+   "data": "2026-11-17",
+   "tema": "Macro",
+   "abbonamento": false,
+   "agg": 4,
+   "visto": "2026-11-17"
+  },
+  {
+   "fonte": "scenarieconomici",
+   "titolo": "Deficit italiano al 2,9% secondo Bruxelles; Knot indica l'Italia come esempio",
+   "sintesi": "La Commissione europea prevede per l'Italia un deficit del 2,9% del PIL nel 2026, sotto la soglia del 3%, e alza la stima di crescita all'1% dallo 0,5% di primavera. Klaas Knot, ex governatore della banca centrale olandese e candidato alla presidenza della BCE, cita l'Italia come esempio di gestione prudente di un debito elevato. Il quadro resta fragile: deficit al 3,5% nel 2027 e debito al 138,8% del PIL, con pressioni da difesa, energia e interessi. L'articolo ricorda anche il peso dei bonus edilizi.",
+   "url": "https://scenarieconomici.it/deficit-sotto-il-3-bruxelles-conferma-la-rotta-di-meloni-e-knot-indica-litalia-come-esempio/",
+   "data": "2026-11-17",
+   "tema": "Obbligazioni",
+   "abbonamento": false,
+   "agg": 4,
+   "visto": "2026-11-17"
+  },
+  {
+   "fonte": "scenarieconomici",
+   "titolo": "Asia e crisi del Golfo: spinta al nucleare per la sicurezza energetica",
+   "sintesi": "Con petrolio e gas più cari per la crisi in Medio Oriente, i paesi asiatici puntano su risorse locali. Secondo Global Energy Monitor nel mondo ci sono 408 GW di nucleare operativo e 91 GW in costruzione, circa il 73% (66 GW) in Asia. Guidano Cina (oltre 43 GW), India (6,6 GW), Giappone (6,1 GW) e Corea del Sud (5,6 GW). L'India punta a 100 GW entro il 2047 dagli attuali 8,8 GW; il Giappone al 20% di elettricità nucleare entro il 2040. Le rinnovabili crescono ma non garantiscono carico stabile.",
+   "url": "https://scenarieconomici.it/lasia-blinda-la-sua-industria-la-crisi-del-golfo-spinge-la-rinascita-del-nucleare/",
+   "data": "2026-11-17",
+   "tema": "Energia",
+   "abbonamento": false,
+   "agg": 4,
+   "visto": "2026-11-17"
+  },
+  {
+   "fonte": "scenarieconomici",
+   "titolo": "Bitcoin perde oltre il 20% in undici giorni: liquidità e deflussi dagli ETF",
+   "sintesi": "Il Bitcoin è sceso da 81.000 a circa 61.900 dollari tra il 4 e il 15 novembre. Secondo l'autore pesa la stretta di liquidità: l'inflazione USA di ottobre al 3,7% fa temere un rialzo dei tassi Fed a dicembre. Gli ETF spot hanno avuto deflussi netti per 1,91 miliardi di dollari in una settimana, con emittenti come BlackRock (IBIT) costretti a vendere Bitcoin fisici; circa 2 miliardi di posizioni a leva sono stati liquidati in 24 ore.",
+   "url": "https://scenarieconomici.it/bitcoin-perde-20-000-dollari-in-dieci-giorni-la-trappola-della-liquidita-e-lillusione-degli-etf/",
+   "data": "2026-11-15",
+   "tema": "Cripto",
+   "abbonamento": false,
+   "agg": 4,
+   "visto": "2026-11-17"
+  },
+  {
+   "fonte": "zerohedge",
+   "titolo": "Guasto alla rete segreta della NSA: i future Nasdaq scendono, S&P sotto la media a 200 giorni",
+   "sintesi": "Secondo la CNN, che cita cinque fonti anonime, martedì mattina la rete interna riservata della NSA è andata fuori servizio. Non risultano ancora segni di attacco informatico; l'agenzia ha spostato gli orari d'ingresso del personale. L'articolo collega l'episodio ad altri disservizi recenti: Microsoft 365 giovedì, il blocco dei voli FAA venerdì, US Bank lunedì. I future sul Nasdaq cedono e l'S&P risulterebbe sceso sotto la media a 200 giorni, senza cifre sul calo.",
+   "url": "https://www.zerohedge.com/markets/nsas-spy-network-reportedly-goes-dark-sending-stocks-sliding",
+   "data": "2026-11-17",
+   "tema": "Tecnologia",
+   "abbonamento": false,
+   "agg": 4,
+   "visto": "2026-11-17"
+  },
+  {
+   "fonte": "zerohedge",
+   "titolo": "Hormuz: petroliera in fiamme e droni su una base in Bahrein",
+   "sintesi": "Martedì i Guardiani della Rivoluzione iraniani dicono di aver colpito con droni un radar USA nella base di Sheikh Isa in Bahrein; il Comando centrale USA afferma che i droni sono stati intercettati senza danni. La petroliera di gas Tara Gas (bandiera panamense, 25 marittimi, 24 indiani) è stata immobilizzata e incendiata a circa sette miglia nautiche da Khasab, in Oman. La marina iraniana dichiara che una terza petroliera ha urtato una mina nello stretto. Il Qatar riferisce che la mediazione prosegue.",
+   "url": "https://www.zerohedge.com/geopolitical/pentagon-says-irgc-missiles-bahrain-airbase-intercepted-more-tankers-flames",
+   "data": "2026-11-17",
+   "tema": "Geopolitica",
+   "abbonamento": false,
+   "agg": 4,
+   "visto": "2026-11-17"
+  },
+  {
+   "fonte": "zerohedge",
+   "titolo": "Trump minaccia l'Iran sul presunto piano di «bomba sporca»; Teheran: «infondato»",
+   "sintesi": "Il ministero degli Esteri iraniano smentisce un'informazione della CNN, basata su fonti USA anonime, su un piano per far esplodere una «bomba sporca» a Washington, e la definisce infondata. Il ministro Abbas Araghchi vede «impronte israeliane». Trump avverte che l'Iran «pagherà un prezzo mai pagato da nessun paese». Il segretario alla Sicurezza interna Markwayne Mullin ricorda che la minaccia non è nuova. L'autore collega le notizie alla visita a Washington del capo del Mossad, che secondo Axios vuole spingere Trump a riprendere gli attacchi.",
+   "url": "https://www.zerohedge.com/geopolitical/trump-issues-threat-over-dirty-bomb-plot-while-iran-says-israeli-fingerprints-all-over",
+   "data": "2026-11-17",
+   "tema": "Geopolitica",
+   "abbonamento": false,
+   "agg": 4,
+   "visto": "2026-11-17"
+  },
+  {
+   "fonte": "zerohedge",
+   "titolo": "Attacco informatico: 178 grandi siti hanno servito malware ai visitatori",
+   "sintesi": "Lunedì hacker hanno servito malware ai visitatori di 178 organizzazioni, tra cui Zoom, CNN, BBC, HSBC ed Equifax, dirottando la piattaforma di test Optimizely. Report URI ha trovato 188 file infetti su 1.611 controllati, ma ritiene che il numero reale sia più alto. Il codice sostituiva indirizzi di portafogli cripto e copiava dati delle carte dalle pagine di pagamento dalle 8:43 (ora della costa est). Circa 7.350 dollari sono arrivati ai portafogli dell'attaccante; i file erano puliti alle 18:11.",
+   "url": "https://www.zerohedge.com/technology/massive-cyberattack-turned-178-worlds-biggest-websites-against-their-own-visitors",
+   "data": "2026-11-17",
+   "tema": "Tecnologia",
+   "abbonamento": false,
+   "agg": 4,
+   "visto": "2026-11-17"
   }
  ],
  "aggiornato": "2026-11-17",
- "ultimo_agg": 3
+ "ultimo_agg": 4
 }
