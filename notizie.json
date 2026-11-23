@@ -1415,8 +1415,166 @@
    "abbonamento": false,
    "agg": 0,
    "visto": "2026-11-16"
+  },
+  {
+   "fonte": "web",
+   "titolo": "Wall Street vola con il ritorno di Huang alla guida di Nvidia, dollaro ai massimi da 19 mesi",
+   "sintesi": "Il consiglio di Nvidia ha reintegrato Jensen Huang come amministratore delegato e la notizia ha invertito le vendite della settimana scorsa. Alle 19:30 circa l'S&P 500 è a 7.236 punti, il Nasdaq 100 sale del 6,81% e il Dow Jones del 3,02%. Il dollaro tocca il massimo da 19 mesi (indice a 104,3) per le attese di una Fed più aggressiva. Gli investitori attendono l'inflazione PCE, con il dato annuale atteso al 3,8%. Informatica +8,97%, telecomunicazioni +5,09% e beni di consumo secondari +4,70% i settori migliori.",
+   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/commenti/wall-street-vola-con-il-ritorno-di-huang-alla-guida-di-nvidia-dollaro-ai-massimi-da-19-mesi-203_2026-11-23_TLB.html?lang=it",
+   "data": "2026-11-23",
+   "tema": "Mercati",
+   "sito": "Teleborsa (Borsa Italiana)",
+   "agg": 9,
+   "visto": "2026-11-23"
+  },
+  {
+   "fonte": "web",
+   "titolo": "Effetto Huang sui listini europei, a Piazza Affari volano Stm e Technoprobe",
+   "sintesi": "Milano chiude in positivo mentre gli altri listini europei sono in calo diffuso in apertura; l'impatto dello stacco cedole di UniCredit, Intesa Sanpaolo, Banco Bpm, Bper, Mediolanum, Poste, Eni, Terna e Tenaris pesa circa 1,4% sull'indice. Stm e Technoprobe guadagnano circa il 9% dopo il ritorno di Huang. Settore tecnologia +7,93%, energia −1,06%. Lo spread BTP-Bund scende a 105 punti base con il BTP decennale al 4,34%. Francoforte +2,15%, Londra +1,30%, Parigi +1,48%.",
+   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/commenti/effetto-huang-sui-listini-europei-a-piazza-affari-volano-stm-e-technoprobe-181_2026-11-23_TLB.html?lang=it",
+   "data": "2026-11-23",
+   "tema": "Piazza Affari",
+   "sito": "Teleborsa (Borsa Italiana)",
+   "agg": 9,
+   "visto": "2026-11-23"
+  },
+  {
+   "fonte": "web",
+   "titolo": "Wall Street riparte dopo il ritorno di Huang in Nvidia: Reuters a metà seduta",
+   "sintesi": "Reuters riferisce che a metà seduta il Nasdaq Composite sale del 6,69% a 24.131, l'S&P 500 del 4,85% a 7.245 e il Dow Jones del 3,05% a 49.617. Nvidia guadagna circa il 32%, l'indice dei semiconduttori Philadelphia il 13,4% e le Magnificent Seven tra il 5,8% e il 12,4%. CrowdStrike compra Zscaler per circa 43,9 miliardi di dollari in azioni. Secondo CME FedWatch la probabilità di un rialzo Fed di 25 punti base a dicembre è circa 98%.",
+   "url": "https://ca.investing.com/news/stock-market-news/wall-street-roars-back-as-nvidia-reinstates-jensen-huang-as-ceo-4976467",
+   "data": "2026-11-23",
+   "tema": "USA",
+   "sito": "Reuters (via Investing.com)",
+   "agg": 9,
+   "visto": "2026-11-23"
+  },
+  {
+   "fonte": "web",
+   "titolo": "Moody's alza i rating di Mps: senior unsecured a Baa2",
+   "sintesi": "Moody's migliora il rating dei depositi di lungo termine di Banca Mps ad A3 da Baa1 e quello sul debito senior unsecured a Baa2 da Baa3, con outlook stabile; il Baseline Credit Assessment sale a baa3 da ba1. L'agenzia cita redditività duratura, migliore qualità degli attivi e posizione patrimoniale robusta. Se l'Opas di Intesa Sanpaolo diventasse efficace, ne valuterà le implicazioni per Mps.",
+   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/moody-s-alza-i-rating-di-mps-senior-unsecured-a-baa2-da-baa3-outlook-stabile-191_2026-11-23_TLB.html?lang=it",
+   "data": "2026-11-23",
+   "tema": "Banche",
+   "sito": "Teleborsa (Borsa Italiana)",
+   "agg": 9,
+   "visto": "2026-11-23"
+  },
+  {
+   "fonte": "web",
+   "titolo": "Banco Bpm colloca covered bond da 500 milioni a 4 anni",
+   "sintesi": "Nuova emissione di covered bond da 500 milioni di euro a 4 anni sul programma da 10 miliardi, con rating atteso Aa2 di Moody's, cedola fissa del 3,625% e scadenza 30 novembre 2030. Il rendimento è pari al mid-swap più 39 punti base. Gli ordini hanno superato al picco 2 miliardi; gli asset manager sono il 40% degli investitori.",
+   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/banco-bpm-colloca-covered-bond-da-500-milioni-a-4-anni-ordini-oltre-2-miliardi-cedola-al-3625-199_2026-11-23_TLB.html?lang=it",
+   "data": "2026-11-23",
+   "tema": "Obbligazioni",
+   "sito": "Teleborsa (Borsa Italiana)",
+   "agg": 9,
+   "visto": "2026-11-23"
+  },
+  {
+   "fonte": "web",
+   "titolo": "Italian Sea Group, il cda ritiene idonea l'offerta di Sri Global da 220 milioni",
+   "sintesi": "Il cda di The Italian Sea Group ha esaminato l'offerta di Sri Global Limited per l'intero compendio aziendale a 220 milioni di euro, individuata come la migliore a conclusione del processo competitivo, e la ritiene idonea nei termini del concordato preventivo. Sarà depositata al Tribunale una nuova istanza per autorizzare l'affitto d'azienda. La stipula è condizionata a un versamento in escrow di risorse non inferiori a 275 milioni.",
+   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/italian-sea-group-il-cda-ritiene-idonea-l-offerta-di-sri-global-da-220-milioni-229_2026-11-23_TLB.html?lang=it",
+   "data": "2026-11-23",
+   "tema": "Piazza Affari",
+   "sito": "Teleborsa (Borsa Italiana)",
+   "agg": 9,
+   "visto": "2026-11-23"
+  },
+  {
+   "fonte": "web",
+   "titolo": "Opa Pininfarina, le adesioni salgono all'84,71%",
+   "sintesi": "Nell'Opa volontaria totalitaria di PF Holdings su Pininfarina sono state presentate oggi 9.997 richieste; le adesioni totali salgono a 11.606.252, pari all'84,71% degli strumenti oggetto di offerta. L'Opa è iniziata il 26 ottobre e si chiude il 27 novembre 2026, dopo la proroga.",
+   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/opa-pininfarina-le-adesioni-salgono-al-8471-197_2026-11-23_TLB.html?lang=it",
+   "data": "2026-11-23",
+   "tema": "Piazza Affari",
+   "sito": "Teleborsa (Borsa Italiana)",
+   "agg": 9,
+   "visto": "2026-11-23"
+  },
+  {
+   "fonte": "web",
+   "titolo": "Banca centrale di Israele ferma i tassi al 3,25%",
+   "sintesi": "La Banca centrale di Israele lascia i tassi al 3,25% per il secondo mese consecutivo, in linea con le attese. Pesano l'incertezza politica interna, le tensioni geopolitiche e l'indebolimento dello shekel. È l'ultima riunione di politica monetaria del 2026.",
+   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/banca-centrale-di-israele-ferma-i-tassi-al-325-pesano-incertezze-politiche-e-tensioni-geopolitiche-225_2026-11-23_TLB.html?lang=it",
+   "data": "2026-11-23",
+   "tema": "Tassi",
+   "sito": "Teleborsa (Borsa Italiana)",
+   "agg": 9,
+   "visto": "2026-11-23"
+  },
+  {
+   "fonte": "milanofinanza",
+   "titolo": "Cos'è successo oggi sui mercati: il ritorno di Huang in Nvidia e il deal da 3,9 miliardi di Vår Energi",
+   "sintesi": "Nvidia guadagna oltre il 30% dopo il ritorno di Jensen Huang, che torna alla guida dieci giorni dopo le dimissioni per decisione unanime del cda. CrowdStrike compra Zscaler per circa 43,9 miliardi di dollari in azioni (Zscaler +15%, CrowdStrike −10%). Vår Energi, partecipata al 63,04% da Eni, rileva il business norvegese di ConocoPhillips: corrispettivo iniziale 4,4 miliardi di dollari, valore atteso circa 3,9. Stellantis lascia il Mondiale Endurance e la Formula E, con risparmi di diverse decine di milioni.",
+   "url": "https://www.milanofinanza.it/news/cos-e-successo-oggi-sui-mercati-dal-ritorno-di-jensen-huang-in-sella-a-nvidia-al-deal-da-3-9-mld-di-var-202611231815508328",
+   "data": "2026-11-23",
+   "tema": "Mercati",
+   "agg": 9,
+   "visto": "2026-11-23"
+  },
+  {
+   "fonte": "milanofinanza",
+   "titolo": "Nvidia, Jensen Huang torna ceo e l'azione vola del 31,5%. Anthropic sull'altalena",
+   "sintesi": "Nel pre-market Nvidia sale di oltre il 31% dopo un novembre in cui aveva perso più del 40%. Il ritorno di Huang arriva a sorpresa: fino a poco prima il board aveva deciso di cercare un nuovo ceo. Anthropic, dopo un debutto chiuso a +17% sul prezzo di ipo, ha perso l'8,5% il giorno dopo e oggi rimbalza del 3,8%; l'ipo ha raccolto 93,5 miliardi di dollari più 26 di collocamento privato. Gli analisti di Mps avvertono che il rimbalzo potrebbe essere tecnico: il rame ha perso il 15% in un mese.",
+   "url": "https://www.milanofinanza.it/news/anthropic-e-nvidia-rimbalzano-nel-pre-market-e-finita-la-crisi-del-tech-202611231314498108",
+   "data": "2026-11-23",
+   "tema": "Tecnologia",
+   "agg": 9,
+   "visto": "2026-11-23"
+  },
+  {
+   "fonte": "milanofinanza",
+   "titolo": "Dividendi, il 23 novembre è il D-Day di Piazza Affari: 9,7 miliardi solo dalle banche",
+   "sintesi": "Lunedì 23 novembre 11 società quotate staccano la cedola e le sole banche distribuiscono 9,7 miliardi di euro: UniCredit 4,5 miliardi, Intesa Sanpaolo 3,8, Banco Bpm 757,6 milioni, Bper 694 milioni. Nove delle società fanno parte del FTSE MIB, con un effetto tecnico sull'indice stimato intorno a −1,4%. Tra le altre Poste, Eni, Terna, Tenaris, Mondadori (rendimento 8,17%) e Danieli.",
+   "url": "https://www.milanofinanza.it/news/dividendi-il-23-novembre-e-il-d-day-di-piazza-affari-9-7-miliardi-solo-dalle-banche-l-impatto-sull-indice-202611211502008591",
+   "data": "2026-11-21",
+   "tema": "Banche",
+   "agg": 9,
+   "visto": "2026-11-23"
+  },
+  {
+   "fonte": "scenarieconomici",
+   "titolo": "Colpo di scena a Wall Street: Nvidia richiama Jensen Huang su spinta della Casa Bianca, il titolo esplode del 30%",
+   "sintesi": "Lunedì 23 novembre il consiglio di Nvidia ha reintegrato con effetto immediato Jensen Huang come amministratore delegato, presidente e consigliere, una settimana dopo aver accettato le sue dimissioni e giurato di non richiamarlo. Nel pre-mercato le azioni sono salite di circa il 30%, fino a quasi 170 dollari, dopo un minimo vicino a 125,5 alla vigilia. L'articolo attribuisce la svolta alla spinta della Casa Bianca; è la lettura dell'autore.",
+   "url": "https://scenarieconomici.it/colpo-di-scena-a-wall-street-nvidia-richiama-jensen-huang-su-spinta-della-casa-bianca-il-titolo-esplode-del-30/",
+   "data": "2026-11-23",
+   "tema": "Tecnologia",
+   "agg": 9,
+   "visto": "2026-11-23"
+  },
+  {
+   "fonte": "scenarieconomici",
+   "titolo": "Crollo AI a Wall Street: bruciati 4.000 miliardi e mercati in correzione",
+   "sintesi": "Venerdì 20 novembre il Nasdaq 100 ha perso il 5,61% e il VIX è salito fino a 40,03; il Nasdaq Composite ha ceduto circa il 10% nella settimana, il peggiore calo dal marzo 2020. Il Nasdaq ha perso oltre 4.000 miliardi di dollari di capitalizzazione e l'indice dei semiconduttori il 17,13% in cinque sedute. L'S&P 500 è sceso del 3,70% a 6.910,39, al settimo ribasso consecutivo. Goldman Sachs stima vendite dei fondi CTA tra 28,6 e 80,6 miliardi di dollari.",
+   "url": "https://scenarieconomici.it/crollo-ai-a-wall-street-bruciati-4-000-miliardi-e-mercati-in-correzione-che-cosa-e-successo-e-cosa-succedera/",
+   "data": "2026-11-21",
+   "tema": "Mercati",
+   "agg": 9,
+   "visto": "2026-11-23"
+  },
+  {
+   "fonte": "zerohedge",
+   "titolo": "«Thoughts and prayers»: il ritorno di Jensen azzera in pochi secondi un ETP short 3x su Nvidia",
+   "sintesi": "Quando il consiglio ha reintegrato Huang poco prima delle 9 ET, Nvidia è salita fino al 34% (circa 1.100 miliardi di dollari di capitalizzazione) e i future del Nasdaq sono stati fermati. L'ETP Leverage Shares −3x su Nvidia, quotato a Londra, Francoforte e Milano, è stato sospeso per superamento della soglia di tolleranza; la linea in dollari ha perso circa il 91% in pochi secondi, secondo Bloomberg Intelligence. L'autore lo paragona al crollo dell'XIV del 2018 (−92% in un giorno).",
+   "url": "https://www.zerohedge.com/markets/thoughts-and-prayers-jensens-return-wipes-out-3x-short-nvidia-etp-seconds-volmageddon",
+   "data": "2026-11-23",
+   "tema": "Tecnologia",
+   "agg": 9,
+   "visto": "2026-11-23"
+  },
+  {
+   "fonte": "zerohedge",
+   "titolo": "Eventi chiave della settimana accorciata: tutto sul PCE",
+   "sintesi": "La settimana parte con i PMI flash globali e il discorso di Williams (Fed di New York), l'ultima comunicazione prima del blackout in vista della riunione Fed del 9 dicembre. Mercoledì escono l'inflazione PCE di ottobre (core atteso +0,29% su mese per Deutsche Bank, redditi e consumi +0,4%) e gli ordini di beni durevoli (+2,5%), prima del Thanksgiving di giovedì. Il verbale Fed di ottobre segnala rischi per la stabilità finanziaria dalla rapida crescita del debito legato all'IA.",
+   "url": "https://www.zerohedge.com/markets/key-events-holiday-shortened-week-all-about-pce",
+   "data": "2026-11-23",
+   "tema": "Macro",
+   "agg": 9,
+   "visto": "2026-11-23"
   }
  ],
- "aggiornato": "2026-11-21",
- "ultimo_agg": 8
+ "aggiornato": "2026-11-23",
+ "ultimo_agg": 9
 }
