@@ -1,194 +1,194 @@
 {
- "rid": "vmwttit4j",
+ "rid": "vmwva07r2",
  "state": "ok",
- "at": "2026-11-23T22:09:10Z",
+ "at": "2026-11-24T22:38:22Z",
  "app_version": "2.7.1",
- "data_as_of": "2026-11-23",
+ "data_as_of": "2026-11-24",
  "settings_key": "10lt6nt",
  "settings_label": "impostazioni standard · fragilità 1, stress 1, istituzionali 0.5 · soglia 70 + filtro media 200g",
  "livello": "elevato",
- "titolo": "Rischio elevato (indice 65), ma rimbalzo record: l'S&P 500 sale del 4,7% a 7.237 e il Nasdaq 100 del 6,9% dopo il ritorno di Huang alla guida di Nvidia (+31,5%); VIX a 26,6, Fed verso il rialzo.",
+ "titolo": "Rischio elevato (indice 62): il rimbalzo si ridimensiona, S&P 500 −0,5% a 7.201 e Nasdaq 100 −2%; Nvidia −5,9% e Anthropic sotto il prezzo di ipo; Fed verso il rialzo e nuovi dazi in arrivo.",
  "in_breve": [
-  "Rischio: l'indice resta «elevato» a 65 (66 il 20/11, 63 quattro settimane fa), a cinque punti da «alto»: stress a 83 e fragilità a 60. L'S&P 500 chiude a 7.237 (+4,7%), 7,4% sotto il massimo e 1,5% sotto la media a 200 giorni (7.350); il 55% dei titoli è sopra la media. Il VIX scende del 26% a 26,6.",
-  "Cosa fare: il modello resta in difesa: il rimbalzo di un giorno non cambia la tendenza finché l'S&P 500 non torna sopra la media a 200 giorni. Il rialzo nasce dal ritorno di Huang in Nvidia (+31,5%); restano il rialzo Fed atteso a dicembre e il dollaro ai massimi da 19 mesi. Le idee sotto sono spunti da approfondire, non indicazioni di acquisto o vendita."
+  "Rischio: l'indice resta «elevato» a 62 (65 ieri, 61 quattro settimane fa), a otto punti da «alto»: fragilità a 56 e stress a 82. L'S&P 500 chiude a 7.201 (−0,5%), 7,9% sotto il massimo e 2,0% sotto la media a 200 giorni (7.351); il 55% dei titoli è sopra la media. Il VIX è a 26,4.",
+  "Cosa fare: il modello resta in difesa: il rimbalzo di lunedì non ha cambiato la tendenza e oggi se ne è perso circa un quarto. Pesano il ritorno dei dubbi sull'IA (Nvidia −5,9%, Micron −11%), i possibili nuovi dazi su Cina e UE e il rialzo Fed già scontato. Le idee sotto sono spunti da approfondire, non indicazioni di acquisto o vendita."
  ],
  "dashboard": [
-  "Indice di rischio 65 su 100 (Tendenza negativa); quattro settimane fa era 63. Fragilità 60, stress 83.",
-  "S&P 500 a 7237: -1.5% rispetto alla media a 200 giorni (7350) e -7.4% dal massimo. Il 55% dei titoli è sopra la propria media a 200 giorni. VIX 26.6.",
+  "Indice di rischio 62 su 100 (Tendenza negativa); quattro settimane fa era 61. Fragilità 56, stress 82.",
+  "S&P 500 a 7201: -2.0% rispetto alla media a 200 giorni (7351) e -7.9% dal massimo. Il 55% dei titoli è sopra la propria media a 200 giorni. VIX 26.4.",
   "Quota in azioni indicata dal modello: prudente 20%, bilanciato 20%, dinamico 20%, reattivo 20% (modello di base del profilo Bilanciato 20%)."
  ],
  "esterno": [
   {
-   "tema": "Wall Street, 23 novembre",
-   "lettura": "Chiusura in forte rialzo (dati della dashboard): S&P 500 7.237,2 (+4,73%), Nasdaq 100 26.746 (+6,86%), Nasdaq Composite 24.090 (+6,51%), Dow Jones 49.595 (+3,01%), Russell 2000 +3,40%. Reuters a metà seduta: S&P 500 7.245 (+4,85%), Nasdaq Composite +6,69%. I titoli restano sotto la media a 200 giorni (S&P 500 −1,5%).",
-   "segno": "meno rischio",
-   "fonte": "Dashboard (Yahoo Finance); Reuters (via Investing.com, metà seduta)",
-   "url": "https://ca.investing.com/news/stock-market-news/wall-street-roars-back-as-nvidia-reinstates-jensen-huang-as-ceo-4976467",
-   "data": "2026-11-23"
+   "tema": "Wall Street, 24 novembre",
+   "lettura": "Chiusura contrastata (dashboard): S&P 500 7.201,1 (−0,50%), Nasdaq 100 26.214 (−1,99%), Nasdaq Composite −1,48%, Dow Jones 50.018,7 (+0,85%), Russell 2000 +0,57%. Rotazione dai titoli dell'IA a un paniere più ampio; Teleborsa a metà seduta dà il Nasdaq 100 a circa −2%.",
+   "segno": "neutro",
+   "fonte": "Dashboard (Yahoo Finance); Teleborsa",
+   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/commenti/wall-street-prosegue-a-luci-e-ombre-tra-i-timori-per-nuovi-dazi-e-ai-197_2026-11-24_TLB.html?lang=it",
+   "data": "2026-11-24"
   },
   {
-   "tema": "Nvidia e il ritorno di Huang",
-   "lettura": "Il consiglio reintegra Jensen Huang come amministratore delegato, presidente e consigliere con effetto immediato; Nvidia chiude a 165,05 dollari (+31,48%, dashboard). L'indice dei semiconduttori sale del 13,4% a metà seduta (Reuters). Un ETP short 3x sul titolo perde circa il 91% in pochi secondi (ZeroHedge, da Bloomberg Intelligence).",
-   "segno": "meno rischio",
-   "fonte": "Teleborsa (Wall Street, 23/11); Reuters (via Investing.com); ZeroHedge",
-   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/commenti/wall-street-vola-con-il-ritorno-di-huang-alla-guida-di-nvidia-dollaro-ai-massimi-da-19-mesi-203_2026-11-23_TLB.html?lang=it",
-   "data": "2026-11-23"
-  },
-  {
-   "tema": "Fed e dollaro",
-   "lettura": "Dollaro ai massimi da 19 mesi (indice a 104,3). Rialzo Fed di 25 punti base a dicembre atteso tra il 91% e il 98% secondo la fonte (Polymarket 91%, mercato obbligazionario 92%, CME 98% a metà seduta). Mercoledì PCE (core atteso +0,29% su mese, Deutsche Bank).",
+   "tema": "IA e semiconduttori",
+   "lettura": "Il rimbalzo del 23/11 si rovescia in parte: Nvidia −5,86% a 155,38, Micron −11,01%, AMD −8,86% (dashboard); Anthropic sotto il prezzo di ipo; HPE fino a −17%, Texas Instruments −9,21%, CoreWeave −12,22% (Teleborsa a metà seduta). ZeroHedge: il rialzo di lunedì era in gran parte uno short squeeze.",
    "segno": "più rischio",
-   "fonte": "Teleborsa; Yahoo Finance; Reuters (via Investing.com); ZeroHedge",
-   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/commenti/wall-street-vola-con-il-ritorno-di-huang-alla-guida-di-nvidia-dollaro-ai-massimi-da-19-mesi-203_2026-11-23_TLB.html?lang=it",
-   "data": "2026-11-23"
+   "fonte": "Dashboard; Teleborsa; Milano Finanza; ZeroHedge",
+   "url": "https://www.milanofinanza.it/news/anthropic-scende-sotto-il-prezzo-di-ipo-dopo-solo-quattro-sedute-anche-nvidia-fatica-nel-pre-market-202611241235382294",
+   "data": "2026-11-24"
+  },
+  {
+   "tema": "Dazi e Fed",
+   "lettura": "Gli USA potrebbero annunciare già questa settimana nuovi dazi (Sezione 301) su Cina, UE e circa 14 altre economie: indiscrezioni di WSJ e Bloomberg, senza conferma ufficiale. Rialzo Fed di dicembre già scontato; fiducia dei consumatori ai massimi da due anni. Dollaro in calo (indice 103,84, −0,46%).",
+   "segno": "più rischio",
+   "fonte": "Teleborsa; Scenari Economici; ZeroHedge",
+   "url": "https://scenarieconomici.it/nuovi-dazi-usa-su-cina-ue-e-altri-14-paesi-la-scure-della-sezione-301-contro-la-sovraccapacita-industriale/",
+   "data": "2026-11-24"
   },
   {
    "tema": "Petrolio e oro",
-   "lettura": "Brent 86,82 dollari (−6,21%), WTI 80,37 (−4,30%), oro 3.631,7 (+3,31%) per la dashboard. Teleborsa a metà seduta: WTI 80,42, oro 3.651 (dati non di chiusura). Yahoo Finance: gli attacchi alle navi nel Golfo limitano il calo del petrolio.",
-   "segno": "meno rischio",
-   "fonte": "Dashboard (Yahoo Finance); Teleborsa (Europa, 23/11)",
-   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/commenti/effetto-huang-sui-listini-europei-a-piazza-affari-volano-stm-e-technoprobe-181_2026-11-23_TLB.html?lang=it",
-   "data": "2026-11-23"
+   "lettura": "Brent 88,50 (−0,97%), WTI 81,69 (+1,90%), oro 3.555,1 (−2,64%), argento −5,65% (dashboard). Teleborsa a metà seduta: WTI 81,54, oro 3.562,06 (non di chiusura). Il segno opposto di Brent e WTI nella dashboard è anomalo: non verificato.",
+   "segno": "neutro",
+   "fonte": "Dashboard (Yahoo Finance); Teleborsa",
+   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/petrolio-a-8154-dollari-alle-1930-243_2026-11-24_TLB-1LINER.html?lang=it",
+   "data": "2026-11-24"
   },
   {
    "tema": "Europa e Italia",
-   "lettura": "Chiusura positiva in Europa e a Milano: FTSE MIB 49.022 (+0,65%), DAX +2,15%, CAC 40 +1,48%, Euro Stoxx 50 +2,23% (dashboard); Stm e Technoprobe guadagnano circa il 9%. Stacco di cedole per 9,7 miliardi delle banche: effetto tecnico circa −1,4% sul FTSE MIB. Spread a 105, BTP al 4,34%.",
-   "segno": "meno rischio",
-   "fonte": "Teleborsa (chiusura Europa, 23/11); Milano Finanza",
-   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/commenti/effetto-huang-sui-listini-europei-a-piazza-affari-volano-stm-e-technoprobe-181_2026-11-23_TLB.html?lang=it",
-   "data": "2026-11-23"
+   "lettura": "Chiusura in calo: FTSE MIB 48.121 (−1,84%), DAX −1,26%, Euro Stoxx 50 −1,16%, CAC 40 −0,05% (dashboard). Milano Finanza a metà seduta: FTSE MIB circa −1,5%; Ifo tedesco a 90,6 (90,1 a ottobre). Nikkei +3,91% e Kospi +6,32% in Asia.",
+   "segno": "più rischio",
+   "fonte": "Dashboard (Yahoo Finance); Milano Finanza",
+   "url": "https://www.milanofinanza.it/investimenti-trading/piazza-affari-e-wall-street-in-calo-202611241644579910",
+   "data": "2026-11-24"
   },
   {
    "tema": "Grandi operazioni",
-   "lettura": "CrowdStrike acquista Zscaler in un accordo interamente in azioni da circa 43,9 miliardi di dollari: Zscaler +15%, CrowdStrike oltre −10%. Vår Energi (63,04% Eni) rileva il business norvegese di ConocoPhillips (corrispettivo iniziale 4,4 miliardi di dollari, valore atteso circa 3,9).",
+   "lettura": "GTCR vuole portare Global Payments fuori dal listino (circa 50 miliardi di dollari); Blackstone, Apollo e Warburg Pincus in trattative per finanziarla (Reuters, nessun accordo). Recordati revocata dal listino di Milano. Opa Pininfarina all'84,95%.",
    "segno": "neutro",
-   "fonte": "Milano Finanza (23/11)",
-   "url": "https://www.milanofinanza.it/news/cos-e-successo-oggi-sui-mercati-dal-ritorno-di-jensen-huang-in-sella-a-nvidia-al-deal-da-3-9-mld-di-var-202611231815508328",
-   "data": "2026-11-23"
+   "fonte": "Teleborsa (Reuters)",
+   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/blackstone-apollo-e-warburg-pincus-in-trattative-per-sostenere-l-acquisizione-di-global-payments-213_2026-11-24_TLB.html?lang=it",
+   "data": "2026-11-24"
   }
  ],
- "concordanza": "Dashboard e fonti concordano sul quadro: S&P 500 a 7.237 (chiusura, dashboard) contro 7.245 di Reuters a metà seduta; Nasdaq 100 +6,86% contro circa +7% di Teleborsa a metà seduta. Scarti: oro 3.631,7 (dashboard, chiusura) contro 3.651 (Teleborsa a metà seduta); Bitcoin 61.232 (dashboard) contro «sopra 63.000» nella cronaca di Yahoo Finance: non verificato quale sia corretto. VIX (26,62) e Treasury a 10 anni (4,92%) vengono solo dalla dashboard: non ho trovato una seconda fonte di chiusura di oggi, quindi non verificati. Perché l'indice scende da 66 a 65 pur con il rimbalzo: stress 83 (da 86: il VIX scende a 26,6) e fragilità 60 (da 62) tolgono circa 1,9 punti al valore non arrotondato, mentre «Grandi investitori» (CFTC) è invariato (nessun dato nuovo prima di venerdì).",
+ "concordanza": "Chiusure dalla dashboard (Yahoo Finance): S&P 500 7.201,09, Nasdaq 100 26.214, Dow 50.018,7; Teleborsa e Milano Finanza sono a metà seduta e concordano nel segno (Nasdaq 100 circa −2%, FTSE MIB circa −1,5% a metà seduta contro −1,84% a fine seduta). Scarti: oro 3.555,1 (dashboard) contro 3.562,06 alle 19:30 (Teleborsa); petrolio con Brent −0,97% e WTI +1,90% nella dashboard contro WTI 81,54 di Teleborsa e «petrolio in calo» di ZeroHedge: non verificato. VIX (26,36) e Treasury a 10 anni (4,904%) solo dashboard; ZeroHedge dà 4,89% in pre-mercato. Spread BTP-Bund di oggi non verificato. Perché l'indice scende da 65 a 62 pur con l'S&P 500 in calo: la fragilità scende a 56 (da 60) e lo stress a 82 (da 83), circa −2,3 punti sul valore non arrotondato; «Grandi investitori» (CFTC) è invariato fino al dato di venerdì.",
  "monitorare": [
   {
    "cosa": "Indice di rischio",
-   "perche": "Scende a 65 (66 il 20/11, 67 il 19/11; 63 quattro settimane fa): stress a 83 (da 86) con il VIX a 26,6 (da 35,9), fragilità a 60 (da 62). Resta «elevato», a cinque punti da «alto».",
+   "perche": "Scende a 62 (65 il 23/11, 66 il 20/11; 61 quattro settimane fa): fragilità a 56 (da 60), stress a 82 (da 83) con il VIX a 26,4. Resta «elevato», a otto punti da «alto».",
    "soglia": "Sopra 70: rischio «alto». Sotto 55: torna «moderato».",
-   "guardare": "Se il VIX risale sopra 30 o i titoli sopra la media a 200 giorni (55%, 48% il 20/11) tornano sotto il 50%, l'indice può riavvicinare 70. Il gruppo «Grandi investitori» (CFTC) si aggiorna venerdì 27/11.",
+   "guardare": "Il gruppo «Grandi investitori» (CFTC) si aggiorna venerdì 27/11 e può spostare l'indice di qualche punto; il VIX sopra 30 o i titoli sopra la media a 200 giorni (55%) sotto il 50% sarebbero segnali di peggioramento.",
    "notizie": [
     {
-     "testo": "Indice a 65 con stress a 83 e fragilità a 60 (dashboard, dati al 23/11).",
+     "testo": "Indice a 62 con fragilità a 56 e stress a 82 (dashboard, dati al 24/11).",
      "fonte": "Dashboard (Yahoo Finance, CFTC)",
      "url": "https://puntospillo.github.io/analisi-finanziaria/",
-     "data": "2026-11-23"
+     "data": "2026-11-24"
     },
     {
-     "testo": "VIX a 26,62 (−25,83%) dalla chiusura del 20/11 a 35,89 (dashboard).",
+     "testo": "VIX a 26,36 (−0,98%) dopo il 26,62 di ieri e il 35,89 del 20/11 (dashboard).",
      "fonte": "Dashboard (Yahoo Finance)",
      "url": "https://puntospillo.github.io/analisi-finanziaria/",
-     "data": "2026-11-23"
+     "data": "2026-11-24"
     }
    ]
   },
   {
    "cosa": "S&P 500 e media a 200 giorni",
-   "perche": "Chiude a 7.237 (+4,73%): di nuovo sopra 7.000 ma 1,5% sotto la media a 200 giorni (7.350) e 7,4% sotto il massimo. Il 55% dei titoli è sopra la media (48% il 20/11).",
-   "soglia": "S&P 500 sotto 6.910 (minimo del 20/11) oppure due chiusure sopra 7.350.",
-   "guardare": "Un rimbalzo del 4,7% in un giorno non cambia la tendenza finché l'indice resta sotto la media; contano le chiusure di martedì e mercoledì (PCE).",
+   "perche": "Chiude a 7.201 (−0,50%): 2,0% sotto la media a 200 giorni (7.351) e 7,9% sotto il massimo. Il 55% dei titoli è sopra la media (invariato).",
+   "soglia": "S&P 500 sotto 6.910 (minimo del 20/11) oppure due chiusure sopra 7.351.",
+   "guardare": "Il rimbalzo di lunedì si è ridotto di un quarto in una seduta; contano le chiusure di mercoledì (PCE e Beige Book) e venerdì (mezza seduta dopo il Thanksgiving).",
    "notizie": [
     {
-     "testo": "Wall Street: S&P 500 +4,85% a 7.245 a metà seduta, Nasdaq Composite +6,69%, Dow +3,05%; chiusura S&P 500 7.237 per la dashboard.",
-     "fonte": "Reuters (via Investing.com); dashboard",
-     "url": "https://ca.investing.com/news/stock-market-news/wall-street-roars-back-as-nvidia-reinstates-jensen-huang-as-ceo-4976467",
-     "data": "2026-11-23"
+     "testo": "Il Nasdaq 100 cede circa il 2% a metà seduta dopo un rialzo trainato dalla tecnologia; il mercato obbligazionario è favorito dalla rotazione.",
+     "fonte": "Teleborsa (Borsa Italiana)",
+     "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/commenti/wall-street-prosegue-a-luci-e-ombre-tra-i-timori-per-nuovi-dazi-e-ai-197_2026-11-24_TLB.html?lang=it",
+     "data": "2026-11-24"
     },
     {
-     "testo": "Il rimbalzo cancella quasi la perdita della settimana scorsa; l'S&P 500 era sceso per sette sedute di fila ed era entrato in correzione.",
-     "fonte": "Reuters (via Investing.com)",
-     "url": "https://ca.investing.com/news/stock-market-news/wall-street-roars-back-as-nvidia-reinstates-jensen-huang-as-ceo-4976467",
-     "data": "2026-11-23"
+     "testo": "Chiusura: S&P 500 7.201,09 (−0,50%), Dow Jones +0,85% a 50.018,7, Nasdaq Composite −1,48%.",
+     "fonte": "Dashboard (Yahoo Finance)",
+     "url": "https://puntospillo.github.io/analisi-finanziaria/",
+     "data": "2026-11-24"
     }
    ]
   },
   {
    "cosa": "Nvidia, Anthropic e titoli dell'IA",
-   "perche": "Nasdaq 100 a 26.746 (+6,86%), circa 14,3% sotto il massimo (calcolo mio da 24.970 = −20%), da −19,8% di venerdì. Nvidia +31,5% a 165,05 dopo il ritorno di Huang.",
+   "perche": "Nasdaq 100 a 26.214 (−1,99%), circa 16,0% sotto il massimo (calcolo mio da 24.970 = −20%); Nvidia −5,86% a 155,38; Anthropic sotto il prezzo di ipo di 83 dollari (79,1 in pre-mercato, −9,8%); HPE fino a −17%; CoreWeave −12,2%.",
    "soglia": "Nasdaq 100 con chiusura sotto 24.970 (−20% dal massimo) oppure Nvidia sotto 125,5 (minimo del 20/11).",
-   "guardare": "Audizione di Huang alla Camera USA il 1° dicembre; eventuali novità sull'indagine della SEC (Reuters); Anthropic dopo il debutto (+3,8% in pre-mercato, Milano Finanza).",
+   "guardare": "Audizioni di Huang alla Camera USA il 1° dicembre e al Senato il 3; novità sull'indagine della SEC (Reuters, 18-20/11); Anthropic sotto 79: Wedbush ha avviato la copertura con «outperform» e obiettivo 120 dollari.",
    "notizie": [
     {
-     "testo": "Il consiglio di Nvidia reintegra Huang come CEO, presidente e consigliere con effetto immediato; titolo +31,48%.",
+     "testo": "Nvidia −7% a metà seduta, Anthropic sotto il prezzo di ipo; Axios: alcuni modelli non ancora rilasciati da Anthropic e OpenAI sarebbero così potenti da far dubitare i dipendenti sulla sicurezza del lancio.",
      "fonte": "Teleborsa (Borsa Italiana)",
-     "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/commenti/wall-street-vola-con-il-ritorno-di-huang-alla-guida-di-nvidia-dollaro-ai-massimi-da-19-mesi-203_2026-11-23_TLB.html?lang=it",
-     "data": "2026-11-23"
+     "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/commenti/wall-street-prosegue-a-luci-e-ombre-tra-i-timori-per-nuovi-dazi-e-ai-197_2026-11-24_TLB.html?lang=it",
+     "data": "2026-11-24"
     },
     {
-     "testo": "Nvidia +31,5% in pre-mercato dopo un novembre in cui aveva perso oltre il 40%; Anthropic +3,8% dopo il −8,5% della seduta precedente.",
+     "testo": "Anthropic a 79,1 dollari in pre-mercato (−9,8%) sotto gli 83 dell'ipo; Wedbush avvia la copertura con «outperform» e obiettivo 120 dollari.",
      "fonte": "Milano Finanza",
-     "url": "https://www.milanofinanza.it/news/anthropic-e-nvidia-rimbalzano-nel-pre-market-e-finita-la-crisi-del-tech-202611231314498108",
-     "data": "2026-11-23"
+     "url": "https://www.milanofinanza.it/news/anthropic-scende-sotto-il-prezzo-di-ipo-dopo-solo-quattro-sedute-anche-nvidia-fatica-nel-pre-market-202611241235382294",
+     "data": "2026-11-24"
     },
     {
-     "testo": "Il rimbalzo potrebbe essere tecnico: gli analisti di Mps avvertono che il rame ha perso il 15% nell'ultimo mese.",
-     "fonte": "Milano Finanza",
-     "url": "https://www.milanofinanza.it/news/anthropic-e-nvidia-rimbalzano-nel-pre-market-e-finita-la-crisi-del-tech-202611231314498108",
-     "data": "2026-11-23"
+     "testo": "HPE cala fino al 17% a 39,68 dollari, il peggior calo intraday dal marzo 2020, per il timore che i costi dei componenti erodano la redditività (margine Cloud & AI atteso al 14% da 18,4%).",
+     "fonte": "Teleborsa (Borsa Italiana)",
+     "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/hewlett-packard-enterprise-crolla-al-nyse-su-timori-redditivita-futura-207_2026-11-24_TLB.html?lang=it",
+     "data": "2026-11-24"
     }
    ]
   },
   {
-   "cosa": "Fed, inflazione e tassi",
-   "perche": "Rialzo di 25 punti base il 9 dicembre atteso tra il 91% (Polymarket) e il 98% (CME FedWatch) a seconda della fonte; dollaro ai massimi da 19 mesi (indice a 104,3). Treasury a 10 anni al 4,92%, 30 anni al 5,29% (dashboard).",
+   "cosa": "Fed, dazi e tassi",
+   "perche": "Rialzo Fed di 25 punti base il 9 dicembre già scontato dai mercati monetari (ZeroHedge). Treasury a 10 anni al 4,90% (4,92% ieri), 30 anni 5,29%. Fiducia dei consumatori USA ai massimi da due anni (Conference Board, Teleborsa). Nuovi dazi (Sezione 301) su Cina, UE e circa 14 altre economie attesi anche già questa settimana.",
    "soglia": "Treasury 10 anni sopra 5,25% oppure sotto 4,60% (segnale di fuga dal rischio).",
-   "guardare": "Mercoledì 25/11: inflazione PCE (core atteso +0,29% su mese da Deutsche Bank) e Beige Book; discorso di Williams (Fed di New York) il 23/11, ultima comunicazione prima del blackout; riunione Fed del 9 dicembre.",
+   "guardare": "Mercoledì 25/11: inflazione PCE di ottobre (core atteso +0,29% su mese da Deutsche Bank) e Beige Book; annuncio dei dazi da parte dell'USTR Greer; il verbale Fed segnala rischi dal debito legato all'IA.",
    "notizie": [
     {
-     "testo": "Dollaro ai massimi da 19 mesi: aspettative di una Fed più aggressiva; attesa per l'inflazione PCE, dato annuale atteso al 3,8%.",
+     "testo": "Gli Stati Uniti si preparano ad annunciare un aumento dei dazi su merci da Cina, Unione Europea e oltre una dozzina di altre economie, forse già da martedì.",
      "fonte": "Teleborsa (Borsa Italiana)",
-     "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/commenti/wall-street-vola-con-il-ritorno-di-huang-alla-guida-di-nvidia-dollaro-ai-massimi-da-19-mesi-203_2026-11-23_TLB.html?lang=it",
-     "data": "2026-11-23"
+     "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/commenti/wall-street-prosegue-a-luci-e-ombre-tra-i-timori-per-nuovi-dazi-e-ai-197_2026-11-24_TLB.html?lang=it",
+     "data": "2026-11-24"
     },
     {
-     "testo": "Settimana accorciata dal Thanksgiving: PCE di ottobre mercoledì, discorso di Williams, Conference Board (previsione 92,0).",
-     "fonte": "ZeroHedge (Deutsche Bank)",
-     "url": "https://www.zerohedge.com/markets/key-events-holiday-shortened-week-all-about-pce",
-     "data": "2026-11-23"
+     "testo": "Dazi Sezione 301: secondo WSJ e Bloomberg nel mirino Cina, UE e 14 economie (42 Paesi contando i 27 UE); i future S&P 500 hanno ceduto l'1,25%. Nessuna conferma ufficiale della Casa Bianca.",
+     "fonte": "Scenari Economici",
+     "url": "https://scenarieconomici.it/nuovi-dazi-usa-su-cina-ue-e-altri-14-paesi-la-scure-della-sezione-301-contro-la-sovraccapacita-industriale/",
+     "data": "2026-11-24"
     },
     {
-     "testo": "Probabilità di rialzo Fed a dicembre: circa 91% per Polymarket e 92% per il mercato obbligazionario; 98% per CME FedWatch (a metà seduta).",
-     "fonte": "Yahoo Finance; Reuters (via Investing.com)",
-     "url": "https://ca.investing.com/news/stock-market-news/wall-street-roars-back-as-nvidia-reinstates-jensen-huang-as-ceo-4976467",
-     "data": "2026-11-23"
+     "testo": "Treasury in rialzo di prezzo: 10 anni in calo di 7 punti base a 4,89% e 2 anni a 4,64% in pre-mercato; i mercati monetari scontano per intero il rialzo di dicembre.",
+     "fonte": "ZeroHedge",
+     "url": "https://www.zerohedge.com/markets/futures-slide-jensen-squeeze-fizzles-ai-hangover-returns-bonds-rally",
+     "data": "2026-11-24"
     }
    ]
   },
   {
    "cosa": "Banche europee, spread e BCE",
-   "perche": "Spread BTP-Bund a 105 punti base (110,74 il 20/11), BTP decennale al 4,34%. FTSE MIB 49.022 (+0,65%) nonostante lo stacco di cedole che pesa circa 1,4%; DAX +2,15%.",
-   "soglia": "Spread BTP-Bund sopra 120 punti base oppure FTSE MIB sotto 47.000.",
-   "guardare": "Adesioni all'Opas Intesa-MPS dal 24 novembre, asta BTP Short Term e BTP€i il 25 novembre; effetto dello stacco cedole sull'indice da neutralizzare nel confronto con i giorni precedenti.",
+   "perche": "FTSE MIB a 48.121 (−1,84%), DAX −1,26%, Euro Stoxx 50 −1,16%. Primo giorno di adesioni all'Opas Intesa su MPS: 0,0317%; Intesa −2,60% e MPS −2,74% (17:37). Spread BTP-Bund di oggi non verificato (105 ieri).",
+   "soglia": "Spread BTP-Bund sopra 120 punti base oppure FTSE MIB sotto 47.000 (a circa 2,3% da oggi).",
+   "guardare": "Adesioni all'Opas Intesa-MPS (fino al 22 gennaio 2027) e asta BTP Short Term e BTP€i da 3,5 miliardi il 25 novembre.",
    "notizie": [
     {
-     "testo": "Lo spread scende a +105 punti base, BTP decennale al 4,34%; Piazza Affari chiude in positivo ma lontana dagli altri listini europei per l'effetto dello stacco cedole.",
+     "testo": "Opas Intesa su MPS: 961.413 richieste presentate nel primo giorno, pari allo 0,0317%; l'offerta si chiude il 22 gennaio 2027.",
      "fonte": "Teleborsa (Borsa Italiana)",
-     "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/commenti/effetto-huang-sui-listini-europei-a-piazza-affari-volano-stm-e-technoprobe-181_2026-11-23_TLB.html?lang=it",
-     "data": "2026-11-23"
+     "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/opas-mps-adesioni-allo-00317-nel-primo-giorno-201_2026-11-24_TLB.html?lang=it",
+     "data": "2026-11-24"
     },
     {
-     "testo": "11 società staccano la cedola: le sole banche distribuiscono 9,7 miliardi (UniCredit 4,5, Intesa 3,8); effetto tecnico sul FTSE MIB circa −1,4%.",
+     "testo": "Piazza Affari cede circa l'1,5% a metà seduta; l'indice Ifo tedesco sale a 90,6 da 90,1.",
      "fonte": "Milano Finanza",
-     "url": "https://www.milanofinanza.it/news/dividendi-il-23-novembre-e-il-d-day-di-piazza-affari-9-7-miliardi-solo-dalle-banche-l-impatto-sull-indice-202611211502008591",
-     "data": "2026-11-21"
+     "url": "https://www.milanofinanza.it/investimenti-trading/piazza-affari-e-wall-street-in-calo-202611241644579910",
+     "data": "2026-11-24"
     },
     {
-     "testo": "Moody's alza i rating di Mps: senior unsecured a Baa2 da Baa3, depositi A3 da Baa1, outlook stabile; valuterà l'effetto dell'Opas Intesa.",
+     "testo": "Recordati revocata da Euronext Milan: esercitato il diritto di acquisto sul residuo 8,077% (oltre 895 milioni di euro).",
      "fonte": "Teleborsa (Borsa Italiana)",
-     "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/moody-s-alza-i-rating-di-mps-senior-unsecured-a-baa2-da-baa3-outlook-stabile-191_2026-11-23_TLB.html?lang=it",
-     "data": "2026-11-23"
+     "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/recordati-revocata-da-euronext-milan-193_2026-11-24_TLB.html?lang=it",
+     "data": "2026-11-24"
     }
    ]
   }
  ],
- "idee_premessa": "Logica d'insieme: rischio elevato e tendenza negativa, ma dopo un rimbalzo di un giorno preferisco qualità e diversificazione: pesi uguali invece dell'indice concentrato, utility e infrastrutture elettriche con utili in crescita (Enel, Terna, Schneider Electric), sanità (Lilly, Novartis), banche con conti record. Evito di aumentare semiconduttori e grandi titoli dell'IA dopo un movimento del 31% in un giorno su una decisione societaria. Obbligazioni a breve scadenza con rialzo Fed atteso. Le opportunità rischiose (Intel, Diasorin, Micron, Stellantis e altre) sono scommesse su una piccola parte del capitale.",
+ "idee_premessa": "Logica d'insieme: rischio elevato e tendenza negativa, con i titoli dell'IA di nuovo sotto pressione dopo il rimbalzo di un giorno: preferisco qualità e diversificazione, pesi uguali invece dell'indice concentrato, utility e infrastrutture elettriche con utili in crescita (Enel, Schneider Electric), un gruppo difensivo come Poste Italiane, sanità (Lilly, Novartis), banche con conti record. Evito di aumentare semiconduttori e grandi titoli dell'IA, che oscillano del 6-30% in un giorno. Obbligazioni a breve scadenza con rialzo Fed atteso. Le opportunità rischiose (Technoprobe, Intel, Diasorin, Micron, Stellantis e altre) sono scommesse su una piccola parte del capitale.",
  "idee": [
   {
    "categoria": "azione",
@@ -200,7 +200,7 @@
    "perche_ora": "Il mercato si allarga oltre i titoli tecnologici: Prysmian beneficia degli stessi investimenti (reti elettriche e data center) senza dipendere dai margini dei grandi gruppi dell'IA. Il 29 ottobre ha chiuso a 114,90 € (+6,64%).",
    "rischi": "Utile netto del trimestre −31,4%: va capito il motivo. Il titolo è già salito molto e un taglio degli investimenti nei data center colpirebbe le attese.",
    "orizzonte": "6–12 mesi",
-   "prezzo_rif": "107,05 € (Yahoo Finance, 23/11/2026)",
+   "prezzo_rif": "98,44 € (Yahoo Finance, 24/11/2026)",
    "link": "https://it.investing.com/equities/prysmian",
    "link_sito": "Investing.com",
    "fonte": "Investing.com Italia; Money.it",
@@ -223,7 +223,7 @@
    "fonte": "Teleborsa (Enel, nove mesi 2026, 12/11)",
    "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/enel-ricavi-89-a-65-miliardi-ed-ebitda-ordinario-4-nei-nove-mesi-229_2026-11-12_TLB.html?lang=it",
    "data": "2026-11-12",
-   "prezzo_rif": "9,50 € (Yahoo Finance, 23/11/2026)"
+   "prezzo_rif": "9,42 € (Yahoo Finance, 24/11/2026)"
   },
   {
    "categoria": "azione",
@@ -232,32 +232,33 @@
    "direzione": "interessante",
    "tesi": "Banca con utili record nei primi nove mesi e previsioni per il 2026 alzate. Morningstar DBRS (17 novembre) giudica solidi i conti dei cinque maggiori gruppi italiani: utile aggregato del terzo trimestre 7,6 miliardi (+16% annuo), ricavi +13% nei nove mesi, rapporto costi/ricavi intorno al 40%.",
    "catalizzatori": "Previsioni 2026 alzate; controllo di Commerzbank ottenuto (Reuters); risiko bancario italiano in movimento.",
-   "perche_ora": "Il 23 novembre UniCredit ha staccato la cedola (4,5 miliardi di euro, la più grande tra le banche; Intesa 3,8): le 11 società in stacco pesano circa −1,4% sul FTSE MIB per effetto tecnico (Milano Finanza). Il FTSE MIB ha chiuso comunque a +0,65%. Resta il dossier Commerzbank (accordo di massima con Berlino del 19/11).",
+   "perche_ora": "Il 24 novembre le banche perdono terreno: il FTSE MIB cede l'1,84% e, nel primo giorno di adesioni all'Opas di Intesa su MPS (0,0317%), Intesa Sanpaolo perde il 2,60% e MPS il 2,74% (Teleborsa, 17:37). La variazione di UniCredit oggi non è verificata. L'effetto dello stacco cedole del 23/11 è ormai uscito dal confronto.",
    "rischi": "Circa 7.000 posti a rischio e impegni su sede e quotazione a Francoforte; il gruppo combinato dovrà dimostrare utili adeguati; il modello HVB non è garantito per Commerzbank; spread BTP-Bund a 107,38 punti base (ieri 108,29).",
    "orizzonte": "12 mesi",
-   "prezzo_rif": "76,80 € (Yahoo Finance, 23/11/2026)",
+   "prezzo_rif": "75,73 € (Yahoo Finance, 24/11/2026)",
    "link": "https://it.investing.com/equities/unicredito",
-   "fonte": "Milano Finanza (dividendi del 23/11, pubblicato 21/11); Teleborsa (Orcel, 19/11)",
-   "url": "https://www.milanofinanza.it/news/dividendi-il-23-novembre-e-il-d-day-di-piazza-affari-9-7-miliardi-solo-dalle-banche-l-impatto-sull-indice-202611211502008591",
-   "data": "2026-11-21",
+   "fonte": "Teleborsa (Opas MPS, primo giorno, 24/11)",
+   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/opas-mps-adesioni-allo-00317-nel-primo-giorno-201_2026-11-24_TLB.html?lang=it",
+   "data": "2026-11-24",
    "link_sito": "Investing.com"
   },
   {
    "categoria": "azione",
    "mercato": "Italia",
-   "nome": "Terna",
-   "ticker": "TRN.MI",
+   "nome": "Poste Italiane",
+   "ticker": "PST.MI",
    "direzione": "interessante",
-   "tesi": "Nei primi nove mesi 2026 Terna ha ricavi di 3.114,6 milioni di euro (+8,1%), EBITDA di 2.172,0 milioni (+7,2%) e utile netto di 857,2 milioni (+0,5%), con investimenti di 2.353,1 milioni (+12,7%). Il debito finanziario netto scende a 12.071 milioni da 13.000,2 a fine 2025. La guidance 2026 è confermata: ricavi 4,41 miliardi, EBITDA 2,93 miliardi, utile netto 1,12 miliardi, investimenti circa 4,2 miliardi. Acconto sul dividendo 2026 di 11,92 centesimi, stacco il 23 novembre e pagamento dal 25.",
-   "perche_ora": "È una rete elettrica regolata, con ricavi poco legati ai cicli dei titoli tecnologici e dell'IA che oggi guidano il ribasso (S&P 500 −3,7%, FTSE MIB −2,48% il 20/11). Il dato di oggi del titolo non è verificato.",
-   "rischi": "L'utile netto è quasi fermo (+0,5%) con aliquota fiscale al 31,4% (29,8%) e oneri finanziari in aumento di 17 milioni; con rendimenti in salita (BTP al 4,41%, Fed verso un rialzo) i titoli a dividendo possono perdere appeal (deduzione); il nuovo piano industriale arriverà solo nel 2027; dipende dalla regolazione.",
+   "tesi": "Servizi postali, finanziari, assicurativi e di pagamento. Primi nove mesi 2026 da record: ricavi 10,2 miliardi di euro (+5,4%), EBIT rettificato 2,68 miliardi (+6,6%), utile netto rettificato 1,84 miliardi (+3,8%); terzo trimestre EBIT 910 milioni (+6,3%). Guidance stand-alone 2026 confermata (già alzata): EBIT rettificato 3,4 miliardi, utile netto 2,3 miliardi.",
+   "catalizzatori": "Acconto sul dividendo di 0,43 € per azione (+7,5%), pagato il 25 novembre (stacco il 23/11); servizi assicurativi +10% a 1,5 miliardi; attività dei clienti a 614 miliardi (+14 da fine 2025); Solvency II di Poste Vita al 269%, CET1 di BancoPosta al 19,5%.",
+   "perche_ora": "Il 24 novembre il FTSE MIB perde l'1,84% con le banche in calo: un gruppo con ricavi diversificati, patrimonio solido e acconto già incassato dagli azionisti ha un profilo più difensivo (deduzione, non un dato della fonte).",
+   "rischi": "Corrispondenza, pacchi e distribuzione: EBIT rettificato −26,6% a 101 milioni (in linea con la guidance, secondo la società); l'esborso per dividendi sale del 32% a 686 milioni per le nuove azioni emesse per l'offerta su TIM (Poste detiene circa l'86,95%); la guidance non include il contributo di TIM nel quarto trimestre; sensibilità di Poste Vita a spread e tassi (nel trimestre allargamento degli spread e rialzo dei tassi).",
    "orizzonte": "12 mesi",
-   "link": "https://finance.yahoo.com/quote/TRN.MI",
+   "link": "https://finance.yahoo.com/quote/PST.MI",
    "link_sito": "Yahoo Finance",
-   "fonte": "Teleborsa (Terna, nove mesi, 12/11)",
-   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/terna-9-mesi-in-crescita-con-investimenti-record-a-235-miliardi-acconto-su-dividendo-a-1192-centesimi-125_2026-11-12_TLB.html?lang=it",
+   "fonte": "Teleborsa (Poste Italiane, nove mesi 2026, 12/11)",
+   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/poste-italiane-9-mesi-da-record-e-conferma-della-guidance-acconto-sul-dividendo-sale-a-043-euro-1_2026-11-12_TLB.html?lang=it",
    "data": "2026-11-12",
-   "prezzo_rif": "9,40 € (Yahoo Finance, 23/11/2026)"
+   "prezzo_rif": "23,23 € (Yahoo Finance, 24/11/2026)"
   },
   {
    "categoria": "azione",
@@ -274,7 +275,7 @@
    "fonte": "Teleborsa (Mariani su Avio, 19/11)",
    "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/avio-mariani-leonardo-restare-azionisti-e-una-delle-opzioni-esclusa-una-controopa-239_2026-11-19_TLB.html",
    "data": "2026-11-19",
-   "prezzo_rif": "48,51 € (Yahoo Finance, 23/11/2026)"
+   "prezzo_rif": "49,20 € (Yahoo Finance, 24/11/2026)"
   },
   {
    "categoria": "azione",
@@ -291,7 +292,7 @@
    "fonte": "Teleborsa (Novartis, 19/11)",
    "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/novartis-stima-incremento-annuo-delle-vendite-del-5-fino-al-2031-trainato-da-tre-farmaci-chiave-141_2026-11-19_TLB.html",
    "data": "2026-11-19",
-   "prezzo_rif": "128,02 CHF (Yahoo Finance, 23/11/2026)"
+   "prezzo_rif": "128,60 CHF (Yahoo Finance, 24/11/2026)"
   },
   {
    "categoria": "azione",
@@ -300,15 +301,15 @@
    "ticker": "TTE (Parigi)",
    "direzione": "interessante",
    "tesi": "Compagnia petrolifera e dell'energia elettrica: nel terzo trimestre utile netto rettificato 9,1 miliardi di dollari (+51% sul secondo trimestre), flusso di cassa 12,3 miliardi, buyback di 2,5 miliardi per i prossimi due trimestri e acconto sul dividendo di 0,90 € (+5,9%).",
-   "perche_ora": "Il 23 novembre il petrolio scende: Brent 86,82 dollari (−6,21%) e WTI 80,37 (−4,30%) per la dashboard, contro un Brent medio di 97 nel terzo trimestre (dato aziendale). Il settore energia europeo perde l'1,06% (Teleborsa). I conti record del trimestre riflettono prezzi già più alti di quelli di oggi.",
+   "perche_ora": "Il 24 novembre il Brent chiude a 88,50 dollari (−0,97%) e il WTI a 81,69 (+1,90%) per la dashboard; Teleborsa a metà seduta dà il WTI a 81,54. Il quadro è confuso: ZeroHedge (pre-mercato) parla di petrolio in calo per speranze diplomatiche USA-Iran, mentre l'Iran segnala petroliere colpite da mine a Hormuz. Prezzi ancora sotto la media di 97 dollari del terzo trimestre (dato aziendale).",
    "rischi": "Il petrolio in calo ridurrebbe utili e flussi del quarto trimestre; la parte elettrica e rinnovabile pesa poco sull'utile; eventi geopolitici possono invertire il quadro in entrambe le direzioni.",
    "orizzonte": "6–12 mesi",
    "link": "https://it.investing.com/equities/total",
    "link_sito": "Investing.com",
-   "fonte": "TotalEnergies (comunicato 29/10); dashboard (Yahoo Finance, 23/11); Teleborsa (chiusura Europa, 23/11)",
-   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/commenti/effetto-huang-sui-listini-europei-a-piazza-affari-volano-stm-e-technoprobe-181_2026-11-23_TLB.html?lang=it",
-   "data": "2026-11-23",
-   "prezzo_rif": "77,49 € (Yahoo Finance, 23/11/2026)"
+   "fonte": "Dashboard (Yahoo Finance, 24/11); Teleborsa (petrolio 19:30); ZeroHedge",
+   "url": "https://www.zerohedge.com/markets/futures-slide-jensen-squeeze-fizzles-ai-hangover-returns-bonds-rally",
+   "data": "2026-11-24",
+   "prezzo_rif": "77,68 € (Yahoo Finance, 24/11/2026)"
   },
   {
    "categoria": "azione",
@@ -326,7 +327,7 @@
    "fonte": "Vermögenszentrum (Schneider Electric, terzo trimestre, 17/10)",
    "url": "https://www.vermoegenszentrum.ch/en/stock-exchange-and-markets/news/schneider-ups-guidance-quarterly-revenue-jumps-17",
    "data": "2026-10-17",
-   "prezzo_rif": "235,85 € (Yahoo Finance, 23/11/2026)"
+   "prezzo_rif": "226,10 € (Yahoo Finance, 24/11/2026)"
   },
   {
    "categoria": "azione",
@@ -343,7 +344,7 @@
    "fonte": "Teleborsa (Wall Street, 20/11)",
    "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/new-york-balza-in-avanti-walmart-359_2026-11-20_TLB-AUTO.html?lang=it",
    "data": "2026-11-20",
-   "prezzo_rif": "129,58 $ (Yahoo Finance, 23/11/2026)"
+   "prezzo_rif": "132,31 $ (Yahoo Finance, 24/11/2026)"
   },
   {
    "categoria": "azione",
@@ -361,7 +362,7 @@
    "fonte": "chemXplore (Lilly, terzo trimestre 2026, 29/10)",
    "url": "https://chemxplore.com/news/lilly-q3-2026-financial-results-guidance",
    "data": "2026-10-29",
-   "prezzo_rif": "1364,60 $ (Yahoo Finance, 23/11/2026)"
+   "prezzo_rif": "1407,59 $ (Yahoo Finance, 24/11/2026)"
   },
   {
    "categoria": "etf",
@@ -396,7 +397,7 @@
    "fonte": "Teleborsa (Fitch, 20/11); Milano Finanza (Opas MPS, 20/11)",
    "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/banco-bpm-fitch-migliora-l-outlook-a-positivo-confermando-il-rating-bbb-149_2026-11-20_TLB.html?lang=it",
    "data": "2026-11-20",
-   "prezzo_rif": "38,27 € (Yahoo Finance, 23/11/2026)"
+   "prezzo_rif": "37,56 € (Yahoo Finance, 24/11/2026)"
   },
   {
    "categoria": "materia prima",
@@ -406,15 +407,15 @@
    "isin": "IE00B4ND3602",
    "direzione": "interessante",
    "tesi": "Copertura contro shock geopolitici (Golfo) e contro un eventuale crollo dei grandi titoli tecnologici. Costo 0,12% annuo.",
-   "perche_ora": "Il 23 novembre l'oro sale del 3,31% a 3.631,7 dollari (dashboard; Teleborsa a metà seduta 3.651,34, dato non di chiusura), con il dollaro ai massimi da 19 mesi (indice a 104,3). Sale anche in una giornata di forte rialzo azionario: non è solo rifugio. Fed verso un rialzo a dicembre.",
+   "perche_ora": "Il 24 novembre l'oro scende del 2,64% a 3.555,1 dollari (dashboard; Teleborsa a metà seduta 3.562,06, −1,99%, non di chiusura) e l'argento del 5,65%, dopo il +3,3% di ieri. Indice del dollaro 103,84 (−0,46%), Treasury a 10 anni al 4,90%: i metalli oscillano molto in due giorni. Fed verso il rialzo a dicembre (già scontato).",
    "rischi": "Tassi in rialzo e dollaro forte penalizzano l'oro (è una deduzione, non un dato della fonte); il prezzo può ancora scendere; nessun rendimento corrente.",
    "orizzonte": "oltre 12 mesi",
-   "prezzo_rif": "oro 3.631,70 $/oncia (dashboard, Yahoo Finance, 23/11/2026)",
+   "prezzo_rif": "oro 3.555,10 $/oncia (dashboard, Yahoo Finance, 24/11/2026)",
    "link": "https://www.justetf.com/it/etf-profile.html?isin=IE00B4ND3602",
    "link_sito": "justETF",
-   "fonte": "Dashboard (Yahoo Finance); Teleborsa (Wall Street, 23/11)",
-   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/commenti/wall-street-vola-con-il-ritorno-di-huang-alla-guida-di-nvidia-dollaro-ai-massimi-da-19-mesi-203_2026-11-23_TLB.html?lang=it",
-   "data": "2026-11-23"
+   "fonte": "Dashboard (Yahoo Finance); Teleborsa (oro 19:30, 24/11)",
+   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/oro-356206-dollari-alle-1930-249_2026-11-24_TLB-1LINER.html?lang=it",
+   "data": "2026-11-24"
   },
   {
    "categoria": "obbligazioni",
@@ -432,7 +433,7 @@
    "fonte": "Teleborsa (rendimenti, 20/11); dashboard",
    "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/bund-rendimento-33-alle-1800-235_2026-11-20_TLB-1LINER.html?lang=it",
    "data": "2026-11-20",
-   "prezzo_rif": "139,94 € (Yahoo Finance, 23/11/2026)"
+   "prezzo_rif": "140,00 € (Yahoo Finance, 24/11/2026)"
   },
   {
    "categoria": "etf",
@@ -442,14 +443,14 @@
    "isin": "IE00BMC38736",
    "direzione": "da evitare",
    "tesi": "Settore molto concentrato e legato agli investimenti nell'IA: da evitare di aumentare il peso finché il mercato giudica severamente chi spende senza generare cassa.",
-   "perche_ora": "Il 23 novembre l'indice dei semiconduttori sale del 13,4% a metà seduta (Reuters) dopo il ritorno di Huang: Nvidia +31,48% a 165,05, Micron +19,04%, ma restano 31,0% e 41,7% sotto il massimo di un anno (dashboard). Il rimbalzo segue un calo del 17,13% in cinque sedute (Scenari Economici, 21/11). L'indagine della SEC sui conti di Nvidia, segnalata da Reuters, non risulta chiusa: oggi non ho letto novità.",
-   "rischi": "Rimbalzi di questa ampiezza spesso si ripetono al ribasso come al rialzo (deduzione); l'ETF resta concentrato su pochi titoli e legato agli investimenti in IA e al debito che li finanzia. Se Nvidia e i chip continuano a salire, chi evita il settore resta indietro.",
+   "perche_ora": "Il rimbalzo del 23 novembre si è già in parte rovesciato: il 24 Nvidia chiude a 155,38 (−5,86%), Micron a 629,79 (−11,01%), AMD −8,86% (dashboard); Texas Instruments −9,21% e CoreWeave −12,22% alle 20:00 (Teleborsa). ZeroHedge attribuisce il rialzo di lunedì in gran parte a un «short squeeze» e al ribilanciamento di ETF a leva (stima di McElligott: 41 miliardi di dollari di acquisti meccanici).",
+   "rischi": "Volatilità estrema in entrambe le direzioni: +31% e −6% in due giorni per Nvidia; il titolo resta sotto esame (governance, rapporti con Megaspeed, inserita dal Commercio USA nella lista nera; audizioni di Huang al Congresso il 1° e il 3 dicembre). ETF concentrato su pochi titoli e legato al debito che finanzia l'IA.",
    "orizzonte": "3–6 mesi",
    "link": "https://www.justetf.com/it/etf-profile.html?isin=IE00BMC38736",
    "link_sito": "justETF",
-   "fonte": "Reuters (via Investing.com, 23/11, a metà seduta); dashboard; Scenari Economici (21/11)",
-   "url": "https://ca.investing.com/news/stock-market-news/wall-street-roars-back-as-nvidia-reinstates-jensen-huang-as-ceo-4976467",
-   "data": "2026-11-23"
+   "fonte": "Dashboard (Yahoo Finance); Teleborsa; ZeroHedge (24/11)",
+   "url": "https://www.zerohedge.com/markets/futures-slide-jensen-squeeze-fizzles-ai-hangover-returns-bonds-rally",
+   "data": "2026-11-24"
   },
   {
    "categoria": "azione",
@@ -460,35 +461,34 @@
    "tesi": "Il gruppo ha ridotto la perdita del terzo trimestre del 90% e confermato le previsioni; il titolo è rimbalzato forte ma resta valutato come una società in crisi.",
    "sottovalutazione": "A 4,22 € (29/10), dopo il minimo di circa 3,50 € del 23 ottobre, il gruppo ha liquidità industriale per 42,7 miliardi di euro e una posizione finanziaria netta industriale positiva per 5,4 miliardi (cassa superiore ai debiti industriali). Ricavi dei nove mesi 119,2 miliardi (+7%). Ne deduco che il prezzo sconta una crisi prolungata; le fonti consultate oggi non riportano P/E o prezzo/valore di libro.",
    "catalizzatori": "Ritorno al flusso di cassa industriale positivo previsto nel 2027; Nord America tornato in utile operativo (+64 milioni); risparmi e capitale circolante positivi attesi nel quarto trimestre; posizioni corte vicine al 10% (Benzinga) che possono amplificare i rialzi.",
-   "perche_ora": "Il 23 novembre Stellantis annuncia l'uscita dalle corse: lascia il Mondiale Endurance entro fine 2026 e la Formula E nell'estate 2027, con un risparmio di diverse decine di milioni (Milano Finanza). Piccolo rispetto ai ricavi di 119,2 miliardi dei nove mesi, ma conferma la linea di tagli dell'AD Filosa. Le posizioni corte restano alte (aggiornamento Consob del 19/11).",
+   "perche_ora": "Il 24 novembre Leapmotor (51% Stellantis nella joint venture Leapmotor International) avvia a Saragozza la produzione del SUV B10, con la B05 a seguire; il 20/11 Opel ha firmato con Leapmotor un accordo da 100 milioni di euro per un nuovo C-SUV elettrico. Il 23/11 Stellantis aveva annunciato l'uscita dalle corse. Posizioni corte alte (Consob, 19/11). FTSE MIB −1,84%.",
    "rischi": "Cassa bruciata per 4 miliardi nel trimestre, Europa in perdita operativa (−311 milioni), dazi per circa 1 miliardo nel 2026, margini allo 0,7%. Citi prevede pressione sul titolo finché i benefici non si vedono nei conti. Posizioni corte elevate segnalano scommesse ribassiste di fondi: possono anticipare notizie negative o amplificare i movimenti (deduzione).",
    "orizzonte": "oltre 12 mesi",
-   "prezzo_rif": "3,22 € (Yahoo Finance, 23/11/2026)",
+   "prezzo_rif": "3,12 € (Yahoo Finance, 24/11/2026)",
    "link": "https://it.investing.com/equities/fiat",
    "link_sito": "Investing.com",
-   "fonte": "Milano Finanza (23/11); Consob/Teleborsa (posizioni corte, 19/11)",
-   "url": "https://www.milanofinanza.it/news/cos-e-successo-oggi-sui-mercati-dal-ritorno-di-jensen-huang-in-sella-a-nvidia-al-deal-da-3-9-mld-di-var-202611231815508328",
-   "data": "2026-11-23"
+   "fonte": "Teleborsa (Leapmotor-Stellantis, 24/11); Milano Finanza (23/11)",
+   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/leapmotor-si-rafforza-in-europa-con-stellantis-217_2026-11-24_TLB.html?lang=it",
+   "data": "2026-11-24"
   },
   {
    "categoria": "azione",
    "mercato": "Italia",
-   "nome": "Amplifon",
-   "ticker": "AMP.MI",
-   "isin": "IT0004056880",
+   "nome": "Technoprobe",
+   "ticker": "TPRO.MI",
    "direzione": "opportunità rischiosa",
-   "tesi": "Leader mondiale nella vendita di apparecchi acustici, mercato in crescita per l'invecchiamento della popolazione; margini e cassa in netto miglioramento ma multiplo molto sotto la sua storia.",
-   "sottovalutazione": "P/E sulle stime 2027 di circa 13 volte contro circa 35 della media a 5 anni: sconto del 62% (Equita, Affaritaliani 5/10). Morgan Stanley ha alzato il prezzo obiettivo a 14,96 € con giudizio Overweight (9/10). L'aumento di capitale riservato a GN è fissato a 11,267 € per azione.",
-   "catalizzatori": "Utile netto rettificato del terzo trimestre +38,7%, margine EBITDA nei nove mesi +80 punti base, flusso di cassa libero +139%, leva scesa a 1,85 volte; guidance 2026 confermata; chiusura dell'acquisizione di GN Hearing entro fine 2026.",
-   "perche_ora": "Il 30 ottobre il titolo è sceso del 14,5% a 11,1 € (ANSA) nonostante conti con utile rettificato +38,7% e guidance confermata: ne deduco che il mercato punisce la crescita debole dei ricavi, e lo sconto sui multipli si è allargato. Da valutare con cautela.",
-   "rischi": "Ricavi quasi fermi (+0,9% a cambi costanti) e reazione del mercato molto negativa ai conti; acquisizione di GN da 1,69 miliardi in contanti più nuove azioni (GN avrà il 17%): più debito e diluizione; rischio di integrazione.",
-   "orizzonte": "oltre 12 mesi",
-   "link": "https://it.investing.com/equities/amplifon",
+   "tesi": "Progetta e produce probe card, le schede per testare i chip: forte esposizione ai data center per l'IA. Primi nove mesi 2026: ricavi 787,4 milioni di euro (+68,8%), EBITDA 376,3 milioni (margine 47,8%, +158%), posizione finanziaria netta positiva per 799,8 milioni; liquidità operativa 241 milioni, di cui circa 150 assorbiti dall'aumento di capacità.",
+   "sottovalutazione": "Non è una misura dello sconto ma un confronto con pareri di terzi: dopo i conti Mediobanca (Neutral) alza il prezzo obiettivo da 24,60 a 26,50 €, JPMorgan (Overweight) lo riduce da 45 a 38 €, Deutsche Bank (Buy) da 50 a 45 € (Teleborsa, 12/11); con il titolo a 18,00 € (12/11) sarebbero circa +47%, +111% e +150% (calcolo mio). Il prezzo di riferimento qui sotto è aggiornato e i potenziali vanno ricalcolati. Capitalizzazione: non ho un dato aggiornato verificato; Milano Finanza a giugno titolava «vola a 21 miliardi» (presumibilmente la capitalizzazione: non verificato). Deduzione: con 800 milioni di liquidità netta e 376 milioni di EBITDA nei nove mesi resta ben oltre 1 miliardo.",
+   "catalizzatori": "Recupero dell'efficienza operativa dopo il passaggio ai nuovi sistemi informativi (dal 1° ottobre), previsto entro fine 2026; piano di aumento della capacità; domanda dei data center.",
+   "perche_ora": "L'11/11 la guidance del quarto trimestre, penalizzata dal cambio dei sistemi informativi, fa crollare il titolo del 10,09% a 18,00 € il 12/11 dopo un trimestre record. Il 23/11 sale di circa il 9% con Stm dopo il ritorno di Huang in Nvidia; il 24/11 i chip scendono di nuovo.",
+   "rischi": "Titolo dipendente dal ciclo dei chip per l'IA, oggi molto volatile (−10% e +9% in due settimane); guidance del quarto trimestre sotto pressione; concentrazione sul comparto data center; la fonte sulla capitalizzazione non è verificata; in contrasto con l'ETF sui semiconduttori da evitare: rischio alto da accettare.",
+   "orizzonte": "12 mesi",
+   "link": "https://it.investing.com/equities/technoprobe",
    "link_sito": "Investing.com",
-   "fonte": "ANSA; Milano Finanza; Affaritaliani",
-   "url": "https://www.ansa.it/sito/notizie/economia/2026/10/30/borsa-milano-in-calo-con-le-banche-deboli-scivola-amplifon_589fc273-d10a-49b0-80c6-d72b44132524.html",
-   "data": "2026-10-30",
-   "prezzo_rif": "11,24 € (Yahoo Finance, 23/11/2026)"
+   "fonte": "Teleborsa (Technoprobe, nove mesi, 11/11; target price, 12/11)",
+   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/technoprobe-ricavi-accelerano-nei-nove-mesi-aggiornato-il-target-per-la-fine-dell-anno-237_2026-11-11_TLB.html?lang=it",
+   "data": "2026-11-12",
+   "prezzo_rif": "18,00 € (Yahoo Finance, 24/11/2026)"
   },
   {
    "categoria": "azione",
@@ -507,7 +507,7 @@
    "fonte": "Teleborsa (Diasorin, terzo trimestre, 12/11); Teleborsa (Equita, 21/10)",
    "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/diasorin-ricavi-del-terzo-trimestre-a-8-a-cambi-costanti-confermata-la-guidance-149_2026-11-12_TLB.html?lang=it",
    "data": "2026-11-12",
-   "prezzo_rif": "78,86 € (Yahoo Finance, 23/11/2026)"
+   "prezzo_rif": "78,30 € (Yahoo Finance, 24/11/2026)"
   },
   {
    "categoria": "azione",
@@ -521,7 +521,7 @@
    "perche_ora": "Ordini molto sopra le attese il 28 ottobre: possibile inizio di un nuovo ciclo positivo (ne deduco).",
    "rischi": "Utile per azione −18% nel trimestre; ricavi 2026 previsti fermi e crescita attesa inferiore al mercato finlandese; settore ciclico legato alla carta e ai dazi. La stima sui flussi di cassa è meccanica.",
    "orizzonte": "oltre 12 mesi",
-   "prezzo_rif": "27,58 € (Yahoo Finance, 23/11/2026)",
+   "prezzo_rif": "27,24 € (Yahoo Finance, 24/11/2026)",
    "link": "https://it.investing.com/equities/valmt",
    "link_sito": "Investing.com",
    "fonte": "Valmet (comunicato via Inderes); Simply Wall St",
@@ -537,15 +537,15 @@
    "tesi": "Produttore di processori e di chip su commessa. Terzo trimestre: ricavi 16,5 miliardi di dollari (+21%), data center +78% a 7,3 miliardi. Il titolo ha perso il 57,9% dal massimo di giugno (142,35 $) dopo una guidance debole.",
    "sottovalutazione": "Prezzo obiettivo medio degli analisti 101,02 dollari contro la chiusura di 59,97 del 2/11 (+68,5%): sono pareri di terzi (1 acquisto forte, 14 acquisto, 32 neutrale, 1 vendita, 1 vendita forte), non una misura dello sconto; il prezzo di riferimento qui sotto è aggiornato e il potenziale va ricalcolato. Capitalizzazione 318,7 miliardi di dollari al 2/11, ben oltre 1 miliardo.",
    "catalizzatori": "Data center in forte crescita; ripresa del mercato dei chip dopo il ritorno di Huang (deduzione: il legame con Intel non è verificato).",
-   "perche_ora": "Il 2 novembre il titolo perde l'8,8% dopo una guidance del quarto trimestre (15,0-16,0 miliardi) sotto le attese (circa 17,1) e un margine lordo atteso al 38,0% (44,1% il trimestre precedente). Il 23 novembre il comparto dei chip rimbalza; non ho il movimento di Intel.",
+   "perche_ora": "Il 24 novembre i chip scendono: Nvidia −5,86%, Micron −11,01% (dashboard); Intel era a −6,6% in pre-mercato (ZeroHedge), chiusura non verificata. Il 2/11 aveva perso l'8,8% dopo una guidance del quarto trimestre (15,0-16,0 miliardi) sotto le attese (circa 17,1) e un margine lordo atteso al 38,0% (44,1% il trimestre precedente).",
    "rischi": "Il CFO prevede un rallentamento dei PC almeno fino alla prima metà del 2027; flusso di cassa libero non positivo atteso l'anno prossimo; nessun grande cliente per la produzione su commessa; titolo cresciuto molto con l'IA e già molto volatile; in contrasto con l'ETF sui semiconduttori da evitare: rischio alto da accettare.",
    "orizzonte": "12 mesi",
    "link": "https://finance.yahoo.com/quote/INTC",
    "link_sito": "Yahoo Finance",
-   "fonte": "24/7 Wall St (Intel, 3/11)",
-   "url": "https://247wallst.com/investing/2026/11/03/intel-has-lost-more-than-half-its-value-since-its-peak/",
-   "data": "2026-11-03",
-   "prezzo_rif": "59,66 $ (Yahoo Finance, 23/11/2026)"
+   "fonte": "24/7 Wall St (3/11); ZeroHedge (24/11)",
+   "url": "https://www.zerohedge.com/markets/futures-slide-jensen-squeeze-fizzles-ai-hangover-returns-bonds-rally",
+   "data": "2026-11-24",
+   "prezzo_rif": "54,80 $ (Yahoo Finance, 24/11/2026)"
   },
   {
    "categoria": "azione",
@@ -559,7 +559,7 @@
    "perche_ora": "Con la Fed pronta a rialzare e il credito ancora calmo, le banche con bilanci solidi sono coerenti con il quadro (ne deduco).",
    "rischi": "Banca regionale esposta a immobiliare commerciale e a singoli prestiti problematici (in passato il titolo è crollato per accantonamenti su frodi); margine d'interesse in leggero calo (3,23%); un rallentamento economico peggiorerebbe il credito.",
    "orizzonte": "6–12 mesi",
-   "prezzo_rif": "62,32 $ (Yahoo Finance, 23/11/2026)",
+   "prezzo_rif": "62,59 $ (Yahoo Finance, 24/11/2026)",
    "link": "https://it.investing.com/equities/zions-bancorp",
    "link_sito": "Investing.com",
    "fonte": "Tickzen; Zions (comunicato)",
@@ -575,15 +575,15 @@
    "tesi": "Produttore di memorie DRAM e NAND, comprese le HBM usate nei chip per l'IA. Il 20 novembre perde il 13,9% a 594,51 dollari (volumi 1,8 volte la norma): è il 51% sotto il massimo di un anno e il 30,6% sotto un mese fa (dashboard). Capitalizzazione di circa 798 miliardi di dollari al prezzo di 734 usato da 24/7 Wall St, quindi ben oltre 1 miliardo.",
    "sottovalutazione": "Sul prezzo del 20/11 Investing.com indica un P/E sugli utili attesi di 4,4 volte e un potenziale rispetto al valore equo del 80,7% (stima di un modello di terzi, non del titolo). 24/7 Wall St, con prezzo a 734 dollari, parla di P/E di circa 4 volte sugli utili dell'anno fiscale 2027 e di un obiettivo medio degli analisti di 1.561,91 dollari: sono pareri di terzi e il prezzo di riferimento è precedente al crollo.",
    "catalizzatori": "Revisioni al rialzo delle stime sugli utili delle memorie e ripresa della fiducia sul comparto IA; Google, secondo la stampa sudcoreana, vorrebbe rifornirsi di memorie HBM direttamente dai produttori (Bernstein stima un risparmio di circa 50 miliardi di dollari): il nesso con Micron non è verificato.",
-   "perche_ora": "Il 23 novembre Micron sale del 19,04% a 707,70 dollari (dashboard), ma resta 41,7% sotto il massimo di un anno. I multipli (P/E circa 4,4 e potenziale del 80,7% secondo Investing.com) sono riferiti ai prezzi del 20/11 (594,51) e vanno ricalcolati. Causa specifica del rialzo non verificata: probabile rimbalzo dell'intero comparto dopo il ritorno di Huang (deduzione).",
+   "perche_ora": "Il 24 novembre Micron perde l'11,01% a 629,79 dollari (dashboard) dopo il +19,04% del 23/11: resta 48,1% sotto il massimo di un anno e 30,3% sotto un mese fa. In pre-mercato era a −7% con tutto il comparto (ZeroHedge). I multipli (P/E circa 4,4 e potenziale dell'80,7% secondo Investing.com) sono riferiti ai prezzi del 20/11 (594,51) e vanno ricalcolati.",
    "rischi": "Titolo molto ciclico: i multipli bassi di un'azienda di memorie spesso riflettono utili vicini ai massimi del ciclo (deduzione); volatilità estrema (−13,9% in un giorno); contagio dal debito legato all'IA (Goldman: 545 miliardi di project financing nel 2027); le stime di sconto sono di terzi e con prezzi diversi tra le fonti; in contrasto con l'ETF sui semiconduttori da evitare: qui il rischio è alto e va accettato.",
    "orizzonte": "12 mesi",
    "link": "https://finance.yahoo.com/quote/MU",
    "link_sito": "Yahoo Finance",
-   "fonte": "Dashboard (Yahoo Finance, 23/11); Investing.com (20/11); Teleborsa (23/11)",
-   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/commenti/wall-street-vola-con-il-ritorno-di-huang-alla-guida-di-nvidia-dollaro-ai-massimi-da-19-mesi-203_2026-11-23_TLB.html?lang=it",
-   "data": "2026-11-23",
-   "prezzo_rif": "707,70 $ (Yahoo Finance, 23/11/2026)"
+   "fonte": "Dashboard (Yahoo Finance, 24/11); Milano Finanza (24/11); Investing.com (20/11)",
+   "url": "https://www.milanofinanza.it/news/anthropic-scende-sotto-il-prezzo-di-ipo-dopo-solo-quattro-sedute-anche-nvidia-fatica-nel-pre-market-202611241235382294",
+   "data": "2026-11-24",
+   "prezzo_rif": "629,79 $ (Yahoo Finance, 24/11/2026)"
   },
   {
    "categoria": "azione",
@@ -601,7 +601,7 @@
    "fonte": "Teleborsa (Alstom, 18/11)",
    "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/alstom-crolla-a-parigi-si-restringono-le-opzioni-per-ridurre-il-debito-61_2026-11-18_TLB.html",
    "data": "2026-11-18",
-   "prezzo_rif": "8,54 € (Yahoo Finance, 23/11/2026)"
+   "prezzo_rif": "8,65 € (Yahoo Finance, 24/11/2026)"
   },
   {
    "categoria": "azione",
@@ -614,7 +614,7 @@
    "perche_ora": "Il 5 novembre il titolo ha chiuso a 841,50 euro (−16,1%), il peggiore del DAX, nonostante utile operativo del trimestre +62% e utile netto quasi raddoppiato.",
    "rischi": "Nuovi ritardi nei programmi pubblici; margine 2026 ridotto a circa il 18,5%; un eventuale accordo di pace in Ucraina ridurrebbe l'urgenza degli ordini; titolo molto volatile.",
    "orizzonte": "oltre 12 mesi",
-   "prezzo_rif": "725,20 € (Yahoo Finance, 23/11/2026)",
+   "prezzo_rif": "734,50 € (Yahoo Finance, 24/11/2026)",
    "link": "https://it.investing.com/equities/rheinmetall",
    "link_sito": "Investing.com",
    "fonte": "dpa-AFX via MarketScreener",
@@ -623,56 +623,71 @@
   }
  ],
  "limiti": [
-  "Chiusure del 23/11 dalla dashboard; Reuters, Teleborsa e Yahoo live sono a metà seduta. VIX e Treasury a 10 anni solo dashboard; spread di credito non verificati oggi.",
-  "Nuove opportunità: Intel e Diasorin hanno come «sconto» pareri di analisti (obiettivi di prezzo), non misure; per Valmet e per altre lo sconto resta una stima automatica sui flussi di cassa. I prezzi di riferimento sono aggiornati in automatico: i potenziali vanno ricalcolati.",
-  "Fonti secondarie per Schneider Electric (Vermögenszentrum) e Eli Lilly (chemXplore); Enel, Diasorin da Teleborsa; Intel da 24/7 Wall St (3/11).",
+  "Chiusure del 24/11 dalla dashboard; Teleborsa e Milano Finanza sono a metà seduta. VIX e Treasury a 10 anni solo dashboard; spread BTP-Bund e di credito non verificati oggi.",
+  "Per Technoprobe, Intel e Diasorin lo «sconto» è il confronto con pareri e obiettivi di prezzo degli analisti, non una misura; per Technoprobe anche la capitalizzazione non è verificata. I prezzi di riferimento sono aggiornati in automatico: i potenziali vanno ricalcolati.",
+  "Fonti secondarie per Schneider Electric (Vermögenszentrum) e Eli Lilly (chemXplore); Poste e Technoprobe da Teleborsa.",
   "Spunti di analisi, non raccomandazioni personalizzate."
  ],
  "fonti": [
   {
-   "nome": "Dashboard (Yahoo Finance); Reuters (via Investing.com, metà seduta)",
-   "url": "https://ca.investing.com/news/stock-market-news/wall-street-roars-back-as-nvidia-reinstates-jensen-huang-as-ceo-4976467",
-   "data": "2026-11-23"
+   "nome": "Dashboard (Yahoo Finance); Teleborsa",
+   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/commenti/wall-street-prosegue-a-luci-e-ombre-tra-i-timori-per-nuovi-dazi-e-ai-197_2026-11-24_TLB.html?lang=it",
+   "data": "2026-11-24"
   },
   {
-   "nome": "Teleborsa (Wall Street, 23/11); Reuters (via Investing.com); ZeroHedge",
-   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/commenti/wall-street-vola-con-il-ritorno-di-huang-alla-guida-di-nvidia-dollaro-ai-massimi-da-19-mesi-203_2026-11-23_TLB.html?lang=it",
-   "data": "2026-11-23"
+   "nome": "Dashboard; Teleborsa; Milano Finanza; ZeroHedge",
+   "url": "https://www.milanofinanza.it/news/anthropic-scende-sotto-il-prezzo-di-ipo-dopo-solo-quattro-sedute-anche-nvidia-fatica-nel-pre-market-202611241235382294",
+   "data": "2026-11-24"
   },
   {
-   "nome": "Dashboard (Yahoo Finance); Teleborsa (Europa, 23/11)",
-   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/commenti/effetto-huang-sui-listini-europei-a-piazza-affari-volano-stm-e-technoprobe-181_2026-11-23_TLB.html?lang=it",
-   "data": "2026-11-23"
+   "nome": "Teleborsa; Scenari Economici; ZeroHedge",
+   "url": "https://scenarieconomici.it/nuovi-dazi-usa-su-cina-ue-e-altri-14-paesi-la-scure-della-sezione-301-contro-la-sovraccapacita-industriale/",
+   "data": "2026-11-24"
   },
   {
-   "nome": "Milano Finanza (23/11)",
-   "url": "https://www.milanofinanza.it/news/cos-e-successo-oggi-sui-mercati-dal-ritorno-di-jensen-huang-in-sella-a-nvidia-al-deal-da-3-9-mld-di-var-202611231815508328",
-   "data": "2026-11-23"
+   "nome": "Dashboard (Yahoo Finance); Teleborsa",
+   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/petrolio-a-8154-dollari-alle-1930-243_2026-11-24_TLB-1LINER.html?lang=it",
+   "data": "2026-11-24"
+  },
+  {
+   "nome": "Dashboard (Yahoo Finance); Milano Finanza",
+   "url": "https://www.milanofinanza.it/investimenti-trading/piazza-affari-e-wall-street-in-calo-202611241644579910",
+   "data": "2026-11-24"
+  },
+  {
+   "nome": "Teleborsa (Reuters)",
+   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/blackstone-apollo-e-warburg-pincus-in-trattative-per-sostenere-l-acquisizione-di-global-payments-213_2026-11-24_TLB.html?lang=it",
+   "data": "2026-11-24"
   },
   {
    "nome": "Dashboard (Yahoo Finance, CFTC)",
    "url": "https://puntospillo.github.io/analisi-finanziaria/",
-   "data": "2026-11-23"
-  },
-  {
-   "nome": "Milano Finanza",
-   "url": "https://www.milanofinanza.it/news/anthropic-e-nvidia-rimbalzano-nel-pre-market-e-finita-la-crisi-del-tech-202611231314498108",
-   "data": "2026-11-23"
-  },
-  {
-   "nome": "ZeroHedge (Deutsche Bank)",
-   "url": "https://www.zerohedge.com/markets/key-events-holiday-shortened-week-all-about-pce",
-   "data": "2026-11-23"
-  },
-  {
-   "nome": "Milano Finanza",
-   "url": "https://www.milanofinanza.it/news/dividendi-il-23-novembre-e-il-d-day-di-piazza-affari-9-7-miliardi-solo-dalle-banche-l-impatto-sull-indice-202611211502008591",
-   "data": "2026-11-21"
+   "data": "2026-11-24"
   },
   {
    "nome": "Teleborsa (Borsa Italiana)",
-   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/moody-s-alza-i-rating-di-mps-senior-unsecured-a-baa2-da-baa3-outlook-stabile-191_2026-11-23_TLB.html?lang=it",
-   "data": "2026-11-23"
+   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/hewlett-packard-enterprise-crolla-al-nyse-su-timori-redditivita-futura-207_2026-11-24_TLB.html?lang=it",
+   "data": "2026-11-24"
+  },
+  {
+   "nome": "ZeroHedge",
+   "url": "https://www.zerohedge.com/markets/futures-slide-jensen-squeeze-fizzles-ai-hangover-returns-bonds-rally",
+   "data": "2026-11-24"
+  },
+  {
+   "nome": "Teleborsa (Borsa Italiana)",
+   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/opas-mps-adesioni-allo-00317-nel-primo-giorno-201_2026-11-24_TLB.html?lang=it",
+   "data": "2026-11-24"
+  },
+  {
+   "nome": "Teleborsa (Borsa Italiana)",
+   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/recordati-revocata-da-euronext-milan-193_2026-11-24_TLB.html?lang=it",
+   "data": "2026-11-24"
+  },
+  {
+   "nome": "Dashboard (Yahoo Finance); Teleborsa",
+   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/oro-356206-dollari-alle-1930-249_2026-11-24_TLB-1LINER.html?lang=it",
+   "data": "2026-11-24"
   },
   {
    "nome": "Investing.com Italia; Money.it",
@@ -685,8 +700,8 @@
    "data": "2026-11-12"
   },
   {
-   "nome": "Teleborsa (Terna, nove mesi, 12/11)",
-   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/terna-9-mesi-in-crescita-con-investimenti-record-a-235-miliardi-acconto-su-dividendo-a-1192-centesimi-125_2026-11-12_TLB.html?lang=it",
+   "nome": "Teleborsa (Poste Italiane, nove mesi 2026, 12/11)",
+   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/poste-italiane-9-mesi-da-record-e-conferma-della-guidance-acconto-sul-dividendo-sale-a-043-euro-1_2026-11-12_TLB.html?lang=it",
    "data": "2026-11-12"
   },
   {
@@ -730,9 +745,14 @@
    "data": "2026-11-20"
   },
   {
-   "nome": "ANSA; Milano Finanza; Affaritaliani",
-   "url": "https://www.ansa.it/sito/notizie/economia/2026/10/30/borsa-milano-in-calo-con-le-banche-deboli-scivola-amplifon_589fc273-d10a-49b0-80c6-d72b44132524.html",
-   "data": "2026-10-30"
+   "nome": "Teleborsa (Leapmotor-Stellantis, 24/11); Milano Finanza (23/11)",
+   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/leapmotor-si-rafforza-in-europa-con-stellantis-217_2026-11-24_TLB.html?lang=it",
+   "data": "2026-11-24"
+  },
+  {
+   "nome": "Teleborsa (Technoprobe, nove mesi, 11/11; target price, 12/11)",
+   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/technoprobe-ricavi-accelerano-nei-nove-mesi-aggiornato-il-target-per-la-fine-dell-anno-237_2026-11-11_TLB.html?lang=it",
+   "data": "2026-11-12"
   },
   {
    "nome": "Teleborsa (Diasorin, terzo trimestre, 12/11); Teleborsa (Equita, 21/10)",
@@ -743,11 +763,6 @@
    "nome": "Valmet (comunicato via Inderes); Simply Wall St",
    "url": "https://www.inderes.dk/en/releases/valmets-interim-review-january-1-september-30-2026-strong-orders-received-and-increased-comparable-ebita",
    "data": "2026-10-28"
-  },
-  {
-   "nome": "24/7 Wall St (Intel, 3/11)",
-   "url": "https://247wallst.com/investing/2026/11/03/intel-has-lost-more-than-half-its-value-since-its-peak/",
-   "data": "2026-11-03"
   },
   {
    "nome": "Tickzen; Zions (comunicato)",
@@ -766,56 +781,56 @@
   }
  ],
  "report": {
-  "precedente_titolo": "20 novembre sera",
+  "precedente_titolo": "23 novembre sera",
   "precedente": [
-   "L'ultima valutazione, del 20 novembre sera, dava rischio «elevato» con indice a 66 (67 il 19/11).",
-   "Il quadro: S&P 500 a 6.910 (−3,7%), Nasdaq 100 a 25.029 (−5,6%, 19,8% sotto il massimo), VIX a 35,9, Nvidia −14,0% dopo la notizia Reuters su una revisione contabile della SEC.",
-   "Soglie osservate: indice sotto 55 o sopra 70; S&P 500 sotto 6.600 o due chiusure sopra 7.349; Nasdaq 100 sotto 24.970; Treasury a 10 anni sopra 5,25% o sotto 4,60%; spread sopra 120 o FTSE MIB sotto 47.000.",
-   "Da allora: il 23 novembre Nvidia ha reintegrato Huang e ha chiuso a +31,5% (165,05); l'S&P 500 è salito del 4,7% a 7.237, sopra 7.000 ma ancora 1,5% sotto la media a 200 giorni. Nessuna delle soglie sopra è stata raggiunta."
+   "L'ultima valutazione, del 23 novembre sera, dava rischio «elevato» con indice a 65 (66 il 20/11).",
+   "Il quadro: S&P 500 a 7.237 (+4,7%), Nasdaq 100 +6,9%, VIX a 26,6, Nvidia +31,5% dopo il rientro di Huang, rialzo Fed di dicembre atteso al 91-98%.",
+   "Soglie osservate: indice sotto 55 o sopra 70; S&P 500 sotto 6.910 o due chiusure sopra 7.350; Nasdaq 100 sotto 24.970; Nvidia sotto 125,5; Treasury a 10 anni sopra 5,25% o sotto 4,60%; spread sopra 120 o FTSE MIB sotto 47.000.",
+   "Da allora: il rimbalzo si è in parte rovesciato (Nasdaq 100 −2%, Nvidia −5,9%, Micron −11%) e l'S&P 500 è sceso a 7.201. Nessuna delle soglie sopra è stata raggiunta."
   ],
   "cambiato": [
-   "Il 23 novembre S&P 500 +4,73% a 7.237, Nasdaq 100 +6,86% a 26.746, Dow Jones +3,01% a 49.595 (dashboard, chiusure).",
-   "Il consiglio di Nvidia reintegra Jensen Huang come CEO (si era dimesso il 12 novembre): il titolo chiude a 165,05 (+31,48%).",
-   "VIX a 26,62 (−25,83%) da 35,89; indice dei semiconduttori +13,4% a metà seduta (Reuters).",
-   "Fed: rialzo di 25 punti base il 9 dicembre atteso al 91-98% a seconda della fonte; dollaro ai massimi da 19 mesi.",
-   "Petrolio −6,2% (Brent 86,82), oro +3,3% (3.631,7); Piazza Affari +0,65% con 9,7 miliardi di cedole bancarie staccate."
+   "Il 24 novembre S&P 500 −0,50% a 7.201, Nasdaq 100 −1,99% a 26.214, Dow Jones +0,85% a 50.019 (dashboard, chiusure).",
+   "L'IA torna sotto pressione: Nvidia −5,86%, Micron −11,01%, Anthropic sotto il prezzo di ipo di 83 dollari, HPE fino a −17%.",
+   "Nuovi dazi USA (Sezione 301) su Cina, UE e circa 14 economie attesi già questa settimana (indiscrezioni WSJ/Bloomberg, senza conferma ufficiale).",
+   "FTSE MIB −1,84% a 48.121; primo giorno dell'Opas Intesa su MPS, adesioni 0,0317%.",
+   "Oro −2,64% a 3.555 e argento −5,65%; VIX stabile a 26,4."
   ],
   "situazione": [
-   "L'indice di rischio è a 65 su 100, livello «elevato» (66 il 20/11), a cinque punti da «alto». Stress a 83 e fragilità a 60: il calo viene dal VIX, sceso da 35,9 a 26,6; il gruppo «Grandi investitori» è fermo in attesa dei dati CFTC di venerdì.",
-   "L'S&P 500 è a 7.237, 7,4% sotto il massimo e 1,5% sotto la media a 200 giorni (7.350); il 55% dei titoli è sopra la media (48% il 20/11). Il Nasdaq 100 è circa 14,3% sotto il massimo (calcolo mio, da −19,8% di venerdì).",
-   "Il rimbalzo nasce da una decisione societaria, non da dati macro: il ritorno di Huang ha riportato fiducia sul comparto IA (informatica +8,97% a metà seduta). Restano aperti l'indagine SEC segnalata da Reuters, l'audizione di Huang del 1° dicembre e i dubbi sul debito legato all'IA.",
-   "Sul fronte tassi niente è cambiato: rialzo Fed atteso a dicembre, dollaro forte, Treasury a 10 anni al 4,92%. Mercoledì l'inflazione PCE è il test; lo spread BTP-Bund scende a 105.",
+   "L'indice di rischio è a 62 su 100, livello «elevato» (65 ieri), a otto punti da «alto». Fragilità a 56 e stress a 82. Il gruppo «Grandi investitori» è fermo fino ai dati CFTC di venerdì.",
+   "L'S&P 500 è a 7.201, 7,9% sotto il massimo e 2,0% sotto la media a 200 giorni (7.351): il rimbalzo di lunedì si è ridotto di circa un quarto. Il 55% dei titoli è sopra la media. Il Nasdaq 100 è circa 16,0% sotto il massimo (calcolo mio).",
+   "Il giorno è di «ressaca» dell'IA: ZeroHedge descrive il +31,5% di Nvidia come in gran parte uno short squeeze; si aggiungono il timore sulla sicurezza dei modelli (Axios), il calo di HPE sui margini e le audizioni di Huang al Congresso il 1° e il 3 dicembre.",
+   "Sui tassi niente di nuovo: rialzo Fed di dicembre già scontato, Treasury a 10 anni al 4,90%; il fattore nuovo sono i possibili dazi di Sezione 301. Domani PCE e Beige Book.",
    "Per il modello conta la tendenza: finché l'S&P 500 resta sotto la media a 200 giorni la difesa non cambia. Le idee sotto sono spunti da approfondire, non indicazioni di acquisto o vendita."
   ],
   "temi": [
    {
     "titolo": "S&P 500",
-    "testo": "Chiude a 7.237,2 (+4,73%): 7,4% sotto il massimo e 1,5% sotto la media a 200 giorni (7.350). Torna sopra 7.000, soglia indicata il 19/11.",
+    "testo": "Chiude a 7.201,1 (−0,50%): 7,9% sotto il massimo e 2,0% sotto la media a 200 giorni (7.351). Dopo il +4,73% di ieri cede circa un quarto del rialzo.",
     "segno": "neutro",
     "grafico": "spx",
-    "fonte": "Dashboard (Yahoo Finance); Reuters (via Investing.com, metà seduta)",
-    "url": "https://ca.investing.com/news/stock-market-news/wall-street-roars-back-as-nvidia-reinstates-jensen-huang-as-ceo-4976467",
-    "data": "2026-11-23"
+    "fonte": "Dashboard (Yahoo Finance); Teleborsa",
+    "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/commenti/wall-street-prosegue-a-luci-e-ombre-tra-i-timori-per-nuovi-dazi-e-ai-197_2026-11-24_TLB.html?lang=it",
+    "data": "2026-11-24"
    },
    {
     "titolo": "Nasdaq 100",
-    "testo": "Chiude a 26.746 (+6,86%), circa 14,3% sotto il massimo (calcolo mio). Nasdaq Composite +6,51%. Nvidia +31,5%, Micron +19,0%, Tesla +11,5%, Alphabet +6,3%, Apple +1,9% (dashboard).",
-    "segno": "meno rischio",
+    "testo": "Chiude a 26.214 (−1,99%), circa 16,0% sotto il massimo (calcolo mio). Nasdaq Composite −1,48%. Nvidia −5,86%, Micron −11,01%, AMD −8,86%; Apple +1,43%, Alphabet in rialzo moderato (dashboard titoli).",
+    "segno": "più rischio",
     "grafico": "ndx",
     "fonte": "Dashboard (Yahoo Finance)",
-    "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/commenti/wall-street-vola-con-il-ritorno-di-huang-alla-guida-di-nvidia-dollaro-ai-massimi-da-19-mesi-203_2026-11-23_TLB.html?lang=it",
-    "data": "2026-11-23"
+    "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/commenti/wall-street-prosegue-a-luci-e-ombre-tra-i-timori-per-nuovi-dazi-e-ai-197_2026-11-24_TLB.html?lang=it",
+    "data": "2026-11-24"
    },
    {
     "titolo": "Ampiezza del mercato",
-    "testo": "Il 55% dei titoli dell'S&P 500 è sopra la media a 200 giorni (48% il 20/11, dati della dashboard): il rimbalzo si allarga ma non è tornato ai livelli di inizio novembre.",
+    "testo": "Il 55% dei titoli dell'S&P 500 è sopra la media a 200 giorni (55% anche ieri, dati della dashboard): il calo dell'indice è guidato dai titoli dell'IA, non è generalizzato.",
     "segno": "neutro",
     "grafico": "ampiezza"
    },
    {
     "titolo": "VIX (volatilità)",
-    "testo": "Il VIX scende del 25,8% a 26,62 (35,89 il 20/11). Solo dashboard: non ho trovato una seconda fonte di chiusura.",
-    "segno": "meno rischio",
+    "testo": "Il VIX scende dello 0,98% a 26,36 (26,62 ieri, 35,89 il 20/11). Solo dashboard: non ho trovato una seconda fonte di chiusura.",
+    "segno": "neutro",
     "grafico": "vix"
    },
    {
@@ -826,82 +841,78 @@
    },
    {
     "titolo": "Settori",
-    "testo": "A metà seduta (non è la chiusura): informatica +8,97%, telecomunicazioni +5,09%, beni di consumo secondari +4,70%; in fondo alla classifica segnalati ribassi non letti per intero. Non ho i dati di chiusura per settore.",
+    "testo": "Non ho i dati di settore di chiusura. Teleborsa a metà seduta parla di rotazione dai titoli dell'IA verso un paniere più ampio; Gilead Sciences +4,78% e Axon Enterprise in forte rialzo alle 20:00 tra i titoli singoli.",
     "segno": "neutro",
     "grafico": "settori",
     "fonte": "Teleborsa (Borsa Italiana)",
-    "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/commenti/wall-street-vola-con-il-ritorno-di-huang-alla-guida-di-nvidia-dollaro-ai-massimi-da-19-mesi-203_2026-11-23_TLB.html?lang=it",
-    "data": "2026-11-23"
+    "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/commenti/wall-street-prosegue-a-luci-e-ombre-tra-i-timori-per-nuovi-dazi-e-ai-197_2026-11-24_TLB.html?lang=it",
+    "data": "2026-11-24"
    },
    {
     "titolo": "Tassi e banche centrali",
-    "testo": "Rialzo Fed il 9 dicembre atteso al 91-98% a seconda della fonte. Treasury a 10 anni 4,92% (+0,6 punti base), 30 anni 5,29%, 3 mesi 4,15% (dashboard). BTP decennale al 4,34%, spread a 105 (Teleborsa).",
+    "testo": "Rialzo Fed del 9 dicembre già scontato (ZeroHedge). Treasury a 10 anni 4,904% (−1,4 punti base), 30 anni 5,29%, 5 anni 4,71%, 3 mesi 4,17% (dashboard); in pre-mercato 2 anni a 4,64%. Fiducia dei consumatori ai massimi da due anni.",
     "segno": "più rischio",
-    "fonte": "Teleborsa (Borsa Italiana); dashboard",
-    "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/commenti/effetto-huang-sui-listini-europei-a-piazza-affari-volano-stm-e-technoprobe-181_2026-11-23_TLB.html?lang=it",
-    "data": "2026-11-23"
+    "fonte": "Dashboard; Teleborsa; ZeroHedge",
+    "url": "https://www.zerohedge.com/markets/futures-slide-jensen-squeeze-fizzles-ai-hangover-returns-bonds-rally",
+    "data": "2026-11-24"
    },
    {
     "titolo": "Utili delle società",
-    "testo": "Nessun conto trimestrale di rilievo letto oggi. Grandi operazioni: CrowdStrike acquista Zscaler per circa 43,9 miliardi di dollari in azioni (Zscaler +15%, CrowdStrike −10%); Vår Energi rileva il business norvegese di ConocoPhillips.",
-    "segno": "neutro",
-    "fonte": "Milano Finanza",
-    "url": "https://www.milanofinanza.it/news/cos-e-successo-oggi-sui-mercati-dal-ritorno-di-jensen-huang-in-sella-a-nvidia-al-deal-da-3-9-mld-di-var-202611231815508328",
-    "data": "2026-11-23"
+    "testo": "Hewlett Packard Enterprise: vendite attese +27-35% nel nuovo anno ma margine Cloud & AI al 14% (da 18,4%), titolo fino a −17% a 39,68 dollari; flusso di cassa libero atteso di almeno 5,5 miliardi (Bloomberg Intelligence). Nessun'altra trimestrale di rilievo letta oggi.",
+    "segno": "più rischio",
+    "fonte": "Teleborsa (Borsa Italiana)",
+    "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/hewlett-packard-enterprise-crolla-al-nyse-su-timori-redditivita-futura-207_2026-11-24_TLB.html?lang=it",
+    "data": "2026-11-24"
    },
    {
     "titolo": "Petrolio e oro",
-    "testo": "Brent 86,82 (−6,21%), WTI 80,37 (−4,30%), oro 3.631,7 (+3,31%), argento +4,54% (dashboard). Teleborsa a metà seduta: WTI 80,42, oro 3.651 (non di chiusura). Causa del calo del petrolio non verificata; Yahoo Finance cita gli attacchi alle navi nel Golfo come freno al ribasso.",
+    "testo": "Brent 88,50 (−0,97%), WTI 81,69 (+1,90%), oro 3.555,1 (−2,64%), argento 40,71 (−5,65%), rame −2,54% (dashboard). Il segno opposto di Brent e WTI è anomalo e non verificato.",
     "segno": "neutro",
     "fonte": "Dashboard (Yahoo Finance); Teleborsa",
-    "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/commenti/effetto-huang-sui-listini-europei-a-piazza-affari-volano-stm-e-technoprobe-181_2026-11-23_TLB.html?lang=it",
-    "data": "2026-11-23"
+    "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/oro-356206-dollari-alle-1930-249_2026-11-24_TLB-1LINER.html?lang=it",
+    "data": "2026-11-24"
    },
    {
     "titolo": "Italia",
-    "testo": "FTSE MIB 49.022 (+0,65%) con lo stacco di cedole per 9,7 miliardi delle banche (effetto tecnico circa −1,4%). Spread a 105. Moody's alza i rating di MPS (senior Baa2 da Baa3). Opa Pininfarina: adesioni all'84,71% (chiusura 27/11).",
-    "segno": "meno rischio",
+    "testo": "FTSE MIB 48.121 (−1,84%) contro −1,5% a metà seduta. Opas Intesa su MPS al primo giorno: adesioni 0,0317%; Intesa −2,60%, MPS −2,74%. Recordati revocata dal listino; Opa Pininfarina all'84,95%.",
+    "segno": "più rischio",
     "fonte": "Teleborsa; Milano Finanza",
-    "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/commenti/effetto-huang-sui-listini-europei-a-piazza-affari-volano-stm-e-technoprobe-181_2026-11-23_TLB.html?lang=it",
-    "data": "2026-11-23"
+    "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/opas-mps-adesioni-allo-00317-nel-primo-giorno-201_2026-11-24_TLB.html?lang=it",
+    "data": "2026-11-24"
    },
    {
     "titolo": "Valute e cripto",
-    "testo": "Euro/dollaro 1,0898 (−0,65%), indice del dollaro 104,33 (massimi da 19 mesi), dollaro/yen 158,95. Bitcoin 61.232 (+0,11%, dashboard; Yahoo Finance parla di sopra 63.000: scarto non verificato).",
+    "testo": "Euro/dollaro 1,0969 (−0,02%), indice del dollaro 103,84 (−0,46%), dollaro/yen 159,23. Bitcoin 59.916 (−2,12%), Ethereum −1,53%.",
     "segno": "neutro",
-    "fonte": "Dashboard (Yahoo Finance); Teleborsa",
-    "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/commenti/wall-street-vola-con-il-ritorno-di-huang-alla-guida-di-nvidia-dollaro-ai-massimi-da-19-mesi-203_2026-11-23_TLB.html?lang=it",
-    "data": "2026-11-23"
+    "fonte": "Dashboard (Yahoo Finance)",
+    "url": "https://puntospillo.github.io/analisi-finanziaria/",
+    "data": "2026-11-24"
    },
    {
     "titolo": "Calendario",
-    "testo": "23/11 discorso di Williams (Fed di New York); 24/11 fiducia dei consumatori Conference Board e partenza dell'Opas Intesa su MPS; 25/11 PCE di ottobre, Beige Book e asta BTP Short Term e BTP€i; 26/11 Thanksgiving; 27/11 fine dell'Opa Pininfarina; 30/11 aggiornamento su Sparkle; 1/12 audizione di Huang; 9/12 riunione Fed.",
+    "testo": "25/11: inflazione PCE di ottobre, Beige Book e asta BTP Short Term e BTP€i da 3,5 miliardi; 26/11 Thanksgiving; 27/11 fine dell'Opa Pininfarina e dati CFTC; 30/11 aggiornamento su Sparkle; 1/12 e 3/12 audizioni di Huang al Congresso; 9/12 riunione Fed; possibile annuncio dei dazi di Sezione 301 già questa settimana.",
     "segno": "neutro",
-    "fonte": "ZeroHedge (Deutsche Bank); Teleborsa",
-    "url": "https://www.zerohedge.com/markets/key-events-holiday-shortened-week-all-about-pce",
-    "data": "2026-11-23"
+    "fonte": "ZeroHedge (Deutsche Bank); Teleborsa; Scenari Economici",
+    "url": "https://www.zerohedge.com/markets/futures-slide-jensen-squeeze-fizzles-ai-hangover-returns-bonds-rally",
+    "data": "2026-11-24"
    }
   ],
-  "nota": "Dati: chiusure del 23/11 dalla dashboard (Yahoo Finance); Reuters, Teleborsa e Yahoo live sono a metà seduta. Non verificati: VIX e Treasury a 10 anni (solo dashboard), causa dei rialzi di Micron e Tesla, spread di credito, dati di settore a fine seduta. Rotazione: nuove idee Enel, Schneider Electric, Eli Lilly (escono Snam, Pirelli, T-Mobile US); riscritte UniCredit, TotalEnergies, oro, semiconduttori; nuove opportunità Diasorin e Intel (escono Campari e Nvidia, dopo il rialzo del 31% il suo «sconto» è superato); riscritte Stellantis e Micron. Intel e Diasorin: lo sconto è un parere di analisti, non una misura. Fonti secondarie per Schneider (Vermögenszentrum) e Lilly (chemXplore)."
+  "nota": "Dati: chiusure del 24/11 dalla dashboard (Yahoo Finance); Teleborsa e Milano Finanza sono a metà seduta. Non verificati: VIX e Treasury a 10 anni (solo dashboard), segno opposto di Brent e WTI, spread BTP-Bund e di credito, dati di settore. Rotazione: nuova idea Poste Italiane (esce Terna); riscritte UniCredit, TotalEnergies, oro, semiconduttori; nuova opportunità Technoprobe (esce Amplifon); riscritte Stellantis, Intel, Micron. Cercati ma non inseriti: HPE, Texas Instruments e Moncler, per mancanza di una stima di sconto verificata e recente; Gilead (+4,78%) senza causa trovata. Technoprobe: sconto = pareri di analisti e capitalizzazione non verificata."
  },
  "titoli_giorno": {
   "metodo": "Tra i 30 titoli più pesanti dell'S&P 500 conta chi ha spostato di più l'indice nell'ultima seduta (peso × variazione del giorno), con un bonus se è stato scambiato molto più del solito: di solito c'è una notizia.",
-  "pesi_al": "20-Nov-2026",
+  "pesi_al": "23-Nov-2026",
   "titoli": [
    {
     "nome": "Nvidia Corp",
     "ticker": "NVDA",
-    "peso": 5.09,
-    "prezzo": 165.05,
-    "data": "2026-11-23",
-    "g1": 31.48,
-    "vol_rel": 2.7,
-    "contributo": 1.602,
+    "peso": 6.39,
+    "prezzo": 155.38,
+    "data": "2026-11-24",
+    "g1": -5.86,
+    "vol_rel": 1.19,
+    "contributo": -0.374,
     "serie": [
-     [
-      "2025-11-24",
-      182.55
-     ],
      [
       "2025-11-25",
       177.82
@@ -1901,54 +1912,49 @@
      [
       "2026-11-23",
       165.05
+     ],
+     [
+      "2026-11-24",
+      155.38
      ]
     ],
-    "perche": "Nvidia, il titolo più pesante, sale del 31,5% con volumi 2,7 volte la norma e aggiunge circa 1,60 punti percentuali all'S&P 500: è il maggior contributo del giorno.",
+    "perche": "Nvidia, il titolo più pesante, perde il 5,9% e toglie circa 0,37 punti percentuali all'S&P 500: è il peggior contributo del giorno, dopo il +1,60 di ieri.",
     "cosa_fa": "Chip per l'intelligenza artificiale (GPU per data center) e relativo software.",
     "situazione": [
-     "Chiude a 165,05 dollari (+31,48%), volumi 2,70 volte la norma.",
-     "Resta 31,0% sotto il massimo di un anno e 21,8% sotto un mese fa (dashboard).",
-     "Il consiglio ha reintegrato Jensen Huang come amministratore delegato, presidente e consigliere «con effetto immediato»; si era dimesso il 12 novembre.",
-     "ZeroHedge: un ETP con leva −3 sul titolo ha perso circa il 91% in pochi secondi (dato riportato da Bloomberg Intelligence)."
+     "Chiude a 155,38 dollari (−5,86%), volumi 1,19 volte la norma.",
+     "È 35,1% sotto il massimo di un anno e 28,1% sotto un mese fa (dashboard).",
+     "Teleborsa: a metà seduta cedeva circa il 7%, mentre Anthropic scendeva sotto il prezzo di ipo (83 dollari).",
+     "Milano Finanza: il titolo resta sotto esame per i rapporti tra Huang e una dipendente di Megaspeed, accusata di spionaggio; il Commercio USA ha inserito Megaspeed nella lista nera."
     ],
-    "commento": "Il rialzo nasce da una decisione del consiglio, non da nuovi conti: la fiducia degli investitori nell'intero comparto IA è tornata in poche ore, con il Nasdaq 100 a +6,9%. Non risultano chiusi i punti aperti: l'indagine della SEC segnalata da Reuters, l'audizione di Huang alla Camera USA il 1° dicembre. Limite: la dinamica di un rialzo del 31% in un giorno è tecnica quanto fondamentale, e può invertirsi.",
+    "commento": "Il rialzo di lunedì era nato da una decisione del consiglio, non da nuovi fondamentali: ZeroHedge lo descrive come in gran parte uno «short squeeze» con ribilanciamento di ETF a leva, e il ritorno di Huang ha tolto un'incertezza ma ne ha aperte altre (governance, finanziamenti circolari, esportazioni). Huang è atteso al Congresso il 1° e il 3 dicembre. Limite: la dinamica meccanica di questi flussi è una stima di una sola fonte.",
     "fonti": [
      {
-      "nome": "Teleborsa: Wall Street vola con il ritorno di Huang",
-      "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/commenti/wall-street-vola-con-il-ritorno-di-huang-alla-guida-di-nvidia-dollaro-ai-massimi-da-19-mesi-203_2026-11-23_TLB.html?lang=it",
-      "data": "2026-11-23"
+      "nome": "Teleborsa: Wall Street a luci e ombre tra dazi e IA",
+      "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/commenti/wall-street-prosegue-a-luci-e-ombre-tra-i-timori-per-nuovi-dazi-e-ai-197_2026-11-24_TLB.html?lang=it",
+      "data": "2026-11-24"
      },
      {
-      "nome": "Milano Finanza: Huang torna ceo e l'azione vola",
-      "url": "https://www.milanofinanza.it/news/anthropic-e-nvidia-rimbalzano-nel-pre-market-e-finita-la-crisi-del-tech-202611231314498108",
-      "data": "2026-11-23"
+      "nome": "Milano Finanza: Anthropic sotto il prezzo di ipo, Nvidia in rosso",
+      "url": "https://www.milanofinanza.it/news/anthropic-scende-sotto-il-prezzo-di-ipo-dopo-solo-quattro-sedute-anche-nvidia-fatica-nel-pre-market-202611241235382294",
+      "data": "2026-11-24"
      },
      {
-      "nome": "Scenari Economici: Nvidia richiama Huang",
-      "url": "https://scenarieconomici.it/colpo-di-scena-a-wall-street-nvidia-richiama-jensen-huang-su-spinta-della-casa-bianca-il-titolo-esplode-del-30/",
-      "data": "2026-11-23"
-     },
-     {
-      "nome": "ZeroHedge: ETP short 3x azzerato",
-      "url": "https://www.zerohedge.com/markets/thoughts-and-prayers-jensens-return-wipes-out-3x-short-nvidia-etp-seconds-volmageddon",
-      "data": "2026-11-23"
+      "nome": "ZeroHedge: i future scendono, il «Jensen squeeze» si esaurisce",
+      "url": "https://www.zerohedge.com/markets/futures-slide-jensen-squeeze-fizzles-ai-hangover-returns-bonds-rally",
+      "data": "2026-11-24"
      }
     ]
    },
    {
     "nome": "Micron Technology Inc",
     "ticker": "MU",
-    "peso": 1.12,
-    "prezzo": 707.7,
-    "data": "2026-11-23",
-    "g1": 19.04,
-    "vol_rel": 1.46,
-    "contributo": 0.214,
+    "peso": 1.28,
+    "prezzo": 629.79,
+    "data": "2026-11-24",
+    "g1": -11.01,
+    "vol_rel": 1.1,
+    "contributo": -0.141,
     "serie": [
-     [
-      "2025-11-24",
-      223.93
-     ],
      [
       "2025-11-25",
       224.53
@@ -2948,1058 +2954,1062 @@
      [
       "2026-11-23",
       707.7
+     ],
+     [
+      "2026-11-24",
+      629.79
      ]
     ],
-    "perche": "Micron sale del 19,0% con volumi 1,5 volte la norma e aggiunge circa 0,21 punti all'S&P 500: è il secondo maggior contributo del giorno.",
+    "perche": "Micron perde l'11,0% e toglie circa 0,14 punti all'S&P 500: è il secondo peggior contributo del giorno.",
     "cosa_fa": "Memorie DRAM e NAND, comprese le HBM usate nei chip per l'IA.",
     "situazione": [
-     "Chiude a 707,70 dollari (+19,04%), volumi 1,46 volte la norma.",
-     "Resta 41,7% sotto il massimo di un anno e 19,4% sotto un mese fa (dashboard).",
-     "Il 20/11 aveva perso il 13,9% a 594,51 (quindi il rialzo recupera solo in parte).",
-     "Teleborsa a metà seduta: «Micron Technology, quotazioni alle stelle»."
+     "Chiude a 629,79 dollari (−11,01%), volumi 1,10 volte la norma.",
+     "È 48,1% sotto il massimo di un anno e 30,3% sotto un mese fa (dashboard).",
+     "Aveva guadagnato il 19,04% il 23/11 (707,70): il ribasso cancella oltre la metà del rimbalzo.",
+     "In pre-mercato Micron, Marvell e Arm perdevano oltre il 7% (Milano Finanza)."
     ],
-    "commento": "La causa specifica non è verificata: la fonte letta (Teleborsa) parla solo di rialzo; è coerente con il rimbalzo di tutto il comparto dei chip dopo il ritorno di Huang (+13,4% per l'indice dei semiconduttori a metà seduta, Reuters). Limite: titolo molto ciclico e volatile; da guardare se regge sopra i 594 del 20/11.",
+    "commento": "Il calo rientra nella ripresa delle vendite sui chip e sull'IA: Teleborsa cita anche Texas Instruments (−9,21%), CoreWeave (−12,22%) e Lumentum. Non ho trovato notizie specifiche su Micron. Limite: titolo molto ciclico, con oscillazioni a due cifre in giorni consecutivi.",
     "fonti": [
      {
-      "nome": "Teleborsa: Wall Street vola (indici e chip)",
-      "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/commenti/wall-street-vola-con-il-ritorno-di-huang-alla-guida-di-nvidia-dollaro-ai-massimi-da-19-mesi-203_2026-11-23_TLB.html?lang=it",
-      "data": "2026-11-23"
+      "nome": "Milano Finanza: Nvidia e Micron in rosso in pre-market",
+      "url": "https://www.milanofinanza.it/news/anthropic-scende-sotto-il-prezzo-di-ipo-dopo-solo-quattro-sedute-anche-nvidia-fatica-nel-pre-market-202611241235382294",
+      "data": "2026-11-24"
      },
      {
-      "nome": "Reuters (via Investing.com): Wall Street roars back",
-      "url": "https://ca.investing.com/news/stock-market-news/wall-street-roars-back-as-nvidia-reinstates-jensen-huang-as-ceo-4976467",
-      "data": "2026-11-23"
+      "nome": "Teleborsa: Wall Street a luci e ombre",
+      "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/commenti/wall-street-prosegue-a-luci-e-ombre-tra-i-timori-per-nuovi-dazi-e-ai-197_2026-11-24_TLB.html?lang=it",
+      "data": "2026-11-24"
      }
     ]
    },
    {
-    "nome": "Tesla Inc",
-    "ticker": "TSLA",
-    "peso": 1.63,
-    "prezzo": 385.46,
-    "data": "2026-11-23",
-    "g1": 11.46,
-    "vol_rel": 1.25,
-    "contributo": 0.187,
+    "nome": "Apple Inc",
+    "ticker": "AAPL",
+    "peso": 8.15,
+    "prezzo": 354.07,
+    "data": "2026-11-24",
+    "g1": 1.43,
+    "vol_rel": 0.8,
+    "contributo": 0.117,
     "serie": [
      [
-      "2025-11-24",
-      417.78
-     ],
-     [
       "2025-11-25",
-      419.4
+      276.97
      ],
      [
       "2025-11-26",
-      426.58
+      277.55
      ],
      [
       "2025-11-28",
-      430.17
+      278.85
      ],
      [
       "2025-12-01",
-      430.14
+      283.1
      ],
      [
       "2025-12-02",
-      429.24
+      286.19
      ],
      [
       "2025-12-03",
-      446.74
+      284.15
      ],
      [
       "2025-12-04",
-      454.53
+      280.7
      ],
      [
       "2025-12-05",
-      455.0
+      278.78
      ],
      [
       "2025-12-08",
-      439.58
+      277.89
      ],
      [
       "2025-12-09",
-      445.17
+      277.18
      ],
      [
       "2025-12-10",
-      451.45
+      278.78
      ],
      [
       "2025-12-11",
-      446.89
+      278.03
      ],
      [
       "2025-12-12",
-      458.96
+      278.28
      ],
      [
       "2025-12-15",
-      475.31
+      274.11
      ],
      [
       "2025-12-16",
-      489.88
+      274.61
      ],
      [
       "2025-12-17",
-      467.26
+      271.84
      ],
      [
       "2025-12-18",
-      483.37
+      272.19
      ],
      [
       "2025-12-19",
-      481.2
+      273.67
      ],
      [
       "2025-12-22",
-      488.73
+      270.97
      ],
      [
       "2025-12-23",
-      485.56
+      272.36
      ],
      [
       "2025-12-24",
-      485.4
+      273.81
      ],
      [
       "2025-12-26",
-      475.19
+      273.4
      ],
      [
       "2025-12-29",
-      459.64
+      273.76
      ],
      [
       "2025-12-30",
-      454.43
+      273.08
      ],
      [
       "2025-12-31",
-      449.72
+      271.86
      ],
      [
       "2026-01-02",
-      438.07
+      271.01
      ],
      [
       "2026-01-05",
-      451.67
+      267.26
      ],
      [
       "2026-01-06",
-      432.96
+      262.36
      ],
      [
       "2026-01-07",
-      431.41
+      260.33
      ],
      [
       "2026-01-08",
-      435.8
+      259.04
      ],
      [
       "2026-01-09",
-      445.01
+      259.37
      ],
      [
       "2026-01-12",
-      448.96
+      260.25
      ],
      [
       "2026-01-13",
-      447.2
+      261.05
      ],
      [
       "2026-01-14",
-      439.2
+      259.96
      ],
      [
       "2026-01-15",
-      438.57
+      258.21
      ],
      [
       "2026-01-16",
-      437.5
+      255.53
      ],
      [
       "2026-01-20",
-      419.25
+      246.7
      ],
      [
       "2026-01-21",
-      431.44
+      247.65
      ],
      [
       "2026-01-22",
-      449.36
+      248.35
      ],
      [
       "2026-01-23",
-      449.06
+      248.04
      ],
      [
       "2026-01-26",
-      435.2
+      255.41
      ],
      [
       "2026-01-27",
-      430.9
+      258.27
      ],
      [
       "2026-01-28",
-      431.46
+      256.44
      ],
      [
       "2026-01-29",
-      416.56
+      258.28
      ],
      [
       "2026-01-30",
-      430.41
+      259.48
      ],
      [
       "2026-02-02",
-      421.81
+      270.01
      ],
      [
       "2026-02-03",
-      421.96
+      269.48
      ],
      [
       "2026-02-04",
-      406.01
+      276.49
      ],
      [
       "2026-02-05",
-      397.21
+      275.91
      ],
      [
       "2026-02-06",
-      411.11
+      278.12
      ],
      [
       "2026-02-09",
-      417.32
+      274.62
      ],
      [
       "2026-02-10",
-      425.21
+      273.68
      ],
      [
       "2026-02-11",
-      428.27
+      275.5
      ],
      [
       "2026-02-12",
-      417.07
+      261.73
      ],
      [
       "2026-02-13",
-      417.44
+      255.78
      ],
      [
       "2026-02-17",
-      410.63
+      263.88
      ],
      [
       "2026-02-18",
-      411.32
+      264.35
      ],
      [
       "2026-02-19",
-      411.71
+      260.58
      ],
      [
       "2026-02-20",
-      411.82
+      264.58
      ],
      [
       "2026-02-23",
-      399.83
+      266.18
      ],
      [
       "2026-02-24",
-      409.38
+      272.14
      ],
      [
       "2026-02-25",
-      417.4
+      274.23
      ],
      [
       "2026-02-26",
-      408.58
+      272.95
      ],
      [
       "2026-02-27",
-      402.51
+      264.18
      ],
      [
       "2026-03-02",
-      403.32
+      264.72
      ],
      [
       "2026-03-03",
-      392.43
+      263.75
      ],
      [
       "2026-03-04",
-      405.94
+      262.52
      ],
      [
       "2026-03-05",
-      405.55
+      260.29
      ],
      [
       "2026-03-06",
-      396.73
+      257.46
      ],
      [
       "2026-03-09",
-      398.68
+      259.88
      ],
      [
       "2026-03-10",
-      399.24
+      260.83
      ],
      [
       "2026-03-11",
-      407.82
+      260.81
      ],
      [
       "2026-03-12",
-      395.01
+      255.76
      ],
      [
       "2026-03-13",
-      391.2
+      250.12
      ],
      [
       "2026-03-16",
-      395.56
+      252.82
      ],
      [
       "2026-03-17",
-      399.27
+      254.23
      ],
      [
       "2026-03-18",
-      392.78
+      249.94
      ],
      [
       "2026-03-19",
-      380.3
+      248.96
      ],
      [
       "2026-03-20",
-      367.96
+      247.99
      ],
      [
       "2026-03-23",
-      380.85
+      251.49
      ],
      [
       "2026-03-24",
-      383.03
+      251.64
      ],
      [
       "2026-03-25",
-      385.95
+      252.62
      ],
      [
       "2026-03-26",
-      372.11
+      252.89
      ],
      [
       "2026-03-27",
-      361.83
+      248.8
      ],
      [
       "2026-03-30",
-      355.28
+      246.63
      ],
      [
       "2026-03-31",
-      371.75
+      253.79
      ],
      [
       "2026-04-01",
-      381.26
+      255.63
      ],
      [
       "2026-04-02",
-      360.59
+      255.92
      ],
      [
       "2026-04-06",
-      352.82
+      258.86
      ],
      [
       "2026-04-07",
-      346.65
+      253.5
      ],
      [
       "2026-04-08",
-      343.25
+      258.9
      ],
      [
       "2026-04-09",
-      345.62
+      260.49
      ],
      [
       "2026-04-10",
-      348.95
+      260.48
      ],
      [
       "2026-04-13",
-      352.42
+      259.2
      ],
      [
       "2026-04-14",
-      364.2
+      258.83
      ],
      [
       "2026-04-15",
-      391.95
+      266.43
      ],
      [
       "2026-04-16",
-      388.9
+      263.4
      ],
      [
       "2026-04-17",
-      400.62
+      270.23
      ],
      [
       "2026-04-20",
-      392.5
+      273.05
      ],
      [
       "2026-04-21",
-      386.42
+      266.17
      ],
      [
       "2026-04-22",
-      387.51
+      273.17
      ],
      [
       "2026-04-23",
-      373.72
+      273.43
      ],
      [
       "2026-04-24",
-      376.3
+      271.06
      ],
      [
       "2026-04-27",
-      378.67
+      267.61
      ],
      [
       "2026-04-28",
-      376.02
+      270.71
      ],
      [
       "2026-04-29",
-      372.8
+      270.17
      ],
      [
       "2026-04-30",
-      381.63
+      271.35
      ],
      [
       "2026-05-01",
-      390.82
+      280.14
      ],
      [
       "2026-05-04",
-      392.51
+      276.83
      ],
      [
       "2026-05-05",
-      389.37
+      284.18
      ],
      [
       "2026-05-06",
-      398.73
+      287.51
      ],
      [
       "2026-05-07",
-      411.79
+      287.44
      ],
      [
       "2026-05-08",
-      428.35
+      293.32
      ],
      [
       "2026-05-11",
-      445.0
+      292.68
      ],
      [
       "2026-05-12",
-      433.45
+      294.8
      ],
      [
       "2026-05-13",
-      445.27
+      298.87
      ],
      [
       "2026-05-14",
-      443.3
+      298.21
      ],
      [
       "2026-05-15",
-      422.24
+      300.23
      ],
      [
       "2026-05-18",
-      409.99
+      297.84
      ],
      [
       "2026-05-19",
-      404.11
+      298.97
      ],
      [
       "2026-05-20",
-      417.26
+      302.25
      ],
      [
       "2026-05-21",
-      417.85
+      304.99
      ],
      [
       "2026-05-22",
-      426.01
+      308.82
      ],
      [
       "2026-05-26",
-      433.59
+      308.33
      ],
      [
       "2026-05-27",
-      440.36
+      310.85
      ],
      [
       "2026-05-28",
-      442.1
+      312.51
      ],
      [
       "2026-05-29",
-      435.79
+      312.06
      ],
      [
       "2026-06-01",
-      415.88
+      306.31
      ],
      [
       "2026-06-02",
-      423.74
+      315.2
      ],
      [
       "2026-06-03",
-      423.7
+      310.26
      ],
      [
       "2026-06-04",
-      418.45
+      311.23
      ],
      [
       "2026-06-05",
-      391.0
+      307.34
      ],
      [
       "2026-06-08",
-      408.95
+      301.54
      ],
      [
       "2026-06-09",
-      396.68
+      290.55
      ],
      [
       "2026-06-10",
-      381.59
+      291.58
      ],
      [
       "2026-06-11",
-      399.15
+      295.63
      ],
      [
       "2026-06-12",
-      406.43
+      291.13
      ],
      [
       "2026-06-15",
-      411.15
+      296.42
      ],
      [
       "2026-06-16",
-      404.66
+      299.24
      ],
      [
       "2026-06-17",
-      396.38
+      295.95
      ],
      [
       "2026-06-18",
-      400.49
+      298.01
      ],
      [
       "2026-06-22",
-      405.05
+      297.01
      ],
      [
       "2026-06-23",
-      381.61
+      294.3
      ],
      [
       "2026-06-24",
-      375.53
+      293.08
      ],
      [
       "2026-06-25",
-      375.12
+      275.15
      ],
      [
       "2026-06-26",
-      379.71
+      283.78
      ],
      [
       "2026-06-29",
-      411.84
+      281.74
      ],
      [
       "2026-06-30",
-      420.6
+      289.36
      ],
      [
       "2026-07-01",
-      425.3
+      294.38
      ],
      [
       "2026-07-02",
-      393.45
+      308.63
      ],
      [
       "2026-07-06",
-      419.77
+      312.66
      ],
      [
       "2026-07-07",
-      402.9
+      310.66
      ],
      [
       "2026-07-08",
-      394.06
+      313.39
      ],
      [
       "2026-07-09",
-      406.55
+      316.22
      ],
      [
       "2026-07-10",
-      407.76
+      315.32
      ],
      [
       "2026-07-13",
-      394.76
+      317.31
      ],
      [
       "2026-07-14",
-      396.18
+      314.86
      ],
      [
       "2026-07-15",
-      394.46
+      327.5
      ],
      [
       "2026-07-16",
-      391.06
+      333.26
      ],
      [
       "2026-07-17",
-      380.84
+      333.74
      ],
      [
       "2026-07-20",
-      369.57
+      326.59
      ],
      [
       "2026-07-21",
-      378.93
+      327.74
      ],
      [
       "2026-07-22",
-      374.01
+      325.89
      ],
      [
       "2026-07-23",
-      319.69
+      321.66
      ],
      [
       "2026-07-24",
-      313.03
+      333.02
      ],
      [
       "2026-07-27",
-      309.22
+      336.91
      ],
      [
       "2026-07-28",
-      307.44
+      340.08
      ],
      [
       "2026-07-29",
-      298.32
+      338.19
      ],
      [
       "2026-07-30",
-      308.85
+      333.43
      ],
      [
       "2026-07-31",
-      311.21
+      308.91
      ],
      [
       "2026-08-03",
-      322.08
+      303.42
      ],
      [
       "2026-08-04",
-      327.35
+      309.38
      ],
      [
       "2026-08-05",
-      321.55
+      311.0
      ],
      [
       "2026-08-06",
-      319.53
+      312.41
      ],
      [
       "2026-08-07",
-      328.58
+      313.33
      ],
      [
       "2026-08-10",
-      330.88
+      308.26
      ],
      [
       "2026-08-11",
-      332.81
+      304.91
      ],
      [
       "2026-08-12",
-      327.51
+      302.25
      ],
      [
       "2026-08-13",
-      339.96
+      305.26
      ],
      [
       "2026-08-14",
-      342.27
+      305.93
      ],
      [
       "2026-08-17",
-      339.3
+      305.59
      ],
      [
       "2026-08-18",
-      336.87
+      310.03
      ],
      [
       "2026-08-19",
-      351.12
+      316.83
      ],
      [
       "2026-08-20",
-      345.13
+      311.3
      ],
      [
       "2026-08-21",
-      362.86
+      309.35
      ],
      [
       "2026-08-24",
-      348.95
+      310.34
      ],
      [
       "2026-08-25",
-      350.25
+      309.9
      ],
      [
       "2026-08-26",
-      345.82
+      313.45
      ],
      [
       "2026-08-27",
-      354.81
+      314.58
      ],
      [
       "2026-08-28",
-      348.75
+      319.7
      ],
      [
       "2026-08-31",
-      367.95
+      316.85
      ],
      [
       "2026-09-01",
-      356.09
+      325.13
      ],
      [
       "2026-09-02",
-      357.01
+      324.96
      ],
      [
       "2026-09-03",
-      376.37
+      328.21
      ],
      [
       "2026-09-04",
-      354.08
+      319.97
      ],
      [
       "2026-09-08",
-      368.16
+      316.22
      ],
      [
       "2026-09-09",
-      367.81
+      315.34
      ],
      [
       "2026-09-10",
-      363.56
+      326.57
      ],
      [
       "2026-09-11",
-      365.44
+      332.27
      ],
      [
       "2026-09-14",
-      358.97
+      333.08
      ],
      [
       "2026-09-15",
-      356.58
+      331.34
      ],
      [
       "2026-09-16",
-      358.08
+      332.41
      ],
      [
       "2026-09-17",
-      366.2
+      337.0
      ],
      [
       "2026-09-18",
-      364.27
+      336.13
      ],
      [
       "2026-09-21",
-      375.3
+      338.98
      ],
      [
       "2026-09-22",
-      378.9
+      339.75
      ],
      [
       "2026-09-23",
-      380.12
+      337.02
      ],
      [
       "2026-09-24",
-      377.94
+      335.92
      ],
      [
       "2026-09-25",
-      372.11
+      341.07
      ],
      [
       "2026-09-28",
-      357.45
+      338.4
      ],
      [
       "2026-09-29",
-      352.84
+      329.4
      ],
      [
       "2026-09-30",
-      354.81
+      333.02
      ],
      [
       "2026-10-01",
-      354.11
+      330.32
      ],
      [
       "2026-10-02",
-      370.59
+      333.69
      ],
      [
       "2026-10-05",
-      378.73
+      332.89
      ],
      [
       "2026-10-06",
-      380.68
+      333.63
      ],
      [
       "2026-10-07",
-      377.81
+      336.67
      ],
      [
       "2026-10-08",
-      375.0
+      340.42
      ],
      [
       "2026-10-09",
-      382.7
+      336.64
      ],
      [
       "2026-10-12",
-      378.03
+      340.97
      ],
      [
       "2026-10-13",
-      375.23
+      341.27
      ],
      [
       "2026-10-14",
-      367.16
+      342.96
      ],
      [
       "2026-10-15",
-      362.44
+      342.0
      ],
      [
       "2026-10-16",
-      354.72
+      343.46
      ],
      [
       "2026-10-19",
-      368.06
+      342.94
      ],
      [
       "2026-10-20",
-      373.71
+      339.5
      ],
      [
       "2026-10-21",
-      386.47
+      343.99
      ],
      [
       "2026-10-22",
-      374.58
+      348.22
      ],
      [
       "2026-10-23",
-      372.22
+      347.73
      ],
      [
       "2026-10-26",
-      391.62
+      343.91
      ],
      [
       "2026-10-27",
-      407.46
+      347.1
      ],
      [
       "2026-10-28",
-      404.22
+      343.83
      ],
      [
       "2026-10-29",
-      403.3
+      348.91
      ],
      [
       "2026-10-30",
-      399.81
+      344.63
      ],
      [
       "2026-11-02",
-      403.82
+      338.32
      ],
      [
       "2026-11-03",
-      398.5
+      331.9
      ],
      [
       "2026-11-04",
-      385.19
+      349.51
      ],
      [
       "2026-11-05",
-      343.69
+      344.17
      ],
      [
       "2026-11-06",
-      358.22
+      342.37
      ],
      [
       "2026-11-09",
-      378.05
+      350.69
      ],
      [
       "2026-11-10",
-      379.78
+      348.51
      ],
      [
       "2026-11-11",
-      390.84
+      355.63
      ],
      [
       "2026-11-12",
-      397.45
+      354.88
      ],
      [
       "2026-11-13",
-      390.22
+      356.27
      ],
      [
       "2026-11-16",
-      379.74
+      352.78
      ],
      [
       "2026-11-17",
-      380.11
+      351.91
      ],
      [
       "2026-11-18",
-      383.72
+      352.45
      ],
      [
       "2026-11-19",
-      374.41
+      349.21
      ],
      [
       "2026-11-20",
-      345.82
+      342.56
      ],
      [
       "2026-11-23",
-      385.46
+      349.08
+     ],
+     [
+      "2026-11-24",
+      354.07
      ]
     ],
-    "perche": "Tesla sale dell'11,5% con volumi 1,25 volte la norma e aggiunge circa 0,19 punti all'S&P 500.",
-    "cosa_fa": "Auto elettriche, batterie e sistemi di guida autonoma.",
+    "perche": "Apple sale dell'1,4% con volumi sotto la norma e aggiunge circa 0,12 punti all'S&P 500: è il maggiore contributo positivo in una giornata di calo per l'indice.",
+    "cosa_fa": "iPhone, Mac, servizi digitali e dispositivi indossabili.",
     "situazione": [
-     "Chiude a 385,46 dollari (+11,46%), volumi 1,25 volte la norma.",
-     "Resta 21,3% sotto il massimo di un anno, ma +3,6% rispetto a un mese fa (dashboard).",
-     "Le Magnificent Seven salgono tra +5,8% e +12,4% a metà seduta (Reuters)."
+     "Chiude a 354,07 dollari (+1,43%), volumi 0,80 volte la norma.",
+     "È solo 0,6% sotto il massimo di un anno e 3,0% sopra un mese fa (dashboard).",
+     "Teleborsa: la debolezza dell'IA ha innescato una rotazione verso un paniere più ampio di titoli."
     ],
-    "commento": "Causa specifica non trovata nelle fonti lette: il rialzo rientra nel rimbalzo dei grandi titoli tecnologici (le sette maggiori salgono tra il 5,8% e il 12,4% a metà seduta). Non verificato se ci siano notizie proprie di Tesla oggi.",
+    "commento": "Non ho trovato notizie specifiche su Apple oggi: il rialzo è coerente con la rotazione fuori dai titoli dell'IA descritta da Teleborsa (deduzione). Tra i grandi titoli è il più vicino al massimo, ma il rialzo di una sola seduta è un dato debole.",
     "fonti": [
      {
-      "nome": "Reuters (via Investing.com): Wall Street roars back",
-      "url": "https://ca.investing.com/news/stock-market-news/wall-street-roars-back-as-nvidia-reinstates-jensen-huang-as-ceo-4976467",
-      "data": "2026-11-23"
+      "nome": "Teleborsa: Wall Street a luci e ombre",
+      "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/commenti/wall-street-prosegue-a-luci-e-ombre-tra-i-timori-per-nuovi-dazi-e-ai-197_2026-11-24_TLB.html?lang=it",
+      "data": "2026-11-24"
      }
     ]
    }
