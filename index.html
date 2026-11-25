@@ -976,7 +976,7 @@ body.tech-on .secnav .tl{display:inline-block}
 .hdr .upd .btn{width:auto!important;flex:1 1 0;min-width:0;min-height:38px!important;padding:6px 8px!important;font-size:.8rem!important;gap:5px!important;white-space:nowrap;overflow:hidden}
 .hdr .upd .btn .blab{overflow:hidden;text-overflow:ellipsis}
 @media (max-width:1100px){.hdr .upd{flex-basis:100%!important}}
-@media (max-width:640px){.hdr .upd .btn .blab{display:none}.hdr .upd .btn{min-height:42px!important}.hdr .upd .btn-eval{grid-column:auto!important}}
+@media (max-width:640px){.hdr .upd{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:6px!important}.hdr .upd .btn{flex-direction:column;justify-content:center;min-height:58px!important;padding:6px 3px!important;font-size:.72rem!important;gap:2px!important;white-space:normal;line-height:1.1;text-align:center}.hdr .upd .btn .blab{display:block;white-space:normal;overflow:visible;text-overflow:clip}.hdr .upd .btn .spark,.hdr .upd .btn .ic{font-size:1.2rem}.hdr .upd .btn-eval{grid-column:auto!important}}
 /* grafico principale: legenda ordinata su tablet e telefono */
 #chartToggles{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:8px 16px}
 #chartToggles label{display:flex;flex-wrap:nowrap;align-items:center;gap:6px;min-width:0;padding:6px 10px;border:1px solid var(--line);border-radius:10px;background:var(--panel);white-space:nowrap}
@@ -1021,7 +1021,7 @@ body.tech-on .secnav .tl{display:inline-block}
       </div>
     </div>
     <div class="upd">
-      <button class="btn btn-eval" id="btnEval" type="button" hidden><span class="spark"></span><span class="blab"></span></button><button class="btn btn-eval" id="btnNotizie" type="button" title="Le notizie del momento: dashboard, fonti esterne, cosa seguire"><span class="spark" aria-hidden="true">◔</span><span class="blab">Notizie</span></button><button class="btn btn-eval btn-ind" id="btnIndici" type="button" title="Indici mondiali, materie prime, cambi, tassi e cripto: clicca una riga per il grafico"><span class="spark" aria-hidden="true">📈</span> Indici</button><button class="btn btn-eval" id="btnIdee" type="button" title="Idee di approfondimento: società e temi da studiare, con le fonti"><span class="spark" aria-hidden="true">✦</span><span class="blab">Idee da approfondire</span></button><button class="btn btn-peso" id="btnPeso" type="button" title="I primi 50 titoli dell'S&P 500 per peso nell'indice"><span class="ic" aria-hidden="true">▦</span><span class="blab">Peso S&amp;P 500</span></button>
+      <button class="btn btn-eval" id="btnEval" type="button" hidden><span class="spark"></span><span class="blab"></span></button><button class="btn btn-eval" id="btnNotizie" type="button" title="Le notizie del momento: dashboard, fonti esterne, cosa seguire"><span class="spark" aria-hidden="true">📰</span><span class="blab">Notizie</span></button><button class="btn btn-eval btn-ind" id="btnIndici" type="button" title="Indici mondiali, materie prime, cambi, tassi e cripto: clicca una riga per il grafico"><span class="spark" aria-hidden="true">📈</span><span class="blab">Indici</span></button><button class="btn btn-eval" id="btnIdee" type="button" title="Idee di approfondimento: società e temi da studiare, con le fonti"><span class="spark" aria-hidden="true">✦</span><span class="blab">Idee da approfondire</span></button><button class="btn btn-peso" id="btnPeso" type="button" title="I primi 50 titoli dell'S&P 500 per peso nell'indice"><span class="ic" aria-hidden="true">▦</span><span class="blab">Peso S&amp;P 500</span></button>
       <button class="btn btn-rep" id="btnReport" type="button" title="Crea un PDF con tutti i dati della dashboard: scegli tu le sezioni e il livello di dettaglio"><span class="ic" aria-hidden="true">⎙</span><span class="blab">Report</span></button>
       <button class="btn btn-primary" id="btnUpdate" type="button" title="Scarica i dati di mercato più recenti e ricalcola l'indice"><span class="ic" aria-hidden="true">↻</span><span class="blab">Aggiorna ora</span></button>
     </div>
@@ -1276,9 +1276,10 @@ const EVAL_TRIGGER_ID = "trig_01JUVzUSZf92iP2qE7fLPynn"; // compito "valutazione
   sm.call(this);
   if (this.classList.contains('help')) { const top = () => { this.scrollTop = 0; const h = this.querySelector('.help-in'); if (h) h.scrollTop = 0; }; top(); requestAnimationFrame(top); setTimeout(top, 400); }
 }; })();
-const APP_VERSION = '2.7.3';
+const APP_VERSION = '2.7.4';
 const DEF_GI = 0.5; // peso predefinito del gruppo «Grandi investitori istituzionali»
 const CHANGELOG = [
+  ['2.7.4', '25/11/2026', ['Telefono: i sei pulsanti in alto (Notizie, Indici, Idee, Peso S&P 500, Report, Aggiorna ora) mostrano di nuovo il nome sotto l\'icona, su due righe da tre, tutti della stessa dimensione. Prima restavano solo le icone, tranne Indici. L\'icona di Notizie (un cerchietto quasi invisibile) diventa un giornale.']],
   ['2.7.3', '25/11/2026', ['Il Quotidiano dei Mercati su schermi stretti (telefono, tablet, finestre ridotte fino a 1100 px): in alto quattro schede colorate (Dal web, Milano Finanza, Scenari Economici, ZeroHedge) con il numero di notizie nuove; si passa da una fonte all\'altra con un tocco senza scorrere tutta la pagina. La barra resta fissa in alto.']],
   ['2.7.2', '25/11/2026', ['Scheda Italia, spread BTP-Bund: grafico a barre con il valore scritto sopra ogni barra e la data sotto, colorate per livello e con la linea della soglia 120. Tolto l\'elenco di commenti sotto il grafico.']],
   ['2.7.1', '21/11/2026', ['Ottimizzazione: tolti stili e costanti non più usati (circa 3 KB). Nessun cambiamento nei calcoli, nelle quote o nell\'aspetto: confronto pixel per pixel prima e dopo a 1350 e 390 px.']],
