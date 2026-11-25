@@ -1276,9 +1276,10 @@ const EVAL_TRIGGER_ID = "trig_01JUVzUSZf92iP2qE7fLPynn"; // compito "valutazione
   sm.call(this);
   if (this.classList.contains('help')) { const top = () => { this.scrollTop = 0; const h = this.querySelector('.help-in'); if (h) h.scrollTop = 0; }; top(); requestAnimationFrame(top); setTimeout(top, 400); }
 }; })();
-const APP_VERSION = '2.7.4';
+const APP_VERSION = '2.7.5';
 const DEF_GI = 0.5; // peso predefinito del gruppo «Grandi investitori istituzionali»
 const CHANGELOG = [
+  ['2.7.5', '25/11/2026', ['Notizie: tolta la scritta «Nessuna novità in questo aggiornamento · ultima voce del …» dalle colonne delle fonti.']],
   ['2.7.4', '25/11/2026', ['Telefono: i sei pulsanti in alto (Notizie, Indici, Idee, Peso S&P 500, Report, Aggiorna ora) mostrano di nuovo il nome sotto l\'icona, su due righe da tre, tutti della stessa dimensione. Prima restavano solo le icone, tranne Indici. L\'icona di Notizie (un cerchietto quasi invisibile) diventa un giornale.']],
   ['2.7.3', '25/11/2026', ['Il Quotidiano dei Mercati su schermi stretti (telefono, tablet, finestre ridotte fino a 1100 px): in alto quattro schede colorate (Dal web, Milano Finanza, Scenari Economici, ZeroHedge) con il numero di notizie nuove; si passa da una fonte all\'altra con un tocco senza scorrere tutta la pagina. La barra resta fissa in alto.']],
   ['2.7.2', '25/11/2026', ['Scheda Italia, spread BTP-Bund: grafico a barre con il valore scritto sopra ogni barra e la data sotto, colorate per livello e con la linea della soglia 120. Tolto l\'elenco di commenti sotto il grafico.']],
@@ -3765,7 +3766,6 @@ function renderNotizieFonti() {
       tb.addEventListener('click', () => { grid.dataset.act = id; tabs.querySelectorAll('.gz-tab').forEach(t => t.classList.toggle('on', t === tb)); }); tabs.append(tb); }
     const br = el(home ? 'a' : 'div', 'gz-brand'); if (home) { br.href = home; br.target = '_blank'; br.rel = 'noopener noreferrer'; br.title = 'Apri ' + nome; }
     br.append(el('b', 'sig', sig), el('span', 'bn', brand), el('span', 'cnt', nNew + (nNew === 1 ? ' nuova' : ' nuove')), el('span', 'sub', sub)); col.append(br);
-    if (!nNew) { const ult = mine.map(dd).sort().pop(); col.append(el('p', 'muted', 'Nessuna novità in questo aggiornamento' + (ult ? ' · ultima voce del ' + fmt(ult) : '') + '.')); }
     const card = (x, old) => { const c = el('article', 'gz-card' + (old ? ' old' : '') + (x.abbonamento ? ' lock' : '') + (!old && x.agg === NEWS.ultimo_agg ? ' fresh' : '')); const m = el('div', 'gz-meta');
       if (x.tema) { const tg = el('span', 'tag', x.tema); tg.style.setProperty('--tc', TEMACOL[x.tema] || '#4a5d8f'); m.append(tg); } if (x.sito && x.sito !== x.tema) m.append(el('span', 'tag sito', x.sito)); const g = el('span', 'dtg'); if (!old && x.agg === NEWS.ultimo_agg) g.append(el('span', 'nuova', 'NUOVA')); g.append(el('span', 'dt', x.data ? fmt(x.data) : 'rilevata il ' + fmt(x.visto))); m.append(g); c.append(m);
       const u = x.abbonamento ? null : safeUrl(x.url); const t = el('h4');
