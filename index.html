@@ -934,6 +934,8 @@ body.tech-on .secnav .tl{display:inline-block}
 .gz-cols{grid-template-columns:repeat(4,minmax(0,1fr))!important}
 @media(max-width:1100px){.gz-cols{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
 @media(max-width:640px){.gz-cols{grid-template-columns:1fr!important}}
+@media(max-width:640px){.gz-tabs{position:sticky;top:0;z-index:30;display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;padding:6px 0;margin:0 0 8px;background:var(--bg,#f4f6fb);box-shadow:0 6px 10px -8px rgba(0,0,0,.35)}.gz-tab{--tc:#4a5d8f;display:grid;gap:1px;justify-items:center;align-content:start;padding:6px 2px 5px;border:2px solid var(--tc);border-radius:10px;background:#fff;color:var(--tc);font-family:inherit;cursor:pointer;line-height:1.1;min-width:0}.gz-tab b{font-size:.95rem}.gz-tab .tn{font-size:.6rem;font-weight:700;text-align:center;overflow-wrap:anywhere}.gz-tab .tc{font-size:.58rem;font-weight:600;opacity:.85}.gz-tab.on{background:var(--tc);color:#fff;box-shadow:0 2px 6px -2px var(--tc)}.gz-tab.nf-mf{--tc:#c8102e}.gz-tab.nf-se{--tc:#e0701c}.gz-tab.nf-zh{--tc:#2b2f36}.gz-tab.nf-web{--tc:#12a58a}.gz-cols .gz-col:not(.on-col){}.gz-cols[data-act="web"] .gz-col:not([data-src="web"]),.gz-cols[data-act="milanofinanza"] .gz-col:not([data-src="milanofinanza"]),.gz-cols[data-act="scenarieconomici"] .gz-col:not([data-src="scenarieconomici"]),.gz-cols[data-act="zerohedge"] .gz-col:not([data-src="zerohedge"]){display:none}}
+.gz-tabs{display:none}
 .gz-card h4{font-size:.9rem}.gz-card p{font-size:.82rem}
 .gz-btn{justify-self:start}.gz-prec{display:grid;gap:8px}
 #evalDlg[data-mode="notizie"] #evBody > .ideas,#evalDlg[data-mode="notizie"] #evBody > .grid2{display:none!important}
@@ -1275,9 +1277,10 @@ const EVAL_TRIGGER_ID = "trig_01JUVzUSZf92iP2qE7fLPynn"; // compito "valutazione
   sm.call(this);
   if (this.classList.contains('help')) { const top = () => { this.scrollTop = 0; const h = this.querySelector('.help-in'); if (h) h.scrollTop = 0; }; top(); requestAnimationFrame(top); setTimeout(top, 400); }
 }; })();
-const APP_VERSION = '2.7.2';
+const APP_VERSION = '2.7.3';
 const DEF_GI = 0.5; // peso predefinito del gruppo «Grandi investitori istituzionali»
 const CHANGELOG = [
+  ['2.7.3', '25/11/2026', ['Il Quotidiano dei Mercati su schermi stretti (telefono): in alto quattro schede colorate (Dal web, Milano Finanza, Scenari Economici, ZeroHedge) con il numero di notizie nuove; si passa da una fonte all\'altra con un tocco senza scorrere tutta la pagina. La barra resta fissa in alto.']],
   ['2.7.2', '25/11/2026', ['Scheda Italia, spread BTP-Bund: grafico a barre con il valore scritto sopra ogni barra e la data sotto, colorate per livello e con la linea della soglia 120. Tolto l\'elenco di commenti sotto il grafico.']],
   ['2.7.1', '21/11/2026', ['Ottimizzazione: tolti stili e costanti non più usati (circa 3 KB). Nessun cambiamento nei calcoli, nelle quote o nell\'aspetto: confronto pixel per pixel prima e dopo a 1350 e 390 px.']],
   ['2.7', '20/11/2026', ['Profili più distinti: ogni profilo ha una volatilità obiettivo diversa (Prudente 8%, Bilanciato 10%, Dinamico e Reattivo 12%). Prudente e Bilanciato scalano la quota prima quando il mercato si agita: dal 2000 la perdita massima passa da −12% a −9% con circa 0,7 e 0,4 punti di rendimento annuo in meno (prove sugli stessi dati delle regole, senza costi e tasse).', 'Grafico «Quota in azioni consigliata» su 3 anni (prima 2).', 'Etichette: «Divario indice – titolo medio»; stato «Allerta» (non «rientrata») quando i segnali precoci sono di nuovo in aumento.']],
@@ -3747,7 +3750,7 @@ function renderNotizieFonti() {
   const sec = el('section', 'gz-news'); sec.append(el('h3', 'gz-h', 'Notizie da:'));
   if (!NEWS || !(NEWS.voci || []).length) { sec.append(el('p', 'muted', 'Notizie in arrivo: compaiono con il prossimo «aggiorna tutto».')); return sec; }
   const fmt = d => d ? new Date(d + 'T12:00:00Z').toLocaleDateString('it-IT', {day: 'numeric', month: 'short'}).replace('.', '') : '';
-  const grid = el('div', 'gz-cols');
+  const grid = el('div', 'gz-cols'), tabs = el('div', 'gz-tabs'); tabs.setAttribute('role', 'tablist'); grid.dataset.act = NFONTI[0][0];
   for (const [id, nome, sub, cls, home, sig, brand] of NFONTI) {
     const dAgo = n => new Date(Date.now() - n * 864e5).toISOString().slice(0, 10), l7 = dAgo(7), l30 = dAgo(30), isNew = x => x.agg === NEWS.ultimo_agg, dd = x => String(x.data || x.visto);
     const cmp = (a, b) => (isNew(b) - isNew(a)) || dd(b).localeCompare(dd(a));
@@ -3757,7 +3760,9 @@ function renderNotizieFonti() {
     const prosegui = mine.filter(x => !vis.includes(x) && dd(x) >= l30).sort(cmp);
     const prec = mine.filter(x => !vis.includes(x) && dd(x) < l30).sort(cmp);
     const nNew = vis.filter(isNew).length;
-    const col = el('div', 'gz-col ' + cls);
+    const col = el('div', 'gz-col ' + cls); col.dataset.src = id;
+    { const tb = el('button', 'gz-tab ' + cls + (id === grid.dataset.act ? ' on' : '')); tb.type = 'button'; tb.setAttribute('role', 'tab'); tb.dataset.src = id; tb.dataset.n = nNew; tb.append(el('b', null, sig), el('span', 'tn', nome), el('span', 'tc', nNew + (nNew === 1 ? ' nuova' : ' nuove')));
+      tb.addEventListener('click', () => { grid.dataset.act = id; tabs.querySelectorAll('.gz-tab').forEach(t => t.classList.toggle('on', t === tb)); }); tabs.append(tb); }
     const br = el(home ? 'a' : 'div', 'gz-brand'); if (home) { br.href = home; br.target = '_blank'; br.rel = 'noopener noreferrer'; br.title = 'Apri ' + nome; }
     br.append(el('b', 'sig', sig), el('span', 'bn', brand), el('span', 'cnt', nNew + (nNew === 1 ? ' nuova' : ' nuove')), el('span', 'sub', sub)); col.append(br);
     if (!nNew) { const ult = mine.map(dd).sort().pop(); col.append(el('p', 'muted', 'Nessuna novità in questo aggiornamento' + (ult ? ' · ultima voce del ' + fmt(ult) : '') + '.')); }
@@ -3771,7 +3776,8 @@ function renderNotizieFonti() {
       bt.addEventListener('click', () => { if (!box.children.length) list.forEach(x => box.append(card(x, true))); box.hidden = !box.hidden; bt.textContent = box.hidden ? lab + ' (' + list.length + ')' : hide; }); col.append(bt, box); };
     more(prosegui, 'Prosegui ▾', 'Nascondi'); more(prec, 'Archivio (oltre un mese)', 'Nascondi archivio');
     grid.append(col); }
-  sec.append(grid, el('p', 'ev-meta', 'Riassunti in italiano scritti con parole nostre; il titolo apre l\'articolo originale (🔒 = a pagamento, senza link). In linea gli ultimi 7 giorni, «Prosegui» arriva a un mese, l\'archivio conserva un anno. Sono cronaca e opinioni di terzi, non dati del modello.')); return sec;
+  { const f = [...tabs.children].find(t => +t.dataset.n > 0) || tabs.children[0]; if (f) { grid.dataset.act = f.dataset.src; [...tabs.children].forEach(t => t.classList.toggle('on', t === f)); } }
+  sec.append(tabs, grid, el('p', 'ev-meta', 'Riassunti in italiano scritti con parole nostre; il titolo apre l\'articolo originale (🔒 = a pagamento, senza link). In linea gli ultimi 7 giorni, «Prosegui» arriva a un mese, l\'archivio conserva un anno. Sono cronaca e opinioni di terzi, non dati del modello.')); return sec;
 }
 function renderEval() {
   evBody.replaceChildren();
