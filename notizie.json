@@ -1792,8 +1792,74 @@
    "sito": "Teleborsa (Borsa Italiana)",
    "agg": 0,
    "visto": "2026-11-11"
+  },
+  {
+   "fonte": "web",
+   "titolo": "Wall Street prosegue all'insegna delle vendite, appesantita dal tech",
+   "sintesi": "Una nuova ondata di vendite sui titoli tecnologici scuote Wall Street, alimentata dai dubbi sul settore dell'intelligenza artificiale, e spinge gli investitori verso i beni rifugio. I rendimenti dei Treasury a 10 anni scendono per l'ottava seduta consecutiva, la serie più lunga dal 2024. Il mercato smaltisce l'euforia per il ritorno di Jensen Huang alla guida di Nvidia: restano dubbi su spese e costi di finanziamento. L'inflazione PCE di ottobre accelera ancora e mantiene la Fed orientata a un rialzo dei tassi a dicembre; il Pil del terzo trimestre è rivisto a +4,3%, il passo più rapido da tre anni.",
+   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/commenti/wall-street-prosegue-all-insegna-delle-vendite-appesantita-dal-tech-239_2026-11-25_TLB.html?lang=it",
+   "data": "2026-11-25",
+   "tema": "Mercati",
+   "sito": "Teleborsa (Borsa Italiana)",
+   "agg": 12,
+   "visto": "2026-11-25"
+  },
+  {
+   "fonte": "web",
+   "titolo": "Europa in rosso tra dubbi sull'IA, dazi e rischio stretta della Fed",
+   "sintesi": "Chiusura in rosso per Piazza Affari e le altre Borse europee. Il commento riporta Wall Street in forte calo a metà seduta (S&P 500 −2,7% nel momento della scrittura, non la chiusura). Pesano le preoccupazioni sugli investimenti in IA, l'aspettativa di un rialzo Fed a dicembre dopo il PCE di ottobre (3,8% annuo contro 3,7% di settembre) e la proposta dell'amministrazione Trump di nuovi dazi su 14 partner commerciali per la «sovracapacità produttiva strutturale».",
+   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/commenti/europa-in-rosso-tra-dubbi-ai-dazi-e-rischio-stretta-della-fed-207_2026-11-25_TLB.html?lang=it",
+   "data": "2026-11-25",
+   "tema": "Piazza Affari",
+   "sito": "Teleborsa (Borsa Italiana)",
+   "agg": 12,
+   "visto": "2026-11-25"
+  },
+  {
+   "fonte": "web",
+   "titolo": "OpenAI, IPO potrebbe slittare a fine 2027",
+   "sintesi": "Secondo gli operatori della piattaforma di previsioni Kalshi, la probabilità che OpenAI annunci un'IPO entro giugno 2027 è intorno al 28%, da oltre il 50% di inizio mese; per ottobre 2027 resta al 50%. Il cambio di attese risente dell'andamento di Anthropic: il titolo ha perso quasi il 30% dal picco del primo giorno e martedì ha chiuso sotto il prezzo di ipo di 83 dollari. Sam Altman, in un'intervista a Fortune di settembre, aveva escluso un debutto in Borsa nel 2026.",
+   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/openai-ipo-potrebbe-slittare-a-fine-2027-225_2026-11-25_TLB.html?lang=it",
+   "data": "2026-11-25",
+   "tema": "Tecnologia",
+   "sito": "Teleborsa (Borsa Italiana)",
+   "agg": 12,
+   "visto": "2026-11-25"
+  },
+  {
+   "fonte": "web",
+   "titolo": "Bank of England, funzionari non escludono un rialzo dei tassi a dicembre",
+   "sintesi": "Il governatore Bailey, la vice Lombardelli e Catherine Mann dicono alla Commissione Tesoro di non poter ignorare la minaccia all'inflazione dei prezzi dell'energia, ancora alti: senza una rapida soluzione del conflitto in Medio Oriente servirà intervenire. Il 5 novembre il comitato ha alzato all'unanimità i tassi di un quarto di punto al 4% e ha prospettato un altro rialzo il 17 dicembre; i mercati stimano una probabilità vicina all'80%, mentre la maggior parte degli economisti vede tassi fermi fino a febbraio.",
+   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/bank-of-england-funzionari-non-escludono-rialzo-tassi-a-dicembre-243_2026-11-25_TLB.html?lang=it",
+   "data": "2026-11-25",
+   "tema": "Tassi",
+   "sito": "Teleborsa (Borsa Italiana)",
+   "agg": 12,
+   "visto": "2026-11-25"
+  },
+  {
+   "fonte": "web",
+   "titolo": "Petrolio verso i 94 dollari mentre cresce la tensione tra Israele e Iran",
+   "sintesi": "Il Brent sale a 94,03 dollari (+2,88%) e il WTI a 83,71 (+2,02%) in giornata, tra navi colpite a Hormuz, attacchi degli Houthi in Arabia Saudita e la convocazione del gabinetto di sicurezza israeliano. Il Times of Israel scrive che Israele e Stati Uniti si preparano a una possibile operazione militare contro l'Iran, mentre Teheran potrebbe attaccare a sorpresa. Sono prezzi di metà giornata: la dashboard dà una chiusura diversa per il Brent.",
+   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/economia/petrolio-in-rialzo-verso-i-94-dollari-mentre-cresce-la-tensione-tra-israele-e-iran-237_2026-11-25_TLB.html?lang=it",
+   "data": "2026-11-25",
+   "tema": "Energia",
+   "sito": "Teleborsa (Borsa Italiana)",
+   "agg": 12,
+   "visto": "2026-11-25"
+  },
+  {
+   "fonte": "web",
+   "titolo": "OPAS MPS, le adesioni salgono allo 0,16%",
+   "sintesi": "Nel secondo giorno dell'offerta di Intesa Sanpaolo su MPS sono state presentate 3.898.566 richieste; in totale 4.859.979, pari allo 0,16% degli strumenti oggetto di offerta. L'Opas è iniziata il 24 novembre e si chiude il 22 gennaio 2027. Alle 17:35 MPS perde il 2,97% e Intesa il 3,34%.",
+   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/opas-mps-le-adesioni-aumentano-allo-016-221_2026-11-25_TLB.html?lang=it",
+   "data": "2026-11-25",
+   "tema": "Banche",
+   "sito": "Teleborsa (Borsa Italiana)",
+   "agg": 12,
+   "visto": "2026-11-25"
   }
  ],
  "aggiornato": "2026-11-25",
- "ultimo_agg": 11
+ "ultimo_agg": 12
 }
