@@ -1700,8 +1700,100 @@
    "tema": "Mercati",
    "agg": 10,
    "visto": "2026-11-24"
+  },
+  {
+   "fonte": "milanofinanza",
+   "titolo": "Wall Street recupera dai minimi: Dow Jones +0,33%, S&P 500 −0,25%, Nasdaq −0,62%",
+   "sintesi": "Il Dow Jones ha recuperato un crollo di oltre 1.100 punti e chiude in rialzo dello 0,33%, mentre il Nasdaq cede lo 0,62% e l'S&P 500 lo 0,25%. Nei momenti peggiori Dow −2,2%, Nasdaq −4,6% e S&P 500 −3,2%. Nvidia chiude in calo di quasi il 4%, Micron −4,5%, Oracle oltre −5%, Alphabet oltre −2%; sostengono l'indice IBM, Salesforce e Sherwin-Williams. Gli Stati Uniti hanno proposto nuovi dazi su 14 partner, la Cina avrà +20% oltre al 25% del 2018. L'inflazione PCE di ottobre è +0,3% su mese (3,8% annuo), il core 3,3% annuo contro 3,2% atteso; il Pil del terzo trimestre sale a +4,3%. Il Treasury a 10 anni scende al 4,84%, minimo da inizio settembre.",
+   "url": "https://www.milanofinanza.it/news/la-diretta-da-wall-street-futures-sulle-borse-usa-in-calo-nuova-svendita-sui-chip-e-il-nasdaq-perde-il-202611251455073870",
+   "data": "2026-11-25",
+   "tema": "Mercati",
+   "agg": 11,
+   "visto": "2026-11-25"
+  },
+  {
+   "fonte": "milanofinanza",
+   "titolo": "Anthropic, perché l'ipo da record si è già sgonfiata",
+   "sintesi": "Martedì 25 novembre le azioni di Anthropic crollano del 6,5% e chiudono a 81,91 dollari, per la prima volta sotto il prezzo di ipo di 83. Giovedì 19 novembre il titolo aveva aperto con un balzo del 34%; le vendite sul settore tecnologico hanno cancellato i guadagni. La società ha raccolto oltre 100 miliardi di dollari tra ipo e collocamento privato. Matt Orton (Raymond James) osserva che l'ipo arriva in un contesto in cui «tutti mettono in discussione l'intelligenza artificiale».",
+   "url": "https://www.milanofinanza.it/news/anthropic-l-ipo-da-record-si-e-gia-sgonfiata-tutti-i-dubbi-di-wall-street-202611251159128861",
+   "data": "2026-11-25",
+   "tema": "Tecnologia",
+   "agg": 11,
+   "visto": "2026-11-25"
+  },
+  {
+   "fonte": "milanofinanza",
+   "titolo": "Wall Street, cosa dice l'indice della paura",
+   "sintesi": "Il Vix è sceso di circa il 25% lunedì 23 novembre a 26,58, mentre l'S&P 500 saliva del 5%, ma Milano Finanza lo definisce «sticky»: più probabile che salga che scenda. L'intervallo a 52 settimane è 13,38-40,03. Gli ETF su S&P 500 e Nasdaq 100 sono sotto le medie mobili a 20, 50, 100 e 200 giorni, segnale di interruzione del trend rialzista di lungo periodo.",
+   "url": "https://www.milanofinanza.it/news/wall-street-ecco-che-cosa-ci-sta-dicendo-l-indice-della-paura-sull-andamento-dei-mercati-202611251507359731",
+   "data": "2026-11-25",
+   "tema": "Mercati",
+   "agg": 11,
+   "visto": "2026-11-25"
+  },
+  {
+   "fonte": "milanofinanza",
+   "titolo": "Auto in rally dopo il report di JPMorgan: corrono Ferrari e Stellantis",
+   "sintesi": "Il comparto automotive europeo sale il 25 novembre dopo un report di JPMorgan che indica Ferrari, Porsche, Michelin, Continental, Daimler Truck e Volvo come titoli con performance superiore alla media nel prossimo anno, e Volkswagen e Stellantis da monitorare. Alle 10:30 Ferrari +2,8% a 371 euro, Stellantis +5,3% a 3,3, Pirelli +1% a 6,4, Volkswagen +5,5%, Porsche +4%. Renault è abbassata a neutral. MF scrive che Stellantis punterebbe sull'elettrico a Mirafiori con fino a 90 mila Fiat 500 nel 2027.",
+   "url": "https://www.milanofinanza.it/news/auto-in-crescita-dopo-il-report-di-jpmorgan-corrono-ferrari-e-stellantis-ecco-quali-sono-i-titoli-da-202611251046308874",
+   "data": "2026-11-25",
+   "tema": "Piazza Affari",
+   "agg": 11,
+   "visto": "2026-11-25"
+  },
+  {
+   "fonte": "milanofinanza",
+   "titolo": "Borse oggi: il FTSE MIB chiude a −1,8% a 47.249",
+   "sintesi": "Il FTSE MIB perde l'1,8% a 47.249 punti per le vendite sul tech e sulle banche: Prysmian −5,4%, Stm −4,8%, Technoprobe −4,7%, Bper −4%, Banco Bpm −3,7%, Intesa −3,3%, UniCredit −3,3%. Acquisti su Stellantis (+3,6%), Buzzi (+1,46%), Ferrari (+1,25%), Campari (+1,1%). Lo spread BTP-Bund chiude a 114, il decennale al 4,36%; euro a 1,0965 dollari. Il Pil USA a +4,3% supera il 3,5% atteso.",
+   "url": "https://www.milanofinanza.it/news/borse-oggi-diretta-25-novembre-2026-chiusura-apertura-europee-borsa-milano-ftse-mib-piazza-affari-202611250832178799",
+   "data": "2026-11-25",
+   "tema": "Piazza Affari",
+   "agg": 11,
+   "visto": "2026-11-25"
+  },
+  {
+   "fonte": "scenarieconomici",
+   "titolo": "USA, il Pil vola al +4,3%: a dicembre la Fed prepara la mazzata sui tassi",
+   "sintesi": "La seconda stima del Bureau of Economic Analysis porta il Pil USA del terzo trimestre a +4,3% annualizzato (3,4% la prima stima, 2,2% nel secondo trimestre), la crescita più forte da tre anni. Gli investimenti fissi privati salgono del 22,4%, le scorte contribuiscono per 1,64 punti, il reddito interno lordo cresce del 4,4%. Calano le esportazioni (−5,4%) e l'edilizia residenziale (−3,4%); i profitti societari salgono di 206 miliardi contro 384 del trimestre precedente. Secondo l'articolo, un mercato del lavoro forte rende concreto un rialzo dei tassi a dicembre.",
+   "url": "https://scenarieconomici.it/il-pil-usa-vola-al-43-gli-investimenti-tirano-la-volata-ma-a-dicembre-incombe-la-mazzata-sui-tassi/",
+   "data": "2026-11-25",
+   "tema": "Macro",
+   "agg": 11,
+   "visto": "2026-11-25"
+  },
+  {
+   "fonte": "zerohedge",
+   "titolo": "I future scendono: la ripresa di Huang diventa un altro «Huangover»",
+   "sintesi": "I future USA scendono (S&P −1,9% sotto quota 7.100, Nasdaq −2,9% a 25.603,5) mentre l'euforia di lunedì su Huang svanisce: Trump ha detto al New York Post che una grazia per il CEO di Nvidia è «sempre un'opzione» e ha parlato di una quota pubblica in Nvidia. Il Kospi cede il 6,2%, Nvidia −5% in pre-mercato, Dell −7,5% nonostante le stime alzate, Workday −9%, Ambarella −35%. Il rendimento a 10 anni scende fino a 4,84%; l'oro è a 3.531 (−0,8%). Goldman stima vendite di azioni da 68 miliardi di dollari dai CTA nei prossimi cinque giorni. Huang è atteso alla commissione bancaria del Senato il 3 dicembre.",
+   "url": "https://www.zerohedge.com/markets/futures-slide-trump-pardon-talk-turns-jensens-comeback-another-huangover",
+   "data": "2026-11-25",
+   "tema": "Mercati",
+   "agg": 11,
+   "visto": "2026-11-25"
+  },
+  {
+   "fonte": "web",
+   "titolo": "Ferrari accelera nel terzo trimestre e alza le stime 2026",
+   "sintesi": "Ferrari chiude il terzo trimestre 2026 con utile netto di 431 milioni di euro (+13%), ricavi 1,896 miliardi (+7%), EBITDA 753 milioni con margine 39,7%, flusso di cassa industriale 567 milioni (+43%). Consegne a 3.368 vetture (33 in meno). La guidance 2026 sui ricavi sale a 7,65 miliardi; il portafoglio ordini arriva al 2028.",
+   "url": "https://en.ilsole24ore.com/art/ferrari-13-per-cent-431-million-profit-in-the-third-quarter-7-per-cent-1896-million-revenue-AJ6hu32B",
+   "data": "2026-11-03",
+   "tema": "Piazza Affari",
+   "sito": "Il Sole 24 Ore",
+   "agg": 0,
+   "visto": "2026-11-03"
+  },
+  {
+   "fonte": "web",
+   "titolo": "Banca Generali, Barclays conferma overweight dopo la solida trimestrale",
+   "sintesi": "Barclays conferma «overweight» su Banca Generali con target price di 78 euro, con un potenziale del 29%. Gli analisti notano l'accelerazione di ottobre; le polizze con Alleanza superano 400 milioni. La guidance sulla raccolta netta sale a oltre 8 miliardi (da circa 7,5) e quella sul margine di interesse a 340-345 milioni.",
+   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/banca-generali-barclays-conferma-overweight-dopo-la-solida-trimestrale-63_2026-11-11_TLB.html?lang=it",
+   "data": "2026-11-11",
+   "tema": "Banche",
+   "sito": "Teleborsa (Borsa Italiana)",
+   "agg": 0,
+   "visto": "2026-11-11"
   }
  ],
- "aggiornato": "2026-11-24",
- "ultimo_agg": 10
+ "aggiornato": "2026-11-25",
+ "ultimo_agg": 11
 }

@@ -33,5 +33,7 @@
  "Intel": "INTC",
  "Diasorin": "DIA.MI",
  "Poste Italiane": "PST.MI",
- "Technoprobe": "TPRO.MI"
+ "Technoprobe": "TPRO.MI",
+ "Ferrari": "RACE.MI",
+ "Banca Generali": "BGN.MI"
 }
