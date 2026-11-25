@@ -29,11 +29,11 @@ log = []
 def say(*a):
     s = ' '.join(str(x) for x in a); print(s, flush=True); log.append(s)
 
-def get(url, timeout=40, tries=3):
+def get(url, timeout=40, tries=3, headers=None):
     last = None
     for k in range(tries):
         try:
-            with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=timeout) as r:
+            with urllib.request.urlopen(urllib.request.Request(url, headers=headers or UA), timeout=timeout) as r:
                 return r.read()
         except Exception as e:
             last = e; time.sleep(1.5 * (k + 1))
@@ -151,7 +151,10 @@ def fetch_cftc():
 
 def fetch_aaii():
     try:
-        b = get('https://www.aaii.com/files/surveys/sentiment.xls', timeout=40)
+        b = get('https://www.aaii.com/files/surveys/sentiment.xls', timeout=60, headers={
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15',
+            'Accept': 'text/html,application/xhtml+xml,application/vnd.ms-excel,*/*', 'Accept-Language': 'it-IT,it;q=0.9,en;q=0.8',
+            'Referer': 'https://www.aaii.com/sentimentsurvey'})
         if b[:4] == b'\xd0\xcf\x11\xe0': atomic_write('aaii_sentiment.xls', b); say('OK  AAII'); return
         say('WARN AAII risposta non valida: uso la copia precedente')
     except Exception as e:
