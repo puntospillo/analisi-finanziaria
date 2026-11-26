@@ -1858,8 +1858,121 @@
    "sito": "Teleborsa (Borsa Italiana)",
    "agg": 12,
    "visto": "2026-11-25"
+  },
+  {
+   "fonte": "milanofinanza",
+   "titolo": "Borse oggi: il FTSE MIB chiude a +2,4% vicino a 48.400, nessun titolo in ribasso",
+   "sintesi": "Il FTSE MIB chiude in rialzo del 2,4% poco sotto 48.400 punti, senza titoli in calo: contribuiscono la chiusura di Wall Street per Thanksgiving e la fiducia nell'IA. Stellantis +8,82% (nuove limitazioni Ue alle importazioni di ibridi cinesi), Prysmian +6,57%, Saipem +4,64%, Stm +4,58%. Lo spread cala a 108 punti base. Francoforte +2,12%, Londra +1,82%, Parigi +1,61%, Madrid +2,33%. L'indice GfK tedesco sale a −30,2 (−30,9 a novembre), il livello più alto da luglio ma sotto le attese (−29,9).",
+   "url": "https://www.milanofinanza.it/news/borse-oggi-in-diretta-europa-attesa-al-rimbalzone-dopo-il-selloff-sull-ai-occhio-a-unicredit-prysmian-202611260828046297",
+   "data": "2026-11-26",
+   "tema": "Piazza Affari",
+   "agg": 13,
+   "visto": "2026-11-26"
+  },
+  {
+   "fonte": "milanofinanza",
+   "titolo": "Chip europei in rimbalzo senza il Nasdaq: volano Stm e Technoprobe",
+   "sintesi": "Con il Nasdaq chiuso i chip europei rimbalzano: Stm +5%, Technoprobe +3,7%, Adyen +4%, Asml +3%, Infineon +4,5%, BE Semiconductor +3,5% a metà seduta. In un mese Technoprobe ha perso quasi un terzo del valore, Asml il 20%, Stm il 17%, Infineon il 19%. Per Technoprobe 10 broker su 12 consigliano l'acquisto con un obiettivo medio del 125% più alto; per Stm potenziale del 76% (11 buy, 3 neutrali); per Asml 80%, con capitalizzazione oltre 440 miliardi.",
+   "url": "https://www.milanofinanza.it/news/nasdaq-chiuso-i-titoli-europei-dei-chip-provano-il-rimbalzo-ecco-di-quanto-possono-crescere-ancora-202611261317025573",
+   "data": "2026-11-26",
+   "tema": "Tecnologia",
+   "agg": 13,
+   "visto": "2026-11-26"
+  },
+  {
+   "fonte": "scenarieconomici",
+   "titolo": "Nvidia resta AA ma i mercati non ci credono più: CDS ai massimi, S&P pronta al taglio",
+   "sintesi": "Il 25 novembre S&P Global Ratings ha messo sotto osservazione negativa (CreditWatch) il rating AA di Nvidia, con possibile declassamento entro 90 giorni. I CDS a cinque anni hanno toccato il record intraday di 147,27 punti base (dati ICE), contro circa 40 a giugno: assicurare 10 milioni di dollari di debito costa circa 147.000 dollari l'anno. Alla base ci sono caos ai vertici, indagini federali e le garanzie finanziarie che sostengono il settore dell'IA.",
+   "url": "https://scenarieconomici.it/nvidia-resta-aa-ma-i-mercati-non-ci-credono-piu-cds-ai-massimi-storici-e-sp-pronta-al-taglio/",
+   "data": "2026-11-26",
+   "tema": "Tecnologia",
+   "agg": 13,
+   "visto": "2026-11-26"
+  },
+  {
+   "fonte": "scenarieconomici",
+   "titolo": "La grande ritirata dell'IA: Nvidia congela i chip nel Sud-Est asiatico",
+   "sintesi": "Nvidia ha imposto ai partner (tra cui Dell e Supermicro) lo stop alle consegne di server per l'IA verso Malesia, Singapore, Thailandia e Indonesia dopo la stretta del Dipartimento del Commercio USA: i fornitori cloud hanno 90 giorni per ottenere licenze che dimostrino l'assenza di clienti finali cinesi sanzionati. Nel mercato del credito pesano prestiti per miliardi legati ai data center che affittavano potenza di calcolo a ByteDance, Alibaba e Tencent.",
+   "url": "https://scenarieconomici.it/la-grande-ritirata-dellintelligenza-artificiale-nvidia-congela-i-chip-nel-sud-est-asiatico-e-il-castello-di-debiti-comincia-a-tremare/",
+   "data": "2026-11-26",
+   "tema": "Tecnologia",
+   "agg": 13,
+   "visto": "2026-11-26"
+  },
+  {
+   "fonte": "scenarieconomici",
+   "titolo": "Svolta alla BCE: accordo su Hernández de Cos, ai falchi del nord il MES",
+   "sintesi": "I leader europei hanno raggiunto l'intesa: lo spagnolo Pablo Hernández de Cos sarà presidente della BCE dal 7 febbraio; l'Olanda ha ceduto, battuto il candidato Klaas Knot grazie al patto tra Parigi e Berlino. Per la nomina bastavano 16 paesi su 21 e il 65% della popolazione. A Knot potrebbe andare la guida del MES, che cambia direttore a novembre del prossimo anno.",
+   "url": "https://scenarieconomici.it/svolta-alla-bce-accordo-chiuso-su-hernandez-de-cos-ai-falchi-del-nord-il-mes/",
+   "data": "2026-11-26",
+   "tema": "Macro",
+   "agg": 13,
+   "visto": "2026-11-26"
+  },
+  {
+   "fonte": "zerohedge",
+   "titolo": "I future prolungano la ripresa del Thanksgiving, il Nasdaq evita il bear market",
+   "sintesi": "Mercoledì il Nasdaq 100 è sceso in bear market intraday prima di chiudere a −0,6%; l'S&P 500 ha chiuso a 7.183 (−0,25%, minimo −3,2%), il VIX a 28,29 dopo un picco di 34,95, l'indice dei semiconduttori Philly −0,65% dopo −8%. Il 26/11 i future salgono (Nasdaq +0,8%, S&P +0,7%); Goldman parla di un calo delle vendite più che di acquisti. Treasury 10 anni a 4,85% (future +2 punti base), WTI +0,7% a 84,27, Brent vicino a 95 dopo gli attacchi Houthi ai porti di Jeddah e Jazan; Bitcoin sopra 60.000.",
+   "url": "https://www.zerohedge.com/markets/futures-extend-thanksgiving-turnaround-nasdaq-dodges-bear-market-oil-climbs-houthi-strikes",
+   "data": "2026-11-26",
+   "tema": "Mercati",
+   "agg": 13,
+   "visto": "2026-11-26"
+  },
+  {
+   "fonte": "zerohedge",
+   "titolo": "Nvidia ferma le consegne di chip per l'IA in quattro paesi del Sud-Est asiatico",
+   "sintesi": "Secondo il Financial Times, Dell e Supermicro hanno detto ai clienti di Malesia, Singapore, Thailandia e Indonesia che gli ordini non possono essere spediti. Goldman considera ipotesi base un «vuoto d'ordini» per i data center nel 2027; un prestito di 480 milioni per Aolani Cloud è sospeso, in revisione uno da 6,6 miliardi per Bridge Data Centers. I prestiti a data center asiatici sono saliti da zero a 49 miliardi di dollari.",
+   "url": "https://www.zerohedge.com/ai/nvidia-halts-ai-chip-shipments-four-southwest-asian-countries",
+   "data": "2026-11-26",
+   "tema": "Tecnologia",
+   "agg": 13,
+   "visto": "2026-11-26"
+  },
+  {
+   "fonte": "zerohedge",
+   "titolo": "Risk-on con il rimbalzo dei tech e il rialzo della BoK; USA chiusi per Thanksgiving",
+   "sintesi": "L'Asia-Pacifico sale dopo il rimbalzo di Wall Street, con il Nasdaq 100 tornato dal bordo del bear market; la Banca di Corea alza i tassi; i mercati USA sono chiusi per Thanksgiving. Il rendiconto della BCE di ottobre esce alle 7:30 ET e i leader UE sono a Bruxelles per il vertice euro.",
+   "url": "http://www.zerohedge.com/markets/risk-rebounds-tech-recovers-and-bok-hikes-us-away-thanksgiving-newsquawk-eu-market-open",
+   "data": "2026-11-26",
+   "tema": "Mercati",
+   "agg": 13,
+   "visto": "2026-11-26"
+  },
+  {
+   "fonte": "web",
+   "titolo": "Le Borse europee chiudono in forte rialzo, niente scambi a Wall Street",
+   "sintesi": "Chiusura in ottimo rialzo per le Borse europee, con il sentiment sostenuto dal chiarimento secondo cui i nuovi dazi USA su Cina e decine di altri paesi sostituiranno quelli precedenti. I verbali BCE di ottobre mostrano che alcuni membri prospettano un ulteriore inasprimento e temono che l'inflazione non torni al 2% prima del 2028. Hernández de Cos si appresta a diventare presidente BCE.",
+   "url": "https://www.borsaitaliana.it/borsa/notizie/teleborsa/commenti/le-borse-europee-chiudono-in-forte-rialzo-niente-scambi-a-wall-street-per-giorno-del-ringraziamento-177_2026-11-26_TLB.html",
+   "data": "2026-11-26",
+   "tema": "Mercati",
+   "sito": "Teleborsa (Borsa Italiana)",
+   "agg": 13,
+   "visto": "2026-11-26"
+  },
+  {
+   "fonte": "web",
+   "titolo": "Bayer tonica a Francoforte dopo l'upgrade di Berenberg a buy",
+   "sintesi": "Bayer guadagna circa il 3% (+4,22% a fine seduta) dopo che Berenberg ha alzato il rating da hold a buy confermando il target di 62 euro: minor rischio di cause sul Roundup dopo la vittoria nel caso Durnell alla Corte Suprema USA e l'esito favorevole nella causa Aretino; attesi miglioramenti per la farmaceutica; brevetti principali non in scadenza prima del 2032; stime di utile per azione 2027 e 2028 riviste di +1,3% e +1,6%.",
+   "url": "https://www.teleborsa.it/News/2026/11/26/bayer-tonica-a-francoforte-dopo-upgrade-berenberg-a-buy-69.html",
+   "data": "2026-11-26",
+   "tema": "Sanità",
+   "sito": "Teleborsa",
+   "agg": 13,
+   "visto": "2026-11-26"
+  },
+  {
+   "fonte": "web",
+   "titolo": "Piazza Affari tonica, traina Stellantis; UniCredit propone Orcel alla guida del Consiglio di Sorveglianza di Commerzbank",
+   "sintesi": "Prevalgono gli acquisti a Milano: guida Stellantis per le restrizioni Ue sulle importazioni di ibridi dalla Cina da dicembre. UniCredit ha proposto l'AD Orcel alla presidenza del Consiglio di Sorveglianza di Commerzbank. La BCE segnala che a ottobre i prestiti alle famiglie crescono del 3,1% e quelli alle imprese del 4,5% (da 4,3%). Spread a 108, BTP al 4,33%.",
+   "url": "https://www.teleborsa.it/News/2026/11/26/piazza-affari-prosegue-tonica-in-sintonia-con-l-europa-a-milano-traina-stellantis-73.html",
+   "data": "2026-11-26",
+   "tema": "Piazza Affari",
+   "sito": "Teleborsa",
+   "agg": 13,
+   "visto": "2026-11-26"
   }
  ],
- "aggiornato": "2026-11-25",
- "ultimo_agg": 12
+ "aggiornato": "2026-11-26",
+ "ultimo_agg": 13
 }
