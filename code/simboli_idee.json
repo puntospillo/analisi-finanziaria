@@ -38,5 +38,7 @@
  "Banca Generali": "BGN.MI",
  "Fincantieri": "FCT.MI",
  "Bayer (Germania)": "BAYN.DE",
- "Oracle": "ORCL"
+ "Oracle": "ORCL",
+ "Adyen (Paesi Bassi)": "ADYEN.AS",
+ "Infineon (Germania)": "IFX.DE"
 }

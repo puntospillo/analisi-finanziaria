@@ -1971,8 +1971,111 @@
    "sito": "Teleborsa",
    "agg": 13,
    "visto": "2026-11-26"
+  },
+  {
+   "fonte": "milanofinanza",
+   "titolo": "Borse oggi: il FTSE MIB chiude a +1,89% a 49.275, guidato da Fincantieri, Unicredit e Stm",
+   "sintesi": "Il FTSE MIB chiude a 49.275 punti (+1,89%): Fincantieri +5,72%, Unicredit +4,27%, Stm +3,91%, Saipem +3,8%; in calo solo Pirelli (−0,32%) e Campari (−0,03%). Lo spread Btp-Bund scende a 106 punti base, i rendimenti dell'asta di Btp sono ai minimi di agosto. Un accordo BEI-Unicredit per l'eolico europeo coinvolge Fincantieri per navi specializzate. Le aspettative di inflazione dell'Eurozona aumentano e la BCE potrebbe alzare ancora i tassi a dicembre. Wall Street apre in rialzo (Dow +0,9%, S&P 500 +1,1%, Nasdaq +1,4%).",
+   "url": "https://www.milanofinanza.it/news/borse-oggi-diretta-27-novembre-2026-chiusura-apertura-europee-borsa-milano-ftse-mib-piazza-affari-202611270737073527",
+   "data": "2026-11-27",
+   "tema": "Piazza Affari",
+   "agg": 14,
+   "visto": "2026-11-27"
+  },
+  {
+   "fonte": "milanofinanza",
+   "titolo": "Dai 10 mila posti a rischio in Sap ai super-hacker: le cinque notizie di oggi sull'AI",
+   "sintesi": "Secondo indiscrezioni di stampa l'intelligenza artificiale potrebbe costare almeno 10 mila posti di lavoro a Sap, che prepara una riorganizzazione. La Banca d'Inghilterra, con il governatore Andrew Bailey, avverte che gli investimenti miliardari in IA espongono banche e mercati a perdite se i profitti non arrivano, e che l'IA può mettere in difficoltà i sistemi di sicurezza e la crittografia. Microsoft denuncia l'uso di agenti IA da parte di gruppi hacker legati a Cina e Corea del Nord.",
+   "url": "https://milanofinanza.it/news/dai-10-mila-posti-di-lavoro-a-rischio-ai-super-hacker-ecco-le-cinque-notizie-di-oggi-sull-ai-202611271217245877",
+   "data": "2026-11-27",
+   "tema": "Tecnologia",
+   "agg": 14,
+   "visto": "2026-11-27"
+  },
+  {
+   "fonte": "scenarieconomici",
+   "titolo": "Crisi del debito IA in Asia: i chip Nvidia finiscono in svendita e le banche bloccano miliardi di prestiti",
+   "sintesi": "Le nuove restrizioni USA del 16 novembre bloccano prestiti in Asia: i processori Nvidia B300 arrivano sul mercato a prezzi in calo e il debito legato ai data center, circa 49 miliardi di dollari, rischia di diventare un problema per le banche internazionali. Il modello di business di molti operatori asiatici era indebitarsi per comprare chip Nvidia e affittare potenza di calcolo a gruppi cinesi come ByteDance, Alibaba e Tencent.",
+   "url": "https://scenarieconomici.it/crisi-del-debito-ia-in-asia-i-chip-nvidia-finiscono-in-svendita-e-le-banche-bloccano-miliardi-di-prestiti/",
+   "data": "2026-11-27",
+   "tema": "Tecnologia",
+   "agg": 14,
+   "visto": "2026-11-27"
+  },
+  {
+   "fonte": "scenarieconomici",
+   "titolo": "Il paradosso delle raffinerie USA: corrono sul diesel e affondano la benzina",
+   "sintesi": "Articolo di Scenari Economici del 27 novembre sulle raffinerie statunitensi: i margini sul diesel salgono mentre quelli sulla benzina cedono. (Articolo letto solo nel titolo e nel sommario: i dettagli non sono verificati.)",
+   "url": "https://scenarieconomici.it/il-paradosso-delle-raffinerie-usa-corrono-sul-diesel-e-affondano-la-benzina/",
+   "data": "2026-11-27",
+   "tema": "Energia",
+   "agg": 14,
+   "visto": "2026-11-27"
+  },
+  {
+   "fonte": "scenarieconomici",
+   "titolo": "Caos a Bruxelles sul bilancio UE: gli austeri lasciano il tavolo, decide la Francia del dopo-Macron",
+   "sintesi": "Il vertice straordinario sul Quadro Finanziario Pluriennale 2028-2034 si è chiuso senza intesa: alle 22:10 Costa ha cancellato la seconda giornata e ridotto a undici minuti la conferenza stampa. Danimarca, Svezia, Belgio e Austria hanno lasciato le sessioni ristrette; la premier danese Frederiksen ha detto «tutto questo non porta a nulla». Anche la stampa tedesca (Die Welt) parla di fallimento.",
+   "url": "https://scenarieconomici.it/caos-a-bruxelles-sul-bilancio-ue-gli-austeri-lasciano-il-tavolo-la-terapia-di-gruppo-di-costa-fallisce-e-ora-decide-la-francia-del-dopo-macron/",
+   "data": "2026-11-27",
+   "tema": "Macro",
+   "agg": 14,
+   "visto": "2026-11-27"
+  },
+  {
+   "fonte": "zerohedge",
+   "titolo": "I future del Nasdaq salgono del 2,5% nel rimbalzo del Black Friday, mentre Pechino mobilita la «National Team»",
+   "sintesi": "I future USA salgono con il Nasdaq +2,4% e l'S&P 500 +1,7% a 7.320; il Nasdaq perde ancora circa l'8% in novembre ed è in rotta per il peggior mese da dicembre 2022. Pre-mercato: Nvidia +3,7%, Meta +3,8%, Sandisk +11,2%, Coherent +9,6%, Lumentum +9,3%. Treasury a 10 anni +6 punti base a 4,92%, Gilt al 5,20%; Brent vicino a 97, WTI +2,1% a 85,42 dopo attacchi Houthi alla raffineria saudita di Jazan; rame al massimo balzo da gennaio, oro +3% vicino a 3.670, argento +6,5%. Singapore tratta con Washington per mantenere l'accesso ai chip avanzati.",
+   "url": "https://www.zerohedge.com/markets/nasdaq-futures-jump-25-black-friday-tech-rebound-beijing-unleashes-national-team",
+   "data": "2026-11-27",
+   "tema": "Mercati",
+   "agg": 14,
+   "visto": "2026-11-27"
+  },
+  {
+   "fonte": "zerohedge",
+   "titolo": "L'oro si risveglia, il credito dice «bullshit»",
+   "sintesi": "Commento di QTR (Fringe Finance): il 27/11 i future del Nasdaq sono +2,5%, l'oro +4% (circa 3.675 $) e l'argento oltre +10%. L'autore cita un livello di «circa 3.460» di mercoledì (non coerente con la chiusura di 3.615,9 della dashboard: non verificato) e una discesa di oltre il 35% dal massimo storico in una «liquidazione storicamente brutale»; non chiama un minimo, parla di possibile rimbalzo tecnico e osserva che il trend resta ribassista.",
+   "url": "http://www.zerohedge.com/news/2026-11-27/gold-wakes-credit-calls-bullshit",
+   "data": "2026-11-27",
+   "tema": "Materie prime",
+   "agg": 14,
+   "visto": "2026-11-27"
+  },
+  {
+   "fonte": "web",
+   "titolo": "A Wall Street si scatenano gli acquisti, Anthropic chiude la prima settimana in deciso rialzo",
+   "sintesi": "Wall Street ha chiuso in anticipo (19:00 italiane) una settimana caotica con un rialzo trainato dall'IA: Nasdaq 100 +2,61%, S&P 500 a 7.297 (+1,6%, migliore settimana dall'aprile 2025), Dow Jones +1,18% a 50.775. Anthropic chiude la prima settimana a 92,46 $ (+11%), sopra l'ipo di 83. Due aziende cinesi avrebbero installato chip Blackwell in un data center a Shanghai (Bloomberg); Altria valuta un'offerta per Imperial Brands.",
+   "url": "https://www.teleborsa.it/News/2026/11/27/a-wall-street-si-scatenano-gli-acquisti-anthropic-chiude-la-prima-settimana-di-quotazione-in-deciso-rialzo-231.html",
+   "data": "2026-11-27",
+   "tema": "Mercati",
+   "sito": "Teleborsa (Borsa Italiana)",
+   "agg": 14,
+   "visto": "2026-11-27"
+  },
+  {
+   "fonte": "web",
+   "titolo": "Piazza Affari maglia rosa d'Europa grazie a banche e difesa",
+   "sintesi": "Chiusura positiva per le Borse europee, con acquisti sui titoli più penalizzati nelle scorse settimane. Milano fa meglio di tutte grazie a banche e difesa, supportata dagli obiettivi di medio periodo di Rheinmetall. Aspettative di inflazione delle famiglie nell'Eurozona a +3,5% a un anno; ESI a 95,8; spread a 104, BTP al 4,30%.",
+   "url": "https://www.teleborsa.it/News/2026/11/27/piazza-affari-maglia-rosa-d-europa-grazie-a-banche-e-difesa-197.html",
+   "data": "2026-11-27",
+   "tema": "Piazza Affari",
+   "sito": "Teleborsa (Borsa Italiana)",
+   "agg": 14,
+   "visto": "2026-11-27"
+  },
+  {
+   "fonte": "web",
+   "titolo": "Generali, JPMorgan alza il target price e conferma Neutral",
+   "sintesi": "JPMorgan alza il target su Generali a 48 € da 46, giudizio «Neutral». Nello stesso report sul settore assicurativo promuove Sampo a «overweight» (target 12 €), alza AXA a 56 €, Ageas a 95, ASR Nederland a 95 e NN Group a 100 (tutti «overweight»); taglia Aviva a «neutral» (815 pence); riprende Zurich con «neutral» e 670 franchi.",
+   "url": "https://www.teleborsa.it/News/2026/11/27/generali-jpmorgan-alza-target-price-e-conferma-neutral-105.html",
+   "data": "2026-11-27",
+   "tema": "Assicurazioni",
+   "sito": "Teleborsa",
+   "agg": 14,
+   "visto": "2026-11-27"
   }
  ],
- "aggiornato": "2026-11-26",
- "ultimo_agg": 13
+ "aggiornato": "2026-11-27",
+ "ultimo_agg": 14
 }
